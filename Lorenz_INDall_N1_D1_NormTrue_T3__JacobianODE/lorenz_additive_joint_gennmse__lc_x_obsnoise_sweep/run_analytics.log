@@ -1,0 +1,69 @@
+No run_id provided — selecting best run from group 'lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep' ...
+Found 1 total runs in JacobianODE/Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE (group=lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  bu6n73iv: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including bu6n73iv (lc=0.0001): use_all_runs=True (state=finished)
+Found 1 effectively-done sweep runs:
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=bu6n73iv
+n_dims=3, n_latent=3, n_dyn=3, dt=0.0150
+  run=bu6n73iv: DiagnosticMetrics(one_step_mase=0.4426366984844208, loop_closure_loss=9.216533660888672, fast_eigenvalue_fraction=0.27916666865348816, trajectory_val_loss=0.0136601272970438) (from cache, n_batches=100)
+
+Ranking method:           best_traj_loss
+Best run ID:              bu6n73iv
+Best loop_closure_weight: 0.0001
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.013660
+Criteria applied: ['C3']
+Surviving: 1 / 1
+Auto-selected run_id: bu6n73iv
+
+======================================================================
+PARETO FRONTIER RUNS (1 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  bu6n73iv            9.216534        0.013660 <-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 1 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          bu6n73iv            9.216534        0.013660 <-- active
+  pareto_knee             bu6n73iv            9.216534        0.013660
+  geo_rank                bu6n73iv            9.216534        0.013660
+  minimax_rank            bu6n73iv            9.216534        0.013660
+  geo_log_score           bu6n73iv            9.216534        0.013660
+  minimax_log_score       bu6n73iv            9.216534        0.013660
+======================================================================
+
+Loading run bu6n73iv from JacobianODE/Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE ...
+Train dataset shape: torch.Size([25850, 25, 3])
+Validation dataset shape: torch.Size([8225, 25, 3])
+Test dataset shape: torch.Size([3525, 25, 3])
+Train trajectories dataset shape: torch.Size([22, 1200, 3])
+Validation trajectories dataset shape: torch.Size([7, 1200, 3])
+Test trajectories dataset shape: torch.Size([3, 1200, 3])
+Loading checkpoint epoch=44-step=9000.ckpt...
+Computing MASE ...
+Teacher-forced MASE: 3.0268
+Free-running MASE:   3.8616
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1200) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = -3.7179 ± 1.2565
+  λ_2 = -4.1148 ± 1.2395
+  λ_3 = -105.2819 ± 14.6231
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = -1.9568 ± 0.0888
+  λ_2 = -5.9056 ± 0.0275
+  λ_3 = -101.9113 ± 0.1515
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.3846 ± 0.0251
+  λ_2 = -0.1716 ± 0.0444
+  λ_3 = -13.8799 ± 0.0398
+Computing prediction windows ...
+Windows: 354 — nMSE min=0.0027, median=0.0141, mean=0.0158, max=0.0660

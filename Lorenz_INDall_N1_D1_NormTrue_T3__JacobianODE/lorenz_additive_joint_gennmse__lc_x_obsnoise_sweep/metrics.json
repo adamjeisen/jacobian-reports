@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep",
+  "analyzed_at": "2026-04-13T02:57:48Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "bu6n73iv",
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.0136601272970438,
+        "best_traj_loss_epoch": 44.0,
+        "best_mase": 0.9669820666313171,
+        "best_mase_epoch": 33.0,
+        "lc_loss_at_best_tl": 9.216533660888672,
+        "r2_at_best_tl": 0.9982439279556274,
+        "n_epochs": 88
+      }
+    ],
+    "best_by_obs_noise_scale": {
+      "0.01": {
+        "run_id": "bu6n73iv",
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.0136601272970438,
+        "best_traj_loss_epoch": 44.0,
+        "best_mase": 0.9669820666313171,
+        "best_mase_epoch": 33.0,
+        "lc_loss_at_best_tl": 9.216533660888672,
+        "r2_at_best_tl": 0.9982439279556274,
+        "n_epochs": 88
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "bu6n73iv",
+      "state": "finished",
+      "lc_weight": 0.0001,
+      "obs_noise_scale": 0.01,
+      "best_traj_loss": 0.0136601272970438,
+      "best_traj_loss_epoch": 44.0,
+      "best_mase": 0.9669820666313171,
+      "best_mase_epoch": 33.0,
+      "lc_loss_at_best_tl": 9.216533660888672,
+      "r2_at_best_tl": 0.9982439279556274,
+      "n_epochs": 88
+    },
+    "n_runs": 1
+  },
+  "per_run_lyapunov": {
+    "bu6n73iv": {
+      "lambda_spectrum": [
+        -1.8468672037124634,
+        -5.3253021240234375,
+        -91.99068450927734
+      ],
+      "lambda_max": -1.8468672037124634,
+      "lambda_sum": -99.16285705566406,
+      "kaplan_yorke_dim": null,
+      "error": null,
+      "spectrum_mse_vs_true": 2043.6933309997337
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.4050633907318115,
+    -0.18091364204883575,
+    -13.891106605529785
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Best run's leading Lyapunov exponent > 0 (chaos recovered)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best run's predicted Lyapunov spectrum within ~20% of empirical",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "val/trajectory_r2_score > 0.95 at the best configuration",
+      "verdict": "Pass",
+      "note": "Best R\u00b2 = 0.9982; threshold > 0.95"
+    },
+    {
+      "criterion": "Loop closure bounded and monotonically improving at low LC",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/sweep_pareto.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/mase.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/lyapunov.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/prediction_windows.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/per_run_lyapunov_vs_true.png",
+    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

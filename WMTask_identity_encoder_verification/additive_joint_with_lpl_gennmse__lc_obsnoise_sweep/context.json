@@ -1,0 +1,40 @@
+{
+  "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
+  "completed_at": "2026-04-12T21:00:00Z",
+  "outcome": "complete_with_failures",
+  "experiment_metadata": {
+    "wmtask_additive_joint_with_lpl_gennmse": {
+      "description": "Base config for the generalized_normalized_mse (gennMSE) version of the\nLC \u00d7 obs_noise_scale sweep. Uses a precomputed fixed denominator\ndet(Cov(x_recent))^(1/n_recent_dims) for all prediction losses. Compared\ndirectly against MSE and per-batch nMSE sweeps.\n",
+      "hypothesis": "A fixed, data-scale-aware denominator gives consistent scaling across\nall prediction terms while eliminating the batch-noise pathology of\nper-batch nMSE. Should match or slightly beat MSE baseline with\nidentical-shape optimal-LC landscape.\n",
+      "success_criteria": [
+        "Best MASE matches or beats MSE baseline",
+        "Optimal LC weight is consistent across obs_noise_scale",
+        "No batch-noise-driven instability in the loss landscape"
+      ]
+    }
+  },
+  "expected_run_count": 27,
+  "hydra": {
+    "experiments": [
+      "wmtask_additive_joint_with_lpl_gennmse"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_additive_joint_with_lpl_gennmse",
+      "training.lightning.loop_closure_weight=0,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1,1,10",
+      "training.lightning.obs_noise_scale=0,0.01,0.05"
+    ],
+    "resolved_runs": []
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "retroactive",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-12T09:30:00Z"
+}
