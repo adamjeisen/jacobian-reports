@@ -1,1 +1,1 @@
-Discussion written. Key findings: the 9×3 sweep collapsed to a single finished run, so landscape claims are impossible; that one run passes R² > 0.95 (0.9982) but fails Lyapunov criteria (all predicted λ negative, MSE vs empirical = 2043.7), leaving the hypothesis unsupported.
+Wrote discussion.md. Key findings: C1 & C3 & C4 Pass, C2 Partial (λ₁ matches within 1.5% but λ₃ ~24% off, λ₂ biased). Broad LC basin at obs_noise=0 across six decades; obs_noise=0.05 collapses performance. Hypothesis mixed/supported.
