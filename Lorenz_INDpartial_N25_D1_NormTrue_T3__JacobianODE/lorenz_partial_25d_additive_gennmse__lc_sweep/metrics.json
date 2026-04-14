@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
-  "analyzed_at": "2026-04-14T04:16:15Z",
+  "analyzed_at": "2026-04-14T16:14:58Z",
   "metrics_summary": {
     "per_run": [
       {
