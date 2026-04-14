@@ -1,0 +1,104 @@
+{
+  "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
+  "completed_at": "2026-04-14T00:00:31Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_25d_additive_gennmse": {
+      "description": "Partial-obs Lorenz: observe only x (index 0), n_delays=25,\ndelay_spacing=1. Encoder input: 25-D delay vector. Dynamic latent:\n3-D (z_dyn). Null subspace: 22-D with kl_null_weight=0 (no\nstructural penalty, per the additive+zero_init design). Joint\ntraining of encoder + Jacobian dynamics from the start; active loss\nterms: decoded-prediction (trajectory) + latent-prediction +\nreconstruction + loop-closure, all with gennMSE. Reconstruction mode\n= most_recent so recon + decoded-trajectory losses score only the\ncurrent-time frame, not the older lags (avoids the redundant-target\n/ thin-direction pathology flagged in the recent partial-obs\nhypothesis). obs_noise_scale=0. Uses the clean-encoding LPL target\nfix (no-op here since obs_noise=0, but kept for consistency).\n",
+      "hypothesis": "With loop closure enforcing encoder invertibility, the latent\ndynamics should be diffeomorphism-conjugate to the true Lorenz flow,\npreserving its Lyapunov spectrum (\u03bb \u2248 [0.91, 0, -14.57]) despite\nobserving only x(t). The optimal LC weight likely sits in the\n1e-3..1e-1 range (full-obs sweep peaked at 1e-1 with spectrum_mse\n\u2248 0.011). Free-running rollouts in observation space should be\nchaotic with long-run statistics matching the training data.\n\nOpen risk from the partial-obs sufficient-statistic hypothesis: the\nonly hard constraint on z_dyn information content is reconstructing\nthe current frame, so the encoder may dump history into z_null\nrather than surfacing it in z_dyn. Loop closure + LPL should apply\ncounterbalancing pressure; if they don't, we'd see high traj_val\nloss / spectrum mismatch and know to revisit the loss design.\n",
+      "success_criteria": [
+        "Best run's leading Lyapunov exponent > 0 (chaos recovered)",
+        "Best run's predicted Lyapunov spectrum within ~30% of empirical",
+        "Best run's free-running sliced-Wasserstein-1 to training data distribution is low (sanity: obs histograms overlap)",
+        "val/trajectory_r2_score > 0.9 at the best configuration",
+        "Loop closure bounded and monotonically improving at low LC"
+      ]
+    }
+  },
+  "expected_run_count": 9,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_25d_additive_gennmse"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_25d_additive_gennmse"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_25d_additive_gennmse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=10"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE",
+    "group": "lorenz_partial_25d_additive_gennmse__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "9b39231",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-13T18:52:39Z"
+}

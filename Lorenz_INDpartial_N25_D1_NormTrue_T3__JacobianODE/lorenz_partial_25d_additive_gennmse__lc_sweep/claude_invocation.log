@@ -1,0 +1,1 @@
+Wrote discussion to `discussion.md`. Key findings: C1/C4/C5 Pass, C2 Fail (λ₂ off by ~8×), C3 Unknown (SW₁ not reported); traj-optimal LC = 1e-5 (three decades below hypothesis prediction); all runs chaotic-and-dissipative; hypothesis mixed — chaos recovered but neutral Lyapunov direction missing, consistent with the stated z_dyn sufficient-statistic risk.
