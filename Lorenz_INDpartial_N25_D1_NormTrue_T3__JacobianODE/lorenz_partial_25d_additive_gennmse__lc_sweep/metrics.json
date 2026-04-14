@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
-  "analyzed_at": "2026-04-14T16:14:58Z",
+  "analyzed_at": "2026-04-14T16:42:25Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -152,8 +152,121 @@
     },
     "n_runs": 9
   },
-  "per_run_lyapunov": {},
-  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov": {
+    "fxb2ugkx": {
+      "lambda_spectrum": [
+        0.22649216651916504,
+        -0.7386903762817383,
+        -14.417399406433105
+      ],
+      "lambda_max": 0.22649216651916504,
+      "lambda_sum": -14.929597854614258,
+      "kaplan_yorke_dim": 1.3066130876541138,
+      "error": null,
+      "spectrum_mse_vs_true": 0.2694751022550968
+    },
+    "8ymb10x8": {
+      "lambda_spectrum": [
+        0.2276114672422409,
+        -0.7742560505867004,
+        -14.759371757507324
+      ],
+      "lambda_max": 0.2276114672422409,
+      "lambda_sum": -15.306015968322754,
+      "kaplan_yorke_dim": 1.2939743995666504,
+      "error": null,
+      "spectrum_mse_vs_true": 0.44523622937379814
+    },
+    "n9kvy1ms": {
+      "lambda_spectrum": [
+        0.1994500756263733,
+        -0.7256811261177063,
+        -15.641453742980957
+      ],
+      "lambda_max": 0.1994500756263733,
+      "lambda_sum": -16.16768455505371,
+      "kaplan_yorke_dim": 1.2748453617095947,
+      "error": null,
+      "spectrum_mse_vs_true": 1.1889915388793022
+    },
+    "rl5389n9": {
+      "lambda_spectrum": [
+        0.2951372563838959,
+        -0.8461928367614746,
+        -17.065248489379883
+      ],
+      "lambda_max": 0.2951372563838959,
+      "lambda_sum": -17.616304397583008,
+      "kaplan_yorke_dim": 1.3487825393676758,
+      "error": null,
+      "spectrum_mse_vs_true": 3.585459328894618
+    },
+    "uup45vfy": {
+      "lambda_spectrum": [
+        0.24120062589645386,
+        -0.9602311253547668,
+        -17.16840362548828
+      ],
+      "lambda_max": 0.24120062589645386,
+      "lambda_sum": -17.887434005737305,
+      "kaplan_yorke_dim": 1.251190185546875,
+      "error": null,
+      "spectrum_mse_vs_true": 3.8739688521817417
+    },
+    "94fg726v": {
+      "lambda_spectrum": [
+        0.19470739364624023,
+        -0.7720153331756592,
+        -18.051219940185547
+      ],
+      "lambda_max": 0.19470739364624023,
+      "lambda_sum": -18.628528594970703,
+      "kaplan_yorke_dim": 1.2522066831588745,
+      "error": null,
+      "spectrum_mse_vs_true": 5.952755411709752
+    },
+    "7eknb3d1": {
+      "lambda_spectrum": [
+        0.284091591835022,
+        -0.7104102969169617,
+        -14.48560619354248
+      ],
+      "lambda_max": 0.284091591835022,
+      "lambda_sum": -14.911925315856934,
+      "kaplan_yorke_dim": 1.3998979330062866,
+      "error": null,
+      "spectrum_mse_vs_true": 0.28200269841778663
+    },
+    "cmhou3ak": {
+      "lambda_spectrum": [
+        0.4519965648651123,
+        -1.1259636878967285,
+        -12.458149909973145
+      ],
+      "lambda_max": 0.4519965648651123,
+      "lambda_sum": -13.13211727142334,
+      "kaplan_yorke_dim": 1.4014308452606201,
+      "error": null,
+      "spectrum_mse_vs_true": 1.1218516716836093
+    },
+    "i257bznv": {
+      "lambda_spectrum": [
+        0.46723294258117676,
+        -1.6393874883651733,
+        -14.05461597442627
+      ],
+      "lambda_max": 0.46723294258117676,
+      "lambda_sum": -15.226770401000977,
+      "kaplan_yorke_dim": 1.2850046157836914,
+      "error": null,
+      "spectrum_mse_vs_true": 0.9150085481105571
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.2350996732711792,
+    -0.00666311988607049,
+    -13.89539623260498
+  ],
   "per_run_lyapunov_error": null,
   "success_criteria_verdicts": [
     {
@@ -183,9 +296,16 @@
     }
   ],
   "figures": {
-    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/per_run_lyapunov.png"
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/sweep_pareto.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/mase.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/lyapunov.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/prediction_windows.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png"
   },
-  "analytics_error": "NameError: name 'return_full_obs' is not defined",
+  "analytics_error": null,
   "true_lyapunov": null,
   "analytics_log_file": "run_analytics.log"
 }

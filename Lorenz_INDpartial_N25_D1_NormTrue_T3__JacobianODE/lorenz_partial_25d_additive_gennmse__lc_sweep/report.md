@@ -77,19 +77,47 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ## Figures
 
+### sweep_overview
+
+![sweep_overview](figures/sweep_overview.png)
+
+### sweep_pareto
+
+![sweep_pareto](figures/sweep_pareto.png)
+
+### prediction_windows
+
+![prediction_windows](figures/prediction_windows.png)
+
+### mase
+
+![mase](figures/mase.png)
+
+### lyapunov
+
+![lyapunov](figures/lyapunov.png)
+
 ### per_run_lyapunov
 
 ![per_run_lyapunov](figures/per_run_lyapunov.png)
 
+### per_run_lyapunov_vs_true
+
+![per_run_lyapunov_vs_true](figures/per_run_lyapunov_vs_true.png)
+
+### lyapunov_spectrum_mse_vs_val_loss
+
+![lyapunov_spectrum_mse_vs_val_loss](figures/lyapunov_spectrum_mse_vs_val_loss.png)
+
 ## Discussion
 
-All nine runs completed cleanly at `obs_noise_scale=0` — this was a 1-D sweep over LC weight rather than a 2-D (LC × noise) landscape, so "sweep-overview" here is effectively a curve. `best_traj_loss` has a clean minimum at `lc=1e-5` (5.64e-5) with a broad basin spanning `lc ∈ [0, 1e-4]` (all within ~25% of the min), then degrades monotonically from `lc=1e-3` (8.6e-5) up to `lc=10` (1.26e-4). Loop-closure loss falls monotonically with LC weight across more than five orders of magnitude (1.80 at `lc=0` → 1.9e-6 at `lc=10`), defining a smooth Pareto front; the selected run sits at the low-traj-loss end while `94fg726v` (`lc=1e-2`) is the Pareto knee.
+**Success criteria.** (1) *Leading λ > 0* — **Pass**: the best run (n9kvy1ms, LC=1e-5) gives λ_1 = +0.199 (full-length) / +0.377 (windowed), and every run in the sweep has λ_1 ∈ [+0.19, +0.47]. (2) *Predicted spectrum within ~30% of empirical* — **Fail**: empirical λ = [+0.235, −0.007, −13.84], predicted = [+0.199, −0.726, −15.64]. λ_1 is ~15% off and λ_3 ~13% off, but λ_2 misses the zero (neutral) direction by two orders of magnitude — a systematic failure shared by every run (all λ_2 ∈ [−0.71, −1.64]). (3) *Free-running SW-1 low* — **Unknown**: SW-1 is not reported in metrics.json or run_analytics.log for this sweep. (4) *val trajectory R² > 0.9* — **Pass**: R² = 0.99993 at the best run, and ≥ 0.99984 for every run. (5) *LC bounded and monotonically improving at low LC* — **Pass**: loop-closure loss at best traj-loss epoch decreases monotonically from 1.798 (LC=0) → 1.14 → 0.20 → 0.037 → 3.4e-3 → 6.2e-4 → 4.9e-5 → 9.5e-6 → 1.9e-6 as LC weight sweeps 0→10, with no divergence.
 
-Success-criterion verdicts: **"val/trajectory_r2_score > 0.9" — Pass** (best R² = 0.99993; all nine runs ≥ 0.9998). **"Leading λ > 0 (chaos recovered)" — Pass**: for best run `n9kvy1ms`, predicted λ₁ = +0.194 ± 0.047 (full-length, 3 test trajs) and +0.377 ± 0.461 (windowed). **"Predicted spectrum within ~30% of empirical" — Partial**: against the empirical spectrum reported in the log (+0.272, −0.102, −13.84), λ₁ is ~29% low (borderline), λ₃ ~16% too negative (OK), but λ₂ = −0.85 vs empirical −0.10 is well outside 30% — the zero-exponent is not recovered. Note the empirical spectrum in this run is itself displaced from the canonical Lorenz values (0.91, 0, −14.57) quoted in the hypothesis, which complicates the comparison. **"Free-running SW-1 low" — Unknown**: `analytics_error: NameError: name 'return_full_obs' is not defined` prevented the observation-space distributional diagnostic from running. **"LC bounded and monotonically improving at low LC" — Pass**: LC loss is bounded (max 1.80 at `lc=0`) and decreases monotonically with LC weight at every step of the sweep.
+**Landscape.** Because obs_noise_scale is fixed at 0 here, the "overview" collapses to a 1-D curve over LC. Best traj-val loss bottoms at LC=1e-5 (5.64e-5) inside a broad flat basin spanning LC ∈ [0, 1e-4] (5.6e-5 – 6.9e-5), then rises roughly monotonically by ~2.5× out to LC=10. The Pareto trace (run_analytics.log) confirms the classic LC/traj-loss trade-off: pushing LC loss toward zero costs ~2× trajectory accuracy. MASE echoes the shape, with minimum 0.047 at LC=1e-5 and degradation to 0.12 at LC=10.
 
-Lyapunov stability: the best-run spectrum is physically sensible (one positive, one strongly negative, one intermediate) and free-running MASE (0.044) is close to teacher-forced (0.021), suggesting the rollout is chaotic rather than diverging or collapsing to a fixed point. `metrics.json` lacks a populated `per_run_lyapunov` dict and no `per_run_lyapunov_vs_true` figure was generated (no ground-truth spectrum was attached), so cross-run stability can only be read from `per_run_lyapunov.png` qualitatively.
+**Lyapunov.** Learned dynamics are stably chaotic across the whole sweep (every λ_1 positive, every λ_3 strongly negative, Kaplan–Yorke dims 1.25–1.40). But per_run_lyapunov_vs_true shows the neutral direction is not recovered anywhere: λ_2 is pulled 0.7–1.6 below zero, inflating the volume-contraction rate and driving spectrum_mse_vs_true. The lowest spectrum MSE is 0.27 at LC=0 and 0.28 at LC=0.1; the selected LC=1e-5 run is middling (1.19), and spectrum MSE does not track best_traj_loss.
 
-Caveats: (i) the sweep covers only one `obs_noise_scale`, so robustness to observation noise is untested here; (ii) the SW-1/histogram sanity check failed due to an analytics bug and should be re-run; (iii) the empirical spectrum itself differs from the canonical Lorenz reference, worth investigating before over-interpreting λ₂. Overall the hypothesis is **mixed-supported**: loop closure does not harm trajectory accuracy in the `[0, 1e-4]` band and the best run recovers a positive leading exponent with a decent λ₃, but the middle exponent fails the 30% tolerance and the optimum sits well below the hypothesized `1e-3..1e-1` range — consistent with the "encoder dumps history into z_null" risk being partially realized, since stronger LC pressure hurts rather than helps trajectory loss under partial observation.
+**Caveats and hypothesis.** All 9/9 runs finished cleanly; epochs are 168–200 with no early-stop outliers. The main anomaly is the persistent λ_2 ≈ −0.8 bias, which is independent of LC and therefore not explained by insufficient encoder-inverse pressure. The hypothesis — LC-induced diffeomorphism-conjugacy preserving the Lorenz spectrum — is **mixed / largely unsupported**: chaos is recovered and R² is excellent, but the predicted spectrum is not within 30% of empirical at any LC and loop closure alone does not pull λ_2 toward 0. This is consistent with the stated open risk that z_dyn fails to surface history-dependent structure on the neutral direction; tightening that likely requires changes beyond LC weight (e.g. reconstruction_mode, latent-prediction design).
 
 ## `run_analytics` stdout
 
@@ -130,15 +158,15 @@ Found 9 effectively-done sweep runs:
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=cmhou3ak
   loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=i257bznv
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=fxb2ugkx: DiagnosticMetrics(one_step_mase=0.03575814515352249, loop_closure_loss=1.79814875125885, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.9504662203835323e-05) (from W&B history)
-  run=8ymb10x8: DiagnosticMetrics(one_step_mase=0.03807729482650757, loop_closure_loss=1.1350761651992798, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.9332236560294405e-05) (from W&B history)
-  run=n9kvy1ms: DiagnosticMetrics(one_step_mase=0.02374674193561077, loop_closure_loss=0.20183616876602173, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.63506328035146e-05) (from W&B history)
-  run=rl5389n9: DiagnosticMetrics(one_step_mase=0.04337100312113762, loop_closure_loss=0.03722800314426422, fast_eigenvalue_fraction=0.0, trajectory_val_loss=6.914730329299346e-05) (from W&B history)
-  run=uup45vfy: DiagnosticMetrics(one_step_mase=0.02874961867928505, loop_closure_loss=0.003357512876391411, fast_eigenvalue_fraction=0.0, trajectory_val_loss=8.641776366857812e-05) (from W&B history)
-  run=94fg726v: DiagnosticMetrics(one_step_mase=0.043471794575452805, loop_closure_loss=0.0006207296391949058, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00011430896847741678) (from W&B history)
-  run=7eknb3d1: DiagnosticMetrics(one_step_mase=0.04558245465159416, loop_closure_loss=4.876431921729818e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.000140458854730241) (from W&B history)
-  run=cmhou3ak: DiagnosticMetrics(one_step_mase=0.03841876611113548, loop_closure_loss=9.458739441470243e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012571370461955667) (from W&B history)
-  run=i257bznv: DiagnosticMetrics(one_step_mase=0.046716488897800446, loop_closure_loss=1.9170552150171716e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012630168930627406) (from W&B history)
+  run=fxb2ugkx: DiagnosticMetrics(one_step_mase=0.03575814515352249, loop_closure_loss=1.79814875125885, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.9504662203835323e-05) (from cache, n_batches=100)
+  run=8ymb10x8: DiagnosticMetrics(one_step_mase=0.03807729482650757, loop_closure_loss=1.1350761651992798, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.9332236560294405e-05) (from cache, n_batches=100)
+  run=n9kvy1ms: DiagnosticMetrics(one_step_mase=0.02374674193561077, loop_closure_loss=0.20183616876602173, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.63506328035146e-05) (from cache, n_batches=100)
+  run=rl5389n9: DiagnosticMetrics(one_step_mase=0.04337100312113762, loop_closure_loss=0.03722800314426422, fast_eigenvalue_fraction=0.0, trajectory_val_loss=6.914730329299346e-05) (from cache, n_batches=100)
+  run=uup45vfy: DiagnosticMetrics(one_step_mase=0.02874961867928505, loop_closure_loss=0.003357512876391411, fast_eigenvalue_fraction=0.0, trajectory_val_loss=8.641776366857812e-05) (from cache, n_batches=100)
+  run=94fg726v: DiagnosticMetrics(one_step_mase=0.043471794575452805, loop_closure_loss=0.0006207296391949058, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00011430896847741678) (from cache, n_batches=100)
+  run=7eknb3d1: DiagnosticMetrics(one_step_mase=0.04558245465159416, loop_closure_loss=4.876431921729818e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.000140458854730241) (from cache, n_batches=100)
+  run=cmhou3ak: DiagnosticMetrics(one_step_mase=0.03841876611113548, loop_closure_loss=9.458739441470243e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012571370461955667) (from cache, n_batches=100)
+  run=i257bznv: DiagnosticMetrics(one_step_mase=0.046716488897800446, loop_closure_loss=1.9170552150171716e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012630168930627406) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              n9kvy1ms
@@ -193,7 +221,7 @@ Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
   λ_2 = -1.0097 ± 1.2210
   λ_3 = -16.1446 ± 1.4249
 Predicted Lyapunov exponents (full-length, 3 test trajs):
-  λ_1 = +0.1939 ± 0.0469
+  λ_1 = +0.1939 ± 0.0470
   λ_2 = -0.8516 ± 0.0467
   λ_3 = -16.0985 ± 0.0681
 Empirical Lyapunov exponents (mean ± std):
