@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
-  "analyzed_at": "2026-04-14T01:17:56Z",
+  "analyzed_at": "2026-04-14T04:16:15Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -152,107 +152,7 @@
     },
     "n_runs": 9
   },
-  "per_run_lyapunov": {
-    "fxb2ugkx": {
-      "lambda_spectrum": [
-        0.22649191319942474,
-        -0.7386905550956726,
-        -14.417399406433105
-      ],
-      "lambda_max": 0.22649191319942474,
-      "lambda_sum": -14.929597854614258,
-      "kaplan_yorke_dim": 1.3066127300262451,
-      "error": null
-    },
-    "8ymb10x8": {
-      "lambda_spectrum": [
-        0.22760935127735138,
-        -0.7742536067962646,
-        -14.759373664855957
-      ],
-      "lambda_max": 0.22760935127735138,
-      "lambda_sum": -15.306017875671387,
-      "kaplan_yorke_dim": 1.2939726114273071,
-      "error": null
-    },
-    "n9kvy1ms": {
-      "lambda_spectrum": [
-        0.19944389164447784,
-        -0.725675106048584,
-        -15.641453742980957
-      ],
-      "lambda_max": 0.19944389164447784,
-      "lambda_sum": -16.16768455505371,
-      "kaplan_yorke_dim": 1.274839162826538,
-      "error": null
-    },
-    "rl5389n9": {
-      "lambda_spectrum": [
-        0.29513466358184814,
-        -0.8461902141571045,
-        -17.06525230407715
-      ],
-      "lambda_max": 0.29513466358184814,
-      "lambda_sum": -17.616308212280273,
-      "kaplan_yorke_dim": 1.3487805128097534,
-      "error": null
-    },
-    "uup45vfy": {
-      "lambda_spectrum": [
-        0.24120397865772247,
-        -0.960233211517334,
-        -17.16840362548828
-      ],
-      "lambda_max": 0.24120397865772247,
-      "lambda_sum": -17.887432098388672,
-      "kaplan_yorke_dim": 1.2511931657791138,
-      "error": null
-    },
-    "94fg726v": {
-      "lambda_spectrum": [
-        0.1947171837091446,
-        -0.7720246315002441,
-        -18.051218032836914
-      ],
-      "lambda_max": 0.1947171837091446,
-      "lambda_sum": -18.628524780273438,
-      "kaplan_yorke_dim": 1.2522163391113281,
-      "error": null
-    },
-    "7eknb3d1": {
-      "lambda_spectrum": [
-        0.284109890460968,
-        -0.7104279398918152,
-        -14.485600471496582
-      ],
-      "lambda_max": 0.284109890460968,
-      "lambda_sum": -14.911918640136719,
-      "kaplan_yorke_dim": 1.3999137878417969,
-      "error": null
-    },
-    "cmhou3ak": {
-      "lambda_spectrum": [
-        0.45199310779571533,
-        -1.125961184501648,
-        -12.458149909973145
-      ],
-      "lambda_max": 0.45199310779571533,
-      "lambda_sum": -13.132118225097656,
-      "kaplan_yorke_dim": 1.4014286994934082,
-      "error": null
-    },
-    "i257bznv": {
-      "lambda_spectrum": [
-        0.4672248363494873,
-        -1.6394459009170532,
-        -14.054545402526855
-      ],
-      "lambda_max": 0.4672248363494873,
-      "lambda_sum": -15.226766586303711,
-      "kaplan_yorke_dim": 1.2849894762039185,
-      "error": null
-    }
-  },
+  "per_run_lyapunov": {},
   "empirical_lyapunov_spectrum": null,
   "per_run_lyapunov_error": null,
   "success_criteria_verdicts": [
@@ -283,14 +183,9 @@
     }
   ],
   "figures": {
-    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/sweep_overview.png",
-    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/sweep_pareto.png",
-    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/mase.png",
-    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/lyapunov.png",
-    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/prediction_windows.png",
     "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/per_run_lyapunov.png"
   },
-  "analytics_error": null,
+  "analytics_error": "NameError: name 'return_full_obs' is not defined",
   "true_lyapunov": null,
   "analytics_log_file": "run_analytics.log"
 }

@@ -77,39 +77,19 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ## Figures
 
-### sweep_overview
-
-![sweep_overview](figures/sweep_overview.png)
-
-### sweep_pareto
-
-![sweep_pareto](figures/sweep_pareto.png)
-
-### prediction_windows
-
-![prediction_windows](figures/prediction_windows.png)
-
-### mase
-
-![mase](figures/mase.png)
-
-### lyapunov
-
-![lyapunov](figures/lyapunov.png)
-
 ### per_run_lyapunov
 
 ![per_run_lyapunov](figures/per_run_lyapunov.png)
 
 ## Discussion
 
-All nine runs finished cleanly (9/9, obs_noise_scale fixed at 0), so the sweep collapses to a 1-D scan over loop-closure weight rather than the 2-D (LC × noise) landscape anticipated in the template. The best run by trajectory val loss is `n9kvy1ms` at LC=1e-5 (traj_val=5.64e-5, MASE=0.047, R²=0.99993).
+Success-criteria verdicts for the best run (`n9kvy1ms`, LC=1e-5): **C1 (leading λ > 0) — Pass**: full-length predicted λ₁ = +0.194 ± 0.047, clearly positive and consistent with chaotic dynamics. **C2 (spectrum within ~30% of empirical) — Partial**: against the empirical reference computed here (λ ≈ [+0.272, −0.102, −13.84]), λ₁ is off by ~29% and λ₃ by ~16%, but λ₂ (−0.85 vs −0.10) is an order of magnitude too negative; against the *theoretical* Lorenz spectrum [0.91, 0, −14.57] the agreement is worse on λ₁ and λ₂. **C3 (free-running SW-1 low) — Unknown**: the analytics stage crashed with `NameError: return_full_obs is not defined`, so no SW-1 or observation-histogram diagnostic was produced. **C4 (val traj R² > 0.9) — Pass**: best R² = 0.99993, far above threshold. **C5 (LC bounded and monotonically improving at low LC) — Pass**: LC loss at `best_traj_loss` epoch decreases monotonically with LC weight, 1.80 → 1.14 → 0.20 → 0.037 → 3.4e-3 → 6.2e-4 → 4.9e-5 → 9.5e-6 → 1.9e-6 across LC ∈ {0, …, 10}, with no divergence.
 
-Success-criterion verdicts. **C1 (leading λ>0): Pass** — the best run's λ₁=+0.199 (full-length, 3 test trajs) and every run in the sweep has positive λ_max (range 0.195–0.467), so chaos is recovered at all LC weights. **C2 (predicted spectrum within ~30% of empirical): Partial** — against the data-estimated empirical spectrum reported in run_analytics.log (λ≈[+0.27, −0.10, −13.84]), the best run gives [+0.19, −0.85, −16.1]: λ₁ is off by ~28% (just inside the threshold), λ₃ by ~16%, but λ₂ is an order of magnitude too negative and has the wrong sign relative to a neutral direction. No ground-truth spectrum file was shipped (`empirical_lyapunov_spectrum=null`, no per_run_lyapunov_vs_true figure), so C2 cannot be scored against the theoretical [0.91, 0, −14.57]. **C3 (free-running sliced-W1): Unknown** — no sliced-Wasserstein metric is present in metrics.json or the log. **C4 (val trajectory R²>0.9): Pass** — 0.99993 at the best config, and all nine runs clear 0.9998. **C5 (loop closure bounded and monotonic at low LC): Pass** — lc_loss_at_best_tl decreases monotonically from 1.80 (LC=0) through 0.20, 0.037, 3.4e-3, 6.2e-4 down to 1.9e-6 at LC=10, with no blow-ups.
+The sweep was effectively 1-D (obs_noise_scale=0 only, no noise axis populated — `best_by_obs_noise_scale` has a single key). Along the LC axis the trajectory-loss landscape is shallow-U: runs with LC ∈ [0, 1e-4] cluster tightly (best_traj_loss 5.6–6.9e-5, R² ≥ 0.9999), with the minimum at LC=1e-5. Beyond LC=1e-3 trajectory loss degrades ~2–2.5× (to 1.1–1.4e-4 at LC=0.01–10) and MASE roughly doubles (0.047 → 0.12). The basin is broad on the low-LC side but the optimum sits well below the 1e-3..1e-1 range predicted in the hypothesis.
 
-Sweep-overview shape and Lyapunov behaviour. The traj-loss curve is shallow and U-shaped along LC: 5.9e-5 at LC=0, a minimum of 5.6e-5 at LC=1e-5, then a gradual rise to ~1.3e-4 at LC≥1; the basin between LC=0 and LC=1e-3 is within ~50% of the minimum, so the choice of LC weight in that decade is weakly constrained by traj loss alone. The Pareto frontier spans six runs, and alternative rankings (pareto_knee, minimax) prefer LC=1e-2 / 1e-3, reflecting that LC loss itself drops four orders of magnitude across the basin. Per-run Lyapunov panels are stable across the sweep — λ_max stays in (0.19, 0.47), λ_sum is strongly negative everywhere (−13 to −19), and Kaplan–Yorke dimensions cluster near 1.25–1.40 rather than the ~2.06 expected for Lorenz, which is consistent with the λ₂ being pushed well below zero in every run.
+Per-run Lyapunov diagnostics show all nine runs produced a bounded, finite spectrum with `fast_eigenvalue_fraction=0` everywhere, i.e. no unstable blow-up in the learned Jacobian field. A ground-truth spectrum file was not available (`true_lyapunov=null`), so the `per_run_lyapunov_vs_true` / `lyapunov_spectrum_mse_vs_val_loss` panels were not produced and `per_run_lyapunov` in metrics.json is empty; only the best-run spectrum was computed inline in `run_analytics.log`. That best-run spectrum recovers chaos and a strongly contracting third direction, but the middle exponent is not pinned near zero — a mild failure of the diffeomorphism-conjugacy expectation.
 
-Anomalies and hypothesis read-out. No failed/missing runs; three low-LC runs (LC∈{0,1e-6,1e-4}) early-stopped around epoch 168 while the rest ran the full 200, but their best metrics are already competitive, so this does not bias the ranking. The main caveat is that the learned spectra systematically compress the neutral direction (λ₂≈−0.85 instead of ≈0) and over-contract λ₃, inflating |λ_sum| and shrinking the attractor dimension. Net read on the hypothesis: **mixed/partially supported.** Loop closure is enforceable (driven to ~1e-6 at LC=10) without destroying one-step accuracy, and chaos plus an approximately correct λ_max survive across the LC axis, consistent with the encoder carrying enough dynamical information. But diffeomorphism conjugacy in the stronger sense — matching all three exponents — is not achieved at any LC in this sweep, and the predicted Lyapunov dimension is well below Lorenz's, so the sufficient-statistic risk flagged in the hypothesis is not fully ruled out.
+Caveats: the analytics crash (`return_full_obs` NameError) wiped out SW-1, prediction-window stats beyond the log-table, and the full per-run Lyapunov dump, so C3 and detailed spectrum-vs-LC trends cannot be adjudicated here. Empirical λ₂ = −0.10 (rather than ≈0) suggests the reference computation itself is noisy, which loosens C2. Overall the hypothesis is **mixed**: loop closure is demonstrably bounded and improves monotonically (C5), chaos and high R² are recovered at the best config (C1, C4), but the optimal LC weight lies 2–4 decades below the predicted range, spectrum fidelity is only marginal on λ₁/λ₃ and poor on λ₂, and the key distributional sanity check (C3) was not produced.
 
 ## `run_analytics` stdout
 
