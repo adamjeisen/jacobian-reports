@@ -1,1 +1,1 @@
-Discussion written to `discussion.md`. Verdicts: C1 Pass, C2 Partial, C3 Unknown (analytics crashed on `return_full_obs` NameError), C4 Pass, C5 Pass. Best at LC=1e-5 — 2–4 decades below hypothesized optimum; hypothesis overall **mixed**.
+Discussion written to `discussion.md`. Key findings: best run n9kvy1ms at LC=1e-5 passes R² and chaos criteria, partial on spectrum (λ₂ mismatched), SW-1 unknown due to `return_full_obs` NameError, and empirical optimum sits below the hypothesized 1e-3..1e-1 band — mixed support.
