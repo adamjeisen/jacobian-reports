@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-15T22:45:20Z",
+  "last_updated": "2026-04-15T22:55:21Z",
   "sweeps": {
     "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
       "status": "active",
@@ -41,10 +41,15 @@
     "lorenz_partial_100d_7lat_additive_mse__klnull_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 4,
-        "in_flight": 2,
+        "terminal": 6,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 4
+        "effectively_done": 6
+      },
+      "analysis": {
+        "slurm_job_id": "11955401",
+        "dispatched_at": "2026-04-15T22:55:21Z",
+        "status": "running"
       }
     },
     "lorenz_partial_100d_7lat_additive_mse__lc_sweep": {
@@ -131,10 +136,15 @@
     "wmtask_latent_additive_mse_p30__lc_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 6,
-        "in_flight": 3,
+        "terminal": 9,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 6
+        "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "11955402",
+        "dispatched_at": "2026-04-15T22:55:21Z",
+        "status": "running"
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
