@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-15T22:25:23Z",
+  "last_updated": "2026-04-15T22:35:22Z",
   "sweeps": {
     "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
       "status": "active",
@@ -41,10 +41,10 @@
     "lorenz_partial_100d_7lat_additive_mse__klnull_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 2,
-        "in_flight": 4,
+        "terminal": 3,
+        "in_flight": 3,
         "failed_exhausted": 0,
-        "effectively_done": 2
+        "effectively_done": 3
       }
     },
     "lorenz_partial_100d_7lat_additive_mse__lc_sweep": {
