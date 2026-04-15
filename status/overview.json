@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-04-15T19:50:27Z",
+  "sweeps": {
+    "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 27,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 27
+      }
+    },
+    "lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 1,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 1
+      }
+    },
+    "lorenz_full_additive_mse__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_full_additive_mse_p30__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_partial_100d_7lat_additive_mse__klnull_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 6,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
+    "lorenz_partial_100d_7lat_additive_mse__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 9,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
+    "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 9,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
+    "lorenz_partial_25d_additive_gennmse__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_partial_25d_additive_gennmse_adaptivelatent__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_partial_25d_additive_mse__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_partial_25d_additive_mse_p30__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_partial_25d_additive_mse_uniform__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "11945500",
+        "dispatched_at": "2026-04-15T19:50:27Z",
+        "status": "running"
+      }
+    },
+    "wmtask_latent_additive_mse_p30__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 2,
+        "in_flight": 7,
+        "failed_exhausted": 0,
+        "effectively_done": 2
+      }
+    },
+    "wmtask_vanilla_mse_p30__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 9,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 9
+      }
+    },
+    "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
+      "status": "processed"
+    }
+  }
+}
