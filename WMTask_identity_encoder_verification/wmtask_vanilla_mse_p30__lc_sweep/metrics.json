@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "group": "wmtask_vanilla_mse_p30__lc_sweep",
-  "analyzed_at": "2026-04-15T18:27:18Z",
+  "analyzed_at": "2026-04-15T21:57:21Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -172,8 +172,15 @@
       "note": ""
     }
   ],
-  "figures": {},
-  "analytics_error": "RuntimeError: No finished JacobianODE sweep runs found in JacobianODE/WMTask_identity_encoder_verification group=wmtask_vanilla_mse_p30__lc_sweep",
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_vanilla_mse_p30__lc_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_vanilla_mse_p30__lc_sweep/figures/sweep_pareto.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_vanilla_mse_p30__lc_sweep/figures/mase.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_vanilla_mse_p30__lc_sweep/figures/lyapunov.png",
+    "lyapunov_top10": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_vanilla_mse_p30__lc_sweep/figures/lyapunov_top10.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_vanilla_mse_p30__lc_sweep/figures/prediction_windows.png"
+  },
+  "analytics_error": null,
   "true_lyapunov": null,
   "analytics_log_file": "run_analytics.log"
 }
