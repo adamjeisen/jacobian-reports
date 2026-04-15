@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-15T20:00:29Z",
+  "last_updated": "2026-04-15T20:15:19Z",
   "sweeps": {
     "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
       "status": "active",
@@ -131,10 +131,10 @@
     "wmtask_latent_additive_mse_p30__lc_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 2,
-        "in_flight": 7,
+        "terminal": 4,
+        "in_flight": 5,
         "failed_exhausted": 0,
-        "effectively_done": 2
+        "effectively_done": 4
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
