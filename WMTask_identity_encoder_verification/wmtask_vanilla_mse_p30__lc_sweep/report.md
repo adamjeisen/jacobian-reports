@@ -79,6 +79,22 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![lyapunov_top10](figures/lyapunov_top10.png)
 
+### per_run_lyapunov
+
+![per_run_lyapunov](figures/per_run_lyapunov.png)
+
+### per_run_lyapunov_vs_true
+
+![per_run_lyapunov_vs_true](figures/per_run_lyapunov_vs_true.png)
+
+### per_run_lyapunov_relerr
+
+![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
+
+### lyapunov_spectrum_mse_vs_val_loss
+
+![lyapunov_spectrum_mse_vs_val_loss](figures/lyapunov_spectrum_mse_vs_val_loss.png)
+
 ## Discussion
 
 <!--
