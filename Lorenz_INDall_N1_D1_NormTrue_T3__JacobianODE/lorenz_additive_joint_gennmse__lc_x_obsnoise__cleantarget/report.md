@@ -97,15 +97,13 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ## Discussion
 
-<!--
-This section is intentionally left as a placeholder. A human reviewer
-or Claude Code agent should fill it in based on the tables and figures
-above, explicitly addressing each success criterion and comparing the
-outcome to the stated hypothesis. Write the Discussion to
-`discussion.md` in this directory and re-run `render_report`.
--->
+**Success criteria verdicts.** (1) *Leading Lyapunov exponent > 0*: **Pass.** The best run (0yn9siyr, LC=1e-4, obs_noise=0) yields lambda_1 = +0.379 (full-trajectory), clearly positive and within 6% of the empirical +0.404. All nine obs_noise=0 runs recover a positive leading exponent, confirming chaos is learned robustly in the clean-data regime. (2) *Predicted Lyapunov spectrum within ~20% of empirical*: **Partial.** lambda_1 is within 6% and lambda_3 within 22% of empirical (-16.92 vs -13.88), but lambda_2 is poorly recovered (-0.357 vs -0.189, ~89% relative error). The near-zero exponent is intrinsically hard to pin down; notably the run with the lowest spectrum MSE (htnyxn7y, LC=0.1, spectrum_mse=0.017) achieves lambda_2=-0.078 (59% error) with lambda_3 nearly exact at -14.07. No run matches all three exponents to within 20%. (3) *val/trajectory_r2_score > 0.95*: **Pass.** R^2=0.9997 at the best configuration, with teacher-forced MASE=0.38 and free-running MASE=0.46 (both well below 1). (4) *Loop closure bounded and monotonically improving at low LC*: **Pass.** Along the obs_noise=0 slice, loop-closure loss decreases monotonically from 0.41 (LC=0) to 6.7e-5 (LC=10), spanning nearly four orders of magnitude with no reversals.
 
-_(to be written)_
+**Sweep landscape.** The LC x obs_noise grid splits cleanly into two regimes. Observation noise is the dominant factor: all obs_noise=0 runs achieve trajectory loss ~0.0026 and R^2 > 0.9995 regardless of LC weight, while obs_noise=0.01 runs degrade to traj_loss ~0.08-0.28 and obs_noise=0.05 runs collapse to traj_loss ~0.68-0.81. Within the clean regime, the basin over LC is remarkably broad -- trajectory loss varies by less than 2x across the entire range from LC=0 to LC=10. The Pareto front (6 runs, all obs_noise=0) trades smoothly between loop-closure loss and trajectory loss, with the knee at LC=0.1 (htnyxn7y). The obs_noise > 0 runs also train for far fewer epochs (15-88 vs 86-127), with many selecting epoch 0 or 1 as their best, suggesting training diverges early when noise corrupts the observation-space targets.
+
+**Lyapunov analysis.** The per_run_lyapunov_vs_true plots show a sharp bifurcation: obs_noise=0 runs produce spectra that visually track the empirical curve (black line close to blue), while all obs_noise > 0 runs have massively negative spectra (lambda_1 as low as -72, spectrum_mse > 280) indicating the learned dynamics collapse to a contracting map. Among the well-trained runs, the predicted lambda_3 tends to overshoot the empirical value in magnitude (-16 to -17 vs -13.9), suggesting the model's Jacobian is slightly too contractive along the most-stable direction. The Kaplan-Yorke dimension is recovered for all obs_noise=0 runs, ranging from 1.83 to 2.03 (empirical: ~2.06).
+
+**Hypothesis assessment: supported with caveats.** The core hypothesis -- that the additive encoder with gennMSE can learn the Lorenz attractor and recover its Lyapunov spectrum -- is confirmed in the clean-data regime. The predicted optimal LC range (1e-5 to 1e-3) was conservative; the actual basin extends from LC=0 to LC=10 with negligible degradation. However, the sweep reveals that observation noise, not LC tuning, is the binding constraint: even modest noise (sigma=0.01, roughly 0.1% of Lorenz amplitude) prevents the model from learning useful dynamics. The near-zero Lyapunov exponent remains the weakest point of spectrum recovery, with no configuration achieving the 20% target on all three exponents simultaneously.
 
 ## `run_analytics` stdout
 
