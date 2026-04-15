@@ -117,10 +117,15 @@ recovery. Expecting tighter λ_min (less under-contracted than the
 <h3>lyapunov_spectrum_mse_vs_val_loss</h3>
 <p><img alt="lyapunov_spectrum_mse_vs_val_loss" src="figures/lyapunov_spectrum_mse_vs_val_loss.png" /></p>
 <h2>Discussion</h2>
-<p><strong>Success criterion 1 — "Best run's leading Lyapunov exponent &gt; 0": Pass.</strong> The best run (mrlaz23p, lc_weight=0) yields a full-trajectory leading exponent of λ_1 = +0.233 (±0.044), comfortably positive and within 14% of the empirical value (+0.271). In fact, all nine runs in the sweep produce a positive λ_1 (range +0.164 to +0.519), confirming that the learned dynamics are consistently chaotic regardless of loop-closure weight. <strong>Success criterion 2 — "Best run's predicted Lyapunov spectrum within ~40% of empirical": Fail.</strong> While λ_1 and λ_3 are recovered well (λ_3 predicted at −14.34 vs empirical −13.87, a 3.4% error), the near-zero second exponent is systematically over-contracted: the best run predicts λ_2 = −0.824 versus the empirical −0.066, an order-of-magnitude discrepancy. The spectrum MSE for mrlaz23p is 0.27, the lowest in the sweep, but the error is dominated by this λ_2 miss. <strong>Success criterion 3 — "Noticeable improvement in λ_min recovery vs p10 partial_25d_mse": Unknown.</strong> No p10 baseline results are present in this analysis directory, so the comparison cannot be made here.</p>
-<p>The loop-closure sweep landscape is monotonic: trajectory validation loss increases steadily with LC weight, from 4.3e-5 at lc=0 to 1.1e-3 at lc=10. The Pareto front between trajectory loss and loop-closure loss contains 7 of 9 runs and traces a smooth curve across four orders of magnitude in each axis. No LC weight improves trajectory prediction over the unregularized baseline; the best MASE (0.153) and R² (0.9999) both belong to the lc=0 run. The Pareto knee (vnaouu4h, lc=0.01) achieves a 100× reduction in loop-closure loss (0.002 vs 0.229) for a 12× increase in trajectory loss — a reasonable operating point if loop closure is needed, but not beneficial for prediction quality alone. The spectrum-MSE-vs-val-loss plot reveals no clear correlation: the lowest-trajectory-loss runs (lc=0, lc=1e-4) have spectrum MSEs of 0.27 and 1.74 respectively, while moderate-LC runs cluster around 0.3–0.4 — suggesting that spectrum fidelity is not simply a function of prediction accuracy at this noise-free operating point.</p>
-<p>All runs exhibit stable chaotic dynamics (λ_sum deeply negative, Kaplan-Yorke dimension ≈ 1.2–1.5), with no evidence of divergent or marginally stable modes. The per-run Lyapunov vs. true plots confirm the systematic pattern: λ_1 is tracked well across the sweep, λ_3 is slightly over-contracted but close, and λ_2 is uniformly missed. One anomaly is run 1sd1oshk (lc=1e-6), which early-stopped at only 29 epochs (vs 107–162 for the rest), producing the worst trajectory loss (2.7e-3) and MASE (1.05) in the sweep; its spectrum MSE (0.39) is nevertheless middling, suggesting that even an undertrained model captures gross spectral structure. Run 8limhocw (lc=0.001) is an outlier in spectrum MSE (5.61), driven by an unusually negative λ_3 = −17.89.</p>
-<p>The hypothesis — that a longer prediction horizon (p=30) sharpens forward-rollout signal enough to improve spectrum recovery in partial-obs — is <strong>mixed</strong>. The positive exponent and the most-contracted exponent are recovered well, and overall prediction quality is strong (free-running MASE = 0.17, teacher-forced MASE = 0.05). However, the near-zero λ_2, which governs the attractor's volume-contraction rate, remains an order of magnitude too negative. This suggests that the p=30 horizon, while sufficient to learn the dominant unstable and stable directions, does not provide enough signal to resolve the near-neutral manifold direction — a limitation that may require architectural changes (e.g., reconstruction_mode or explicit volume-preservation constraints) rather than longer rollouts alone.</p>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
 <h2><code>run_analytics</code> stdout</h2>
 <details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
 
@@ -159,15 +164,15 @@ Found 9 effectively-done sweep runs:
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=qfgsuu0y
   loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=zrdflw7j
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=mrlaz23p: DiagnosticMetrics(one_step_mase=0.05323868617415428, loop_closure_loss=0.22897323966026306, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.298223211662844e-05) (from W&amp;B history)
-  run=1sd1oshk: DiagnosticMetrics(one_step_mase=0.07847961038351059, loop_closure_loss=0.3126348555088043, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002675914205610752) (from W&amp;B history)
-  run=14bedd98: DiagnosticMetrics(one_step_mase=0.07729717344045639, loop_closure_loss=0.24837779998779297, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012468814384192228) (from W&amp;B history)
-  run=mvgj4an1: DiagnosticMetrics(one_step_mase=0.05887477099895477, loop_closure_loss=0.04615406692028046, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.3177991503616795e-05) (from W&amp;B history)
-  run=8limhocw: DiagnosticMetrics(one_step_mase=0.15273365378379822, loop_closure_loss=0.009837581776082516, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0001729045616229996) (from W&amp;B history)
-  run=vnaouu4h: DiagnosticMetrics(one_step_mase=0.16946785151958466, loop_closure_loss=0.0020310941617935896, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0004997099749743938) (from W&amp;B history)
-  run=2kjpo3wj: DiagnosticMetrics(one_step_mase=0.10682576894760132, loop_closure_loss=8.54705722304061e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0006208796985447407) (from W&amp;B history)
-  run=qfgsuu0y: DiagnosticMetrics(one_step_mase=0.09887446463108063, loop_closure_loss=2.1261592337395996e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008999327546916902) (from W&amp;B history)
-  run=zrdflw7j: DiagnosticMetrics(one_step_mase=0.2357090413570404, loop_closure_loss=1.1918265045096632e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0010838722810149193) (from W&amp;B history)
+  run=mrlaz23p: DiagnosticMetrics(one_step_mase=0.05323868617415428, loop_closure_loss=0.22897323966026306, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.298223211662844e-05) (from cache, n_batches=100)
+  run=1sd1oshk: DiagnosticMetrics(one_step_mase=0.07847961038351059, loop_closure_loss=0.3126348555088043, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002675914205610752) (from cache, n_batches=100)
+  run=14bedd98: DiagnosticMetrics(one_step_mase=0.07729717344045639, loop_closure_loss=0.24837779998779297, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012468814384192228) (from cache, n_batches=100)
+  run=mvgj4an1: DiagnosticMetrics(one_step_mase=0.05887477099895477, loop_closure_loss=0.04615406692028046, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.3177991503616795e-05) (from cache, n_batches=100)
+  run=8limhocw: DiagnosticMetrics(one_step_mase=0.15273365378379822, loop_closure_loss=0.009837581776082516, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0001729045616229996) (from cache, n_batches=100)
+  run=vnaouu4h: DiagnosticMetrics(one_step_mase=0.16946785151958466, loop_closure_loss=0.0020310941617935896, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0004997099749743938) (from cache, n_batches=100)
+  run=2kjpo3wj: DiagnosticMetrics(one_step_mase=0.10682576894760132, loop_closure_loss=8.54705722304061e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0006208796985447407) (from cache, n_batches=100)
+  run=qfgsuu0y: DiagnosticMetrics(one_step_mase=0.09887446463108063, loop_closure_loss=2.1261592337395996e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008999327546916902) (from cache, n_batches=100)
+  run=zrdflw7j: DiagnosticMetrics(one_step_mase=0.2357090413570404, loop_closure_loss=1.1918265045096632e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0010838722810149193) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              mrlaz23p
