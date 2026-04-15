@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-15T23:00:25Z",
+  "last_updated": "2026-04-15T23:05:30Z",
   "sweeps": {
     "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
       "status": "active",
@@ -135,11 +135,6 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "11955402",
-        "dispatched_at": "2026-04-15T22:55:21Z",
-        "status": "running"
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
