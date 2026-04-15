@@ -1,0 +1,113 @@
+{
+  "group": "lorenz_full_additive_mse__lc_sweep",
+  "completed_at": "2026-04-15T01:14:09Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_full_additive_mse": {
+      "description": "Fully observed Lorenz-63 (all 3 dims, no delay embedding). Additive\ncoupling encoder with zero_init (identity-at-init modulo\npermutations), trained jointly with the Jacobian dynamics using\nplain MSE (not gennMSE). obs_noise_scale=0 fixed; LC weight swept.\nMatches the clean-target LPL fix used in recent runs.\n",
+      "hypothesis": "On fully observed Lorenz with clean data, plain MSE and gennMSE\nshould produce broadly similar results \u2014 the gennMSE denominator's\nconsistency benefit is more of a per-term scaling fix that matters\nmost when loss terms span very different subspaces (e.g.\npartial-obs with delay embedding). Expectation: MSE's optimal LC\nand Lyapunov recovery track gennMSE's closely, maybe with slightly\ndifferent loss magnitudes. If they diverge significantly on this\nclean problem, that's diagnostic of how gennMSE is actually acting.\n",
+      "success_criteria": [
+        "Best run's leading Lyapunov exponent > 0 (chaos recovered)",
+        "Best run's predicted Lyapunov spectrum within ~30% of empirical",
+        "Optimal LC weight within 1 order of magnitude of gennMSE optimum",
+        "val/trajectory_r2_score > 0.95 at the best configuration"
+      ]
+    }
+  },
+  "expected_run_count": 9,
+  "hydra": {
+    "experiments": [
+      "lorenz_full_additive_mse"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_full_additive_mse",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_full_additive_mse",
+        "overrides": [
+          "training.lightning.loop_closure_weight=10",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE",
+    "group": "lorenz_full_additive_mse__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "40b08d5",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-14T19:25:13Z"
+}
