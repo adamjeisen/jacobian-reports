@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-15T22:35:22Z",
+  "last_updated": "2026-04-15T22:45:20Z",
   "sweeps": {
     "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
       "status": "active",
@@ -41,10 +41,10 @@
     "lorenz_partial_100d_7lat_additive_mse__klnull_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 3,
-        "in_flight": 3,
+        "terminal": 4,
+        "in_flight": 2,
         "failed_exhausted": 0,
-        "effectively_done": 3
+        "effectively_done": 4
       }
     },
     "lorenz_partial_100d_7lat_additive_mse__lc_sweep": {
@@ -131,10 +131,10 @@
     "wmtask_latent_additive_mse_p30__lc_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 5,
-        "in_flight": 4,
+        "terminal": 6,
+        "in_flight": 3,
         "failed_exhausted": 0,
-        "effectively_done": 5
+        "effectively_done": 6
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
