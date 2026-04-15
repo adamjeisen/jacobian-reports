@@ -1,0 +1,102 @@
+No run_id provided — selecting best run from group 'lorenz_partial_100d_7lat_additive_mse__klnull_sweep' ...
+Found 6 total runs in JacobianODE/Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE (group=lorenz_partial_100d_7lat_additive_mse__klnull_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  y6ua4rm2: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  1ff2zm00: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  7536urxs: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  u553rlds: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  z3xil4u1: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  n0tutxyg: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including y6ua4rm2 (lc=0.001): use_all_runs=True (state=finished)
+  Including 1ff2zm00 (lc=0.001): use_all_runs=True (state=finished)
+  Including 7536urxs (lc=0.001): use_all_runs=True (state=finished)
+  Including u553rlds (lc=0.001): use_all_runs=True (state=finished)
+  Including z3xil4u1 (lc=0.001): use_all_runs=True (state=finished)
+  Including n0tutxyg (lc=0.001): use_all_runs=True (state=finished)
+Found 6 effectively-done sweep runs:
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=1ff2zm00
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=7536urxs
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=n0tutxyg
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=u553rlds
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=y6ua4rm2
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=z3xil4u1
+n_dims=100, n_latent=100, n_dyn=7, dt=0.0150
+  run=1ff2zm00: DiagnosticMetrics(one_step_mase=0.01906902901828289, loop_closure_loss=0.0010725540341809392, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8616602801557747e-06) (from W&B history)
+  run=7536urxs: DiagnosticMetrics(one_step_mase=0.01906902901828289, loop_closure_loss=0.0010725540341809392, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8616602801557747e-06) (from W&B history)
+  run=n0tutxyg: DiagnosticMetrics(one_step_mase=0.01906902901828289, loop_closure_loss=0.0010725540341809392, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8616602801557747e-06) (from W&B history)
+  run=u553rlds: DiagnosticMetrics(one_step_mase=0.01906902901828289, loop_closure_loss=0.0010725540341809392, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8616602801557747e-06) (from W&B history)
+  run=y6ua4rm2: DiagnosticMetrics(one_step_mase=0.01906902901828289, loop_closure_loss=0.0010725540341809392, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8616602801557747e-06) (from W&B history)
+  run=z3xil4u1: DiagnosticMetrics(one_step_mase=0.019587328657507896, loop_closure_loss=0.0010715598473325372, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8657821101442096e-06) (from W&B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              1ff2zm00
+Best loop_closure_weight: 0.001
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.000002
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 6 / 6
+Auto-selected run_id: 1ff2zm00
+
+======================================================================
+PARETO FRONTIER RUNS (6 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  z3xil4u1            0.001072        0.000002
+  1ff2zm00            0.001073        0.000002 <-- selected
+  n0tutxyg            0.001073        0.000002
+  7536urxs            0.001073        0.000002
+  u553rlds            0.001073        0.000002
+  y6ua4rm2            0.001073        0.000002
+
+======================================================================
+RANKING METHOD COMPARISON (over 6 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          1ff2zm00            0.001073        0.000002 <-- active
+  pareto_knee             1ff2zm00            0.001073        0.000002
+  geo_rank                z3xil4u1            0.001072        0.000002
+  minimax_rank            1ff2zm00            0.001073        0.000002
+  geo_log_score           1ff2zm00            0.001073        0.000002
+  minimax_log_score       1ff2zm00            0.001073        0.000002
+======================================================================
+
+Loading run 1ff2zm00 from JacobianODE/Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE ...
+Train dataset shape: torch.Size([23672, 25, 100])
+Validation dataset shape: torch.Size([7532, 25, 100])
+Test dataset shape: torch.Size([3228, 25, 100])
+Train trajectories dataset shape: torch.Size([22, 1101, 100])
+Validation trajectories dataset shape: torch.Size([7, 1101, 100])
+Test trajectories dataset shape: torch.Size([3, 1101, 100])
+Loading checkpoint epoch=198-step=39800.ckpt...
+Computing MASE ...
+Teacher-forced MASE: 0.0194
+Free-running MASE:   0.0244
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1101) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = +0.5159 ± 0.6785
+  λ_2 = -0.5155 ± 0.3068
+  λ_3 = -2.4080 ± 0.2719
+  λ_4 = -2.9829 ± 0.2272
+  λ_5 = -3.5357 ± 0.2471
+  λ_6 = -4.5047 ± 0.2960
+  λ_7 = -6.3818 ± 0.4127
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = +0.3009 ± 0.0503
+  λ_2 = +0.0134 ± 0.0262
+  λ_3 = -2.6481 ± 0.0260
+  λ_4 = -3.1583 ± 0.0200
+  λ_5 = -4.0222 ± 0.0390
+  λ_6 = -4.4452 ± 0.0240
+  λ_7 = -6.3321 ± 0.0457
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.2716 ± 0.0605
+  λ_2 = -0.1016 ± 0.0797
+  λ_3 = -13.8370 ± 0.0514
+Computing prediction windows ...
+Windows: 324 — nMSE min=0.0000, median=0.0000, mean=0.0000, max=0.0005

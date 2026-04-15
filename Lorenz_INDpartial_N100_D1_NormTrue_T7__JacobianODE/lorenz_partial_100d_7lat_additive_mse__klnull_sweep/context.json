@@ -1,0 +1,89 @@
+{
+  "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep",
+  "completed_at": "2026-04-15T22:55:12Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_100d_7lat_additive_mse_klnull_sweep": {
+      "description": "Same as lorenz_partial_100d_7lat_additive_mse except\nloop_closure_weight is FIXED at 1e-3 (best LC from the LC sweep)\nand kl_null_weight is SWEPT over {0, 1e-4, 1e-3, 1e-2, 1e-1, 1}.\nEvery other knob identical. obs_noise_scale=0, reconstruction_mode\n= most_recent, prediction_steps=10, seq_length=25.\n",
+      "hypothesis": "With z_null unpenalised, the encoder dumps trajectory history into\nz_null and the Jacobian MLP spreads contraction across the 7\nz_dyn axes (\u03bb_min \u2248 \u22126 instead of empirical ~\u221214). A positive\nkl_null_weight should force information into z_dyn, tighten the\nattractor manifold in z_dyn, and concentrate contraction into\na single axis whose \u03bb moves toward empirical. Risk: too-large\nkl_null suppresses z_null below what the decoder needs to\nreconstruct observations \u2014 recon_loss explodes, trajectory\nfidelity collapses. Expecting a U-shape in spectrum MSE vs\nkl_null with a sweet spot somewhere in 1e-3 .. 1e-1.\n",
+      "success_criteria": [
+        "At the best kl_null, \u03bb_min moves noticeably more negative than \u22126",
+        "\u03a3\u03bb_i (volume-contraction rate) moves from \u221220 toward empirical ~\u221214",
+        "val/trajectory_r2 at best kl_null within a few % of the 0-kl_null baseline",
+        "Clear U-shape (or monotone direction) across the 6 kl_null values"
+      ]
+    }
+  },
+  "expected_run_count": 6,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_100d_7lat_additive_mse_klnull_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_100d_7lat_additive_mse_klnull_sweep",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_100d_7lat_additive_mse_klnull_sweep",
+        "overrides": [
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_100d_7lat_additive_mse_klnull_sweep",
+        "overrides": [
+          "model.kl_null_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_100d_7lat_additive_mse_klnull_sweep",
+        "overrides": [
+          "model.kl_null_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_100d_7lat_additive_mse_klnull_sweep",
+        "overrides": [
+          "model.kl_null_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_100d_7lat_additive_mse_klnull_sweep",
+        "overrides": [
+          "model.kl_null_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_100d_7lat_additive_mse_klnull_sweep",
+        "overrides": [
+          "model.kl_null_weight=1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE",
+    "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "325ada0",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-15T15:47:15Z"
+}
