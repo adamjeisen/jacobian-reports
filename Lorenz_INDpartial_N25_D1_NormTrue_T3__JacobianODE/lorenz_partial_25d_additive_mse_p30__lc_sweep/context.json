@@ -1,0 +1,112 @@
+{
+  "group": "lorenz_partial_25d_additive_mse_p30__lc_sweep",
+  "completed_at": "2026-04-15T14:40:12Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_25d_additive_mse_p30": {
+      "description": "Partial-obs Lorenz: x-coordinate only (observed_indices=[0]),\nn_delays=25, delay_spacing=1. Encoder input 25-D, z_dyn 3-D,\nz_null 22-D with kl_null_weight=0. Additive coupling encoder,\njoint training, reconstruction_mode='most_recent'. Plain MSE loss.\nprediction_steps=30, seq_length=45. obs_noise_scale=0.\n",
+      "hypothesis": "A longer prediction horizon sharpens the forward-rollout training\nsignal, which in partial-obs has been the main limiter of spectrum\nrecovery. Expecting tighter \u03bb_min (less under-contracted than the\n10-step baseline) and improved trajectory_r2.\n",
+      "success_criteria": [
+        "Best run's leading Lyapunov exponent > 0",
+        "Best run's predicted Lyapunov spectrum within ~40% of empirical",
+        "Noticeable improvement in \u03bb_min recovery vs p10 partial_25d_mse"
+      ]
+    }
+  },
+  "expected_run_count": 9,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_25d_additive_mse_p30"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_25d_additive_mse_p30",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_25d_additive_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=10",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE",
+    "group": "lorenz_partial_25d_additive_mse_p30__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "c35dd72",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-15T10:36:39Z"
+}
