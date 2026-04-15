@@ -1,1 +1,0 @@
-Wrote discussion.md. Summary: 4/5 criteria resolvable — R² and LC-monotonicity **Pass**, leading-λ **Pass**, spectrum-within-30% **Fail** (λ_2 bias ~−0.8 across all runs), SW-1 **Unknown** (not in files). Best at LC=1e-5 inside broad basin. Hypothesis mixed/largely unsupported.

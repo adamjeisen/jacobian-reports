@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
-  "analyzed_at": "2026-04-14T16:42:25Z",
+  "analyzed_at": "2026-04-15T02:09:49Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -303,6 +303,7 @@
     "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/prediction_windows.png",
     "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/per_run_lyapunov.png",
     "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/per_run_lyapunov_relerr.png",
     "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse__lc_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png"
   },
   "analytics_error": null,

@@ -140,13 +140,20 @@ loss / spectrum mismatch and know to revisit the loss design.</p>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>
 <p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
 <h3>lyapunov_spectrum_mse_vs_val_loss</h3>
 <p><img alt="lyapunov_spectrum_mse_vs_val_loss" src="figures/lyapunov_spectrum_mse_vs_val_loss.png" /></p>
 <h2>Discussion</h2>
-<p><strong>Success criteria.</strong> (1) <em>Leading λ &gt; 0</em> — <strong>Pass</strong>: the best run (n9kvy1ms, LC=1e-5) gives λ_1 = +0.199 (full-length) / +0.377 (windowed), and every run in the sweep has λ_1 ∈ [+0.19, +0.47]. (2) <em>Predicted spectrum within ~30% of empirical</em> — <strong>Fail</strong>: empirical λ = [+0.235, −0.007, −13.84], predicted = [+0.199, −0.726, −15.64]. λ_1 is ~15% off and λ_3 ~13% off, but λ_2 misses the zero (neutral) direction by two orders of magnitude — a systematic failure shared by every run (all λ_2 ∈ [−0.71, −1.64]). (3) <em>Free-running SW-1 low</em> — <strong>Unknown</strong>: SW-1 is not reported in metrics.json or run_analytics.log for this sweep. (4) <em>val trajectory R² &gt; 0.9</em> — <strong>Pass</strong>: R² = 0.99993 at the best run, and ≥ 0.99984 for every run. (5) <em>LC bounded and monotonically improving at low LC</em> — <strong>Pass</strong>: loop-closure loss at best traj-loss epoch decreases monotonically from 1.798 (LC=0) → 1.14 → 0.20 → 0.037 → 3.4e-3 → 6.2e-4 → 4.9e-5 → 9.5e-6 → 1.9e-6 as LC weight sweeps 0→10, with no divergence.</p>
-<p><strong>Landscape.</strong> Because obs_noise_scale is fixed at 0 here, the "overview" collapses to a 1-D curve over LC. Best traj-val loss bottoms at LC=1e-5 (5.64e-5) inside a broad flat basin spanning LC ∈ [0, 1e-4] (5.6e-5 – 6.9e-5), then rises roughly monotonically by ~2.5× out to LC=10. The Pareto trace (run_analytics.log) confirms the classic LC/traj-loss trade-off: pushing LC loss toward zero costs ~2× trajectory accuracy. MASE echoes the shape, with minimum 0.047 at LC=1e-5 and degradation to 0.12 at LC=10.</p>
-<p><strong>Lyapunov.</strong> Learned dynamics are stably chaotic across the whole sweep (every λ_1 positive, every λ_3 strongly negative, Kaplan–Yorke dims 1.25–1.40). But per_run_lyapunov_vs_true shows the neutral direction is not recovered anywhere: λ_2 is pulled 0.7–1.6 below zero, inflating the volume-contraction rate and driving spectrum_mse_vs_true. The lowest spectrum MSE is 0.27 at LC=0 and 0.28 at LC=0.1; the selected LC=1e-5 run is middling (1.19), and spectrum MSE does not track best_traj_loss.</p>
-<p><strong>Caveats and hypothesis.</strong> All 9/9 runs finished cleanly; epochs are 168–200 with no early-stop outliers. The main anomaly is the persistent λ_2 ≈ −0.8 bias, which is independent of LC and therefore not explained by insufficient encoder-inverse pressure. The hypothesis — LC-induced diffeomorphism-conjugacy preserving the Lorenz spectrum — is <strong>mixed / largely unsupported</strong>: chaos is recovered and R² is excellent, but the predicted spectrum is not within 30% of empirical at any LC and loop closure alone does not pull λ_2 toward 0. This is consistent with the stated open risk that z_dyn fails to surface history-dependent structure on the neutral direction; tightening that likely requires changes beyond LC weight (e.g. reconstruction_mode, latent-prediction design).</p>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
 <h2><code>run_analytics</code> stdout</h2>
 <details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
 
