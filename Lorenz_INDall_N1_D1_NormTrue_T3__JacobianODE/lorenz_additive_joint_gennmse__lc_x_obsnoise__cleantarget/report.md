@@ -87,19 +87,25 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![per_run_lyapunov_vs_true](figures/per_run_lyapunov_vs_true.png)
 
+### per_run_lyapunov_relerr
+
+![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
+
 ### lyapunov_spectrum_mse_vs_val_loss
 
 ![lyapunov_spectrum_mse_vs_val_loss](figures/lyapunov_spectrum_mse_vs_val_loss.png)
 
 ## Discussion
 
-All 27 runs finished cleanly; the best configuration (run `0yn9siyr`, LC=1e-4, obs_noise=0) reaches trajectory val loss 0.00261, R²=0.99967, teacher-forced MASE 0.383, and free-running MASE 0.459. Against the four success criteria: **C1 (λ₁>0) — Pass**, with predicted λ₁=+0.379 ± 0.035 (full-length) closely matching empirical +0.385; **C2 (spectrum within ~20%) — Partial**, since λ₁ agrees to ~1.5% but λ₃ comes in at −17.24 vs. empirical −13.88 (~24% too contractive) and λ₂ sits at −0.385 vs. empirical −0.172 (well outside tolerance, though both near zero); **C3 (R²>0.95) — Pass** at 0.9997; **C4 (loop closure bounded and monotonic at low LC) — Pass**, with LC loss decreasing monotonically from 0.413 (LC=0) → 0.398 (1e-6) → 0.360 (1e-5) → 0.066 (1e-4) → 0.009 (1e-3) → 0.002 (1e-2) and continuing to shrink through LC=10, while trajectory loss stays flat in [0, 1e-2].
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
 
-The (LC × obs_noise_scale) landscape in sweep_overview is dominated by the noise axis: the clean column (obs=0) shows a broad flat basin of traj_loss ≈ 0.0026 spanning LC ∈ [0, 1e-4], with only mild degradation above LC=1e-2 (0.085 at 1e-2, 0.28 at 1.0, 0.52 at 10). Both noisy columns collapse — obs=0.01 plateaus near 0.19–0.20 (R²≈0.975, MASE~3.3) and obs=0.05 at 0.75–0.81 (R²≈0.90, MASE~7). Within each noise level the LC axis is essentially flat, so loop closure does not rescue noisy observations here.
-
-Per-run Lyapunov figures show stable dynamics (λ₁ finite, λ₃ strongly negative) across every finished run; no diverging spectra. For the best run, predicted λ vs. true broadly tracks the sign and ordering of the empirical spectrum, capturing the chaotic λ₁ accurately but overshooting the contractive λ₃ and misestimating the near-zero λ₂. No runs were missing or early-stopped pathologically; the noisy-column runs simply plateau at higher loss, consistent with the noise magnitude rather than optimization failure.
-
-Overall the hypothesis is **mixed-to-supported**: the additive/zero-init encoder + gennMSE setup does recover Lorenz chaos and yields a broad LC basin in the 0 – 1e-4 range (matching the predicted 1e-5 – 1e-3 window), satisfying the qualitative attractor-recovery claim. The quantitative Lyapunov-recovery claim holds tightly only for λ₁; the fast contracting direction is systematically overestimated in magnitude, and observation noise at 0.01–0.05 breaks the recovery entirely — a caveat the original hypothesis did not anticipate.
+_(to be written)_
 
 ## `run_analytics` stdout
 
