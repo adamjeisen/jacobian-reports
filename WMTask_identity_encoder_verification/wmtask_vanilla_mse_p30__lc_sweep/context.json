@@ -1,0 +1,112 @@
+{
+  "group": "wmtask_vanilla_mse_p30__lc_sweep",
+  "completed_at": "2026-04-15T18:10:18Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_vanilla_mse_p30": {
+      "description": "Vanilla JacobianODE on WMTask: MLP predicts Jacobians directly in\nobservation space (no encoder). obs_noise_scale=0.05, plain MSE\nloss, prediction_steps=30 (seq_length=45, traj_init 15). LC weight\nswept.\n",
+      "hypothesis": "A longer rollout horizon (30 vs ~10) gives the vanilla model more\nmulti-step signal per batch, which should better constrain its\nJacobians across the trajectory \u2014 especially the subdominant\nspectrum directions.\n",
+      "success_criteria": [
+        "val/trajectory_r2_score >= 0.99 at best LC (matches prior vanilla baseline)",
+        "val/trajectory_mase < 1.0 at best LC",
+        "Cleaner loop-closure plateau vs prior 10-step vanilla runs"
+      ]
+    }
+  },
+  "expected_run_count": 9,
+  "hydra": {
+    "experiments": [
+      "wmtask_vanilla_mse_p30"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_vanilla_mse_p30",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_vanilla_mse_p30",
+        "overrides": [
+          "training.lightning.loop_closure_weight=10",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_vanilla_mse_p30__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "c35dd72",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-15T15:11:41Z"
+}

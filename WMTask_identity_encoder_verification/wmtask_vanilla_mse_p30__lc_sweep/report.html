@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>wmtask_vanilla_mse_p30__lc_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/WMTask_identity_encoder_verification/groups/wmtask_vanilla_mse_p30__lc_sweep">WMTask_identity_encoder_verification</a><br />
+<strong>Launched</strong>: 2026-04-15T15:11:41Z<br />
+<strong>Completed</strong>: 2026-04-15T18:10:18Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>c35dd72</code><br />
+<strong>Expected runs</strong>: 9</p>
+<h2>Experiment Context</h2>
+<h3><code>wmtask_vanilla_mse_p30</code></h3>
+<p><strong>Description</strong></p>
+<p>Vanilla JacobianODE on WMTask: MLP predicts Jacobians directly in
+observation space (no encoder). obs_noise_scale=0.05, plain MSE
+loss, prediction_steps=30 (seq_length=45, traj_init 15). LC weight
+swept.</p>
+<p><strong>Hypothesis</strong></p>
+<p>A longer rollout horizon (30 vs ~10) gives the vanilla model more
+multi-step signal per batch, which should better constrain its
+Jacobians across the trajectory — especially the subdominant
+spectrum directions.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>val/trajectory_r2_score &gt;= 0.99 at best LC (matches prior vanilla baseline)</li>
+<li>val/trajectory_mase &lt; 1.0 at best LC</li>
+<li>Cleaner loop-closure plateau vs prior 10-step vanilla runs</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Overall best MASE</strong>: 0.9038 (LC weight = 1.0e-05, obs_noise_scale = 0.05)
+<strong>Overall best traj loss</strong>: 0.00974 at epoch 9.0
+<strong>Runs analyzed</strong>: 9</p>
+<h3>Best run per <code>obs_noise_scale</code></h3>
+<table>
+<thead>
+<tr>
+<th>obs_noise_scale</th>
+<th>Best LC weight</th>
+<th>Best traj loss</th>
+<th>MASE at best</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.05</td>
+<td>1.0e-06</td>
+<td>0.00971</td>
+<td>0.9148</td>
+<td>0.9889</td>
+<td>9.619</td>
+<td>8.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val/trajectory_r2_score &gt;= 0.99 at best LC (matches prior vanilla baseline)</td>
+<td><strong>Fail</strong></td>
+<td>Best R² = 0.9889; threshold &gt;= 0.99</td>
+</tr>
+<tr>
+<td>val/trajectory_mase &lt; 1.0 at best LC</td>
+<td><strong>Pass</strong></td>
+<td>Best MASE = 0.9038; threshold &lt; 1.0</td>
+</tr>
+<tr>
+<td>Cleaner loop-closure plateau vs prior 10-step vanilla runs</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<p><em>(no figures produced — analytics may have failed)</em></p>
+<pre><code>RuntimeError: No finished JacobianODE sweep runs found in JacobianODE/WMTask_identity_encoder_verification group=wmtask_vanilla_mse_p30__lc_sweep
+</code></pre>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+</body>
+</html>
