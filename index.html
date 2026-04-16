@@ -105,6 +105,9 @@
 
   <div class="status-bar" id="status-bar"></div>
 
+  <h2>Active now</h2>
+  <div id="active-now"></div>
+
   <h2>Reports by project</h2>
   <div id="projects"></div>
 
@@ -256,46 +259,81 @@ async function loadDashboard() {
       </div>`;
   }
 
+  // --- "Active now" section: aggregate all status=active groups across
+  //     projects so they're visible at a glance. Groups shown here are
+  //     hidden from the per-project list below (each group appears once).
+  const activeDiv = document.getElementById("active-now");
+  const activeGroups = [];
+  const activeGroupNames = new Set();
+  const allManifestGroups = new Set();
+  if (manifest && manifest.projects) {
+    for (const [project, groups] of Object.entries(manifest.projects)) {
+      for (const g of groups) {
+        allManifestGroups.add(g.group);
+        const info = overview?.sweeps?.[g.group];
+        if (info?.status === "active") {
+          activeGroups.push({ ...g, project });
+          activeGroupNames.add(g.group);
+        }
+      }
+    }
+  }
+  if (overview) {
+    for (const [group, info] of Object.entries(overview.sweeps || {})) {
+      if (info?.status === "active" && !allManifestGroups.has(group)) {
+        activeGroups.push({
+          group, project: null, has_report: false, report_mtime: null,
+        });
+        activeGroupNames.add(group);
+      }
+    }
+  }
+  // Sort: groups with no report (fresh sweeps, most recently submitted) on
+  // top; then extended/reprocessed groups by report_mtime descending.
+  activeGroups.sort((a, b) => {
+    if (!a.report_mtime && !b.report_mtime) return 0;
+    if (!a.report_mtime) return -1;
+    if (!b.report_mtime) return 1;
+    return b.report_mtime - a.report_mtime;
+  });
+  if (activeGroups.length > 0) {
+    const list = document.createElement("div");
+    list.className = "sweep-list";
+    for (const g of activeGroups) {
+      list.innerHTML += renderCard(
+        g.group, g.project, overview?.sweeps?.[g.group],
+        g.has_report, g.report_mtime
+      );
+    }
+    activeDiv.innerHTML = "";
+    activeDiv.appendChild(list);
+  } else {
+    activeDiv.innerHTML = '<div class="empty">Nothing in progress</div>';
+  }
+
+  // --- "Reports by project" section: processed groups (active ones shown
+  //     above in Active now, skipped here to avoid duplication).
   const projectsDiv = document.getElementById("projects");
   if (manifest && manifest.projects) {
     projectsDiv.innerHTML = "";
-
-    // Track manifest groups for orphan detection
-    const allManifestGroups = new Set();
-    for (const groups of Object.values(manifest.projects))
-      for (const g of groups) allManifestGroups.add(g.group);
-
     for (const [project, groups] of Object.entries(manifest.projects)) {
+      const nonActive = groups.filter(g => !activeGroupNames.has(g.group));
+      if (nonActive.length === 0) continue;
       const div = document.createElement("div");
       div.className = "project";
       div.innerHTML = `<div class="project-name">${project}</div><div class="sweep-list"></div>`;
       const list = div.querySelector(".sweep-list");
-      for (const g of groups) {
+      for (const g of nonActive) {
         list.innerHTML += renderCard(g.group, project, overview?.sweeps?.[g.group], g.has_report, g.report_mtime);
       }
       projectsDiv.appendChild(div);
-    }
-
-    // Orphans: overview groups not in manifest (active/in-progress)
-    if (overview) {
-      const orphans = Object.entries(overview.sweeps || {})
-        .filter(([g, _]) => !allManifestGroups.has(g));
-      if (orphans.length > 0) {
-        const div = document.createElement("div");
-        div.className = "project";
-        div.innerHTML = `<div class="project-name" style="color:var(--yellow)">In progress (no report yet)</div><div class="sweep-list"></div>`;
-        const list = div.querySelector(".sweep-list");
-        for (const [group, info] of orphans) {
-          list.innerHTML += renderCard(group, null, info, false);
-        }
-        projectsDiv.appendChild(div);
-      }
     }
   } else if (overview) {
     projectsDiv.innerHTML = '<div class="empty">No manifest.json — flat list from overview</div>';
     const list = document.createElement("div");
     list.className = "sweep-list";
     for (const [group, info] of Object.entries(overview.sweeps || {})) {
+      if (activeGroupNames.has(group)) continue;
       list.innerHTML += renderCard(group, null, info, false);
     }
     projectsDiv.appendChild(list);
