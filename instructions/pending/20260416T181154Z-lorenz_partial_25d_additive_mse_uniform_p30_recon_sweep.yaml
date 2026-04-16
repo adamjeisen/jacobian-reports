@@ -1,5 +1,0 @@
-experiment: lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep
-overrides:
-  - "hydra.launcher.partition=mit_normal_gpu"
-submitted_at: 20260416T181154Z
-submitted_from: millerlab-endeavourOS
