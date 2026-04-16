@@ -77,6 +77,16 @@
   .refresh-note { color: var(--fg2); font-size: 0.75rem; margin-top: 2rem;
     text-align: center; }
 
+  /* Pull-to-refresh indicator */
+  html, body { overscroll-behavior-y: contain; }
+  #pull-indicator { position: fixed; top: 0; left: 0; right: 0;
+    height: 50px; display: flex; align-items: center; justify-content: center;
+    background: var(--card); border-bottom: 1px solid var(--border);
+    color: var(--fg2); font-size: 0.85rem; z-index: 1000;
+    transform: translateY(-100%); pointer-events: none;
+    transition: transform 0.2s ease-out; }
+  #pull-indicator.refreshing { color: var(--accent); }
+
   /* Instructions queue */
   .queue-item { font-size: 0.82rem; padding: 0.4rem 0;
     border-bottom: 1px solid var(--border); }
@@ -97,6 +107,9 @@
   </div>
   <div class="error" id="pw-error"></div>
 </div>
+
+<!-- Pull-to-refresh indicator (mobile) -->
+<div id="pull-indicator">↓ pull to refresh</div>
 
 <!-- ============ DASHBOARD ============ -->
 <div id="dashboard">
@@ -369,6 +382,79 @@ async function loadDashboard() {
 
 // Auto-refresh
 setInterval(loadDashboard, 60000);
+
+// --- Pull-to-refresh (mobile) -----------------------------------------------
+// Only activates when the user touches near the top of the page (scrollY===0)
+// and drags down. Past the threshold, releasing triggers loadDashboard().
+(function() {
+  const indicator = document.getElementById("pull-indicator");
+  if (!indicator) return;
+  const H = 50;            // indicator height in px
+  const THRESHOLD = 80;    // drag distance to commit a refresh
+  let startY = null;
+  let currentPull = 0;
+
+  const hide = () => {
+    indicator.style.transition = "transform 0.3s ease-out";
+    indicator.style.transform = "translateY(-100%)";
+    indicator.classList.remove("refreshing");
+    currentPull = 0;
+  };
+
+  document.addEventListener("touchstart", (e) => {
+    if (window.scrollY <= 0 && e.touches.length === 1) {
+      startY = e.touches[0].clientY;
+      currentPull = 0;
+    } else {
+      startY = null;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchmove", (e) => {
+    if (startY === null) return;
+    const delta = e.touches[0].clientY - startY;
+    if (delta <= 0 || window.scrollY > 0) {
+      startY = null;
+      if (currentPull > 0) hide();
+      return;
+    }
+    currentPull = delta;
+    // Ease the pull — 1:1 under threshold, half-speed past it, so it doesn't
+    // feel infinite when the user keeps dragging.
+    const eased = delta <= THRESHOLD
+      ? delta
+      : THRESHOLD + (delta - THRESHOLD) * 0.4;
+    const y = Math.min(eased, H * 2);
+    indicator.style.transition = "none";
+    indicator.style.transform = `translateY(${y - H}px)`;
+    indicator.textContent = delta >= THRESHOLD
+      ? "↻ release to refresh"
+      : "↓ pull to refresh";
+  }, { passive: true });
+
+  const onEnd = async () => {
+    if (startY === null) return;
+    const commit = currentPull >= THRESHOLD;
+    startY = null;
+    if (!commit) {
+      hide();
+      return;
+    }
+    indicator.textContent = "↻ refreshing…";
+    indicator.classList.add("refreshing");
+    indicator.style.transition = "transform 0.2s ease-out";
+    indicator.style.transform = "translateY(0)";
+    try {
+      await loadDashboard();
+    } catch (e) {
+      console.warn("pull refresh failed:", e);
+    }
+    // Brief hold on "refreshing" so the user registers the feedback, then hide.
+    setTimeout(hide, 400);
+  };
+  document.addEventListener("touchend", onEnd);
+  document.addEventListener("touchcancel", onEnd);
+})();
 </script>
 </body>
 </html>
