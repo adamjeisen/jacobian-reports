@@ -1,0 +1,5 @@
+experiment: lorenz_partial_25d_additive_mse_uniform_p30_recon100
+overrides:
+  - "hydra.launcher.partition=ou_bcs_low"
+submitted_at: 20260416T184835Z
+submitted_from: millerlab-endeavourOS
