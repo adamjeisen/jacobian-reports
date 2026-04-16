@@ -1,6 +1,0 @@
-experiment: lorenz_partial_25d_additive_mse_uniform
-overrides:
-  - "training.lightning.obs_noise_scale=0.01"
-  - "hydra.launcher.partition=ou_bcs_normal"
-submitted_at: 20260416T020553Z
-submitted_from: millerlab-endeavourOS
