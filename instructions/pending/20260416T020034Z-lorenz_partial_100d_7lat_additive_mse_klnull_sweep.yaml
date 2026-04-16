@@ -1,0 +1,5 @@
+experiment: lorenz_partial_100d_7lat_additive_mse_klnull_sweep
+overrides:
+  - "hydra.launcher.partition=ou_bcs_normal"
+submitted_at: 20260416T020034Z
+submitted_from: millerlab-endeavourOS
