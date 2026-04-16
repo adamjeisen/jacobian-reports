@@ -272,19 +272,22 @@ async function loadDashboard() {
       </div>`;
   }
 
-  // --- "Active now" section: aggregate all status=active groups across
-  //     projects so they're visible at a glance. Groups shown here are
-  //     hidden from the per-project list below (each group appears once).
+  // --- "Active now" section: aggregate any non-processed group (active /
+  //     done / failed) across projects so they're visible at a glance.
+  //     Groups shown here are hidden from the per-project list below
+  //     (each group appears once). The per-card badge still distinguishes
+  //     between active, done (awaiting analysis), and failed.
   const activeDiv = document.getElementById("active-now");
   const activeGroups = [];
   const activeGroupNames = new Set();
   const allManifestGroups = new Set();
+  const isInProgress = info => info && info.status && info.status !== "processed";
   if (manifest && manifest.projects) {
     for (const [project, groups] of Object.entries(manifest.projects)) {
       for (const g of groups) {
         allManifestGroups.add(g.group);
         const info = overview?.sweeps?.[g.group];
-        if (info?.status === "active") {
+        if (isInProgress(info)) {
           activeGroups.push({ ...g, project });
           activeGroupNames.add(g.group);
         }
@@ -293,7 +296,7 @@ async function loadDashboard() {
   }
   if (overview) {
     for (const [group, info] of Object.entries(overview.sweeps || {})) {
-      if (info?.status === "active" && !allManifestGroups.has(group)) {
+      if (isInProgress(info) && !allManifestGroups.has(group)) {
         activeGroups.push({
           group, project: null, has_report: false, report_mtime: null,
         });
