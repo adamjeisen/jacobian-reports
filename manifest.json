@@ -69,7 +69,7 @@
         "group": "lorenz_partial_25d_additive_mse__lc_sweep",
         "has_report": true,
         "has_metrics": true,
-        "has_discussion": true
+        "has_discussion": false
       },
       {
         "group": "lorenz_partial_25d_additive_mse_p30__lc_sweep",

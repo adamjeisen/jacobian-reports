@@ -77,6 +77,10 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![prediction_windows](figures/prediction_windows.png)
 
+### long_trajectory
+
+![long_trajectory](figures/long_trajectory.png)
+
 ### mase
 
 ![mase](figures/mase.png)
@@ -101,15 +105,49 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![lyapunov_spectrum_mse_vs_val_loss](figures/lyapunov_spectrum_mse_vs_val_loss.png)
 
+### reconstruction
+
+![reconstruction](figures/reconstruction.png)
+
+### latent_utilization
+
+![latent_utilization](figures/latent_utilization.png)
+
+### kaplan_yorke
+
+![kaplan_yorke](figures/kaplan_yorke.png)
+
+### kaplan_yorke_pca
+
+![kaplan_yorke_pca](figures/kaplan_yorke_pca.png)
+
+### prediction_detail_latent
+
+![prediction_detail_latent](figures/prediction_detail_latent.png)
+
+### prediction_detail_obs
+
+![prediction_detail_obs](figures/prediction_detail_obs.png)
+
+### encoder_decoder_jacobians
+
+![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
+
+### amplification
+
+![amplification](figures/amplification.png)
+
 ## Discussion
 
-**Success criteria.** *Criterion 1 — leading Lyapunov exponent > 0:* **Pass.** The best run (l8nfso8p, LC=0) recovers λ₁ = +0.127, and 8 of 9 runs maintain a positive leading exponent. Only the LC=10 run collapses to a stable attractor (λ₁ = −1.05). *Criterion 2 — predicted spectrum within ~40% of empirical:* **Fail.** For the best run, λ₁ is underestimated by 53% (0.127 vs 0.271 empirical), and λ₂ is an order of magnitude too negative (−1.02 vs −0.066). λ₃ is well-matched (−13.82 vs −13.87). The spectrum MSE of 0.311 is dominated by the λ₂ error. *Criterion 3 — differs from gennMSE sweep:* **Cannot assess** — no gennMSE results are present in this analysis directory, so the head-to-head comparison awaits that sweep's completion. *Criterion 4 — R² > 0.85:* **Pass.** R² = 0.9999 at the best configuration, far exceeding the threshold.
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
 
-**Sweep landscape.** The LC weight sweep (0 to 10, obs_noise fixed at 0) reveals a monotonic relationship: trajectory validation loss increases steadily with LC weight, from 2.33×10⁻⁵ at LC=0 to 6.0×10⁻⁵ at LC=10. The Pareto front is clean and well-populated (6 of 9 runs), with LC=0 and LC=1e-6 nearly tied at the low-loss end and separated by only 4% in trajectory loss. There is no LC-weight "sweet spot" that improves trajectory prediction over the unregularized baseline — under plain MSE, loop closure acts purely as a cost. The basin of good performance (MASE < 0.06) spans only LC ∈ {0, 1e-6}, narrowing sharply at LC=1e-5 where MASE jumps to 0.126. One anomaly: the LC=1e-5 run (7llt3ary) early-stopped at epoch 75, which may inflate its metrics relative to a fully-trained counterpart.
-
-**Lyapunov spectra.** Across the sweep, Lyapunov spectrum quality follows a U-shaped pattern in LC weight rather than tracking trajectory loss. The lowest spectrum MSE belongs to LC=0.1 (0.300), marginally better than LC=0 (0.311) and LC=1e-6 (0.315), despite those runs having 2× lower trajectory loss. Mid-range LC weights (1e-5 through 1e-3) produce the worst spectra (MSE 3.2–13.3), with exaggerated λ₃ magnitudes (−17 to −20 vs −13.9 empirical). This suggests that moderate LC regularization distorts the latent dynamics' eigenstructure even when it does not catastrophically degrade prediction. At LC=10, chaos is entirely lost. The per-run vs-true plots confirm that all runs consistently underestimate λ₁ and over-dissipate λ₂, a systematic bias that LC weight does not correct.
-
-**Hypothesis assessment: mixed.** The hypothesis predicted that MSE might shift the optimal LC location or worsen it relative to gennMSE. What we observe is simpler: under MSE, loop closure provides no benefit at all — the optimum is at LC=0. The loss-scale mismatch the hypothesis anticipated may indeed explain this: with MSE treating the 25-D decoded trajectory and 3-D latent prediction on the same additive scale, even tiny LC weights begin to trade trajectory accuracy for latent self-consistency without a compensating normalization. Whether gennMSE's per-term rescaling changes this picture remains the key open question for the companion sweep.
+_(to be written)_
 
 ## `run_analytics` stdout
 
@@ -203,9 +241,13 @@ Train trajectories dataset shape: torch.Size([22, 1176, 25])
 Validation trajectories dataset shape: torch.Size([7, 1176, 25])
 Test trajectories dataset shape: torch.Size([3, 1176, 25])
 Loading checkpoint epoch=197-step=39600.ckpt...
+Computing reconstruction ...
 Computing MASE ...
 Teacher-forced MASE: 0.0212
 Free-running MASE:   0.0473
+Computing latent utilization ...
+Entropy-based utilization: 0.854
+Null subspace mean RMS: 1.341554e+00
 Computing Lyapunov exponents ...
   Computing full-trajectory Lyapunov (3 test trajs, T=1176) ...
 Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
@@ -220,8 +262,18 @@ Empirical Lyapunov exponents (mean ± std):
   λ_1 = +0.2716 ± 0.0605
   λ_2 = -0.1016 ± 0.0797
   λ_3 = -13.8370 ± 0.0514
+Mean KY dim (predicted): 1.138 ± 0.022
+Mean KY dim (empirical): 2.012 ± 0.003
+Mean KY dim (burn-in):   1.566 ± 0.458
 Computing prediction windows ...
 Windows: 348 — nMSE min=0.0000, median=0.0000, mean=0.0000, max=0.0016
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 25, 25)
+decoder_jacobian: (128, 25, 25)
+Computing amplification loss ...
+Amplification loss — True state: 0.000047
+Amplification loss — Latent:     0.000035
 ```
 
 </details>
