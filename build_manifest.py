@@ -25,13 +25,20 @@ for project_dir in sorted(REPO.iterdir()):
         has_report = (group_dir / "report.html").is_file()
         has_metrics = (group_dir / "metrics.json").is_file()
         has_discussion = (group_dir / "discussion.md").is_file()
+        # Use report.html mtime as the "report generated" timestamp
+        report_mtime = None
+        if has_report:
+            report_mtime = (group_dir / "report.html").stat().st_mtime
         groups.append({
             "group": group_dir.name,
             "has_report": has_report,
             "has_metrics": has_metrics,
             "has_discussion": has_discussion,
+            "report_mtime": report_mtime,
         })
     if groups:
+        # Sort by report mtime descending (most recent first); unreported at bottom
+        groups.sort(key=lambda g: g.get("report_mtime") or 0, reverse=True)
         manifest["projects"][project_dir.name] = groups
 
 (REPO / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
