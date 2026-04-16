@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-16T03:35:12Z",
+  "last_updated": "2026-04-16T03:40:11Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -57,6 +57,11 @@
         "in_flight": 6,
         "failed_exhausted": 0,
         "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 1,
+        "n_pending": 5,
+        "n_total": 6
       }
     },
     "lorenz_partial_100d_7lat_additive_mse__lc_sweep": {
@@ -129,6 +134,11 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 9,
+        "n_total": 9
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep": {
@@ -168,10 +178,5 @@
       "file": "20260416T020553Z-lorenz_partial_25d_additive_mse_uniform.yaml",
       "status": "claimed"
     }
-  ],
-  "slurm_training": {
-    "n_running": 1,
-    "n_pending": 2,
-    "n_total": 3
-  }
+  ]
 }
