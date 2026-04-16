@@ -3,3 +3,5 @@ overrides:
   - "hydra.launcher.partition=mit_normal"
 submitted_at: 20260416T162908Z
 submitted_from: millerlab-endeavourOS
+
+error: jsweep submission for lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep: no new SLURM array job appeared within 90s
