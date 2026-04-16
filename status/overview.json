@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-16T01:35:16Z",
+  "last_updated": "2026-04-16T01:40:22Z",
   "sweeps": {
     "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
       "status": "active",
@@ -63,20 +63,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "11961659",
-        "dispatched_at": "2026-04-16T01:35:16Z",
-        "status": "running"
       }
     },
     "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 1,
-        "in_flight": 8,
+        "terminal": 2,
+        "in_flight": 7,
         "failed_exhausted": 0,
-        "effectively_done": 1
+        "effectively_done": 2
       }
     },
     "lorenz_partial_25d_additive_gennmse__lc_sweep": {
