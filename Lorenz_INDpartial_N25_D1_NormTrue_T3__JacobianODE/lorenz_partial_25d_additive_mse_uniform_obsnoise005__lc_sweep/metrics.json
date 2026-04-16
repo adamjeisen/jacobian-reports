@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "group": "lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep",
+  "analyzed_at": "2026-04-16T10:54:00Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "xilcvbjr",
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004973705857992172,
+        "best_traj_loss_epoch": 132.0,
+        "best_mase": 0.7700746059417725,
+        "best_mase_epoch": 132.0,
+        "lc_loss_at_best_tl": 69.05728912353516,
+        "r2_at_best_tl": 0.986351728439331,
+        "n_epochs": 136
+      },
+      {
+        "run_id": "vvknnlwr",
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004805532284080982,
+        "best_traj_loss_epoch": 87.0,
+        "best_mase": 0.7641634345054626,
+        "best_mase_epoch": 85.0,
+        "lc_loss_at_best_tl": 11.128815650939941,
+        "r2_at_best_tl": 0.9867813587188721,
+        "n_epochs": 93
+      },
+      {
+        "run_id": "i1b7mm9c",
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0048819719813764095,
+        "best_traj_loss_epoch": 100.0,
+        "best_mase": 0.7703110575675964,
+        "best_mase_epoch": 100.0,
+        "lc_loss_at_best_tl": 1.749255657196045,
+        "r2_at_best_tl": 0.98656165599823,
+        "n_epochs": 103
+      },
+      {
+        "run_id": "ggfm33v9",
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005174558609724045,
+        "best_traj_loss_epoch": 79.0,
+        "best_mase": 0.7862401008605957,
+        "best_mase_epoch": 80.0,
+        "lc_loss_at_best_tl": 0.25676262378692627,
+        "r2_at_best_tl": 0.985756516456604,
+        "n_epochs": 85
+      },
+      {
+        "run_id": "tt7gknm5",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0053831422701478004,
+        "best_traj_loss_epoch": 81.0,
+        "best_mase": 0.7970075011253357,
+        "best_mase_epoch": 80.0,
+        "lc_loss_at_best_tl": 0.014998852275311947,
+        "r2_at_best_tl": 0.98518967628479,
+        "n_epochs": 85
+      },
+      {
+        "run_id": "a8d9c9ad",
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005318970885127783,
+        "best_traj_loss_epoch": 159.0,
+        "best_mase": 0.7951751947402954,
+        "best_mase_epoch": 159.0,
+        "lc_loss_at_best_tl": 0.0008134416420944035,
+        "r2_at_best_tl": 0.9853330254554749,
+        "n_epochs": 164
+      },
+      {
+        "run_id": "w3fh36ic",
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005906539503484964,
+        "best_traj_loss_epoch": 98.0,
+        "best_mase": 0.8362604379653931,
+        "best_mase_epoch": 101.0,
+        "lc_loss_at_best_tl": 0.00022182425891514868,
+        "r2_at_best_tl": 0.9837434887886047,
+        "n_epochs": 102
+      },
+      {
+        "run_id": "icynffax",
+        "state": "finished",
+        "lc_weight": 1.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006669881287962198,
+        "best_traj_loss_epoch": 86.0,
+        "best_mase": 0.8892896175384521,
+        "best_mase_epoch": 85.0,
+        "lc_loss_at_best_tl": 8.734814036870375e-05,
+        "r2_at_best_tl": 0.9816074967384338,
+        "n_epochs": 90
+      },
+      {
+        "run_id": "solx3w1m",
+        "state": "finished",
+        "lc_weight": 10.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.007026792969554663,
+        "best_traj_loss_epoch": 114.0,
+        "best_mase": 0.9153439402580261,
+        "best_mase_epoch": 115.0,
+        "lc_loss_at_best_tl": 1.4412994460144546e-05,
+        "r2_at_best_tl": 0.9806148409843445,
+        "n_epochs": 124
+      }
+    ],
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "vvknnlwr",
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004805532284080982,
+        "best_traj_loss_epoch": 87.0,
+        "best_mase": 0.7641634345054626,
+        "best_mase_epoch": 85.0,
+        "lc_loss_at_best_tl": 11.128815650939941,
+        "r2_at_best_tl": 0.9867813587188721,
+        "n_epochs": 93
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "vvknnlwr",
+      "state": "finished",
+      "lc_weight": 1e-06,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004805532284080982,
+      "best_traj_loss_epoch": 87.0,
+      "best_mase": 0.7641634345054626,
+      "best_mase_epoch": 85.0,
+      "lc_loss_at_best_tl": 11.128815650939941,
+      "r2_at_best_tl": 0.9867813587188721,
+      "n_epochs": 93
+    },
+    "n_runs": 9
+  },
+  "per_run_lyapunov": {
+    "xilcvbjr": {
+      "lambda_spectrum": [
+        -0.09776285290718079,
+        -3.6820480823516846,
+        -73.97265625
+      ],
+      "lambda_max": -0.09776285290718079,
+      "lambda_sum": -77.7524642944336,
+      "kaplan_yorke_dim": null,
+      "error": null,
+      "spectrum_mse_vs_true": 1206.1131778030383
+    },
+    "vvknnlwr": {
+      "lambda_spectrum": [
+        -0.01985223963856697,
+        -2.522320032119751,
+        -49.3167610168457
+      ],
+      "lambda_max": -0.01985223963856697,
+      "lambda_sum": -51.85893249511719,
+      "kaplan_yorke_dim": null,
+      "error": null,
+      "spectrum_mse_vs_true": 419.4335700763616
+    },
+    "i1b7mm9c": {
+      "lambda_spectrum": [
+        -0.09082970768213272,
+        -2.2746572494506836,
+        -42.98727798461914
+      ],
+      "lambda_max": -0.09082970768213272,
+      "lambda_sum": -45.35276412963867,
+      "kaplan_yorke_dim": null,
+      "error": null,
+      "spectrum_mse_vs_true": 283.10143561113324
+    },
+    "ggfm33v9": {
+      "lambda_spectrum": [
+        0.2329087257385254,
+        -1.3401089906692505,
+        -38.648109436035156
+      ],
+      "lambda_max": 0.2329087257385254,
+      "lambda_sum": -39.75531005859375,
+      "kaplan_yorke_dim": 1.1737983226776123,
+      "error": null,
+      "spectrum_mse_vs_true": 204.22489093088515
+    },
+    "tt7gknm5": {
+      "lambda_spectrum": [
+        0.24296097457408905,
+        -1.2620152235031128,
+        -37.40692138671875
+      ],
+      "lambda_max": 0.24296097457408905,
+      "lambda_sum": -38.42597579956055,
+      "kaplan_yorke_dim": 1.1925182342529297,
+      "error": null,
+      "spectrum_mse_vs_true": 184.22111865090446
+    },
+    "a8d9c9ad": {
+      "lambda_spectrum": [
+        0.2065386325120926,
+        -0.7234818935394287,
+        -38.763553619384766
+      ],
+      "lambda_max": 0.2065386325120926,
+      "lambda_sum": -39.28049850463867,
+      "kaplan_yorke_dim": 1.2854785919189453,
+      "error": null,
+      "spectrum_mse_vs_true": 205.80568849137683
+    },
+    "w3fh36ic": {
+      "lambda_spectrum": [
+        0.16988800466060638,
+        -0.4227934181690216,
+        -24.60150146484375
+      ],
+      "lambda_max": 0.16988800466060638,
+      "lambda_sum": -24.854406356811523,
+      "kaplan_yorke_dim": 1.4018226861953735,
+      "error": null,
+      "spectrum_mse_vs_true": 38.06123692815532
+    },
+    "icynffax": {
+      "lambda_spectrum": [
+        0.28968775272369385,
+        -1.0109177827835083,
+        -11.696334838867188
+      ],
+      "lambda_max": 0.28968775272369385,
+      "lambda_sum": -12.417564392089844,
+      "kaplan_yorke_dim": 1.2865591049194336,
+      "error": null,
+      "spectrum_mse_vs_true": 1.8690156723871283
+    },
+    "solx3w1m": {
+      "lambda_spectrum": [
+        0.4373384714126587,
+        -0.8695940375328064,
+        -10.367801666259766
+      ],
+      "lambda_max": 0.4373384714126587,
+      "lambda_sum": -10.800057411193848,
+      "kaplan_yorke_dim": 1.502922534942627,
+      "error": null,
+      "spectrum_mse_vs_true": 4.349869721592262
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.48128193616867065,
+    -0.2260732501745224,
+    -13.922173500061035
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Best run's leading Lyapunov exponent > 0",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best run's predicted Lyapunov spectrum within ~30% of empirical",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "val/trajectory_r2 at best-LC improves over partial_25d_mse most_recent baseline",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "No blow-up of loop closure during training (uniform loss doesn't break the encoder-decoder cycle)",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/per_run_lyapunov_relerr.png",
+    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
