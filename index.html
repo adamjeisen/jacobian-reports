@@ -145,8 +145,18 @@ async function loadDashboard() {
   } catch (e) { console.warn("overview.json not available:", e); }
 
   if (overview) {
+    const utc = overview.last_updated;
+    let eastern = "—";
+    if (utc) {
+      try {
+        eastern = new Date(utc).toLocaleString("en-US", {
+          timeZone: "America/New_York",
+          dateStyle: "medium", timeStyle: "short",
+        });
+      } catch (e) { eastern = utc; }
+    }
     document.getElementById("last-updated").textContent =
-      "Last controller cycle: " + (overview.last_updated || "—");
+      "Last controller cycle: " + eastern + " ET";
 
     // Status bar
     const sweeps = overview.sweeps || {};
@@ -245,16 +255,12 @@ async function loadDashboard() {
     projectsDiv.innerHTML = '<div class="empty">No status data available</div>';
   }
 
-  // 4. Queue (pending instructions)
+  // 4. Queue (pending instructions from overview.json)
   const queueDiv = document.getElementById("queue");
-  let queueData = null;
-  try {
-    const r = await fetch("instructions/queue.json?" + Date.now());
-    queueData = await r.json();
-  } catch (e) { /* no queue manifest */ }
-  if (queueData && queueData.length > 0) {
-    queueDiv.innerHTML = queueData.map(q =>
-      `<div class="queue-item">${q.file} — ${q.experiment} (${q.status})</div>`
+  const pendingInstr = overview?.pending_instructions || [];
+  if (pendingInstr.length > 0) {
+    queueDiv.innerHTML = pendingInstr.map(q =>
+      `<div class="queue-item"><span class="badge ${q.status === 'pending' ? 'badge-active' : 'badge-done'}">${q.status}</span> ${q.file}</div>`
     ).join("");
   } else {
     queueDiv.innerHTML = '<div class="empty">No pending instructions</div>';
