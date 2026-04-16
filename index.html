@@ -163,20 +163,12 @@ async function loadDashboard() {
     const counts = { active: 0, done: 0, processed: 0, failed: 0 };
     for (const s of Object.values(sweeps)) counts[s.status] = (counts[s.status] || 0) + 1;
     const total = Object.keys(sweeps).length;
-    const train = overview.slurm_training || {};
-    const nRun = train.n_running || 0;
-    const nPend = train.n_pending || 0;
-    const nTrain = train.n_total || 0;
     document.getElementById("status-bar").innerHTML =
       `<div class="stat"><div class="num">${total}</div>total sweeps</div>` +
       `<div class="stat"><div class="num" style="color:var(--yellow)">${counts.active}</div>active</div>` +
       `<div class="stat"><div class="num" style="color:var(--green)">${counts.processed}</div>processed</div>` +
-      `<div class="stat"><div class="num" style="color:var(--accent)">${counts.done}</div>done (awaiting analysis)</div>` +
-      `<div class="stat"><div class="num" style="color:var(--red)">${counts.failed}</div>failed</div>` +
-      (nTrain > 0
-        ? `<div class="stat"><div class="num" style="color:var(--fg)">${nRun}</div>SLURM running</div>` +
-          `<div class="stat"><div class="num" style="color:var(--fg2)">${nPend}</div>SLURM queued</div>`
-        : "");
+      `<div class="stat"><div class="num" style="color:var(--accent)">${counts.done}</div>awaiting analysis</div>` +
+      `<div class="stat"><div class="num" style="color:var(--red)">${counts.failed}</div>failed</div>`;
   }
 
   // 2. Discover reports by scanning known project dirs.
@@ -202,97 +194,84 @@ async function loadDashboard() {
     manifest = await r.json();
   } catch (e) { /* no manifest yet */ }
 
+  // --- Unified rendering: merge manifest + overview, inline SLURM info ---
+  function renderCard(group, project, oInfo, hasReport) {
+    const status = oInfo?.status || "unknown";
+    const summary = oInfo?.runs_summary;
+    const tSlurm = oInfo?.training_slurm;
+    const aSlurm = oInfo?.analysis_slurm;
+    const badgeClass = {
+      active: "badge-active", processed: "badge-processed",
+      done: "badge-done", failed: "badge-failed"
+    }[status] || "";
+
+    let meta = [];
+    if (summary) {
+      meta.push(`${summary.terminal || 0} terminal · ${summary.in_flight || 0} in-flight`);
+    }
+    if (tSlurm && tSlurm.n_total > 0) {
+      meta.push(`<span style="color:var(--green)">${tSlurm.n_running || 0} running</span> · <span style="color:var(--fg2)">${tSlurm.n_pending || 0} queued</span>`);
+    }
+    if (aSlurm && (aSlurm.n_running > 0 || aSlurm.n_pending > 0)) {
+      meta.push(`<span style="color:var(--accent)">analyzing</span>`);
+    }
+
+    const reportLink = hasReport && project
+      ? `<a href="${project}/${group}/report.html">view report</a>`
+      : `<span style="color:var(--fg2)">no report yet</span>`;
+
+    return `
+      <div class="sweep-card">
+        <div><span class="sweep-name">${group}</span></div>
+        <div class="sweep-meta">
+          ${meta.map(s => `<span>${s}</span>`).join("")}
+          <span class="badge ${badgeClass}">${status}</span>
+          ${reportLink}
+        </div>
+      </div>`;
+  }
+
   const projectsDiv = document.getElementById("projects");
   if (manifest && manifest.projects) {
     projectsDiv.innerHTML = "";
+
+    // Track manifest groups for orphan detection
+    const allManifestGroups = new Set();
+    for (const groups of Object.values(manifest.projects))
+      for (const g of groups) allManifestGroups.add(g.group);
+
     for (const [project, groups] of Object.entries(manifest.projects)) {
       const div = document.createElement("div");
       div.className = "project";
       div.innerHTML = `<div class="project-name">${project}</div><div class="sweep-list"></div>`;
       const list = div.querySelector(".sweep-list");
-
       for (const g of groups) {
-        const oInfo = overview?.sweeps?.[g.group] || {};
-        const status = oInfo.status || "unknown";
-        const summary = oInfo.runs_summary;
-        const summaryStr = summary
-          ? `${summary.terminal || 0} terminal · ${summary.in_flight || 0} in-flight`
-          : "";
-        const badgeClass = {
-          active: "badge-active", processed: "badge-processed",
-          done: "badge-done", failed: "badge-failed"
-        }[status] || "";
-
-        const reportLink = g.has_report
-          ? `<a href="${project}/${g.group}/report.html">view report</a>`
-          : `<span style="color:var(--fg2)">no report yet</span>`;
-
-        list.innerHTML += `
-          <div class="sweep-card">
-            <div>
-              <span class="sweep-name">${g.group}</span>
-            </div>
-            <div class="sweep-meta">
-              ${summaryStr ? `<span>${summaryStr}</span>` : ""}
-              <span class="badge ${badgeClass}">${status}</span>
-              ${reportLink}
-            </div>
-          </div>`;
+        list.innerHTML += renderCard(g.group, project, overview?.sweeps?.[g.group], g.has_report);
       }
       projectsDiv.appendChild(div);
     }
-    // Also show any sweeps from overview that aren't in the manifest
-    // (active sweeps still training, no report yet).
+
+    // Orphans: overview groups not in manifest (active/in-progress)
     if (overview) {
-      const allManifestGroups = new Set();
-      for (const groups of Object.values(manifest.projects)) {
-        for (const g of groups) allManifestGroups.add(g.group);
-      }
       const orphans = Object.entries(overview.sweeps || {})
-        .filter(([group, _]) => !allManifestGroups.has(group));
+        .filter(([g, _]) => !allManifestGroups.has(g));
       if (orphans.length > 0) {
         const div = document.createElement("div");
         div.className = "project";
         div.innerHTML = `<div class="project-name" style="color:var(--yellow)">In progress (no report yet)</div><div class="sweep-list"></div>`;
         const list = div.querySelector(".sweep-list");
         for (const [group, info] of orphans) {
-          const status = info.status || "unknown";
-          const summary = info.runs_summary;
-          const summaryStr = summary
-            ? `${summary.terminal || 0} terminal · ${summary.in_flight || 0} in-flight`
-            : "";
-          const badgeClass = {
-            active: "badge-active", processed: "badge-processed",
-            done: "badge-done", failed: "badge-failed"
-          }[status] || "";
-          list.innerHTML += `
-            <div class="sweep-card">
-              <span class="sweep-name">${group}</span>
-              <div class="sweep-meta">
-                ${summaryStr ? `<span>${summaryStr}</span>` : ""}
-                <span class="badge ${badgeClass}">${status}</span>
-              </div>
-            </div>`;
+          list.innerHTML += renderCard(group, null, info, false);
         }
         projectsDiv.appendChild(div);
       }
     }
   } else if (overview) {
-    // Fallback: flat list from overview (no project grouping)
-    projectsDiv.innerHTML = '<div class="empty">No manifest.json yet — showing flat list from overview</div>';
+    projectsDiv.innerHTML = '<div class="empty">No manifest.json — flat list from overview</div>';
     const list = document.createElement("div");
     list.className = "sweep-list";
     for (const [group, info] of Object.entries(overview.sweeps || {})) {
-      const status = info.status || "unknown";
-      const badgeClass = {
-        active: "badge-active", processed: "badge-processed",
-        done: "badge-done", failed: "badge-failed"
-      }[status] || "";
-      list.innerHTML += `
-        <div class="sweep-card">
-          <span class="sweep-name">${group}</span>
-          <span class="badge ${badgeClass}">${status}</span>
-        </div>`;
+      list.innerHTML += renderCard(group, null, info, false);
     }
     projectsDiv.appendChild(list);
   } else {
