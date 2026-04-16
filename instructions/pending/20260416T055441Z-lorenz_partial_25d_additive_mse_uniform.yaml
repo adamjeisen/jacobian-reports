@@ -1,0 +1,6 @@
+experiment: lorenz_partial_25d_additive_mse_uniform
+overrides:
+  - "data.postprocessing.obs_noise=0.05"
+  - "wandb_group=lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep"
+submitted_at: 20260416T055441Z
+submitted_from: millerlab-endeavourOS
