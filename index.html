@@ -312,13 +312,23 @@ async function loadDashboard() {
   }
 
   // --- "Reports by project" section: processed groups (active ones shown
-  //     above in Active now, skipped here to avoid duplication).
+  //     above in Active now, skipped here to avoid duplication). Projects
+  //     are ordered by the most-recent report_mtime across their
+  //     non-active groups, so the project with fresh analysis sits on top.
   const projectsDiv = document.getElementById("projects");
   if (manifest && manifest.projects) {
     projectsDiv.innerHTML = "";
-    for (const [project, groups] of Object.entries(manifest.projects)) {
-      const nonActive = groups.filter(g => !activeGroupNames.has(g.group));
-      if (nonActive.length === 0) continue;
+    const projectEntries = Object.entries(manifest.projects)
+      .map(([project, groups]) => {
+        const nonActive = groups.filter(g => !activeGroupNames.has(g.group));
+        const maxMtime = nonActive.reduce(
+          (acc, g) => Math.max(acc, g.report_mtime || 0), 0
+        );
+        return { project, nonActive, maxMtime };
+      })
+      .filter(entry => entry.nonActive.length > 0)
+      .sort((a, b) => b.maxMtime - a.maxMtime);
+    for (const { project, nonActive } of projectEntries) {
       const div = document.createElement("div");
       div.className = "project";
       div.innerHTML = `<div class="project-name">${project}</div><div class="sweep-list"></div>`;
