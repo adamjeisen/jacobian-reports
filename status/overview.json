@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-16T18:45:18Z",
+  "last_updated": "2026-04-16T18:50:49Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -181,18 +181,32 @@
         "effectively_done": 9
       }
     },
-    "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep": {
+    "lorenz_partial_25d_additive_mse_uniform_p30__recon100_obcslow": {
       "status": "active",
       "runs_summary": {
         "terminal": 0,
-        "in_flight": 9,
+        "in_flight": 1,
         "failed_exhausted": 0,
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 2,
+        "n_running": 0,
         "n_pending": 1,
-        "n_total": 3
+        "n_total": 1
+      }
+    },
+    "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 1,
+        "in_flight": 8,
+        "failed_exhausted": 1,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 2,
+        "n_pending": 0,
+        "n_total": 2
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__lc_sweep": {
@@ -327,6 +341,10 @@
     },
     {
       "file": "20260416T181154Z-lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T184835Z-lorenz_partial_25d_additive_mse_uniform_p30_recon100.yaml",
       "status": "claimed"
     }
   ]
