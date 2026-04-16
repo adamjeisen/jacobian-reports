@@ -1,0 +1,5 @@
+experiment: lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep
+overrides:
+  - "hydra.launcher.partition=mit_normal"
+submitted_at: 20260416T162908Z
+submitted_from: millerlab-endeavourOS
