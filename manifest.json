@@ -32,6 +32,13 @@
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
       {
+        "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776322820.533714
+      },
+      {
         "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,

@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2",
+  "analyzed_at": "2026-04-16T06:58:01Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "jhg9x3lq",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 1.8616602801557747e-06,
+        "best_traj_loss_epoch": 198.0,
+        "best_mase": 0.025284569710493088,
+        "best_mase_epoch": 198.0,
+        "lc_loss_at_best_tl": 0.0010725540341809392,
+        "r2_at_best_tl": 0.9999939203262329,
+        "n_epochs": 200
+      },
+      {
+        "run_id": "kuhiqael",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 4.002294190286193e-06,
+        "best_traj_loss_epoch": 140.0,
+        "best_mase": 0.04794209450483322,
+        "best_mase_epoch": 140.0,
+        "lc_loss_at_best_tl": 0.001629306934773922,
+        "r2_at_best_tl": 0.9999869465827942,
+        "n_epochs": 143
+      },
+      {
+        "run_id": "88th62np",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 1.9812912341876654e-06,
+        "best_traj_loss_epoch": 198.0,
+        "best_mase": 0.026025371626019478,
+        "best_mase_epoch": 198.0,
+        "lc_loss_at_best_tl": 0.0010061676148325205,
+        "r2_at_best_tl": 0.9999934434890747,
+        "n_epochs": 200
+      },
+      {
+        "run_id": "nklisi77",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 3.2548061881243484e-06,
+        "best_traj_loss_epoch": 195.0,
+        "best_mase": 0.03178509697318077,
+        "best_mase_epoch": 198.0,
+        "lc_loss_at_best_tl": 0.001203253399580717,
+        "r2_at_best_tl": 0.9999893307685852,
+        "n_epochs": 200
+      },
+      {
+        "run_id": "gx6lmk6g",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 2.8873889732494717e-06,
+        "best_traj_loss_epoch": 198.0,
+        "best_mase": 0.027894506230950356,
+        "best_mase_epoch": 194.0,
+        "lc_loss_at_best_tl": 0.001141534186899662,
+        "r2_at_best_tl": 0.9999905228614807,
+        "n_epochs": 200
+      },
+      {
+        "run_id": "6y24w9yt",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 3.1880242659099167e-06,
+        "best_traj_loss_epoch": 183.0,
+        "best_mase": 0.03161945939064026,
+        "best_mase_epoch": 193.0,
+        "lc_loss_at_best_tl": 0.0010781779419630766,
+        "r2_at_best_tl": 0.9999895691871643,
+        "n_epochs": 200
+      }
+    ],
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "jhg9x3lq",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 1.8616602801557747e-06,
+        "best_traj_loss_epoch": 198.0,
+        "best_mase": 0.025284569710493088,
+        "best_mase_epoch": 198.0,
+        "lc_loss_at_best_tl": 0.0010725540341809392,
+        "r2_at_best_tl": 0.9999939203262329,
+        "n_epochs": 200
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "jhg9x3lq",
+      "state": "finished",
+      "lc_weight": 0.001,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 1.8616602801557747e-06,
+      "best_traj_loss_epoch": 198.0,
+      "best_mase": 0.025284569710493088,
+      "best_mase_epoch": 198.0,
+      "lc_loss_at_best_tl": 0.0010725540341809392,
+      "r2_at_best_tl": 0.9999939203262329,
+      "n_epochs": 200
+    },
+    "n_runs": 6
+  },
+  "per_run_lyapunov": {
+    "jhg9x3lq": {
+      "lambda_spectrum": [
+        0.3619130551815033,
+        -0.001970831770449877,
+        -2.7494759559631348,
+        -3.1791727542877197,
+        -3.790961980819702,
+        -4.147793292999268,
+        -6.233313083648682
+      ],
+      "lambda_max": 0.3619130551815033,
+      "lambda_sum": -19.740774154663086,
+      "kaplan_yorke_dim": 2.130913019180298,
+      "error": null,
+      "spectrum_mse_vs_true": 41.24060159436991
+    },
+    "kuhiqael": {
+      "lambda_spectrum": [
+        0.3540354073047638,
+        -0.029935412108898163,
+        -2.5910756587982178,
+        -2.8449487686157227,
+        -3.6274168491363525,
+        -3.8967180252075195,
+        -5.683568000793457
+      ],
+      "lambda_max": 0.3540354073047638,
+      "lambda_sum": -18.319625854492188,
+      "kaplan_yorke_dim": 2.1250832080841064,
+      "error": null,
+      "spectrum_mse_vs_true": 42.42210668690979
+    },
+    "88th62np": {
+      "lambda_spectrum": [
+        0.4270976781845093,
+        -0.06569188833236694,
+        -2.7755370140075684,
+        -2.9312195777893066,
+        -3.591433048248291,
+        -3.814286231994629,
+        -6.797929763793945
+      ],
+      "lambda_max": 0.4270976781845093,
+      "lambda_sum": -19.548999786376953,
+      "kaplan_yorke_dim": 2.130211114883423,
+      "error": null,
+      "spectrum_mse_vs_true": 41.051560260211126
+    },
+    "nklisi77": {
+      "lambda_spectrum": [
+        0.49683427810668945,
+        -0.05378234386444092,
+        -2.280226707458496,
+        -2.484004020690918,
+        -3.6060714721679688,
+        -3.7747437953948975,
+        -4.468235492706299
+      ],
+      "lambda_max": 0.49683427810668945,
+      "lambda_sum": -16.170228958129883,
+      "kaplan_yorke_dim": 2.1943016052246094,
+      "error": null,
+      "spectrum_mse_vs_true": 44.80636659929297
+    },
+    "gx6lmk6g": {
+      "lambda_spectrum": [
+        0.43489301204681396,
+        0.019166337326169014,
+        -2.7397985458374023,
+        -2.9582161903381348,
+        -3.4778647422790527,
+        -3.6795432567596436,
+        -3.9039602279663086
+      ],
+      "lambda_max": 0.43489301204681396,
+      "lambda_sum": -16.30532455444336,
+      "kaplan_yorke_dim": 2.165727376937866,
+      "error": null,
+      "spectrum_mse_vs_true": 41.31963048251537
+    },
+    "6y24w9yt": {
+      "lambda_spectrum": [
+        0.3318434953689575,
+        -0.013009336777031422,
+        -2.2013795375823975,
+        -3.0104868412017822,
+        -3.082261800765991,
+        -3.2191765308380127,
+        -3.373516321182251
+      ],
+      "lambda_max": 0.3318434953689575,
+      "lambda_sum": -14.567986488342285,
+      "kaplan_yorke_dim": 2.14483380317688,
+      "error": null,
+      "spectrum_mse_vs_true": 45.40291596880257
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.27129408717155457,
+    -0.06631043553352356,
+    -13.87195110321045
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "At the best kl_null, \u03bb_min moves noticeably more negative than \u22126",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "\u03a3\u03bb_i (volume-contraction rate) moves from \u221220 toward empirical ~\u221214",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "val/trajectory_r2 at best kl_null within a few % of the 0-kl_null baseline",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Clear U-shape (or monotone direction) across the 6 kl_null values",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/per_run_lyapunov_relerr.png",
+    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2/figures/lyapunov_spectrum_mse_vs_val_loss.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
