@@ -163,12 +163,20 @@ async function loadDashboard() {
     const counts = { active: 0, done: 0, processed: 0, failed: 0 };
     for (const s of Object.values(sweeps)) counts[s.status] = (counts[s.status] || 0) + 1;
     const total = Object.keys(sweeps).length;
+    const train = overview.slurm_training || {};
+    const nRun = train.n_running || 0;
+    const nPend = train.n_pending || 0;
+    const nTrain = train.n_total || 0;
     document.getElementById("status-bar").innerHTML =
       `<div class="stat"><div class="num">${total}</div>total sweeps</div>` +
       `<div class="stat"><div class="num" style="color:var(--yellow)">${counts.active}</div>active</div>` +
       `<div class="stat"><div class="num" style="color:var(--green)">${counts.processed}</div>processed</div>` +
       `<div class="stat"><div class="num" style="color:var(--accent)">${counts.done}</div>done (awaiting analysis)</div>` +
-      `<div class="stat"><div class="num" style="color:var(--red)">${counts.failed}</div>failed</div>`;
+      `<div class="stat"><div class="num" style="color:var(--red)">${counts.failed}</div>failed</div>` +
+      (nTrain > 0
+        ? `<div class="stat"><div class="num" style="color:var(--fg)">${nRun}</div>SLURM running</div>` +
+          `<div class="stat"><div class="num" style="color:var(--fg2)">${nPend}</div>SLURM queued</div>`
+        : "");
   }
 
   // 2. Discover reports by scanning known project dirs.
