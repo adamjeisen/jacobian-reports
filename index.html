@@ -105,7 +105,7 @@
 // SHA-256 of the password. Generate a new one with:
 //   echo -n "yourpassword" | sha256sum
 // Then replace the hash below.
-const PW_HASH = "SET_YOUR_HASH_HERE";
+const PW_HASH = "13f601472ad526d93fac6a017d8f853b5c18d008adeb8dd618d04c42ebdd9ee4";
 
 async function sha256(msg) {
   const buf = await crypto.subtle.digest("SHA-256",
@@ -117,7 +117,7 @@ async function sha256(msg) {
 async function checkAuth() {
   const input = document.getElementById("pw-input").value;
   const hash = await sha256(input);
-  if (hash === PW_HASH || PW_HASH === "SET_YOUR_HASH_HERE") {
+  if (hash === PW_HASH) {
     localStorage.setItem("jac_auth", "1");
     showDashboard();
   } else {
