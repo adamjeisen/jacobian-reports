@@ -233,6 +233,42 @@ async function loadDashboard() {
       }
       projectsDiv.appendChild(div);
     }
+    // Also show any sweeps from overview that aren't in the manifest
+    // (active sweeps still training, no report yet).
+    if (overview) {
+      const allManifestGroups = new Set();
+      for (const groups of Object.values(manifest.projects)) {
+        for (const g of groups) allManifestGroups.add(g.group);
+      }
+      const orphans = Object.entries(overview.sweeps || {})
+        .filter(([group, _]) => !allManifestGroups.has(group));
+      if (orphans.length > 0) {
+        const div = document.createElement("div");
+        div.className = "project";
+        div.innerHTML = `<div class="project-name" style="color:var(--yellow)">In progress (no report yet)</div><div class="sweep-list"></div>`;
+        const list = div.querySelector(".sweep-list");
+        for (const [group, info] of orphans) {
+          const status = info.status || "unknown";
+          const summary = info.runs_summary;
+          const summaryStr = summary
+            ? `${summary.terminal || 0} terminal · ${summary.in_flight || 0} in-flight`
+            : "";
+          const badgeClass = {
+            active: "badge-active", processed: "badge-processed",
+            done: "badge-done", failed: "badge-failed"
+          }[status] || "";
+          list.innerHTML += `
+            <div class="sweep-card">
+              <span class="sweep-name">${group}</span>
+              <div class="sweep-meta">
+                ${summaryStr ? `<span>${summaryStr}</span>` : ""}
+                <span class="badge ${badgeClass}">${status}</span>
+              </div>
+            </div>`;
+        }
+        projectsDiv.appendChild(div);
+      }
+    }
   } else if (overview) {
     // Fallback: flat list from overview (no project grouping)
     projectsDiv.innerHTML = '<div class="empty">No manifest.json yet — showing flat list from overview</div>';
