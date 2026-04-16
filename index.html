@@ -303,12 +303,16 @@ async function loadDashboard() {
     projectsDiv.innerHTML = '<div class="empty">No status data available</div>';
   }
 
-  // 4. Queue (pending instructions from overview.json)
+  // 4. Queue — only show instructions actually still waiting to be claimed.
+  //    Claimed entries never leave instructions/claimed/, so showing them
+  //    would just grow the list forever with historical records that are
+  //    already reflected in the per-group cards above.
   const queueDiv = document.getElementById("queue");
-  const pendingInstr = overview?.pending_instructions || [];
+  const pendingInstr = (overview?.pending_instructions || [])
+    .filter(q => q.status === "pending");
   if (pendingInstr.length > 0) {
     queueDiv.innerHTML = pendingInstr.map(q =>
-      `<div class="queue-item"><span class="badge ${q.status === 'pending' ? 'badge-active' : 'badge-done'}">${q.status}</span> ${q.file}</div>`
+      `<div class="queue-item"><span class="badge badge-active">pending</span> ${q.file}</div>`
     ).join("");
   } else {
     queueDiv.innerHTML = '<div class="empty">No pending instructions</div>';
