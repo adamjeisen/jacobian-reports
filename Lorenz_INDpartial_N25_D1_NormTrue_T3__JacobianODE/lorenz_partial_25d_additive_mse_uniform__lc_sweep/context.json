@@ -1,6 +1,6 @@
 {
   "group": "lorenz_partial_25d_additive_mse_uniform__lc_sweep",
-  "completed_at": "2026-04-15T08:50:13Z",
+  "completed_at": "2026-04-16T14:30:16Z",
   "outcome": "complete_clean",
   "experiment_metadata": {
     "lorenz_partial_25d_additive_mse_uniform": {
@@ -14,7 +14,7 @@
       ]
     }
   },
-  "expected_run_count": 9,
+  "expected_run_count": 18,
   "hydra": {
     "experiments": [
       "lorenz_partial_25d_additive_mse_uniform"
@@ -22,6 +22,7 @@
     "multirun_dir": null,
     "overrides_template": [
       "experiment=lorenz_partial_25d_additive_mse_uniform",
+      "training.lightning.obs_noise_scale=0.01",
       "hydra.launcher.partition=ou_bcs_normal"
     ],
     "resolved_runs": [
@@ -96,6 +97,87 @@
           "training.lightning.loop_closure_weight=10",
           "hydra.launcher.partition=ou_bcs_normal"
         ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform",
+        "overrides": [
+          "training.lightning.loop_closure_weight=10",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
       }
     ]
   },
@@ -106,8 +188,8 @@
   },
   "git": {
     "branch": "latent-JacobianODE",
-    "commit": "40ef3c7",
+    "commit": "1010983",
     "repo_dir": "/home/eisenaj/code/JacobianODE"
   },
-  "launched_at": "2026-04-15T03:55:01Z"
+  "launched_at": "2026-04-16T02:10:11Z"
 }
