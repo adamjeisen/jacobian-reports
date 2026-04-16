@@ -1,9 +1,12 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-16T02:56:03Z",
+  "last_updated": "2026-04-16T03:00:12Z",
   "sweeps": {
+    "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
+      "status": "processed"
+    },
     "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 27,
         "in_flight": 0,
@@ -12,7 +15,7 @@
       }
     },
     "lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 1,
         "in_flight": 0,
@@ -21,7 +24,7 @@
       }
     },
     "lorenz_full_additive_mse__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -30,7 +33,7 @@
       }
     },
     "lorenz_full_additive_mse_p30__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -39,7 +42,7 @@
       }
     },
     "lorenz_partial_100d_7lat_additive_mse__klnull_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 6,
         "in_flight": 0,
@@ -57,7 +60,7 @@
       }
     },
     "lorenz_partial_100d_7lat_additive_mse__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -66,7 +69,7 @@
       }
     },
     "lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -75,7 +78,7 @@
       }
     },
     "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -84,7 +87,7 @@
       }
     },
     "lorenz_partial_25d_additive_gennmse__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -93,7 +96,7 @@
       }
     },
     "lorenz_partial_25d_additive_gennmse_adaptivelatent__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -102,7 +105,7 @@
       }
     },
     "lorenz_partial_25d_additive_mse__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -111,7 +114,7 @@
       }
     },
     "lorenz_partial_25d_additive_mse_p30__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -120,7 +123,7 @@
       }
     },
     "lorenz_partial_25d_additive_mse_uniform__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -129,7 +132,7 @@
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -138,7 +141,7 @@
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
@@ -147,16 +150,28 @@
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
-      "status": "active",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
       }
-    },
-    "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
-      "status": "processed"
     }
+  },
+  "pending_instructions": [
+    {
+      "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T020553Z-lorenz_partial_25d_additive_mse_uniform.yaml",
+      "status": "claimed"
+    }
+  ],
+  "slurm_training": {
+    "n_running": 1,
+    "n_pending": 2,
+    "n_total": 3
   }
 }
