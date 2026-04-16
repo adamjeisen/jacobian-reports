@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "group": "lorenz_full_additive_mse__lc_sweep",
-  "analyzed_at": "2026-04-15T02:58:12Z",
+  "analyzed_at": "2026-04-16T04:12:27Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -474,7 +474,16 @@
     "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/per_run_lyapunov.png",
     "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/per_run_lyapunov_vs_true.png",
     "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/per_run_lyapunov_relerr.png",
-    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png"
+    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/reconstruction.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/latent_utilization.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_full_additive_mse__lc_sweep/figures/amplification.png"
   },
   "analytics_error": null,
   "true_lyapunov": null,

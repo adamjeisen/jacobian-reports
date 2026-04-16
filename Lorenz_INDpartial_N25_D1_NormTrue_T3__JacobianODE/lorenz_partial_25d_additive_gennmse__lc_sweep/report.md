@@ -89,6 +89,10 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![prediction_windows](figures/prediction_windows.png)
 
+### long_trajectory
+
+![long_trajectory](figures/long_trajectory.png)
+
 ### mase
 
 ![mase](figures/mase.png)
@@ -113,15 +117,49 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![lyapunov_spectrum_mse_vs_val_loss](figures/lyapunov_spectrum_mse_vs_val_loss.png)
 
+### reconstruction
+
+![reconstruction](figures/reconstruction.png)
+
+### latent_utilization
+
+![latent_utilization](figures/latent_utilization.png)
+
+### kaplan_yorke
+
+![kaplan_yorke](figures/kaplan_yorke.png)
+
+### kaplan_yorke_pca
+
+![kaplan_yorke_pca](figures/kaplan_yorke_pca.png)
+
+### prediction_detail_latent
+
+![prediction_detail_latent](figures/prediction_detail_latent.png)
+
+### prediction_detail_obs
+
+![prediction_detail_obs](figures/prediction_detail_obs.png)
+
+### encoder_decoder_jacobians
+
+![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
+
+### amplification
+
+![amplification](figures/amplification.png)
+
 ## Discussion
 
-**Success criteria verdicts.** (1) *Leading Lyapunov exponent > 0*: **Pass.** Every run in the sweep recovers chaotic dynamics; the best run (LC=1e-5) has λ₁ = +0.167 and even the worst case (LC=1e-5 by coincidence being the lowest λ₁) remains positive. (2) *Predicted spectrum within ~30% of empirical*: **Fail.** The best run predicts [+0.17, −0.75, −15.58] against an empirical spectrum of [+0.27, −0.07, −13.87]. λ₃ is within 12%, but λ₁ is 38% low and λ₂ is an order of magnitude too negative (−0.75 vs −0.07), meaning the near-zero exponent — which encodes the flow's time-reparameterization symmetry — is not recovered. This λ₂ error is consistent across all nine runs. (3) *Free-running sliced-Wasserstein-1 low*: **Unknown** — SW1 was not computed in this analysis. The free-running MASE of 0.044 (well below the persistence baseline of 1.0) provides indirect evidence that rollout statistics are reasonable, but the criterion as stated cannot be evaluated. (4) *val/trajectory_r2_score > 0.9*: **Pass.** The best run achieves R² = 0.9999. (5) *Loop closure bounded and monotonically improving at low LC*: **Pass.** LC loss decreases monotonically from 1.80 (LC=0) through 1.14 (1e-6), 0.20 (1e-5), 0.037 (1e-4), down to 1.9e-6 (LC=10), confirming that even small LC weights drive the encoder toward invertibility.
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
 
-**Sweep landscape.** The trajectory-loss landscape across LC weight is a smooth monotone: the minimum sits at the lowest nonzero LC weight tested (1e-5, traj_loss = 5.6e-5), and loss rises steadily to ~1.3e-4 at LC ≥ 0.1. The Pareto front in (LC-loss, traj-loss) space is clean with six of nine runs on the frontier, and the selected run sits at the low-traj-loss extreme. The basin of near-optimal trajectory performance is narrow — only LC ∈ {0, 1e-6, 1e-5} keep traj_loss below 7e-5. This contrasts with the hypothesis that the optimum would sit in the 1e-3 to 1e-1 range; in the partial-obs setting, even moderate LC pressure degrades trajectory prediction, likely because enforcing encoder invertibility competes with the encoder's freedom to discard delay-embedding redundancy.
-
-**Lyapunov spectrum.** All runs produce positive λ₁ (range 0.17–0.43), confirming chaotic learned dynamics throughout the sweep. However, the spectrum-MSE-vs-true plot reveals a non-monotonic relationship with LC weight: runs at the extremes (LC=0, 0.1) achieve the lowest spectrum MSE (~0.24–0.27), while mid-range LC weights (1e-4 to 1e-2) have the worst (3.4–5.7). The dominant error source across all runs is λ₂: the model consistently pushes the near-zero exponent to −0.7 to −1.6, far more contracting than the true −0.07. This suggests the 3-D latent dynamics learn a dissipation rate that is qualitatively correct (one expanding, two contracting directions) but quantitatively too contractive in the second mode — possibly because the most-recent-frame reconstruction target provides no direct pressure to preserve the marginal time-direction structure that λ₂ encodes.
-
-**Overall assessment: mixed.** The hypothesis that loop closure would enforce a diffeomorphism-conjugate latent flow is partially supported — trajectory prediction is excellent (R² > 0.9998 across all runs) and chaos is robustly recovered — but the predicted Lyapunov spectrum does not match the empirical one within the 30% target due to the systematic λ₂ bias. The optimal LC weight (1e-5) is two to four orders of magnitude below the hypothesized 1e-3 to 1e-1 range, indicating that partial observability substantially shifts the trajectory-quality vs. encoder-invertibility tradeoff. No runs failed or exhibited anomalies; all nine completed 168–200 epochs with zero fast-eigenvalue fraction.
+_(to be written)_
 
 ## `run_analytics` stdout
 
@@ -215,25 +253,126 @@ Train trajectories dataset shape: torch.Size([22, 1176, 25])
 Validation trajectories dataset shape: torch.Size([7, 1176, 25])
 Test trajectories dataset shape: torch.Size([3, 1176, 25])
 Loading checkpoint epoch=197-step=39600.ckpt...
-Computing MASE ...
-Teacher-forced MASE: 0.0209
-Free-running MASE:   0.0435
-Computing Lyapunov exponents ...
-  Computing full-trajectory Lyapunov (3 test trajs, T=1176) ...
-Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
-  λ_1 = +0.3773 ± 0.4607
-  λ_2 = -1.0097 ± 1.2210
-  λ_3 = -16.1446 ± 1.4249
-Predicted Lyapunov exponents (full-length, 3 test trajs):
-  λ_1 = +0.1939 ± 0.0470
-  λ_2 = -0.8516 ± 0.0467
-  λ_3 = -16.0985 ± 0.0681
-Empirical Lyapunov exponents (mean ± std):
-  λ_1 = +0.2716 ± 0.0605
-  λ_2 = -0.1016 ± 0.0797
-  λ_3 = -13.8370 ± 0.0514
+Computing reconstruction ...
+Computing latent utilization ...
+Entropy-based utilization: 0.877
+Null subspace mean RMS: 1.316469e+00
+Computing Lyapunov exponents for KY dimension (full-length, chunk-batched) ...
+Mean KY dim (predicted): 2.006 ± 0.140
 Computing prediction windows ...
 Windows: 348 — nMSE min=0.0000, median=0.0000, mean=0.0000, max=0.0009
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 25, 25)
+decoder_jacobian: (128, 25, 25)
+Computing amplification loss ...
+Amplification loss — True state: 0.000047
+Amplification loss — Latent:     0.000037
+
+
+--- backfill 2026-04-16T04:24:35Z sections=['reconstruction', 'latent_utilization', 'kaplan_yorke', 'prediction_detail', 'long_trajectory', 'encoder_decoder_jacobians', 'amplification'] ---
+No run_id provided — selecting best run from group 'lorenz_partial_25d_additive_gennmse__lc_sweep' ...
+Found 9 total runs in JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE (group=lorenz_partial_25d_additive_gennmse__lc_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  fxb2ugkx: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  8ymb10x8: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
+  n9kvy1ms: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
+  rl5389n9: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+  uup45vfy: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  94fg726v: state=finished, lc=0.01, te=0.0, kl_dyn=0.0
+  7eknb3d1: state=finished, lc=0.1, te=0.0, kl_dyn=0.0
+  cmhou3ak: state=finished, lc=1.0, te=0.0, kl_dyn=0.0
+  i257bznv: state=finished, lc=10.0, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including fxb2ugkx (lc=0.0): use_all_runs=True (state=finished)
+  Including 8ymb10x8 (lc=1e-06): use_all_runs=True (state=finished)
+  Including n9kvy1ms (lc=1e-05): use_all_runs=True (state=finished)
+  Including rl5389n9 (lc=0.0001): use_all_runs=True (state=finished)
+  Including uup45vfy (lc=0.001): use_all_runs=True (state=finished)
+  Including 94fg726v (lc=0.01): use_all_runs=True (state=finished)
+  Including 7eknb3d1 (lc=0.1): use_all_runs=True (state=finished)
+  Including cmhou3ak (lc=1.0): use_all_runs=True (state=finished)
+  Including i257bznv (lc=10.0): use_all_runs=True (state=finished)
+Found 9 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=fxb2ugkx
+  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=8ymb10x8
+  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=n9kvy1ms
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=rl5389n9
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=uup45vfy
+  loop_closure_weight=0.01, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=94fg726v
+  loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=7eknb3d1
+  loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=cmhou3ak
+  loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=i257bznv
+n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
+  run=fxb2ugkx: DiagnosticMetrics(one_step_mase=0.03575814515352249, loop_closure_loss=1.79814875125885, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.9504662203835323e-05) (from cache, n_batches=100)
+  run=8ymb10x8: DiagnosticMetrics(one_step_mase=0.03807729482650757, loop_closure_loss=1.1350761651992798, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.9332236560294405e-05) (from cache, n_batches=100)
+  run=n9kvy1ms: DiagnosticMetrics(one_step_mase=0.02374674193561077, loop_closure_loss=0.20183616876602173, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.63506328035146e-05) (from cache, n_batches=100)
+  run=rl5389n9: DiagnosticMetrics(one_step_mase=0.04337100312113762, loop_closure_loss=0.03722800314426422, fast_eigenvalue_fraction=0.0, trajectory_val_loss=6.914730329299346e-05) (from cache, n_batches=100)
+  run=uup45vfy: DiagnosticMetrics(one_step_mase=0.02874961867928505, loop_closure_loss=0.003357512876391411, fast_eigenvalue_fraction=0.0, trajectory_val_loss=8.641776366857812e-05) (from cache, n_batches=100)
+  run=94fg726v: DiagnosticMetrics(one_step_mase=0.043471794575452805, loop_closure_loss=0.0006207296391949058, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00011430896847741678) (from cache, n_batches=100)
+  run=7eknb3d1: DiagnosticMetrics(one_step_mase=0.04558245465159416, loop_closure_loss=4.876431921729818e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.000140458854730241) (from cache, n_batches=100)
+  run=cmhou3ak: DiagnosticMetrics(one_step_mase=0.03841876611113548, loop_closure_loss=9.458739441470243e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012571370461955667) (from cache, n_batches=100)
+  run=i257bznv: DiagnosticMetrics(one_step_mase=0.046716488897800446, loop_closure_loss=1.9170552150171716e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012630168930627406) (from cache, n_batches=100)
+
+Ranking method:           best_traj_loss
+Best run ID:              n9kvy1ms
+Best loop_closure_weight: 1e-05
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.000056
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 9 / 9
+Auto-selected run_id: n9kvy1ms
+
+======================================================================
+PARETO FRONTIER RUNS (6 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  i257bznv            0.000002        0.000126
+  cmhou3ak            0.000009        0.000126
+  94fg726v            0.000621        0.000114
+  uup45vfy            0.003358        0.000086
+  rl5389n9            0.037228        0.000069
+  n9kvy1ms            0.201836        0.000056 <-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 9 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          n9kvy1ms            0.201836        0.000056 <-- active
+  pareto_knee             94fg726v            0.000621        0.000114
+  geo_rank                n9kvy1ms            0.201836        0.000056
+  minimax_rank            uup45vfy            0.003358        0.000086
+  geo_log_score           n9kvy1ms            0.201836        0.000056
+  minimax_log_score       uup45vfy            0.003358        0.000086
+======================================================================
+
+Loading run n9kvy1ms from JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE ...
+Train dataset shape: torch.Size([25322, 25, 25])
+Validation dataset shape: torch.Size([8057, 25, 25])
+Test dataset shape: torch.Size([3453, 25, 25])
+Train trajectories dataset shape: torch.Size([22, 1176, 25])
+Validation trajectories dataset shape: torch.Size([7, 1176, 25])
+Test trajectories dataset shape: torch.Size([3, 1176, 25])
+Loading checkpoint epoch=197-step=39600.ckpt...
+Computing reconstruction ...
+Computing latent utilization ...
+Entropy-based utilization: 0.877
+Null subspace mean RMS: 1.316469e+00
+Computing Lyapunov exponents for KY dimension (full-length, chunk-batched) ...
+Mean KY dim (predicted): 2.006 ± 0.140
+Computing prediction windows ...
+Windows: 348 — nMSE min=0.0000, median=0.0000, mean=0.0000, max=0.0009
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 25, 25)
+decoder_jacobian: (128, 25, 25)
+Computing amplification loss ...
+Amplification loss — True state: 0.000047
+Amplification loss — Latent:     0.000037
 ```
 
 </details>

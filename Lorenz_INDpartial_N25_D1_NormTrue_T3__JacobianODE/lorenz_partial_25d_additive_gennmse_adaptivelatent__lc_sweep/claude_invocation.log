@@ -1,1 +1,0 @@
-Discussion written to `discussion.md`. It covers all four success criteria with verdicts (Pass, Fail, Partial, Cannot evaluate), describes the broad LC optimum around 1e-6 to 1e-4, notes the systematic lambda_2 underestimation driving the Lyapunov spectrum failure, flags the tkb16u0a early-stop outlier and duplicate run pairs, and concludes partial support for the hypothesis.

@@ -6,28 +6,28 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776281297.772221
+        "report_mtime": 1776312901.6070411
       },
       {
         "group": "lorenz_full_additive_mse__lc_sweep",
         "has_report": true,
         "has_metrics": true,
-        "has_discussion": true,
-        "report_mtime": 1776281297.747542
+        "has_discussion": false,
+        "report_mtime": 1776312756.521724
       },
       {
         "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep",
         "has_report": true,
         "has_metrics": true,
-        "has_discussion": true,
-        "report_mtime": 1776281297.712482
+        "has_discussion": false,
+        "report_mtime": 1776312618.256471
       },
       {
         "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget",
         "has_report": true,
         "has_metrics": true,
-        "has_discussion": true,
-        "report_mtime": 1776281297.674434
+        "has_discussion": false,
+        "report_mtime": 1776312483.5432498
       }
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
@@ -36,72 +36,72 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776306317.6550362
+        "report_mtime": 1776313347.1650934
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776303620.288642
-      },
-      {
-        "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776294021.2533858
+        "report_mtime": 1776313198.7327435
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776281297.804227
-      }
-    ],
-    "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
+        "report_mtime": 1776313048.1283739
+      },
       {
-        "group": "lorenz_partial_25d_additive_mse__lc_sweep",
+        "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776308119.813383
-      },
+        "report_mtime": 1776312918.860198
+      }
+    ],
+    "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776283226.5946372
+        "report_mtime": 1776314079.701751
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776281297.973544
+        "report_mtime": 1776313948.6415617
       },
       {
         "group": "lorenz_partial_25d_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776281297.941575
+        "report_mtime": 1776313812.8853288
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776313676.7180905
       },
       {
         "group": "lorenz_partial_25d_additive_gennmse_adaptivelatent__lc_sweep",
         "has_report": true,
         "has_metrics": true,
-        "has_discussion": true,
-        "report_mtime": 1776281297.87255
+        "has_discussion": false,
+        "report_mtime": 1776313620.8295822
       },
       {
         "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
         "has_report": true,
         "has_metrics": true,
-        "has_discussion": true,
-        "report_mtime": 1776281297.839604
+        "has_discussion": false,
+        "report_mtime": 1776313484.21834
       }
     ],
     "WMTask_identity_encoder_verification": [
@@ -110,14 +110,14 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776297322.7314372
+        "report_mtime": 1776314784.020142
       },
       {
         "group": "wmtask_latent_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776294325.8671608
+        "report_mtime": 1776314448.0430932
       },
       {
         "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",

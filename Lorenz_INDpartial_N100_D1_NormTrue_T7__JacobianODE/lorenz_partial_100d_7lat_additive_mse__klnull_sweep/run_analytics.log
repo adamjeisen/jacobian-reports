@@ -100,3 +100,6 @@ Empirical Lyapunov exponents (mean ± std):
   λ_3 = -13.8370 ± 0.0514
 Computing prediction windows ...
 Windows: 324 — nMSE min=0.0000, median=0.0000, mean=0.0000, max=0.0005
+
+
+--- backfill 2026-04-16T04:15:11Z sections=['reconstruction', 'latent_utilization', 'kaplan_yorke', 'prediction_detail', 'long_trajectory', 'encoder_decoder_jacobians', 'amplification'] ---

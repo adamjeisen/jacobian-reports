@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-16T04:00:13Z",
+  "last_updated": "2026-04-16T04:46:37Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -136,8 +136,8 @@
         "effectively_done": 9
       },
       "training_slurm": {
-        "n_running": 0,
-        "n_pending": 9,
+        "n_running": 9,
+        "n_pending": 0,
         "n_total": 9
       }
     },
@@ -176,6 +176,74 @@
     },
     {
       "file": "20260416T020553Z-lorenz_partial_25d_additive_mse_uniform.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-additive_joint_with_lpl_gennmse__lc_obsnoise_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_full_additive_mse__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_full_additive_mse_p30__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_100d_7lat_additive_mse__klnull_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_100d_7lat_additive_mse__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_25d_additive_gennmse__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_25d_additive_gennmse_adaptivelatent__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_25d_additive_mse__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_25d_additive_mse_p30__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_25d_additive_mse_uniform__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-wmtask_latent_additive_mse_p30__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260416T040454Z-backfill-wmtask_vanilla_mse_p30__lc_sweep.yaml",
       "status": "claimed"
     }
   ]
