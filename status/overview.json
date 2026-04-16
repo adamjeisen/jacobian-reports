@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-16T11:15:13Z",
+  "last_updated": "2026-04-16T11:20:14Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -86,9 +86,9 @@
         "effectively_done": 6
       },
       "training_slurm": {
-        "n_running": 4,
+        "n_running": 3,
         "n_pending": 0,
-        "n_total": 4
+        "n_total": 3
       }
     },
     "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep": {
