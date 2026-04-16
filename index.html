@@ -195,7 +195,7 @@ async function loadDashboard() {
   } catch (e) { /* no manifest yet */ }
 
   // --- Unified rendering: merge manifest + overview, inline SLURM info ---
-  function renderCard(group, project, oInfo, hasReport) {
+  function renderCard(group, project, oInfo, hasReport, reportMtime) {
     const status = oInfo?.status || "unknown";
     const summary = oInfo?.runs_summary;
     const tSlurm = oInfo?.training_slurm;
@@ -206,6 +206,17 @@ async function loadDashboard() {
     }[status] || "";
 
     let meta = [];
+    if (reportMtime) {
+      let ts;
+      try {
+        ts = new Date(reportMtime * 1000).toLocaleString("en-US", {
+          timeZone: "America/New_York",
+          month: "short", day: "numeric",
+          hour: "numeric", minute: "2-digit",
+        });
+      } catch (e) { ts = "?"; }
+      meta.push(`<span title="report generated">${ts} ET</span>`);
+    }
     if (summary) {
       meta.push(`${summary.terminal || 0} terminal · ${summary.in_flight || 0} in-flight`);
     }
@@ -246,7 +257,7 @@ async function loadDashboard() {
       div.innerHTML = `<div class="project-name">${project}</div><div class="sweep-list"></div>`;
       const list = div.querySelector(".sweep-list");
       for (const g of groups) {
-        list.innerHTML += renderCard(g.group, project, overview?.sweeps?.[g.group], g.has_report);
+        list.innerHTML += renderCard(g.group, project, overview?.sweeps?.[g.group], g.has_report, g.report_mtime);
       }
       projectsDiv.appendChild(div);
     }
