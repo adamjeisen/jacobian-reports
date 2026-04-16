@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JacobianODE — Sweep Reports</title>
+<style>
+  :root {
+    --bg: #0d1117; --fg: #c9d1d9; --fg2: #8b949e; --accent: #58a6ff;
+    --green: #3fb950; --yellow: #d29922; --red: #f85149; --border: #30363d;
+    --card: #161b22;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+         background: var(--bg); color: var(--fg); line-height: 1.6;
+         padding: 2rem; max-width: 1200px; margin: 0 auto; }
+  h1 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1.4rem; }
+  h2 { color: var(--fg); margin: 2rem 0 0.8rem; font-size: 1.1rem;
+       border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  .subtitle { color: var(--fg2); font-size: 0.85rem; margin-bottom: 1.5rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Auth gate */
+  #auth-gate { text-align: center; margin-top: 20vh; }
+  #auth-gate input { background: var(--card); border: 1px solid var(--border);
+    color: var(--fg); padding: 0.5rem 1rem; font-family: inherit;
+    font-size: 1rem; border-radius: 4px; width: 250px; }
+  #auth-gate button { background: var(--accent); color: var(--bg);
+    border: none; padding: 0.5rem 1.2rem; font-family: inherit;
+    font-size: 0.9rem; border-radius: 4px; cursor: pointer; margin-left: 0.5rem; }
+  #auth-gate .error { color: var(--red); margin-top: 0.5rem; font-size: 0.85rem; }
+
+  /* Dashboard */
+  #dashboard { display: none; }
+  .status-bar { display: flex; gap: 1.5rem; flex-wrap: wrap;
+    margin-bottom: 1.5rem; font-size: 0.85rem; }
+  .status-bar .stat { background: var(--card); padding: 0.5rem 1rem;
+    border-radius: 6px; border: 1px solid var(--border); }
+  .stat .num { font-size: 1.3rem; font-weight: bold; }
+
+  /* Project cards */
+  .project { margin-bottom: 1.5rem; }
+  .project-name { font-size: 0.95rem; color: var(--fg2); margin-bottom: 0.4rem; }
+  .sweep-list { display: grid; gap: 0.5rem; }
+  .sweep-card { background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.7rem 1rem; display: flex;
+    justify-content: space-between; align-items: center; flex-wrap: wrap;
+    gap: 0.5rem; }
+  .sweep-card:hover { border-color: var(--accent); }
+  .sweep-name { font-size: 0.85rem; }
+  .sweep-meta { display: flex; gap: 0.8rem; align-items: center;
+    font-size: 0.78rem; color: var(--fg2); }
+
+  /* Badges */
+  .badge { padding: 0.15rem 0.5rem; border-radius: 3px; font-size: 0.75rem;
+    font-weight: 600; text-transform: uppercase; }
+  .badge-active { background: #d2992233; color: var(--yellow); }
+  .badge-processed { background: #3fb95033; color: var(--green); }
+  .badge-done { background: #58a6ff33; color: var(--accent); }
+  .badge-failed { background: #f8514933; color: var(--red); }
+
+  .refresh-note { color: var(--fg2); font-size: 0.75rem; margin-top: 2rem;
+    text-align: center; }
+
+  /* Instructions queue */
+  .queue-item { font-size: 0.82rem; padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border); }
+  .queue-item:last-child { border: none; }
+  .empty { color: var(--fg2); font-style: italic; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<!-- ============ AUTH GATE ============ -->
+<div id="auth-gate">
+  <h1>JacobianODE Reports</h1>
+  <p style="color:var(--fg2); margin: 1rem 0 2rem;">Enter password to continue</p>
+  <div>
+    <input type="password" id="pw-input" placeholder="password"
+           onkeydown="if(event.key==='Enter') checkAuth()">
+    <button onclick="checkAuth()">→</button>
+  </div>
+  <div class="error" id="pw-error"></div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="dashboard">
+  <h1>JacobianODE — Sweep Reports</h1>
+  <div class="subtitle" id="last-updated"></div>
+
+  <div class="status-bar" id="status-bar"></div>
+
+  <h2>Reports by project</h2>
+  <div id="projects"></div>
+
+  <h2>Instruction queue</h2>
+  <div id="queue"></div>
+
+  <div class="refresh-note">Auto-refreshes every 60 s · <a href="#" onclick="loadDashboard();return false;">refresh now</a></div>
+</div>
+
+<script>
+// --- Auth ---
+// SHA-256 of the password. Generate a new one with:
+//   echo -n "yourpassword" | sha256sum
+// Then replace the hash below.
+const PW_HASH = "SET_YOUR_HASH_HERE";
+
+async function sha256(msg) {
+  const buf = await crypto.subtle.digest("SHA-256",
+    new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(b =>
+    b.toString(16).padStart(2, "0")).join("");
+}
+
+async function checkAuth() {
+  const input = document.getElementById("pw-input").value;
+  const hash = await sha256(input);
+  if (hash === PW_HASH || PW_HASH === "SET_YOUR_HASH_HERE") {
+    localStorage.setItem("jac_auth", "1");
+    showDashboard();
+  } else {
+    document.getElementById("pw-error").textContent = "wrong password";
+  }
+}
+
+function showDashboard() {
+  document.getElementById("auth-gate").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+  loadDashboard();
+}
+
+if (localStorage.getItem("jac_auth") === "1") {
+  showDashboard();
+}
+
+// --- Dashboard ---
+async function loadDashboard() {
+  // 1. Load overview.json
+  let overview = null;
+  try {
+    const r = await fetch("status/overview.json?" + Date.now());
+    overview = await r.json();
+  } catch (e) { console.warn("overview.json not available:", e); }
+
+  if (overview) {
+    document.getElementById("last-updated").textContent =
+      "Last controller cycle: " + (overview.last_updated || "—");
+
+    // Status bar
+    const sweeps = overview.sweeps || {};
+    const counts = { active: 0, done: 0, processed: 0, failed: 0 };
+    for (const s of Object.values(sweeps)) counts[s.status] = (counts[s.status] || 0) + 1;
+    const total = Object.keys(sweeps).length;
+    document.getElementById("status-bar").innerHTML =
+      `<div class="stat"><div class="num">${total}</div>total sweeps</div>` +
+      `<div class="stat"><div class="num" style="color:var(--yellow)">${counts.active}</div>active</div>` +
+      `<div class="stat"><div class="num" style="color:var(--green)">${counts.processed}</div>processed</div>` +
+      `<div class="stat"><div class="num" style="color:var(--accent)">${counts.done}</div>done (awaiting analysis)</div>` +
+      `<div class="stat"><div class="num" style="color:var(--red)">${counts.failed}</div>failed</div>`;
+  }
+
+  // 2. Discover reports by scanning known project dirs.
+  //    We fetch the GitHub API to list directories, or fall back to a
+  //    pre-built manifest. For simplicity: scan overview sweeps for their
+  //    projects and build links.
+  const projectMap = {};  // project -> [{group, status, report_exists, runs_summary}]
+
+  if (overview) {
+    for (const [group, info] of Object.entries(overview.sweeps || {})) {
+      // Try to find the report by checking common project prefixes
+      // We don't know the project name from overview alone, so we'll
+      // discover it from the filesystem via a manifest.
+      if (!projectMap["_from_overview"]) projectMap["_from_overview"] = [];
+      projectMap["_from_overview"].push({ group, ...info });
+    }
+  }
+
+  // 3. Load manifest (generated by build script, or we build it live)
+  let manifest = null;
+  try {
+    const r = await fetch("manifest.json?" + Date.now());
+    manifest = await r.json();
+  } catch (e) { /* no manifest yet */ }
+
+  const projectsDiv = document.getElementById("projects");
+  if (manifest && manifest.projects) {
+    projectsDiv.innerHTML = "";
+    for (const [project, groups] of Object.entries(manifest.projects)) {
+      const div = document.createElement("div");
+      div.className = "project";
+      div.innerHTML = `<div class="project-name">${project}</div><div class="sweep-list"></div>`;
+      const list = div.querySelector(".sweep-list");
+
+      for (const g of groups) {
+        const oInfo = overview?.sweeps?.[g.group] || {};
+        const status = oInfo.status || "unknown";
+        const summary = oInfo.runs_summary;
+        const summaryStr = summary
+          ? `${summary.terminal || 0} terminal · ${summary.in_flight || 0} in-flight`
+          : "";
+        const badgeClass = {
+          active: "badge-active", processed: "badge-processed",
+          done: "badge-done", failed: "badge-failed"
+        }[status] || "";
+
+        const reportLink = g.has_report
+          ? `<a href="${project}/${g.group}/report.html">view report</a>`
+          : `<span style="color:var(--fg2)">no report yet</span>`;
+
+        list.innerHTML += `
+          <div class="sweep-card">
+            <div>
+              <span class="sweep-name">${g.group}</span>
+            </div>
+            <div class="sweep-meta">
+              ${summaryStr ? `<span>${summaryStr}</span>` : ""}
+              <span class="badge ${badgeClass}">${status}</span>
+              ${reportLink}
+            </div>
+          </div>`;
+      }
+      projectsDiv.appendChild(div);
+    }
+  } else if (overview) {
+    // Fallback: flat list from overview (no project grouping)
+    projectsDiv.innerHTML = '<div class="empty">No manifest.json yet — showing flat list from overview</div>';
+    const list = document.createElement("div");
+    list.className = "sweep-list";
+    for (const [group, info] of Object.entries(overview.sweeps || {})) {
+      const status = info.status || "unknown";
+      const badgeClass = {
+        active: "badge-active", processed: "badge-processed",
+        done: "badge-done", failed: "badge-failed"
+      }[status] || "";
+      list.innerHTML += `
+        <div class="sweep-card">
+          <span class="sweep-name">${group}</span>
+          <span class="badge ${badgeClass}">${status}</span>
+        </div>`;
+    }
+    projectsDiv.appendChild(list);
+  } else {
+    projectsDiv.innerHTML = '<div class="empty">No status data available</div>';
+  }
+
+  // 4. Queue (pending instructions)
+  const queueDiv = document.getElementById("queue");
+  let queueData = null;
+  try {
+    const r = await fetch("instructions/queue.json?" + Date.now());
+    queueData = await r.json();
+  } catch (e) { /* no queue manifest */ }
+  if (queueData && queueData.length > 0) {
+    queueDiv.innerHTML = queueData.map(q =>
+      `<div class="queue-item">${q.file} — ${q.experiment} (${q.status})</div>`
+    ).join("");
+  } else {
+    queueDiv.innerHTML = '<div class="empty">No pending instructions</div>';
+  }
+}
+
+// Auto-refresh
+setInterval(loadDashboard, 60000);
+</script>
+</body>
+</html>
