@@ -1,0 +1,64 @@
+{
+  "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep",
+  "completed_at": "2026-04-16T21:10:15Z",
+  "outcome": "complete_with_failures",
+  "experiment_metadata": {
+    "lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep": {
+      "description": "Same base as lorenz_partial_25d_additive_mse_uniform_p30. Fixes\nloop_closure_weight=1e-5 (best from the prior LC sweep, run\nz4l1eazh). Sweeps training.lightning.reconstruction_loss_weight\nover {1, 10, 100} to test whether pushing the dyn-only bottleneck\nresidual smaller drags <tr(dg/dz)> toward the Lorenz divergence\n-13.67 and hence \u03bb\u2083 toward -14.57.\n",
+      "hypothesis": "For z4l1eazh, the full-latent cycle D(E(x))=x held at ~1e-8 but\nthe dyn-only cycle D([E(x)_dyn, 0]) had ~0.7% RMS residual \u2014 so\ntraining data x_de does not lie exactly on the model's 3-D image\nmanifold M = {D([z_dyn, 0])}. <tr(dg/dz)> came out at -10.05\ninstead of -13.67, with non-constant trace including locally\npositive regions. The story: off-M slippage concentrates in the\nstable direction (loss-invisible) and softens \u03bb\u2083.\nIf increasing reconstruction_loss_weight genuinely pushes x_de\nonto M, we should see:\n  - dyn-only reconstruction loss shrink with weight\n  - <tr(dg/dz)> track toward -13.67\n  - \u03bb\u2083 approach -14.57\nIf the trace gap is insensitive to reconstruction weight, the\nbottleneck-residual hypothesis is wrong and we need to look\nelsewhere (e.g. z_null regularization, Jacobian-net capacity,\noptimization dynamics).\n",
+      "success_criteria": [
+        "dyn-only reconstruction loss monotonically decreases with weight",
+        "<tr(dg/dz)> at recon_weight=100 is within 20% of -13.67",
+        "\u03bb\u2083 at recon_weight=100 is more negative than at recon_weight=1"
+      ]
+    }
+  },
+  "expected_run_count": 3,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep",
+      "hydra.launcher.partition=mit_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep",
+        "overrides": [
+          "training.lightning.reconstruction_loss_weight=1",
+          "hydra.launcher.partition=mit_normal_gpu"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep",
+        "overrides": [
+          "training.lightning.reconstruction_loss_weight=10",
+          "hydra.launcher.partition=mit_normal_gpu"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_recon_sweep",
+        "overrides": [
+          "training.lightning.reconstruction_loss_weight=100",
+          "hydra.launcher.partition=mit_normal_gpu"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE",
+    "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "1bb0d97",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-16T16:35:10Z"
+}
