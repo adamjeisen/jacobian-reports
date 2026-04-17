@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-17T21:00:11Z",
+  "last_updated": "2026-04-17T21:06:54Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -221,6 +221,20 @@
         "effectively_done": 2
       }
     },
+    "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__enchd_lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 45,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 45,
+        "n_total": 45
+      }
+    },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__lc_sweep": {
       "status": "processed",
       "runs_summary": {
@@ -228,6 +242,34 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      }
+    },
+    "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__nolpl_lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 9,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 9,
+        "n_total": 9
+      }
+    },
+    "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 72,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 72,
+        "n_total": 72
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
@@ -364,6 +406,18 @@
     },
     {
       "file": "20260417T151605Z-lorenz_partial_25d_additive_gennmse.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260417T205640Z-lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__enchd_lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260417T205640Z-lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__nolpl_lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260417T205640Z-lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep.yaml",
       "status": "claimed"
     }
   ]
