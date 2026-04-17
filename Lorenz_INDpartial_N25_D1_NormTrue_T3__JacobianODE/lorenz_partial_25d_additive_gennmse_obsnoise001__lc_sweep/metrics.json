@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "group": "lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep",
+  "analyzed_at": "2026-04-17T18:55:00Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "7hgswub6",
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0009832428768277168,
+        "best_traj_loss_epoch": 152.0,
+        "best_mase": 0.5695109367370605,
+        "best_mase_epoch": 152.0,
+        "lc_loss_at_best_tl": 0.8583828210830688,
+        "r2_at_best_tl": 0.9990338087081909,
+        "n_epochs": 164
+      },
+      {
+        "run_id": "z8a1jmbf",
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0012089101364836097,
+        "best_traj_loss_epoch": 116.0,
+        "best_mase": 0.6154840588569641,
+        "best_mase_epoch": 117.0,
+        "lc_loss_at_best_tl": 0.03484678640961647,
+        "r2_at_best_tl": 0.9988071322441101,
+        "n_epochs": 121
+      },
+      {
+        "run_id": "cj1fzag0",
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.001435752841643989,
+        "best_traj_loss_epoch": 151.0,
+        "best_mase": 0.6643447279930115,
+        "best_mase_epoch": 151.0,
+        "lc_loss_at_best_tl": 0.00018559489399194717,
+        "r2_at_best_tl": 0.9985857605934143,
+        "n_epochs": 159
+      },
+      {
+        "run_id": "0xhvd2y7",
+        "state": "finished",
+        "lc_weight": 1.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0015112519031390548,
+        "best_traj_loss_epoch": 189.0,
+        "best_mase": 0.6875145435333252,
+        "best_mase_epoch": 187.0,
+        "lc_loss_at_best_tl": 4.1786850488279015e-05,
+        "r2_at_best_tl": 0.9985089302062988,
+        "n_epochs": 193
+      },
+      {
+        "run_id": "3xgzru7u",
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.001242600497789681,
+        "best_traj_loss_epoch": 177.0,
+        "best_mase": 0.6174716949462891,
+        "best_mase_epoch": 190.0,
+        "lc_loss_at_best_tl": 0.0014590458013117313,
+        "r2_at_best_tl": 0.9987779855728149,
+        "n_epochs": 191
+      },
+      {
+        "run_id": "d8ireow1",
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0009647952974773943,
+        "best_traj_loss_epoch": 177.0,
+        "best_mase": 0.5625687837600708,
+        "best_mase_epoch": 180.0,
+        "lc_loss_at_best_tl": 0.17248038947582245,
+        "r2_at_best_tl": 0.9990522861480713,
+        "n_epochs": 188
+      },
+      {
+        "run_id": "o14xwnle",
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0008574000676162541,
+        "best_traj_loss_epoch": 169.0,
+        "best_mase": 0.5354397296905518,
+        "best_mase_epoch": 174.0,
+        "lc_loss_at_best_tl": 7.134218692779541,
+        "r2_at_best_tl": 0.9991599917411804,
+        "n_epochs": 179
+      },
+      {
+        "run_id": "rnh0mo3j",
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0008926484733819962,
+        "best_traj_loss_epoch": 160.0,
+        "best_mase": 0.5411962270736694,
+        "best_mase_epoch": 160.0,
+        "lc_loss_at_best_tl": 4.6850104331970215,
+        "r2_at_best_tl": 0.9991257190704346,
+        "n_epochs": 166
+      },
+      {
+        "run_id": "qhg02flb",
+        "state": "finished",
+        "lc_weight": 10.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0020244133193045855,
+        "best_traj_loss_epoch": 100.0,
+        "best_mase": 0.8029139637947083,
+        "best_mase_epoch": 96.0,
+        "lc_loss_at_best_tl": 2.3997810785658658e-05,
+        "r2_at_best_tl": 0.997998833656311,
+        "n_epochs": 107
+      }
+    ],
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "o14xwnle",
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0008574000676162541,
+        "best_traj_loss_epoch": 169.0,
+        "best_mase": 0.5354397296905518,
+        "best_mase_epoch": 174.0,
+        "lc_loss_at_best_tl": 7.134218692779541,
+        "r2_at_best_tl": 0.9991599917411804,
+        "n_epochs": 179
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "o14xwnle",
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0008574000676162541,
+      "best_traj_loss_epoch": 169.0,
+      "best_mase": 0.5354397296905518,
+      "best_mase_epoch": 174.0,
+      "lc_loss_at_best_tl": 7.134218692779541,
+      "r2_at_best_tl": 0.9991599917411804,
+      "n_epochs": 179
+    },
+    "n_runs": 9
+  },
+  "per_run_lyapunov": {
+    "7hgswub6": {
+      "lambda_spectrum": [
+        0.09845495969057083,
+        -0.9965837597846985,
+        -28.164899826049805
+      ],
+      "lambda_max": 0.09845495969057083,
+      "lambda_sum": -29.06302833557129,
+      "kaplan_yorke_dim": 1.0987924337387085,
+      "error": null
+    },
+    "z8a1jmbf": {
+      "lambda_spectrum": [
+        0.27538686990737915,
+        -1.0493969917297363,
+        -22.026206970214844
+      ],
+      "lambda_max": 0.27538686990737915,
+      "lambda_sum": -22.800216674804688,
+      "kaplan_yorke_dim": 1.2624239921569824,
+      "error": null
+    },
+    "cj1fzag0": {
+      "lambda_spectrum": [
+        0.3806857764720917,
+        -0.9023836255073547,
+        -15.930243492126465
+      ],
+      "lambda_max": 0.3806857764720917,
+      "lambda_sum": -16.451940536499023,
+      "kaplan_yorke_dim": 1.4218668937683105,
+      "error": null
+    },
+    "0xhvd2y7": {
+      "lambda_spectrum": [
+        0.5634675025939941,
+        -1.5768344402313232,
+        -17.721227645874023
+      ],
+      "lambda_max": 0.5634675025939941,
+      "lambda_sum": -18.734594345092773,
+      "kaplan_yorke_dim": 1.357340931892395,
+      "error": null
+    },
+    "3xgzru7u": {
+      "lambda_spectrum": [
+        0.3471881151199341,
+        -0.9482856392860413,
+        -20.65057373046875
+      ],
+      "lambda_max": 0.3471881151199341,
+      "lambda_sum": -21.251670837402344,
+      "kaplan_yorke_dim": 1.3661218881607056,
+      "error": null
+    },
+    "d8ireow1": {
+      "lambda_spectrum": [
+        0.16905249655246735,
+        -0.9132004380226135,
+        -26.113819122314453
+      ],
+      "lambda_max": 0.16905249655246735,
+      "lambda_sum": -26.857967376708984,
+      "kaplan_yorke_dim": 1.185120940208435,
+      "error": null
+    },
+    "o14xwnle": {
+      "lambda_spectrum": [
+        0.057363271713256836,
+        -1.1581460237503052,
+        -23.40863800048828
+      ],
+      "lambda_max": 0.057363271713256836,
+      "lambda_sum": -24.50942039489746,
+      "kaplan_yorke_dim": 1.049530267715454,
+      "error": null
+    },
+    "rnh0mo3j": {
+      "lambda_spectrum": [
+        0.051398180425167084,
+        -1.0707207918167114,
+        -23.40770721435547
+      ],
+      "lambda_max": 0.051398180425167084,
+      "lambda_sum": -24.427030563354492,
+      "kaplan_yorke_dim": 1.0480033159255981,
+      "error": null
+    },
+    "qhg02flb": {
+      "lambda_spectrum": [
+        0.32427772879600525,
+        -1.6452293395996094,
+        -16.737709045410156
+      ],
+      "lambda_max": 0.32427772879600525,
+      "lambda_sum": -18.05866050720215,
+      "kaplan_yorke_dim": 1.1971018314361572,
+      "error": null
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.4042733907699585,
+    -0.1893320232629776,
+    -13.881906509399414
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Best run's leading Lyapunov exponent > 0 (chaos recovered)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best run's predicted Lyapunov spectrum within ~30% of empirical",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best run's free-running sliced-Wasserstein-1 to training data distribution is low (sanity: obs histograms overlap)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "val/trajectory_r2_score > 0.9 at the best configuration",
+      "verdict": "Pass",
+      "note": "Best R\u00b2 = 0.9992; threshold > 0.9"
+    },
+    {
+      "criterion": "Loop closure bounded and monotonically improving at low LC",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep/figures/per_run_lyapunov_relerr.png"
+  },
+  "analytics_error": "AttributeError: 'DiscoveredSweep' object has no attribute 'te_weights'",
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

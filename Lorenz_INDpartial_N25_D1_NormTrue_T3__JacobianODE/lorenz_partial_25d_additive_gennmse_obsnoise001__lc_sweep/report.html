@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE/groups/lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep">Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-17T15:20:10Z<br />
+<strong>Completed</strong>: 2026-04-17T18:50:13Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>fd26c55</code><br />
+<strong>Expected runs</strong>: 9</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_25d_additive_gennmse</code></h3>
+<p><strong>Description</strong></p>
+<p>Partial-obs Lorenz: observe only x (index 0), n_delays=25,
+delay_spacing=1. Encoder input: 25-D delay vector. Dynamic latent:
+3-D (z_dyn). Null subspace: 22-D with kl_null_weight=0 (no
+structural penalty, per the additive+zero_init design). Joint
+training of encoder + Jacobian dynamics from the start; active loss
+terms: decoded-prediction (trajectory) + latent-prediction +
+reconstruction + loop-closure, all with gennMSE. Reconstruction mode
+= most_recent so recon + decoded-trajectory losses score only the
+current-time frame, not the older lags (avoids the redundant-target
+/ thin-direction pathology flagged in the recent partial-obs
+hypothesis). obs_noise_scale=0. Uses the clean-encoding LPL target
+fix (no-op here since obs_noise=0, but kept for consistency).</p>
+<p><strong>Hypothesis</strong></p>
+<p>With loop closure enforcing encoder invertibility, the latent
+dynamics should be diffeomorphism-conjugate to the true Lorenz flow,
+preserving its Lyapunov spectrum (λ ≈ [0.91, 0, -14.57]) despite
+observing only x(t). The optimal LC weight likely sits in the
+1e-3..1e-1 range (full-obs sweep peaked at 1e-1 with spectrum_mse
+≈ 0.011). Free-running rollouts in observation space should be
+chaotic with long-run statistics matching the training data.</p>
+<p>Open risk from the partial-obs sufficient-statistic hypothesis: the
+only hard constraint on z_dyn information content is reconstructing
+the current frame, so the encoder may dump history into z_null
+rather than surfacing it in z_dyn. Loop closure + LPL should apply
+counterbalancing pressure; if they don't, we'd see high traj_val
+loss / spectrum mismatch and know to revisit the loss design.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>Best run's leading Lyapunov exponent &gt; 0 (chaos recovered)</li>
+<li>Best run's predicted Lyapunov spectrum within ~30% of empirical</li>
+<li>Best run's free-running sliced-Wasserstein-1 to training data distribution is low (sanity: obs histograms overlap)</li>
+<li>val/trajectory_r2_score &gt; 0.9 at the best configuration</li>
+<li>Loop closure bounded and monotonically improving at low LC</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Overall best MASE</strong>: 0.5354 (LC weight = 0.0e+00, obs_noise_scale = 0.00)
+<strong>Overall best traj loss</strong>: 0.00086 at epoch 169.0
+<strong>Runs analyzed</strong>: 9</p>
+<h3>Best run per <code>obs_noise_scale</code></h3>
+<table>
+<thead>
+<tr>
+<th>obs_noise_scale</th>
+<th>Best LC weight</th>
+<th>Best traj loss</th>
+<th>MASE at best</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0</td>
+<td>0.0e+00</td>
+<td>0.00086</td>
+<td>0.5354</td>
+<td>0.9992</td>
+<td>7.134</td>
+<td>169.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best run's leading Lyapunov exponent &gt; 0 (chaos recovered)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best run's predicted Lyapunov spectrum within ~30% of empirical</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best run's free-running sliced-Wasserstein-1 to training data distribution is low (sanity: obs histograms overlap)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>val/trajectory_r2_score &gt; 0.9 at the best configuration</td>
+<td><strong>Pass</strong></td>
+<td>Best R² = 0.9992; threshold &gt; 0.9</td>
+</tr>
+<tr>
+<td>Loop closure bounded and monotonically improving at low LC</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+</body>
+</html>
