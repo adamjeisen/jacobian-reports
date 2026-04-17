@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "group": "lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep",
-  "analyzed_at": "2026-04-17T04:02:25Z",
+  "analyzed_at": "2026-04-17T05:56:33Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -19,7 +19,7 @@
       },
       {
         "run_id": "o0lmk9do",
-        "state": "finished",
+        "state": "running",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
         "best_traj_loss": NaN,
@@ -28,11 +28,11 @@
         "best_mase_epoch": 0.0,
         "lc_loss_at_best_tl": 0.5421668887138367,
         "r2_at_best_tl": NaN,
-        "n_epochs": 16
+        "n_epochs": 72
       },
       {
         "run_id": "rd78e3p1",
-        "state": "crashed",
+        "state": "running",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
         "best_traj_loss": NaN,
@@ -41,72 +41,72 @@
         "best_mase_epoch": 0.0,
         "lc_loss_at_best_tl": 4.470466136932373,
         "r2_at_best_tl": NaN,
-        "n_epochs": 20
+        "n_epochs": 90
       },
       {
         "run_id": "f94958hz",
         "state": "running",
         "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.06536530703306198,
-        "best_traj_loss_epoch": 28.0,
-        "best_mase": 5.997495651245117,
-        "best_mase_epoch": 28.0,
-        "lc_loss_at_best_tl": 1.1145655207656091e-06,
-        "r2_at_best_tl": 0.821625292301178,
-        "n_epochs": 34
+        "best_traj_loss": 0.0025481125339865685,
+        "best_traj_loss_epoch": 109.0,
+        "best_mase": 1.150071620941162,
+        "best_mase_epoch": 109.0,
+        "lc_loss_at_best_tl": 0.00021532965183723718,
+        "r2_at_best_tl": 0.9931435585021973,
+        "n_epochs": 110
       },
       {
         "run_id": "wq8wfyxy",
-        "state": "finished",
+        "state": "running",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.03145931288599968,
-        "best_traj_loss_epoch": 15.0,
-        "best_mase": 3.7724609375,
-        "best_mase_epoch": 18.0,
-        "lc_loss_at_best_tl": 0.0015192163409665227,
-        "r2_at_best_tl": 0.9149510264396667,
-        "n_epochs": 19
+        "best_traj_loss": 0.0022566604893654585,
+        "best_traj_loss_epoch": 87.0,
+        "best_mase": 0.9510465860366821,
+        "best_mase_epoch": 87.0,
+        "lc_loss_at_best_tl": 0.0030754271429032087,
+        "r2_at_best_tl": 0.9938022494316101,
+        "n_epochs": 90
       },
       {
         "run_id": "x8gguowy",
-        "state": "crashed",
+        "state": "running",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.06064613163471222,
-        "best_traj_loss_epoch": 18.0,
-        "best_mase": 5.703392505645752,
-        "best_mase_epoch": 18.0,
-        "lc_loss_at_best_tl": 4.5739558117929846e-05,
-        "r2_at_best_tl": 0.8344024419784546,
-        "n_epochs": 19
+        "best_traj_loss": 0.003197801997885108,
+        "best_traj_loss_epoch": 87.0,
+        "best_mase": 1.2089115381240845,
+        "best_mase_epoch": 87.0,
+        "lc_loss_at_best_tl": 0.0003040399169549346,
+        "r2_at_best_tl": 0.9913328289985657,
+        "n_epochs": 89
       },
       {
         "run_id": "rav3nrkr",
-        "state": "crashed",
+        "state": "running",
         "lc_weight": 10.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.07025763392448425,
-        "best_traj_loss_epoch": 7.0,
-        "best_mase": 5.986386775970459,
-        "best_mase_epoch": 7.0,
-        "lc_loss_at_best_tl": 1.6082266256489675e-06,
-        "r2_at_best_tl": 0.810721218585968,
-        "n_epochs": 19
+        "best_traj_loss": 0.05500970780849457,
+        "best_traj_loss_epoch": 50.0,
+        "best_mase": 5.369897365570068,
+        "best_mase_epoch": 50.0,
+        "lc_loss_at_best_tl": 3.789822500266382e-08,
+        "r2_at_best_tl": 0.8501905798912048,
+        "n_epochs": 51
       },
       {
         "run_id": "5ona41iw",
-        "state": "running",
+        "state": "crashed",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0015311388997361064,
-        "best_traj_loss_epoch": 55.0,
-        "best_mase": 0.8543986678123474,
-        "best_mase_epoch": 55.0,
-        "lc_loss_at_best_tl": 1.8584074974060059,
-        "r2_at_best_tl": 0.9957073926925659,
-        "n_epochs": 59
+        "best_traj_loss": 0.0007883651414886117,
+        "best_traj_loss_epoch": 101.0,
+        "best_mase": 0.6975588798522949,
+        "best_mase_epoch": 101.0,
+        "lc_loss_at_best_tl": 3.420879602432251,
+        "r2_at_best_tl": 0.9978319406509399,
+        "n_epochs": 113
       },
       {
         "run_id": "qxlwn990",
@@ -123,71 +123,71 @@
       },
       {
         "run_id": "8p5gxwdn",
-        "state": "running",
+        "state": "crashed",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.004808648489415646,
-        "best_traj_loss_epoch": 54.0,
-        "best_mase": 1.2606006860733032,
-        "best_mase_epoch": 54.0,
-        "lc_loss_at_best_tl": 0.0015684973914176226,
-        "r2_at_best_tl": 0.986725389957428,
-        "n_epochs": 56
+        "best_traj_loss": 0.0011718646856024861,
+        "best_traj_loss_epoch": 101.0,
+        "best_mase": 0.773883581161499,
+        "best_mase_epoch": 101.0,
+        "lc_loss_at_best_tl": 0.004660323262214661,
+        "r2_at_best_tl": 0.9967925548553467,
+        "n_epochs": 114
       },
       {
         "run_id": "ub7bqcft",
-        "state": "running",
+        "state": "crashed",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0026718147564679384,
-        "best_traj_loss_epoch": 50.0,
-        "best_mase": 0.9554280638694763,
-        "best_mase_epoch": 50.0,
-        "lc_loss_at_best_tl": 0.05828094854950905,
-        "r2_at_best_tl": 0.9926732778549194,
-        "n_epochs": 52
+        "best_traj_loss": 0.0008400846272706985,
+        "best_traj_loss_epoch": 101.0,
+        "best_mase": 0.7295258045196533,
+        "best_mase_epoch": 96.0,
+        "lc_loss_at_best_tl": 0.03483300283551216,
+        "r2_at_best_tl": 0.9976932406425476,
+        "n_epochs": 106
       },
       {
         "run_id": "jrndl5j0",
         "state": "running",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.11435311287641525,
-        "best_traj_loss_epoch": 6.0,
-        "best_mase": 5.979589939117432,
-        "best_mase_epoch": 6.0,
-        "lc_loss_at_best_tl": 0.014506632462143898,
-        "r2_at_best_tl": 0.6885333061218262,
-        "n_epochs": 7
+        "best_traj_loss": 0.0013427409576252103,
+        "best_traj_loss_epoch": 79.0,
+        "best_mase": 0.8320584297180176,
+        "best_mase_epoch": 71.0,
+        "lc_loss_at_best_tl": 0.03575555980205536,
+        "r2_at_best_tl": 0.9962852597236633,
+        "n_epochs": 80
       }
     ],
     "best_by_obs_noise_scale": {
       "0.0": {
-        "run_id": "qxlwn990",
-        "state": "finished",
+        "run_id": "5ona41iw",
+        "state": "crashed",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0010818451410159469,
-        "best_traj_loss_epoch": 65.0,
-        "best_mase": 0.7773516178131104,
-        "best_mase_epoch": 62.0,
-        "lc_loss_at_best_tl": 2.2841503620147705,
-        "r2_at_best_tl": 0.9970294833183289,
-        "n_epochs": 71
+        "best_traj_loss": 0.0007883651414886117,
+        "best_traj_loss_epoch": 101.0,
+        "best_mase": 0.6975588798522949,
+        "best_mase_epoch": 101.0,
+        "lc_loss_at_best_tl": 3.420879602432251,
+        "r2_at_best_tl": 0.9978319406509399,
+        "n_epochs": 113
       }
     },
     "overall_best_mase": {
-      "run_id": "i8nq6c39",
-      "state": "finished",
-      "lc_weight": 1e-06,
+      "run_id": "5ona41iw",
+      "state": "crashed",
+      "lc_weight": 0.0,
       "obs_noise_scale": 0.0,
-      "best_traj_loss": 0.0011247723596170545,
-      "best_traj_loss_epoch": 65.0,
-      "best_mase": 0.7748751640319824,
-      "best_mase_epoch": 59.0,
-      "lc_loss_at_best_tl": 1.8115429878234863,
-      "r2_at_best_tl": 0.9969084858894348,
-      "n_epochs": 71
+      "best_traj_loss": 0.0007883651414886117,
+      "best_traj_loss_epoch": 101.0,
+      "best_mase": 0.6975588798522949,
+      "best_mase_epoch": 101.0,
+      "lc_loss_at_best_tl": 3.420879602432251,
+      "r2_at_best_tl": 0.9978319406509399,
+      "n_epochs": 113
     },
     "n_runs": 12
   },
@@ -205,36 +205,6 @@
       "lambda_max": 0.07635841518640518,
       "lambda_sum": -22.628938674926758,
       "kaplan_yorke_dim": 1.8432434797286987,
-      "error": null
-    },
-    "o0lmk9do": {
-      "lambda_spectrum": [
-        0.64146888256073,
-        -0.36943700909614563,
-        -2.2995047569274902,
-        -2.4978392124176025,
-        -3.5111465454101562,
-        -3.779013156890869,
-        -7.684252738952637
-      ],
-      "lambda_max": 0.64146888256073,
-      "lambda_sum": -19.499725341796875,
-      "kaplan_yorke_dim": 2.118300199508667,
-      "error": null
-    },
-    "wq8wfyxy": {
-      "lambda_spectrum": [
-        0.24290837347507477,
-        0.035788413137197495,
-        -0.5055045485496521,
-        -0.6751866340637207,
-        -1.2517825365066528,
-        -1.471436619758606,
-        -2.1934564113616943
-      ],
-      "lambda_max": 0.24290837347507477,
-      "lambda_sum": -5.818670272827148,
-      "kaplan_yorke_dim": 2.551323890686035,
       "error": null
     },
     "qxlwn990": {
@@ -268,7 +238,7 @@
     {
       "criterion": "val/trajectory_r2 > 0.9 at best LC",
       "verdict": "Pass",
-      "note": "Best R\u00b2 = 0.9969; threshold > 0.9"
+      "note": "Best R\u00b2 = 0.9978; threshold > 0.9"
     },
     {
       "criterion": "\u03a3\u03bb_i moves from ~-20 toward empirical ~-14",
@@ -277,11 +247,25 @@
     }
   ],
   "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/amplification.png",
     "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/per_run_lyapunov.png",
     "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/per_run_lyapunov_vs_true.png",
     "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep/figures/per_run_lyapunov_relerr.png"
   },
-  "analytics_error": "FileNotFoundError: [Errno 2] No such file or directory: '/orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE/p69uxgg8/checkpoints'",
+  "analytics_error": null,
   "true_lyapunov": null,
   "analytics_log_file": "run_analytics.log"
 }

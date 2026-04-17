@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-17T05:55:15Z",
+  "last_updated": "2026-04-17T06:00:26Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -84,15 +84,6 @@
         "in_flight": 0,
         "failed_exhausted": 1,
         "effectively_done": 8
-      },
-      "analysis": {
-        "slurm_job_id": "12064055",
-        "dispatched_at": "2026-04-17T05:55:15Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       },
       "training_slurm": {
         "n_running": 7,
@@ -190,8 +181,8 @@
         "effectively_done": 8
       },
       "training_slurm": {
-        "n_running": 4,
-        "n_pending": 2,
+        "n_running": 6,
+        "n_pending": 1,
         "n_total": 7
       }
     },
