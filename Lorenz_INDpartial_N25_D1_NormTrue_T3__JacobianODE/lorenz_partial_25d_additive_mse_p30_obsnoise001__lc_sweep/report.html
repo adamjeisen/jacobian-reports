@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_25d_additive_mse_p30_obsnoise001__lc_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE/groups/lorenz_partial_25d_additive_mse_p30_obsnoise001__lc_sweep">Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-17T01:50:10Z<br />
+<strong>Completed</strong>: 2026-04-17T06:05:17Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>f05d2ea</code><br />
+<strong>Expected runs</strong>: 9</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_25d_additive_mse_p30</code></h3>
+<p><strong>Description</strong></p>
+<p>Partial-obs Lorenz: x-coordinate only (observed_indices=[0]),
+n_delays=25, delay_spacing=1. Encoder input 25-D, z_dyn 3-D,
+z_null 22-D with kl_null_weight=0. Additive coupling encoder,
+joint training, reconstruction_mode='most_recent'. Plain MSE loss.
+prediction_steps=30, seq_length=45. obs_noise_scale=0.</p>
+<p><strong>Hypothesis</strong></p>
+<p>A longer prediction horizon sharpens the forward-rollout training
+signal, which in partial-obs has been the main limiter of spectrum
+recovery. Expecting tighter λ_min (less under-contracted than the
+10-step baseline) and improved trajectory_r2.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>Best run's leading Lyapunov exponent &gt; 0</li>
+<li>Best run's predicted Lyapunov spectrum within ~40% of empirical</li>
+<li>Noticeable improvement in λ_min recovery vs p10 partial_25d_mse</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Overall best MASE</strong>: 0.8514 (LC weight = 1.0e-06, obs_noise_scale = 0.00)
+<strong>Overall best traj loss</strong>: 0.00180 at epoch 131.0
+<strong>Runs analyzed</strong>: 10</p>
+<h3>Best run per <code>obs_noise_scale</code></h3>
+<table>
+<thead>
+<tr>
+<th>obs_noise_scale</th>
+<th>Best LC weight</th>
+<th>Best traj loss</th>
+<th>MASE at best</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0</td>
+<td>1.0e-06</td>
+<td>0.00180</td>
+<td>0.8514</td>
+<td>0.9952</td>
+<td>0.578</td>
+<td>131.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best run's leading Lyapunov exponent &gt; 0</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best run's predicted Lyapunov spectrum within ~40% of empirical</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Noticeable improvement in λ_min recovery vs p10 partial_25d_mse</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+</body>
+</html>
