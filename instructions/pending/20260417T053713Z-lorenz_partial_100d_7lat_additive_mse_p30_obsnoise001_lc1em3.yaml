@@ -1,0 +1,5 @@
+experiment: lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001_lc1em3
+overrides:
+  - "hydra.launcher.partition=ou_bcs_low"
+submitted_at: 20260417T053713Z
+submitted_from: millerlab-endeavourOS
