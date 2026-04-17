@@ -1,0 +1,11 @@
+experiment: lorenz_partial_100d_7lat_additive_mse_p30
+overrides:
+- data.postprocessing.obs_noise=0.01
+- wandb_group=lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep
+- hydra.launcher.partition=ou_bcs_low
+submitted_at: 20260417T014514Z
+submitted_from: millerlab-endeavourOS
+wandb_group: lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep
+expected_run_count: 9
+slurm_array_id: '12046422'
+slurm_submitted_at: '2026-04-17T01:51:01Z'
