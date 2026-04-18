@@ -1,24 +1,12 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep",
-  "analyzed_at": "2026-04-16T04:22:18Z",
+  "analyzed_at": "2026-04-18T23:24:53Z",
   "metrics_summary": {
     "per_run": [
       {
-        "run_id": "nm2t99bl",
-        "state": "finished",
-        "lc_weight": 1e-06,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0003549623943399638,
-        "best_traj_loss_epoch": 115.0,
-        "best_mase": 0.38474392890930176,
-        "best_mase_epoch": 114.0,
-        "lc_loss_at_best_tl": 1.3726403713226318,
-        "r2_at_best_tl": 0.9989463686943054,
-        "n_epochs": 116
-      },
-      {
         "run_id": "ejrk8enc",
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -28,10 +16,31 @@
         "best_mase_epoch": 80.0,
         "lc_loss_at_best_tl": 5.8523736000061035,
         "r2_at_best_tl": 0.9986311197280884,
-        "n_epochs": 86
+        "n_epochs": 86,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0
+        }
+      },
+      {
+        "run_id": "nm2t99bl",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0003549623943399638,
+        "best_traj_loss_epoch": 115.0,
+        "best_mase": 0.38474392890930176,
+        "best_mase_epoch": 114.0,
+        "lc_loss_at_best_tl": 1.3726403713226318,
+        "r2_at_best_tl": 0.9989463686943054,
+        "n_epochs": 116,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06
+        }
       },
       {
         "run_id": "ijhov6lj",
+        "run_idx": 2,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -41,10 +50,14 @@
         "best_mase_epoch": 88.0,
         "lc_loss_at_best_tl": 0.2624385356903076,
         "r2_at_best_tl": 0.9988813996315002,
-        "n_epochs": 94
+        "n_epochs": 94,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05
+        }
       },
       {
         "run_id": "s3o0rg3h",
+        "run_idx": 3,
         "state": "finished",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
@@ -54,10 +67,14 @@
         "best_mase_epoch": 114.0,
         "lc_loss_at_best_tl": 0.040838275104761124,
         "r2_at_best_tl": 0.9989599585533142,
-        "n_epochs": 118
+        "n_epochs": 118,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001
+        }
       },
       {
         "run_id": "wjvueak9",
+        "run_idx": 4,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -67,10 +84,14 @@
         "best_mase_epoch": 105.0,
         "lc_loss_at_best_tl": 0.007480884902179241,
         "r2_at_best_tl": 0.9991193413734436,
-        "n_epochs": 112
+        "n_epochs": 112,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001
+        }
       },
       {
         "run_id": "2pvx7ngn",
+        "run_idx": 5,
         "state": "finished",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
@@ -80,10 +101,14 @@
         "best_mase_epoch": 105.0,
         "lc_loss_at_best_tl": 0.0010897256433963776,
         "r2_at_best_tl": 0.9989820718765259,
-        "n_epochs": 106
+        "n_epochs": 106,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.01
+        }
       },
       {
         "run_id": "90yfvwek",
+        "run_idx": 6,
         "state": "finished",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
@@ -93,23 +118,14 @@
         "best_mase_epoch": 103.0,
         "lc_loss_at_best_tl": 0.0001488796842750162,
         "r2_at_best_tl": 0.9976825714111328,
-        "n_epochs": 110
-      },
-      {
-        "run_id": "jrajkpha",
-        "state": "finished",
-        "lc_weight": 10.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.007653485983610153,
-        "best_traj_loss_epoch": 108.0,
-        "best_mase": 1.2476972341537476,
-        "best_mase_epoch": 114.0,
-        "lc_loss_at_best_tl": 1.0337299727325444e-06,
-        "r2_at_best_tl": 0.9766175746917725,
-        "n_epochs": 116
+        "n_epochs": 110,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.1
+        }
       },
       {
         "run_id": "rrsbw9oo",
+        "run_idx": 7,
         "state": "finished",
         "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
@@ -119,12 +135,37 @@
         "best_mase_epoch": 107.0,
         "lc_loss_at_best_tl": 1.1032963811885566e-05,
         "r2_at_best_tl": 0.9810631275177002,
-        "n_epochs": 108
+        "n_epochs": 108,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1
+        }
+      },
+      {
+        "run_id": "jrajkpha",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 10.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.007653485983610153,
+        "best_traj_loss_epoch": 108.0,
+        "best_mase": 1.2476972341537476,
+        "best_mase_epoch": 114.0,
+        "lc_loss_at_best_tl": 1.0337299727325444e-06,
+        "r2_at_best_tl": 0.9766175746917725,
+        "n_epochs": 116,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 10
+        }
       }
     ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 9,
+    "matched_run_count": 9,
     "best_by_obs_noise_scale": {
       "0.0": {
         "run_id": "wjvueak9",
+        "run_idx": 4,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -134,11 +175,32 @@
         "best_mase_epoch": 105.0,
         "lc_loss_at_best_tl": 0.007480884902179241,
         "r2_at_best_tl": 0.9991193413734436,
-        "n_epochs": 112
+        "n_epochs": 112,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "wjvueak9",
+      "run_idx": 4,
+      "state": "finished",
+      "lc_weight": 0.001,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0002885080757550895,
+      "best_traj_loss_epoch": 105.0,
+      "best_mase": 0.42311209440231323,
+      "best_mase_epoch": 105.0,
+      "lc_loss_at_best_tl": 0.007480884902179241,
+      "r2_at_best_tl": 0.9991193413734436,
+      "n_epochs": 112,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 0.001
       }
     },
     "overall_best_mase": {
       "run_id": "nm2t99bl",
+      "run_idx": 1,
       "state": "finished",
       "lc_weight": 1e-06,
       "obs_noise_scale": 0.0,
@@ -148,8 +210,14 @@
       "best_mase_epoch": 114.0,
       "lc_loss_at_best_tl": 1.3726403713226318,
       "r2_at_best_tl": 0.9989463686943054,
-      "n_epochs": 116
+      "n_epochs": 116,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 1e-06
+      }
     },
+    "swept_paths": [
+      "training.lightning.loop_closure_weight"
+    ],
     "n_runs": 9
   },
   "per_run_lyapunov": {
@@ -166,8 +234,7 @@
       "lambda_max": 0.1352379024028778,
       "lambda_sum": -26.256011962890625,
       "kaplan_yorke_dim": 2.0088484287261963,
-      "error": null,
-      "spectrum_mse_vs_true": 44.564414063474686
+      "error": null
     },
     "ejrk8enc": {
       "lambda_spectrum": [
@@ -182,8 +249,7 @@
       "lambda_max": 0.13602972030639648,
       "lambda_sum": -22.51842498779297,
       "kaplan_yorke_dim": 1.667720079421997,
-      "error": null,
-      "spectrum_mse_vs_true": 52.21278686899226
+      "error": null
     },
     "ijhov6lj": {
       "lambda_spectrum": [
@@ -198,8 +264,7 @@
       "lambda_max": 0.14158150553703308,
       "lambda_sum": -23.49625587463379,
       "kaplan_yorke_dim": 2.0052804946899414,
-      "error": null,
-      "spectrum_mse_vs_true": 47.442192862553206
+      "error": null
     },
     "s3o0rg3h": {
       "lambda_spectrum": [
@@ -214,8 +279,7 @@
       "lambda_max": 0.1741410344839096,
       "lambda_sum": -24.65595245361328,
       "kaplan_yorke_dim": 2.0339407920837402,
-      "error": null,
-      "spectrum_mse_vs_true": 46.52339109755871
+      "error": null
     },
     "wjvueak9": {
       "lambda_spectrum": [
@@ -230,8 +294,7 @@
       "lambda_max": 0.19694377481937408,
       "lambda_sum": -16.37023162841797,
       "kaplan_yorke_dim": 2.058917760848999,
-      "error": null,
-      "spectrum_mse_vs_true": 41.45767833601236
+      "error": null
     },
     "2pvx7ngn": {
       "lambda_spectrum": [
@@ -246,8 +309,7 @@
       "lambda_max": 0.27115127444267273,
       "lambda_sum": -12.271485328674316,
       "kaplan_yorke_dim": 2.13053822517395,
-      "error": null,
-      "spectrum_mse_vs_true": 46.05638910520622
+      "error": null
     },
     "90yfvwek": {
       "lambda_spectrum": [
@@ -262,8 +324,7 @@
       "lambda_max": 0.3798314332962036,
       "lambda_sum": -11.049556732177734,
       "kaplan_yorke_dim": 2.2667999267578125,
-      "error": null,
-      "spectrum_mse_vs_true": 49.65806371760155
+      "error": null
     },
     "jrajkpha": {
       "lambda_spectrum": [
@@ -278,8 +339,7 @@
       "lambda_max": -0.15458160638809204,
       "lambda_sum": -3.744924545288086,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 61.596565522184854
+      "error": null
     },
     "rrsbw9oo": {
       "lambda_spectrum": [
@@ -294,8 +354,7 @@
       "lambda_max": -0.017593897879123688,
       "lambda_sum": -4.013037204742432,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 60.31606208656047
+      "error": null
     }
   },
   "empirical_lyapunov_spectrum": [
@@ -318,7 +377,7 @@
     {
       "criterion": "val/trajectory_r2 > 0.9 at best LC",
       "verdict": "Pass",
-      "note": "Best R\u00b2 = 0.9989; threshold > 0.9"
+      "note": "Best R\u00b2 = 0.9991; threshold > 0.9"
     },
     {
       "criterion": "No loop-closure explosion under uniform training",
@@ -329,22 +388,22 @@
   "figures": {
     "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/sweep_overview.png",
     "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/sweep_pareto.png",
-    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/mase.png",
-    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/lyapunov.png",
-    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/prediction_windows.png",
-    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/per_run_lyapunov.png",
-    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/per_run_lyapunov_vs_true.png",
-    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/per_run_lyapunov_relerr.png",
-    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png",
     "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/mase.png",
     "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/lyapunov.png",
     "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/kaplan_yorke.png",
     "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/prediction_windows.png",
     "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/prediction_detail_latent.png",
     "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/prediction_detail_obs.png",
     "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/long_trajectory.png",
     "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/encoder_decoder_jacobians.png",
-    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/amplification.png"
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/per_run_lyapunov_relerr.png",
+    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png"
   },
   "analytics_error": null,
   "true_lyapunov": null,

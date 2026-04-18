@@ -1,11 +1,12 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "group": "lorenz_partial_100d_7lat_additive_mse_uniform_obsnoise005__lc_sweep",
-  "analyzed_at": "2026-04-16T11:53:50Z",
+  "analyzed_at": "2026-04-18T23:21:53Z",
   "metrics_summary": {
     "per_run": [
       {
         "run_id": "1dc6pbmm",
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -15,10 +16,14 @@
         "best_mase_epoch": 102.0,
         "lc_loss_at_best_tl": 375.9659118652344,
         "r2_at_best_tl": 0.9854103326797485,
-        "n_epochs": 108
+        "n_epochs": 108,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0
+        }
       },
       {
         "run_id": "hcai47of",
+        "run_idx": 1,
         "state": "finished",
         "lc_weight": 1e-06,
         "obs_noise_scale": 0.0,
@@ -28,10 +33,14 @@
         "best_mase_epoch": 133.0,
         "lc_loss_at_best_tl": 8.979778289794922,
         "r2_at_best_tl": 0.9857618808746338,
-        "n_epochs": 137
+        "n_epochs": 137,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06
+        }
       },
       {
         "run_id": "4h82lv4v",
+        "run_idx": 2,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -41,10 +50,14 @@
         "best_mase_epoch": 140.0,
         "lc_loss_at_best_tl": 1.5565879344940186,
         "r2_at_best_tl": 0.985766589641571,
-        "n_epochs": 142
+        "n_epochs": 142,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05
+        }
       },
       {
         "run_id": "hp642zyz",
+        "run_idx": 3,
         "state": "finished",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
@@ -54,10 +67,14 @@
         "best_mase_epoch": 93.0,
         "lc_loss_at_best_tl": 0.25814926624298096,
         "r2_at_best_tl": 0.9846366047859192,
-        "n_epochs": 106
+        "n_epochs": 106,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001
+        }
       },
       {
         "run_id": "xit7r44p",
+        "run_idx": 4,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -67,10 +84,14 @@
         "best_mase_epoch": 133.0,
         "lc_loss_at_best_tl": 0.02472049556672573,
         "r2_at_best_tl": 0.9852531552314758,
-        "n_epochs": 137
+        "n_epochs": 137,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001
+        }
       },
       {
         "run_id": "tthjlvoy",
+        "run_idx": 5,
         "state": "finished",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
@@ -80,10 +101,14 @@
         "best_mase_epoch": 145.0,
         "lc_loss_at_best_tl": 0.0020117268431931734,
         "r2_at_best_tl": 0.985227108001709,
-        "n_epochs": 155
+        "n_epochs": 155,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.01
+        }
       },
       {
         "run_id": "4i62yjy8",
+        "run_idx": 6,
         "state": "finished",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
@@ -93,10 +118,14 @@
         "best_mase_epoch": 139.0,
         "lc_loss_at_best_tl": 0.00024421935086138546,
         "r2_at_best_tl": 0.9836801290512085,
-        "n_epochs": 145
+        "n_epochs": 145,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.1
+        }
       },
       {
         "run_id": "9yyrp800",
+        "run_idx": 7,
         "state": "finished",
         "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
@@ -106,10 +135,14 @@
         "best_mase_epoch": 174.0,
         "lc_loss_at_best_tl": 9.579030120221432e-06,
         "r2_at_best_tl": 0.9820968508720398,
-        "n_epochs": 180
+        "n_epochs": 180,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1
+        }
       },
       {
         "run_id": "nnhboy20",
+        "run_idx": 8,
         "state": "finished",
         "lc_weight": 10.0,
         "obs_noise_scale": 0.0,
@@ -119,12 +152,20 @@
         "best_mase_epoch": 145.0,
         "lc_loss_at_best_tl": 1.608309929679308e-07,
         "r2_at_best_tl": 0.9793498516082764,
-        "n_epochs": 146
+        "n_epochs": 146,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 10
+        }
       }
     ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 9,
+    "matched_run_count": 9,
     "best_by_obs_noise_scale": {
       "0.0": {
         "run_id": "4h82lv4v",
+        "run_idx": 2,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -134,11 +175,15 @@
         "best_mase_epoch": 140.0,
         "lc_loss_at_best_tl": 1.5565879344940186,
         "r2_at_best_tl": 0.985766589641571,
-        "n_epochs": 142
+        "n_epochs": 142,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05
+        }
       }
     },
-    "overall_best_mase": {
+    "overall_chosen_run": {
       "run_id": "4h82lv4v",
+      "run_idx": 2,
       "state": "finished",
       "lc_weight": 1e-05,
       "obs_noise_scale": 0.0,
@@ -148,8 +193,31 @@
       "best_mase_epoch": 140.0,
       "lc_loss_at_best_tl": 1.5565879344940186,
       "r2_at_best_tl": 0.985766589641571,
-      "n_epochs": 142
+      "n_epochs": 142,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 1e-05
+      }
     },
+    "overall_best_mase": {
+      "run_id": "4h82lv4v",
+      "run_idx": 2,
+      "state": "finished",
+      "lc_weight": 1e-05,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.005246102809906006,
+      "best_traj_loss_epoch": 127.0,
+      "best_mase": 0.778261125087738,
+      "best_mase_epoch": 140.0,
+      "lc_loss_at_best_tl": 1.5565879344940186,
+      "r2_at_best_tl": 0.985766589641571,
+      "n_epochs": 142,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 1e-05
+      }
+    },
+    "swept_paths": [
+      "training.lightning.loop_closure_weight"
+    ],
     "n_runs": 9
   },
   "per_run_lyapunov": {
@@ -166,8 +234,7 @@
       "lambda_max": -0.15790368616580963,
       "lambda_sum": -193.01329040527344,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 30.807702401882395
+      "error": null
     },
     "hcai47of": {
       "lambda_spectrum": [
@@ -182,8 +249,7 @@
       "lambda_max": -0.0817512646317482,
       "lambda_sum": -181.23257446289062,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 29.493373994192236
+      "error": null
     },
     "4h82lv4v": {
       "lambda_spectrum": [
@@ -198,8 +264,7 @@
       "lambda_max": -0.07630878686904907,
       "lambda_sum": -195.69833374023438,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 21.80228770925741
+      "error": null
     },
     "hp642zyz": {
       "lambda_spectrum": [
@@ -214,8 +279,7 @@
       "lambda_max": 0.1045437604188919,
       "lambda_sum": -215.91012573242188,
       "kaplan_yorke_dim": 1.551056146621704,
-      "error": null,
-      "spectrum_mse_vs_true": 18.913634221961484
+      "error": null
     },
     "xit7r44p": {
       "lambda_spectrum": [
@@ -230,8 +294,7 @@
       "lambda_max": 0.03624853491783142,
       "lambda_sum": -207.25064086914062,
       "kaplan_yorke_dim": 1.387275218963623,
-      "error": null,
-      "spectrum_mse_vs_true": 40.5643788780939
+      "error": null
     },
     "tthjlvoy": {
       "lambda_spectrum": [
@@ -246,8 +309,7 @@
       "lambda_max": 0.09348263591527939,
       "lambda_sum": -199.83099365234375,
       "kaplan_yorke_dim": 2.0196025371551514,
-      "error": null,
-      "spectrum_mse_vs_true": 49.49649948253935
+      "error": null
     },
     "4i62yjy8": {
       "lambda_spectrum": [
@@ -262,8 +324,7 @@
       "lambda_max": 0.1688346266746521,
       "lambda_sum": -193.0626220703125,
       "kaplan_yorke_dim": 2.074838399887085,
-      "error": null,
-      "spectrum_mse_vs_true": 44.1837231917591
+      "error": null
     },
     "9yyrp800": {
       "lambda_spectrum": [
@@ -278,8 +339,7 @@
       "lambda_max": 0.1291016936302185,
       "lambda_sum": -115.13520812988281,
       "kaplan_yorke_dim": 2.0941197872161865,
-      "error": null,
-      "spectrum_mse_vs_true": 49.483974093998135
+      "error": null
     },
     "nnhboy20": {
       "lambda_spectrum": [
@@ -294,8 +354,7 @@
       "lambda_max": -0.1762315332889557,
       "lambda_sum": -3.8259482383728027,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 61.65242312936502
+      "error": null
     }
   },
   "empirical_lyapunov_spectrum": [
