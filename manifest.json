@@ -32,6 +32,20 @@
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
       {
+        "group": "lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776554136.8224406
+      },
+      {
+        "group": "lorenz_partial_100d_7lat_additive_mse__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776554123.1143165
+      },
+      {
         "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2",
         "has_report": true,
         "has_metrics": true,
@@ -72,20 +86,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776313347.1650934
-      },
-      {
-        "group": "lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776313198.7327435
-      },
-      {
-        "group": "lorenz_partial_100d_7lat_additive_mse__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776313048.1283739
       }
     ],
     "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
