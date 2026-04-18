@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-18T09:20:44Z",
+  "last_updated": "2026-04-18T09:25:43Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -224,15 +224,15 @@
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__enchd_lc_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 30,
-        "in_flight": 10,
+        "terminal": 34,
+        "in_flight": 6,
         "failed_exhausted": 0,
-        "effectively_done": 30
+        "effectively_done": 34
       },
       "training_slurm": {
-        "n_running": 10,
+        "n_running": 6,
         "n_pending": 0,
-        "n_total": 10
+        "n_total": 6
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__lc_sweep": {
