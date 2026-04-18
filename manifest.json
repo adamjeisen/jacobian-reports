@@ -90,6 +90,13 @@
     ],
     "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
       {
+        "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776555321.9461741
+      },
+      {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -193,13 +200,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776313620.8295822
-      },
-      {
-        "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776313484.21834
       }
     ],
     "WMTask_identity_encoder_verification": [
