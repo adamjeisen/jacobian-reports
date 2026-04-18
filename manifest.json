@@ -204,6 +204,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776552029.1843505
+      },
+      {
         "group": "wmtask_vanilla_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -216,13 +223,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776314448.0430932
-      },
-      {
-        "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": true,
-        "report_mtime": 1776281298.01358
       }
     ]
   }

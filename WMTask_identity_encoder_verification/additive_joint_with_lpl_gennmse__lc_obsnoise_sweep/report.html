@@ -40,52 +40,11 @@ identical-shape optimal-LC landscape.</p>
 <li>No batch-noise-driven instability in the loss landscape</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Overall best MASE</strong>: 0.6137 (LC weight = 1.0e-04, obs_noise_scale = 0.01)
-<strong>Overall best traj loss</strong>: 0.38791 at epoch 32.0
-<strong>Runs analyzed</strong>: 24</p>
-<h3>Best run per <code>obs_noise_scale</code></h3>
-<table>
-<thead>
-<tr>
-<th>obs_noise_scale</th>
-<th>Best LC weight</th>
-<th>Best traj loss</th>
-<th>MASE at best</th>
-<th>R²</th>
-<th>LC loss</th>
-<th>epoch</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.0</td>
-<td>1.0e-05</td>
-<td>0.38854</td>
-<td>0.6144</td>
-<td>0.9957</td>
-<td>21.803</td>
-<td>33.0</td>
-</tr>
-<tr>
-<td>0.01</td>
-<td>1.0e-04</td>
-<td>0.38791</td>
-<td>0.6137</td>
-<td>0.9957</td>
-<td>10.925</td>
-<td>32.0</td>
-</tr>
-<tr>
-<td>0.05</td>
-<td>1.0e-06</td>
-<td>0.40352</td>
-<td>0.6224</td>
-<td>0.9956</td>
-<td>46.117</td>
-<td>31.0</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Swept axes</strong> (3): <code>data.postprocessing.generalized_variance</code>, <code>training.lightning.loop_closure_weight</code>, <code>training.lightning.obs_noise_scale</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>—</code> — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>24 wandb run(s) did not match any run_idx</strong> (excluded from the per-run table). These are most likely orphans from preempt-cycle retries or rate-limit re-launches. IDs: <code>ceo1z2z0</code>, <code>a9ztpmpa</code>, <code>j1gtjx02</code>, <code>j1ne5r5w</code>, <code>akh29o2g</code>, <code>mrc4x0kz</code>, <code>h0r7975j</code>, <code>6wi5e52l</code>, <code>00hdcmp9</code>, <code>znqbu94g</code>, <code>r9405hyh</code>, <code>4prl2xix</code>, <code>td1o8fm1</code>, <code>ljeooem0</code>, <code>fvlbkmpr</code>, <code>jjkfwma9</code>, <code>6wsesimk</code>, <code>msw6q774</code>, <code>4yo2u628</code>, <code>dtkrwrnt</code>, <code>hjp6f1r5</code>, <code>pcdayv3z</code>, <code>jzmoinzu</code>, <code>pc4xqu5v</code>.</p>
+<p><strong>Runs analyzed</strong>: 0 (expected 0)</p>
 <h2>Success-criteria verdicts (automated)</h2>
 <table>
 <thead>
@@ -119,25 +78,50 @@ identical-shape optimal-LC landscape.</p>
 <p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
 <h3>sweep_pareto</h3>
 <p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
 <h3>prediction_windows</h3>
 <p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
+<h3>long_trajectory</h3>
+<p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
 <h3>mase</h3>
 <p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
 <h3>lyapunov</h3>
 <p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
 <h3>lyapunov_top10</h3>
 <p><img alt="lyapunov_top10" src="figures/lyapunov_top10.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
 <h3>per_run_lyapunov</h3>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>
 <p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
 <h3>lyapunov_spectrum_mse_vs_val_loss</h3>
 <p><img alt="lyapunov_spectrum_mse_vs_val_loss" src="figures/lyapunov_spectrum_mse_vs_val_loss.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
+<h3>kaplan_yorke_pca</h3>
+<p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
+<h3>prediction_detail_latent</h3>
+<p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
+<h3>prediction_detail_obs</h3>
+<p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
 <h2>Discussion</h2>
-<p>Addressing each success criterion in turn. <strong>"Best MASE matches or beats MSE baseline"</strong> — <em>Inconclusive</em>: no MSE-baseline numbers are included in this analysis directory, so an absolute comparison is not possible here. The best run (<code>00hdcmp9</code>, LC=1e-4, obs_noise=0.01) reaches best_traj_loss=0.3879 and best_mase=0.6137 (teacher-forced MASE 0.583, free-running 0.624), which provide the absolute reference point for future comparisons. <strong>"Optimal LC weight is consistent across obs_noise_scale"</strong> — <em>Partial</em>: the per-column minima are LC=1e-5 (obs=0.0, TL=0.3885), LC=1e-4 (obs=0.01, TL=0.3879), LC=1e-6 (obs=0.05, TL=0.4035). The optimum drifts across three decades of LC, but all sit in the weak-coupling regime (≤1e-4) and traj losses at the 1e-6→1e-4 plateau differ by &lt;5% within each column, so the landscape is broadly — but not pointwise — consistent. <strong>"No batch-noise-driven instability"</strong> — <em>Pass</em>: the sweep-overview and pareto plots are smooth and monotonic through the LC dimension, with no jagged isolated spikes; LC-loss falls cleanly by ~6 orders of magnitude (from ~45 at LC=0 down to ~6e-5 at LC=10) as weight increases.</p>
-<p>The (LC × obs_noise) landscape is a shallow basin whose floor sits at weak LC (1e-6 to 1e-4) and mild observation noise (0.0–0.01). Trajectory loss degrades gently toward both strong-LC (LC≥0.01, TL rising past 0.55) and high obs_noise=0.05 tails. The basin is broad in LC (roughly two decades of near-optimal performance) but narrower in obs_noise, with obs=0.05 systematically worse than obs=0.01 at matched LC.</p>
-<p>Learned dynamics are uniformly stable across the sweep: for the selected run all 128 predicted exponents are negative (λ₁=−0.563±0.218 windowed; λ₁=−1.88±0.43 full-length), and <code>per_run_lyapunov.png</code> shows the same pattern across runs. The predicted spectrum tracks the empirical ground-truth shape (true λ₁=−0.684, λ₁₂₈=−33.46) reasonably in the top/bulk exponents but compresses the tail (predicted λ₁₂₈≈−34 full-length vs true −33.5, while windowed estimates under-steepen the bottom, λ₁₂₈=−34.1 vs true −33.5 — qualitative match, modest tail bias).</p>
-<p>Caveats: only 24 of 27 expected runs completed (3 missing cells from the grid, reducing LC coverage at some obs_noise levels to 2 seeds). Several low-LC runs early-stop quickly (n_epochs≈14–18) while mid-LC optima train to ≥33 epochs, so some weak-LC points may be under-trained relative to the winner. Overall the hypothesis is <strong>mixed/partial</strong>: the landscape is smooth and free of batch-noise pathology (supporting the core claim of the fixed denominator), but the optimal LC shifts with obs_noise rather than being truly invariant, and the MSE-baseline comparison cannot be adjudicated from this directory alone.</p>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
 <h2><code>run_analytics</code> stdout</h2>
 <details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
 
@@ -294,9 +278,12 @@ Train trajectories dataset shape: torch.Size([2867, 49, 128])
 Validation trajectories dataset shape: torch.Size([820, 49, 128])
 Test trajectories dataset shape: torch.Size([409, 49, 128])
 Loading checkpoint epoch=32-step=1650.ckpt...
+Computing reconstruction ...
 Computing MASE ...
 Teacher-forced MASE: 0.5833
 Free-running MASE:   0.6242
+Computing latent utilization ...
+Entropy-based utilization: 0.891
 Computing Lyapunov exponents ...
   Computing full-trajectory Lyapunov (409 test trajs, T=49) ...
 Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
@@ -419,7 +406,7 @@ Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
   λ_117 = -28.6953 ± 2.0894
   λ_118 = -28.9016 ± 2.0152
   λ_119 = -29.2244 ± 2.0407
-  λ_120 = -29.5009 ± 2.0662
+  λ_120 = -29.5009 ± 2.0663
   λ_121 = -29.6803 ± 2.1063
   λ_122 = -30.2515 ± 2.1032
   λ_123 = -30.4258 ± 2.1616
@@ -686,8 +673,18 @@ Empirical Lyapunov exponents (mean ± std):
   λ_126 = -33.0206 ± 0.2244
   λ_127 = -33.2132 ± 0.2160
   λ_128 = -33.4614 ± 0.3541
+Mean KY dim (predicted): 0.000 ± 0.000
+Mean KY dim (empirical): 0.042 ± 0.210
+Mean KY dim (burn-in):   0.000 ± 0.000
 Computing prediction windows ...
 Windows: 9 — nMSE min=0.0102, median=0.0115, mean=0.0122, max=0.0153
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 128, 128)
+decoder_jacobian: (128, 128, 128)
+Computing amplification loss ...
+Amplification loss — True state: 0.004748
+Amplification loss — Latent:     0.005116
 </code></pre>
 
 

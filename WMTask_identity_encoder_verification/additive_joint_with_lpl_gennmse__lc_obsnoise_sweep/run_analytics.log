@@ -150,9 +150,12 @@ Train trajectories dataset shape: torch.Size([2867, 49, 128])
 Validation trajectories dataset shape: torch.Size([820, 49, 128])
 Test trajectories dataset shape: torch.Size([409, 49, 128])
 Loading checkpoint epoch=32-step=1650.ckpt...
+Computing reconstruction ...
 Computing MASE ...
 Teacher-forced MASE: 0.5833
 Free-running MASE:   0.6242
+Computing latent utilization ...
+Entropy-based utilization: 0.891
 Computing Lyapunov exponents ...
   Computing full-trajectory Lyapunov (409 test trajs, T=49) ...
 Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
@@ -275,7 +278,7 @@ Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
   λ_117 = -28.6953 ± 2.0894
   λ_118 = -28.9016 ± 2.0152
   λ_119 = -29.2244 ± 2.0407
-  λ_120 = -29.5009 ± 2.0662
+  λ_120 = -29.5009 ± 2.0663
   λ_121 = -29.6803 ± 2.1063
   λ_122 = -30.2515 ± 2.1032
   λ_123 = -30.4258 ± 2.1616
@@ -542,5 +545,15 @@ Empirical Lyapunov exponents (mean ± std):
   λ_126 = -33.0206 ± 0.2244
   λ_127 = -33.2132 ± 0.2160
   λ_128 = -33.4614 ± 0.3541
+Mean KY dim (predicted): 0.000 ± 0.000
+Mean KY dim (empirical): 0.042 ± 0.210
+Mean KY dim (burn-in):   0.000 ± 0.000
 Computing prediction windows ...
 Windows: 9 — nMSE min=0.0102, median=0.0115, mean=0.0122, max=0.0153
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 128, 128)
+decoder_jacobian: (128, 128, 128)
+Computing amplification loss ...
+Amplification loss — True state: 0.004748
+Amplification loss — Latent:     0.005116
