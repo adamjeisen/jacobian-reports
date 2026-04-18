@@ -23,12 +23,12 @@ Found 6 effectively-done sweep runs:
   loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=kuhiqael
   loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=nklisi77
 n_dims=100, n_latent=100, n_dyn=7, dt=0.0150
-  run=6y24w9yt: DiagnosticMetrics(one_step_mase=0.0217712614685297, loop_closure_loss=0.0010781779419630766, fast_eigenvalue_fraction=0.0, trajectory_val_loss=3.1880242659099167e-06) (from W&B history)
-  run=88th62np: DiagnosticMetrics(one_step_mase=0.01953170634806156, loop_closure_loss=0.0010061676148325205, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.9812912341876654e-06) (from W&B history)
-  run=gx6lmk6g: DiagnosticMetrics(one_step_mase=0.018431490287184715, loop_closure_loss=0.001141534186899662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=2.8873889732494717e-06) (from W&B history)
-  run=jhg9x3lq: DiagnosticMetrics(one_step_mase=0.01906902901828289, loop_closure_loss=0.0010725540341809392, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8616602801557747e-06) (from W&B history)
-  run=kuhiqael: DiagnosticMetrics(one_step_mase=0.03152746707201004, loop_closure_loss=0.001629306934773922, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.002294190286193e-06) (from W&B history)
-  run=nklisi77: DiagnosticMetrics(one_step_mase=0.01955581083893776, loop_closure_loss=0.001203253399580717, fast_eigenvalue_fraction=0.0, trajectory_val_loss=3.2548061881243484e-06) (from W&B history)
+  run=6y24w9yt: DiagnosticMetrics(one_step_mase=0.0217712614685297, loop_closure_loss=0.0010781779419630766, fast_eigenvalue_fraction=0.0, trajectory_val_loss=3.1880242659099167e-06) (from cache, n_batches=100)
+  run=88th62np: DiagnosticMetrics(one_step_mase=0.01953170634806156, loop_closure_loss=0.0010061676148325205, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.9812912341876654e-06) (from cache, n_batches=100)
+  run=gx6lmk6g: DiagnosticMetrics(one_step_mase=0.018431490287184715, loop_closure_loss=0.001141534186899662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=2.8873889732494717e-06) (from cache, n_batches=100)
+  run=jhg9x3lq: DiagnosticMetrics(one_step_mase=0.01906902901828289, loop_closure_loss=0.0010725540341809392, fast_eigenvalue_fraction=0.0, trajectory_val_loss=1.8616602801557747e-06) (from cache, n_batches=100)
+  run=kuhiqael: DiagnosticMetrics(one_step_mase=0.03152746707201004, loop_closure_loss=0.001629306934773922, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.002294190286193e-06) (from cache, n_batches=100)
+  run=nklisi77: DiagnosticMetrics(one_step_mase=0.01955581083893776, loop_closure_loss=0.001203253399580717, fast_eigenvalue_fraction=0.0, trajectory_val_loss=3.2548061881243484e-06) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              jhg9x3lq

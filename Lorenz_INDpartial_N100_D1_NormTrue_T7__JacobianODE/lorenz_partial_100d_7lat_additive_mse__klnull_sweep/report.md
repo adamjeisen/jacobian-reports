@@ -41,15 +41,13 @@ kl_null with a sweet spot somewhere in 1e-3 .. 1e-1.
 
 ## Results
 
-**Overall best MASE**: 0.0253 (LC weight = 1.0e-03, obs_noise_scale = 0.00)
-**Overall best traj loss**: 0.00000 at epoch 198.0
-**Runs analyzed**: 6
+**Chosen run** (by `best_traj_loss`): `—` — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None
 
-### Best run per `obs_noise_scale`
+### Integrity checks
 
-| obs_noise_scale | Best LC weight | Best traj loss | MASE at best | R² | LC loss | epoch |
-|---|---|---|---|---|---|---|
-| 0.0 | 1.0e-03 | 0.00000 | 0.0253 | 1.0000 | 0.001 | 198.0 |
+⚠️ **Matched-run count mismatch**: expected 6 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.
+
+**Runs analyzed**: 0 (expected 6)
 
 ## Success-criteria verdicts (automated)
 
@@ -63,26 +61,6 @@ kl_null with a sweet spot somewhere in 1e-3 .. 1e-1.
 _Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence._
 
 ## Figures
-
-### sweep_overview
-
-![sweep_overview](figures/sweep_overview.png)
-
-### sweep_pareto
-
-![sweep_pareto](figures/sweep_pareto.png)
-
-### prediction_windows
-
-![prediction_windows](figures/prediction_windows.png)
-
-### mase
-
-![mase](figures/mase.png)
-
-### lyapunov
-
-![lyapunov](figures/lyapunov.png)
 
 ### per_run_lyapunov
 

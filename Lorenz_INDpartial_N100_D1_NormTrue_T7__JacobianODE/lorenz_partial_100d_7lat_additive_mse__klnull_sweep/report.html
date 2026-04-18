@@ -48,34 +48,10 @@ kl_null with a sweet spot somewhere in 1e-3 .. 1e-1.</p>
 <li>Clear U-shape (or monotone direction) across the 6 kl_null values</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Overall best MASE</strong>: 0.0253 (LC weight = 1.0e-03, obs_noise_scale = 0.00)
-<strong>Overall best traj loss</strong>: 0.00000 at epoch 198.0
-<strong>Runs analyzed</strong>: 6</p>
-<h3>Best run per <code>obs_noise_scale</code></h3>
-<table>
-<thead>
-<tr>
-<th>obs_noise_scale</th>
-<th>Best LC weight</th>
-<th>Best traj loss</th>
-<th>MASE at best</th>
-<th>R²</th>
-<th>LC loss</th>
-<th>epoch</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.0</td>
-<td>1.0e-03</td>
-<td>0.00000</td>
-<td>0.0253</td>
-<td>1.0000</td>
-<td>0.001</td>
-<td>198.0</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>—</code> — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>Matched-run count mismatch</strong>: expected 6 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.</p>
+<p><strong>Runs analyzed</strong>: 0 (expected 6)</p>
 <h2>Success-criteria verdicts (automated)</h2>
 <table>
 <thead>
@@ -110,16 +86,6 @@ kl_null with a sweet spot somewhere in 1e-3 .. 1e-1.</p>
 </table>
 <p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
 <h2>Figures</h2>
-<h3>sweep_overview</h3>
-<p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
-<h3>sweep_pareto</h3>
-<p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
-<h3>prediction_windows</h3>
-<p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
-<h3>mase</h3>
-<p><img alt="mase" src="figures/mase.png" /></p>
-<h3>lyapunov</h3>
-<p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
 <h3>per_run_lyapunov</h3>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>

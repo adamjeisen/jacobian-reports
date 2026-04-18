@@ -1,11 +1,12 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2",
-  "analyzed_at": "2026-04-16T06:58:01Z",
+  "analyzed_at": "2026-04-18T23:07:24Z",
   "metrics_summary": {
     "per_run": [
       {
         "run_id": "jhg9x3lq",
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -15,10 +16,14 @@
         "best_mase_epoch": 198.0,
         "lc_loss_at_best_tl": 0.0010725540341809392,
         "r2_at_best_tl": 0.9999939203262329,
-        "n_epochs": 200
+        "n_epochs": 200,
+        "swept_config": {
+          "training.lightning.kl_null_weight": 0
+        }
       },
       {
         "run_id": "kuhiqael",
+        "run_idx": 1,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -28,10 +33,14 @@
         "best_mase_epoch": 140.0,
         "lc_loss_at_best_tl": 0.001629306934773922,
         "r2_at_best_tl": 0.9999869465827942,
-        "n_epochs": 143
+        "n_epochs": 143,
+        "swept_config": {
+          "training.lightning.kl_null_weight": 0.0001
+        }
       },
       {
         "run_id": "88th62np",
+        "run_idx": 2,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -41,10 +50,14 @@
         "best_mase_epoch": 198.0,
         "lc_loss_at_best_tl": 0.0010061676148325205,
         "r2_at_best_tl": 0.9999934434890747,
-        "n_epochs": 200
+        "n_epochs": 200,
+        "swept_config": {
+          "training.lightning.kl_null_weight": 0.001
+        }
       },
       {
         "run_id": "nklisi77",
+        "run_idx": 3,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -54,10 +67,14 @@
         "best_mase_epoch": 198.0,
         "lc_loss_at_best_tl": 0.001203253399580717,
         "r2_at_best_tl": 0.9999893307685852,
-        "n_epochs": 200
+        "n_epochs": 200,
+        "swept_config": {
+          "training.lightning.kl_null_weight": 0.01
+        }
       },
       {
         "run_id": "gx6lmk6g",
+        "run_idx": 4,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -67,10 +84,14 @@
         "best_mase_epoch": 194.0,
         "lc_loss_at_best_tl": 0.001141534186899662,
         "r2_at_best_tl": 0.9999905228614807,
-        "n_epochs": 200
+        "n_epochs": 200,
+        "swept_config": {
+          "training.lightning.kl_null_weight": 0.1
+        }
       },
       {
         "run_id": "6y24w9yt",
+        "run_idx": 5,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -80,12 +101,20 @@
         "best_mase_epoch": 193.0,
         "lc_loss_at_best_tl": 0.0010781779419630766,
         "r2_at_best_tl": 0.9999895691871643,
-        "n_epochs": 200
+        "n_epochs": 200,
+        "swept_config": {
+          "training.lightning.kl_null_weight": 1
+        }
       }
     ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 6,
+    "matched_run_count": 6,
     "best_by_obs_noise_scale": {
       "0.0": {
         "run_id": "jhg9x3lq",
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -95,11 +124,15 @@
         "best_mase_epoch": 198.0,
         "lc_loss_at_best_tl": 0.0010725540341809392,
         "r2_at_best_tl": 0.9999939203262329,
-        "n_epochs": 200
+        "n_epochs": 200,
+        "swept_config": {
+          "training.lightning.kl_null_weight": 0
+        }
       }
     },
-    "overall_best_mase": {
+    "overall_chosen_run": {
       "run_id": "jhg9x3lq",
+      "run_idx": 0,
       "state": "finished",
       "lc_weight": 0.001,
       "obs_noise_scale": 0.0,
@@ -109,8 +142,31 @@
       "best_mase_epoch": 198.0,
       "lc_loss_at_best_tl": 0.0010725540341809392,
       "r2_at_best_tl": 0.9999939203262329,
-      "n_epochs": 200
+      "n_epochs": 200,
+      "swept_config": {
+        "training.lightning.kl_null_weight": 0
+      }
     },
+    "overall_best_mase": {
+      "run_id": "jhg9x3lq",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.001,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 1.8616602801557747e-06,
+      "best_traj_loss_epoch": 198.0,
+      "best_mase": 0.025284569710493088,
+      "best_mase_epoch": 198.0,
+      "lc_loss_at_best_tl": 0.0010725540341809392,
+      "r2_at_best_tl": 0.9999939203262329,
+      "n_epochs": 200,
+      "swept_config": {
+        "training.lightning.kl_null_weight": 0
+      }
+    },
+    "swept_paths": [
+      "training.lightning.kl_null_weight"
+    ],
     "n_runs": 6
   },
   "per_run_lyapunov": {
@@ -127,8 +183,7 @@
       "lambda_max": 0.3619130551815033,
       "lambda_sum": -19.740774154663086,
       "kaplan_yorke_dim": 2.130913019180298,
-      "error": null,
-      "spectrum_mse_vs_true": 41.24060159436991
+      "error": null
     },
     "kuhiqael": {
       "lambda_spectrum": [
@@ -143,8 +198,7 @@
       "lambda_max": 0.3540354073047638,
       "lambda_sum": -18.319625854492188,
       "kaplan_yorke_dim": 2.1250832080841064,
-      "error": null,
-      "spectrum_mse_vs_true": 42.42210668690979
+      "error": null
     },
     "88th62np": {
       "lambda_spectrum": [
@@ -159,8 +213,7 @@
       "lambda_max": 0.4270976781845093,
       "lambda_sum": -19.548999786376953,
       "kaplan_yorke_dim": 2.130211114883423,
-      "error": null,
-      "spectrum_mse_vs_true": 41.051560260211126
+      "error": null
     },
     "nklisi77": {
       "lambda_spectrum": [
@@ -175,8 +228,7 @@
       "lambda_max": 0.49683427810668945,
       "lambda_sum": -16.170228958129883,
       "kaplan_yorke_dim": 2.1943016052246094,
-      "error": null,
-      "spectrum_mse_vs_true": 44.80636659929297
+      "error": null
     },
     "gx6lmk6g": {
       "lambda_spectrum": [
@@ -191,8 +243,7 @@
       "lambda_max": 0.43489301204681396,
       "lambda_sum": -16.30532455444336,
       "kaplan_yorke_dim": 2.165727376937866,
-      "error": null,
-      "spectrum_mse_vs_true": 41.31963048251537
+      "error": null
     },
     "6y24w9yt": {
       "lambda_spectrum": [
@@ -207,8 +258,7 @@
       "lambda_max": 0.3318434953689575,
       "lambda_sum": -14.567986488342285,
       "kaplan_yorke_dim": 2.14483380317688,
-      "error": null,
-      "spectrum_mse_vs_true": 45.40291596880257
+      "error": null
     }
   },
   "empirical_lyapunov_spectrum": [
