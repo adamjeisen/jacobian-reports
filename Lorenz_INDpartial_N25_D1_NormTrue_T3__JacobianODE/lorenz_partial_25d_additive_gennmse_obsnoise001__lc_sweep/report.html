@@ -59,17 +59,19 @@ loss / spectrum mismatch and know to revisit the loss design.</p>
 <li>Loop closure bounded and monotonically improving at low LC</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Overall best MASE</strong>: 0.5354 (LC weight = 0.0e+00, obs_noise_scale = 0.00)
-<strong>Overall best traj loss</strong>: 0.00086 at epoch 169.0
-<strong>Runs analyzed</strong>: 9</p>
-<h3>Best run per <code>obs_noise_scale</code></h3>
+<p><strong>Swept axes</strong> (1): <code>training.lightning.loop_closure_weight</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>o14xwnle</code> — traj_loss=0.00086, MASE=0.5354, R²=0.9992, LC loss=7.134, epoch=169.0</p>
+<p>Swept-axis values at chosen run: <code>training.lightning.loop_closure_weight</code>=0</p>
+<p><strong>Runs analyzed</strong>: 9 (expected 9)</p>
+<h3>Per-run results</h3>
 <table>
 <thead>
 <tr>
-<th>obs_noise_scale</th>
-<th>Best LC weight</th>
-<th>Best traj loss</th>
-<th>MASE at best</th>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>training.lightning.loop_closure_weight</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
 <th>R²</th>
 <th>LC loss</th>
 <th>epoch</th>
@@ -77,13 +79,94 @@ loss / spectrum mismatch and know to revisit the loss design.</p>
 </thead>
 <tbody>
 <tr>
-<td>0.0</td>
-<td>0.0e+00</td>
+<td>0</td>
+<td><code>o14xwnle</code></td>
+<td>0</td>
 <td>0.00086</td>
 <td>0.5354</td>
 <td>0.9992</td>
 <td>7.134</td>
 <td>169.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>rnh0mo3j</code></td>
+<td>1.0e-06</td>
+<td>0.00089</td>
+<td>0.5412</td>
+<td>0.9991</td>
+<td>4.685</td>
+<td>160.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>d8ireow1</code></td>
+<td>1.0e-04</td>
+<td>0.00096</td>
+<td>0.5626</td>
+<td>0.9991</td>
+<td>0.172</td>
+<td>177.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>7hgswub6</code></td>
+<td>1.0e-05</td>
+<td>0.00098</td>
+<td>0.5695</td>
+<td>0.9990</td>
+<td>0.858</td>
+<td>152.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>z8a1jmbf</code></td>
+<td>0.001</td>
+<td>0.00121</td>
+<td>0.6155</td>
+<td>0.9988</td>
+<td>0.035</td>
+<td>116.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>3xgzru7u</code></td>
+<td>0.01</td>
+<td>0.00124</td>
+<td>0.6175</td>
+<td>0.9988</td>
+<td>0.001</td>
+<td>177.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>cj1fzag0</code></td>
+<td>0.1</td>
+<td>0.00144</td>
+<td>0.6643</td>
+<td>0.9986</td>
+<td>0.000</td>
+<td>151.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>0xhvd2y7</code></td>
+<td>1</td>
+<td>0.00151</td>
+<td>0.6875</td>
+<td>0.9985</td>
+<td>0.000</td>
+<td>189.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>qhg02flb</code></td>
+<td>10</td>
+<td>0.00202</td>
+<td>0.8029</td>
+<td>0.9980</td>
+<td>0.000</td>
+<td>100.0</td>
 </tr>
 </tbody>
 </table>
@@ -130,36 +213,36 @@ loss / spectrum mismatch and know to revisit the loss design.</p>
 <p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
 <h3>sweep_pareto</h3>
 <p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
 <h3>prediction_windows</h3>
 <p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
 <h3>long_trajectory</h3>
 <p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
 <h3>mase</h3>
 <p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
 <h3>lyapunov</h3>
 <p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
 <h3>per_run_lyapunov</h3>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>
 <p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
 <h3>per_run_lyapunov_relerr</h3>
 <p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
-<h3>reconstruction</h3>
-<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
-<h3>latent_utilization</h3>
-<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
-<h3>kaplan_yorke</h3>
-<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h3>kaplan_yorke_pca</h3>
 <p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
 <h3>prediction_detail_latent</h3>
 <p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
 <h3>prediction_detail_obs</h3>
 <p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
-<h3>encoder_decoder_jacobians</h3>
-<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
-<h3>amplification</h3>
-<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h2>Discussion</h2>
 <!--
 This section is intentionally left as a placeholder. A human reviewer
@@ -215,15 +298,15 @@ Found 11 effectively-done sweep runs:
   loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=qhg02flb
   Dropping 2 run(s) with no checkpoint dir: ['9vror9rv', 'c31v88rb']
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=o14xwnle: DiagnosticMetrics(one_step_mase=0.4591344892978668, loop_closure_loss=7.134218692779541, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008574000676162541) (from W&amp;B history)
-  run=rnh0mo3j: DiagnosticMetrics(one_step_mase=0.46033379435539246, loop_closure_loss=4.6850104331970215, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008926484733819962) (from W&amp;B history)
-  run=7hgswub6: DiagnosticMetrics(one_step_mase=0.46712175011634827, loop_closure_loss=0.8583828210830688, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009832428768277168) (from W&amp;B history)
-  run=d8ireow1: DiagnosticMetrics(one_step_mase=0.46212300658226013, loop_closure_loss=0.17248038947582245, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009647952974773943) (from W&amp;B history)
-  run=z8a1jmbf: DiagnosticMetrics(one_step_mase=0.4749892055988312, loop_closure_loss=0.03484678640961647, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012089101364836097) (from W&amp;B history)
-  run=3xgzru7u: DiagnosticMetrics(one_step_mase=0.4691356122493744, loop_closure_loss=0.0014590458013117313, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001242600497789681) (from W&amp;B history)
-  run=cj1fzag0: DiagnosticMetrics(one_step_mase=0.47547024488449097, loop_closure_loss=0.00018559489399194717, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001435752841643989) (from W&amp;B history)
-  run=0xhvd2y7: DiagnosticMetrics(one_step_mase=0.48966339230537415, loop_closure_loss=4.1786850488279015e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015112519031390548) (from W&amp;B history)
-  run=qhg02flb: DiagnosticMetrics(one_step_mase=0.5301817655563354, loop_closure_loss=2.3997810785658658e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0020244133193045855) (from W&amp;B history)
+  run=o14xwnle: DiagnosticMetrics(one_step_mase=0.4591344892978668, loop_closure_loss=7.134218692779541, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008574000676162541) (from cache, n_batches=100)
+  run=rnh0mo3j: DiagnosticMetrics(one_step_mase=0.46033379435539246, loop_closure_loss=4.6850104331970215, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008926484733819962) (from cache, n_batches=100)
+  run=7hgswub6: DiagnosticMetrics(one_step_mase=0.46712175011634827, loop_closure_loss=0.8583828210830688, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009832428768277168) (from cache, n_batches=100)
+  run=d8ireow1: DiagnosticMetrics(one_step_mase=0.46212300658226013, loop_closure_loss=0.17248038947582245, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009647952974773943) (from cache, n_batches=100)
+  run=z8a1jmbf: DiagnosticMetrics(one_step_mase=0.4749892055988312, loop_closure_loss=0.03484678640961647, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012089101364836097) (from cache, n_batches=100)
+  run=3xgzru7u: DiagnosticMetrics(one_step_mase=0.4691356122493744, loop_closure_loss=0.0014590458013117313, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001242600497789681) (from cache, n_batches=100)
+  run=cj1fzag0: DiagnosticMetrics(one_step_mase=0.47547024488449097, loop_closure_loss=0.00018559489399194717, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001435752841643989) (from cache, n_batches=100)
+  run=0xhvd2y7: DiagnosticMetrics(one_step_mase=0.48966339230537415, loop_closure_loss=4.1786850488279015e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015112519031390548) (from cache, n_batches=100)
+  run=qhg02flb: DiagnosticMetrics(one_step_mase=0.5301817655563354, loop_closure_loss=2.3997810785658658e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0020244133193045855) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              rnh0mo3j
