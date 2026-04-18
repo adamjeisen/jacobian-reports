@@ -2,6 +2,13 @@
   "projects": {
     "Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE": [
       {
+        "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776552627.6987708
+      },
+      {
         "group": "lorenz_full_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -21,13 +28,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776312618.256471
-      },
-      {
-        "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776312483.5432498
       }
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
