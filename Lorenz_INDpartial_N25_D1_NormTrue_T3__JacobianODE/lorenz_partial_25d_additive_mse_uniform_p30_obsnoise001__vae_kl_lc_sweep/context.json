@@ -1,0 +1,680 @@
+{
+  "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+  "completed_at": "2026-04-18T18:30:25Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep": {
+      "description": "Same base as lorenz_partial_25d_additive_mse_uniform_p30 with\nobs_noise=0.01 and model.use_vae=true. Sweeps kl_dyn_weight over\n{1e-4, 1e-3, 1e-2, 1e-1} \u00d7 kl_null_weight over {null (= coupled to\ndyn), 0} \u00d7 the standard 9-value loop_closure_weight grid (3-D\nsweep, 72 runs).\n",
+      "hypothesis": "Open question whether adding VAE-style stochasticity to the dyn\nlatent (regularized by kl_dyn_weight) improves Lyapunov-spectrum\nestimation \u2014 in particular, whether posterior noise on z_dyn acts\nas a helpful implicit ensemble average that stabilizes stable-\ndirection contraction rate estimates, or instead destabilizes\ntraining through interaction with LPL (known LPL \u00d7 LC sensitivity\nfrom prior runs) and loop closure.\nThe null toggle (kl_null=coupled vs 0) separately tests whether\npulling z_null toward zero adds signal on top of dyn regularization\nor is redundant once the dyn posterior is constrained.\n",
+      "success_criteria": [
+        "At some kl_dyn setting, \u03bb_min accuracy improves vs the kl_dyn \u2192 0 limit (or equivalently the existing obsnoise001 baseline)",
+        "Trajectory loss and loop closure don't catastrophically diverge at any kl_dyn \u00d7 LC cell (beyond the already-known LC=1,10 explosion)",
+        "Detectable, interpretable difference between kl_null=coupled and kl_null=0 (e.g., in null-space RMS or in \u03bb accuracy)"
+      ]
+    }
+  },
+  "expected_run_count": 64,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+      "hydra.launcher.partition=ou_bcs_low"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 21,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 22,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 23,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 24,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 25,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 26,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 27,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 28,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 29,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 30,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 31,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 32,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 33,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 34,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 35,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 36,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 37,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 38,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 39,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 40,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 41,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 42,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 43,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 44,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 45,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 46,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 47,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 48,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 49,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 50,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 51,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 52,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 53,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 54,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 55,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 56,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 57,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 58,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 59,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 60,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 61,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 62,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 63,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE",
+    "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "5051646",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-17T21:06:15Z"
+}
