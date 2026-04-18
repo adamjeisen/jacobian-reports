@@ -40,17 +40,24 @@ contraction spectrum closer to the empirical.</p>
 <li>Σλ_i moves from ~-20 toward empirical ~-14</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Overall best MASE</strong>: 0.6976 (LC weight = 0.0e+00, obs_noise_scale = 0.00)
-<strong>Overall best traj loss</strong>: 0.00079 at epoch 101.0
-<strong>Runs analyzed</strong>: 12</p>
-<h3>Best run per <code>obs_noise_scale</code></h3>
+<p><strong>Swept axes</strong> (1): <code>training.lightning.loop_closure_weight</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>5ona41iw</code> — traj_loss=0.00079, MASE=0.6976, R²=0.9978, LC loss=3.421, epoch=101.0</p>
+<p>Swept-axis values at chosen run: <code>training.lightning.loop_closure_weight</code>=0</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>3 run_idx slot(s) had multiple matching wandb runs</strong> — the best by <code>best_traj_loss</code> was kept; the others are listed below for audit:
+  - run_idx=<strong>0</strong>: chose <code>5ona41iw</code>, dropped <code>qxlwn990</code>
+  - run_idx=<strong>4</strong>: chose <code>ub7bqcft</code>, dropped <code>jrndl5j0</code>
+  - run_idx=<strong>5</strong>: chose <code>8p5gxwdn</code>, dropped <code>wq8wfyxy</code></p>
+<p><strong>Runs analyzed</strong>: 9 (expected 9)</p>
+<h3>Per-run results</h3>
 <table>
 <thead>
 <tr>
-<th>obs_noise_scale</th>
-<th>Best LC weight</th>
-<th>Best traj loss</th>
-<th>MASE at best</th>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>training.lightning.loop_closure_weight</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
 <th>R²</th>
 <th>LC loss</th>
 <th>epoch</th>
@@ -58,13 +65,94 @@ contraction spectrum closer to the empirical.</p>
 </thead>
 <tbody>
 <tr>
-<td>0.0</td>
-<td>0.0e+00</td>
+<td>0</td>
+<td><code>5ona41iw</code></td>
+<td>0</td>
 <td>0.00079</td>
 <td>0.6976</td>
 <td>0.9978</td>
 <td>3.421</td>
 <td>101.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>i8nq6c39</code></td>
+<td>1.0e-06</td>
+<td>0.00112</td>
+<td>0.7749</td>
+<td>0.9969</td>
+<td>1.812</td>
+<td>65.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>rd78e3p1</code></td>
+<td>1.0e-05</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>4.470</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>o0lmk9do</code></td>
+<td>1.0e-04</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>0.542</td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>ub7bqcft</code></td>
+<td>0.001</td>
+<td>0.00084</td>
+<td>0.7295</td>
+<td>0.9977</td>
+<td>0.035</td>
+<td>101.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>8p5gxwdn</code></td>
+<td>0.01</td>
+<td>0.00117</td>
+<td>0.7739</td>
+<td>0.9968</td>
+<td>0.005</td>
+<td>101.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>f94958hz</code></td>
+<td>1</td>
+<td>0.00212</td>
+<td>1.0654</td>
+<td>0.9943</td>
+<td>0.000</td>
+<td>123.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>x8gguowy</code></td>
+<td>0.1</td>
+<td>0.00240</td>
+<td>1.0517</td>
+<td>0.9935</td>
+<td>0.000</td>
+<td>102.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>rav3nrkr</code></td>
+<td>10</td>
+<td>0.03357</td>
+<td>4.0534</td>
+<td>0.9092</td>
+<td>0.000</td>
+<td>67.0</td>
 </tr>
 </tbody>
 </table>
@@ -101,36 +189,36 @@ contraction spectrum closer to the empirical.</p>
 <p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
 <h3>sweep_pareto</h3>
 <p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
 <h3>prediction_windows</h3>
 <p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
 <h3>long_trajectory</h3>
 <p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
 <h3>mase</h3>
 <p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
 <h3>lyapunov</h3>
 <p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
 <h3>per_run_lyapunov</h3>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>
 <p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
 <h3>per_run_lyapunov_relerr</h3>
 <p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
-<h3>reconstruction</h3>
-<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
-<h3>latent_utilization</h3>
-<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
-<h3>kaplan_yorke</h3>
-<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h3>kaplan_yorke_pca</h3>
 <p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
 <h3>prediction_detail_latent</h3>
 <p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
 <h3>prediction_detail_obs</h3>
 <p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
-<h3>encoder_decoder_jacobians</h3>
-<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
-<h3>amplification</h3>
-<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h2>Discussion</h2>
 <!--
 This section is intentionally left as a placeholder. A human reviewer
@@ -149,31 +237,31 @@ outcome to the stated hypothesis. Write the Discussion to
 Found 12 total runs in JacobianODE/Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE (group=lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep)
 All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
   i8nq6c39: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  o0lmk9do: state=running, lc=0.0001, te=0.0, kl_dyn=0.0
-  rd78e3p1: state=running, lc=1e-05, te=0.0, kl_dyn=0.0
-  f94958hz: state=running, lc=1.0, te=0.0, kl_dyn=0.0
-  wq8wfyxy: state=running, lc=0.01, te=0.0, kl_dyn=0.0
-  x8gguowy: state=running, lc=0.1, te=0.0, kl_dyn=0.0
-  rav3nrkr: state=running, lc=10.0, te=0.0, kl_dyn=0.0
+  o0lmk9do: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+  rd78e3p1: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
+  f94958hz: state=finished, lc=1.0, te=0.0, kl_dyn=0.0
+  wq8wfyxy: state=finished, lc=0.01, te=0.0, kl_dyn=0.0
+  x8gguowy: state=finished, lc=0.1, te=0.0, kl_dyn=0.0
+  rav3nrkr: state=finished, lc=10.0, te=0.0, kl_dyn=0.0
   5ona41iw: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
   qxlwn990: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
   8p5gxwdn: state=crashed, lc=0.01, te=0.0, kl_dyn=0.0
   ub7bqcft: state=crashed, lc=0.001, te=0.0, kl_dyn=0.0
-  jrndl5j0: state=running, lc=0.001, te=0.0, kl_dyn=0.0
+  jrndl5j0: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
 
 slurm_timeout_min not found in any run config — falling back to 180 min
   Including i8nq6c39 (lc=1e-06): use_all_runs=True (state=finished)
-  Including o0lmk9do (lc=0.0001): use_all_runs=True (state=running)
-  Including rd78e3p1 (lc=1e-05): use_all_runs=True (state=running)
-  Including f94958hz (lc=1.0): use_all_runs=True (state=running)
-  Including wq8wfyxy (lc=0.01): use_all_runs=True (state=running)
-  Including x8gguowy (lc=0.1): use_all_runs=True (state=running)
-  Including rav3nrkr (lc=10.0): use_all_runs=True (state=running)
+  Including o0lmk9do (lc=0.0001): use_all_runs=True (state=finished)
+  Including rd78e3p1 (lc=1e-05): use_all_runs=True (state=finished)
+  Including f94958hz (lc=1.0): use_all_runs=True (state=finished)
+  Including wq8wfyxy (lc=0.01): use_all_runs=True (state=finished)
+  Including x8gguowy (lc=0.1): use_all_runs=True (state=finished)
+  Including rav3nrkr (lc=10.0): use_all_runs=True (state=finished)
   Including 5ona41iw (lc=0.0): use_all_runs=True (state=crashed)
   Including qxlwn990 (lc=0.0): use_all_runs=True (state=finished)
   Including 8p5gxwdn (lc=0.01): use_all_runs=True (state=crashed)
   Including ub7bqcft (lc=0.001): use_all_runs=True (state=crashed)
-  Including jrndl5j0 (lc=0.001): use_all_runs=True (state=running)
+  Including jrndl5j0 (lc=0.001): use_all_runs=True (state=finished)
 Found 12 effectively-done sweep runs:
   loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=5ona41iw
   loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=qxlwn990
@@ -189,17 +277,17 @@ Found 12 effectively-done sweep runs:
   loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=rav3nrkr
 n_dims=100, n_latent=100, n_dyn=7, dt=0.0150
   run=5ona41iw: DiagnosticMetrics(one_step_mase=0.48544707894325256, loop_closure_loss=1.8584074974060059, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015311388997361064) (from cache, n_batches=100)
-  run=qxlwn990: DiagnosticMetrics(one_step_mase=0.47509074211120605, loop_closure_loss=2.2841503620147705, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0010818451410159469) (from W&amp;B history)
-  run=i8nq6c39: DiagnosticMetrics(one_step_mase=0.48617541790008545, loop_closure_loss=1.8115429878234863, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011247723596170545) (from W&amp;B history)
-  run=rd78e3p1: DiagnosticMetrics(one_step_mase=0.464398592710495, loop_closure_loss=0.5756409168243408, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0010503451339900494) (from W&amp;B history)
-  run=o0lmk9do: DiagnosticMetrics(one_step_mase=0.5012394189834595, loop_closure_loss=0.09735587239265442, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0016264350851997733) (from W&amp;B history)
-  run=jrndl5j0: DiagnosticMetrics(one_step_mase=0.49195191264152527, loop_closure_loss=0.03575555980205536, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013427409576252103) (from W&amp;B history)
-  run=ub7bqcft: DiagnosticMetrics(one_step_mase=0.48754647374153137, loop_closure_loss=0.03483300283551216, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008400846272706985) (from W&amp;B history)
-  run=8p5gxwdn: DiagnosticMetrics(one_step_mase=0.4820827543735504, loop_closure_loss=0.004660323262214661, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011718646856024861) (from W&amp;B history)
-  run=wq8wfyxy: DiagnosticMetrics(one_step_mase=0.4840472936630249, loop_closure_loss=0.0030754271429032087, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0022566604893654585) (from W&amp;B history)
-  run=x8gguowy: DiagnosticMetrics(one_step_mase=0.499728262424469, loop_closure_loss=0.0003040399169549346, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003197801997885108) (from W&amp;B history)
-  run=f94958hz: DiagnosticMetrics(one_step_mase=0.5014160871505737, loop_closure_loss=0.00021532965183723718, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0025481125339865685) (from W&amp;B history)
-  run=rav3nrkr: DiagnosticMetrics(one_step_mase=0.4928510785102844, loop_closure_loss=3.789822500266382e-08, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.05500970780849457) (from W&amp;B history)
+  run=qxlwn990: DiagnosticMetrics(one_step_mase=0.47509074211120605, loop_closure_loss=2.2841503620147705, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0010818451410159469) (from cache, n_batches=100)
+  run=i8nq6c39: DiagnosticMetrics(one_step_mase=0.48617541790008545, loop_closure_loss=1.8115429878234863, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011247723596170545) (from cache, n_batches=100)
+  run=rd78e3p1: DiagnosticMetrics(one_step_mase=0.464398592710495, loop_closure_loss=0.5756409168243408, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0010503451339900494) (from cache, n_batches=100)
+  run=o0lmk9do: DiagnosticMetrics(one_step_mase=0.5012394189834595, loop_closure_loss=0.09735587239265442, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0016264350851997733) (from cache, n_batches=100)
+  run=jrndl5j0: DiagnosticMetrics(one_step_mase=0.49195191264152527, loop_closure_loss=0.03575555980205536, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013427409576252103) (from cache, n_batches=100)
+  run=ub7bqcft: DiagnosticMetrics(one_step_mase=0.48754647374153137, loop_closure_loss=0.03483300283551216, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008400846272706985) (from cache, n_batches=100)
+  run=8p5gxwdn: DiagnosticMetrics(one_step_mase=0.4820827543735504, loop_closure_loss=0.004660323262214661, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011718646856024861) (from cache, n_batches=100)
+  run=wq8wfyxy: DiagnosticMetrics(one_step_mase=0.4840472936630249, loop_closure_loss=0.0030754271429032087, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0022566604893654585) (from cache, n_batches=100)
+  run=x8gguowy: DiagnosticMetrics(one_step_mase=0.499728262424469, loop_closure_loss=0.0003040399169549346, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003197801997885108) (from cache, n_batches=100)
+  run=f94958hz: DiagnosticMetrics(one_step_mase=0.5014160871505737, loop_closure_loss=0.00021532965183723718, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0025481125339865685) (from cache, n_batches=100)
+  run=rav3nrkr: DiagnosticMetrics(one_step_mase=0.4928510785102844, loop_closure_loss=3.789822500266382e-08, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.05500970780849457) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              ub7bqcft

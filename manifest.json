@@ -32,6 +32,13 @@
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
       {
+        "group": "lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776554422.3910275
+      },
+      {
         "group": "lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -58,13 +65,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776553836.0327158
-      },
-      {
-        "group": "lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776405622.260264
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30_obsnoise001__lc_sweep",
