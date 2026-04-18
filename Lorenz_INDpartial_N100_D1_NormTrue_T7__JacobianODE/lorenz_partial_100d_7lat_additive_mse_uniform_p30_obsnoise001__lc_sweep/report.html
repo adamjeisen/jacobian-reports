@@ -43,17 +43,19 @@ of the stable spectrum across all Lorenz partial sweeps to date.</p>
 <li>No loop-closure explosion under uniform training</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Overall best MASE</strong>: 0.7606 (LC weight = 1.0e-03, obs_noise_scale = 0.00)
-<strong>Overall best traj loss</strong>: 0.00129 at epoch 89.0
-<strong>Runs analyzed</strong>: 9</p>
-<h3>Best run per <code>obs_noise_scale</code></h3>
+<p><strong>Swept axes</strong> (1): <code>training.lightning.loop_closure_weight</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>0s9x4c7x</code> — traj_loss=0.00124, MASE=0.7696, R²=0.9966, LC loss=0.125, epoch=113.0</p>
+<p>Swept-axis values at chosen run: <code>training.lightning.loop_closure_weight</code>=1.0e-04</p>
+<p><strong>Runs analyzed</strong>: 9 (expected 9)</p>
+<h3>Per-run results</h3>
 <table>
 <thead>
 <tr>
-<th>obs_noise_scale</th>
-<th>Best LC weight</th>
-<th>Best traj loss</th>
-<th>MASE at best</th>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>training.lightning.loop_closure_weight</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
 <th>R²</th>
 <th>LC loss</th>
 <th>epoch</th>
@@ -61,13 +63,94 @@ of the stable spectrum across all Lorenz partial sweeps to date.</p>
 </thead>
 <tbody>
 <tr>
-<td>0.0</td>
+<td>3</td>
+<td><code>0s9x4c7x</code></td>
 <td>1.0e-04</td>
 <td>0.00124</td>
 <td>0.7696</td>
 <td>0.9966</td>
 <td>0.125</td>
 <td>113.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>yeik8qyi</code></td>
+<td>1.0e-05</td>
+<td>0.00129</td>
+<td>0.8237</td>
+<td>0.9965</td>
+<td>0.702</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>if4guozf</code></td>
+<td>0.001</td>
+<td>0.00129</td>
+<td>0.7606</td>
+<td>0.9964</td>
+<td>0.021</td>
+<td>89.0</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>e67bpprk</code></td>
+<td>0</td>
+<td>0.00132</td>
+<td>0.8151</td>
+<td>0.9964</td>
+<td>7.458</td>
+<td>104.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>uhv7bm3m</code></td>
+<td>1.0e-06</td>
+<td>0.00133</td>
+<td>0.8254</td>
+<td>0.9964</td>
+<td>2.760</td>
+<td>104.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>lkqxvwes</code></td>
+<td>0.01</td>
+<td>0.00145</td>
+<td>0.8095</td>
+<td>0.9959</td>
+<td>0.004</td>
+<td>113.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>nx14pp22</code></td>
+<td>0.1</td>
+<td>0.00228</td>
+<td>0.9426</td>
+<td>0.9937</td>
+<td>0.001</td>
+<td>113.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>p59phq8k</code></td>
+<td>1</td>
+<td>0.00866</td>
+<td>1.7345</td>
+<td>0.9766</td>
+<td>0.000</td>
+<td>102.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>4qnc6ffg</code></td>
+<td>10</td>
+<td>0.00888</td>
+<td>1.6733</td>
+<td>0.9759</td>
+<td>0.000</td>
+<td>148.0</td>
 </tr>
 </tbody>
 </table>
@@ -94,7 +177,7 @@ of the stable spectrum across all Lorenz partial sweeps to date.</p>
 <tr>
 <td>val/trajectory_r2 &gt; 0.9 at best LC</td>
 <td><strong>Pass</strong></td>
-<td>Best R² = 0.9964; threshold &gt; 0.9</td>
+<td>Best R² = 0.9966; threshold &gt; 0.9</td>
 </tr>
 <tr>
 <td>No loop-closure explosion under uniform training</td>
@@ -109,36 +192,36 @@ of the stable spectrum across all Lorenz partial sweeps to date.</p>
 <p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
 <h3>sweep_pareto</h3>
 <p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
 <h3>prediction_windows</h3>
 <p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
 <h3>long_trajectory</h3>
 <p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
 <h3>mase</h3>
 <p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
 <h3>lyapunov</h3>
 <p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
 <h3>per_run_lyapunov</h3>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>
 <p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
 <h3>per_run_lyapunov_relerr</h3>
 <p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
-<h3>reconstruction</h3>
-<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
-<h3>latent_utilization</h3>
-<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
-<h3>kaplan_yorke</h3>
-<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h3>kaplan_yorke_pca</h3>
 <p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
 <h3>prediction_detail_latent</h3>
 <p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
 <h3>prediction_detail_obs</h3>
 <p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
-<h3>encoder_decoder_jacobians</h3>
-<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
-<h3>amplification</h3>
-<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h2>Discussion</h2>
 <!--
 This section is intentionally left as a placeholder. A human reviewer
@@ -187,15 +270,15 @@ Found 9 effectively-done sweep runs:
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=p59phq8k
   loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=4qnc6ffg
 n_dims=100, n_latent=100, n_dyn=7, dt=0.0150
-  run=e67bpprk: DiagnosticMetrics(one_step_mase=0.6273157596588135, loop_closure_loss=7.45751953125, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00132189248688519) (from W&amp;B history)
-  run=uhv7bm3m: DiagnosticMetrics(one_step_mase=0.6239482164382935, loop_closure_loss=2.760481357574463, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013255274388939142) (from W&amp;B history)
-  run=yeik8qyi: DiagnosticMetrics(one_step_mase=0.6232653856277466, loop_closure_loss=0.7018495202064514, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012855890672653913) (from W&amp;B history)
-  run=0s9x4c7x: DiagnosticMetrics(one_step_mase=0.6532276272773743, loop_closure_loss=0.1253618746995926, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012366055743768811) (from W&amp;B history)
-  run=if4guozf: DiagnosticMetrics(one_step_mase=0.6544821858406067, loop_closure_loss=0.020569054409861565, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012942408211529255) (from W&amp;B history)
-  run=lkqxvwes: DiagnosticMetrics(one_step_mase=0.6592742800712585, loop_closure_loss=0.0038593243807554245, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014511931221932173) (from W&amp;B history)
-  run=nx14pp22: DiagnosticMetrics(one_step_mase=0.6523944139480591, loop_closure_loss=0.000719482428394258, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002284906804561615) (from W&amp;B history)
-  run=p59phq8k: DiagnosticMetrics(one_step_mase=0.7089461088180542, loop_closure_loss=4.580683526000939e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008659649640321732) (from W&amp;B history)
-  run=4qnc6ffg: DiagnosticMetrics(one_step_mase=0.6812399625778198, loop_closure_loss=1.119154148909729e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008884234353899956) (from W&amp;B history)
+  run=e67bpprk: DiagnosticMetrics(one_step_mase=0.6273157596588135, loop_closure_loss=7.45751953125, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00132189248688519) (from cache, n_batches=100)
+  run=uhv7bm3m: DiagnosticMetrics(one_step_mase=0.6239482164382935, loop_closure_loss=2.760481357574463, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013255274388939142) (from cache, n_batches=100)
+  run=yeik8qyi: DiagnosticMetrics(one_step_mase=0.6232653856277466, loop_closure_loss=0.7018495202064514, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012855890672653913) (from cache, n_batches=100)
+  run=0s9x4c7x: DiagnosticMetrics(one_step_mase=0.6532276272773743, loop_closure_loss=0.1253618746995926, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012366055743768811) (from cache, n_batches=100)
+  run=if4guozf: DiagnosticMetrics(one_step_mase=0.6544821858406067, loop_closure_loss=0.020569054409861565, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012942408211529255) (from cache, n_batches=100)
+  run=lkqxvwes: DiagnosticMetrics(one_step_mase=0.6592742800712585, loop_closure_loss=0.0038593243807554245, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014511931221932173) (from cache, n_batches=100)
+  run=nx14pp22: DiagnosticMetrics(one_step_mase=0.6523944139480591, loop_closure_loss=0.000719482428394258, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002284906804561615) (from cache, n_batches=100)
+  run=p59phq8k: DiagnosticMetrics(one_step_mase=0.7089461088180542, loop_closure_loss=4.580683526000939e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008659649640321732) (from cache, n_batches=100)
+  run=4qnc6ffg: DiagnosticMetrics(one_step_mase=0.6812399625778198, loop_closure_loss=1.119154148909729e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008884234353899956) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              0s9x4c7x
