@@ -43,15 +43,31 @@
   .project { margin-bottom: 1.5rem; }
   .project-name { font-size: 0.95rem; color: var(--fg2); margin-bottom: 0.4rem; }
   .sweep-list { display: grid; gap: 0.5rem; }
+  /* Stats/meta always on second line: stack group-name over meta
+     regardless of viewport width. Prevents layout jitter where long
+     names push meta to a new line and short ones keep it inline. */
   .sweep-card { background: var(--card); border: 1px solid var(--border);
     border-radius: 6px; padding: 0.7rem 1rem; display: flex;
-    justify-content: space-between; align-items: center; flex-wrap: wrap;
-    gap: 0.5rem; }
+    flex-direction: column; align-items: stretch; gap: 0.4rem; }
   .sweep-card:hover { border-color: var(--accent); }
+  .sweep-name-row { display: flex; justify-content: space-between;
+    align-items: baseline; gap: 0.5rem; }
   .sweep-name { font-size: 0.85rem; overflow-wrap: anywhere;
-    word-break: break-word; }
+    word-break: break-word; flex: 1 1 auto; }
   .sweep-meta { display: flex; gap: 0.8rem; align-items: center;
     flex-wrap: wrap; font-size: 0.78rem; color: var(--fg2); }
+  .hide-btn { background: none; border: none; color: var(--fg2);
+    font-family: inherit; font-size: 0.75rem; cursor: pointer;
+    padding: 0 0.3rem; opacity: 0.4; transition: opacity 0.15s; }
+  .hide-btn:hover { opacity: 1; color: var(--fg); }
+
+  /* Hidden-groups dropdown inside each project */
+  .hidden-details { margin-top: 0.4rem; font-size: 0.8rem; }
+  .hidden-details > summary { color: var(--fg2); cursor: pointer;
+    padding: 0.3rem 0; list-style: none; user-select: none; }
+  .hidden-details > summary::before { content: "▸ "; }
+  .hidden-details[open] > summary::before { content: "▾ "; }
+  .hidden-details .sweep-list { margin-top: 0.4rem; opacity: 0.75; }
 
   /* Mobile / narrow viewport */
   @media (max-width: 640px) {
@@ -61,8 +77,7 @@
     .status-bar { gap: 0.6rem; }
     .status-bar .stat { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
     .stat .num { font-size: 1.1rem; }
-    .sweep-card { flex-direction: column; align-items: flex-start;
-      gap: 0.4rem; padding: 0.7rem 0.8rem; }
+    .sweep-card { padding: 0.7rem 0.8rem; }
     .sweep-meta { width: 100%; gap: 0.5rem 0.8rem; }
   }
 
@@ -165,6 +180,28 @@ if (localStorage.getItem("jac_auth") === "1") {
   showDashboard();
 }
 
+// --- Hidden groups (per-browser, via localStorage) ---
+// Minimizes clutter on a dashboard with dozens of processed sweeps. Each
+// card gets a subtle × to hide that group; every project renders its
+// hidden groups in a collapsible <details> dropdown at the bottom so
+// they can be unhidden later. The ``Active now`` section also respects
+// this list — a hidden group stays hidden wherever it appears until the
+// user explicitly brings it back via the project-level dropdown.
+function getHidden() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem("jac_hidden_groups") || "[]"));
+  } catch (e) { return new Set(); }
+}
+function saveHidden(set) {
+  localStorage.setItem("jac_hidden_groups", JSON.stringify([...set]));
+}
+function hideGroup(group) {
+  const h = getHidden(); h.add(group); saveHidden(h); loadDashboard();
+}
+function unhideGroup(group) {
+  const h = getHidden(); h.delete(group); saveHidden(h); loadDashboard();
+}
+
 // --- Dashboard ---
 async function loadDashboard() {
   // 1. Load overview.json
@@ -225,7 +262,7 @@ async function loadDashboard() {
   } catch (e) { /* no manifest yet */ }
 
   // --- Unified rendering: merge manifest + overview, inline SLURM info ---
-  function renderCard(group, project, oInfo, hasReport, reportMtime) {
+  function renderCard(group, project, oInfo, hasReport, reportMtime, isHidden = false) {
     const status = oInfo?.status || "unknown";
     const summary = oInfo?.runs_summary;
     const tSlurm = oInfo?.training_slurm;
@@ -261,9 +298,20 @@ async function loadDashboard() {
       ? `<a href="${project}/${group}/report.html">view report</a>`
       : `<span style="color:var(--fg2)">no report yet</span>`;
 
+    // Group names come from the repo's own manifest / overview, so no
+    // sanitiser. encodeURIComponent guards against any backslashes or
+    // quotes if they ever appear.
+    const gEnc = encodeURIComponent(group);
+    const toggleBtn = isHidden
+      ? `<button class="hide-btn" title="unhide" onclick="unhideGroup(decodeURIComponent('${gEnc}'))">↩ unhide</button>`
+      : `<button class="hide-btn" title="hide this group" onclick="hideGroup(decodeURIComponent('${gEnc}'))">×</button>`;
+
     return `
       <div class="sweep-card">
-        <div><span class="sweep-name">${group}</span></div>
+        <div class="sweep-name-row">
+          <span class="sweep-name">${group}</span>
+          ${toggleBtn}
+        </div>
         <div class="sweep-meta">
           ${meta.map(s => `<span>${s}</span>`).join("")}
           <span class="badge ${badgeClass}">${status}</span>
@@ -277,6 +325,9 @@ async function loadDashboard() {
   //     Groups shown here are hidden from the per-project list below
   //     (each group appears once). The per-card badge still distinguishes
   //     between active, done (awaiting analysis), and failed.
+  //     Respects the per-user hidden-groups list — hidden-and-active
+  //     groups reappear in the per-project "Show hidden" dropdown.
+  const hidden = getHidden();
   const activeDiv = document.getElementById("active-now");
   const activeGroups = [];
   const activeGroupNames = new Set();
@@ -312,10 +363,11 @@ async function loadDashboard() {
     if (!b.report_mtime) return 1;
     return b.report_mtime - a.report_mtime;
   });
-  if (activeGroups.length > 0) {
+  const visibleActive = activeGroups.filter(g => !hidden.has(g.group));
+  if (visibleActive.length > 0) {
     const list = document.createElement("div");
     list.className = "sweep-list";
-    for (const g of activeGroups) {
+    for (const g of visibleActive) {
       list.innerHTML += renderCard(
         g.group, g.project, overview?.sweeps?.[g.group],
         g.has_report, g.report_mtime
@@ -331,27 +383,57 @@ async function loadDashboard() {
   //     above in Active now, skipped here to avoid duplication). Projects
   //     are ordered by the most-recent report_mtime across their
   //     non-active groups, so the project with fresh analysis sits on top.
+  //     Within each project, hidden groups collapse into a <details>
+  //     dropdown at the bottom so they can still be audited / unhidden.
   const projectsDiv = document.getElementById("projects");
+  function renderHiddenDetails(projectGroups, project) {
+    // Render hidden groups for a project as a collapsible block. Returns
+    // an HTMLElement (or null if no hidden groups).
+    const hiddenGroups = projectGroups.filter(g => hidden.has(g.group));
+    if (hiddenGroups.length === 0) return null;
+    const details = document.createElement("details");
+    details.className = "hidden-details";
+    details.innerHTML = `<summary>${hiddenGroups.length} hidden — click to show</summary>` +
+      `<div class="sweep-list"></div>`;
+    const list = details.querySelector(".sweep-list");
+    for (const g of hiddenGroups) {
+      list.innerHTML += renderCard(
+        g.group, project, overview?.sweeps?.[g.group],
+        g.has_report, g.report_mtime, /*isHidden=*/true
+      );
+    }
+    return details;
+  }
   if (manifest && manifest.projects) {
     projectsDiv.innerHTML = "";
     const projectEntries = Object.entries(manifest.projects)
       .map(([project, groups]) => {
+        // All this project's groups that aren't shown in Active-now.
         const nonActive = groups.filter(g => !activeGroupNames.has(g.group));
-        const maxMtime = nonActive.reduce(
+        const visible = nonActive.filter(g => !hidden.has(g.group));
+        const maxMtime = visible.reduce(
           (acc, g) => Math.max(acc, g.report_mtime || 0), 0
         );
-        return { project, nonActive, maxMtime };
+        return { project, nonActive, visible, maxMtime };
       })
-      .filter(entry => entry.nonActive.length > 0)
+      .filter(entry =>
+        entry.visible.length > 0
+        || entry.nonActive.some(g => hidden.has(g.group))
+      )
       .sort((a, b) => b.maxMtime - a.maxMtime);
-    for (const { project, nonActive } of projectEntries) {
+    for (const { project, nonActive, visible } of projectEntries) {
       const div = document.createElement("div");
       div.className = "project";
       div.innerHTML = `<div class="project-name">${project}</div><div class="sweep-list"></div>`;
       const list = div.querySelector(".sweep-list");
-      for (const g of nonActive) {
-        list.innerHTML += renderCard(g.group, project, overview?.sweeps?.[g.group], g.has_report, g.report_mtime);
+      for (const g of visible) {
+        list.innerHTML += renderCard(
+          g.group, project, overview?.sweeps?.[g.group],
+          g.has_report, g.report_mtime
+        );
       }
+      const hiddenBlock = renderHiddenDetails(nonActive, project);
+      if (hiddenBlock) div.appendChild(hiddenBlock);
       projectsDiv.appendChild(div);
     }
   } else if (overview) {
@@ -360,6 +442,7 @@ async function loadDashboard() {
     list.className = "sweep-list";
     for (const [group, info] of Object.entries(overview.sweeps || {})) {
       if (activeGroupNames.has(group)) continue;
+      if (hidden.has(group)) continue;
       list.innerHTML += renderCard(group, null, info, false);
     }
     projectsDiv.appendChild(list);
