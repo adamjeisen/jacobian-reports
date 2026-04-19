@@ -1,0 +1,9 @@
+experiment: lorenz_partial_25d_additive_mse_uniform_p50_obsnoise005__lc_sweep
+overrides:
+- hydra.launcher.partition=ou_bcs_low
+submitted_at: 20260419T222235Z
+submitted_from: millerlab-endeavourOS
+wandb_group: lorenz_partial_25d_additive_mse_uniform_p50_obsnoise005__lc_sweep
+expected_run_count: 9
+slurm_array_id: '12202692'
+slurm_submitted_at: '2026-04-19T22:25:53Z'

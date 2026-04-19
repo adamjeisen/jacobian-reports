@@ -1,5 +1,0 @@
-experiment: lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep
-overrides:
-  - "hydra.launcher.partition=ou_bcs_low"
-submitted_at: 20260419T222235Z
-submitted_from: millerlab-endeavourOS
