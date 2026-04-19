@@ -52,17 +52,19 @@ kl_null is the real bottleneck.</p>
 <li>No blow-up of loop closure during training (uniform loss doesn't break the encoder-decoder cycle)</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Overall best MASE</strong>: 0.7642 (LC weight = 1.0e-06, obs_noise_scale = 0.00)
-<strong>Overall best traj loss</strong>: 0.00481 at epoch 87.0
-<strong>Runs analyzed</strong>: 9</p>
-<h3>Best run per <code>obs_noise_scale</code></h3>
+<p><strong>Swept axes</strong> (1): <code>training.lightning.loop_closure_weight</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>vvknnlwr</code> — traj_loss=0.00481, MASE=0.7642, R²=0.9868, LC loss=11.129, epoch=87.0</p>
+<p>Swept-axis values at chosen run: <code>training.lightning.loop_closure_weight</code>=1.0e-06</p>
+<p><strong>Runs analyzed</strong>: 9 (expected 9)</p>
+<h3>Per-run results</h3>
 <table>
 <thead>
 <tr>
-<th>obs_noise_scale</th>
-<th>Best LC weight</th>
-<th>Best traj loss</th>
-<th>MASE at best</th>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>training.lightning.loop_closure_weight</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
 <th>R²</th>
 <th>LC loss</th>
 <th>epoch</th>
@@ -70,13 +72,94 @@ kl_null is the real bottleneck.</p>
 </thead>
 <tbody>
 <tr>
-<td>0.0</td>
+<td>1</td>
+<td><code>vvknnlwr</code></td>
 <td>1.0e-06</td>
 <td>0.00481</td>
 <td>0.7642</td>
 <td>0.9868</td>
 <td>11.129</td>
 <td>87.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>i1b7mm9c</code></td>
+<td>1.0e-05</td>
+<td>0.00488</td>
+<td>0.7703</td>
+<td>0.9866</td>
+<td>1.749</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>xilcvbjr</code></td>
+<td>0</td>
+<td>0.00497</td>
+<td>0.7701</td>
+<td>0.9864</td>
+<td>69.057</td>
+<td>132.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>ggfm33v9</code></td>
+<td>1.0e-04</td>
+<td>0.00517</td>
+<td>0.7862</td>
+<td>0.9858</td>
+<td>0.257</td>
+<td>79.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>a8d9c9ad</code></td>
+<td>0.01</td>
+<td>0.00532</td>
+<td>0.7952</td>
+<td>0.9853</td>
+<td>0.001</td>
+<td>159.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>tt7gknm5</code></td>
+<td>0.001</td>
+<td>0.00538</td>
+<td>0.7970</td>
+<td>0.9852</td>
+<td>0.015</td>
+<td>81.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>w3fh36ic</code></td>
+<td>0.1</td>
+<td>0.00591</td>
+<td>0.8363</td>
+<td>0.9837</td>
+<td>0.000</td>
+<td>98.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>icynffax</code></td>
+<td>1</td>
+<td>0.00667</td>
+<td>0.8893</td>
+<td>0.9816</td>
+<td>0.000</td>
+<td>86.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>solx3w1m</code></td>
+<td>10</td>
+<td>0.00703</td>
+<td>0.9153</td>
+<td>0.9806</td>
+<td>0.000</td>
+<td>114.0</td>
 </tr>
 </tbody>
 </table>
@@ -118,14 +201,20 @@ kl_null is the real bottleneck.</p>
 <p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
 <h3>sweep_pareto</h3>
 <p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
 <h3>prediction_windows</h3>
 <p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
 <h3>long_trajectory</h3>
 <p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
 <h3>mase</h3>
 <p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
 <h3>lyapunov</h3>
 <p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
 <h3>per_run_lyapunov</h3>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>
@@ -134,22 +223,16 @@ kl_null is the real bottleneck.</p>
 <p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
 <h3>lyapunov_spectrum_mse_vs_val_loss</h3>
 <p><img alt="lyapunov_spectrum_mse_vs_val_loss" src="figures/lyapunov_spectrum_mse_vs_val_loss.png" /></p>
-<h3>reconstruction</h3>
-<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
-<h3>latent_utilization</h3>
-<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
-<h3>kaplan_yorke</h3>
-<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h3>kaplan_yorke_pca</h3>
 <p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
 <h3>prediction_detail_latent</h3>
 <p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
 <h3>prediction_detail_obs</h3>
 <p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
-<h3>encoder_decoder_jacobians</h3>
-<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
-<h3>amplification</h3>
-<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h2>Discussion</h2>
 <!--
 This section is intentionally left as a placeholder. A human reviewer
@@ -198,15 +281,15 @@ Found 9 effectively-done sweep runs:
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=icynffax
   loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=solx3w1m
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=xilcvbjr: DiagnosticMetrics(one_step_mase=0.660169780254364, loop_closure_loss=69.05728912353516, fast_eigenvalue_fraction=0.26499998569488525, trajectory_val_loss=0.004973705857992172) (from W&amp;B history)
-  run=vvknnlwr: DiagnosticMetrics(one_step_mase=0.6563029885292053, loop_closure_loss=11.128815650939941, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004805532284080982) (from W&amp;B history)
-  run=i1b7mm9c: DiagnosticMetrics(one_step_mase=0.6536190509796143, loop_closure_loss=1.749255657196045, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0048819719813764095) (from W&amp;B history)
-  run=ggfm33v9: DiagnosticMetrics(one_step_mase=0.6570034027099609, loop_closure_loss=0.25676262378692627, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005174558609724045) (from W&amp;B history)
-  run=tt7gknm5: DiagnosticMetrics(one_step_mase=0.6581518054008484, loop_closure_loss=0.014998852275311947, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0053831422701478004) (from W&amp;B history)
-  run=a8d9c9ad: DiagnosticMetrics(one_step_mase=0.6540114879608154, loop_closure_loss=0.0008134416420944035, fast_eigenvalue_fraction=0.0008333333535119891, trajectory_val_loss=0.005318970885127783) (from W&amp;B history)
-  run=w3fh36ic: DiagnosticMetrics(one_step_mase=0.6525664329528809, loop_closure_loss=0.00022182425891514868, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005906539503484964) (from W&amp;B history)
-  run=icynffax: DiagnosticMetrics(one_step_mase=0.6502817869186401, loop_closure_loss=8.734814036870375e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006669881287962198) (from W&amp;B history)
-  run=solx3w1m: DiagnosticMetrics(one_step_mase=0.6511616706848145, loop_closure_loss=1.4412994460144546e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007026792969554663) (from W&amp;B history)
+  run=xilcvbjr: DiagnosticMetrics(one_step_mase=0.660169780254364, loop_closure_loss=69.05728912353516, fast_eigenvalue_fraction=0.26499998569488525, trajectory_val_loss=0.004973705857992172) (from cache, n_batches=100)
+  run=vvknnlwr: DiagnosticMetrics(one_step_mase=0.6563029885292053, loop_closure_loss=11.128815650939941, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004805532284080982) (from cache, n_batches=100)
+  run=i1b7mm9c: DiagnosticMetrics(one_step_mase=0.6536190509796143, loop_closure_loss=1.749255657196045, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0048819719813764095) (from cache, n_batches=100)
+  run=ggfm33v9: DiagnosticMetrics(one_step_mase=0.6570034027099609, loop_closure_loss=0.25676262378692627, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005174558609724045) (from cache, n_batches=100)
+  run=tt7gknm5: DiagnosticMetrics(one_step_mase=0.6581518054008484, loop_closure_loss=0.014998852275311947, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0053831422701478004) (from cache, n_batches=100)
+  run=a8d9c9ad: DiagnosticMetrics(one_step_mase=0.6540114879608154, loop_closure_loss=0.0008134416420944035, fast_eigenvalue_fraction=0.0008333333535119891, trajectory_val_loss=0.005318970885127783) (from cache, n_batches=100)
+  run=w3fh36ic: DiagnosticMetrics(one_step_mase=0.6525664329528809, loop_closure_loss=0.00022182425891514868, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005906539503484964) (from cache, n_batches=100)
+  run=icynffax: DiagnosticMetrics(one_step_mase=0.6502817869186401, loop_closure_loss=8.734814036870375e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006669881287962198) (from cache, n_batches=100)
+  run=solx3w1m: DiagnosticMetrics(one_step_mase=0.6511616706848145, loop_closure_loss=1.4412994460144546e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007026792969554663) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              i1b7mm9c

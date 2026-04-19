@@ -1,11 +1,12 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "group": "lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep",
-  "analyzed_at": "2026-04-16T10:54:00Z",
+  "analyzed_at": "2026-04-19T00:03:41Z",
   "metrics_summary": {
     "per_run": [
       {
         "run_id": "xilcvbjr",
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -15,10 +16,14 @@
         "best_mase_epoch": 132.0,
         "lc_loss_at_best_tl": 69.05728912353516,
         "r2_at_best_tl": 0.986351728439331,
-        "n_epochs": 136
+        "n_epochs": 136,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0
+        }
       },
       {
         "run_id": "vvknnlwr",
+        "run_idx": 1,
         "state": "finished",
         "lc_weight": 1e-06,
         "obs_noise_scale": 0.0,
@@ -28,10 +33,14 @@
         "best_mase_epoch": 85.0,
         "lc_loss_at_best_tl": 11.128815650939941,
         "r2_at_best_tl": 0.9867813587188721,
-        "n_epochs": 93
+        "n_epochs": 93,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06
+        }
       },
       {
         "run_id": "i1b7mm9c",
+        "run_idx": 2,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -41,10 +50,14 @@
         "best_mase_epoch": 100.0,
         "lc_loss_at_best_tl": 1.749255657196045,
         "r2_at_best_tl": 0.98656165599823,
-        "n_epochs": 103
+        "n_epochs": 103,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05
+        }
       },
       {
         "run_id": "ggfm33v9",
+        "run_idx": 3,
         "state": "finished",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
@@ -54,10 +67,14 @@
         "best_mase_epoch": 80.0,
         "lc_loss_at_best_tl": 0.25676262378692627,
         "r2_at_best_tl": 0.985756516456604,
-        "n_epochs": 85
+        "n_epochs": 85,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001
+        }
       },
       {
         "run_id": "tt7gknm5",
+        "run_idx": 4,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -67,10 +84,14 @@
         "best_mase_epoch": 80.0,
         "lc_loss_at_best_tl": 0.014998852275311947,
         "r2_at_best_tl": 0.98518967628479,
-        "n_epochs": 85
+        "n_epochs": 85,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001
+        }
       },
       {
         "run_id": "a8d9c9ad",
+        "run_idx": 5,
         "state": "finished",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
@@ -80,10 +101,14 @@
         "best_mase_epoch": 159.0,
         "lc_loss_at_best_tl": 0.0008134416420944035,
         "r2_at_best_tl": 0.9853330254554749,
-        "n_epochs": 164
+        "n_epochs": 164,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.01
+        }
       },
       {
         "run_id": "w3fh36ic",
+        "run_idx": 6,
         "state": "finished",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
@@ -93,10 +118,14 @@
         "best_mase_epoch": 101.0,
         "lc_loss_at_best_tl": 0.00022182425891514868,
         "r2_at_best_tl": 0.9837434887886047,
-        "n_epochs": 102
+        "n_epochs": 102,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.1
+        }
       },
       {
         "run_id": "icynffax",
+        "run_idx": 7,
         "state": "finished",
         "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
@@ -106,10 +135,14 @@
         "best_mase_epoch": 85.0,
         "lc_loss_at_best_tl": 8.734814036870375e-05,
         "r2_at_best_tl": 0.9816074967384338,
-        "n_epochs": 90
+        "n_epochs": 90,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1
+        }
       },
       {
         "run_id": "solx3w1m",
+        "run_idx": 8,
         "state": "finished",
         "lc_weight": 10.0,
         "obs_noise_scale": 0.0,
@@ -119,12 +152,20 @@
         "best_mase_epoch": 115.0,
         "lc_loss_at_best_tl": 1.4412994460144546e-05,
         "r2_at_best_tl": 0.9806148409843445,
-        "n_epochs": 124
+        "n_epochs": 124,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 10
+        }
       }
     ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 9,
+    "matched_run_count": 9,
     "best_by_obs_noise_scale": {
       "0.0": {
         "run_id": "vvknnlwr",
+        "run_idx": 1,
         "state": "finished",
         "lc_weight": 1e-06,
         "obs_noise_scale": 0.0,
@@ -134,11 +175,15 @@
         "best_mase_epoch": 85.0,
         "lc_loss_at_best_tl": 11.128815650939941,
         "r2_at_best_tl": 0.9867813587188721,
-        "n_epochs": 93
+        "n_epochs": 93,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06
+        }
       }
     },
-    "overall_best_mase": {
+    "overall_chosen_run": {
       "run_id": "vvknnlwr",
+      "run_idx": 1,
       "state": "finished",
       "lc_weight": 1e-06,
       "obs_noise_scale": 0.0,
@@ -148,8 +193,31 @@
       "best_mase_epoch": 85.0,
       "lc_loss_at_best_tl": 11.128815650939941,
       "r2_at_best_tl": 0.9867813587188721,
-      "n_epochs": 93
+      "n_epochs": 93,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 1e-06
+      }
     },
+    "overall_best_mase": {
+      "run_id": "vvknnlwr",
+      "run_idx": 1,
+      "state": "finished",
+      "lc_weight": 1e-06,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004805532284080982,
+      "best_traj_loss_epoch": 87.0,
+      "best_mase": 0.7641634345054626,
+      "best_mase_epoch": 85.0,
+      "lc_loss_at_best_tl": 11.128815650939941,
+      "r2_at_best_tl": 0.9867813587188721,
+      "n_epochs": 93,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 1e-06
+      }
+    },
+    "swept_paths": [
+      "training.lightning.loop_closure_weight"
+    ],
     "n_runs": 9
   },
   "per_run_lyapunov": {
@@ -162,8 +230,7 @@
       "lambda_max": -0.09776285290718079,
       "lambda_sum": -77.7524642944336,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 1206.1131778030383
+      "error": null
     },
     "vvknnlwr": {
       "lambda_spectrum": [
@@ -174,8 +241,7 @@
       "lambda_max": -0.01985223963856697,
       "lambda_sum": -51.85893249511719,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 419.4335700763616
+      "error": null
     },
     "i1b7mm9c": {
       "lambda_spectrum": [
@@ -186,8 +252,7 @@
       "lambda_max": -0.09082970768213272,
       "lambda_sum": -45.35276412963867,
       "kaplan_yorke_dim": null,
-      "error": null,
-      "spectrum_mse_vs_true": 283.10143561113324
+      "error": null
     },
     "ggfm33v9": {
       "lambda_spectrum": [
@@ -198,8 +263,7 @@
       "lambda_max": 0.2329087257385254,
       "lambda_sum": -39.75531005859375,
       "kaplan_yorke_dim": 1.1737983226776123,
-      "error": null,
-      "spectrum_mse_vs_true": 204.22489093088515
+      "error": null
     },
     "tt7gknm5": {
       "lambda_spectrum": [
@@ -210,8 +274,7 @@
       "lambda_max": 0.24296097457408905,
       "lambda_sum": -38.42597579956055,
       "kaplan_yorke_dim": 1.1925182342529297,
-      "error": null,
-      "spectrum_mse_vs_true": 184.22111865090446
+      "error": null
     },
     "a8d9c9ad": {
       "lambda_spectrum": [
@@ -222,8 +285,7 @@
       "lambda_max": 0.2065386325120926,
       "lambda_sum": -39.28049850463867,
       "kaplan_yorke_dim": 1.2854785919189453,
-      "error": null,
-      "spectrum_mse_vs_true": 205.80568849137683
+      "error": null
     },
     "w3fh36ic": {
       "lambda_spectrum": [
@@ -234,8 +296,7 @@
       "lambda_max": 0.16988800466060638,
       "lambda_sum": -24.854406356811523,
       "kaplan_yorke_dim": 1.4018226861953735,
-      "error": null,
-      "spectrum_mse_vs_true": 38.06123692815532
+      "error": null
     },
     "icynffax": {
       "lambda_spectrum": [
@@ -246,8 +307,7 @@
       "lambda_max": 0.28968775272369385,
       "lambda_sum": -12.417564392089844,
       "kaplan_yorke_dim": 1.2865591049194336,
-      "error": null,
-      "spectrum_mse_vs_true": 1.8690156723871283
+      "error": null
     },
     "solx3w1m": {
       "lambda_spectrum": [
@@ -258,8 +318,7 @@
       "lambda_max": 0.4373384714126587,
       "lambda_sum": -10.800057411193848,
       "kaplan_yorke_dim": 1.502922534942627,
-      "error": null,
-      "spectrum_mse_vs_true": 4.349869721592262
+      "error": null
     }
   },
   "empirical_lyapunov_spectrum": [
