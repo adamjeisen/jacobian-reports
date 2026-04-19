@@ -45,9 +45,36 @@ kl_null is the real bottleneck.
 
 ## Results
 
-**Overall best MASE**: 0.0971 (LC weight = 1.0e-06, obs_noise_scale = 0.00)
-**Overall best traj loss**: 0.00005 at epoch 161.0
-**Runs analyzed**: 18
+**Swept axes** (2): `training.lightning.loop_closure_weight`, `training.lightning.obs_noise_scale`
+
+**Chosen run** (by `best_traj_loss`): `peygv8ks` — traj_loss=0.00005, MASE=0.0971, R²=0.9999, LC loss=0.553, epoch=161.0
+
+Swept-axis values at chosen run: `training.lightning.loop_closure_weight`=1.0e-06 · `training.lightning.obs_noise_scale`=0
+
+**Runs analyzed**: 18 (expected 18)
+
+### Per-run results
+
+| run_idx | run_id | `training.lightning.loop_closure_weight` | `training.lightning.obs_noise_scale` | best_traj_loss | best_MASE | R² | LC loss | epoch |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `peygv8ks` | 1.0e-06 | 0 | 0.00005 | 0.0971 | 0.9999 | 0.553 | 161.0 |
+| 0 | `q8wt4mmn` | 0 | 0 | 0.00005 | 0.1106 | 0.9998 | 4.517 | 119.0 |
+| 2 | `2yxz4iia` | 1.0e-05 | 0 | 0.00005 | 0.1016 | 0.9998 | 0.052 | 161.0 |
+| 3 | `lvwmhbz9` | 1.0e-04 | 0 | 0.00006 | 0.1066 | 0.9998 | 0.006 | 188.0 |
+| 4 | `4npej2do` | 0.001 | 0 | 0.00007 | 0.1208 | 0.9998 | 0.001 | 196.0 |
+| 5 | `zai8ulnh` | 0.01 | 0 | 0.00012 | 0.2038 | 0.9996 | 0.000 | 132.0 |
+| 6 | `46pa8cfq` | 0.1 | 0 | 0.00015 | 0.2412 | 0.9995 | 0.000 | 193.0 |
+| 14 | `5oh7mqlg` | 0.01 | 0.01 | 0.00019 | 0.3123 | 0.9994 | 0.032 | 91.0 |
+| 7 | `71d6sw19` | 1 | 0 | 0.00020 | 0.3056 | 0.9994 | 0.000 | 193.0 |
+| 13 | `2oruo3tc` | 0.001 | 0.01 | 0.00023 | 0.3663 | 0.9993 | 0.555 | 67.0 |
+| 15 | `z6mcl86x` | 0.1 | 0.01 | 0.00024 | 0.3770 | 0.9992 | 0.000 | 186.0 |
+| 8 | `x462gnea` | 10 | 0 | 0.00036 | 0.4286 | 0.9989 | 0.000 | 108.0 |
+| 16 | `u0hnf2o8` | 1 | 0.01 | 0.00042 | 0.5273 | 0.9987 | 0.000 | 187.0 |
+| 12 | `takuntlk` | 1.0e-04 | 0.01 | 0.00064 | 0.6315 | 0.9979 | 0.161 | 16.0 |
+| 11 | `l2jhtjur` | 1.0e-05 | 0.01 | 0.00139 | 1.0886 | 0.9955 | 0.850 | 11.0 |
+| 10 | `bcadg9m1` | 1.0e-06 | 0.01 | 0.00146 | 1.0566 | 0.9952 | 8.474 | 12.0 |
+| 9 | `bgxeww20` | 0 | 0.01 | 0.00149 | 1.1548 | 0.9952 | 28.499 | 13.0 |
+| 17 | `2pek7xz7` | 10 | 0.01 | 0.00756 | 2.2773 | 0.9757 | 0.000 | 24.0 |
 
 ### Best run per `obs_noise_scale`
 
@@ -77,6 +104,10 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![sweep_pareto](figures/sweep_pareto.png)
 
+### reconstruction
+
+![reconstruction](figures/reconstruction.png)
+
 ### prediction_windows
 
 ![prediction_windows](figures/prediction_windows.png)
@@ -89,9 +120,17 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![mase](figures/mase.png)
 
+### latent_utilization
+
+![latent_utilization](figures/latent_utilization.png)
+
 ### lyapunov
 
 ![lyapunov](figures/lyapunov.png)
+
+### kaplan_yorke
+
+![kaplan_yorke](figures/kaplan_yorke.png)
 
 ### per_run_lyapunov
 
@@ -109,17 +148,13 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![lyapunov_spectrum_mse_vs_val_loss](figures/lyapunov_spectrum_mse_vs_val_loss.png)
 
-### reconstruction
+### encoder_decoder_jacobians
 
-![reconstruction](figures/reconstruction.png)
+![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
 
-### latent_utilization
+### amplification
 
-![latent_utilization](figures/latent_utilization.png)
-
-### kaplan_yorke
-
-![kaplan_yorke](figures/kaplan_yorke.png)
+![amplification](figures/amplification.png)
 
 ### kaplan_yorke_pca
 
@@ -132,14 +167,6 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 ### prediction_detail_obs
 
 ![prediction_detail_obs](figures/prediction_detail_obs.png)
-
-### encoder_decoder_jacobians
-
-![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
-
-### amplification
-
-![amplification](figures/amplification.png)
 
 ## Discussion
 
@@ -221,21 +248,21 @@ Found 18 effectively-done sweep runs:
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
   run=bgxeww20: DiagnosticMetrics(one_step_mase=3.2693686485290527, loop_closure_loss=2.123745918273926, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.024457817897200584) (from cache, n_batches=100)
   run=q8wt4mmn: DiagnosticMetrics(one_step_mase=0.05621497705578804, loop_closure_loss=4.516508102416992, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.9841626605484635e-05) (from cache, n_batches=100)
-  run=bcadg9m1: DiagnosticMetrics(one_step_mase=0.6948620080947876, loop_closure_loss=8.474126815795898, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014611840015277267) (from W&B history)
+  run=bcadg9m1: DiagnosticMetrics(one_step_mase=0.6948620080947876, loop_closure_loss=8.474126815795898, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014611840015277267) (from cache, n_batches=100)
   run=peygv8ks: DiagnosticMetrics(one_step_mase=0.0418035164475441, loop_closure_loss=0.5532177686691284, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.6048731746850535e-05) (from cache, n_batches=100)
   run=2yxz4iia: DiagnosticMetrics(one_step_mase=0.04504145309329033, loop_closure_loss=0.05161266028881073, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.013464033254422e-05) (from cache, n_batches=100)
-  run=l2jhtjur: DiagnosticMetrics(one_step_mase=0.6104043126106262, loop_closure_loss=0.8503658771514893, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013926428509876132) (from W&B history)
+  run=l2jhtjur: DiagnosticMetrics(one_step_mase=0.6104043126106262, loop_closure_loss=0.8503658771514893, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013926428509876132) (from cache, n_batches=100)
   run=lvwmhbz9: DiagnosticMetrics(one_step_mase=0.042499057948589325, loop_closure_loss=0.0061804926954209805, fast_eigenvalue_fraction=0.0, trajectory_val_loss=5.583069287240505e-05) (from cache, n_batches=100)
-  run=takuntlk: DiagnosticMetrics(one_step_mase=0.43532806634902954, loop_closure_loss=0.16110435128211975, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0006371960043907166) (from W&B history)
-  run=2oruo3tc: DiagnosticMetrics(one_step_mase=0.5495887994766235, loop_closure_loss=0.5546743273735046, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00022681211703456938) (from W&B history)
+  run=takuntlk: DiagnosticMetrics(one_step_mase=0.43532806634902954, loop_closure_loss=0.16110435128211975, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0006371960043907166) (from cache, n_batches=100)
+  run=2oruo3tc: DiagnosticMetrics(one_step_mase=0.5495887994766235, loop_closure_loss=0.5546743273735046, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00022681211703456938) (from cache, n_batches=100)
   run=4npej2do: DiagnosticMetrics(one_step_mase=0.045318394899368286, loop_closure_loss=0.0008834288455545902, fast_eigenvalue_fraction=0.0, trajectory_val_loss=7.184726564446464e-05) (from cache, n_batches=100)
-  run=5oh7mqlg: DiagnosticMetrics(one_step_mase=0.3822712004184723, loop_closure_loss=0.032049376517534256, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00019187740690540522) (from W&B history)
+  run=5oh7mqlg: DiagnosticMetrics(one_step_mase=0.3822712004184723, loop_closure_loss=0.032049376517534256, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00019187740690540522) (from cache, n_batches=100)
   run=zai8ulnh: DiagnosticMetrics(one_step_mase=0.06424910575151443, loop_closure_loss=0.000344433676218614, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00012025572505081072) (from cache, n_batches=100)
   run=46pa8cfq: DiagnosticMetrics(one_step_mase=0.06423916667699814, loop_closure_loss=3.228276182198897e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00014737430319655687) (from cache, n_batches=100)
-  run=z6mcl86x: DiagnosticMetrics(one_step_mase=0.19081588089466095, loop_closure_loss=0.0002832501195371151, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00024412125640083104) (from W&B history)
+  run=z6mcl86x: DiagnosticMetrics(one_step_mase=0.19081588089466095, loop_closure_loss=0.0002832501195371151, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00024412125640083104) (from cache, n_batches=100)
   run=71d6sw19: DiagnosticMetrics(one_step_mase=0.07779721170663834, loop_closure_loss=7.372317668341566e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0002033840137301013) (from cache, n_batches=100)
-  run=u0hnf2o8: DiagnosticMetrics(one_step_mase=0.27542245388031006, loop_closure_loss=5.120592322782613e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00041689162026159465) (from W&B history)
-  run=2pek7xz7: DiagnosticMetrics(one_step_mase=0.8747787475585938, loop_closure_loss=1.1309413139315438e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007560731377452612) (from W&B history)
+  run=u0hnf2o8: DiagnosticMetrics(one_step_mase=0.27542245388031006, loop_closure_loss=5.120592322782613e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00041689162026159465) (from cache, n_batches=100)
+  run=2pek7xz7: DiagnosticMetrics(one_step_mase=0.8747787475585938, loop_closure_loss=1.1309413139315438e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007560731377452612) (from cache, n_batches=100)
   run=x462gnea: DiagnosticMetrics(one_step_mase=0.15039539337158203, loop_closure_loss=1.9846668237732956e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0003558300086297095) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
