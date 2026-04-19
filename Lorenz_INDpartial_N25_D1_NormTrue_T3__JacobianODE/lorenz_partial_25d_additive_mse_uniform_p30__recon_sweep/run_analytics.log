@@ -11,8 +11,8 @@ Found 2 effectively-done sweep runs:
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=0efqqxfe
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ez55lpde
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=0efqqxfe: DiagnosticMetrics(one_step_mase=0.0311412550508976, loop_closure_loss=0.16365577280521393, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.1294744733022526e-05) (from W&B history)
-  run=ez55lpde: DiagnosticMetrics(one_step_mase=0.04930305853486061, loop_closure_loss=0.12527205049991608, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.595398058881983e-05) (from W&B history)
+  run=0efqqxfe: DiagnosticMetrics(one_step_mase=0.0311412550508976, loop_closure_loss=0.16365577280521393, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.1294744733022526e-05) (from cache, n_batches=100)
+  run=ez55lpde: DiagnosticMetrics(one_step_mase=0.04930305853486061, loop_closure_loss=0.12527205049991608, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.595398058881983e-05) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              0efqqxfe

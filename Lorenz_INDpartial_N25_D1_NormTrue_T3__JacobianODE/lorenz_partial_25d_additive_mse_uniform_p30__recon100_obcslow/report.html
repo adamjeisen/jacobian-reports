@@ -40,34 +40,11 @@ at recon_weight=100 than at 1 or 10.</p>
 <li><tr(dg/dz)> closer to -13.67 than the recon_weight=1 run</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Overall best MASE</strong>: 0.1243 (LC weight = 1.0e-05, obs_noise_scale = 0.00)
-<strong>Overall best traj loss</strong>: 0.00004 at epoch 167.0
-<strong>Runs analyzed</strong>: 1</p>
-<h3>Best run per <code>obs_noise_scale</code></h3>
-<table>
-<thead>
-<tr>
-<th>obs_noise_scale</th>
-<th>Best LC weight</th>
-<th>Best traj loss</th>
-<th>MASE at best</th>
-<th>R²</th>
-<th>LC loss</th>
-<th>epoch</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.0</td>
-<td>1.0e-05</td>
-<td>0.00004</td>
-<td>0.1243</td>
-<td>0.9999</td>
-<td>0.231</td>
-<td>167.0</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>—</code> — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>Matched-run count mismatch</strong>: expected 1 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.</p>
+<p>⚠️ <strong>1 wandb run(s) did not match any run_idx</strong> (excluded from the per-run table). These are most likely orphans from preempt-cycle retries or rate-limit re-launches. IDs: <code>m4zejlel</code>.</p>
+<p><strong>Runs analyzed</strong>: 0 (expected 1)</p>
 <h2>Success-criteria verdicts (automated)</h2>
 <table>
 <thead>
@@ -96,36 +73,36 @@ at recon_weight=100 than at 1 or 10.</p>
 <p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
 <h3>sweep_pareto</h3>
 <p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
 <h3>prediction_windows</h3>
 <p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
 <h3>long_trajectory</h3>
 <p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
 <h3>mase</h3>
 <p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
 <h3>lyapunov</h3>
 <p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
 <h3>per_run_lyapunov</h3>
 <p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
 <h3>per_run_lyapunov_vs_true</h3>
 <p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
 <h3>per_run_lyapunov_relerr</h3>
 <p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
-<h3>reconstruction</h3>
-<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
-<h3>latent_utilization</h3>
-<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
-<h3>kaplan_yorke</h3>
-<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h3>kaplan_yorke_pca</h3>
 <p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
 <h3>prediction_detail_latent</h3>
 <p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
 <h3>prediction_detail_obs</h3>
 <p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
-<h3>encoder_decoder_jacobians</h3>
-<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
-<h3>amplification</h3>
-<p><img alt="amplification" src="figures/amplification.png" /></p>
 <h2>Discussion</h2>
 <!--
 This section is intentionally left as a placeholder. A human reviewer
@@ -150,7 +127,7 @@ slurm_timeout_min not found in any run config — falling back to 180 min
 Found 1 effectively-done sweep runs:
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=m4zejlel
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=m4zejlel: DiagnosticMetrics(one_step_mase=0.027904605492949486, loop_closure_loss=0.2311270534992218, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.304070898797363e-05) (from W&amp;B history)
+  run=m4zejlel: DiagnosticMetrics(one_step_mase=0.027904605492949486, loop_closure_loss=0.2311270534992218, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.304070898797363e-05) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              m4zejlel

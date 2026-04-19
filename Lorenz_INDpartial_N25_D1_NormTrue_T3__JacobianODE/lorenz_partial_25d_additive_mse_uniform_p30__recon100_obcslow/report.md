@@ -33,15 +33,15 @@ at recon_weight=100 than at 1 or 10.
 
 ## Results
 
-**Overall best MASE**: 0.1243 (LC weight = 1.0e-05, obs_noise_scale = 0.00)
-**Overall best traj loss**: 0.00004 at epoch 167.0
-**Runs analyzed**: 1
+**Chosen run** (by `best_traj_loss`): `—` — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None
 
-### Best run per `obs_noise_scale`
+### Integrity checks
 
-| obs_noise_scale | Best LC weight | Best traj loss | MASE at best | R² | LC loss | epoch |
-|---|---|---|---|---|---|---|
-| 0.0 | 1.0e-05 | 0.00004 | 0.1243 | 0.9999 | 0.231 | 167.0 |
+⚠️ **Matched-run count mismatch**: expected 1 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.
+
+⚠️ **1 wandb run(s) did not match any run_idx** (excluded from the per-run table). These are most likely orphans from preempt-cycle retries or rate-limit re-launches. IDs: `m4zejlel`.
+
+**Runs analyzed**: 0 (expected 1)
 
 ## Success-criteria verdicts (automated)
 
@@ -62,6 +62,10 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![sweep_pareto](figures/sweep_pareto.png)
 
+### reconstruction
+
+![reconstruction](figures/reconstruction.png)
+
 ### prediction_windows
 
 ![prediction_windows](figures/prediction_windows.png)
@@ -74,9 +78,17 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![mase](figures/mase.png)
 
+### latent_utilization
+
+![latent_utilization](figures/latent_utilization.png)
+
 ### lyapunov
 
 ![lyapunov](figures/lyapunov.png)
+
+### kaplan_yorke
+
+![kaplan_yorke](figures/kaplan_yorke.png)
 
 ### per_run_lyapunov
 
@@ -90,17 +102,13 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
 
-### reconstruction
+### encoder_decoder_jacobians
 
-![reconstruction](figures/reconstruction.png)
+![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
 
-### latent_utilization
+### amplification
 
-![latent_utilization](figures/latent_utilization.png)
-
-### kaplan_yorke
-
-![kaplan_yorke](figures/kaplan_yorke.png)
+![amplification](figures/amplification.png)
 
 ### kaplan_yorke_pca
 
@@ -113,14 +121,6 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 ### prediction_detail_obs
 
 ![prediction_detail_obs](figures/prediction_detail_obs.png)
-
-### encoder_decoder_jacobians
-
-![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
-
-### amplification
-
-![amplification](figures/amplification.png)
 
 ## Discussion
 
@@ -149,7 +149,7 @@ slurm_timeout_min not found in any run config — falling back to 180 min
 Found 1 effectively-done sweep runs:
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=m4zejlel
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=m4zejlel: DiagnosticMetrics(one_step_mase=0.027904605492949486, loop_closure_loss=0.2311270534992218, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.304070898797363e-05) (from W&B history)
+  run=m4zejlel: DiagnosticMetrics(one_step_mase=0.027904605492949486, loop_closure_loss=0.2311270534992218, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.304070898797363e-05) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              m4zejlel

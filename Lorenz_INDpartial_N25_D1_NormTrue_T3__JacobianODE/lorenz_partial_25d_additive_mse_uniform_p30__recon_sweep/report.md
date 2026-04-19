@@ -47,15 +47,24 @@ optimization dynamics).
 
 ## Results
 
-**Overall best MASE**: 0.1258 (LC weight = 1.0e-05, obs_noise_scale = 0.00)
-**Overall best traj loss**: 0.00004 at epoch 197.0
-**Runs analyzed**: 2
+**Swept axes** (1): `training.lightning.reconstruction_loss_weight`
 
-### Best run per `obs_noise_scale`
+**Chosen run** (by `best_traj_loss`): `0efqqxfe` — traj_loss=0.00004, MASE=0.1258, R²=0.9999, LC loss=0.164, epoch=197.0
 
-| obs_noise_scale | Best LC weight | Best traj loss | MASE at best | R² | LC loss | epoch |
-|---|---|---|---|---|---|---|
-| 0.0 | 1.0e-05 | 0.00004 | 0.1258 | 0.9999 | 0.164 | 197.0 |
+Swept-axis values at chosen run: `training.lightning.reconstruction_loss_weight`=10
+
+### Integrity checks
+
+⚠️ **Matched-run count mismatch**: expected 3 run_idx slots per the sentinel, matched 2 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.
+
+**Runs analyzed**: 2 (expected 3)
+
+### Per-run results
+
+| run_idx | run_id | `training.lightning.reconstruction_loss_weight` | best_traj_loss | best_MASE | R² | LC loss | epoch |
+|---|---|---|---|---|---|---|---|
+| 1 | `0efqqxfe` | 10 | 0.00004 | 0.1258 | 0.9999 | 0.164 | 197.0 |
+| 0 | `ez55lpde` | 1 | 0.00005 | 0.1379 | 0.9999 | 0.125 | 197.0 |
 
 ## Success-criteria verdicts (automated)
 
@@ -77,6 +86,10 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![sweep_pareto](figures/sweep_pareto.png)
 
+### reconstruction
+
+![reconstruction](figures/reconstruction.png)
+
 ### prediction_windows
 
 ![prediction_windows](figures/prediction_windows.png)
@@ -89,9 +102,17 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![mase](figures/mase.png)
 
+### latent_utilization
+
+![latent_utilization](figures/latent_utilization.png)
+
 ### lyapunov
 
 ![lyapunov](figures/lyapunov.png)
+
+### kaplan_yorke
+
+![kaplan_yorke](figures/kaplan_yorke.png)
 
 ### per_run_lyapunov
 
@@ -105,17 +126,13 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
 
-### reconstruction
+### encoder_decoder_jacobians
 
-![reconstruction](figures/reconstruction.png)
+![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
 
-### latent_utilization
+### amplification
 
-![latent_utilization](figures/latent_utilization.png)
-
-### kaplan_yorke
-
-![kaplan_yorke](figures/kaplan_yorke.png)
+![amplification](figures/amplification.png)
 
 ### kaplan_yorke_pca
 
@@ -128,14 +145,6 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 ### prediction_detail_obs
 
 ![prediction_detail_obs](figures/prediction_detail_obs.png)
-
-### encoder_decoder_jacobians
-
-![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
-
-### amplification
-
-![amplification](figures/amplification.png)
 
 ## Discussion
 
@@ -167,8 +176,8 @@ Found 2 effectively-done sweep runs:
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=0efqqxfe
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ez55lpde
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=0efqqxfe: DiagnosticMetrics(one_step_mase=0.0311412550508976, loop_closure_loss=0.16365577280521393, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.1294744733022526e-05) (from W&B history)
-  run=ez55lpde: DiagnosticMetrics(one_step_mase=0.04930305853486061, loop_closure_loss=0.12527205049991608, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.595398058881983e-05) (from W&B history)
+  run=0efqqxfe: DiagnosticMetrics(one_step_mase=0.0311412550508976, loop_closure_loss=0.16365577280521393, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.1294744733022526e-05) (from cache, n_batches=100)
+  run=ez55lpde: DiagnosticMetrics(one_step_mase=0.04930305853486061, loop_closure_loss=0.12527205049991608, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.595398058881983e-05) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              0efqqxfe

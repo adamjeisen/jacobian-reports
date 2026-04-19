@@ -8,7 +8,7 @@ slurm_timeout_min not found in any run config — falling back to 180 min
 Found 1 effectively-done sweep runs:
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=m4zejlel
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=m4zejlel: DiagnosticMetrics(one_step_mase=0.027904605492949486, loop_closure_loss=0.2311270534992218, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.304070898797363e-05) (from W&B history)
+  run=m4zejlel: DiagnosticMetrics(one_step_mase=0.027904605492949486, loop_closure_loss=0.2311270534992218, fast_eigenvalue_fraction=0.0, trajectory_val_loss=4.304070898797363e-05) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              m4zejlel

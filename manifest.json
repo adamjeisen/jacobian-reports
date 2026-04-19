@@ -90,6 +90,27 @@
     ],
     "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
       {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776557750.781104
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon100_obcslow",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776557736.6979778
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776557721.9608457
+      },
+      {
         "group": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -181,32 +202,11 @@
         "report_mtime": 1776509444.1519225
       },
       {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon100_obcslow",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776380118.89841
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776374123.5711524
-      },
-      {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776369639.4386952
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776314079.701751
       }
     ],
     "WMTask_identity_encoder_verification": [
