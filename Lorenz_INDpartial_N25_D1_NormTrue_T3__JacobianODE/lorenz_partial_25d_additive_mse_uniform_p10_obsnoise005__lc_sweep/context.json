@@ -1,0 +1,112 @@
+{
+  "group": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+  "completed_at": "2026-04-18T22:55:15Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep": {
+      "description": "Same base as lorenz_partial_25d_additive_mse_uniform (prediction_steps\n= 10, seq_length = 25) with obs_noise=0.05. 9-run LC sweep;\ndirect p10 counterpart to lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep.\n",
+      "hypothesis": "At obs_noise=0.05 the p30 rollout horizon may be too long to\nsupervise cleanly: accumulated latent-space noise over 30 steps\ncould dominate the signal, making the dynamics gradient noisier\nthan informative. p10 trades forward-rollout reach for per-step\nsignal-to-noise and may train more stably at this noise level.\nExpect p10 val traj_loss at best LC to be comparable-or-better\nthan p30 at best LC; \u03bb_min estimation may favour whichever\nhorizon gives a better bias/variance trade-off in the Jacobian\ntrace.\n",
+      "success_criteria": [
+        "Best val traj_loss finite and within ~5\u00d7 of the p30 obsnoise005 companion",
+        "\u03bb_min at best LC still meaningfully negative (< -5)",
+        "No loop-closure explosion (max LC loss at best_tl < 10 across the sweep)"
+      ]
+    }
+  },
+  "expected_run_count": 9,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+      "hydra.launcher.partition=ou_bcs_low"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=10",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE",
+    "group": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "2b130bb",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-18T18:40:12Z"
+}
