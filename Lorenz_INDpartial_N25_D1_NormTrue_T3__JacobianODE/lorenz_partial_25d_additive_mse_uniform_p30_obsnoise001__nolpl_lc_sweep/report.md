@@ -46,20 +46,20 @@ onto the dynamics net) and we should keep it.
 
 Swept-axis values at chosen run: `training.lightning.loop_closure_weight`=1.0e-06
 
-**Runs analyzed**: 8
+**Runs analyzed**: 8 (expected 8)
 
 ### Per-run results
 
-| run_id | `training.lightning.loop_closure_weight` | best_traj_loss | best_MASE | R² | LC loss | epoch |
-|---|---|---|---|---|---|---|
-| `opmdjlmu` | 1.0e-06 | 0.00116 | 0.6856 | 0.9969 | 1.494 | 145.0 |
-| `092g9dhl` | 0 | 0.00132 | 0.7235 | 0.9965 | 3.828 | 96.0 |
-| `kfn859xs` | 1.0e-05 | 0.00143 | 0.7388 | 0.9962 | 0.476 | 99.0 |
-| `4tfmicbv` | 1.0e-04 | 0.00154 | 0.7473 | 0.9959 | 0.068 | 104.0 |
-| `g6w8e9tz` | 0.001 | 0.00185 | 0.8191 | 0.9950 | 0.009 | 115.0 |
-| `vhaz6ufh` | 0.01 | 0.00270 | 0.9538 | 0.9927 | 0.004 | 101.0 |
-| `i22vgice` | 0.1 | 0.00451 | 1.2270 | 0.9878 | 0.000 | 90.0 |
-| `uue09sft` | 1 | 0.00529 | 1.3987 | 0.9858 | 0.000 | 131.0 |
+| run_idx | run_id | `training.lightning.loop_closure_weight` | best_traj_loss | best_MASE | R² | LC loss | epoch |
+|---|---|---|---|---|---|---|---|
+| 1 | `opmdjlmu` | 1.0e-06 | 0.00116 | 0.6856 | 0.9969 | 1.494 | 145.0 |
+| 0 | `092g9dhl` | 0 | 0.00132 | 0.7235 | 0.9965 | 3.828 | 96.0 |
+| 2 | `kfn859xs` | 1.0e-05 | 0.00143 | 0.7388 | 0.9962 | 0.476 | 99.0 |
+| 3 | `4tfmicbv` | 1.0e-04 | 0.00154 | 0.7473 | 0.9959 | 0.068 | 104.0 |
+| 4 | `g6w8e9tz` | 0.001 | 0.00185 | 0.8191 | 0.9950 | 0.009 | 115.0 |
+| 5 | `vhaz6ufh` | 0.01 | 0.00270 | 0.9538 | 0.9927 | 0.004 | 101.0 |
+| 6 | `i22vgice` | 0.1 | 0.00451 | 1.2270 | 0.9878 | 0.000 | 90.0 |
+| 7 | `uue09sft` | 1 | 0.00529 | 1.3987 | 0.9858 | 0.000 | 131.0 |
 
 ## Success-criteria verdicts (automated)
 
@@ -189,14 +189,14 @@ Found 8 effectively-done sweep runs:
   loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=i22vgice
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=uue09sft
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=092g9dhl: DiagnosticMetrics(one_step_mase=0.38112178444862366, loop_closure_loss=3.8279452323913574, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001321429735980928) (from W&B history)
-  run=opmdjlmu: DiagnosticMetrics(one_step_mase=0.3756863474845886, loop_closure_loss=1.4935657978057861, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001155607053078711) (from W&B history)
-  run=kfn859xs: DiagnosticMetrics(one_step_mase=0.38685932755470276, loop_closure_loss=0.47550055384635925, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014258477604016662) (from W&B history)
-  run=4tfmicbv: DiagnosticMetrics(one_step_mase=0.38457468152046204, loop_closure_loss=0.06815202534198761, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015400759875774384) (from W&B history)
-  run=g6w8e9tz: DiagnosticMetrics(one_step_mase=0.3833397924900055, loop_closure_loss=0.008531534112989902, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0018485391046851873) (from W&B history)
-  run=vhaz6ufh: DiagnosticMetrics(one_step_mase=0.39798006415367126, loop_closure_loss=0.003517073579132557, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0027007204480469227) (from W&B history)
-  run=i22vgice: DiagnosticMetrics(one_step_mase=0.40811842679977417, loop_closure_loss=0.0003155436716042459, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004512681160122156) (from W&B history)
-  run=uue09sft: DiagnosticMetrics(one_step_mase=0.4241741895675659, loop_closure_loss=5.130571298650466e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005287426523864269) (from W&B history)
+  run=092g9dhl: DiagnosticMetrics(one_step_mase=0.38112178444862366, loop_closure_loss=3.8279452323913574, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001321429735980928) (from cache, n_batches=100)
+  run=opmdjlmu: DiagnosticMetrics(one_step_mase=0.3756863474845886, loop_closure_loss=1.4935657978057861, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001155607053078711) (from cache, n_batches=100)
+  run=kfn859xs: DiagnosticMetrics(one_step_mase=0.38685932755470276, loop_closure_loss=0.47550055384635925, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014258477604016662) (from cache, n_batches=100)
+  run=4tfmicbv: DiagnosticMetrics(one_step_mase=0.38457468152046204, loop_closure_loss=0.06815202534198761, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015400759875774384) (from cache, n_batches=100)
+  run=g6w8e9tz: DiagnosticMetrics(one_step_mase=0.3833397924900055, loop_closure_loss=0.008531534112989902, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0018485391046851873) (from cache, n_batches=100)
+  run=vhaz6ufh: DiagnosticMetrics(one_step_mase=0.39798006415367126, loop_closure_loss=0.003517073579132557, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0027007204480469227) (from cache, n_batches=100)
+  run=i22vgice: DiagnosticMetrics(one_step_mase=0.40811842679977417, loop_closure_loss=0.0003155436716042459, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004512681160122156) (from cache, n_batches=100)
+  run=uue09sft: DiagnosticMetrics(one_step_mase=0.4241741895675659, loop_closure_loss=5.130571298650466e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005287426523864269) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              opmdjlmu

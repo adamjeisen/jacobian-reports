@@ -50,11 +50,12 @@ onto the dynamics net) and we should keep it.</p>
 <p><strong>Swept axes</strong> (1): <code>training.lightning.loop_closure_weight</code></p>
 <p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>opmdjlmu</code> — traj_loss=0.00116, MASE=0.6856, R²=0.9969, LC loss=1.494, epoch=145.0</p>
 <p>Swept-axis values at chosen run: <code>training.lightning.loop_closure_weight</code>=1.0e-06</p>
-<p><strong>Runs analyzed</strong>: 8</p>
+<p><strong>Runs analyzed</strong>: 8 (expected 8)</p>
 <h3>Per-run results</h3>
 <table>
 <thead>
 <tr>
+<th>run_idx</th>
 <th>run_id</th>
 <th><code>training.lightning.loop_closure_weight</code></th>
 <th>best_traj_loss</th>
@@ -66,6 +67,7 @@ onto the dynamics net) and we should keep it.</p>
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td><code>opmdjlmu</code></td>
 <td>1.0e-06</td>
 <td>0.00116</td>
@@ -75,6 +77,7 @@ onto the dynamics net) and we should keep it.</p>
 <td>145.0</td>
 </tr>
 <tr>
+<td>0</td>
 <td><code>092g9dhl</code></td>
 <td>0</td>
 <td>0.00132</td>
@@ -84,6 +87,7 @@ onto the dynamics net) and we should keep it.</p>
 <td>96.0</td>
 </tr>
 <tr>
+<td>2</td>
 <td><code>kfn859xs</code></td>
 <td>1.0e-05</td>
 <td>0.00143</td>
@@ -93,6 +97,7 @@ onto the dynamics net) and we should keep it.</p>
 <td>99.0</td>
 </tr>
 <tr>
+<td>3</td>
 <td><code>4tfmicbv</code></td>
 <td>1.0e-04</td>
 <td>0.00154</td>
@@ -102,6 +107,7 @@ onto the dynamics net) and we should keep it.</p>
 <td>104.0</td>
 </tr>
 <tr>
+<td>4</td>
 <td><code>g6w8e9tz</code></td>
 <td>0.001</td>
 <td>0.00185</td>
@@ -111,6 +117,7 @@ onto the dynamics net) and we should keep it.</p>
 <td>115.0</td>
 </tr>
 <tr>
+<td>5</td>
 <td><code>vhaz6ufh</code></td>
 <td>0.01</td>
 <td>0.00270</td>
@@ -120,6 +127,7 @@ onto the dynamics net) and we should keep it.</p>
 <td>101.0</td>
 </tr>
 <tr>
+<td>6</td>
 <td><code>i22vgice</code></td>
 <td>0.1</td>
 <td>0.00451</td>
@@ -129,6 +137,7 @@ onto the dynamics net) and we should keep it.</p>
 <td>90.0</td>
 </tr>
 <tr>
+<td>7</td>
 <td><code>uue09sft</code></td>
 <td>1</td>
 <td>0.00529</td>
@@ -247,14 +256,14 @@ Found 8 effectively-done sweep runs:
   loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=i22vgice
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=uue09sft
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=092g9dhl: DiagnosticMetrics(one_step_mase=0.38112178444862366, loop_closure_loss=3.8279452323913574, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001321429735980928) (from W&amp;B history)
-  run=opmdjlmu: DiagnosticMetrics(one_step_mase=0.3756863474845886, loop_closure_loss=1.4935657978057861, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001155607053078711) (from W&amp;B history)
-  run=kfn859xs: DiagnosticMetrics(one_step_mase=0.38685932755470276, loop_closure_loss=0.47550055384635925, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014258477604016662) (from W&amp;B history)
-  run=4tfmicbv: DiagnosticMetrics(one_step_mase=0.38457468152046204, loop_closure_loss=0.06815202534198761, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015400759875774384) (from W&amp;B history)
-  run=g6w8e9tz: DiagnosticMetrics(one_step_mase=0.3833397924900055, loop_closure_loss=0.008531534112989902, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0018485391046851873) (from W&amp;B history)
-  run=vhaz6ufh: DiagnosticMetrics(one_step_mase=0.39798006415367126, loop_closure_loss=0.003517073579132557, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0027007204480469227) (from W&amp;B history)
-  run=i22vgice: DiagnosticMetrics(one_step_mase=0.40811842679977417, loop_closure_loss=0.0003155436716042459, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004512681160122156) (from W&amp;B history)
-  run=uue09sft: DiagnosticMetrics(one_step_mase=0.4241741895675659, loop_closure_loss=5.130571298650466e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005287426523864269) (from W&amp;B history)
+  run=092g9dhl: DiagnosticMetrics(one_step_mase=0.38112178444862366, loop_closure_loss=3.8279452323913574, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001321429735980928) (from cache, n_batches=100)
+  run=opmdjlmu: DiagnosticMetrics(one_step_mase=0.3756863474845886, loop_closure_loss=1.4935657978057861, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001155607053078711) (from cache, n_batches=100)
+  run=kfn859xs: DiagnosticMetrics(one_step_mase=0.38685932755470276, loop_closure_loss=0.47550055384635925, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0014258477604016662) (from cache, n_batches=100)
+  run=4tfmicbv: DiagnosticMetrics(one_step_mase=0.38457468152046204, loop_closure_loss=0.06815202534198761, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015400759875774384) (from cache, n_batches=100)
+  run=g6w8e9tz: DiagnosticMetrics(one_step_mase=0.3833397924900055, loop_closure_loss=0.008531534112989902, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0018485391046851873) (from cache, n_batches=100)
+  run=vhaz6ufh: DiagnosticMetrics(one_step_mase=0.39798006415367126, loop_closure_loss=0.003517073579132557, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0027007204480469227) (from cache, n_batches=100)
+  run=i22vgice: DiagnosticMetrics(one_step_mase=0.40811842679977417, loop_closure_loss=0.0003155436716042459, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004512681160122156) (from cache, n_batches=100)
+  run=uue09sft: DiagnosticMetrics(one_step_mase=0.4241741895675659, loop_closure_loss=5.130571298650466e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005287426523864269) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              opmdjlmu

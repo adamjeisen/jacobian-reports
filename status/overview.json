@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-19T00:20:28Z",
+  "last_updated": "2026-04-19T00:25:39Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -240,39 +240,21 @@
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12183847",
-        "dispatched_at": "2026-04-19T00:15:15Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 1,
-        "n_pending": 0
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__nolpl_lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 8,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 8
-      },
-      "analysis": {
-        "slurm_job_id": "12183848",
-        "dispatched_at": "2026-04-19T00:15:15Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep": {
@@ -285,17 +267,21 @@
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 8,
-        "in_flight": 1,
+        "terminal": 9,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 8
+        "effectively_done": 9
       },
-      "training_slurm": {
-        "n_running": 1,
-        "n_pending": 0,
-        "n_total": 1
+      "analysis": {
+        "slurm_job_id": "12184215",
+        "dispatched_at": "2026-04-19T00:25:14Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
@@ -312,8 +298,8 @@
         "status": "running"
       },
       "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
+        "n_running": 1,
+        "n_pending": 0
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
