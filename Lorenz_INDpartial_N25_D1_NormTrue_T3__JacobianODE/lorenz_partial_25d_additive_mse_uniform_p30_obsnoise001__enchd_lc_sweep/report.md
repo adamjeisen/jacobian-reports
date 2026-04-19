@@ -43,53 +43,57 @@ be flat across hidden_dim.
 
 Swept-axis values at chosen run: `model.encoder.hidden_dim`=64 · `training.lightning.loop_closure_weight`=0
 
-**Runs analyzed**: 41
+### Integrity checks
+
+⚠️ **1 run_idx slot(s) had multiple matching wandb runs** — the best by `best_traj_loss` was kept; the others are listed below for audit:
+  - run_idx=**20**: chose `j8xqwvh5`, dropped `z5zzf7v3`
+
+**Runs analyzed**: 40 (expected 40)
 
 ### Per-run results
 
-| run_id | `model.encoder.hidden_dim` | `training.lightning.loop_closure_weight` | best_traj_loss | best_MASE | R² | LC loss | epoch |
-|---|---|---|---|---|---|---|---|
-| `1wwirh60` | 64 | 0 | 0.00089 | 0.6698 | 0.9976 | 1.610 | 165.0 |
-| `ll5xx3rc` | 256 | 1.0e-04 | 0.00090 | 0.6545 | 0.9976 | 0.120 | 157.0 |
-| `r2lznj4b` | 512 | 1.0e-05 | 0.00097 | 0.6413 | 0.9974 | 0.207 | 180.0 |
-| `96wzp7ax` | 256 | 1.0e-06 | 0.00114 | 0.7041 | 0.9970 | 0.769 | 105.0 |
-| `lsg9vpxt` | 256 | 0 | 0.00114 | 0.6714 | 0.9970 | 0.615 | 138.0 |
-| `xotytukg` | 128 | 1.0e-05 | 0.00115 | 0.6816 | 0.9969 | 0.305 | 152.0 |
-| `vxsqq8n3` | 64 | 1.0e-06 | 0.00123 | 0.7193 | 0.9967 | 1.122 | 109.0 |
-| `fyzhn6mb` | 512 | 0 | 0.00128 | 0.7394 | 0.9966 | 1.165 | 106.0 |
-| `rha3kf0k` | 128 | 1.0e-06 | 0.00128 | 0.7177 | 0.9966 | 1.076 | 110.0 |
-| `ftu91y8t` | 64 | 1.0e-04 | 0.00130 | 0.7183 | 0.9966 | 0.163 | 130.0 |
-| `joj7z0t2` | 512 | 1.0e-04 | 0.00132 | 0.7608 | 0.9965 | 0.123 | 104.0 |
-| `5px1rlbp` | 128 | 1.0e-04 | 0.00132 | 0.7287 | 0.9965 | 0.181 | 110.0 |
-| `njrxgz11` | 64 | 1.0e-05 | 0.00133 | 0.7311 | 0.9965 | 0.879 | 107.0 |
-| `6cp0rz4y` | 32 | 1.0e-05 | 0.00157 | 0.7948 | 0.9958 | 0.478 | 193.0 |
-| `bx4cgk4y` | 128 | 0.001 | 0.00166 | 0.7891 | 0.9956 | 0.022 | 111.0 |
-| `ufx598w7` | 512 | 0.01 | 0.00225 | 0.9313 | 0.9940 | 0.002 | 88.0 |
-| `idpmocmw` | 64 | 0.01 | 0.00234 | 0.9395 | 0.9938 | 0.005 | 102.0 |
-| `50nbcet4` | 256 | 0.01 | 0.00236 | 0.9256 | 0.9937 | 0.009 | 103.0 |
-| `0mpwbqk7` | 32 | 0 | 0.00242 | 1.0772 | 0.9936 | 1.624 | 167.0 |
-| `maqs3088` | 128 | 0.01 | 0.00245 | 0.9229 | 0.9935 | 0.002 | 102.0 |
-| `bhrkc679` | 512 | 1.0e-06 | 0.00252 | 0.8623 | 0.9932 | 0.243 | 57.0 |
-| `jy9nxbxe` | 256 | 0.001 | 0.00285 | 0.9935 | 0.9924 | 0.008 | 55.0 |
-| `7t07kkzf` | 256 | 1.0e-05 | 0.00302 | 0.9317 | 0.9919 | 0.122 | 47.0 |
-| `lv4lufoq` | 32 | 1.0e-06 | 0.00303 | 1.1477 | 0.9919 | 1.609 | 107.0 |
-| `4nz0p544` | 128 | 0 | 0.00380 | 1.1892 | 0.9898 | 0.846 | 28.0 |
-| `2d48iu8o` | 32 | 1.0e-04 | nan | nan | nan | 1.126 | — |
-| `j8xqwvh5` | 32 | 0.001 | nan | nan | nan | 0.228 | — |
-| `mjx53oh9` | 256 | 0.1 | 0.00281 | 1.0286 | 0.9925 | 0.000 | 143.0 |
-| `wsy55cmp` | 128 | 0.1 | 0.00312 | 1.0479 | 0.9916 | 0.000 | 163.0 |
-| `i9qfgypj` | 512 | 0.1 | 0.00322 | 1.1309 | 0.9914 | 0.000 | 100.0 |
-| `syjwl5ic` | 256 | 1 | 0.00409 | 1.2506 | 0.9890 | 0.000 | 105.0 |
-| `o9aszdui` | 64 | 0.1 | 0.00440 | 1.2301 | 0.9882 | 0.001 | 99.0 |
-| `x2te15ug` | 128 | 1 | 0.00536 | 1.4571 | 0.9856 | 0.000 | 90.0 |
-| `5w7bdslv` | 64 | 1 | 0.00644 | 1.5314 | 0.9828 | 0.000 | 92.0 |
-| `ueimwt6w` | 512 | 1 | 0.00954 | 1.8943 | 0.9744 | 0.000 | 44.0 |
-| `33f4ymvo` | 32 | 0.01 | 0.01323 | 2.1832 | 0.9647 | 0.004 | 30.0 |
-| `x4p8zlr9` | 32 | 0.1 | 0.01798 | 2.7755 | 0.9521 | 0.000 | 26.0 |
-| `cat8nkrd` | 64 | 0.001 | 0.01985 | 2.8201 | 0.9471 | 0.016 | 12.0 |
-| `ilucchni` | 32 | 1 | 0.07856 | 6.4587 | 0.7905 | 0.000 | 17.0 |
-| `uuso2tr7` | 512 | 0.001 | 0.09673 | 6.9480 | 0.7421 | 0.005 | 2.0 |
-| `z5zzf7v3` | 32 | 0.001 | nan | nan | nan | 0.228 | — |
+| run_idx | run_id | `model.encoder.hidden_dim` | `training.lightning.loop_closure_weight` | best_traj_loss | best_MASE | R² | LC loss | epoch |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `1wwirh60` | 64 | 0 | 0.00089 | 0.6698 | 0.9976 | 1.610 | 165.0 |
+| 18 | `ll5xx3rc` | 256 | 1.0e-04 | 0.00090 | 0.6545 | 0.9976 | 0.120 | 157.0 |
+| 14 | `r2lznj4b` | 512 | 1.0e-05 | 0.00097 | 0.6413 | 0.9974 | 0.207 | 180.0 |
+| 8 | `96wzp7ax` | 256 | 1.0e-06 | 0.00114 | 0.7041 | 0.9970 | 0.769 | 105.0 |
+| 3 | `lsg9vpxt` | 256 | 0 | 0.00114 | 0.6714 | 0.9970 | 0.615 | 138.0 |
+| 12 | `xotytukg` | 128 | 1.0e-05 | 0.00115 | 0.6816 | 0.9969 | 0.305 | 152.0 |
+| 6 | `vxsqq8n3` | 64 | 1.0e-06 | 0.00123 | 0.7193 | 0.9967 | 1.122 | 109.0 |
+| 4 | `fyzhn6mb` | 512 | 0 | 0.00128 | 0.7394 | 0.9966 | 1.165 | 106.0 |
+| 7 | `rha3kf0k` | 128 | 1.0e-06 | 0.00128 | 0.7177 | 0.9966 | 1.076 | 110.0 |
+| 16 | `ftu91y8t` | 64 | 1.0e-04 | 0.00130 | 0.7183 | 0.9966 | 0.163 | 130.0 |
+| 19 | `joj7z0t2` | 512 | 1.0e-04 | 0.00132 | 0.7608 | 0.9965 | 0.123 | 104.0 |
+| 17 | `5px1rlbp` | 128 | 1.0e-04 | 0.00132 | 0.7287 | 0.9965 | 0.181 | 110.0 |
+| 11 | `njrxgz11` | 64 | 1.0e-05 | 0.00133 | 0.7311 | 0.9965 | 0.879 | 107.0 |
+| 10 | `6cp0rz4y` | 32 | 1.0e-05 | 0.00157 | 0.7948 | 0.9958 | 0.478 | 193.0 |
+| 22 | `bx4cgk4y` | 128 | 0.001 | 0.00166 | 0.7891 | 0.9956 | 0.022 | 111.0 |
+| 29 | `ufx598w7` | 512 | 0.01 | 0.00225 | 0.9313 | 0.9940 | 0.002 | 88.0 |
+| 26 | `idpmocmw` | 64 | 0.01 | 0.00234 | 0.9395 | 0.9938 | 0.005 | 102.0 |
+| 28 | `50nbcet4` | 256 | 0.01 | 0.00236 | 0.9256 | 0.9937 | 0.009 | 103.0 |
+| 0 | `0mpwbqk7` | 32 | 0 | 0.00242 | 1.0772 | 0.9936 | 1.624 | 167.0 |
+| 27 | `maqs3088` | 128 | 0.01 | 0.00245 | 0.9229 | 0.9935 | 0.002 | 102.0 |
+| 9 | `bhrkc679` | 512 | 1.0e-06 | 0.00252 | 0.8623 | 0.9932 | 0.243 | 57.0 |
+| 33 | `mjx53oh9` | 256 | 0.1 | 0.00281 | 1.0286 | 0.9925 | 0.000 | 143.0 |
+| 23 | `jy9nxbxe` | 256 | 0.001 | 0.00285 | 0.9935 | 0.9924 | 0.008 | 55.0 |
+| 13 | `7t07kkzf` | 256 | 1.0e-05 | 0.00302 | 0.9317 | 0.9919 | 0.122 | 47.0 |
+| 5 | `lv4lufoq` | 32 | 1.0e-06 | 0.00303 | 1.1477 | 0.9919 | 1.609 | 107.0 |
+| 32 | `wsy55cmp` | 128 | 0.1 | 0.00312 | 1.0479 | 0.9916 | 0.000 | 163.0 |
+| 34 | `i9qfgypj` | 512 | 0.1 | 0.00322 | 1.1309 | 0.9914 | 0.000 | 100.0 |
+| 2 | `4nz0p544` | 128 | 0 | 0.00380 | 1.1892 | 0.9898 | 0.846 | 28.0 |
+| 15 | `2d48iu8o` | 32 | 1.0e-04 | nan | nan | nan | 1.126 | — |
+| 20 | `j8xqwvh5` | 32 | 0.001 | nan | nan | nan | 0.228 | — |
+| 38 | `syjwl5ic` | 256 | 1 | 0.00409 | 1.2506 | 0.9890 | 0.000 | 105.0 |
+| 31 | `o9aszdui` | 64 | 0.1 | 0.00440 | 1.2301 | 0.9882 | 0.001 | 99.0 |
+| 37 | `x2te15ug` | 128 | 1 | 0.00536 | 1.4571 | 0.9856 | 0.000 | 90.0 |
+| 36 | `5w7bdslv` | 64 | 1 | 0.00644 | 1.5314 | 0.9828 | 0.000 | 92.0 |
+| 39 | `ueimwt6w` | 512 | 1 | 0.00954 | 1.8943 | 0.9744 | 0.000 | 44.0 |
+| 25 | `33f4ymvo` | 32 | 0.01 | 0.01323 | 2.1832 | 0.9647 | 0.004 | 30.0 |
+| 30 | `x4p8zlr9` | 32 | 0.1 | 0.01798 | 2.7755 | 0.9521 | 0.000 | 26.0 |
+| 21 | `cat8nkrd` | 64 | 0.001 | 0.01985 | 2.8201 | 0.9471 | 0.016 | 12.0 |
+| 35 | `ilucchni` | 32 | 1 | 0.07856 | 6.4587 | 0.7905 | 0.000 | 17.0 |
+| 24 | `uuso2tr7` | 512 | 0.001 | 0.09673 | 6.9480 | 0.7421 | 0.005 | 2.0 |
 
 ## Success-criteria verdicts (automated)
 
@@ -325,47 +329,47 @@ Found 43 effectively-done sweep runs:
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=x2te15ug
   Dropping 2 run(s) with no checkpoint dir: ['sh9njr1h', 'gbm9ds5t']
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=0mpwbqk7: DiagnosticMetrics(one_step_mase=0.5217545628547668, loop_closure_loss=1.6241657733917236, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002422568155452609) (from W&B history)
-  run=1wwirh60: DiagnosticMetrics(one_step_mase=0.3935339152812958, loop_closure_loss=1.6100541353225708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008947824826464057) (from W&B history)
-  run=4nz0p544: DiagnosticMetrics(one_step_mase=0.42501354217529297, loop_closure_loss=0.8458001017570496, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0038001942448318005) (from W&B history)
-  run=fyzhn6mb: DiagnosticMetrics(one_step_mase=0.39095765352249146, loop_closure_loss=1.1645786762237549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012772853951901197) (from W&B history)
-  run=lsg9vpxt: DiagnosticMetrics(one_step_mase=0.37728819251060486, loop_closure_loss=0.6147653460502625, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011408667778596282) (from W&B history)
-  run=96wzp7ax: DiagnosticMetrics(one_step_mase=0.3854735493659973, loop_closure_loss=0.7688683867454529, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001138719148002565) (from W&B history)
-  run=bhrkc679: DiagnosticMetrics(one_step_mase=0.37712517380714417, loop_closure_loss=0.24316950142383575, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002518994268029928) (from W&B history)
-  run=lv4lufoq: DiagnosticMetrics(one_step_mase=0.5356078743934631, loop_closure_loss=1.6094849109649658, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003028406761586666) (from W&B history)
-  run=rha3kf0k: DiagnosticMetrics(one_step_mase=0.38616660237312317, loop_closure_loss=1.0760879516601562, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001280559110455215) (from W&B history)
-  run=vxsqq8n3: DiagnosticMetrics(one_step_mase=0.4073794484138489, loop_closure_loss=1.1216003894805908, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012266903650015593) (from W&B history)
-  run=6cp0rz4y: DiagnosticMetrics(one_step_mase=0.4516511559486389, loop_closure_loss=0.47845402359962463, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015676736366003752) (from W&B history)
-  run=7t07kkzf: DiagnosticMetrics(one_step_mase=0.3877793252468109, loop_closure_loss=0.12204135209321976, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003024458885192871) (from W&B history)
-  run=njrxgz11: DiagnosticMetrics(one_step_mase=0.40118566155433655, loop_closure_loss=0.878781795501709, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001326276338659227) (from W&B history)
-  run=r2lznj4b: DiagnosticMetrics(one_step_mase=0.3694973289966583, loop_closure_loss=0.20710216462612152, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009654525201767683) (from W&B history)
-  run=xotytukg: DiagnosticMetrics(one_step_mase=0.37520235776901245, loop_closure_loss=0.3053646385669708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011509821051731706) (from W&B history)
-  run=2d48iu8o: DiagnosticMetrics(one_step_mase=0.6747350096702576, loop_closure_loss=0.1755295991897583, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008546104654669762) (from W&B history)
-  run=5px1rlbp: DiagnosticMetrics(one_step_mase=0.38711661100387573, loop_closure_loss=0.18072062730789185, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013222586130723357) (from W&B history)
-  run=ftu91y8t: DiagnosticMetrics(one_step_mase=0.391697496175766, loop_closure_loss=0.1629897654056549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00129707099404186) (from W&B history)
-  run=joj7z0t2: DiagnosticMetrics(one_step_mase=0.386638879776001, loop_closure_loss=0.12302810698747635, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013190156314522028) (from W&B history)
-  run=ll5xx3rc: DiagnosticMetrics(one_step_mase=0.37820422649383545, loop_closure_loss=0.12034718692302704, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009027845226228237) (from W&B history)
-  run=bx4cgk4y: DiagnosticMetrics(one_step_mase=0.3897989094257355, loop_closure_loss=0.022098904475569725, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0016580949304625392) (from W&B history)
-  run=cat8nkrd: DiagnosticMetrics(one_step_mase=0.8682265877723694, loop_closure_loss=0.015850931406021118, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.019851338118314743) (from W&B history)
-  run=j8xqwvh5: DiagnosticMetrics(one_step_mase=0.5480572581291199, loop_closure_loss=0.04801424965262413, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0035981156397610903) (from W&B history)
-  run=jy9nxbxe: DiagnosticMetrics(one_step_mase=0.38951653242111206, loop_closure_loss=0.008470424450933933, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028486058581620455) (from W&B history)
-  run=uuso2tr7: DiagnosticMetrics(one_step_mase=0.7862730622291565, loop_closure_loss=0.004632106516510248, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.09673088043928146) (from W&B history)
-  run=z5zzf7v3: DiagnosticMetrics(one_step_mase=0.5452226996421814, loop_closure_loss=0.04756515473127365, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0030430322512984276) (from W&B history)
-  run=33f4ymvo: DiagnosticMetrics(one_step_mase=0.6988587379455566, loop_closure_loss=0.0035228740889579058, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.013225925154983997) (from W&B history)
-  run=50nbcet4: DiagnosticMetrics(one_step_mase=0.40340498089790344, loop_closure_loss=0.008795131929218769, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002356510842218995) (from W&B history)
-  run=idpmocmw: DiagnosticMetrics(one_step_mase=0.42371314764022827, loop_closure_loss=0.0045555345714092255, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002340043894946575) (from W&B history)
-  run=maqs3088: DiagnosticMetrics(one_step_mase=0.40615275502204895, loop_closure_loss=0.0020099254325032234, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0024464766029268503) (from W&B history)
-  run=ufx598w7: DiagnosticMetrics(one_step_mase=0.3992995619773865, loop_closure_loss=0.0024546498898416758, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002254910534247756) (from W&B history)
-  run=i9qfgypj: DiagnosticMetrics(one_step_mase=0.406982421875, loop_closure_loss=0.00016031588893383741, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0032183644361793995) (from W&B history)
-  run=mjx53oh9: DiagnosticMetrics(one_step_mase=0.40514156222343445, loop_closure_loss=0.00023292795231100172, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028087878599762917) (from W&B history)
-  run=o9aszdui: DiagnosticMetrics(one_step_mase=0.43560975790023804, loop_closure_loss=0.0006371282506734133, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004404474049806595) (from W&B history)
-  run=wsy55cmp: DiagnosticMetrics(one_step_mase=0.4078247547149658, loop_closure_loss=0.0003494429693091661, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0031193182803690434) (from W&B history)
-  run=x4p8zlr9: DiagnosticMetrics(one_step_mase=0.7893850207328796, loop_closure_loss=0.00041640247218310833, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01798124983906746) (from W&B history)
-  run=5w7bdslv: DiagnosticMetrics(one_step_mase=0.4823963940143585, loop_closure_loss=0.00022746999457012862, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006437171250581741) (from W&B history)
-  run=ilucchni: DiagnosticMetrics(one_step_mase=1.25845468044281, loop_closure_loss=4.4378630263963714e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07855549454689026) (from W&B history)
-  run=syjwl5ic: DiagnosticMetrics(one_step_mase=0.4292369782924652, loop_closure_loss=5.8287045249016955e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004094111267477274) (from W&B history)
-  run=ueimwt6w: DiagnosticMetrics(one_step_mase=0.45281505584716797, loop_closure_loss=4.939811697113328e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.009544222615659237) (from W&B history)
-  run=x2te15ug: DiagnosticMetrics(one_step_mase=0.4604220986366272, loop_closure_loss=6.245687836781144e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005356785841286182) (from W&B history)
+  run=0mpwbqk7: DiagnosticMetrics(one_step_mase=0.5217545628547668, loop_closure_loss=1.6241657733917236, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002422568155452609) (from cache, n_batches=100)
+  run=1wwirh60: DiagnosticMetrics(one_step_mase=0.3935339152812958, loop_closure_loss=1.6100541353225708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008947824826464057) (from cache, n_batches=100)
+  run=4nz0p544: DiagnosticMetrics(one_step_mase=0.42501354217529297, loop_closure_loss=0.8458001017570496, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0038001942448318005) (from cache, n_batches=100)
+  run=fyzhn6mb: DiagnosticMetrics(one_step_mase=0.39095765352249146, loop_closure_loss=1.1645786762237549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012772853951901197) (from cache, n_batches=100)
+  run=lsg9vpxt: DiagnosticMetrics(one_step_mase=0.37728819251060486, loop_closure_loss=0.6147653460502625, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011408667778596282) (from cache, n_batches=100)
+  run=96wzp7ax: DiagnosticMetrics(one_step_mase=0.3854735493659973, loop_closure_loss=0.7688683867454529, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001138719148002565) (from cache, n_batches=100)
+  run=bhrkc679: DiagnosticMetrics(one_step_mase=0.37712517380714417, loop_closure_loss=0.24316950142383575, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002518994268029928) (from cache, n_batches=100)
+  run=lv4lufoq: DiagnosticMetrics(one_step_mase=0.5356078743934631, loop_closure_loss=1.6094849109649658, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003028406761586666) (from cache, n_batches=100)
+  run=rha3kf0k: DiagnosticMetrics(one_step_mase=0.38616660237312317, loop_closure_loss=1.0760879516601562, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001280559110455215) (from cache, n_batches=100)
+  run=vxsqq8n3: DiagnosticMetrics(one_step_mase=0.4073794484138489, loop_closure_loss=1.1216003894805908, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012266903650015593) (from cache, n_batches=100)
+  run=6cp0rz4y: DiagnosticMetrics(one_step_mase=0.4516511559486389, loop_closure_loss=0.47845402359962463, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015676736366003752) (from cache, n_batches=100)
+  run=7t07kkzf: DiagnosticMetrics(one_step_mase=0.3877793252468109, loop_closure_loss=0.12204135209321976, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003024458885192871) (from cache, n_batches=100)
+  run=njrxgz11: DiagnosticMetrics(one_step_mase=0.40118566155433655, loop_closure_loss=0.878781795501709, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001326276338659227) (from cache, n_batches=100)
+  run=r2lznj4b: DiagnosticMetrics(one_step_mase=0.3694973289966583, loop_closure_loss=0.20710216462612152, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009654525201767683) (from cache, n_batches=100)
+  run=xotytukg: DiagnosticMetrics(one_step_mase=0.37520235776901245, loop_closure_loss=0.3053646385669708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011509821051731706) (from cache, n_batches=100)
+  run=2d48iu8o: DiagnosticMetrics(one_step_mase=0.6747350096702576, loop_closure_loss=0.1755295991897583, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008546104654669762) (from cache, n_batches=100)
+  run=5px1rlbp: DiagnosticMetrics(one_step_mase=0.38711661100387573, loop_closure_loss=0.18072062730789185, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013222586130723357) (from cache, n_batches=100)
+  run=ftu91y8t: DiagnosticMetrics(one_step_mase=0.391697496175766, loop_closure_loss=0.1629897654056549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00129707099404186) (from cache, n_batches=100)
+  run=joj7z0t2: DiagnosticMetrics(one_step_mase=0.386638879776001, loop_closure_loss=0.12302810698747635, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013190156314522028) (from cache, n_batches=100)
+  run=ll5xx3rc: DiagnosticMetrics(one_step_mase=0.37820422649383545, loop_closure_loss=0.12034718692302704, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009027845226228237) (from cache, n_batches=100)
+  run=bx4cgk4y: DiagnosticMetrics(one_step_mase=0.3897989094257355, loop_closure_loss=0.022098904475569725, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0016580949304625392) (from cache, n_batches=100)
+  run=cat8nkrd: DiagnosticMetrics(one_step_mase=0.8682265877723694, loop_closure_loss=0.015850931406021118, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.019851338118314743) (from cache, n_batches=100)
+  run=j8xqwvh5: DiagnosticMetrics(one_step_mase=0.5480572581291199, loop_closure_loss=0.04801424965262413, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0035981156397610903) (from cache, n_batches=100)
+  run=jy9nxbxe: DiagnosticMetrics(one_step_mase=0.38951653242111206, loop_closure_loss=0.008470424450933933, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028486058581620455) (from cache, n_batches=100)
+  run=uuso2tr7: DiagnosticMetrics(one_step_mase=0.7862730622291565, loop_closure_loss=0.004632106516510248, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.09673088043928146) (from cache, n_batches=100)
+  run=z5zzf7v3: DiagnosticMetrics(one_step_mase=0.5452226996421814, loop_closure_loss=0.04756515473127365, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0030430322512984276) (from cache, n_batches=100)
+  run=33f4ymvo: DiagnosticMetrics(one_step_mase=0.6988587379455566, loop_closure_loss=0.0035228740889579058, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.013225925154983997) (from cache, n_batches=100)
+  run=50nbcet4: DiagnosticMetrics(one_step_mase=0.40340498089790344, loop_closure_loss=0.008795131929218769, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002356510842218995) (from cache, n_batches=100)
+  run=idpmocmw: DiagnosticMetrics(one_step_mase=0.42371314764022827, loop_closure_loss=0.0045555345714092255, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002340043894946575) (from cache, n_batches=100)
+  run=maqs3088: DiagnosticMetrics(one_step_mase=0.40615275502204895, loop_closure_loss=0.0020099254325032234, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0024464766029268503) (from cache, n_batches=100)
+  run=ufx598w7: DiagnosticMetrics(one_step_mase=0.3992995619773865, loop_closure_loss=0.0024546498898416758, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002254910534247756) (from cache, n_batches=100)
+  run=i9qfgypj: DiagnosticMetrics(one_step_mase=0.406982421875, loop_closure_loss=0.00016031588893383741, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0032183644361793995) (from cache, n_batches=100)
+  run=mjx53oh9: DiagnosticMetrics(one_step_mase=0.40514156222343445, loop_closure_loss=0.00023292795231100172, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028087878599762917) (from cache, n_batches=100)
+  run=o9aszdui: DiagnosticMetrics(one_step_mase=0.43560975790023804, loop_closure_loss=0.0006371282506734133, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004404474049806595) (from cache, n_batches=100)
+  run=wsy55cmp: DiagnosticMetrics(one_step_mase=0.4078247547149658, loop_closure_loss=0.0003494429693091661, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0031193182803690434) (from cache, n_batches=100)
+  run=x4p8zlr9: DiagnosticMetrics(one_step_mase=0.7893850207328796, loop_closure_loss=0.00041640247218310833, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01798124983906746) (from cache, n_batches=100)
+  run=5w7bdslv: DiagnosticMetrics(one_step_mase=0.4823963940143585, loop_closure_loss=0.00022746999457012862, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006437171250581741) (from cache, n_batches=100)
+  run=ilucchni: DiagnosticMetrics(one_step_mase=1.25845468044281, loop_closure_loss=4.4378630263963714e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07855549454689026) (from cache, n_batches=100)
+  run=syjwl5ic: DiagnosticMetrics(one_step_mase=0.4292369782924652, loop_closure_loss=5.8287045249016955e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004094111267477274) (from cache, n_batches=100)
+  run=ueimwt6w: DiagnosticMetrics(one_step_mase=0.45281505584716797, loop_closure_loss=4.939811697113328e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.009544222615659237) (from cache, n_batches=100)
+  run=x2te15ug: DiagnosticMetrics(one_step_mase=0.4604220986366272, loop_closure_loss=6.245687836781144e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005356785841286182) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              1wwirh60

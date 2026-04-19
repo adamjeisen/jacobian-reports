@@ -47,11 +47,15 @@ be flat across hidden_dim.</p>
 <p><strong>Swept axes</strong> (2): <code>model.encoder.hidden_dim</code>, <code>training.lightning.loop_closure_weight</code></p>
 <p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>1wwirh60</code> — traj_loss=0.00089, MASE=0.6698, R²=0.9976, LC loss=1.610, epoch=165.0</p>
 <p>Swept-axis values at chosen run: <code>model.encoder.hidden_dim</code>=64 · <code>training.lightning.loop_closure_weight</code>=0</p>
-<p><strong>Runs analyzed</strong>: 41</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>1 run_idx slot(s) had multiple matching wandb runs</strong> — the best by <code>best_traj_loss</code> was kept; the others are listed below for audit:
+  - run_idx=<strong>20</strong>: chose <code>j8xqwvh5</code>, dropped <code>z5zzf7v3</code></p>
+<p><strong>Runs analyzed</strong>: 40 (expected 40)</p>
 <h3>Per-run results</h3>
 <table>
 <thead>
 <tr>
+<th>run_idx</th>
 <th>run_id</th>
 <th><code>model.encoder.hidden_dim</code></th>
 <th><code>training.lightning.loop_closure_weight</code></th>
@@ -64,6 +68,7 @@ be flat across hidden_dim.</p>
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td><code>1wwirh60</code></td>
 <td>64</td>
 <td>0</td>
@@ -74,6 +79,7 @@ be flat across hidden_dim.</p>
 <td>165.0</td>
 </tr>
 <tr>
+<td>18</td>
 <td><code>ll5xx3rc</code></td>
 <td>256</td>
 <td>1.0e-04</td>
@@ -84,6 +90,7 @@ be flat across hidden_dim.</p>
 <td>157.0</td>
 </tr>
 <tr>
+<td>14</td>
 <td><code>r2lznj4b</code></td>
 <td>512</td>
 <td>1.0e-05</td>
@@ -94,6 +101,7 @@ be flat across hidden_dim.</p>
 <td>180.0</td>
 </tr>
 <tr>
+<td>8</td>
 <td><code>96wzp7ax</code></td>
 <td>256</td>
 <td>1.0e-06</td>
@@ -104,6 +112,7 @@ be flat across hidden_dim.</p>
 <td>105.0</td>
 </tr>
 <tr>
+<td>3</td>
 <td><code>lsg9vpxt</code></td>
 <td>256</td>
 <td>0</td>
@@ -114,6 +123,7 @@ be flat across hidden_dim.</p>
 <td>138.0</td>
 </tr>
 <tr>
+<td>12</td>
 <td><code>xotytukg</code></td>
 <td>128</td>
 <td>1.0e-05</td>
@@ -124,6 +134,7 @@ be flat across hidden_dim.</p>
 <td>152.0</td>
 </tr>
 <tr>
+<td>6</td>
 <td><code>vxsqq8n3</code></td>
 <td>64</td>
 <td>1.0e-06</td>
@@ -134,6 +145,7 @@ be flat across hidden_dim.</p>
 <td>109.0</td>
 </tr>
 <tr>
+<td>4</td>
 <td><code>fyzhn6mb</code></td>
 <td>512</td>
 <td>0</td>
@@ -144,6 +156,7 @@ be flat across hidden_dim.</p>
 <td>106.0</td>
 </tr>
 <tr>
+<td>7</td>
 <td><code>rha3kf0k</code></td>
 <td>128</td>
 <td>1.0e-06</td>
@@ -154,6 +167,7 @@ be flat across hidden_dim.</p>
 <td>110.0</td>
 </tr>
 <tr>
+<td>16</td>
 <td><code>ftu91y8t</code></td>
 <td>64</td>
 <td>1.0e-04</td>
@@ -164,6 +178,7 @@ be flat across hidden_dim.</p>
 <td>130.0</td>
 </tr>
 <tr>
+<td>19</td>
 <td><code>joj7z0t2</code></td>
 <td>512</td>
 <td>1.0e-04</td>
@@ -174,6 +189,7 @@ be flat across hidden_dim.</p>
 <td>104.0</td>
 </tr>
 <tr>
+<td>17</td>
 <td><code>5px1rlbp</code></td>
 <td>128</td>
 <td>1.0e-04</td>
@@ -184,6 +200,7 @@ be flat across hidden_dim.</p>
 <td>110.0</td>
 </tr>
 <tr>
+<td>11</td>
 <td><code>njrxgz11</code></td>
 <td>64</td>
 <td>1.0e-05</td>
@@ -194,6 +211,7 @@ be flat across hidden_dim.</p>
 <td>107.0</td>
 </tr>
 <tr>
+<td>10</td>
 <td><code>6cp0rz4y</code></td>
 <td>32</td>
 <td>1.0e-05</td>
@@ -204,6 +222,7 @@ be flat across hidden_dim.</p>
 <td>193.0</td>
 </tr>
 <tr>
+<td>22</td>
 <td><code>bx4cgk4y</code></td>
 <td>128</td>
 <td>0.001</td>
@@ -214,6 +233,7 @@ be flat across hidden_dim.</p>
 <td>111.0</td>
 </tr>
 <tr>
+<td>29</td>
 <td><code>ufx598w7</code></td>
 <td>512</td>
 <td>0.01</td>
@@ -224,6 +244,7 @@ be flat across hidden_dim.</p>
 <td>88.0</td>
 </tr>
 <tr>
+<td>26</td>
 <td><code>idpmocmw</code></td>
 <td>64</td>
 <td>0.01</td>
@@ -234,6 +255,7 @@ be flat across hidden_dim.</p>
 <td>102.0</td>
 </tr>
 <tr>
+<td>28</td>
 <td><code>50nbcet4</code></td>
 <td>256</td>
 <td>0.01</td>
@@ -244,6 +266,7 @@ be flat across hidden_dim.</p>
 <td>103.0</td>
 </tr>
 <tr>
+<td>0</td>
 <td><code>0mpwbqk7</code></td>
 <td>32</td>
 <td>0</td>
@@ -254,6 +277,7 @@ be flat across hidden_dim.</p>
 <td>167.0</td>
 </tr>
 <tr>
+<td>27</td>
 <td><code>maqs3088</code></td>
 <td>128</td>
 <td>0.01</td>
@@ -264,6 +288,7 @@ be flat across hidden_dim.</p>
 <td>102.0</td>
 </tr>
 <tr>
+<td>9</td>
 <td><code>bhrkc679</code></td>
 <td>512</td>
 <td>1.0e-06</td>
@@ -274,66 +299,7 @@ be flat across hidden_dim.</p>
 <td>57.0</td>
 </tr>
 <tr>
-<td><code>jy9nxbxe</code></td>
-<td>256</td>
-<td>0.001</td>
-<td>0.00285</td>
-<td>0.9935</td>
-<td>0.9924</td>
-<td>0.008</td>
-<td>55.0</td>
-</tr>
-<tr>
-<td><code>7t07kkzf</code></td>
-<td>256</td>
-<td>1.0e-05</td>
-<td>0.00302</td>
-<td>0.9317</td>
-<td>0.9919</td>
-<td>0.122</td>
-<td>47.0</td>
-</tr>
-<tr>
-<td><code>lv4lufoq</code></td>
-<td>32</td>
-<td>1.0e-06</td>
-<td>0.00303</td>
-<td>1.1477</td>
-<td>0.9919</td>
-<td>1.609</td>
-<td>107.0</td>
-</tr>
-<tr>
-<td><code>4nz0p544</code></td>
-<td>128</td>
-<td>0</td>
-<td>0.00380</td>
-<td>1.1892</td>
-<td>0.9898</td>
-<td>0.846</td>
-<td>28.0</td>
-</tr>
-<tr>
-<td><code>2d48iu8o</code></td>
-<td>32</td>
-<td>1.0e-04</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>1.126</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>j8xqwvh5</code></td>
-<td>32</td>
-<td>0.001</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.228</td>
-<td>—</td>
-</tr>
-<tr>
+<td>33</td>
 <td><code>mjx53oh9</code></td>
 <td>256</td>
 <td>0.1</td>
@@ -344,6 +310,40 @@ be flat across hidden_dim.</p>
 <td>143.0</td>
 </tr>
 <tr>
+<td>23</td>
+<td><code>jy9nxbxe</code></td>
+<td>256</td>
+<td>0.001</td>
+<td>0.00285</td>
+<td>0.9935</td>
+<td>0.9924</td>
+<td>0.008</td>
+<td>55.0</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>7t07kkzf</code></td>
+<td>256</td>
+<td>1.0e-05</td>
+<td>0.00302</td>
+<td>0.9317</td>
+<td>0.9919</td>
+<td>0.122</td>
+<td>47.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>lv4lufoq</code></td>
+<td>32</td>
+<td>1.0e-06</td>
+<td>0.00303</td>
+<td>1.1477</td>
+<td>0.9919</td>
+<td>1.609</td>
+<td>107.0</td>
+</tr>
+<tr>
+<td>32</td>
 <td><code>wsy55cmp</code></td>
 <td>128</td>
 <td>0.1</td>
@@ -354,6 +354,7 @@ be flat across hidden_dim.</p>
 <td>163.0</td>
 </tr>
 <tr>
+<td>34</td>
 <td><code>i9qfgypj</code></td>
 <td>512</td>
 <td>0.1</td>
@@ -364,6 +365,40 @@ be flat across hidden_dim.</p>
 <td>100.0</td>
 </tr>
 <tr>
+<td>2</td>
+<td><code>4nz0p544</code></td>
+<td>128</td>
+<td>0</td>
+<td>0.00380</td>
+<td>1.1892</td>
+<td>0.9898</td>
+<td>0.846</td>
+<td>28.0</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>2d48iu8o</code></td>
+<td>32</td>
+<td>1.0e-04</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>1.126</td>
+<td>—</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>j8xqwvh5</code></td>
+<td>32</td>
+<td>0.001</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>0.228</td>
+<td>—</td>
+</tr>
+<tr>
+<td>38</td>
 <td><code>syjwl5ic</code></td>
 <td>256</td>
 <td>1</td>
@@ -374,6 +409,7 @@ be flat across hidden_dim.</p>
 <td>105.0</td>
 </tr>
 <tr>
+<td>31</td>
 <td><code>o9aszdui</code></td>
 <td>64</td>
 <td>0.1</td>
@@ -384,6 +420,7 @@ be flat across hidden_dim.</p>
 <td>99.0</td>
 </tr>
 <tr>
+<td>37</td>
 <td><code>x2te15ug</code></td>
 <td>128</td>
 <td>1</td>
@@ -394,6 +431,7 @@ be flat across hidden_dim.</p>
 <td>90.0</td>
 </tr>
 <tr>
+<td>36</td>
 <td><code>5w7bdslv</code></td>
 <td>64</td>
 <td>1</td>
@@ -404,6 +442,7 @@ be flat across hidden_dim.</p>
 <td>92.0</td>
 </tr>
 <tr>
+<td>39</td>
 <td><code>ueimwt6w</code></td>
 <td>512</td>
 <td>1</td>
@@ -414,6 +453,7 @@ be flat across hidden_dim.</p>
 <td>44.0</td>
 </tr>
 <tr>
+<td>25</td>
 <td><code>33f4ymvo</code></td>
 <td>32</td>
 <td>0.01</td>
@@ -424,6 +464,7 @@ be flat across hidden_dim.</p>
 <td>30.0</td>
 </tr>
 <tr>
+<td>30</td>
 <td><code>x4p8zlr9</code></td>
 <td>32</td>
 <td>0.1</td>
@@ -434,6 +475,7 @@ be flat across hidden_dim.</p>
 <td>26.0</td>
 </tr>
 <tr>
+<td>21</td>
 <td><code>cat8nkrd</code></td>
 <td>64</td>
 <td>0.001</td>
@@ -444,6 +486,7 @@ be flat across hidden_dim.</p>
 <td>12.0</td>
 </tr>
 <tr>
+<td>35</td>
 <td><code>ilucchni</code></td>
 <td>32</td>
 <td>1</td>
@@ -454,6 +497,7 @@ be flat across hidden_dim.</p>
 <td>17.0</td>
 </tr>
 <tr>
+<td>24</td>
 <td><code>uuso2tr7</code></td>
 <td>512</td>
 <td>0.001</td>
@@ -462,16 +506,6 @@ be flat across hidden_dim.</p>
 <td>0.7421</td>
 <td>0.005</td>
 <td>2.0</td>
-</tr>
-<tr>
-<td><code>z5zzf7v3</code></td>
-<td>32</td>
-<td>0.001</td>
-<td>nan</td>
-<td>nan</td>
-<td>nan</td>
-<td>0.228</td>
-<td>—</td>
 </tr>
 </tbody>
 </table>
@@ -689,47 +723,47 @@ Found 43 effectively-done sweep runs:
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=x2te15ug
   Dropping 2 run(s) with no checkpoint dir: ['sh9njr1h', 'gbm9ds5t']
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=0mpwbqk7: DiagnosticMetrics(one_step_mase=0.5217545628547668, loop_closure_loss=1.6241657733917236, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002422568155452609) (from W&amp;B history)
-  run=1wwirh60: DiagnosticMetrics(one_step_mase=0.3935339152812958, loop_closure_loss=1.6100541353225708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008947824826464057) (from W&amp;B history)
-  run=4nz0p544: DiagnosticMetrics(one_step_mase=0.42501354217529297, loop_closure_loss=0.8458001017570496, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0038001942448318005) (from W&amp;B history)
-  run=fyzhn6mb: DiagnosticMetrics(one_step_mase=0.39095765352249146, loop_closure_loss=1.1645786762237549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012772853951901197) (from W&amp;B history)
-  run=lsg9vpxt: DiagnosticMetrics(one_step_mase=0.37728819251060486, loop_closure_loss=0.6147653460502625, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011408667778596282) (from W&amp;B history)
-  run=96wzp7ax: DiagnosticMetrics(one_step_mase=0.3854735493659973, loop_closure_loss=0.7688683867454529, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001138719148002565) (from W&amp;B history)
-  run=bhrkc679: DiagnosticMetrics(one_step_mase=0.37712517380714417, loop_closure_loss=0.24316950142383575, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002518994268029928) (from W&amp;B history)
-  run=lv4lufoq: DiagnosticMetrics(one_step_mase=0.5356078743934631, loop_closure_loss=1.6094849109649658, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003028406761586666) (from W&amp;B history)
-  run=rha3kf0k: DiagnosticMetrics(one_step_mase=0.38616660237312317, loop_closure_loss=1.0760879516601562, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001280559110455215) (from W&amp;B history)
-  run=vxsqq8n3: DiagnosticMetrics(one_step_mase=0.4073794484138489, loop_closure_loss=1.1216003894805908, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012266903650015593) (from W&amp;B history)
-  run=6cp0rz4y: DiagnosticMetrics(one_step_mase=0.4516511559486389, loop_closure_loss=0.47845402359962463, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015676736366003752) (from W&amp;B history)
-  run=7t07kkzf: DiagnosticMetrics(one_step_mase=0.3877793252468109, loop_closure_loss=0.12204135209321976, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003024458885192871) (from W&amp;B history)
-  run=njrxgz11: DiagnosticMetrics(one_step_mase=0.40118566155433655, loop_closure_loss=0.878781795501709, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001326276338659227) (from W&amp;B history)
-  run=r2lznj4b: DiagnosticMetrics(one_step_mase=0.3694973289966583, loop_closure_loss=0.20710216462612152, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009654525201767683) (from W&amp;B history)
-  run=xotytukg: DiagnosticMetrics(one_step_mase=0.37520235776901245, loop_closure_loss=0.3053646385669708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011509821051731706) (from W&amp;B history)
-  run=2d48iu8o: DiagnosticMetrics(one_step_mase=0.6747350096702576, loop_closure_loss=0.1755295991897583, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008546104654669762) (from W&amp;B history)
-  run=5px1rlbp: DiagnosticMetrics(one_step_mase=0.38711661100387573, loop_closure_loss=0.18072062730789185, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013222586130723357) (from W&amp;B history)
-  run=ftu91y8t: DiagnosticMetrics(one_step_mase=0.391697496175766, loop_closure_loss=0.1629897654056549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00129707099404186) (from W&amp;B history)
-  run=joj7z0t2: DiagnosticMetrics(one_step_mase=0.386638879776001, loop_closure_loss=0.12302810698747635, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013190156314522028) (from W&amp;B history)
-  run=ll5xx3rc: DiagnosticMetrics(one_step_mase=0.37820422649383545, loop_closure_loss=0.12034718692302704, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009027845226228237) (from W&amp;B history)
-  run=bx4cgk4y: DiagnosticMetrics(one_step_mase=0.3897989094257355, loop_closure_loss=0.022098904475569725, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0016580949304625392) (from W&amp;B history)
-  run=cat8nkrd: DiagnosticMetrics(one_step_mase=0.8682265877723694, loop_closure_loss=0.015850931406021118, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.019851338118314743) (from W&amp;B history)
-  run=j8xqwvh5: DiagnosticMetrics(one_step_mase=0.5480572581291199, loop_closure_loss=0.04801424965262413, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0035981156397610903) (from W&amp;B history)
-  run=jy9nxbxe: DiagnosticMetrics(one_step_mase=0.38951653242111206, loop_closure_loss=0.008470424450933933, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028486058581620455) (from W&amp;B history)
-  run=uuso2tr7: DiagnosticMetrics(one_step_mase=0.7862730622291565, loop_closure_loss=0.004632106516510248, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.09673088043928146) (from W&amp;B history)
-  run=z5zzf7v3: DiagnosticMetrics(one_step_mase=0.5452226996421814, loop_closure_loss=0.04756515473127365, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0030430322512984276) (from W&amp;B history)
-  run=33f4ymvo: DiagnosticMetrics(one_step_mase=0.6988587379455566, loop_closure_loss=0.0035228740889579058, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.013225925154983997) (from W&amp;B history)
-  run=50nbcet4: DiagnosticMetrics(one_step_mase=0.40340498089790344, loop_closure_loss=0.008795131929218769, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002356510842218995) (from W&amp;B history)
-  run=idpmocmw: DiagnosticMetrics(one_step_mase=0.42371314764022827, loop_closure_loss=0.0045555345714092255, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002340043894946575) (from W&amp;B history)
-  run=maqs3088: DiagnosticMetrics(one_step_mase=0.40615275502204895, loop_closure_loss=0.0020099254325032234, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0024464766029268503) (from W&amp;B history)
-  run=ufx598w7: DiagnosticMetrics(one_step_mase=0.3992995619773865, loop_closure_loss=0.0024546498898416758, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002254910534247756) (from W&amp;B history)
-  run=i9qfgypj: DiagnosticMetrics(one_step_mase=0.406982421875, loop_closure_loss=0.00016031588893383741, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0032183644361793995) (from W&amp;B history)
-  run=mjx53oh9: DiagnosticMetrics(one_step_mase=0.40514156222343445, loop_closure_loss=0.00023292795231100172, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028087878599762917) (from W&amp;B history)
-  run=o9aszdui: DiagnosticMetrics(one_step_mase=0.43560975790023804, loop_closure_loss=0.0006371282506734133, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004404474049806595) (from W&amp;B history)
-  run=wsy55cmp: DiagnosticMetrics(one_step_mase=0.4078247547149658, loop_closure_loss=0.0003494429693091661, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0031193182803690434) (from W&amp;B history)
-  run=x4p8zlr9: DiagnosticMetrics(one_step_mase=0.7893850207328796, loop_closure_loss=0.00041640247218310833, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01798124983906746) (from W&amp;B history)
-  run=5w7bdslv: DiagnosticMetrics(one_step_mase=0.4823963940143585, loop_closure_loss=0.00022746999457012862, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006437171250581741) (from W&amp;B history)
-  run=ilucchni: DiagnosticMetrics(one_step_mase=1.25845468044281, loop_closure_loss=4.4378630263963714e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07855549454689026) (from W&amp;B history)
-  run=syjwl5ic: DiagnosticMetrics(one_step_mase=0.4292369782924652, loop_closure_loss=5.8287045249016955e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004094111267477274) (from W&amp;B history)
-  run=ueimwt6w: DiagnosticMetrics(one_step_mase=0.45281505584716797, loop_closure_loss=4.939811697113328e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.009544222615659237) (from W&amp;B history)
-  run=x2te15ug: DiagnosticMetrics(one_step_mase=0.4604220986366272, loop_closure_loss=6.245687836781144e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005356785841286182) (from W&amp;B history)
+  run=0mpwbqk7: DiagnosticMetrics(one_step_mase=0.5217545628547668, loop_closure_loss=1.6241657733917236, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002422568155452609) (from cache, n_batches=100)
+  run=1wwirh60: DiagnosticMetrics(one_step_mase=0.3935339152812958, loop_closure_loss=1.6100541353225708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008947824826464057) (from cache, n_batches=100)
+  run=4nz0p544: DiagnosticMetrics(one_step_mase=0.42501354217529297, loop_closure_loss=0.8458001017570496, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0038001942448318005) (from cache, n_batches=100)
+  run=fyzhn6mb: DiagnosticMetrics(one_step_mase=0.39095765352249146, loop_closure_loss=1.1645786762237549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012772853951901197) (from cache, n_batches=100)
+  run=lsg9vpxt: DiagnosticMetrics(one_step_mase=0.37728819251060486, loop_closure_loss=0.6147653460502625, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011408667778596282) (from cache, n_batches=100)
+  run=96wzp7ax: DiagnosticMetrics(one_step_mase=0.3854735493659973, loop_closure_loss=0.7688683867454529, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001138719148002565) (from cache, n_batches=100)
+  run=bhrkc679: DiagnosticMetrics(one_step_mase=0.37712517380714417, loop_closure_loss=0.24316950142383575, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002518994268029928) (from cache, n_batches=100)
+  run=lv4lufoq: DiagnosticMetrics(one_step_mase=0.5356078743934631, loop_closure_loss=1.6094849109649658, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003028406761586666) (from cache, n_batches=100)
+  run=rha3kf0k: DiagnosticMetrics(one_step_mase=0.38616660237312317, loop_closure_loss=1.0760879516601562, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001280559110455215) (from cache, n_batches=100)
+  run=vxsqq8n3: DiagnosticMetrics(one_step_mase=0.4073794484138489, loop_closure_loss=1.1216003894805908, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0012266903650015593) (from cache, n_batches=100)
+  run=6cp0rz4y: DiagnosticMetrics(one_step_mase=0.4516511559486389, loop_closure_loss=0.47845402359962463, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0015676736366003752) (from cache, n_batches=100)
+  run=7t07kkzf: DiagnosticMetrics(one_step_mase=0.3877793252468109, loop_closure_loss=0.12204135209321976, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003024458885192871) (from cache, n_batches=100)
+  run=njrxgz11: DiagnosticMetrics(one_step_mase=0.40118566155433655, loop_closure_loss=0.878781795501709, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.001326276338659227) (from cache, n_batches=100)
+  run=r2lznj4b: DiagnosticMetrics(one_step_mase=0.3694973289966583, loop_closure_loss=0.20710216462612152, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009654525201767683) (from cache, n_batches=100)
+  run=xotytukg: DiagnosticMetrics(one_step_mase=0.37520235776901245, loop_closure_loss=0.3053646385669708, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0011509821051731706) (from cache, n_batches=100)
+  run=2d48iu8o: DiagnosticMetrics(one_step_mase=0.6747350096702576, loop_closure_loss=0.1755295991897583, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.008546104654669762) (from cache, n_batches=100)
+  run=5px1rlbp: DiagnosticMetrics(one_step_mase=0.38711661100387573, loop_closure_loss=0.18072062730789185, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013222586130723357) (from cache, n_batches=100)
+  run=ftu91y8t: DiagnosticMetrics(one_step_mase=0.391697496175766, loop_closure_loss=0.1629897654056549, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00129707099404186) (from cache, n_batches=100)
+  run=joj7z0t2: DiagnosticMetrics(one_step_mase=0.386638879776001, loop_closure_loss=0.12302810698747635, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0013190156314522028) (from cache, n_batches=100)
+  run=ll5xx3rc: DiagnosticMetrics(one_step_mase=0.37820422649383545, loop_closure_loss=0.12034718692302704, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009027845226228237) (from cache, n_batches=100)
+  run=bx4cgk4y: DiagnosticMetrics(one_step_mase=0.3897989094257355, loop_closure_loss=0.022098904475569725, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0016580949304625392) (from cache, n_batches=100)
+  run=cat8nkrd: DiagnosticMetrics(one_step_mase=0.8682265877723694, loop_closure_loss=0.015850931406021118, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.019851338118314743) (from cache, n_batches=100)
+  run=j8xqwvh5: DiagnosticMetrics(one_step_mase=0.5480572581291199, loop_closure_loss=0.04801424965262413, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0035981156397610903) (from cache, n_batches=100)
+  run=jy9nxbxe: DiagnosticMetrics(one_step_mase=0.38951653242111206, loop_closure_loss=0.008470424450933933, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028486058581620455) (from cache, n_batches=100)
+  run=uuso2tr7: DiagnosticMetrics(one_step_mase=0.7862730622291565, loop_closure_loss=0.004632106516510248, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.09673088043928146) (from cache, n_batches=100)
+  run=z5zzf7v3: DiagnosticMetrics(one_step_mase=0.5452226996421814, loop_closure_loss=0.04756515473127365, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0030430322512984276) (from cache, n_batches=100)
+  run=33f4ymvo: DiagnosticMetrics(one_step_mase=0.6988587379455566, loop_closure_loss=0.0035228740889579058, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.013225925154983997) (from cache, n_batches=100)
+  run=50nbcet4: DiagnosticMetrics(one_step_mase=0.40340498089790344, loop_closure_loss=0.008795131929218769, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002356510842218995) (from cache, n_batches=100)
+  run=idpmocmw: DiagnosticMetrics(one_step_mase=0.42371314764022827, loop_closure_loss=0.0045555345714092255, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002340043894946575) (from cache, n_batches=100)
+  run=maqs3088: DiagnosticMetrics(one_step_mase=0.40615275502204895, loop_closure_loss=0.0020099254325032234, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0024464766029268503) (from cache, n_batches=100)
+  run=ufx598w7: DiagnosticMetrics(one_step_mase=0.3992995619773865, loop_closure_loss=0.0024546498898416758, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002254910534247756) (from cache, n_batches=100)
+  run=i9qfgypj: DiagnosticMetrics(one_step_mase=0.406982421875, loop_closure_loss=0.00016031588893383741, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0032183644361793995) (from cache, n_batches=100)
+  run=mjx53oh9: DiagnosticMetrics(one_step_mase=0.40514156222343445, loop_closure_loss=0.00023292795231100172, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0028087878599762917) (from cache, n_batches=100)
+  run=o9aszdui: DiagnosticMetrics(one_step_mase=0.43560975790023804, loop_closure_loss=0.0006371282506734133, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004404474049806595) (from cache, n_batches=100)
+  run=wsy55cmp: DiagnosticMetrics(one_step_mase=0.4078247547149658, loop_closure_loss=0.0003494429693091661, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0031193182803690434) (from cache, n_batches=100)
+  run=x4p8zlr9: DiagnosticMetrics(one_step_mase=0.7893850207328796, loop_closure_loss=0.00041640247218310833, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01798124983906746) (from cache, n_batches=100)
+  run=5w7bdslv: DiagnosticMetrics(one_step_mase=0.4823963940143585, loop_closure_loss=0.00022746999457012862, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006437171250581741) (from cache, n_batches=100)
+  run=ilucchni: DiagnosticMetrics(one_step_mase=1.25845468044281, loop_closure_loss=4.4378630263963714e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07855549454689026) (from cache, n_batches=100)
+  run=syjwl5ic: DiagnosticMetrics(one_step_mase=0.4292369782924652, loop_closure_loss=5.8287045249016955e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004094111267477274) (from cache, n_batches=100)
+  run=ueimwt6w: DiagnosticMetrics(one_step_mase=0.45281505584716797, loop_closure_loss=4.939811697113328e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.009544222615659237) (from cache, n_batches=100)
+  run=x2te15ug: DiagnosticMetrics(one_step_mase=0.4604220986366272, loop_closure_loss=6.245687836781144e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005356785841286182) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              1wwirh60

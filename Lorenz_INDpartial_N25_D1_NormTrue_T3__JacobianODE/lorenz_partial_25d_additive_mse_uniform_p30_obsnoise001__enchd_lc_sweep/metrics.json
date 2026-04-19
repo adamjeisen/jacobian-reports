@@ -1,28 +1,12 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__enchd_lc_sweep",
-  "analyzed_at": "2026-04-18T12:03:27Z",
+  "analyzed_at": "2026-04-19T00:19:10Z",
   "metrics_summary": {
     "per_run": [
       {
-        "run_id": "lsg9vpxt",
-        "state": "finished",
-        "lc_weight": 0.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0011408667778596282,
-        "best_traj_loss_epoch": 138.0,
-        "best_mase": 0.6714151501655579,
-        "best_mase_epoch": 146.0,
-        "lc_loss_at_best_tl": 0.6147653460502625,
-        "r2_at_best_tl": 0.9969570636749268,
-        "n_epochs": 147,
-        "swept_config": {
-          "model.encoder.hidden_dim": 256,
-          "training.lightning.loop_closure_weight": 0
-        }
-      },
-      {
         "run_id": "0mpwbqk7",
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -40,6 +24,7 @@
       },
       {
         "run_id": "1wwirh60",
+        "run_idx": 1,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -57,6 +42,7 @@
       },
       {
         "run_id": "4nz0p544",
+        "run_idx": 2,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -73,24 +59,26 @@
         }
       },
       {
-        "run_id": "96wzp7ax",
+        "run_id": "lsg9vpxt",
+        "run_idx": 3,
         "state": "finished",
-        "lc_weight": 1e-06,
+        "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.001138719148002565,
-        "best_traj_loss_epoch": 105.0,
-        "best_mase": 0.7040721774101257,
-        "best_mase_epoch": 105.0,
-        "lc_loss_at_best_tl": 0.7688683867454529,
-        "r2_at_best_tl": 0.9969661831855774,
-        "n_epochs": 119,
+        "best_traj_loss": 0.0011408667778596282,
+        "best_traj_loss_epoch": 138.0,
+        "best_mase": 0.6714151501655579,
+        "best_mase_epoch": 146.0,
+        "lc_loss_at_best_tl": 0.6147653460502625,
+        "r2_at_best_tl": 0.9969570636749268,
+        "n_epochs": 147,
         "swept_config": {
           "model.encoder.hidden_dim": 256,
-          "training.lightning.loop_closure_weight": 1e-06
+          "training.lightning.loop_closure_weight": 0
         }
       },
       {
         "run_id": "fyzhn6mb",
+        "run_idx": 4,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -108,6 +96,7 @@
       },
       {
         "run_id": "lv4lufoq",
+        "run_idx": 5,
         "state": "finished",
         "lc_weight": 1e-06,
         "obs_noise_scale": 0.0,
@@ -124,24 +113,8 @@
         }
       },
       {
-        "run_id": "rha3kf0k",
-        "state": "finished",
-        "lc_weight": 1e-06,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.001280559110455215,
-        "best_traj_loss_epoch": 110.0,
-        "best_mase": 0.7176827788352966,
-        "best_mase_epoch": 110.0,
-        "lc_loss_at_best_tl": 1.0760879516601562,
-        "r2_at_best_tl": 0.996559202671051,
-        "n_epochs": 116,
-        "swept_config": {
-          "model.encoder.hidden_dim": 128,
-          "training.lightning.loop_closure_weight": 1e-06
-        }
-      },
-      {
         "run_id": "vxsqq8n3",
+        "run_idx": 6,
         "state": "finished",
         "lc_weight": 1e-06,
         "obs_noise_scale": 0.0,
@@ -158,24 +131,44 @@
         }
       },
       {
-        "run_id": "6cp0rz4y",
+        "run_id": "rha3kf0k",
+        "run_idx": 7,
         "state": "finished",
-        "lc_weight": 1e-05,
+        "lc_weight": 1e-06,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0015676736366003752,
-        "best_traj_loss_epoch": 193.0,
-        "best_mase": 0.7947814464569092,
-        "best_mase_epoch": 185.0,
-        "lc_loss_at_best_tl": 0.47845402359962463,
-        "r2_at_best_tl": 0.995765745639801,
-        "n_epochs": 196,
+        "best_traj_loss": 0.001280559110455215,
+        "best_traj_loss_epoch": 110.0,
+        "best_mase": 0.7176827788352966,
+        "best_mase_epoch": 110.0,
+        "lc_loss_at_best_tl": 1.0760879516601562,
+        "r2_at_best_tl": 0.996559202671051,
+        "n_epochs": 116,
         "swept_config": {
-          "model.encoder.hidden_dim": 32,
-          "training.lightning.loop_closure_weight": 1e-05
+          "model.encoder.hidden_dim": 128,
+          "training.lightning.loop_closure_weight": 1e-06
+        }
+      },
+      {
+        "run_id": "96wzp7ax",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.001138719148002565,
+        "best_traj_loss_epoch": 105.0,
+        "best_mase": 0.7040721774101257,
+        "best_mase_epoch": 105.0,
+        "lc_loss_at_best_tl": 0.7688683867454529,
+        "r2_at_best_tl": 0.9969661831855774,
+        "n_epochs": 119,
+        "swept_config": {
+          "model.encoder.hidden_dim": 256,
+          "training.lightning.loop_closure_weight": 1e-06
         }
       },
       {
         "run_id": "bhrkc679",
+        "run_idx": 9,
         "state": "crashed",
         "lc_weight": 1e-06,
         "obs_noise_scale": 0.0,
@@ -192,7 +185,26 @@
         }
       },
       {
+        "run_id": "6cp0rz4y",
+        "run_idx": 10,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0015676736366003752,
+        "best_traj_loss_epoch": 193.0,
+        "best_mase": 0.7947814464569092,
+        "best_mase_epoch": 185.0,
+        "lc_loss_at_best_tl": 0.47845402359962463,
+        "r2_at_best_tl": 0.995765745639801,
+        "n_epochs": 196,
+        "swept_config": {
+          "model.encoder.hidden_dim": 32,
+          "training.lightning.loop_closure_weight": 1e-05
+        }
+      },
+      {
         "run_id": "njrxgz11",
+        "run_idx": 11,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -210,6 +222,7 @@
       },
       {
         "run_id": "xotytukg",
+        "run_idx": 12,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -227,6 +240,7 @@
       },
       {
         "run_id": "7t07kkzf",
+        "run_idx": 13,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -244,6 +258,7 @@
       },
       {
         "run_id": "r2lznj4b",
+        "run_idx": 14,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -261,6 +276,7 @@
       },
       {
         "run_id": "2d48iu8o",
+        "run_idx": 15,
         "state": "finished",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
@@ -278,6 +294,7 @@
       },
       {
         "run_id": "ftu91y8t",
+        "run_idx": 16,
         "state": "finished",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
@@ -294,7 +311,26 @@
         }
       },
       {
+        "run_id": "5px1rlbp",
+        "run_idx": 17,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0013222586130723357,
+        "best_traj_loss_epoch": 110.0,
+        "best_mase": 0.7286661267280579,
+        "best_mase_epoch": 110.0,
+        "lc_loss_at_best_tl": 0.18072062730789185,
+        "r2_at_best_tl": 0.996452271938324,
+        "n_epochs": 120,
+        "swept_config": {
+          "model.encoder.hidden_dim": 128,
+          "training.lightning.loop_closure_weight": 0.0001
+        }
+      },
+      {
         "run_id": "ll5xx3rc",
+        "run_idx": 18,
         "state": "finished",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
@@ -311,7 +347,26 @@
         }
       },
       {
+        "run_id": "joj7z0t2",
+        "run_idx": 19,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0013190156314522028,
+        "best_traj_loss_epoch": 104.0,
+        "best_mase": 0.7608079314231873,
+        "best_mase_epoch": 104.0,
+        "lc_loss_at_best_tl": 0.12302810698747635,
+        "r2_at_best_tl": 0.9964808821678162,
+        "n_epochs": 117,
+        "swept_config": {
+          "model.encoder.hidden_dim": 512,
+          "training.lightning.loop_closure_weight": 0.0001
+        }
+      },
+      {
         "run_id": "j8xqwvh5",
+        "run_idx": 20,
         "state": "crashed",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -329,6 +384,7 @@
       },
       {
         "run_id": "cat8nkrd",
+        "run_idx": 21,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -346,6 +402,7 @@
       },
       {
         "run_id": "bx4cgk4y",
+        "run_idx": 22,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -363,6 +420,7 @@
       },
       {
         "run_id": "jy9nxbxe",
+        "run_idx": 23,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -380,6 +438,7 @@
       },
       {
         "run_id": "uuso2tr7",
+        "run_idx": 24,
         "state": "finished",
         "lc_weight": 0.001,
         "obs_noise_scale": 0.0,
@@ -396,41 +455,26 @@
         }
       },
       {
-        "run_id": "ufx598w7",
+        "run_id": "33f4ymvo",
+        "run_idx": 25,
         "state": "finished",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.002254910534247756,
-        "best_traj_loss_epoch": 88.0,
-        "best_mase": 0.9313135743141174,
-        "best_mase_epoch": 95.0,
-        "lc_loss_at_best_tl": 0.0024546498898416758,
-        "r2_at_best_tl": 0.9939573407173157,
-        "n_epochs": 103,
+        "best_traj_loss": 0.013225925154983997,
+        "best_traj_loss_epoch": 30.0,
+        "best_mase": 2.183246612548828,
+        "best_mase_epoch": 30.0,
+        "lc_loss_at_best_tl": 0.0035228740889579058,
+        "r2_at_best_tl": 0.9647384881973267,
+        "n_epochs": 31,
         "swept_config": {
-          "model.encoder.hidden_dim": 512,
-          "training.lightning.loop_closure_weight": 0.01
-        }
-      },
-      {
-        "run_id": "50nbcet4",
-        "state": "finished",
-        "lc_weight": 0.01,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.002356510842218995,
-        "best_traj_loss_epoch": 103.0,
-        "best_mase": 0.9255769848823547,
-        "best_mase_epoch": 103.0,
-        "lc_loss_at_best_tl": 0.008795131929218769,
-        "r2_at_best_tl": 0.9936672449111938,
-        "n_epochs": 104,
-        "swept_config": {
-          "model.encoder.hidden_dim": 256,
+          "model.encoder.hidden_dim": 32,
           "training.lightning.loop_closure_weight": 0.01
         }
       },
       {
         "run_id": "idpmocmw",
+        "run_idx": 26,
         "state": "finished",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
@@ -448,6 +492,7 @@
       },
       {
         "run_id": "maqs3088",
+        "run_idx": 27,
         "state": "finished",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
@@ -464,24 +509,44 @@
         }
       },
       {
-        "run_id": "33f4ymvo",
+        "run_id": "50nbcet4",
+        "run_idx": 28,
         "state": "finished",
         "lc_weight": 0.01,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.013225925154983997,
-        "best_traj_loss_epoch": 30.0,
-        "best_mase": 2.183246612548828,
-        "best_mase_epoch": 30.0,
-        "lc_loss_at_best_tl": 0.0035228740889579058,
-        "r2_at_best_tl": 0.9647384881973267,
-        "n_epochs": 31,
+        "best_traj_loss": 0.002356510842218995,
+        "best_traj_loss_epoch": 103.0,
+        "best_mase": 0.9255769848823547,
+        "best_mase_epoch": 103.0,
+        "lc_loss_at_best_tl": 0.008795131929218769,
+        "r2_at_best_tl": 0.9936672449111938,
+        "n_epochs": 104,
         "swept_config": {
-          "model.encoder.hidden_dim": 32,
+          "model.encoder.hidden_dim": 256,
+          "training.lightning.loop_closure_weight": 0.01
+        }
+      },
+      {
+        "run_id": "ufx598w7",
+        "run_idx": 29,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.002254910534247756,
+        "best_traj_loss_epoch": 88.0,
+        "best_mase": 0.9313135743141174,
+        "best_mase_epoch": 95.0,
+        "lc_loss_at_best_tl": 0.0024546498898416758,
+        "r2_at_best_tl": 0.9939573407173157,
+        "n_epochs": 103,
+        "swept_config": {
+          "model.encoder.hidden_dim": 512,
           "training.lightning.loop_closure_weight": 0.01
         }
       },
       {
         "run_id": "x4p8zlr9",
+        "run_idx": 30,
         "state": "finished",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
@@ -499,6 +564,7 @@
       },
       {
         "run_id": "o9aszdui",
+        "run_idx": 31,
         "state": "finished",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
@@ -515,24 +581,8 @@
         }
       },
       {
-        "run_id": "mjx53oh9",
-        "state": "finished",
-        "lc_weight": 0.1,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0028087878599762917,
-        "best_traj_loss_epoch": 143.0,
-        "best_mase": 1.0286026000976562,
-        "best_mase_epoch": 159.0,
-        "lc_loss_at_best_tl": 0.00023292795231100172,
-        "r2_at_best_tl": 0.9924633502960205,
-        "n_epochs": 170,
-        "swept_config": {
-          "model.encoder.hidden_dim": 256,
-          "training.lightning.loop_closure_weight": 0.1
-        }
-      },
-      {
         "run_id": "wsy55cmp",
+        "run_idx": 32,
         "state": "finished",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
@@ -549,7 +599,26 @@
         }
       },
       {
+        "run_id": "mjx53oh9",
+        "run_idx": 33,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0028087878599762917,
+        "best_traj_loss_epoch": 143.0,
+        "best_mase": 1.0286026000976562,
+        "best_mase_epoch": 159.0,
+        "lc_loss_at_best_tl": 0.00023292795231100172,
+        "r2_at_best_tl": 0.9924633502960205,
+        "n_epochs": 170,
+        "swept_config": {
+          "model.encoder.hidden_dim": 256,
+          "training.lightning.loop_closure_weight": 0.1
+        }
+      },
+      {
         "run_id": "i9qfgypj",
+        "run_idx": 34,
         "state": "finished",
         "lc_weight": 0.1,
         "obs_noise_scale": 0.0,
@@ -567,6 +636,7 @@
       },
       {
         "run_id": "ilucchni",
+        "run_idx": 35,
         "state": "finished",
         "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
@@ -583,24 +653,8 @@
         }
       },
       {
-        "run_id": "ueimwt6w",
-        "state": "finished",
-        "lc_weight": 1.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.009544222615659237,
-        "best_traj_loss_epoch": 44.0,
-        "best_mase": 1.8943229913711548,
-        "best_mase_epoch": 46.0,
-        "lc_loss_at_best_tl": 4.939811697113328e-05,
-        "r2_at_best_tl": 0.9744000434875488,
-        "n_epochs": 50,
-        "swept_config": {
-          "model.encoder.hidden_dim": 512,
-          "training.lightning.loop_closure_weight": 1
-        }
-      },
-      {
         "run_id": "5w7bdslv",
+        "run_idx": 36,
         "state": "finished",
         "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
@@ -617,24 +671,8 @@
         }
       },
       {
-        "run_id": "syjwl5ic",
-        "state": "finished",
-        "lc_weight": 1.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.004094111267477274,
-        "best_traj_loss_epoch": 105.0,
-        "best_mase": 1.2505508661270142,
-        "best_mase_epoch": 105.0,
-        "lc_loss_at_best_tl": 5.8287045249016955e-05,
-        "r2_at_best_tl": 0.9889986515045166,
-        "n_epochs": 112,
-        "swept_config": {
-          "model.encoder.hidden_dim": 256,
-          "training.lightning.loop_closure_weight": 1
-        }
-      },
-      {
         "run_id": "x2te15ug",
+        "run_idx": 37,
         "state": "finished",
         "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
@@ -651,60 +689,59 @@
         }
       },
       {
-        "run_id": "z5zzf7v3",
-        "state": "crashed",
-        "lc_weight": 0.001,
+        "run_id": "syjwl5ic",
+        "run_idx": 38,
+        "state": "finished",
+        "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": NaN,
-        "best_traj_loss_epoch": 0.0,
-        "best_mase": NaN,
-        "best_mase_epoch": 0.0,
-        "lc_loss_at_best_tl": 0.22751501202583313,
-        "r2_at_best_tl": NaN,
-        "n_epochs": 114,
+        "best_traj_loss": 0.004094111267477274,
+        "best_traj_loss_epoch": 105.0,
+        "best_mase": 1.2505508661270142,
+        "best_mase_epoch": 105.0,
+        "lc_loss_at_best_tl": 5.8287045249016955e-05,
+        "r2_at_best_tl": 0.9889986515045166,
+        "n_epochs": 112,
         "swept_config": {
-          "model.encoder.hidden_dim": 32,
-          "training.lightning.loop_closure_weight": 0.001
+          "model.encoder.hidden_dim": 256,
+          "training.lightning.loop_closure_weight": 1
         }
       },
       {
-        "run_id": "joj7z0t2",
+        "run_id": "ueimwt6w",
+        "run_idx": 39,
         "state": "finished",
-        "lc_weight": 0.0001,
+        "lc_weight": 1.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0013190156314522028,
-        "best_traj_loss_epoch": 104.0,
-        "best_mase": 0.7608079314231873,
-        "best_mase_epoch": 104.0,
-        "lc_loss_at_best_tl": 0.12302810698747635,
-        "r2_at_best_tl": 0.9964808821678162,
-        "n_epochs": 117,
+        "best_traj_loss": 0.009544222615659237,
+        "best_traj_loss_epoch": 44.0,
+        "best_mase": 1.8943229913711548,
+        "best_mase_epoch": 46.0,
+        "lc_loss_at_best_tl": 4.939811697113328e-05,
+        "r2_at_best_tl": 0.9744000434875488,
+        "n_epochs": 50,
         "swept_config": {
           "model.encoder.hidden_dim": 512,
-          "training.lightning.loop_closure_weight": 0.0001
-        }
-      },
-      {
-        "run_id": "5px1rlbp",
-        "state": "finished",
-        "lc_weight": 0.0001,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0013222586130723357,
-        "best_traj_loss_epoch": 110.0,
-        "best_mase": 0.7286661267280579,
-        "best_mase_epoch": 110.0,
-        "lc_loss_at_best_tl": 0.18072062730789185,
-        "r2_at_best_tl": 0.996452271938324,
-        "n_epochs": 120,
-        "swept_config": {
-          "model.encoder.hidden_dim": 128,
-          "training.lightning.loop_closure_weight": 0.0001
+          "training.lightning.loop_closure_weight": 1
         }
       }
     ],
+    "unmatched_runs": [],
+    "duplicate_matches": [
+      {
+        "run_idx": 20,
+        "chosen_run_id": "j8xqwvh5",
+        "other_run_ids": [
+          "z5zzf7v3"
+        ],
+        "n_candidates": 2
+      }
+    ],
+    "expected_run_count": 40,
+    "matched_run_count": 40,
     "best_by_obs_noise_scale": {
       "0.0": {
         "run_id": "1wwirh60",
+        "run_idx": 1,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
@@ -723,6 +760,7 @@
     },
     "overall_chosen_run": {
       "run_id": "1wwirh60",
+      "run_idx": 1,
       "state": "finished",
       "lc_weight": 0.0,
       "obs_noise_scale": 0.0,
@@ -740,6 +778,7 @@
     },
     "overall_best_mase": {
       "run_id": "r2lznj4b",
+      "run_idx": 14,
       "state": "finished",
       "lc_weight": 1e-05,
       "obs_noise_scale": 0.0,
@@ -759,7 +798,7 @@
       "model.encoder.hidden_dim",
       "training.lightning.loop_closure_weight"
     ],
-    "n_runs": 41
+    "n_runs": 40
   },
   "per_run_lyapunov": {
     "lsg9vpxt": {
