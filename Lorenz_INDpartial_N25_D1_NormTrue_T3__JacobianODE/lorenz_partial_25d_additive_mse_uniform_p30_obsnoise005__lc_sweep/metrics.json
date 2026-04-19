@@ -1,0 +1,369 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep",
+  "analyzed_at": "2026-04-19T00:39:57Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "cuscq7w2",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.011846988461911678,
+        "best_traj_loss_epoch": 110.0,
+        "best_mase": 0.965375542640686,
+        "best_mase_epoch": 110.0,
+        "lc_loss_at_best_tl": 2.5000617504119873,
+        "r2_at_best_tl": 0.968687117099762,
+        "n_epochs": 111,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0
+        }
+      },
+      {
+        "run_id": "dgh2ncgu",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.018603092059493065,
+        "best_traj_loss_epoch": 28.0,
+        "best_mase": 1.0957645177841187,
+        "best_mase_epoch": 28.0,
+        "lc_loss_at_best_tl": 1.9762285947799683,
+        "r2_at_best_tl": 0.9507119655609131,
+        "n_epochs": 31,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06
+        }
+      },
+      {
+        "run_id": "cxkzlvxb",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.015656791627407074,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 1.030117154121399,
+        "best_mase_epoch": 41.0,
+        "lc_loss_at_best_tl": 0.8694607615470886,
+        "r2_at_best_tl": 0.9585164785385132,
+        "n_epochs": 47,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05
+        }
+      },
+      {
+        "run_id": "bxuw994m",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.011179681867361069,
+        "best_traj_loss_epoch": 65.0,
+        "best_mase": 0.9438856244087219,
+        "best_mase_epoch": 73.0,
+        "lc_loss_at_best_tl": 0.2545514404773712,
+        "r2_at_best_tl": 0.9704129099845886,
+        "n_epochs": 75,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001
+        }
+      },
+      {
+        "run_id": "y7938e7x",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.009436698630452156,
+        "best_traj_loss_epoch": 156.0,
+        "best_mase": 0.888825535774231,
+        "best_mase_epoch": 157.0,
+        "lc_loss_at_best_tl": 0.03966875374317169,
+        "r2_at_best_tl": 0.9749208688735962,
+        "n_epochs": 179,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001
+        }
+      },
+      {
+        "run_id": "f91ecsag",
+        "run_idx": 5,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.01301533356308937,
+        "best_traj_loss_epoch": 75.0,
+        "best_mase": 0.998248279094696,
+        "best_mase_epoch": 70.0,
+        "lc_loss_at_best_tl": 0.005578300449997187,
+        "r2_at_best_tl": 0.9653249382972717,
+        "n_epochs": 80,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.01
+        }
+      },
+      {
+        "run_id": "8jqwi5gc",
+        "run_idx": 6,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.013971555978059769,
+        "best_traj_loss_epoch": 144.0,
+        "best_mase": 1.0263912677764893,
+        "best_mase_epoch": 162.0,
+        "lc_loss_at_best_tl": 0.000482161674881354,
+        "r2_at_best_tl": 0.9627990126609802,
+        "n_epochs": 163,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.1
+        }
+      },
+      {
+        "run_id": "qt8nlbvw",
+        "run_idx": 7,
+        "state": "finished",
+        "lc_weight": 1.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.015100440010428429,
+        "best_traj_loss_epoch": 98.0,
+        "best_mase": 1.1084578037261963,
+        "best_mase_epoch": 98.0,
+        "lc_loss_at_best_tl": 9.67189043876715e-05,
+        "r2_at_best_tl": 0.9599013328552246,
+        "n_epochs": 106,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1
+        }
+      },
+      {
+        "run_id": "n5m6h4g9",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 10.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.021486254408955574,
+        "best_traj_loss_epoch": 71.0,
+        "best_mase": 1.2698062658309937,
+        "best_mase_epoch": 71.0,
+        "lc_loss_at_best_tl": 1.9354698451934382e-05,
+        "r2_at_best_tl": 0.9427710771560669,
+        "n_epochs": 83,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 10
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 9,
+    "matched_run_count": 9,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "y7938e7x",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.009436698630452156,
+        "best_traj_loss_epoch": 156.0,
+        "best_mase": 0.888825535774231,
+        "best_mase_epoch": 157.0,
+        "lc_loss_at_best_tl": 0.03966875374317169,
+        "r2_at_best_tl": 0.9749208688735962,
+        "n_epochs": 179,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "y7938e7x",
+      "run_idx": 4,
+      "state": "finished",
+      "lc_weight": 0.001,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.009436698630452156,
+      "best_traj_loss_epoch": 156.0,
+      "best_mase": 0.888825535774231,
+      "best_mase_epoch": 157.0,
+      "lc_loss_at_best_tl": 0.03966875374317169,
+      "r2_at_best_tl": 0.9749208688735962,
+      "n_epochs": 179,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 0.001
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "y7938e7x",
+      "run_idx": 4,
+      "state": "finished",
+      "lc_weight": 0.001,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.009436698630452156,
+      "best_traj_loss_epoch": 156.0,
+      "best_mase": 0.888825535774231,
+      "best_mase_epoch": 157.0,
+      "lc_loss_at_best_tl": 0.03966875374317169,
+      "r2_at_best_tl": 0.9749208688735962,
+      "n_epochs": 179,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 0.001
+      }
+    },
+    "swept_paths": [
+      "training.lightning.loop_closure_weight"
+    ],
+    "n_runs": 9
+  },
+  "per_run_lyapunov": {
+    "y7938e7x": {
+      "lambda_spectrum": [
+        0.22417579591274261,
+        -0.6154359579086304,
+        -24.671348571777344
+      ],
+      "lambda_max": 0.22417579591274261,
+      "lambda_sum": -25.06260871887207,
+      "kaplan_yorke_dim": 1.3642553091049194,
+      "error": null
+    },
+    "8jqwi5gc": {
+      "lambda_spectrum": [
+        0.17223361134529114,
+        -0.8830169439315796,
+        -18.364952087402344
+      ],
+      "lambda_max": 0.17223361134529114,
+      "lambda_sum": -19.075735092163086,
+      "kaplan_yorke_dim": 1.1950513124465942,
+      "error": null
+    },
+    "bxuw994m": {
+      "lambda_spectrum": [
+        0.19132351875305176,
+        -1.390074610710144,
+        -27.861818313598633
+      ],
+      "lambda_max": 0.19132351875305176,
+      "lambda_sum": -29.060569763183594,
+      "kaplan_yorke_dim": 1.1376354694366455,
+      "error": null
+    },
+    "cuscq7w2": {
+      "lambda_spectrum": [
+        0.3347823917865753,
+        -1.5079307556152344,
+        -40.276458740234375
+      ],
+      "lambda_max": 0.3347823917865753,
+      "lambda_sum": -41.449607849121094,
+      "kaplan_yorke_dim": 1.2220144271850586,
+      "error": null
+    },
+    "f91ecsag": {
+      "lambda_spectrum": [
+        0.16097861528396606,
+        -0.5619328022003174,
+        -20.867679595947266
+      ],
+      "lambda_max": 0.16097861528396606,
+      "lambda_sum": -21.268632888793945,
+      "kaplan_yorke_dim": 1.286473035812378,
+      "error": null
+    },
+    "n5m6h4g9": {
+      "lambda_spectrum": [
+        0.26760581135749817,
+        -0.6581518650054932,
+        -11.577079772949219
+      ],
+      "lambda_max": 0.26760581135749817,
+      "lambda_sum": -11.967625617980957,
+      "kaplan_yorke_dim": 1.406601905822754,
+      "error": null
+    },
+    "qt8nlbvw": {
+      "lambda_spectrum": [
+        0.24638818204402924,
+        -0.9058426022529602,
+        -13.769765853881836
+      ],
+      "lambda_max": 0.24638818204402924,
+      "lambda_sum": -14.429220199584961,
+      "kaplan_yorke_dim": 1.2719988822937012,
+      "error": null
+    },
+    "cxkzlvxb": {
+      "lambda_spectrum": [
+        0.18027463555335999,
+        -0.8492534160614014,
+        -47.51216125488281
+      ],
+      "lambda_max": 0.18027463555335999,
+      "lambda_sum": -48.1811408996582,
+      "kaplan_yorke_dim": 1.2122743129730225,
+      "error": null
+    },
+    "dgh2ncgu": {
+      "lambda_spectrum": [
+        0.5372851490974426,
+        -0.8247239589691162,
+        -83.07508850097656
+      ],
+      "lambda_max": 0.5372851490974426,
+      "lambda_sum": -83.3625259399414,
+      "kaplan_yorke_dim": 1.6514726877212524,
+      "error": null
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.48128193616867065,
+    -0.2260732501745224,
+    -13.922173500061035
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Best val traj_loss finite and within ~5\u00d7 of the obsnoise001__lc_sweep baseline",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "\u03bb_min at best LC still meaningfully negative (< -5)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "No loop-closure explosion (max LC loss at best_tl < 10 across the sweep)",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep/figures/per_run_lyapunov_relerr.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

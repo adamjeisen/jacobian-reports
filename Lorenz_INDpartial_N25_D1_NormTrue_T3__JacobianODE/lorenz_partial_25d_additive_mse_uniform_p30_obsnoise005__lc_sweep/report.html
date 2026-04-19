@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE/groups/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep">Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-18T18:35:11Z<br />
+<strong>Completed</strong>: 2026-04-19T00:25:13Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>f8e8560</code><br />
+<strong>Expected runs</strong>: 9</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep</code></h3>
+<p><strong>Description</strong></p>
+<p>Same base as lorenz_partial_25d_additive_mse_uniform_p30 with
+obs_noise=0.05. 9-run LC sweep (same axis as the obsnoise001
+companion sweep); mirrors the obsnoise001__lc_sweep layout so
+results are directly comparable at a higher noise level.</p>
+<p><strong>Hypothesis</strong></p>
+<p>Bumping obs_noise from 0.01 to 0.05 makes the delay-embedded
+partial observation substantially harder to invert into a clean
+3-D attractor chart: the directions the encoder contracts into
+z_dyn (top-3 obs PCs by variance, per earlier Jacobian analysis)
+now carry 25× more variance in latent-space noise. Expect
+val/trajectory_loss at the best LC to be higher than the
+obsnoise001 baseline, and λ_min to be less negative (strong-
+contraction direction harder to identify under denser noise).
+Whether the best LC weight shifts materially vs obsnoise001 is
+the main scientific question.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>Best val traj_loss finite and within ~5× of the obsnoise001__lc_sweep baseline</li>
+<li>λ_min at best LC still meaningfully negative (&lt; -5)</li>
+<li>No loop-closure explosion (max LC loss at best_tl &lt; 10 across the sweep)</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Swept axes</strong> (1): <code>training.lightning.loop_closure_weight</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>y7938e7x</code> — traj_loss=0.00944, MASE=0.8888, R²=0.9749, LC loss=0.040, epoch=156.0</p>
+<p>Swept-axis values at chosen run: <code>training.lightning.loop_closure_weight</code>=0.001</p>
+<p><strong>Runs analyzed</strong>: 9 (expected 9)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>training.lightning.loop_closure_weight</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td><code>y7938e7x</code></td>
+<td>0.001</td>
+<td>0.00944</td>
+<td>0.8888</td>
+<td>0.9749</td>
+<td>0.040</td>
+<td>156.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>bxuw994m</code></td>
+<td>1.0e-04</td>
+<td>0.01118</td>
+<td>0.9439</td>
+<td>0.9704</td>
+<td>0.255</td>
+<td>65.0</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>cuscq7w2</code></td>
+<td>0</td>
+<td>0.01185</td>
+<td>0.9654</td>
+<td>0.9687</td>
+<td>2.500</td>
+<td>110.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>f91ecsag</code></td>
+<td>0.01</td>
+<td>0.01302</td>
+<td>0.9982</td>
+<td>0.9653</td>
+<td>0.006</td>
+<td>75.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>8jqwi5gc</code></td>
+<td>0.1</td>
+<td>0.01397</td>
+<td>1.0264</td>
+<td>0.9628</td>
+<td>0.000</td>
+<td>144.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>qt8nlbvw</code></td>
+<td>1</td>
+<td>0.01510</td>
+<td>1.1085</td>
+<td>0.9599</td>
+<td>0.000</td>
+<td>98.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cxkzlvxb</code></td>
+<td>1.0e-05</td>
+<td>0.01566</td>
+<td>1.0301</td>
+<td>0.9585</td>
+<td>0.869</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>dgh2ncgu</code></td>
+<td>1.0e-06</td>
+<td>0.01860</td>
+<td>1.0958</td>
+<td>0.9507</td>
+<td>1.976</td>
+<td>28.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>n5m6h4g9</code></td>
+<td>10</td>
+<td>0.02149</td>
+<td>1.2698</td>
+<td>0.9428</td>
+<td>0.000</td>
+<td>71.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best val traj_loss finite and within ~5× of the obsnoise001__lc_sweep baseline</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>λ_min at best LC still meaningfully negative (&lt; -5)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>No loop-closure explosion (max LC loss at best_tl &lt; 10 across the sweep)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>sweep_overview</h3>
+<p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
+<h3>sweep_pareto</h3>
+<p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
+<h3>prediction_windows</h3>
+<p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
+<h3>long_trajectory</h3>
+<p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
+<h3>mase</h3>
+<p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
+<h3>lyapunov</h3>
+<p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
+<h3>kaplan_yorke_pca</h3>
+<p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
+<h3>prediction_detail_latent</h3>
+<p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
+<h3>prediction_detail_obs</h3>
+<p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+<h2><code>run_analytics</code> stdout</h2>
+<details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
+
+
+<pre><code>No run_id provided — selecting best run from group 'lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep' ...
+Found 9 total runs in JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE (group=lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  y7938e7x: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  8jqwi5gc: state=finished, lc=0.1, te=0.0, kl_dyn=0.0
+  bxuw994m: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+  cuscq7w2: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  f91ecsag: state=finished, lc=0.01, te=0.0, kl_dyn=0.0
+  n5m6h4g9: state=finished, lc=10.0, te=0.0, kl_dyn=0.0
+  qt8nlbvw: state=finished, lc=1.0, te=0.0, kl_dyn=0.0
+  cxkzlvxb: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
+  dgh2ncgu: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including y7938e7x (lc=0.001): use_all_runs=True (state=finished)
+  Including 8jqwi5gc (lc=0.1): use_all_runs=True (state=finished)
+  Including bxuw994m (lc=0.0001): use_all_runs=True (state=finished)
+  Including cuscq7w2 (lc=0.0): use_all_runs=True (state=finished)
+  Including f91ecsag (lc=0.01): use_all_runs=True (state=finished)
+  Including n5m6h4g9 (lc=10.0): use_all_runs=True (state=finished)
+  Including qt8nlbvw (lc=1.0): use_all_runs=True (state=finished)
+  Including cxkzlvxb (lc=1e-05): use_all_runs=True (state=finished)
+  Including dgh2ncgu (lc=1e-06): use_all_runs=True (state=finished)
+Found 9 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=cuscq7w2
+  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=dgh2ncgu
+  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=cxkzlvxb
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=bxuw994m
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=y7938e7x
+  loop_closure_weight=0.01, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=f91ecsag
+  loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=8jqwi5gc
+  loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=qt8nlbvw
+  loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=n5m6h4g9
+n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
+  run=cuscq7w2: DiagnosticMetrics(one_step_mase=0.6690186858177185, loop_closure_loss=2.5000617504119873, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.011846988461911678) (from W&amp;B history)
+  run=dgh2ncgu: DiagnosticMetrics(one_step_mase=0.6897918581962585, loop_closure_loss=1.9762285947799683, fast_eigenvalue_fraction=0.3199999928474426, trajectory_val_loss=0.018603092059493065) (from W&amp;B history)
+  run=cxkzlvxb: DiagnosticMetrics(one_step_mase=0.6836985945701599, loop_closure_loss=0.8694607615470886, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.015656791627407074) (from W&amp;B history)
+  run=bxuw994m: DiagnosticMetrics(one_step_mase=0.6750456690788269, loop_closure_loss=0.2545514404773712, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.011179681867361069) (from W&amp;B history)
+  run=y7938e7x: DiagnosticMetrics(one_step_mase=0.6625606417655945, loop_closure_loss=0.03966875374317169, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.009436698630452156) (from W&amp;B history)
+  run=f91ecsag: DiagnosticMetrics(one_step_mase=0.6726009845733643, loop_closure_loss=0.005578300449997187, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01301533356308937) (from W&amp;B history)
+  run=8jqwi5gc: DiagnosticMetrics(one_step_mase=0.6587134599685669, loop_closure_loss=0.000482161674881354, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.013971555978059769) (from W&amp;B history)
+  run=qt8nlbvw: DiagnosticMetrics(one_step_mase=0.6658934354782104, loop_closure_loss=9.67189043876715e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.015100440010428429) (from W&amp;B history)
+  run=n5m6h4g9: DiagnosticMetrics(one_step_mase=0.6679693460464478, loop_closure_loss=1.9354698451934382e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.021486254408955574) (from W&amp;B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              y7938e7x
+Best loop_closure_weight: 0.001
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.009437
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 8 / 9
+Auto-selected run_id: y7938e7x
+
+======================================================================
+PARETO FRONTIER RUNS (5 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  n5m6h4g9            0.000019        0.021486
+  qt8nlbvw            0.000097        0.015100
+  8jqwi5gc            0.000482        0.013972
+  f91ecsag            0.005578        0.013015
+  y7938e7x            0.039669        0.009437 &lt;-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 8 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          y7938e7x            0.039669        0.009437 &lt;-- active
+  pareto_knee             f91ecsag            0.005578        0.013015
+  geo_rank                y7938e7x            0.039669        0.009437
+  minimax_rank            f91ecsag            0.005578        0.013015
+  geo_log_score           y7938e7x            0.039669        0.009437
+  minimax_log_score       8jqwi5gc            0.000482        0.013972
+======================================================================
+
+Loading run y7938e7x from JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE ...
+Train dataset shape: torch.Size([24882, 45, 25])
+Validation dataset shape: torch.Size([7917, 45, 25])
+Test dataset shape: torch.Size([3393, 45, 25])
+Train trajectories dataset shape: torch.Size([22, 1176, 25])
+Validation trajectories dataset shape: torch.Size([7, 1176, 25])
+Test trajectories dataset shape: torch.Size([3, 1176, 25])
+Loading checkpoint epoch=156-step=31400.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 0.6658
+Free-running MASE:   0.7719
+Computing latent utilization ...
+Entropy-based utilization: 0.598
+Null subspace mean RMS: 1.071286e-01
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1176) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = +0.3892 ± 0.3699
+  λ_2 = -0.6446 ± 1.0843
+  λ_3 = -25.5664 ± 2.8187
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = +0.0736 ± 0.0896
+  λ_2 = -0.4662 ± 0.1485
+  λ_3 = -25.4183 ± 0.1366
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.4677 ± 0.0259
+  λ_2 = -0.2173 ± 0.0549
+  λ_3 = -13.9174 ± 0.0513
+Mean KY dim (predicted): 1.143 ± 0.123
+Mean KY dim (empirical): 2.018 ± 0.003
+Mean KY dim (burn-in):   1.763 ± 0.486
+Computing prediction windows ...
+Windows: 114 — nMSE min=0.0181, median=0.0347, mean=0.0409, max=0.4100
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 25, 25)
+decoder_jacobian: (128, 25, 25)
+Computing amplification loss ...
+Amplification loss — True state: 0.003459
+Amplification loss — Latent:     0.006880
+</code></pre>
+
+
+</details>
+</body>
+</html>
