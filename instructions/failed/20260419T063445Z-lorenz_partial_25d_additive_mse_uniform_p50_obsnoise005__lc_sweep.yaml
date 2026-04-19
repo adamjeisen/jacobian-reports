@@ -3,3 +3,5 @@ overrides:
   - "hydra.launcher.partition=ou_bcs_low"
 submitted_at: 20260419T063445Z
 submitted_from: millerlab-endeavourOS
+
+error: jsweep submission for lorenz_partial_25d_additive_mse_uniform_p50_obsnoise005__lc_sweep: no new SLURM array job appeared within 90s
