@@ -90,6 +90,20 @@
     ],
     "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
       {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776710764.8703697
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776710740.469137
+      },
+      {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__nolpl_lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -214,23 +228,23 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776666919.5405602
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776559233.540486
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776551128.4561934
       }
     ],
     "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE": [
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776710776.977485
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776710752.9302557
+      },
       {
         "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
         "has_report": true,
@@ -244,20 +258,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776699330.1186547
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776699323.34359
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776699316.4275243
       }
     ],
     "WMTask_identity_encoder_verification": [

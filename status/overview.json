@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-20T18:40:17Z",
+  "last_updated": "2026-04-20T18:46:20Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -258,75 +258,39 @@
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 64,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 64
-      },
-      "analysis": {
-        "slurm_job_id": "12275028",
-        "dispatched_at": "2026-04-20T18:30:11Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 1,
-        "n_pending": 0
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 1,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 1
-      },
-      "analysis": {
-        "slurm_job_id": "12275029",
-        "dispatched_at": "2026-04-20T18:30:11Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12275565",
-        "dispatched_at": "2026-04-20T18:35:10Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 1,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 1
-      },
-      "analysis": {
-        "slurm_job_id": "12275566",
-        "dispatched_at": "2026-04-20T18:35:10Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep": {
@@ -336,6 +300,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12275886",
+        "dispatched_at": "2026-04-20T18:45:27Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 1,
+        "n_pending": 0
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise005__lc_sweep": {
@@ -345,6 +318,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12275887",
+        "dispatched_at": "2026-04-20T18:45:27Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep": {
@@ -354,6 +336,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 10
+      },
+      "analysis": {
+        "slurm_job_id": "12275888",
+        "dispatched_at": "2026-04-20T18:45:28Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep": {
@@ -363,6 +354,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 10
+      },
+      "analysis": {
+        "slurm_job_id": "12275889",
+        "dispatched_at": "2026-04-20T18:45:28Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {

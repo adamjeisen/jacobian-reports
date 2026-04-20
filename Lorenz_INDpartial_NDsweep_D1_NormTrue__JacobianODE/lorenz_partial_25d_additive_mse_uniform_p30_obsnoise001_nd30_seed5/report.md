@@ -155,7 +155,7 @@ slurm_timeout_min not found in any run config — falling back to 180 min
 Found 1 effectively-done sweep runs:
   loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=hpz2p5jq
 n_dims=30, n_latent=30, n_dyn=3, dt=0.0150
-  run=hpz2p5jq: DiagnosticMetrics(one_step_mase=0.39327314496040344, loop_closure_loss=0.7803782820701599, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0005953841027803719) (from W&B history)
+  run=hpz2p5jq: DiagnosticMetrics(one_step_mase=0.39327314496040344, loop_closure_loss=0.7803782820701599, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0005953841027803719) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              hpz2p5jq
@@ -221,7 +221,7 @@ Mean KY dim (empirical): 2.015 ± 0.002
 Mean KY dim (burn-in):   1.981 ± 0.122
 Computing prediction windows ...
 Windows: 114 — nMSE min=0.0008, median=0.0016, mean=0.0022, max=0.0288
-Computing long trajectory prediction ...
+Computing long-trajectory free-running rollouts ...
 Computing encoder/decoder Jacobians ...
 encoder_jacobian: (128, 30, 30)
 decoder_jacobian: (128, 30, 30)

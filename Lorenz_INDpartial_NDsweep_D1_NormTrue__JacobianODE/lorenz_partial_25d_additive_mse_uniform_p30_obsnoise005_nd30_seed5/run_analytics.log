@@ -8,7 +8,7 @@ slurm_timeout_min not found in any run config — falling back to 180 min
 Found 1 effectively-done sweep runs:
   loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=m45rx05h
 n_dims=30, n_latent=30, n_dyn=3, dt=0.0150
-  run=m45rx05h: DiagnosticMetrics(one_step_mase=0.6527441143989563, loop_closure_loss=0.8714377880096436, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007361209020018578) (from W&B history)
+  run=m45rx05h: DiagnosticMetrics(one_step_mase=0.6527441143989563, loop_closure_loss=0.8714377880096436, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007361209020018578) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              m45rx05h
@@ -74,7 +74,7 @@ Mean KY dim (empirical): 2.018 ± 0.003
 Mean KY dim (burn-in):   1.953 ± 0.234
 Computing prediction windows ...
 Windows: 114 — nMSE min=0.0200, median=0.0350, mean=0.0362, max=0.1051
-Computing long trajectory prediction ...
+Computing long-trajectory free-running rollouts ...
 Computing encoder/decoder Jacobians ...
 encoder_jacobian: (128, 30, 30)
 decoder_jacobian: (128, 30, 30)

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5",
-  "analyzed_at": "2026-04-20T15:31:12Z",
+  "analyzed_at": "2026-04-20T18:42:14Z",
   "metrics_summary": {
     "per_run": [
       {
