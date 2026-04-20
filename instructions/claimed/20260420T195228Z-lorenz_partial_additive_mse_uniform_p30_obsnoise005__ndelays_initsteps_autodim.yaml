@@ -1,0 +1,8 @@
+experiment: lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim
+overrides: []
+submitted_at: 20260420T195228Z
+submitted_from: millerlab-endeavourOS
+wandb_group: lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim
+expected_run_count: 40
+slurm_array_id: '12280308'
+slurm_submitted_at: '2026-04-20T19:56:04Z'
