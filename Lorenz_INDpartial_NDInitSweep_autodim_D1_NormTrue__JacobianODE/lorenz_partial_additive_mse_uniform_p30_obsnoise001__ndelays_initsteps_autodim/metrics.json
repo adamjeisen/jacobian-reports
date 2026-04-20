@@ -1,0 +1,288 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim",
+  "analyzed_at": "2026-04-20T20:29:44Z",
+  "metrics_summary": {
+    "per_run": [],
+    "unmatched_runs": [
+      {
+        "run_id": "vum47n54",
+        "run_idx": null,
+        "state": "running",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.38192814588546753,
+        "best_traj_loss_epoch": 6.0,
+        "best_mase": 15.996748924255371,
+        "best_mase_epoch": 6.0,
+        "lc_loss_at_best_tl": 1.0135444566961027e-10,
+        "r2_at_best_tl": -0.016995888203382492,
+        "n_epochs": 7,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 5,
+          "data.train_test_params.seq_length": 45,
+          "model.encoder.n_input": 5,
+          "model.n_target_dims": 1,
+          "model.n_target_dims_pca_auto": 1,
+          "model.n_target_dims_pca_cum_var": 0.9930918539118554,
+          "model.params.input_dim": 1,
+          "model.params.output_dim": 1,
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps": 15
+        }
+      },
+      {
+        "run_id": "9u7h6zjy",
+        "run_idx": null,
+        "state": "running",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.22783158719539642,
+        "best_traj_loss_epoch": 2.0,
+        "best_mase": 12.079615592956543,
+        "best_mase_epoch": 2.0,
+        "lc_loss_at_best_tl": 3.9132567053457024e-07,
+        "r2_at_best_tl": 0.39172667264938354,
+        "n_epochs": 4,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 5,
+          "data.train_test_params.seq_length": 60,
+          "model.encoder.n_input": 5,
+          "model.n_target_dims": 1,
+          "model.n_target_dims_pca_auto": 1,
+          "model.n_target_dims_pca_cum_var": 0.993091853911853,
+          "model.params.input_dim": 1,
+          "model.params.output_dim": 1,
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps": 30
+        }
+      },
+      {
+        "run_id": "fhrst1rb",
+        "run_idx": null,
+        "state": "running",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.024262426421046257,
+        "best_traj_loss_epoch": 2.0,
+        "best_mase": 2.844071626663208,
+        "best_mase_epoch": 2.0,
+        "lc_loss_at_best_tl": 0.019352059811353683,
+        "r2_at_best_tl": 0.9349675178527832,
+        "n_epochs": 4,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 10,
+          "data.train_test_params.seq_length": 45,
+          "model.encoder.n_input": 10,
+          "model.n_target_dims": 2,
+          "model.n_target_dims_pca_auto": 2,
+          "model.n_target_dims_pca_cum_var": 0.9985491051234714,
+          "model.params.input_dim": 2,
+          "model.params.output_dim": 4,
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps": 15
+        }
+      },
+      {
+        "run_id": "xr9flz8e",
+        "run_idx": null,
+        "state": "running",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.07851911336183548,
+        "best_traj_loss_epoch": 2.0,
+        "best_mase": 6.1775126457214355,
+        "best_mase_epoch": 2.0,
+        "lc_loss_at_best_tl": 0.009711168706417084,
+        "r2_at_best_tl": 0.78883957862854,
+        "n_epochs": 4,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "data.train_test_params.seq_length": 60,
+          "model.encoder.n_input": 15,
+          "model.n_target_dims": 2,
+          "model.n_target_dims_pca_auto": 2,
+          "model.n_target_dims_pca_cum_var": 0.9950176248718592,
+          "model.params.input_dim": 2,
+          "model.params.output_dim": 4,
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps": 30
+        }
+      },
+      {
+        "run_id": "f93huri8",
+        "run_idx": null,
+        "state": "running",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": NaN,
+        "best_traj_loss_epoch": 0.0,
+        "best_mase": NaN,
+        "best_mase_epoch": 0.0,
+        "lc_loss_at_best_tl": 0.010172354988753796,
+        "r2_at_best_tl": NaN,
+        "n_epochs": 4,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 10,
+          "data.train_test_params.seq_length": 60,
+          "model.encoder.n_input": 10,
+          "model.n_target_dims": 2,
+          "model.n_target_dims_pca_auto": 2,
+          "model.n_target_dims_pca_cum_var": 0.9985491051234714,
+          "model.params.input_dim": 2,
+          "model.params.output_dim": 4,
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps": 30
+        }
+      },
+      {
+        "run_id": "vblk9kz9",
+        "run_idx": null,
+        "state": "running",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.07126376032829285,
+        "best_traj_loss_epoch": 2.0,
+        "best_mase": 4.93112325668335,
+        "best_mase_epoch": 2.0,
+        "lc_loss_at_best_tl": 0.047992728650569916,
+        "r2_at_best_tl": 0.808927595615387,
+        "n_epochs": 4,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "data.train_test_params.seq_length": 45,
+          "model.encoder.n_input": 15,
+          "model.n_target_dims": 2,
+          "model.n_target_dims_pca_auto": 2,
+          "model.n_target_dims_pca_cum_var": 0.9950176248718592,
+          "model.params.input_dim": 2,
+          "model.params.output_dim": 4,
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps": 15
+        }
+      }
+    ],
+    "duplicate_matches": [],
+    "expected_run_count": 80,
+    "matched_run_count": 0,
+    "best_by_obs_noise_scale": {},
+    "overall_chosen_run": null,
+    "overall_best_mase": null,
+    "swept_paths": [
+      "data.train_test_params.delay_embedding_params.n_delays",
+      "data.train_test_params.seq_length",
+      "model.encoder.n_input",
+      "model.n_target_dims",
+      "model.n_target_dims_pca_auto",
+      "model.n_target_dims_pca_cum_var",
+      "model.params.input_dim",
+      "model.params.output_dim",
+      "training.lightning.jacobianODEint_kwargs.traj_init_steps"
+    ],
+    "n_runs": 0
+  },
+  "per_run_lyapunov": {
+    "vum47n54": {
+      "lambda_spectrum": [
+        -0.9834995269775391
+      ],
+      "lambda_max": -0.9834995269775391,
+      "lambda_sum": -0.9834995269775391,
+      "kaplan_yorke_dim": null,
+      "error": null
+    },
+    "9u7h6zjy": {
+      "lambda_spectrum": [
+        -0.6674531698226929
+      ],
+      "lambda_max": -0.6674531698226929,
+      "lambda_sum": -0.6674531698226929,
+      "kaplan_yorke_dim": null,
+      "error": null
+    },
+    "fhrst1rb": {
+      "lambda_spectrum": [
+        0.6144206523895264,
+        -1.193881869316101
+      ],
+      "lambda_max": 0.6144206523895264,
+      "lambda_sum": -0.5794612169265747,
+      "kaplan_yorke_dim": 1.5146410465240479,
+      "error": null
+    },
+    "xr9flz8e": {
+      "lambda_spectrum": [
+        0.8763554096221924,
+        0.2049548178911209
+      ],
+      "lambda_max": 0.8763554096221924,
+      "lambda_sum": 1.0813102722167969,
+      "kaplan_yorke_dim": null,
+      "error": null
+    },
+    "f93huri8": {
+      "lambda_spectrum": [
+        0.477632999420166,
+        -1.7050838470458984
+      ],
+      "lambda_max": 0.477632999420166,
+      "lambda_sum": -1.2274508476257324,
+      "kaplan_yorke_dim": 1.2801228761672974,
+      "error": null
+    },
+    "vblk9kz9": {
+      "lambda_spectrum": [
+        1.7219847440719604,
+        -0.26939550042152405
+      ],
+      "lambda_max": 1.7219847440719604,
+      "lambda_sum": 1.4525892734527588,
+      "kaplan_yorke_dim": null,
+      "error": null
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.4042733907699585,
+    -0.1893320232629776,
+    -13.881906509399414
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 40 runs train without divergence (routing fix holds)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "PCA-chosen n_target_dims grows with n_delays then saturates",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Val traj_loss improves with traj_init_steps=30 over traj_init_steps=15 at most n_delays",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best val traj_loss per (noise, init) has a non-monotonic optimum in n_delays",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim/figures/per_run_lyapunov_relerr.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

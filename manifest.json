@@ -230,6 +230,15 @@
         "report_mtime": 1776708034.1713972
       }
     ],
+    "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE": [
+      {
+        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776717017.745456
+      }
+    ],
     "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE": [
       {
         "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",

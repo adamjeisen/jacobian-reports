@@ -1,0 +1,104 @@
+No run_id provided — selecting best run from group 'lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim' ...
+Found 6 total runs in JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE (group=lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  vum47n54: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+  9u7h6zjy: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+  fhrst1rb: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+  xr9flz8e: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+  f93huri8: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+  vblk9kz9: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including vum47n54 (lc=0.0): use_all_runs=True (state=running)
+  Including 9u7h6zjy (lc=0.0): use_all_runs=True (state=running)
+  Including fhrst1rb (lc=0.0): use_all_runs=True (state=running)
+  Including xr9flz8e (lc=0.0): use_all_runs=True (state=running)
+  Including f93huri8 (lc=0.0): use_all_runs=True (state=running)
+  Including vblk9kz9 (lc=0.0): use_all_runs=True (state=running)
+Found 6 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=9u7h6zjy
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=f93huri8
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=fhrst1rb
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=vblk9kz9
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=vum47n54
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=xr9flz8e
+n_dims=5, n_latent=5, n_dyn=1, dt=0.0150
+  run=9u7h6zjy: DiagnosticMetrics(one_step_mase=1.2581123113632202, loop_closure_loss=3.9132567053457024e-07, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.22783158719539642) (from W&B history)
+  run=f93huri8: DiagnosticMetrics(one_step_mase=1.9041943550109863, loop_closure_loss=0.012637934647500515, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.02388305589556694) (from W&B history)
+  run=fhrst1rb: DiagnosticMetrics(one_step_mase=1.8668575286865234, loop_closure_loss=0.019352059811353683, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.024262426421046257) (from W&B history)
+  run=vblk9kz9: DiagnosticMetrics(one_step_mase=2.775660514831543, loop_closure_loss=0.047992728650569916, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07126376032829285) (from W&B history)
+  run=vum47n54: DiagnosticMetrics(one_step_mase=1.3777366876602173, loop_closure_loss=1.0135444566961027e-10, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.38192814588546753) (from W&B history)
+  run=xr9flz8e: DiagnosticMetrics(one_step_mase=2.7965402603149414, loop_closure_loss=0.009711168706417084, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07851911336183548) (from W&B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              f93huri8
+Best loop_closure_weight: 0.0
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.023883
+Criteria applied: ['C3']
+Surviving: 6 / 6
+Auto-selected run_id: f93huri8
+
+======================================================================
+PARETO FRONTIER RUNS (4 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  vum47n54            0.000000        0.381928
+  9u7h6zjy            0.000000        0.227832
+  xr9flz8e            0.009711        0.078519
+  f93huri8            0.012638        0.023883 <-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 6 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          f93huri8            0.012638        0.023883 <-- active
+  pareto_knee             xr9flz8e            0.009711        0.078519
+  geo_rank                f93huri8            0.012638        0.023883
+  minimax_rank            f93huri8            0.012638        0.023883
+  geo_log_score           f93huri8            0.012638        0.023883
+  minimax_log_score       9u7h6zjy            0.000000        0.227832
+======================================================================
+
+Loading run f93huri8 from JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE ...
+Train dataset shape: torch.Size([24882, 60, 10])
+Validation dataset shape: torch.Size([7917, 60, 10])
+Test dataset shape: torch.Size([3393, 60, 10])
+Train trajectories dataset shape: torch.Size([22, 1191, 10])
+Validation trajectories dataset shape: torch.Size([7, 1191, 10])
+Test trajectories dataset shape: torch.Size([3, 1191, 10])
+Loading checkpoint epoch=2-step=600.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 1.8848
+Free-running MASE:   3.1168
+Computing latent utilization ...
+Entropy-based utilization: 0.987
+Null subspace mean RMS: 1.291852e-01
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1191) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = -0.3875 ± 0.2120
+  λ_2 = -0.7434 ± 0.1403
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = +0.4684 ± 0.0202
+  λ_2 = -1.8099 ± 0.0171
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.3846 ± 0.0251
+  λ_2 = -0.1716 ± 0.0444
+  λ_3 = -13.8799 ± 0.0398
+Mean KY dim (predicted): 1.259 ± 0.007
+Mean KY dim (empirical): 2.015 ± 0.002
+Mean KY dim (burn-in):   0.066 ± 0.279
+Computing prediction windows ...
+Windows: 114 — nMSE min=0.0067, median=0.0388, mean=0.1270, max=1.4669
+Computing long-trajectory free-running rollouts ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 10, 10)
+decoder_jacobian: (128, 10, 10)
+Computing amplification loss ...
+Amplification loss — True state: 0.000342
+Amplification loss — Latent:     0.000289
