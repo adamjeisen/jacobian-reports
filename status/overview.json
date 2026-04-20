@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-20T18:50:48Z",
+  "last_updated": "2026-04-20T18:55:39Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -312,39 +312,21 @@
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 10,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 10
-      },
-      "analysis": {
-        "slurm_job_id": "12275888",
-        "dispatched_at": "2026-04-20T18:45:28Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 1,
-        "n_pending": 0
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 10,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 10
-      },
-      "analysis": {
-        "slurm_job_id": "12275889",
-        "dispatched_at": "2026-04-20T18:45:28Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
@@ -362,7 +344,7 @@
       },
       "analysis_slurm": {
         "n_running": 0,
-        "n_pending": 1
+        "n_pending": 0
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {

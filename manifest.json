@@ -232,6 +232,20 @@
     ],
     "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE": [
       {
+        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776711337.1918201
+      },
+      {
+        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776711329.5617476
+      },
+      {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5",
         "has_report": true,
         "has_metrics": true,
@@ -244,20 +258,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776710752.9302557
-      },
-      {
-        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776699617.0003881
-      },
-      {
-        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776699330.1186547
       }
     ],
     "WMTask_identity_encoder_verification": [

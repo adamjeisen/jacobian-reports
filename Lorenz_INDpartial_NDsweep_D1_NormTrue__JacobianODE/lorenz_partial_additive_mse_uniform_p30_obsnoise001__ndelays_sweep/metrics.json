@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep",
-  "analyzed_at": "2026-04-20T15:33:54Z",
+  "analyzed_at": "2026-04-20T18:51:10Z",
   "metrics_summary": {
     "per_run": [
       {
