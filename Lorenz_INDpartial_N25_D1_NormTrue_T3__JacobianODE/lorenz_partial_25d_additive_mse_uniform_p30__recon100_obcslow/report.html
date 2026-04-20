@@ -40,11 +40,33 @@ at recon_weight=100 than at 1 or 10.</p>
 <li><tr(dg/dz)> closer to -13.67 than the recon_weight=1 run</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>—</code> — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None</p>
-<h3>Integrity checks</h3>
-<p>⚠️ <strong>Matched-run count mismatch</strong>: expected 1 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.</p>
-<p>⚠️ <strong>1 wandb run(s) did not match any run_idx</strong> (excluded from the per-run table). These are most likely orphans from preempt-cycle retries or rate-limit re-launches. IDs: <code>m4zejlel</code>.</p>
-<p><strong>Runs analyzed</strong>: 0 (expected 1)</p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>m4zejlel</code> — traj_loss=0.00004, MASE=0.1243, R²=0.9999, LC loss=0.231, epoch=167.0</p>
+<p><strong>Runs analyzed</strong>: 1 (expected 1)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>m4zejlel</code></td>
+<td>0.00004</td>
+<td>0.1243</td>
+<td>0.9999</td>
+<td>0.231</td>
+<td>167.0</td>
+</tr>
+</tbody>
+</table>
 <h2>Success-criteria verdicts (automated)</h2>
 <table>
 <thead>
@@ -193,7 +215,7 @@ Mean KY dim (empirical): 2.012 ± 0.003
 Mean KY dim (burn-in):   1.942 ± 0.142
 Computing prediction windows ...
 Windows: 114 — nMSE min=0.0000, median=0.0000, mean=0.0002, max=0.0081
-Computing long trajectory prediction ...
+Computing long-trajectory free-running rollouts ...
 Computing encoder/decoder Jacobians ...
 encoder_jacobian: (128, 25, 25)
 decoder_jacobian: (128, 25, 25)

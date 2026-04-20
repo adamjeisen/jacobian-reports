@@ -1,13 +1,12 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon100_obcslow",
-  "analyzed_at": "2026-04-19T00:13:54Z",
+  "analyzed_at": "2026-04-20T18:24:16Z",
   "metrics_summary": {
-    "per_run": [],
-    "unmatched_runs": [
+    "per_run": [
       {
         "run_id": "m4zejlel",
-        "run_idx": null,
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 1e-05,
         "obs_noise_scale": 0.0,
@@ -21,14 +20,59 @@
         "swept_config": {}
       }
     ],
+    "unmatched_runs": [],
     "duplicate_matches": [],
     "expected_run_count": 1,
-    "matched_run_count": 0,
-    "best_by_obs_noise_scale": {},
-    "overall_chosen_run": null,
-    "overall_best_mase": null,
+    "matched_run_count": 1,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "m4zejlel",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 4.304070898797363e-05,
+        "best_traj_loss_epoch": 167.0,
+        "best_mase": 0.124311663210392,
+        "best_mase_epoch": 167.0,
+        "lc_loss_at_best_tl": 0.2311270534992218,
+        "r2_at_best_tl": 0.9998673796653748,
+        "n_epochs": 169,
+        "swept_config": {}
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "m4zejlel",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 1e-05,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 4.304070898797363e-05,
+      "best_traj_loss_epoch": 167.0,
+      "best_mase": 0.124311663210392,
+      "best_mase_epoch": 167.0,
+      "lc_loss_at_best_tl": 0.2311270534992218,
+      "r2_at_best_tl": 0.9998673796653748,
+      "n_epochs": 169,
+      "swept_config": {}
+    },
+    "overall_best_mase": {
+      "run_id": "m4zejlel",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 1e-05,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 4.304070898797363e-05,
+      "best_traj_loss_epoch": 167.0,
+      "best_mase": 0.124311663210392,
+      "best_mase_epoch": 167.0,
+      "lc_loss_at_best_tl": 0.2311270534992218,
+      "r2_at_best_tl": 0.9998673796653748,
+      "n_epochs": 169,
+      "swept_config": {}
+    },
     "swept_paths": [],
-    "n_runs": 0
+    "n_runs": 1
   },
   "per_run_lyapunov": {
     "m4zejlel": {

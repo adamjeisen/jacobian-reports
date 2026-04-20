@@ -33,15 +33,15 @@ at recon_weight=100 than at 1 or 10.
 
 ## Results
 
-**Chosen run** (by `best_traj_loss`): `—` — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None
+**Chosen run** (by `best_traj_loss`): `m4zejlel` — traj_loss=0.00004, MASE=0.1243, R²=0.9999, LC loss=0.231, epoch=167.0
 
-### Integrity checks
+**Runs analyzed**: 1 (expected 1)
 
-⚠️ **Matched-run count mismatch**: expected 1 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.
+### Per-run results
 
-⚠️ **1 wandb run(s) did not match any run_idx** (excluded from the per-run table). These are most likely orphans from preempt-cycle retries or rate-limit re-launches. IDs: `m4zejlel`.
-
-**Runs analyzed**: 0 (expected 1)
+| run_idx | run_id | best_traj_loss | best_MASE | R² | LC loss | epoch |
+|---|---|---|---|---|---|---|
+| 0 | `m4zejlel` | 0.00004 | 0.1243 | 0.9999 | 0.231 | 167.0 |
 
 ## Success-criteria verdicts (automated)
 
@@ -215,7 +215,7 @@ Mean KY dim (empirical): 2.012 ± 0.003
 Mean KY dim (burn-in):   1.942 ± 0.142
 Computing prediction windows ...
 Windows: 114 — nMSE min=0.0000, median=0.0000, mean=0.0002, max=0.0081
-Computing long trajectory prediction ...
+Computing long-trajectory free-running rollouts ...
 Computing encoder/decoder Jacobians ...
 encoder_jacobian: (128, 25, 25)
 decoder_jacobian: (128, 25, 25)

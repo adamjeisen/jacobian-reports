@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep",
-  "analyzed_at": "2026-04-19T00:12:53Z",
+  "analyzed_at": "2026-04-20T18:23:04Z",
   "metrics_summary": {
     "per_run": [
       {
