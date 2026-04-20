@@ -90,6 +90,20 @@
     ],
     "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
       {
+        "group": "lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776709225.4157321
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776709218.049662
+      },
+      {
         "group": "lorenz_partial_25d_additive_mse_p30_obsnoise001__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -207,20 +221,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776557422.2211566
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776557121.5694487
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776556822.3827446
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
