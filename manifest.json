@@ -32,6 +32,20 @@
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
       {
+        "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30_obsnoise001__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776708026.9643283
+      },
+      {
+        "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776708019.6442583
+      },
+      {
         "group": "lorenz_partial_100d_7lat_additive_mse_uniform_obsnoise005__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -72,23 +86,16 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776707134.1828134
-      },
-      {
-        "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30_obsnoise001__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776555020.8914483
-      },
-      {
-        "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776554740.3329072
       }
     ],
     "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
+      {
+        "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776708034.1713972
+      },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep",
         "has_report": true,
@@ -214,13 +221,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776555922.4636078
-      },
-      {
-        "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776555321.9461741
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",

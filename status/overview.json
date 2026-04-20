@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-20T17:55:27Z",
+  "last_updated": "2026-04-20T18:00:35Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -96,57 +96,30 @@
       }
     },
     "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12273467",
-        "dispatched_at": "2026-04-20T17:50:10Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 1,
-        "n_pending": 0
       }
     },
     "lorenz_partial_100d_7lat_additive_mse_uniform_p30_obsnoise001__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12273468",
-        "dispatched_at": "2026-04-20T17:50:10Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_gennmse__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12273546",
-        "dispatched_at": "2026-04-20T17:55:10Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_gennmse_adaptivelatent__lc_sweep": {
@@ -163,8 +136,8 @@
         "status": "running"
       },
       "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
+        "n_running": 1,
+        "n_pending": 0
       }
     },
     "lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep": {
@@ -174,6 +147,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12273779",
+        "dispatched_at": "2026-04-20T18:00:11Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse__lc_sweep": {
@@ -183,6 +165,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12273780",
+        "dispatched_at": "2026-04-20T18:00:11Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_obsnoise001__lc_sweep": {
@@ -192,6 +183,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12273781",
+        "dispatched_at": "2026-04-20T18:00:11Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_p30__lc_sweep": {
