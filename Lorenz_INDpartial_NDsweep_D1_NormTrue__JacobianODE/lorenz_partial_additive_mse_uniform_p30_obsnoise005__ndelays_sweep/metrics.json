@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
-  "analyzed_at": "2026-04-20T06:02:40Z",
+  "analyzed_at": "2026-04-20T15:35:57Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -264,31 +264,103 @@
       "error": null
     },
     "vqt1l45r": {
-      "error": "RuntimeError: The size of tensor a (13) must match the size of tensor b (8) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.4496323764324188,
+        -1.1505671739578247,
+        -48.71502685546875
+      ],
+      "lambda_max": 0.4496323764324188,
+      "lambda_sum": -49.41596221923828,
+      "kaplan_yorke_dim": 1.390791893005371,
+      "error": null
     },
     "zc95ojvj": {
-      "error": "RuntimeError: The size of tensor a (15) must match the size of tensor b (5) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.4642789959907532,
+        -1.5165603160858154,
+        -56.712894439697266
+      ],
+      "lambda_max": 0.4642789959907532,
+      "lambda_sum": -57.765174865722656,
+      "kaplan_yorke_dim": 1.3061394691467285,
+      "error": null
     },
     "g0jmo6np": {
-      "error": "RuntimeError: The size of tensor a (18) must match the size of tensor b (3) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.26901689171791077,
+        -3.1989660263061523,
+        -100.6513442993164
+      ],
+      "lambda_max": 0.26901689171791077,
+      "lambda_sum": -103.58129119873047,
+      "kaplan_yorke_dim": 1.0840950012207031,
+      "error": null
     },
     "rnsg3d7o": {
-      "error": "RuntimeError: The size of tensor a (8) must match the size of tensor b (13) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.3025883138179779,
+        -1.2556592226028442,
+        -28.435754776000977
+      ],
+      "lambda_max": 0.3025883138179779,
+      "lambda_sum": -29.388826370239258,
+      "kaplan_yorke_dim": 1.2409796714782715,
+      "error": null
     },
     "4fzvocqs": {
-      "error": "RuntimeError: The size of tensor a (3) must match the size of tensor b (18) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.06906303018331528,
+        -0.1372976452112198,
+        -13.055505752563477
+      ],
+      "lambda_max": 0.06906303018331528,
+      "lambda_sum": -13.123740196228027,
+      "kaplan_yorke_dim": 1.5030168294906616,
+      "error": null
     },
     "3oodwc3a": {
-      "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (9448x20 and 22x128)"
+      "lambda_spectrum": [
+        0.24963383376598358,
+        -0.0758599266409874,
+        -6.458742141723633
+      ],
+      "lambda_max": 0.24963383376598358,
+      "lambda_sum": -6.284968376159668,
+      "kaplan_yorke_dim": 2.0269052982330322,
+      "error": null
     },
     "qxpj8xpn": {
-      "error": "RuntimeError: The size of tensor a (5) must match the size of tensor b (15) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        -1.775675654411316,
+        -1.8958553075790405,
+        -56.997989654541016
+      ],
+      "lambda_max": -1.775675654411316,
+      "lambda_sum": -60.66952133178711,
+      "kaplan_yorke_dim": null,
+      "error": null
     },
     "16s8uli1": {
-      "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (9448x20 and 25x128)"
+      "lambda_spectrum": [
+        0.2635127902030945,
+        -0.0806034654378891,
+        -7.944857597351074
+      ],
+      "lambda_max": 0.2635127902030945,
+      "lambda_sum": -7.761948108673096,
+      "kaplan_yorke_dim": 2.023022413253784,
+      "error": null
     },
     "sw7tq71c": {
-      "error": "RuntimeError: The size of tensor a (0) must match the size of tensor b (20) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.1949520707130432,
+        -0.061391543596982956,
+        -7.754018783569336
+      ],
+      "lambda_max": 0.1949520707130432,
+      "lambda_sum": -7.620458126068115,
+      "kaplan_yorke_dim": 2.0172247886657715,
+      "error": null
     }
   },
   "empirical_lyapunov_spectrum": [
