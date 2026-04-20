@@ -2,6 +2,13 @@
   "projects": {
     "Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE": [
       {
+        "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776706527.7320478
+      },
+      {
         "group": "lorenz_full_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -21,13 +28,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776553223.3141649
-      },
-      {
-        "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776552627.6987708
       }
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
@@ -262,6 +262,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776706520.3749778
+      },
+      {
         "group": "wmtask_vanilla_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -274,13 +281,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776558918.5246367
-      },
-      {
-        "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776552029.1843505
       }
     ]
   },
