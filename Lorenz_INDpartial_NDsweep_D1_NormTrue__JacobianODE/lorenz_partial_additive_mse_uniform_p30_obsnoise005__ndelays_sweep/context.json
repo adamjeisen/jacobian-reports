@@ -1,0 +1,120 @@
+{
+  "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+  "completed_at": "2026-04-20T06:00:21Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep": {
+      "description": "Lorenz partial additive coupling, uniform reconstruction loss,\nobs_noise=0.05, prediction_steps=30, loop_closure_weight=0.\nSweeps delay_embedding_params.n_delays over [5, 10, 15, 20, 25,\n30, 35, 40, 45, 50]. n_target_dims fixed at 3; encoder.n_input\nis auto-resolved from n_delays \u00d7 |observed_indices| at Hydra\nruntime.\n",
+      "hypothesis": "The obs y7938e7x post-mortem suggested the 25-delay embedding may\nbe sub-optimal at obs_noise=0.05 (overestimated |\u03bb_min|). Larger\nn_delays effectively lower-passes more noise out of any single\ndelay coordinate (each delay is one noisy point); smaller n_delays\nkeeps the embedding tight but can't unfold the attractor cleanly.\nExpect the best n_delays at obs_noise=0.05 to be larger than at\nobs_noise=0.01.\n",
+      "success_criteria": [
+        "Clear minimum in best val traj_loss as a function of n_delays",
+        "Best n_delays at obs_noise=0.05 \u2265 best n_delays at obs_noise=0.01",
+        "All runs converge (no training divergence regardless of n_delays)"
+      ]
+    }
+  },
+  "expected_run_count": 10,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+      "hydra.launcher.partition=ou_bcs_low"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=5",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=10",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=15",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=20",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=25",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=30",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=35",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=40",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=50",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "477d6a0",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-19T22:26:23Z"
+}

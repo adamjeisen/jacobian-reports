@@ -1,0 +1,339 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep",
+  "analyzed_at": "2026-04-20T06:02:40Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "g0jmo6np",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0477001890540123,
+        "best_traj_loss_epoch": 156.0,
+        "best_mase": 2.031803846359253,
+        "best_mase_epoch": 156.0,
+        "lc_loss_at_best_tl": 0.8387559652328491,
+        "r2_at_best_tl": 0.8742098212242126,
+        "n_epochs": 161,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 5,
+          "model.encoder.n_input": 5
+        }
+      },
+      {
+        "run_id": "zc95ojvj",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.025739939883351326,
+        "best_traj_loss_epoch": 153.0,
+        "best_mase": 1.3429269790649414,
+        "best_mase_epoch": 157.0,
+        "lc_loss_at_best_tl": 0.056427132338285446,
+        "r2_at_best_tl": 0.9317334890365601,
+        "n_epochs": 158,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 10,
+          "model.encoder.n_input": 10
+        }
+      },
+      {
+        "run_id": "vqt1l45r",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.024153903126716614,
+        "best_traj_loss_epoch": 12.0,
+        "best_mase": 1.2308064699172974,
+        "best_mase_epoch": 18.0,
+        "lc_loss_at_best_tl": 0.18966253101825714,
+        "r2_at_best_tl": 0.9362218976020813,
+        "n_epochs": 83,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.encoder.n_input": 15
+        }
+      },
+      {
+        "run_id": "iw0d7gcy",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.010159987956285477,
+        "best_traj_loss_epoch": 116.0,
+        "best_mase": 0.916491687297821,
+        "best_mase_epoch": 116.0,
+        "lc_loss_at_best_tl": 0.35624420642852783,
+        "r2_at_best_tl": 0.9722864627838135,
+        "n_epochs": 118,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 20,
+          "model.encoder.n_input": 20
+        }
+      },
+      {
+        "run_id": "rnsg3d7o",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.009704153053462505,
+        "best_traj_loss_epoch": 94.0,
+        "best_mase": 0.9074376821517944,
+        "best_mase_epoch": 98.0,
+        "lc_loss_at_best_tl": 1.3428367376327515,
+        "r2_at_best_tl": 0.9742083549499512,
+        "n_epochs": 104,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 25,
+          "model.encoder.n_input": 25
+        }
+      },
+      {
+        "run_id": "qxpj8xpn",
+        "run_idx": 5,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 1.0995689630508423,
+        "best_traj_loss_epoch": 0.0,
+        "best_mase": 11.996041297912598,
+        "best_mase_epoch": 0.0,
+        "lc_loss_at_best_tl": 1.061212420463562,
+        "r2_at_best_tl": -1.939399242401123,
+        "n_epochs": 27,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 30,
+          "model.encoder.n_input": 30
+        }
+      },
+      {
+        "run_id": "4fzvocqs",
+        "run_idx": 6,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.009467532858252525,
+        "best_traj_loss_epoch": 109.0,
+        "best_mase": 0.8800154328346252,
+        "best_mase_epoch": 113.0,
+        "lc_loss_at_best_tl": 6.006000518798828,
+        "r2_at_best_tl": 0.9750398993492126,
+        "n_epochs": 159,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 35,
+          "model.encoder.n_input": 35
+        }
+      },
+      {
+        "run_id": "sw7tq71c",
+        "run_idx": 7,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005907409358769655,
+        "best_traj_loss_epoch": 103.0,
+        "best_mase": 0.7838184237480164,
+        "best_mase_epoch": 103.0,
+        "lc_loss_at_best_tl": 0.5754083395004272,
+        "r2_at_best_tl": 0.9842439293861389,
+        "n_epochs": 108,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 40,
+          "model.encoder.n_input": 40
+        }
+      },
+      {
+        "run_id": "3oodwc3a",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006982374936342239,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.8304844498634338,
+        "best_mase_epoch": 42.0,
+        "lc_loss_at_best_tl": 3.018904447555542,
+        "r2_at_best_tl": 0.9804815053939819,
+        "n_epochs": 44,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 45,
+          "model.encoder.n_input": 45
+        }
+      },
+      {
+        "run_id": "16s8uli1",
+        "run_idx": 9,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0057553634978830814,
+        "best_traj_loss_epoch": 177.0,
+        "best_mase": 0.7755014300346375,
+        "best_mase_epoch": 178.0,
+        "lc_loss_at_best_tl": 1.109110713005066,
+        "r2_at_best_tl": 0.9845854043960571,
+        "n_epochs": 187,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 50,
+          "model.encoder.n_input": 50
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 10,
+    "matched_run_count": 10,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "16s8uli1",
+        "run_idx": 9,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0057553634978830814,
+        "best_traj_loss_epoch": 177.0,
+        "best_mase": 0.7755014300346375,
+        "best_mase_epoch": 178.0,
+        "lc_loss_at_best_tl": 1.109110713005066,
+        "r2_at_best_tl": 0.9845854043960571,
+        "n_epochs": 187,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 50,
+          "model.encoder.n_input": 50
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "16s8uli1",
+      "run_idx": 9,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0057553634978830814,
+      "best_traj_loss_epoch": 177.0,
+      "best_mase": 0.7755014300346375,
+      "best_mase_epoch": 178.0,
+      "lc_loss_at_best_tl": 1.109110713005066,
+      "r2_at_best_tl": 0.9845854043960571,
+      "n_epochs": 187,
+      "swept_config": {
+        "data.train_test_params.delay_embedding_params.n_delays": 50,
+        "model.encoder.n_input": 50
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "16s8uli1",
+      "run_idx": 9,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0057553634978830814,
+      "best_traj_loss_epoch": 177.0,
+      "best_mase": 0.7755014300346375,
+      "best_mase_epoch": 178.0,
+      "lc_loss_at_best_tl": 1.109110713005066,
+      "r2_at_best_tl": 0.9845854043960571,
+      "n_epochs": 187,
+      "swept_config": {
+        "data.train_test_params.delay_embedding_params.n_delays": 50,
+        "model.encoder.n_input": 50
+      }
+    },
+    "swept_paths": [
+      "data.train_test_params.delay_embedding_params.n_delays",
+      "model.encoder.n_input"
+    ],
+    "n_runs": 10
+  },
+  "per_run_lyapunov": {
+    "iw0d7gcy": {
+      "lambda_spectrum": [
+        0.17868047952651978,
+        -0.6815240383148193,
+        -19.229108810424805
+      ],
+      "lambda_max": 0.17868047952651978,
+      "lambda_sum": -19.731952667236328,
+      "kaplan_yorke_dim": 1.26217782497406,
+      "error": null
+    },
+    "vqt1l45r": {
+      "error": "RuntimeError: The size of tensor a (13) must match the size of tensor b (8) at non-singleton dimension 2"
+    },
+    "zc95ojvj": {
+      "error": "RuntimeError: The size of tensor a (15) must match the size of tensor b (5) at non-singleton dimension 2"
+    },
+    "g0jmo6np": {
+      "error": "RuntimeError: The size of tensor a (18) must match the size of tensor b (3) at non-singleton dimension 2"
+    },
+    "rnsg3d7o": {
+      "error": "RuntimeError: The size of tensor a (8) must match the size of tensor b (13) at non-singleton dimension 2"
+    },
+    "4fzvocqs": {
+      "error": "RuntimeError: The size of tensor a (3) must match the size of tensor b (18) at non-singleton dimension 2"
+    },
+    "3oodwc3a": {
+      "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (9448x20 and 22x128)"
+    },
+    "qxpj8xpn": {
+      "error": "RuntimeError: The size of tensor a (5) must match the size of tensor b (15) at non-singleton dimension 2"
+    },
+    "16s8uli1": {
+      "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (9448x20 and 25x128)"
+    },
+    "sw7tq71c": {
+      "error": "RuntimeError: The size of tensor a (0) must match the size of tensor b (20) at non-singleton dimension 2"
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.48128193616867065,
+    -0.2260732501745224,
+    -13.922173500061035
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Clear minimum in best val traj_loss as a function of n_delays",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best n_delays at obs_noise=0.05 \u2265 best n_delays at obs_noise=0.01",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "All runs converge (no training divergence regardless of n_delays)",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep/figures/per_run_lyapunov_relerr.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
