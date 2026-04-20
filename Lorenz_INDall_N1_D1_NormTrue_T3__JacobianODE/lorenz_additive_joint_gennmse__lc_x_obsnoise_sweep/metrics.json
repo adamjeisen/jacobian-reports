@@ -1,204 +1,12 @@
 {
   "schema_version": 3,
   "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep",
-  "analyzed_at": "2026-04-18T22:57:54Z",
+  "analyzed_at": "2026-04-20T17:38:50Z",
   "metrics_summary": {
     "per_run": [
       {
-        "run_id": "bu6n73iv",
-        "run_idx": 0,
-        "state": "finished",
-        "lc_weight": 0.0001,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.0136601272970438,
-        "best_traj_loss_epoch": 44.0,
-        "best_mase": 0.9669820666313171,
-        "best_mase_epoch": 33.0,
-        "lc_loss_at_best_tl": 9.216533660888672,
-        "r2_at_best_tl": 0.9982439279556274,
-        "n_epochs": 88,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.0001,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      }
-    ],
-    "unmatched_runs": [
-      {
-        "run_id": "y3alw1w5",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0026140741538256407,
-        "best_traj_loss_epoch": 101.0,
-        "best_mase": 0.47108832001686096,
-        "best_mase_epoch": 101.0,
-        "lc_loss_at_best_tl": 0.4127780795097351,
-        "r2_at_best_tl": 0.9996644854545593,
-        "n_epochs": 111,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "amh5qo83",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.0,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.4559133052825928,
-        "best_traj_loss_epoch": 45.0,
-        "best_mase": 5.5629167556762695,
-        "best_mase_epoch": 65.0,
-        "lc_loss_at_best_tl": 6.16535758972168,
-        "r2_at_best_tl": 0.942203164100647,
-        "n_epochs": 83,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
-        "run_id": "atihozi6",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.0,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.013448437675833702,
-        "best_traj_loss_epoch": 33.0,
-        "best_mase": 0.9491632580757141,
-        "best_mase_epoch": 33.0,
-        "lc_loss_at_best_tl": 56.537174224853516,
-        "r2_at_best_tl": 0.9982858300209045,
-        "n_epochs": 75,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "d5x688jl",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1e-06,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.013446961529552937,
-        "best_traj_loss_epoch": 33.0,
-        "best_mase": 0.949504554271698,
-        "best_mase_epoch": 33.0,
-        "lc_loss_at_best_tl": 47.71196746826172,
-        "r2_at_best_tl": 0.9982861280441284,
-        "n_epochs": 75,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1e-06,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "m5bxy6so",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1e-05,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0027024121955037117,
-        "best_traj_loss_epoch": 19.0,
-        "best_mase": 0.4772239923477173,
-        "best_mase_epoch": 19.0,
-        "lc_loss_at_best_tl": 0.36026421189308167,
-        "r2_at_best_tl": 0.9996528625488281,
-        "n_epochs": 25,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1e-05,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "nuyyzjqs",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1e-06,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.43987905979156494,
-        "best_traj_loss_epoch": 65.0,
-        "best_mase": 5.508739471435547,
-        "best_mase_epoch": 65.0,
-        "lc_loss_at_best_tl": 8.279156684875488,
-        "r2_at_best_tl": 0.9442964196205139,
-        "n_epochs": 105,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1e-06,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
-        "run_id": "h8wc7glc",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1e-05,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.01353801041841507,
-        "best_traj_loss_epoch": 33.0,
-        "best_mase": 0.9517740607261658,
-        "best_mase_epoch": 33.0,
-        "lc_loss_at_best_tl": 25.491748809814453,
-        "r2_at_best_tl": 0.9982750415802002,
-        "n_epochs": 64,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1e-05,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "0bduime7",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1e-06,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0026140923146158457,
-        "best_traj_loss_epoch": 101.0,
-        "best_mase": 0.4710969030857086,
-        "best_mase_epoch": 101.0,
-        "lc_loss_at_best_tl": 0.39761778712272644,
-        "r2_at_best_tl": 0.9996645450592041,
-        "n_epochs": 111,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1e-06,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "cw0hkste",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1e-05,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.4543336033821106,
-        "best_traj_loss_epoch": 65.0,
-        "best_mase": 5.52723503112793,
-        "best_mase_epoch": 65.0,
-        "lc_loss_at_best_tl": 6.211432456970215,
-        "r2_at_best_tl": 0.9423873424530029,
-        "n_epochs": 134,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1e-05,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
         "run_id": "ixxkuswu",
-        "run_idx": null,
+        "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.0001,
         "obs_noise_scale": 0.0,
@@ -214,381 +22,104 @@
           "training.lightning.loop_closure_weight": 0.0001,
           "training.lightning.obs_noise_scale": 0
         }
-      },
-      {
-        "run_id": "3acbijxo",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.0001,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.429546594619751,
-        "best_traj_loss_epoch": 65.0,
-        "best_mase": 5.4595513343811035,
-        "best_mase_epoch": 65.0,
-        "lc_loss_at_best_tl": 5.554229259490967,
-        "r2_at_best_tl": 0.9455319046974182,
-        "n_epochs": 103,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.0001,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
-        "run_id": "0i2v07dp",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.001,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0026351045817136765,
-        "best_traj_loss_epoch": 101.0,
-        "best_mase": 0.4728085696697235,
-        "best_mase_epoch": 101.0,
-        "lc_loss_at_best_tl": 0.009351909160614014,
-        "r2_at_best_tl": 0.999661922454834,
-        "n_epochs": 111,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.001,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "adgsbzb6",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.001,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.012851215898990631,
-        "best_traj_loss_epoch": 37.0,
-        "best_mase": 0.9785646200180054,
-        "best_mase_epoch": 37.0,
-        "lc_loss_at_best_tl": 2.431546688079834,
-        "r2_at_best_tl": 0.9983550310134888,
-        "n_epochs": 62,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438417,
-          "training.lightning.loop_closure_weight": 0.001,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "8gi3hrrs",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.001,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.4426262676715851,
-        "best_traj_loss_epoch": 65.0,
-        "best_mase": 5.4961395263671875,
-        "best_mase_epoch": 65.0,
-        "lc_loss_at_best_tl": 2.7706615924835205,
-        "r2_at_best_tl": 0.9439444541931152,
-        "n_epochs": 89,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.001,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
-        "run_id": "6fjymj34",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.01,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0026756832376122475,
-        "best_traj_loss_epoch": 80.0,
-        "best_mase": 0.4759254455566406,
-        "best_mase_epoch": 80.0,
-        "lc_loss_at_best_tl": 0.002027137205004692,
-        "r2_at_best_tl": 0.9996564984321594,
-        "n_epochs": 86,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.01,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "7gvngy15",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.01,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.010721173137426376,
-        "best_traj_loss_epoch": 24.0,
-        "best_mase": 0.8543001413345337,
-        "best_mase_epoch": 24.0,
-        "lc_loss_at_best_tl": 0.16881613433361053,
-        "r2_at_best_tl": 0.9986289739608765,
-        "n_epochs": 68,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.01,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "on8okrh1",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.01,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.42866629362106323,
-        "best_traj_loss_epoch": 58.0,
-        "best_mase": 5.374608039855957,
-        "best_mase_epoch": 61.0,
-        "lc_loss_at_best_tl": 1.7053712606430054,
-        "r2_at_best_tl": 0.9455419182777405,
-        "n_epochs": 67,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.01,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
-        "run_id": "8bnyx04y",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.1,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0027487429324537516,
-        "best_traj_loss_epoch": 112.0,
-        "best_mase": 0.48091381788253784,
-        "best_mase_epoch": 112.0,
-        "lc_loss_at_best_tl": 0.00034362179576419294,
-        "r2_at_best_tl": 0.9996472001075745,
-        "n_epochs": 117,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438417,
-          "training.lightning.loop_closure_weight": 0.1,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "bm33qvuq",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.1,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.009974733926355839,
-        "best_traj_loss_epoch": 50.0,
-        "best_mase": 0.8262126445770264,
-        "best_mase_epoch": 50.0,
-        "lc_loss_at_best_tl": 0.013177753426134586,
-        "r2_at_best_tl": 0.9987229704856873,
-        "n_epochs": 117,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.1,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "1sqrb462",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 0.1,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.7644325494766235,
-        "best_traj_loss_epoch": 18.0,
-        "best_mase": 6.982271671295166,
-        "best_mase_epoch": 18.0,
-        "lc_loss_at_best_tl": 0.07420574873685837,
-        "r2_at_best_tl": 0.9031038880348206,
-        "n_epochs": 24,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 0.1,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
-        "run_id": "p5lvkw4m",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.00326258665882051,
-        "best_traj_loss_epoch": 97.0,
-        "best_mase": 0.5141584277153015,
-        "best_mase_epoch": 100.0,
-        "lc_loss_at_best_tl": 0.00010528202255954966,
-        "r2_at_best_tl": 0.9995817542076111,
-        "n_epochs": 101,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "teoimuz6",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1.0,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.012233463115990162,
-        "best_traj_loss_epoch": 50.0,
-        "best_mase": 0.8682856559753418,
-        "best_mase_epoch": 50.0,
-        "lc_loss_at_best_tl": 0.002567511284723878,
-        "r2_at_best_tl": 0.9984337091445923,
-        "n_epochs": 150,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "wsivniv4",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 10.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.004028536844998598,
-        "best_traj_loss_epoch": 123.0,
-        "best_mase": 0.5559796094894409,
-        "best_mase_epoch": 126.0,
-        "lc_loss_at_best_tl": 6.692414171993732e-05,
-        "r2_at_best_tl": 0.9994847178459167,
-        "n_epochs": 127,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 10,
-          "training.lightning.obs_noise_scale": 0
-        }
-      },
-      {
-        "run_id": "nz9x07cl",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 1.0,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.5344958305358887,
-        "best_traj_loss_epoch": 35.0,
-        "best_mase": 5.949329853057861,
-        "best_mase_epoch": 35.0,
-        "lc_loss_at_best_tl": 0.04217519611120224,
-        "r2_at_best_tl": 0.9321845769882202,
-        "n_epochs": 46,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 1,
-          "training.lightning.obs_noise_scale": 0.05
-        }
-      },
-      {
-        "run_id": "2fuphbqb",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 10.0,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.019569581374526024,
-        "best_traj_loss_epoch": 54.0,
-        "best_mase": 1.019853115081787,
-        "best_mase_epoch": 44.0,
-        "lc_loss_at_best_tl": 0.0050450884737074375,
-        "r2_at_best_tl": 0.9975050091743469,
-        "n_epochs": 150,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 10,
-          "training.lightning.obs_noise_scale": 0.01
-        }
-      },
-      {
-        "run_id": "gk1oa37j",
-        "run_idx": null,
-        "state": "finished",
-        "lc_weight": 10.0,
-        "obs_noise_scale": 0.05,
-        "best_traj_loss": 0.7519117593765259,
-        "best_traj_loss_epoch": 33.0,
-        "best_mase": 6.824031829833984,
-        "best_mase_epoch": 33.0,
-        "lc_loss_at_best_tl": 0.004536627791821957,
-        "r2_at_best_tl": 0.9047938585281372,
-        "n_epochs": 39,
-        "swept_config": {
-          "data.postprocessing.generalized_variance": 0.16048156990438597,
-          "training.lightning.loop_closure_weight": 10,
-          "training.lightning.obs_noise_scale": 0.05
-        }
       }
     ],
+    "unmatched_runs": [],
     "duplicate_matches": [
       {
         "run_idx": 0,
-        "chosen_run_id": "bu6n73iv",
+        "chosen_run_id": "ixxkuswu",
         "other_run_ids": [
-          "esyyb6x2"
+          "bu6n73iv",
+          "y3alw1w5",
+          "amh5qo83",
+          "atihozi6",
+          "d5x688jl",
+          "m5bxy6so",
+          "nuyyzjqs",
+          "h8wc7glc",
+          "0bduime7",
+          "cw0hkste",
+          "esyyb6x2",
+          "3acbijxo",
+          "0i2v07dp",
+          "adgsbzb6",
+          "8gi3hrrs",
+          "6fjymj34",
+          "7gvngy15",
+          "on8okrh1",
+          "8bnyx04y",
+          "bm33qvuq",
+          "1sqrb462",
+          "p5lvkw4m",
+          "teoimuz6",
+          "wsivniv4",
+          "nz9x07cl",
+          "2fuphbqb",
+          "gk1oa37j"
         ],
-        "n_candidates": 2
+        "n_candidates": 28
       }
     ],
     "expected_run_count": 1,
     "matched_run_count": 1,
     "best_by_obs_noise_scale": {
-      "0.01": {
-        "run_id": "bu6n73iv",
+      "0.0": {
+        "run_id": "ixxkuswu",
         "run_idx": 0,
         "state": "finished",
         "lc_weight": 0.0001,
-        "obs_noise_scale": 0.01,
-        "best_traj_loss": 0.0136601272970438,
-        "best_traj_loss_epoch": 44.0,
-        "best_mase": 0.9669820666313171,
-        "best_mase_epoch": 33.0,
-        "lc_loss_at_best_tl": 9.216533660888672,
-        "r2_at_best_tl": 0.9982439279556274,
-        "n_epochs": 88,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0026056210044771433,
+        "best_traj_loss_epoch": 121.0,
+        "best_mase": 0.4702247977256775,
+        "best_mase_epoch": 112.0,
+        "lc_loss_at_best_tl": 0.06590361893177032,
+        "r2_at_best_tl": 0.9996656179428101,
+        "n_epochs": 123,
         "swept_config": {
           "data.postprocessing.generalized_variance": 0.16048156990438597,
           "training.lightning.loop_closure_weight": 0.0001,
-          "training.lightning.obs_noise_scale": 0.01
+          "training.lightning.obs_noise_scale": 0
         }
       }
     },
     "overall_chosen_run": {
-      "run_id": "bu6n73iv",
+      "run_id": "ixxkuswu",
       "run_idx": 0,
       "state": "finished",
       "lc_weight": 0.0001,
-      "obs_noise_scale": 0.01,
-      "best_traj_loss": 0.0136601272970438,
-      "best_traj_loss_epoch": 44.0,
-      "best_mase": 0.9669820666313171,
-      "best_mase_epoch": 33.0,
-      "lc_loss_at_best_tl": 9.216533660888672,
-      "r2_at_best_tl": 0.9982439279556274,
-      "n_epochs": 88,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0026056210044771433,
+      "best_traj_loss_epoch": 121.0,
+      "best_mase": 0.4702247977256775,
+      "best_mase_epoch": 112.0,
+      "lc_loss_at_best_tl": 0.06590361893177032,
+      "r2_at_best_tl": 0.9996656179428101,
+      "n_epochs": 123,
       "swept_config": {
         "data.postprocessing.generalized_variance": 0.16048156990438597,
         "training.lightning.loop_closure_weight": 0.0001,
-        "training.lightning.obs_noise_scale": 0.01
+        "training.lightning.obs_noise_scale": 0
       }
     },
     "overall_best_mase": {
-      "run_id": "bu6n73iv",
+      "run_id": "ixxkuswu",
       "run_idx": 0,
       "state": "finished",
       "lc_weight": 0.0001,
-      "obs_noise_scale": 0.01,
-      "best_traj_loss": 0.0136601272970438,
-      "best_traj_loss_epoch": 44.0,
-      "best_mase": 0.9669820666313171,
-      "best_mase_epoch": 33.0,
-      "lc_loss_at_best_tl": 9.216533660888672,
-      "r2_at_best_tl": 0.9982439279556274,
-      "n_epochs": 88,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0026056210044771433,
+      "best_traj_loss_epoch": 121.0,
+      "best_mase": 0.4702247977256775,
+      "best_mase_epoch": 112.0,
+      "lc_loss_at_best_tl": 0.06590361893177032,
+      "r2_at_best_tl": 0.9996656179428101,
+      "n_epochs": 123,
       "swept_config": {
         "data.postprocessing.generalized_variance": 0.16048156990438597,
         "training.lightning.loop_closure_weight": 0.0001,
-        "training.lightning.obs_noise_scale": 0.01
+        "training.lightning.obs_noise_scale": 0
       }
     },
     "swept_paths": [
@@ -928,7 +459,7 @@
     {
       "criterion": "val/trajectory_r2_score > 0.95 at the best configuration",
       "verdict": "Pass",
-      "note": "Best R\u00b2 = 0.9982; threshold > 0.95"
+      "note": "Best R\u00b2 = 0.9997; threshold > 0.95"
     },
     {
       "criterion": "Loop closure bounded and monotonically improving at low LC",

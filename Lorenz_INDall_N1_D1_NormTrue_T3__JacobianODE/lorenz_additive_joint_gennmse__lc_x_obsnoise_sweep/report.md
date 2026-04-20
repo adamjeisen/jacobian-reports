@@ -36,16 +36,14 @@ Optimal LC should sit in the 1e-5 – 1e-3 range with a broad basin.
 
 **Swept axes** (3): `data.postprocessing.generalized_variance`, `training.lightning.loop_closure_weight`, `training.lightning.obs_noise_scale`
 
-**Chosen run** (by `best_traj_loss`): `bu6n73iv` — traj_loss=0.01366, MASE=0.9670, R²=0.9982, LC loss=9.217, epoch=44.0
+**Chosen run** (by `best_traj_loss`): `ixxkuswu` — traj_loss=0.00261, MASE=0.4702, R²=0.9997, LC loss=0.066, epoch=121.0
 
-Swept-axis values at chosen run: `data.postprocessing.generalized_variance`=0.160482 · `training.lightning.loop_closure_weight`=1.0e-04 · `training.lightning.obs_noise_scale`=0.01
+Swept-axis values at chosen run: `data.postprocessing.generalized_variance`=0.160482 · `training.lightning.loop_closure_weight`=1.0e-04 · `training.lightning.obs_noise_scale`=0
 
 ### Integrity checks
 
-⚠️ **26 wandb run(s) did not match any run_idx** (excluded from the per-run table). These are most likely orphans from preempt-cycle retries or rate-limit re-launches. IDs: `y3alw1w5`, `amh5qo83`, `atihozi6`, `d5x688jl`, `m5bxy6so`, `nuyyzjqs`, `h8wc7glc`, `0bduime7`, `cw0hkste`, `ixxkuswu`, `3acbijxo`, `0i2v07dp`, `adgsbzb6`, `8gi3hrrs`, `6fjymj34`, `7gvngy15`, `on8okrh1`, `8bnyx04y`, `bm33qvuq`, `1sqrb462`, `p5lvkw4m`, `teoimuz6`, `wsivniv4`, `nz9x07cl`, `2fuphbqb`, `gk1oa37j`.
-
 ⚠️ **1 run_idx slot(s) had multiple matching wandb runs** — the best by `best_traj_loss` was kept; the others are listed below for audit:
-  - run_idx=**0**: chose `bu6n73iv`, dropped `esyyb6x2`
+  - run_idx=**0**: chose `ixxkuswu`, dropped `bu6n73iv`, `y3alw1w5`, `amh5qo83`, `atihozi6`, `d5x688jl`, `m5bxy6so`, `nuyyzjqs`, `h8wc7glc`, `0bduime7`, `cw0hkste`, `esyyb6x2`, `3acbijxo`, `0i2v07dp`, `adgsbzb6`, `8gi3hrrs`, `6fjymj34`, `7gvngy15`, `on8okrh1`, `8bnyx04y`, `bm33qvuq`, `1sqrb462`, `p5lvkw4m`, `teoimuz6`, `wsivniv4`, `nz9x07cl`, `2fuphbqb`, `gk1oa37j`
 
 **Runs analyzed**: 1 (expected 1)
 
@@ -53,7 +51,7 @@ Swept-axis values at chosen run: `data.postprocessing.generalized_variance`=0.16
 
 | run_idx | run_id | `data.postprocessing.generalized_variance` | `training.lightning.loop_closure_weight` | `training.lightning.obs_noise_scale` | best_traj_loss | best_MASE | R² | LC loss | epoch |
 |---|---|---|---|---|---|---|---|---|---|
-| 0 | `bu6n73iv` | 0.160482 | 1.0e-04 | 0.01 | 0.01366 | 0.9670 | 0.9982 | 9.217 | 44.0 |
+| 0 | `ixxkuswu` | 0.160482 | 1.0e-04 | 0 | 0.00261 | 0.4702 | 0.9997 | 0.066 | 121.0 |
 
 ## Success-criteria verdicts (automated)
 
@@ -61,7 +59,7 @@ Swept-axis values at chosen run: `data.postprocessing.generalized_variance`=0.16
 |---|---|---|
 | Best run's leading Lyapunov exponent > 0 (chaos recovered) | **Unknown** |  |
 | Best run's predicted Lyapunov spectrum within ~20% of empirical | **Unknown** |  |
-| val/trajectory_r2_score > 0.95 at the best configuration | **Pass** | Best R² = 0.9982; threshold > 0.95 |
+| val/trajectory_r2_score > 0.95 at the best configuration | **Pass** | Best R² = 0.9997; threshold > 0.95 |
 | Loop closure bounded and monotonically improving at low LC | **Unknown** |  |
 
 _Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence._
@@ -345,7 +343,7 @@ Mean KY dim (empirical): 2.015 ± 0.002
 Mean KY dim (burn-in):   1.749 ± 0.517
 Computing prediction windows ...
 Windows: 354 — nMSE min=0.0005, median=0.0019, mean=0.0025, max=0.0205
-Computing long trajectory prediction ...
+Computing long-trajectory free-running rollouts ...
 Computing encoder/decoder Jacobians ...
 encoder_jacobian: (128, 3, 3)
 decoder_jacobian: (128, 3, 3)

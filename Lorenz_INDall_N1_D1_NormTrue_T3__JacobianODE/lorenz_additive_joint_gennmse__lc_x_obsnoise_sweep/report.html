@@ -42,12 +42,11 @@ Optimal LC should sit in the 1e-5 – 1e-3 range with a broad basin.</p>
 </ul>
 <h2>Results</h2>
 <p><strong>Swept axes</strong> (3): <code>data.postprocessing.generalized_variance</code>, <code>training.lightning.loop_closure_weight</code>, <code>training.lightning.obs_noise_scale</code></p>
-<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>bu6n73iv</code> — traj_loss=0.01366, MASE=0.9670, R²=0.9982, LC loss=9.217, epoch=44.0</p>
-<p>Swept-axis values at chosen run: <code>data.postprocessing.generalized_variance</code>=0.160482 · <code>training.lightning.loop_closure_weight</code>=1.0e-04 · <code>training.lightning.obs_noise_scale</code>=0.01</p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>ixxkuswu</code> — traj_loss=0.00261, MASE=0.4702, R²=0.9997, LC loss=0.066, epoch=121.0</p>
+<p>Swept-axis values at chosen run: <code>data.postprocessing.generalized_variance</code>=0.160482 · <code>training.lightning.loop_closure_weight</code>=1.0e-04 · <code>training.lightning.obs_noise_scale</code>=0</p>
 <h3>Integrity checks</h3>
-<p>⚠️ <strong>26 wandb run(s) did not match any run_idx</strong> (excluded from the per-run table). These are most likely orphans from preempt-cycle retries or rate-limit re-launches. IDs: <code>y3alw1w5</code>, <code>amh5qo83</code>, <code>atihozi6</code>, <code>d5x688jl</code>, <code>m5bxy6so</code>, <code>nuyyzjqs</code>, <code>h8wc7glc</code>, <code>0bduime7</code>, <code>cw0hkste</code>, <code>ixxkuswu</code>, <code>3acbijxo</code>, <code>0i2v07dp</code>, <code>adgsbzb6</code>, <code>8gi3hrrs</code>, <code>6fjymj34</code>, <code>7gvngy15</code>, <code>on8okrh1</code>, <code>8bnyx04y</code>, <code>bm33qvuq</code>, <code>1sqrb462</code>, <code>p5lvkw4m</code>, <code>teoimuz6</code>, <code>wsivniv4</code>, <code>nz9x07cl</code>, <code>2fuphbqb</code>, <code>gk1oa37j</code>.</p>
 <p>⚠️ <strong>1 run_idx slot(s) had multiple matching wandb runs</strong> — the best by <code>best_traj_loss</code> was kept; the others are listed below for audit:
-  - run_idx=<strong>0</strong>: chose <code>bu6n73iv</code>, dropped <code>esyyb6x2</code></p>
+  - run_idx=<strong>0</strong>: chose <code>ixxkuswu</code>, dropped <code>bu6n73iv</code>, <code>y3alw1w5</code>, <code>amh5qo83</code>, <code>atihozi6</code>, <code>d5x688jl</code>, <code>m5bxy6so</code>, <code>nuyyzjqs</code>, <code>h8wc7glc</code>, <code>0bduime7</code>, <code>cw0hkste</code>, <code>esyyb6x2</code>, <code>3acbijxo</code>, <code>0i2v07dp</code>, <code>adgsbzb6</code>, <code>8gi3hrrs</code>, <code>6fjymj34</code>, <code>7gvngy15</code>, <code>on8okrh1</code>, <code>8bnyx04y</code>, <code>bm33qvuq</code>, <code>1sqrb462</code>, <code>p5lvkw4m</code>, <code>teoimuz6</code>, <code>wsivniv4</code>, <code>nz9x07cl</code>, <code>2fuphbqb</code>, <code>gk1oa37j</code></p>
 <p><strong>Runs analyzed</strong>: 1 (expected 1)</p>
 <h3>Per-run results</h3>
 <table>
@@ -68,15 +67,15 @@ Optimal LC should sit in the 1e-5 – 1e-3 range with a broad basin.</p>
 <tbody>
 <tr>
 <td>0</td>
-<td><code>bu6n73iv</code></td>
+<td><code>ixxkuswu</code></td>
 <td>0.160482</td>
 <td>1.0e-04</td>
-<td>0.01</td>
-<td>0.01366</td>
-<td>0.9670</td>
-<td>0.9982</td>
-<td>9.217</td>
-<td>44.0</td>
+<td>0</td>
+<td>0.00261</td>
+<td>0.4702</td>
+<td>0.9997</td>
+<td>0.066</td>
+<td>121.0</td>
 </tr>
 </tbody>
 </table>
@@ -103,7 +102,7 @@ Optimal LC should sit in the 1e-5 – 1e-3 range with a broad basin.</p>
 <tr>
 <td>val/trajectory_r2_score &gt; 0.95 at the best configuration</td>
 <td><strong>Pass</strong></td>
-<td>Best R² = 0.9982; threshold &gt; 0.95</td>
+<td>Best R² = 0.9997; threshold &gt; 0.95</td>
 </tr>
 <tr>
 <td>Loop closure bounded and monotonically improving at low LC</td>
@@ -352,7 +351,7 @@ Mean KY dim (empirical): 2.015 ± 0.002
 Mean KY dim (burn-in):   1.749 ± 0.517
 Computing prediction windows ...
 Windows: 354 — nMSE min=0.0005, median=0.0019, mean=0.0025, max=0.0205
-Computing long trajectory prediction ...
+Computing long-trajectory free-running rollouts ...
 Computing encoder/decoder Jacobians ...
 encoder_jacobian: (128, 3, 3)
 decoder_jacobian: (128, 3, 3)
