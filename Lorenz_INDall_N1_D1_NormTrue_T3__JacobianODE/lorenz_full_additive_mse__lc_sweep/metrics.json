@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_full_additive_mse__lc_sweep",
-  "analyzed_at": "2026-04-18T23:01:53Z",
+  "analyzed_at": "2026-04-20T17:41:31Z",
   "metrics_summary": {
     "per_run": [
       {
