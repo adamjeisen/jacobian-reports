@@ -1,0 +1,104 @@
+No run_id provided — selecting best run from group 'lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim' ...
+Found 6 total runs in JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE (group=lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  rozlkci9: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+  eyfqgemc: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+  l42rqc1g: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  hic5ynzw: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  rgca51q1: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  f28hxmys: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including rozlkci9 (lc=0.0): use_all_runs=True (state=running)
+  Including eyfqgemc (lc=0.0): use_all_runs=True (state=running)
+  Including l42rqc1g (lc=0.0): use_all_runs=True (state=finished)
+  Including hic5ynzw (lc=0.0): use_all_runs=True (state=finished)
+  Including rgca51q1 (lc=0.0): use_all_runs=True (state=finished)
+  Including f28hxmys (lc=0.0): use_all_runs=True (state=running)
+Found 6 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=eyfqgemc
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=f28hxmys
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=hic5ynzw
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=l42rqc1g
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=rgca51q1
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=rozlkci9
+  Dropping 1 run(s) with no checkpoint dir: ['f28hxmys']
+n_dims=5, n_latent=5, n_dyn=2, dt=0.0150
+  run=eyfqgemc: DiagnosticMetrics(one_step_mase=0.7904332280158997, loop_closure_loss=5.152933120727539, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.08754920959472656) (from W&B history)
+  run=hic5ynzw: DiagnosticMetrics(one_step_mase=1.0403393507003784, loop_closure_loss=0.9549960494041443, fast_eigenvalue_fraction=0.3333333432674408, trajectory_val_loss=0.1392793208360672) (from W&B history)
+  run=l42rqc1g: DiagnosticMetrics(one_step_mase=1.0393056869506836, loop_closure_loss=0.8822500705718994, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.2338985800743103) (from W&B history)
+  run=rgca51q1: DiagnosticMetrics(one_step_mase=1.364698052406311, loop_closure_loss=4.962955474853516, fast_eigenvalue_fraction=0.2775000035762787, trajectory_val_loss=0.1578359156847) (from W&B history)
+  run=rozlkci9: DiagnosticMetrics(one_step_mase=0.8035351037979126, loop_closure_loss=2.2053279876708984, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.12071456760168076) (from W&B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              rozlkci9
+Best loop_closure_weight: 0.0
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.120715
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 1 / 5
+Auto-selected run_id: rozlkci9
+
+======================================================================
+PARETO FRONTIER RUNS (4 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  l42rqc1g            0.882250        0.233899
+  hic5ynzw            0.954996        0.139279
+  rozlkci9            2.205328        0.120715 <-- selected
+  eyfqgemc            5.152933        0.087549
+
+======================================================================
+RANKING METHOD COMPARISON (over 1 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          rozlkci9            2.205328        0.120715 <-- active
+  pareto_knee             rozlkci9            2.205328        0.120715
+  geo_rank                rozlkci9            2.205328        0.120715
+  minimax_rank            rozlkci9            2.205328        0.120715
+  geo_log_score           rozlkci9            2.205328        0.120715
+  minimax_log_score       rozlkci9            2.205328        0.120715
+======================================================================
+
+Loading run rozlkci9 from JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE ...
+Train dataset shape: torch.Size([25322, 45, 5])
+Validation dataset shape: torch.Size([8057, 45, 5])
+Test dataset shape: torch.Size([3453, 45, 5])
+Train trajectories dataset shape: torch.Size([22, 1196, 5])
+Validation trajectories dataset shape: torch.Size([7, 1196, 5])
+Test trajectories dataset shape: torch.Size([3, 1196, 5])
+Loading checkpoint epoch=2-step=600.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 0.8083
+Free-running MASE:   3.2063
+Computing latent utilization ...
+Entropy-based utilization: 0.999
+Null subspace mean RMS: 8.363803e-02
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1196) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = -4.5729 ± 1.4297
+  λ_2 = -26.0730 ± 3.8024
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = -5.7019 ± 0.0116
+  λ_2 = -23.5826 ± 0.1057
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.4677 ± 0.0259
+  λ_2 = -0.2173 ± 0.0549
+  λ_3 = -13.9174 ± 0.0513
+Mean KY dim (predicted): 0.000 ± 0.000
+Mean KY dim (empirical): 2.018 ± 0.003
+Mean KY dim (burn-in):   0.000 ± 0.000
+Computing prediction windows ...
+Windows: 117 — nMSE min=0.0398, median=0.4346, mean=0.8083, max=4.4706
+Computing long-trajectory free-running rollouts ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 5, 5)
+decoder_jacobian: (128, 5, 5)
+Computing amplification loss ...
+Amplification loss — True state: 0.006862
+Amplification loss — Latent:     0.006789
