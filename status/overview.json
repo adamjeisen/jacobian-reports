@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-20T00:00:20Z",
+  "last_updated": "2026-04-20T00:05:20Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -284,8 +284,8 @@
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 8,
-        "n_pending": 1,
+        "n_running": 7,
+        "n_pending": 2,
         "n_total": 9
       }
     },
@@ -326,8 +326,8 @@
         "effectively_done": 1
       },
       "training_slurm": {
-        "n_running": 5,
-        "n_pending": 4,
+        "n_running": 4,
+        "n_pending": 5,
         "n_total": 9
       }
     },
