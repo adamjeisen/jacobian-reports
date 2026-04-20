@@ -216,6 +216,15 @@
         "report_mtime": 1776551128.4561934
       }
     ],
+    "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE": [
+      {
+        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776662427.4598126
+      }
+    ],
     "WMTask_identity_encoder_verification": [
       {
         "group": "wmtask_vanilla_mse_p30__lc_sweep",
