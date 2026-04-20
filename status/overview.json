@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-20T18:46:20Z",
+  "last_updated": "2026-04-20T18:50:48Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -294,39 +294,21 @@
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12275886",
-        "dispatched_at": "2026-04-20T18:45:27Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 1,
-        "n_pending": 0
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise005__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12275887",
-        "dispatched_at": "2026-04-20T18:45:27Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep": {
@@ -343,8 +325,8 @@
         "status": "running"
       },
       "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
+        "n_running": 1,
+        "n_pending": 0
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_sweep": {
@@ -372,6 +354,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12276232",
+        "dispatched_at": "2026-04-20T18:50:18Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
@@ -381,6 +372,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12276233",
+        "dispatched_at": "2026-04-20T18:50:18Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     }
   },

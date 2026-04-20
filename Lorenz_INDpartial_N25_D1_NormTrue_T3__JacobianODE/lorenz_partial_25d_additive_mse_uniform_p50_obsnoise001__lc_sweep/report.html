@@ -263,15 +263,15 @@ Found 9 effectively-done sweep runs:
   loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ndvi92wv
   loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=pgnllqmq
 n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
-  run=2yko9o74: DiagnosticMetrics(one_step_mase=0.41966408491134644, loop_closure_loss=0.056269191205501556, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0062315575778484344) (from W&amp;B history)
-  run=sdle8h4s: DiagnosticMetrics(one_step_mase=0.39701828360557556, loop_closure_loss=0.3059949576854706, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002283151261508465) (from W&amp;B history)
-  run=rinyf9yt: DiagnosticMetrics(one_step_mase=0.40121379494667053, loop_closure_loss=0.05184609815478325, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00295262667350471) (from W&amp;B history)
-  run=esmjapp2: DiagnosticMetrics(one_step_mase=0.4133065938949585, loop_closure_loss=0.1331740915775299, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003561542835086584) (from W&amp;B history)
-  run=qu2ht627: DiagnosticMetrics(one_step_mase=0.41893425583839417, loop_closure_loss=0.02685912884771824, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005741240922361612) (from W&amp;B history)
-  run=mrm84y0j: DiagnosticMetrics(one_step_mase=0.42870235443115234, loop_closure_loss=0.0030276314355432987, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006899154279381037) (from W&amp;B history)
-  run=b62aoy0x: DiagnosticMetrics(one_step_mase=0.5188819766044617, loop_closure_loss=0.0003201020008418709, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01581365056335926) (from W&amp;B history)
-  run=ndvi92wv: DiagnosticMetrics(one_step_mase=0.48773711919784546, loop_closure_loss=4.427452222444117e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0199715755879879) (from W&amp;B history)
-  run=pgnllqmq: DiagnosticMetrics(one_step_mase=0.5603161454200745, loop_closure_loss=1.128054009313928e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.027598319575190544) (from W&amp;B history)
+  run=2yko9o74: DiagnosticMetrics(one_step_mase=0.41966408491134644, loop_closure_loss=0.056269191205501556, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0062315575778484344) (from cache, n_batches=100)
+  run=sdle8h4s: DiagnosticMetrics(one_step_mase=0.39701828360557556, loop_closure_loss=0.3059949576854706, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002283151261508465) (from cache, n_batches=100)
+  run=rinyf9yt: DiagnosticMetrics(one_step_mase=0.40121379494667053, loop_closure_loss=0.05184609815478325, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00295262667350471) (from cache, n_batches=100)
+  run=esmjapp2: DiagnosticMetrics(one_step_mase=0.4133065938949585, loop_closure_loss=0.1331740915775299, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003561542835086584) (from cache, n_batches=100)
+  run=qu2ht627: DiagnosticMetrics(one_step_mase=0.41893425583839417, loop_closure_loss=0.02685912884771824, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005741240922361612) (from cache, n_batches=100)
+  run=mrm84y0j: DiagnosticMetrics(one_step_mase=0.42870235443115234, loop_closure_loss=0.0030276314355432987, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006899154279381037) (from cache, n_batches=100)
+  run=b62aoy0x: DiagnosticMetrics(one_step_mase=0.5188819766044617, loop_closure_loss=0.0003201020008418709, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01581365056335926) (from cache, n_batches=100)
+  run=ndvi92wv: DiagnosticMetrics(one_step_mase=0.48773711919784546, loop_closure_loss=4.427452222444117e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0199715755879879) (from cache, n_batches=100)
+  run=pgnllqmq: DiagnosticMetrics(one_step_mase=0.5603161454200745, loop_closure_loss=1.128054009313928e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.027598319575190544) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              sdle8h4s
@@ -343,7 +343,7 @@ Mean KY dim (empirical): 2.015 ± 0.002
 Mean KY dim (burn-in):   1.764 ± 0.435
 Computing prediction windows ...
 Windows: 69 — nMSE min=0.0009, median=0.0018, mean=0.0049, max=0.1237
-Computing long trajectory prediction ...
+Computing long-trajectory free-running rollouts ...
 Computing encoder/decoder Jacobians ...
 encoder_jacobian: (128, 25, 25)
 decoder_jacobian: (128, 25, 25)
