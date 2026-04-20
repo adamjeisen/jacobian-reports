@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-20T18:30:28Z",
+  "last_updated": "2026-04-20T18:35:26Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -240,39 +240,21 @@
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 9,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      },
-      "analysis": {
-        "slurm_job_id": "12274846",
-        "dispatched_at": "2026-04-20T18:25:11Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__nolpl_lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 8,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 8
-      },
-      "analysis": {
-        "slurm_job_id": "12274847",
-        "dispatched_at": "2026-04-20T18:25:11Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep": {
@@ -289,8 +271,8 @@
         "status": "running"
       },
       "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
+        "n_running": 1,
+        "n_pending": 0
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5": {
@@ -318,6 +300,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      },
+      "analysis": {
+        "slurm_job_id": "12275565",
+        "dispatched_at": "2026-04-20T18:35:10Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5": {
@@ -327,6 +318,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 1
+      },
+      "analysis": {
+        "slurm_job_id": "12275566",
+        "dispatched_at": "2026-04-20T18:35:10Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep": {
