@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE/groups/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5">Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-20T03:40:38Z<br />
+<strong>Completed</strong>: 2026-04-20T15:30:12Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>e1921d4</code><br />
+<strong>Expected runs</strong>: 1</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5</code></h3>
+<p><strong>Description</strong></p>
+<p>n_delays=30, LC=0, obs_noise=0.05, prediction_steps=30, p30 uniform
+reconstruction. Same config as the broken qxpj8xpn run from the
+obsnoise005 ndelays sweep, but with model.encoder.permutation_seed=5
+instead of the default 42. Single-run experiment.</p>
+<p><strong>Hypothesis</strong></p>
+<p>The val/trajectory_loss freeze at n_delays=30 came from the
+permutation-seed-42 encoder leaving decoded[0] independent of z_dyn
+at init, which let the optimizer settle into a basin where decoded[0]
+is reconstructed from z_null only. Validation rollout holds z_null
+fixed, so the trajectory loss decouples from training. With
+permutation_seed=5, decoded[0] = z_dyn[0] at init, providing a
+direct gradient path from z_dyn to the only feature validation
+measures. If this is sufficient, training/val should agree and the
+rollout val loss should track training; if it isn't, we need a
+structural fix (matched val mode, hybrid loss, or a regularizer).</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>trajectory val_loss is non-constant across epochs (the freeze pathology disappears)</li>
+<li>trajectory val_loss reaches at least the level of the n_delays=25 / n_delays=35 runs in the same sweep</li>
+<li>no training divergence</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>m45rx05h</code> — traj_loss=0.00736, MASE=0.8207, R²=0.9804, LC loss=0.871, epoch=100.0</p>
+<p><strong>Runs analyzed</strong>: 1 (expected 1)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>m45rx05h</code></td>
+<td>0.00736</td>
+<td>0.8207</td>
+<td>0.9804</td>
+<td>0.871</td>
+<td>100.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trajectory val_loss is non-constant across epochs (the freeze pathology disappears)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>trajectory val_loss reaches at least the level of the n_delays=25 / n_delays=35 runs in the same sweep</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>no training divergence</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>sweep_overview</h3>
+<p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
+<h3>sweep_pareto</h3>
+<p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
+<h3>prediction_windows</h3>
+<p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
+<h3>long_trajectory</h3>
+<p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
+<h3>mase</h3>
+<p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
+<h3>lyapunov</h3>
+<p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
+<h3>kaplan_yorke_pca</h3>
+<p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
+<h3>prediction_detail_latent</h3>
+<p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
+<h3>prediction_detail_obs</h3>
+<p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+<h2><code>run_analytics</code> stdout</h2>
+<details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
+
+
+<pre><code>No run_id provided — selecting best run from group 'lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5' ...
+Found 1 total runs in JacobianODE/Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE (group=lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  m45rx05h: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including m45rx05h (lc=0.0): use_all_runs=True (state=finished)
+Found 1 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=m45rx05h
+n_dims=30, n_latent=30, n_dyn=3, dt=0.0150
+  run=m45rx05h: DiagnosticMetrics(one_step_mase=0.6527441143989563, loop_closure_loss=0.8714377880096436, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007361209020018578) (from W&amp;B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              m45rx05h
+Best loop_closure_weight: 0.0
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.007361
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 1 / 1
+Auto-selected run_id: m45rx05h
+
+======================================================================
+PARETO FRONTIER RUNS (1 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  m45rx05h            0.871438        0.007361 &lt;-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 1 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          m45rx05h            0.871438        0.007361 &lt;-- active
+  pareto_knee             m45rx05h            0.871438        0.007361
+  geo_rank                m45rx05h            0.871438        0.007361
+  minimax_rank            m45rx05h            0.871438        0.007361
+  geo_log_score           m45rx05h            0.871438        0.007361
+  minimax_log_score       m45rx05h            0.871438        0.007361
+======================================================================
+
+Loading run m45rx05h from JacobianODE/Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE ...
+Train dataset shape: torch.Size([24772, 45, 30])
+Validation dataset shape: torch.Size([7882, 45, 30])
+Test dataset shape: torch.Size([3378, 45, 30])
+Train trajectories dataset shape: torch.Size([22, 1171, 30])
+Validation trajectories dataset shape: torch.Size([7, 1171, 30])
+Test trajectories dataset shape: torch.Size([3, 1171, 30])
+Loading checkpoint epoch=100-step=20200.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 0.6564
+Free-running MASE:   0.7331
+Computing latent utilization ...
+Entropy-based utilization: 0.861
+Null subspace mean RMS: 1.171922e-01
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1171) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = +nan ± nan
+  λ_2 = +nan ± nan
+  λ_3 = +nan ± nan
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = +0.2162 ± 0.0930
+  λ_2 = -0.0322 ± 0.1325
+  λ_3 = -12.6464 ± 0.0693
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.4677 ± 0.0259
+  λ_2 = -0.2173 ± 0.0549
+  λ_3 = -13.9174 ± 0.0513
+Mean KY dim (predicted): 2.015 ± 0.003
+Mean KY dim (empirical): 2.018 ± 0.003
+Mean KY dim (burn-in):   1.953 ± 0.234
+Computing prediction windows ...
+Windows: 114 — nMSE min=0.0200, median=0.0350, mean=0.0362, max=0.1051
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 30, 30)
+decoder_jacobian: (128, 30, 30)
+Computing amplification loss ...
+Amplification loss — True state: 0.003467
+Amplification loss — Latent:     0.006501
+</code></pre>
+
+
+</details>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep",
-  "analyzed_at": "2026-04-20T05:17:45Z",
+  "analyzed_at": "2026-04-20T15:33:54Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -264,31 +264,103 @@
       "error": null
     },
     "wy6ex26e": {
-      "error": "RuntimeError: The size of tensor a (10) must match the size of tensor b (25) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.30820563435554504,
+        -0.19991613924503326,
+        -7.808550834655762
+      ],
+      "lambda_max": 0.30820563435554504,
+      "lambda_sum": -7.700261116027832,
+      "kaplan_yorke_dim": 2.0138680934906006,
+      "error": null
     },
     "0zkh7nui": {
-      "error": "RuntimeError: The size of tensor a (25) must match the size of tensor b (10) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.22219373285770416,
+        -0.5864313840866089,
+        -9.864032745361328
+      ],
+      "lambda_max": 0.22219373285770416,
+      "lambda_sum": -10.228270530700684,
+      "kaplan_yorke_dim": 1.3788912296295166,
+      "error": null
     },
     "2eyziq6e": {
-      "error": "RuntimeError: The size of tensor a (20) must match the size of tensor b (15) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.16099688410758972,
+        0.09692693501710892,
+        -2.1342878341674805
+      ],
+      "lambda_max": 0.16099688410758972,
+      "lambda_sum": -1.87636399269104,
+      "kaplan_yorke_dim": 2.120847702026367,
+      "error": null
     },
     "mt362mfq": {
-      "error": "RuntimeError: The size of tensor a (15) must match the size of tensor b (20) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.3122609853744507,
+        -0.07916862517595291,
+        -9.990741729736328
+      ],
+      "lambda_max": 0.3122609853744507,
+      "lambda_sum": -9.757649421691895,
+      "kaplan_yorke_dim": 2.0233309268951416,
+      "error": null
     },
     "yss0ka8u": {
-      "error": "RuntimeError: The size of tensor a (30) must match the size of tensor b (5) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.4107133150100708,
+        -1.3405909538269043,
+        -28.035240173339844
+      ],
+      "lambda_max": 0.4107133150100708,
+      "lambda_sum": -28.965118408203125,
+      "kaplan_yorke_dim": 1.3063673973083496,
+      "error": null
     },
     "zvldwae9": {
-      "error": "RuntimeError: The size of tensor a (28) must match the size of tensor b (8) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.2520594894886017,
+        -0.8796880841255188,
+        -13.46700382232666
+      ],
+      "lambda_max": 0.2520594894886017,
+      "lambda_sum": -14.094632148742676,
+      "kaplan_yorke_dim": 1.2865327596664429,
+      "error": null
     },
     "ahkte45j": {
-      "error": "RuntimeError: The size of tensor a (33) must match the size of tensor b (3) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.8006479740142822,
+        -1.733259916305542,
+        -36.15842056274414
+      ],
+      "lambda_max": 0.8006479740142822,
+      "lambda_sum": -37.091033935546875,
+      "kaplan_yorke_dim": 1.461931824684143,
+      "error": null
     },
     "b2mixsm8": {
-      "error": "RuntimeError: The size of tensor a (23) must match the size of tensor b (13) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.16748924553394318,
+        -0.14911431074142456,
+        -11.751252174377441
+      ],
+      "lambda_max": 0.16748924553394318,
+      "lambda_sum": -11.732876777648926,
+      "kaplan_yorke_dim": 2.001563549041748,
+      "error": null
     },
     "htrnbil4": {
-      "error": "RuntimeError: The size of tensor a (13) must match the size of tensor b (23) at non-singleton dimension 2"
+      "lambda_spectrum": [
+        0.2940409183502197,
+        -0.09848613291978836,
+        -11.282115936279297
+      ],
+      "lambda_max": 0.2940409183502197,
+      "lambda_sum": -11.08656120300293,
+      "kaplan_yorke_dim": 2.0173332691192627,
+      "error": null
     }
   },
   "empirical_lyapunov_spectrum": [

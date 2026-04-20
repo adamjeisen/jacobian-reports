@@ -1,0 +1,47 @@
+{
+  "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5",
+  "completed_at": "2026-04-20T15:30:11Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5": {
+      "description": "n_delays=30, LC=0, obs_noise=0.01, prediction_steps=30, p30 uniform\nreconstruction. Same config as the broken 2eyziq6e run but with\nmodel.encoder.permutation_seed=5 \u2014 chosen so the cumulative encoder\npermutation chain at zero-init routes z_dyn[0] directly to\ndecoded[0], guaranteeing a non-zero \u2202decoded[0]/\u2202z_dyn at init.\nSingle-run experiment.\n",
+      "hypothesis": "See ..._obsnoise005_nd30_seed5. Same hypothesis at the lower noise\nlevel \u2014 included to control for whether the seed fix is sensitive to\nobs_noise. If both noise levels train cleanly, the init alone is\nsufficient and we can keep training on uniform loss only. If only\none trains, that's evidence that noise-driven optimization pressure\nis required to push the model into the bad attractor (and hence\nthat the loss-asymmetry fix is the real one).\n",
+      "success_criteria": [
+        "trajectory val_loss is non-constant across epochs",
+        "trajectory val_loss reaches at least the level of the n_delays=25 / n_delays=35 runs in the obsnoise001 ndelays sweep",
+        "no training divergence"
+      ]
+    }
+  },
+  "expected_run_count": 1,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5",
+      "hydra.launcher.partition=ou_bcs_low"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5",
+        "overrides": [
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "e1921d4",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-20T03:40:11Z"
+}

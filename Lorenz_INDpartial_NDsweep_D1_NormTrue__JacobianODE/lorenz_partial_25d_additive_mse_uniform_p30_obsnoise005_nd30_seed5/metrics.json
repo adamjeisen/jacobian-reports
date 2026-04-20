@@ -1,0 +1,135 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5",
+  "analyzed_at": "2026-04-20T15:32:09Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "m45rx05h",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.007361209020018578,
+        "best_traj_loss_epoch": 100.0,
+        "best_mase": 0.8206629157066345,
+        "best_mase_epoch": 115.0,
+        "lc_loss_at_best_tl": 0.8714377880096436,
+        "r2_at_best_tl": 0.9804158806800842,
+        "n_epochs": 119,
+        "swept_config": {}
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 1,
+    "matched_run_count": 1,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "m45rx05h",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.007361209020018578,
+        "best_traj_loss_epoch": 100.0,
+        "best_mase": 0.8206629157066345,
+        "best_mase_epoch": 115.0,
+        "lc_loss_at_best_tl": 0.8714377880096436,
+        "r2_at_best_tl": 0.9804158806800842,
+        "n_epochs": 119,
+        "swept_config": {}
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "m45rx05h",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.007361209020018578,
+      "best_traj_loss_epoch": 100.0,
+      "best_mase": 0.8206629157066345,
+      "best_mase_epoch": 115.0,
+      "lc_loss_at_best_tl": 0.8714377880096436,
+      "r2_at_best_tl": 0.9804158806800842,
+      "n_epochs": 119,
+      "swept_config": {}
+    },
+    "overall_best_mase": {
+      "run_id": "m45rx05h",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.007361209020018578,
+      "best_traj_loss_epoch": 100.0,
+      "best_mase": 0.8206629157066345,
+      "best_mase_epoch": 115.0,
+      "lc_loss_at_best_tl": 0.8714377880096436,
+      "r2_at_best_tl": 0.9804158806800842,
+      "n_epochs": 119,
+      "swept_config": {}
+    },
+    "swept_paths": [],
+    "n_runs": 1
+  },
+  "per_run_lyapunov": {
+    "m45rx05h": {
+      "lambda_spectrum": [
+        0.25858843326568604,
+        -0.1149357482790947,
+        -12.252713203430176
+      ],
+      "lambda_max": 0.25858843326568604,
+      "lambda_sum": -12.109060287475586,
+      "kaplan_yorke_dim": 2.0117242336273193,
+      "error": null
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.48128193616867065,
+    -0.2260732501745224,
+    -13.922173500061035
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "trajectory val_loss is non-constant across epochs (the freeze pathology disappears)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "trajectory val_loss reaches at least the level of the n_delays=25 / n_delays=35 runs in the same sweep",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "no training divergence",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5/figures/per_run_lyapunov_relerr.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
