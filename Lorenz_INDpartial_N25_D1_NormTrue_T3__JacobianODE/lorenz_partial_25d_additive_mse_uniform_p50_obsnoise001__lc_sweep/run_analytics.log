@@ -1,0 +1,121 @@
+No run_id provided — selecting best run from group 'lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep' ...
+Found 9 total runs in JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE (group=lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  2yko9o74: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  esmjapp2: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+  mrm84y0j: state=finished, lc=0.01, te=0.0, kl_dyn=0.0
+  ndvi92wv: state=finished, lc=1.0, te=0.0, kl_dyn=0.0
+  pgnllqmq: state=finished, lc=10.0, te=0.0, kl_dyn=0.0
+  b62aoy0x: state=finished, lc=0.1, te=0.0, kl_dyn=0.0
+  rinyf9yt: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
+  sdle8h4s: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
+  qu2ht627: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including 2yko9o74 (lc=0.0): use_all_runs=True (state=finished)
+  Including esmjapp2 (lc=0.0001): use_all_runs=True (state=finished)
+  Including mrm84y0j (lc=0.01): use_all_runs=True (state=finished)
+  Including ndvi92wv (lc=1.0): use_all_runs=True (state=finished)
+  Including pgnllqmq (lc=10.0): use_all_runs=True (state=finished)
+  Including b62aoy0x (lc=0.1): use_all_runs=True (state=finished)
+  Including rinyf9yt (lc=1e-05): use_all_runs=True (state=finished)
+  Including sdle8h4s (lc=1e-06): use_all_runs=True (state=finished)
+  Including qu2ht627 (lc=0.001): use_all_runs=True (state=finished)
+Found 9 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=2yko9o74
+  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=sdle8h4s
+  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=rinyf9yt
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=esmjapp2
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=qu2ht627
+  loop_closure_weight=0.01, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=mrm84y0j
+  loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=b62aoy0x
+  loop_closure_weight=1.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ndvi92wv
+  loop_closure_weight=10.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=pgnllqmq
+n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
+  run=2yko9o74: DiagnosticMetrics(one_step_mase=0.41966408491134644, loop_closure_loss=0.056269191205501556, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0062315575778484344) (from W&B history)
+  run=sdle8h4s: DiagnosticMetrics(one_step_mase=0.39701828360557556, loop_closure_loss=0.3059949576854706, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.002283151261508465) (from W&B history)
+  run=rinyf9yt: DiagnosticMetrics(one_step_mase=0.40121379494667053, loop_closure_loss=0.05184609815478325, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00295262667350471) (from W&B history)
+  run=esmjapp2: DiagnosticMetrics(one_step_mase=0.4133065938949585, loop_closure_loss=0.1331740915775299, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003561542835086584) (from W&B history)
+  run=qu2ht627: DiagnosticMetrics(one_step_mase=0.41893425583839417, loop_closure_loss=0.02685912884771824, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005741240922361612) (from W&B history)
+  run=mrm84y0j: DiagnosticMetrics(one_step_mase=0.42870235443115234, loop_closure_loss=0.0030276314355432987, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006899154279381037) (from W&B history)
+  run=b62aoy0x: DiagnosticMetrics(one_step_mase=0.5188819766044617, loop_closure_loss=0.0003201020008418709, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.01581365056335926) (from W&B history)
+  run=ndvi92wv: DiagnosticMetrics(one_step_mase=0.48773711919784546, loop_closure_loss=4.427452222444117e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0199715755879879) (from W&B history)
+  run=pgnllqmq: DiagnosticMetrics(one_step_mase=0.5603161454200745, loop_closure_loss=1.128054009313928e-05, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.027598319575190544) (from W&B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              sdle8h4s
+Best loop_closure_weight: 1e-06
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.002283
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 9 / 9
+Auto-selected run_id: sdle8h4s
+
+======================================================================
+PARETO FRONTIER RUNS (7 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  pgnllqmq            0.000011        0.027598
+  ndvi92wv            0.000044        0.019972
+  b62aoy0x            0.000320        0.015814
+  mrm84y0j            0.003028        0.006899
+  qu2ht627            0.026859        0.005741
+  rinyf9yt            0.051846        0.002953
+  sdle8h4s            0.305995        0.002283 <-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 9 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          sdle8h4s            0.305995        0.002283 <-- active
+  pareto_knee             qu2ht627            0.026859        0.005741
+  geo_rank                sdle8h4s            0.305995        0.002283
+  minimax_rank            qu2ht627            0.026859        0.005741
+  geo_log_score           sdle8h4s            0.305995        0.002283
+  minimax_log_score       mrm84y0j            0.003028        0.006899
+======================================================================
+
+Loading run sdle8h4s from JacobianODE/Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE ...
+Train dataset shape: torch.Size([24442, 65, 25])
+Validation dataset shape: torch.Size([7777, 65, 25])
+Test dataset shape: torch.Size([3333, 65, 25])
+Train trajectories dataset shape: torch.Size([22, 1176, 25])
+Validation trajectories dataset shape: torch.Size([7, 1176, 25])
+Test trajectories dataset shape: torch.Size([3, 1176, 25])
+Loading checkpoint epoch=146-step=29400.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 0.4095
+Free-running MASE:   0.6526
+Computing latent utilization ...
+Entropy-based utilization: 0.972
+Null subspace mean RMS: 1.707343e-02
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1176) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = +0.3283 ± 0.3558
+  λ_2 = -0.3236 ± 0.4538
+  λ_3 = -11.8612 ± 1.6829
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = +0.2158 ± 0.1104
+  λ_2 = +0.0143 ± 0.1256
+  λ_3 = -12.7700 ± 0.0432
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.3846 ± 0.0251
+  λ_2 = -0.1716 ± 0.0444
+  λ_3 = -13.8799 ± 0.0398
+Mean KY dim (predicted): 2.018 ± 0.003
+Mean KY dim (empirical): 2.015 ± 0.002
+Mean KY dim (burn-in):   1.764 ± 0.435
+Computing prediction windows ...
+Windows: 69 — nMSE min=0.0009, median=0.0018, mean=0.0049, max=0.1237
+Computing long trajectory prediction ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 25, 25)
+decoder_jacobian: (128, 25, 25)
+Computing amplification loss ...
+Amplification loss — True state: 0.000221
+Amplification loss — Latent:     0.000382
