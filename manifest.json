@@ -6,28 +6,28 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.535754
+        "report_mtime": 1776553822.5305934
       },
       {
         "group": "lorenz_full_additive_mse__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5297544
+        "report_mtime": 1776553523.9478884
       },
       {
         "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5237546
+        "report_mtime": 1776553223.3141649
       },
       {
         "group": "lorenz_additive_joint_gennmse__lc_x_obsnoise__cleantarget",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5097551
+        "report_mtime": 1776552627.6987708
       }
     ],
     "Lorenz_INDpartial_N100_D1_NormTrue_T7__JacobianODE": [
@@ -36,198 +36,198 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5647528
+        "report_mtime": 1776555020.8914483
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse_uniform_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5637527
+        "report_mtime": 1776554740.3329072
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse_uniform_obsnoise005__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5567532
+        "report_mtime": 1776554727.7947936
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse_p30_obsnoise001__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.554753
+        "report_mtime": 1776554422.3910275
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5527532
+        "report_mtime": 1776554136.8224406
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5447536
+        "report_mtime": 1776554123.1143165
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep_v2",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.536754
+        "report_mtime": 1776553844.4127917
       },
       {
         "group": "lorenz_partial_100d_7lat_additive_mse__klnull_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.535754
+        "report_mtime": 1776553836.0327158
       }
     ],
     "Lorenz_INDpartial_N25_D1_NormTrue_T3__JacobianODE": [
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise005__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776698298.2568827
-      },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise001__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776698298.2456543
+        "report_mtime": 1776667819.9739459
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p50_obsnoise005__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776666919.5405602
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.6167502
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776579199.6067507
+        "report_mtime": 1776559233.540486
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__nolpl_lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.6057508
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776579199.6047509
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__enchd_lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776579199.6047509
+        "report_mtime": 1776558330.8543215
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.6047509
+        "report_mtime": 1776558320.6102288
       },
       {
-        "group": "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep",
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__enchd_lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.603751
+        "report_mtime": 1776558020.4995236
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776557750.781104
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30__recon100_obcslow",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.603751
+        "report_mtime": 1776557736.6979778
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776557721.9608457
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p10_obsnoise005__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.598751
+        "report_mtime": 1776557422.2211566
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_obsnoise005__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5887516
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse_p30_obsnoise001__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776579199.5877516
+        "report_mtime": 1776557121.5694487
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5877516
+        "report_mtime": 1776556822.3827446
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_p30_obsnoise001__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776556530.6821082
       },
       {
         "group": "lorenz_partial_25d_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.580752
-      },
-      {
-        "group": "lorenz_partial_25d_additive_mse__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776579199.5757523
+        "report_mtime": 1776556521.3900242
       },
       {
         "group": "lorenz_partial_25d_additive_mse_obsnoise001__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5757523
+        "report_mtime": 1776556220.4963043
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776555951.905874
       },
       {
         "group": "lorenz_partial_25d_additive_gennmse_obsnoise001__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5747523
+        "report_mtime": 1776555937.6577451
       },
       {
         "group": "lorenz_partial_25d_additive_gennmse_adaptivelatent__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5737524
+        "report_mtime": 1776555922.4636078
       },
       {
         "group": "lorenz_partial_25d_additive_gennmse__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.5687525
+        "report_mtime": 1776555321.9461741
+      },
+      {
+        "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001__vae_kl_lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776551128.4561934
       }
     ],
     "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE": [
@@ -236,28 +236,28 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776700108.1317182
+        "report_mtime": 1776699617.0003881
       },
       {
         "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776700108.129176
+        "report_mtime": 1776699330.1186547
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise005_nd30_seed5",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776700108.1265147
+        "report_mtime": 1776699323.34359
       },
       {
         "group": "lorenz_partial_25d_additive_mse_uniform_p30_obsnoise001_nd30_seed5",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776700108.116702
+        "report_mtime": 1776699316.4275243
       }
     ],
     "WMTask_identity_encoder_verification": [
@@ -266,71 +266,71 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.6827474
+        "report_mtime": 1776559219.4933589
       },
       {
         "group": "wmtask_latent_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.6647482
+        "report_mtime": 1776558918.5246367
       },
       {
         "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776579199.644749
+        "report_mtime": 1776552029.1843505
       }
     ]
   },
   "diagnostics": [
     {
-      "name": "init_length_lyapunov_16s8uli1.png",
-      "path": "diagnostics/init_length_lyapunov_16s8uli1.png",
-      "mtime": 1776704333.1534448,
-      "size": 65440
-    },
-    {
       "name": "init_length_rollout_16s8uli1.png",
       "path": "diagnostics/init_length_rollout_16s8uli1.png",
-      "mtime": 1776704333.152351,
+      "mtime": 1776704402.748999,
       "size": 304922
     },
     {
-      "name": "init_length_lyapunov_39prin7v.png",
-      "path": "diagnostics/init_length_lyapunov_39prin7v.png",
-      "mtime": 1776703415.9388175,
-      "size": 62841
+      "name": "init_length_lyapunov_16s8uli1.png",
+      "path": "diagnostics/init_length_lyapunov_16s8uli1.png",
+      "mtime": 1776704402.744022,
+      "size": 65440
     },
     {
       "name": "init_length_rollout_39prin7v.png",
       "path": "diagnostics/init_length_rollout_39prin7v.png",
-      "mtime": 1776703415.937839,
+      "mtime": 1776703502.251461,
       "size": 266296
+    },
+    {
+      "name": "init_length_lyapunov_39prin7v.png",
+      "path": "diagnostics/init_length_lyapunov_39prin7v.png",
+      "mtime": 1776703502.247438,
+      "size": 62841
     },
     {
       "name": "val_mode_mismatch_uniform_sweeps.png",
       "path": "diagnostics/val_mode_mismatch_uniform_sweeps.png",
-      "mtime": 1776698517.8791914,
+      "mtime": 1776698703.500577,
       "size": 135730
     },
     {
       "name": "obs_lyapunov_y7938e7x.png",
       "path": "diagnostics/obs_lyapunov_y7938e7x.png",
-      "mtime": 1776579200.0107322,
+      "mtime": 1776579302.750071,
       "size": 78395
     },
     {
       "name": "encoder_jacobian_sv_39prin7v.png",
       "path": "diagnostics/encoder_jacobian_sv_39prin7v.png",
-      "mtime": 1776456458.683307,
+      "mtime": 1776456616.058901,
       "size": 174729
     },
     {
       "name": "diffeo_noise_z4l1eazh.png",
       "path": "diagnostics/diffeo_noise_z4l1eazh.png",
-      "mtime": 1776356604.9156651,
+      "mtime": 1776356703.451463,
       "size": 75829
     }
   ]
