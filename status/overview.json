@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-20T21:55:12Z",
+  "last_updated": "2026-04-20T22:01:45Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -320,8 +320,8 @@
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 18,
-        "n_pending": 22,
+        "n_running": 14,
+        "n_pending": 25,
         "n_total": 40
       }
     },
@@ -337,14 +337,23 @@
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim": {
       "status": "active",
       "runs_summary": {
-        "terminal": 0,
-        "in_flight": 80,
-        "failed_exhausted": 0,
+        "terminal": 80,
+        "in_flight": 0,
+        "failed_exhausted": 80,
         "effectively_done": 0
       },
-      "training_slurm": {
+      "analysis": {
+        "slurm_job_id": "12286938",
+        "dispatched_at": "2026-04-20T22:01:44Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
         "n_running": 0,
-        "n_pending": 40,
+        "n_pending": 1
+      },
+      "training_slurm": {
+        "n_running": 4,
+        "n_pending": 36,
         "n_total": 40
       }
     },
