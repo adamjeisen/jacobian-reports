@@ -262,25 +262,25 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
-        "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776706520.3749778
-      },
-      {
         "group": "wmtask_vanilla_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776559219.4933589
+        "report_mtime": 1776711638.0326827
       },
       {
         "group": "wmtask_latent_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1776558918.5246367
+        "report_mtime": 1776711627.4935825
+      },
+      {
+        "group": "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776706520.3749778
       }
     ]
   },
