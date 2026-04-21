@@ -1,5 +1,0 @@
-experiment: lorenz_partial_additive_mse_mostrecent_p30_obsnoise001_init15_autodim__ndelays_sweep
-overrides:
-  - "hydra.launcher.partition=ou_bcs_low"
-submitted_at: 20260421T223242Z
-submitted_from: millerlab-endeavourOS
