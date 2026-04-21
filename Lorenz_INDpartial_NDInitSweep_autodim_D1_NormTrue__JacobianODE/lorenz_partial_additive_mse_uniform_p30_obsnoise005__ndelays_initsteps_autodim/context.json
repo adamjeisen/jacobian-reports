@@ -1,7 +1,7 @@
 {
   "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-  "completed_at": "2026-04-20T22:01:43Z",
-  "outcome": "complete_with_failures",
+  "completed_at": "2026-04-21T04:00:30Z",
+  "outcome": "complete_clean",
   "experiment_metadata": {
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim": {
       "description": "Lorenz partial additive coupling, uniform reconstruction loss,\nobs_noise=0.05, prediction_steps=30, loop_closure_weight=0.\nSweeps delay_embedding_params.n_delays over\n[5, 10, 15, ..., 100] (step 5, 20 values)\n\u00d7 jacobianODEint_kwargs.traj_init_steps over [15, 30]\n= 40 runs.\nn_target_dims is picked at data-load time as the smallest k such\nthat the first k PCs of the noisy training delay embeddings\nexplain \u2265 model.n_target_var_threshold of the total variance.\nfinal_perm_identity=true on the encoder guarantees that at init\nz[..., :n_target_dims] == x[..., :n_target_dims] \u2014 independent of\npermutation_seed.\n",
@@ -14,7 +14,7 @@
       ]
     }
   },
-  "expected_run_count": 80,
+  "expected_run_count": 40,
   "hydra": {
     "experiments": [
       "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim"
@@ -29,7 +29,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=5",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -37,7 +38,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=5",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -45,7 +47,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=10",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -53,7 +56,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=10",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -61,7 +65,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=15",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -69,7 +74,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=15",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -77,7 +83,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=20",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -85,7 +92,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=20",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -93,7 +101,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=25",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -101,7 +110,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=25",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -109,7 +119,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=30",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -117,7 +128,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=30",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -125,7 +137,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=35",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -133,7 +146,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=35",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -141,7 +155,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=40",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -149,7 +164,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=40",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -157,7 +173,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=45",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -165,7 +182,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=45",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -173,7 +191,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=50",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -181,7 +200,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=50",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -189,7 +209,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=55",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -197,7 +218,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=55",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -205,7 +227,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=60",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -213,7 +236,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=60",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -221,7 +245,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=65",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -229,7 +254,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=65",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -237,7 +263,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=70",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -245,7 +272,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=70",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -253,7 +281,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=75",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -261,7 +290,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=75",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -269,7 +299,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=80",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -277,7 +308,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=80",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -285,7 +317,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=85",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -293,7 +326,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=85",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -301,7 +335,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=90",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -309,7 +344,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=90",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -317,7 +353,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=95",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -325,7 +362,8 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=95",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
@@ -333,370 +371,12 @@
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=100",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15"
+          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
+          "hydra.launcher.partition=ou_bcs_low"
         ]
       },
       {
         "run_idx": 39,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=100",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30"
-        ]
-      },
-      {
-        "run_idx": 40,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=5",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 41,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=5",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 42,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=10",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 43,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=10",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 44,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=15",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 45,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=15",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 46,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=20",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 47,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=20",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 48,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=25",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 49,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=25",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 50,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=30",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 51,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=30",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 52,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=35",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 53,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=35",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 54,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=40",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 55,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=40",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 56,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=45",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 57,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=45",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 58,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=50",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 59,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=50",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 60,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=55",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 61,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=55",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 62,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=60",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 63,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=60",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 64,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=65",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 65,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=65",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 66,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=70",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 67,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=70",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 68,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=75",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 69,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=75",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 70,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=80",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 71,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=80",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 72,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=85",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 73,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=85",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 74,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=90",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 75,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=90",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 76,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=95",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 77,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=95",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=30",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 78,
-        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "overrides": [
-          "data.train_test_params.delay_embedding_params.n_delays=100",
-          "training.lightning.jacobianODEint_kwargs.traj_init_steps=15",
-          "hydra.launcher.partition=ou_bcs_low"
-        ]
-      },
-      {
-        "run_idx": 79,
         "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
         "overrides": [
           "data.train_test_params.delay_embedding_params.n_delays=100",
