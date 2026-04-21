@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-21T22:05:12Z",
+  "last_updated": "2026-04-21T22:11:15Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -329,6 +329,20 @@
         "effectively_done": 10
       }
     },
+    "lorenz_partial_additive_mse_uniform_p30_obsnoise001_top3nd_init15_autodim__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 27,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 27,
+        "n_total": 27
+      }
+    },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim": {
       "status": "processed",
       "runs_summary": {
@@ -345,6 +359,20 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 10
+      }
+    },
+    "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 27,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 27,
+        "n_total": 27
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
@@ -541,6 +569,14 @@
     },
     {
       "file": "20260420T201848Z-lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260421T220731Z-lorenz_partial_additive_mse_uniform_p30_obsnoise001_top3nd_init15_autodim__lc_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260421T220731Z-lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep.yaml",
       "status": "claimed"
     }
   ]
