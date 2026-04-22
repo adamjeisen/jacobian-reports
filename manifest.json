@@ -232,6 +232,13 @@
     ],
     "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE": [
       {
+        "group": "lorenz_partial_additive_mse_mostrecent_p30_obsnoise001_init15_autodim__ndelays_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776867325.6779084
+      },
+      {
         "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001_top3nd_init15_autodim__lc_sweep",
         "has_report": true,
         "has_metrics": true,
