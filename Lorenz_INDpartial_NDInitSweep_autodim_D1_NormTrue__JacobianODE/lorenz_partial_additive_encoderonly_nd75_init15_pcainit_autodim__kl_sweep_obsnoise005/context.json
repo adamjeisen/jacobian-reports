@@ -1,0 +1,149 @@
+{
+  "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+  "completed_at": "2026-04-22T09:45:17Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005": {
+      "description": "Lorenz partial additive coupling, obs_noise=0.05, n_delays=75.\nencoder_only_mode=true, init_pca_basis=true, use_vae=true.\n12-run sweep: 6 kl_dyn_weight \u00d7 2 kl_null_weight. Best by\nval/recon_loss. Tangent-spectrum diagnostic post-training.\n",
+      "hypothesis": "At obs_noise=0.05 the encoder has to learn to denoise as well as\nreconstruct. KL shaping may matter more here than at noise=0.01:\na mild kl_dyn should smooth the latent while kl_null suppresses the\nnoise-dominated off-manifold variance. Expect best val/recon_loss at\nkl_dyn slightly higher than the obsnoise001 companion. Tangent spectrum\nshould still concentrate on top 3 components \u2014 Lorenz intrinsic dim\ndoesn't depend on noise level, only on the attractor.\n",
+      "success_criteria": [
+        "All 12 runs train without divergence",
+        "Best val/recon_loss at some kl_dyn > 0 with clear margin over kl_dyn=0",
+        "Top 3 components of tangent spectrum at best run carry >= 90% of energy",
+        "Best kl_dyn at noise=0.05 is >= best kl_dyn at noise=0.01 (more regularization helps at higher noise)"
+      ]
+    }
+  },
+  "expected_run_count": 12,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+      "hydra.launcher.partition=ou_bcs_low"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=0",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=0",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-4",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-3",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-2",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1e-1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1",
+          "model.kl_null_weight=null",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "overrides": [
+          "model.kl_dyn_weight=1",
+          "model.kl_null_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "290cc47",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-22T05:55:45Z"
+}

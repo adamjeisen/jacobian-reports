@@ -1,0 +1,356 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+  "analyzed_at": "2026-04-22T09:47:00Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "a0o5cslr",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": null,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "palbdcgi",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "yofig4zo",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.0001,
+          "model.kl_null_weight": null,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "tbrwzoco",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.0001,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "2ahnvord",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.001,
+          "model.kl_null_weight": null,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "armg82o9",
+        "run_idx": 5,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.003145035821944475,
+        "best_traj_loss_epoch": 25.0,
+        "best_mase": null,
+        "best_mase_epoch": 25.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.001,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509484
+        }
+      },
+      {
+        "run_id": "hoagpu5a",
+        "run_idx": 6,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.01,
+          "model.kl_null_weight": null,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "kdzzgd4k",
+        "run_idx": 7,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.01,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "ziyd9p3i",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.1,
+          "model.kl_null_weight": null,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "60fu5rs0",
+        "run_idx": 9,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.003145044669508934,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0.1,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509484
+        }
+      },
+      {
+        "run_id": "gxorl40v",
+        "run_idx": 10,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 1,
+          "model.kl_null_weight": null,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      },
+      {
+        "run_id": "ygdijtfm",
+        "run_idx": 11,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 1,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 12,
+    "matched_run_count": 12,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "a0o5cslr",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0031446570064872503,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": null,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "a0o5cslr",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0031446570064872503,
+      "best_traj_loss_epoch": 24.0,
+      "best_mase": null,
+      "best_mase_epoch": 24.0,
+      "lc_loss_at_best_tl": null,
+      "r2_at_best_tl": null,
+      "n_epochs": 26,
+      "swept_config": {
+        "model.kl_dyn_weight": 0,
+        "model.kl_null_weight": null,
+        "model.n_target_dims_pca_cum_var": 0.9900360734509472
+      }
+    },
+    "overall_best_mase": null,
+    "swept_paths": [
+      "model.kl_dyn_weight",
+      "model.kl_null_weight",
+      "model.n_target_dims_pca_cum_var"
+    ],
+    "n_runs": 12
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": "skipped: encoder_only_mode",
+  "per_run_tangent_spectrum": {
+    "a0o5cslr": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "tbrwzoco": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "yofig4zo": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "2ahnvord": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "palbdcgi": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "armg82o9": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "hoagpu5a": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "kdzzgd4k": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "ziyd9p3i": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "60fu5rs0": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "gxorl40v": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "ygdijtfm": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    }
+  },
+  "per_run_tangent_spectrum_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 12 runs train without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best val/recon_loss at some kl_dyn > 0 with clear margin over kl_dyn=0",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Top 3 components of tangent spectrum at best run carry >= 90% of energy",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best kl_dyn at noise=0.05 is >= best kl_dyn at noise=0.01 (more regularization helps at higher noise)",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {},
+  "analytics_error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it.",
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
