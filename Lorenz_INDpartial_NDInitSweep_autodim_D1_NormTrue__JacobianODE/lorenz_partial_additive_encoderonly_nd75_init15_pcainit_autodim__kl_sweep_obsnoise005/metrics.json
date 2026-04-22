@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
-  "analyzed_at": "2026-04-22T09:47:00Z",
+  "analyzed_at": "2026-04-22T21:25:53Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -20,11 +20,17 @@
         "swept_config": {
           "model.kl_dyn_weight": 0,
           "model.kl_null_weight": null,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.model.kl_null_weight": "null,0",
+          "sweep_grid.training.lightning.kl_dyn_weight": null,
+          "sweep_grid.training.lightning.kl_null_weight": null,
+          "training.lightning.kl_dyn_weight": 0,
+          "training.lightning.kl_null_weight": null
         }
       },
       {
-        "run_id": "palbdcgi",
+        "run_id": "tmazrdv9",
         "run_idx": 1,
         "state": "finished",
         "lc_weight": 0.0,
@@ -39,73 +45,22 @@
         "swept_config": {
           "model.kl_dyn_weight": 0,
           "model.kl_null_weight": 0,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0,
+          "training.lightning.kl_null_weight": 0
         }
       },
       {
-        "run_id": "yofig4zo",
+        "run_id": "q0yn9a8w",
         "run_idx": 2,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
-        "best_mase": null,
-        "best_mase_epoch": 24.0,
-        "lc_loss_at_best_tl": null,
-        "r2_at_best_tl": null,
-        "n_epochs": 26,
-        "swept_config": {
-          "model.kl_dyn_weight": 0.0001,
-          "model.kl_null_weight": null,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
-        }
-      },
-      {
-        "run_id": "tbrwzoco",
-        "run_idx": 3,
-        "state": "finished",
-        "lc_weight": 0.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
-        "best_mase": null,
-        "best_mase_epoch": 24.0,
-        "lc_loss_at_best_tl": null,
-        "r2_at_best_tl": null,
-        "n_epochs": 26,
-        "swept_config": {
-          "model.kl_dyn_weight": 0.0001,
-          "model.kl_null_weight": 0,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
-        }
-      },
-      {
-        "run_id": "2ahnvord",
-        "run_idx": 4,
-        "state": "finished",
-        "lc_weight": 0.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
-        "best_mase": null,
-        "best_mase_epoch": 24.0,
-        "lc_loss_at_best_tl": null,
-        "r2_at_best_tl": null,
-        "n_epochs": 26,
-        "swept_config": {
-          "model.kl_dyn_weight": 0.001,
-          "model.kl_null_weight": null,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
-        }
-      },
-      {
-        "run_id": "armg82o9",
-        "run_idx": 5,
-        "state": "finished",
-        "lc_weight": 0.0,
-        "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.003145035821944475,
+        "best_traj_loss": 0.003504309104755521,
         "best_traj_loss_epoch": 25.0,
         "best_mase": null,
         "best_mase_epoch": 25.0,
@@ -113,128 +68,265 @@
         "r2_at_best_tl": null,
         "n_epochs": 26,
         "swept_config": {
-          "model.kl_dyn_weight": 0.001,
+          "model.kl_dyn_weight": 0,
           "model.kl_null_weight": 0,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509484
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.0001,
+          "training.lightning.kl_null_weight": null
         }
       },
       {
-        "run_id": "hoagpu5a",
+        "run_id": "68qk05q7",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0035054979380220175,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.0001,
+          "training.lightning.kl_null_weight": 0
+        }
+      },
+      {
+        "run_id": "bdjktejl",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005220452323555946,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": null,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509484,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.001,
+          "training.lightning.kl_null_weight": null
+        }
+      },
+      {
+        "run_id": "c1xrrj3c",
+        "run_idx": 5,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005192025098949671,
+        "best_traj_loss_epoch": 25.0,
+        "best_mase": null,
+        "best_mase_epoch": 25.0,
+        "lc_loss_at_best_tl": null,
+        "r2_at_best_tl": null,
+        "n_epochs": 26,
+        "swept_config": {
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.001,
+          "training.lightning.kl_null_weight": 0
+        }
+      },
+      {
+        "run_id": "6bmck00v",
         "run_idx": 6,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
+        "best_traj_loss": 0.011879601515829563,
+        "best_traj_loss_epoch": 89.0,
         "best_mase": null,
-        "best_mase_epoch": 24.0,
+        "best_mase_epoch": 89.0,
         "lc_loss_at_best_tl": null,
         "r2_at_best_tl": null,
-        "n_epochs": 26,
+        "n_epochs": 118,
         "swept_config": {
-          "model.kl_dyn_weight": 0.01,
-          "model.kl_null_weight": null,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.01,
+          "training.lightning.kl_null_weight": null
         }
       },
       {
-        "run_id": "kdzzgd4k",
+        "run_id": "0fu8zdax",
         "run_idx": 7,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
+        "best_traj_loss": 0.013172897510230541,
+        "best_traj_loss_epoch": 47.0,
         "best_mase": null,
-        "best_mase_epoch": 24.0,
+        "best_mase_epoch": 47.0,
         "lc_loss_at_best_tl": null,
         "r2_at_best_tl": null,
-        "n_epochs": 26,
+        "n_epochs": 48,
         "swept_config": {
-          "model.kl_dyn_weight": 0.01,
+          "model.kl_dyn_weight": 0,
           "model.kl_null_weight": 0,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.01,
+          "training.lightning.kl_null_weight": 0
         }
       },
       {
-        "run_id": "ziyd9p3i",
+        "run_id": "c1qytci3",
         "run_idx": 8,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
+        "best_traj_loss": 0.05186501890420914,
+        "best_traj_loss_epoch": 71.0,
         "best_mase": null,
-        "best_mase_epoch": 24.0,
+        "best_mase_epoch": 71.0,
         "lc_loss_at_best_tl": null,
         "r2_at_best_tl": null,
-        "n_epochs": 26,
+        "n_epochs": 73,
         "swept_config": {
-          "model.kl_dyn_weight": 0.1,
-          "model.kl_null_weight": null,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.1,
+          "training.lightning.kl_null_weight": null
         }
       },
       {
-        "run_id": "60fu5rs0",
+        "run_id": "v6qepwrd",
         "run_idx": 9,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.003145044669508934,
-        "best_traj_loss_epoch": 24.0,
+        "best_traj_loss": 0.054857250303030014,
+        "best_traj_loss_epoch": 56.0,
         "best_mase": null,
-        "best_mase_epoch": 24.0,
+        "best_mase_epoch": 56.0,
         "lc_loss_at_best_tl": null,
         "r2_at_best_tl": null,
-        "n_epochs": 26,
+        "n_epochs": 61,
         "swept_config": {
-          "model.kl_dyn_weight": 0.1,
+          "model.kl_dyn_weight": 0,
           "model.kl_null_weight": 0,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509484
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 0.1,
+          "training.lightning.kl_null_weight": 0
         }
       },
       {
-        "run_id": "gxorl40v",
+        "run_id": "6w5v9nyb",
         "run_idx": 10,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
+        "best_traj_loss": 0.2126408815383911,
+        "best_traj_loss_epoch": 113.0,
         "best_mase": null,
-        "best_mase_epoch": 24.0,
+        "best_mase_epoch": 113.0,
         "lc_loss_at_best_tl": null,
         "r2_at_best_tl": null,
-        "n_epochs": 26,
+        "n_epochs": 116,
         "swept_config": {
-          "model.kl_dyn_weight": 1,
-          "model.kl_null_weight": null,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.kl_dyn_weight": 0,
+          "model.kl_null_weight": 0,
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 1,
+          "training.lightning.kl_null_weight": null
         }
       },
       {
-        "run_id": "ygdijtfm",
+        "run_id": "ari6sskn",
         "run_idx": 11,
         "state": "finished",
         "lc_weight": 0.0,
         "obs_noise_scale": 0.0,
-        "best_traj_loss": 0.0031446570064872503,
-        "best_traj_loss_epoch": 24.0,
+        "best_traj_loss": 0.1997259259223938,
+        "best_traj_loss_epoch": 114.0,
         "best_mase": null,
-        "best_mase_epoch": 24.0,
+        "best_mase_epoch": 114.0,
         "lc_loss_at_best_tl": null,
         "r2_at_best_tl": null,
-        "n_epochs": 26,
+        "n_epochs": 116,
         "swept_config": {
-          "model.kl_dyn_weight": 1,
+          "model.kl_dyn_weight": 0,
           "model.kl_null_weight": 0,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": null,
+          "sweep_grid.model.kl_null_weight": null,
+          "sweep_grid.training.lightning.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.training.lightning.kl_null_weight": "null,0",
+          "training.lightning.kl_dyn_weight": 1,
+          "training.lightning.kl_null_weight": 0
         }
       }
     ],
     "unmatched_runs": [],
-    "duplicate_matches": [],
+    "duplicate_matches": [
+      {
+        "run_idx": 0,
+        "chosen_run_id": "a0o5cslr",
+        "other_run_ids": [
+          "tbrwzoco",
+          "yofig4zo",
+          "2ahnvord",
+          "palbdcgi",
+          "armg82o9",
+          "hoagpu5a",
+          "kdzzgd4k",
+          "ziyd9p3i",
+          "60fu5rs0",
+          "gxorl40v",
+          "ygdijtfm",
+          "d2euo7ms"
+        ],
+        "n_candidates": 13
+      }
+    ],
     "expected_run_count": 12,
     "matched_run_count": 12,
     "best_by_obs_noise_scale": {
@@ -254,7 +346,13 @@
         "swept_config": {
           "model.kl_dyn_weight": 0,
           "model.kl_null_weight": null,
-          "model.n_target_dims_pca_cum_var": 0.9900360734509472
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "sweep_grid.model.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+          "sweep_grid.model.kl_null_weight": "null,0",
+          "sweep_grid.training.lightning.kl_dyn_weight": null,
+          "sweep_grid.training.lightning.kl_null_weight": null,
+          "training.lightning.kl_dyn_weight": 0,
+          "training.lightning.kl_null_weight": null
         }
       }
     },
@@ -274,14 +372,26 @@
       "swept_config": {
         "model.kl_dyn_weight": 0,
         "model.kl_null_weight": null,
-        "model.n_target_dims_pca_cum_var": 0.9900360734509472
+        "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+        "sweep_grid.model.kl_dyn_weight": "0,1e-4,1e-3,1e-2,1e-1,1",
+        "sweep_grid.model.kl_null_weight": "null,0",
+        "sweep_grid.training.lightning.kl_dyn_weight": null,
+        "sweep_grid.training.lightning.kl_null_weight": null,
+        "training.lightning.kl_dyn_weight": 0,
+        "training.lightning.kl_null_weight": null
       }
     },
     "overall_best_mase": null,
     "swept_paths": [
       "model.kl_dyn_weight",
       "model.kl_null_weight",
-      "model.n_target_dims_pca_cum_var"
+      "model.n_target_dims_pca_cum_var",
+      "sweep_grid.model.kl_dyn_weight",
+      "sweep_grid.model.kl_null_weight",
+      "sweep_grid.training.lightning.kl_dyn_weight",
+      "sweep_grid.training.lightning.kl_null_weight",
+      "training.lightning.kl_dyn_weight",
+      "training.lightning.kl_null_weight"
     ],
     "n_runs": 12
   },
@@ -290,40 +400,820 @@
   "per_run_lyapunov_error": "skipped: encoder_only_mode",
   "per_run_tangent_spectrum": {
     "a0o5cslr": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "tbrwzoco": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "yofig4zo": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "2ahnvord": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "palbdcgi": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "armg82o9": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.018202614039182663,
+        0.013517877086997032,
+        0.01338894758373499,
+        0.013335390016436577,
+        0.01017854642122984,
+        0.009465040639042854,
+        0.0076687876135110855,
+        0.007326004095375538,
+        0.00675186887383461,
+        0.006204985547810793,
+        0.005174961872398853,
+        0.0030628982931375504
+      ],
+      "spectrum": [
+        0.15928372740745544,
+        0.11828949302434921,
+        0.11716128140687943,
+        0.11669261753559113,
+        0.08906835317611694,
+        0.08282475173473358,
+        0.0671064704656601,
+        0.06410690397024155,
+        0.05908288061618805,
+        0.054297324270009995,
+        0.045284003019332886,
+        0.02680218778550625
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "hoagpu5a": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "kdzzgd4k": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "ziyd9p3i": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "60fu5rs0": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.018485264852643013,
+        0.01350601390004158,
+        0.013382109813392162,
+        0.013134101405739784,
+        0.010049890726804733,
+        0.009581651538610458,
+        0.007696254178881645,
+        0.0072431620210409164,
+        0.006831575650721788,
+        0.006229329854249954,
+        0.005255619063973427,
+        0.003051352221518755
+      ],
+      "spectrum": [
+        0.16151908040046692,
+        0.11801178008317947,
+        0.11692914366722107,
+        0.11476211249828339,
+        0.08781313896179199,
+        0.08372179418802261,
+        0.06724771857261658,
+        0.06328872591257095,
+        0.05969240143895149,
+        0.054430145770311356,
+        0.045922134071588516,
+        0.026661863550543785
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "gxorl40v": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     },
     "ygdijtfm": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "d2euo7ms": {
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "q0yn9a8w": {
+      "energy": [
+        0.023049794137477875,
+        0.022037697955965996,
+        0.021144097670912743,
+        0.01798553392291069,
+        0.0173945389688015,
+        0.017207246273756027,
+        0.017010558396577835,
+        0.016903413459658623,
+        0.01633443683385849,
+        0.015935808420181274,
+        0.013012720271945,
+        0.0057191913947463036
+      ],
+      "spectrum": [
+        0.11313613504171371,
+        0.10816842317581177,
+        0.10378233343362808,
+        0.08827903866767883,
+        0.0853782370686531,
+        0.08445894718170166,
+        0.08349353075027466,
+        0.08296763151884079,
+        0.08017490059137344,
+        0.07821830362081528,
+        0.06387080252170563,
+        0.02807171270251274
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "tmazrdv9": {
+      "energy": [
+        0.017617106437683105,
+        0.01639610342681408,
+        0.016147777438163757,
+        0.0103071928024292,
+        0.00940620619803667,
+        0.009285321459174156,
+        0.009016131982207298,
+        0.008416061289608479,
+        0.008122771978378296,
+        0.005819773301482201,
+        0.005429981742054224,
+        0.004194725304841995
+      ],
+      "spectrum": [
+        0.14661477506160736,
+        0.13645322620868683,
+        0.1343865841627121,
+        0.08577951043844223,
+        0.0782812312245369,
+        0.07727519422769547,
+        0.07503491640090942,
+        0.07004095613956451,
+        0.06760010868310928,
+        0.048433877527713776,
+        0.04518991336226463,
+        0.03490974381566048
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "68qk05q7": {
+      "energy": [
+        0.02248365618288517,
+        0.021925564855337143,
+        0.020226575434207916,
+        0.017624691128730774,
+        0.017002269625663757,
+        0.01691407524049282,
+        0.01667710766196251,
+        0.01659124717116356,
+        0.01616562530398369,
+        0.015782112255692482,
+        0.013008213602006435,
+        0.005684177856892347
+      ],
+      "spectrum": [
+        0.11237034946680069,
+        0.10958108305931091,
+        0.10108975321054459,
+        0.08808588236570358,
+        0.08497510105371475,
+        0.08453431725502014,
+        0.08334998786449432,
+        0.0829208642244339,
+        0.08079366385936737,
+        0.07887691259384155,
+        0.0650133341550827,
+        0.028408771380782127
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "bdjktejl": {
+      "energy": [
+        0.11194993555545807,
+        0.0893186703324318,
+        0.08811159431934357,
+        0.0669708102941513,
+        0.061831969767808914,
+        0.05610552430152893,
+        0.04069904983043671,
+        0.024540580809116364,
+        0.024340610951185226,
+        0.017030779272317886,
+        0.0118788443505764,
+        0.009788685478270054
+      ],
+      "spectrum": [
+        0.1857883334159851,
+        0.14823025465011597,
+        0.14622703194618225,
+        0.11114250123500824,
+        0.10261425375938416,
+        0.0931108370423317,
+        0.06754276901483536,
+        0.04072672128677368,
+        0.0403948575258255,
+        0.02826370671391487,
+        0.01971372961997986,
+        0.016244972124695778
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "c1xrrj3c": {
+      "energy": [
+        0.1204262226819992,
+        0.09646719694137573,
+        0.09540809690952301,
+        0.07244063168764114,
+        0.06232690066099167,
+        0.058972518891096115,
+        0.04427913576364517,
+        0.02504570782184601,
+        0.024823226034641266,
+        0.017923079431056976,
+        0.012275656685233116,
+        0.0098111005499959
+      ],
+      "spectrum": [
+        0.18810732662677765,
+        0.15068301558494568,
+        0.1490286886692047,
+        0.11315320432186127,
+        0.0973554253578186,
+        0.0921158418059349,
+        0.06916458159685135,
+        0.03912172093987465,
+        0.03877419978380203,
+        0.027996083721518517,
+        0.019174735993146896,
+        0.01532506663352251
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "6bmck00v": {
+      "energy": [
+        0.2156665325164795,
+        0.2088955044746399,
+        0.20230111479759216,
+        0.1941986232995987,
+        0.18539996445178986,
+        0.17992626130580902,
+        0.15244433283805847,
+        0.1193864643573761,
+        0.06032947450876236,
+        0.04183191433548927,
+        0.020751137286424637,
+        0.011313188821077347
+      ],
+      "spectrum": [
+        0.13543112576007843,
+        0.13117915391921997,
+        0.1270381063222885,
+        0.12195001542568207,
+        0.11642476171255112,
+        0.1129874661564827,
+        0.0957297682762146,
+        0.07497056573629379,
+        0.037884823977947235,
+        0.02626899443566799,
+        0.013030996546149254,
+        0.0071042911149561405
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "ari6sskn": {
+      "energy": [
+        0.006302657071501017,
+        0.0050280336290597916,
+        0.004357864148914814,
+        0.0042715477757155895,
+        0.004147869534790516,
+        0.00414026714861393,
+        0.003825671039521694,
+        0.003649301826953888,
+        0.003365637967363,
+        0.002967553213238716,
+        0.0013778175925835967,
+        0.00017456852947361767
+      ],
+      "spectrum": [
+        0.14452721178531647,
+        0.11529862135648727,
+        0.09993086010217667,
+        0.09795152395963669,
+        0.09511544555425644,
+        0.09494110941886902,
+        0.08772705495357513,
+        0.08368270844221115,
+        0.0771779716014862,
+        0.06804942339658737,
+        0.03159495070576668,
+        0.004003058187663555
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "0fu8zdax": {
+      "energy": [
+        0.17160025238990784,
+        0.16248111426830292,
+        0.16070324182510376,
+        0.14882591366767883,
+        0.14805468916893005,
+        0.14119958877563477,
+        0.10885757207870483,
+        0.0956847071647644,
+        0.05309971421957016,
+        0.04285694658756256,
+        0.023729443550109863,
+        0.010419038124382496
+      ],
+      "spectrum": [
+        0.1353835016489029,
+        0.12818898260593414,
+        0.12678633630275726,
+        0.11741575598716736,
+        0.11680729687213898,
+        0.11139898747205734,
+        0.08588284999132156,
+        0.07549016177654266,
+        0.04189286008477211,
+        0.03381185978651047,
+        0.01872127316892147,
+        0.00822006817907095
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "6w5v9nyb": {
+      "energy": [
+        0.033551692962646484,
+        0.023145776242017746,
+        0.018447013571858406,
+        0.017746221274137497,
+        0.015388243831694126,
+        0.015207995660603046,
+        0.01480538584291935,
+        0.011399416252970695,
+        0.010099926963448524,
+        0.009671295061707497,
+        0.005368303041905165,
+        0.0005673824343830347
+      ],
+      "spectrum": [
+        0.19128820300102234,
+        0.13196097314357758,
+        0.10517192631959915,
+        0.10117650032043457,
+        0.08773297071456909,
+        0.08670531958341599,
+        0.0844099223613739,
+        0.06499147415161133,
+        0.05758269503712654,
+        0.05513893812894821,
+        0.03060629591345787,
+        0.0032348164822906256
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "c1qytci3": {
+      "energy": [
+        0.14807534217834473,
+        0.08452575653791428,
+        0.07972981035709381,
+        0.07272225618362427,
+        0.06490209698677063,
+        0.0605163499712944,
+        0.05716562271118164,
+        0.04346601292490959,
+        0.024469615891575813,
+        0.018078090623021126,
+        0.016752848401665688,
+        0.006434595212340355
+      ],
+      "spectrum": [
+        0.21877503395080566,
+        0.12488321959972382,
+        0.11779741197824478,
+        0.10744404792785645,
+        0.0958900898694992,
+        0.08941033482551575,
+        0.08445978164672852,
+        0.06421919167041779,
+        0.03615281730890274,
+        0.02670961059629917,
+        0.02475162222981453,
+        0.00950684119015932
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
+    },
+    "v6qepwrd": {
+      "energy": [
+        0.12917351722717285,
+        0.12076899409294128,
+        0.08512450754642487,
+        0.08497384190559387,
+        0.07878046482801437,
+        0.07355299592018127,
+        0.06316381692886353,
+        0.06142161041498184,
+        0.0500003844499588,
+        0.018960624933242798,
+        0.015831589698791504,
+        0.008722343482077122
+      ],
+      "spectrum": [
+        0.16341260075569153,
+        0.15278035402297974,
+        0.10768783837556839,
+        0.10749723762273788,
+        0.09966222941875458,
+        0.09304915368556976,
+        0.07990618795156479,
+        0.07770218700170517,
+        0.06325361877679825,
+        0.02398637868463993,
+        0.020027954131364822,
+        0.011034311726689339
+      ],
+      "n_pairs": 512,
+      "n_dyn": 12,
+      "n_obs": 75,
+      "error": null
     }
   },
   "per_run_tangent_spectrum_error": null,
@@ -349,8 +1239,15 @@
       "note": ""
     }
   ],
-  "figures": {},
-  "analytics_error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it.",
+  "figures": {
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005/figures/reconstruction.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005/figures/latent_utilization.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005/figures/amplification.png",
+    "tangent_spectrum": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005/figures/tangent_spectrum.png",
+    "per_run_tangent_spectrum": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005/figures/per_run_tangent_spectrum.png"
+  },
+  "analytics_error": null,
   "true_lyapunov": null,
   "analytics_log_file": "run_analytics.log"
 }

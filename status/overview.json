@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-22T21:25:11Z",
+  "last_updated": "2026-04-22T21:30:18Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -321,21 +321,12 @@
       }
     },
     "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 12,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 12
-      },
-      "analysis": {
-        "slurm_job_id": "12361571",
-        "dispatched_at": "2026-04-22T20:20:17Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 1,
-        "n_pending": 0
       }
     },
     "lorenz_partial_additive_mse_mostrecent_p30_obsnoise001_init15_autodim__ndelays_sweep": {

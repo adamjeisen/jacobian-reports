@@ -16,10 +16,10 @@ pre { white-space: pre-wrap; }
 <body>
 <h1>Sweep Analysis: <code>lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005</code></h1>
 <p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE/groups/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005">Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE</a><br />
-<strong>Launched</strong>: 2026-04-22T05:55:45Z<br />
-<strong>Completed</strong>: 2026-04-22T09:45:17Z<br />
+<strong>Launched</strong>: 2026-04-22T19:50:43Z<br />
+<strong>Completed</strong>: 2026-04-22T20:20:16Z<br />
 <strong>Outcome</strong>: <code>complete_clean</code><br />
-<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>290cc47</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>f909fc3</code><br />
 <strong>Expected runs</strong>: 12</p>
 <h2>Experiment Context</h2>
 <h3><code>lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005</code></h3>
@@ -44,9 +44,12 @@ doesn't depend on noise level, only on the attractor.</p>
 <li>Best kl_dyn at noise=0.05 is &gt;= best kl_dyn at noise=0.01 (more regularization helps at higher noise)</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Swept axes</strong> (3): <code>model.kl_dyn_weight</code>, <code>model.kl_null_weight</code>, <code>model.n_target_dims_pca_cum_var</code></p>
+<p><strong>Swept axes</strong> (9): <code>model.kl_dyn_weight</code>, <code>model.kl_null_weight</code>, <code>model.n_target_dims_pca_cum_var</code>, <code>sweep_grid.model.kl_dyn_weight</code>, <code>sweep_grid.model.kl_null_weight</code>, <code>sweep_grid.training.lightning.kl_dyn_weight</code>, <code>sweep_grid.training.lightning.kl_null_weight</code>, <code>training.lightning.kl_dyn_weight</code>, <code>training.lightning.kl_null_weight</code></p>
 <p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>a0o5cslr</code> — traj_loss=0.00314, MASE=—, R²=—, LC loss=—, epoch=24.0</p>
-<p>Swept-axis values at chosen run: <code>model.kl_dyn_weight</code>=0 · <code>model.kl_null_weight</code>=None · <code>model.n_target_dims_pca_cum_var</code>=0.990036</p>
+<p>Swept-axis values at chosen run: <code>model.kl_dyn_weight</code>=0 · <code>model.kl_null_weight</code>=None · <code>model.n_target_dims_pca_cum_var</code>=0.990036 · <code>sweep_grid.model.kl_dyn_weight</code>=0,1e-4,1e-3,1e-2,1e-1,1 · <code>sweep_grid.model.kl_null_weight</code>=null,0 · <code>sweep_grid.training.lightning.kl_dyn_weight</code>=None · <code>sweep_grid.training.lightning.kl_null_weight</code>=None · <code>training.lightning.kl_dyn_weight</code>=0 · <code>training.lightning.kl_null_weight</code>=None</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>1 run_idx slot(s) had multiple matching wandb runs</strong> — the best by <code>best_traj_loss</code> was kept; the others are listed below for audit:
+  - run_idx=<strong>0</strong>: chose <code>a0o5cslr</code>, dropped <code>tbrwzoco</code>, <code>yofig4zo</code>, <code>2ahnvord</code>, <code>palbdcgi</code>, <code>armg82o9</code>, <code>hoagpu5a</code>, <code>kdzzgd4k</code>, <code>ziyd9p3i</code>, <code>60fu5rs0</code>, <code>gxorl40v</code>, <code>ygdijtfm</code>, <code>d2euo7ms</code></p>
 <p><strong>Runs analyzed</strong>: 12 (expected 12)</p>
 <h3>Per-run results</h3>
 <table>
@@ -57,6 +60,12 @@ doesn't depend on noise level, only on the attractor.</p>
 <th><code>model.kl_dyn_weight</code></th>
 <th><code>model.kl_null_weight</code></th>
 <th><code>model.n_target_dims_pca_cum_var</code></th>
+<th><code>sweep_grid.model.kl_dyn_weight</code></th>
+<th><code>sweep_grid.model.kl_null_weight</code></th>
+<th><code>sweep_grid.training.lightning.kl_dyn_weight</code></th>
+<th><code>sweep_grid.training.lightning.kl_null_weight</code></th>
+<th><code>training.lightning.kl_dyn_weight</code></th>
+<th><code>training.lightning.kl_null_weight</code></th>
 <th>best_traj_loss</th>
 <th>best_MASE</th>
 <th>R²</th>
@@ -71,6 +80,12 @@ doesn't depend on noise level, only on the attractor.</p>
 <td>0</td>
 <td>None</td>
 <td>0.990036</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>None</td>
+<td>None</td>
+<td>0</td>
+<td>None</td>
 <td>0.00314</td>
 <td>—</td>
 <td>—</td>
@@ -79,10 +94,16 @@ doesn't depend on noise level, only on the attractor.</p>
 </tr>
 <tr>
 <td>1</td>
-<td><code>palbdcgi</code></td>
+<td><code>tmazrdv9</code></td>
 <td>0</td>
 <td>0</td>
 <td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>0</td>
+<td>0</td>
 <td>0.00314</td>
 <td>—</td>
 <td>—</td>
@@ -91,95 +112,35 @@ doesn't depend on noise level, only on the attractor.</p>
 </tr>
 <tr>
 <td>2</td>
-<td><code>yofig4zo</code></td>
+<td><code>q0yn9a8w</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
 <td>1.0e-04</td>
 <td>None</td>
-<td>0.990036</td>
-<td>0.00314</td>
+<td>0.00350</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td>24.0</td>
+<td>25.0</td>
 </tr>
 <tr>
 <td>3</td>
-<td><code>tbrwzoco</code></td>
+<td><code>68qk05q7</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
 <td>1.0e-04</td>
 <td>0</td>
-<td>0.990036</td>
-<td>0.00314</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>24.0</td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>2ahnvord</code></td>
-<td>0.001</td>
-<td>None</td>
-<td>0.990036</td>
-<td>0.00314</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>24.0</td>
-</tr>
-<tr>
-<td>6</td>
-<td><code>hoagpu5a</code></td>
-<td>0.01</td>
-<td>None</td>
-<td>0.990036</td>
-<td>0.00314</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>24.0</td>
-</tr>
-<tr>
-<td>7</td>
-<td><code>kdzzgd4k</code></td>
-<td>0.01</td>
-<td>0</td>
-<td>0.990036</td>
-<td>0.00314</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>24.0</td>
-</tr>
-<tr>
-<td>8</td>
-<td><code>ziyd9p3i</code></td>
-<td>0.1</td>
-<td>None</td>
-<td>0.990036</td>
-<td>0.00314</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>24.0</td>
-</tr>
-<tr>
-<td>10</td>
-<td><code>gxorl40v</code></td>
-<td>1</td>
-<td>None</td>
-<td>0.990036</td>
-<td>0.00314</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>24.0</td>
-</tr>
-<tr>
-<td>11</td>
-<td><code>ygdijtfm</code></td>
-<td>1</td>
-<td>0</td>
-<td>0.990036</td>
-<td>0.00314</td>
+<td>0.00351</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
@@ -187,27 +148,147 @@ doesn't depend on noise level, only on the attractor.</p>
 </tr>
 <tr>
 <td>5</td>
-<td><code>armg82o9</code></td>
-<td>0.001</td>
+<td><code>c1xrrj3c</code></td>
+<td>0</td>
 <td>0</td>
 <td>0.990036</td>
-<td>0.00315</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>0.001</td>
+<td>0</td>
+<td>0.00519</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
 <td>25.0</td>
 </tr>
 <tr>
-<td>9</td>
-<td><code>60fu5rs0</code></td>
-<td>0.1</td>
+<td>4</td>
+<td><code>bdjktejl</code></td>
+<td>0</td>
 <td>0</td>
 <td>0.990036</td>
-<td>0.00315</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>0.001</td>
+<td>None</td>
+<td>0.00522</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
 <td>24.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>6bmck00v</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>0.01</td>
+<td>None</td>
+<td>0.01188</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>89.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>0fu8zdax</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>0.01</td>
+<td>0</td>
+<td>0.01317</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>47.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>c1qytci3</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>0.1</td>
+<td>None</td>
+<td>0.05187</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>71.0</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>v6qepwrd</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>0.1</td>
+<td>0</td>
+<td>0.05486</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>56.0</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>ari6sskn</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>1</td>
+<td>0</td>
+<td>0.19973</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>114.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>6w5v9nyb</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.990036</td>
+<td>None</td>
+<td>None</td>
+<td>0,1e-4,1e-3,1e-2,1e-1,1</td>
+<td>null,0</td>
+<td>1</td>
+<td>None</td>
+<td>0.21264</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>113.0</td>
 </tr>
 </tbody>
 </table>
@@ -245,9 +326,18 @@ doesn't depend on noise level, only on the attractor.</p>
 </table>
 <p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
 <h2>Figures</h2>
-<p><em>(no figures produced — analytics may have failed)</em></p>
-<pre><code>ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it.
-</code></pre>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
+<h3>tangent_spectrum</h3>
+<p><img alt="tangent_spectrum" src="figures/tangent_spectrum.png" /></p>
+<h3>per_run_tangent_spectrum</h3>
+<p><img alt="per_run_tangent_spectrum" src="figures/per_run_tangent_spectrum.png" /></p>
 <h2>Discussion</h2>
 <!--
 This section is intentionally left as a placeholder. A human reviewer
@@ -258,5 +348,264 @@ outcome to the stated hypothesis. Write the Discussion to
 -->
 
 <p><em>(to be written)</em></p>
+<h2><code>run_analytics</code> stdout</h2>
+<details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
+
+
+<pre><code>No run_id provided — selecting best run from group 'lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005' ...
+Found 24 total runs in JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE (group=lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  a0o5cslr: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  tbrwzoco: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  yofig4zo: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  2ahnvord: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  palbdcgi: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  armg82o9: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  hoagpu5a: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  kdzzgd4k: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  ziyd9p3i: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  60fu5rs0: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  gxorl40v: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  ygdijtfm: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  d2euo7ms: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  q0yn9a8w: state=finished, lc=0.0, te=0.0, kl_dyn=0.0001
+  tmazrdv9: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  68qk05q7: state=finished, lc=0.0, te=0.0, kl_dyn=0.0001
+  bdjktejl: state=finished, lc=0.0, te=0.0, kl_dyn=0.001
+  c1xrrj3c: state=finished, lc=0.0, te=0.0, kl_dyn=0.001
+  6bmck00v: state=finished, lc=0.0, te=0.0, kl_dyn=0.01
+  ari6sskn: state=finished, lc=0.0, te=0.0, kl_dyn=1.0
+  0fu8zdax: state=finished, lc=0.0, te=0.0, kl_dyn=0.01
+  6w5v9nyb: state=finished, lc=0.0, te=0.0, kl_dyn=1.0
+  c1qytci3: state=finished, lc=0.0, te=0.0, kl_dyn=0.1
+  v6qepwrd: state=finished, lc=0.0, te=0.0, kl_dyn=0.1
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including a0o5cslr (lc=0.0): use_all_runs=True (state=finished)
+  Including tbrwzoco (lc=0.0): use_all_runs=True (state=finished)
+  Including yofig4zo (lc=0.0): use_all_runs=True (state=finished)
+  Including 2ahnvord (lc=0.0): use_all_runs=True (state=finished)
+  Including palbdcgi (lc=0.0): use_all_runs=True (state=finished)
+  Including armg82o9 (lc=0.0): use_all_runs=True (state=finished)
+  Including hoagpu5a (lc=0.0): use_all_runs=True (state=finished)
+  Including kdzzgd4k (lc=0.0): use_all_runs=True (state=finished)
+  Including ziyd9p3i (lc=0.0): use_all_runs=True (state=finished)
+  Including 60fu5rs0 (lc=0.0): use_all_runs=True (state=finished)
+  Including gxorl40v (lc=0.0): use_all_runs=True (state=finished)
+  Including ygdijtfm (lc=0.0): use_all_runs=True (state=finished)
+  Including d2euo7ms (lc=0.0): use_all_runs=True (state=finished)
+  Including q0yn9a8w (lc=0.0): use_all_runs=True (state=finished)
+  Including tmazrdv9 (lc=0.0): use_all_runs=True (state=finished)
+  Including 68qk05q7 (lc=0.0): use_all_runs=True (state=finished)
+  Including bdjktejl (lc=0.0): use_all_runs=True (state=finished)
+  Including c1xrrj3c (lc=0.0): use_all_runs=True (state=finished)
+  Including 6bmck00v (lc=0.0): use_all_runs=True (state=finished)
+  Including ari6sskn (lc=0.0): use_all_runs=True (state=finished)
+  Including 0fu8zdax (lc=0.0): use_all_runs=True (state=finished)
+  Including 6w5v9nyb (lc=0.0): use_all_runs=True (state=finished)
+  Including c1qytci3 (lc=0.0): use_all_runs=True (state=finished)
+  Including v6qepwrd (lc=0.0): use_all_runs=True (state=finished)
+Found 24 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=2ahnvord
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=60fu5rs0
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=a0o5cslr
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=armg82o9
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=d2euo7ms
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=gxorl40v
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=hoagpu5a
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=kdzzgd4k
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=palbdcgi
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=tbrwzoco
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=tmazrdv9
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ygdijtfm
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=yofig4zo
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ziyd9p3i
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0001 -&gt; run_id=68qk05q7
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0001 -&gt; run_id=q0yn9a8w
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.001 -&gt; run_id=bdjktejl
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.001 -&gt; run_id=c1xrrj3c
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.01 -&gt; run_id=0fu8zdax
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.01 -&gt; run_id=6bmck00v
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.1 -&gt; run_id=c1qytci3
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.1 -&gt; run_id=v6qepwrd
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=1.0 -&gt; run_id=6w5v9nyb
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=1.0 -&gt; run_id=ari6sskn
+n_dims=75, n_latent=75, n_dyn=12, dt=0.0150
+Loading run 2ahnvord (1/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/2ahnvord_n100.json
+  run=2ahnvord: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03385983515530824, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run 60fu5rs0 (2/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/60fu5rs0_n100.json
+  run=60fu5rs0: DiagnosticMetrics(one_step_mase=0.7669941075307377, loop_closure_loss=0.02641880531795323, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3878078496456146)
+Loading run a0o5cslr (3/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/a0o5cslr_n100.json
+  run=a0o5cslr: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run armg82o9 (4/24)
+Loading checkpoint epoch=25-step=5200.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/armg82o9_n100.json
+  run=armg82o9: DiagnosticMetrics(one_step_mase=0.7670351525858073, loop_closure_loss=0.026048737904056908, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3878690354526043)
+Loading run d2euo7ms (5/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/d2euo7ms_n100.json
+  run=d2euo7ms: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run gxorl40v (6/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/gxorl40v_n100.json
+  run=gxorl40v: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run hoagpu5a (7/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/hoagpu5a_n100.json
+  run=hoagpu5a: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run kdzzgd4k (8/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/kdzzgd4k_n100.json
+  run=kdzzgd4k: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run palbdcgi (9/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/palbdcgi_n100.json
+  run=palbdcgi: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run tbrwzoco (10/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/tbrwzoco_n100.json
+  run=tbrwzoco: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run tmazrdv9 (11/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/tmazrdv9_n100.json
+  run=tmazrdv9: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run ygdijtfm (12/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/ygdijtfm_n100.json
+  run=ygdijtfm: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run yofig4zo (13/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/yofig4zo_n100.json
+  run=yofig4zo: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run ziyd9p3i (14/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/ziyd9p3i_n100.json
+  run=ziyd9p3i: DiagnosticMetrics(one_step_mase=0.7672097064208753, loop_closure_loss=0.03368444244377315, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3836414629220963)
+Loading run 68qk05q7 (15/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/68qk05q7_n100.json
+  run=68qk05q7: DiagnosticMetrics(one_step_mase=0.7705002141293854, loop_closure_loss=0.0011820027601788753, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.39444679766893387)
+Loading run q0yn9a8w (16/24)
+Loading checkpoint epoch=25-step=5200.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/q0yn9a8w_n100.json
+  run=q0yn9a8w: DiagnosticMetrics(one_step_mase=0.7705734317484263, loop_closure_loss=0.0011597621283726766, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3942799569666386)
+Loading run bdjktejl (17/24)
+Loading checkpoint epoch=24-step=5000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/bdjktejl_n100.json
+  run=bdjktejl: DiagnosticMetrics(one_step_mase=0.7869361034685665, loop_closure_loss=0.000621081905264873, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.42333309203386305)
+Loading run c1xrrj3c (18/24)
+Loading checkpoint epoch=25-step=5200.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/c1xrrj3c_n100.json
+  run=c1xrrj3c: DiagnosticMetrics(one_step_mase=0.7858253367301122, loop_closure_loss=0.0006252461933763698, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.42359070777893065)
+Loading run 0fu8zdax (19/24)
+Loading checkpoint epoch=47-step=9600.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/0fu8zdax_n100.json
+  run=0fu8zdax: DiagnosticMetrics(one_step_mase=0.8137903059395514, loop_closure_loss=0.000341723753081169, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3965854725241661)
+Loading run 6bmck00v (20/24)
+Loading checkpoint epoch=89-step=18000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/6bmck00v_n100.json
+  run=6bmck00v: DiagnosticMetrics(one_step_mase=0.8171682043420632, loop_closure_loss=0.00032316096447175367, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.3764262866973877)
+Loading run c1qytci3 (21/24)
+Loading checkpoint epoch=71-step=14400.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/c1qytci3_n100.json
+  run=c1qytci3: DiagnosticMetrics(one_step_mase=1.0028897802511145, loop_closure_loss=0.00012197984382510185, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.2381294558942318)
+Loading run v6qepwrd (22/24)
+Loading checkpoint epoch=56-step=11400.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/v6qepwrd_n100.json
+  run=v6qepwrd: DiagnosticMetrics(one_step_mase=1.0255204939838958, loop_closure_loss=0.00012940920685650781, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.29257618248462675)
+Loading run 6w5v9nyb (23/24)
+Loading checkpoint epoch=113-step=22800.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/6w5v9nyb_n100.json
+  run=6w5v9nyb: DiagnosticMetrics(one_step_mase=2.2087165697538067, loop_closure_loss=4.574248830522265e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.05413219755515456)
+Loading run ari6sskn (24/24)
+Loading checkpoint epoch=114-step=23000.ckpt...
+  Computing diagnostics (100 batches)...
+  Cached to /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/diagnostics_cache/ari6sskn_n100.json
+  run=ari6sskn: DiagnosticMetrics(one_step_mase=2.2163343432975773, loop_closure_loss=2.2103721784105803e-06, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0543174909427762)
+
+Ranking method:           best_traj_loss
+Best run ID:              6bmck00v
+Best loop_closure_weight: 0.0
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.01
+Best traj loss:           0.376426
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 20 / 24
+Auto-selected run_id: 6bmck00v
+
+======================================================================
+PARETO FRONTIER RUNS (2 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  ari6sskn            0.000002        0.054317
+  6w5v9nyb            0.000005        0.054132
+
+======================================================================
+RANKING METHOD COMPARISON (over 20 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          6bmck00v            0.000323        0.376426 &lt;-- active
+  pareto_knee             6bmck00v            0.000323        0.376426
+  geo_rank                6bmck00v            0.000323        0.376426
+  minimax_rank            6bmck00v            0.000323        0.376426
+  geo_log_score           6bmck00v            0.000323        0.376426
+  minimax_log_score       6bmck00v            0.000323        0.376426
+======================================================================
+
+Loading run 6bmck00v from JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE ...
+Train dataset shape: torch.Size([23782, 45, 75])
+Validation dataset shape: torch.Size([7567, 45, 75])
+Test dataset shape: torch.Size([3243, 45, 75])
+Train trajectories dataset shape: torch.Size([22, 1126, 75])
+Validation trajectories dataset shape: torch.Size([7, 1126, 75])
+Test trajectories dataset shape: torch.Size([3, 1126, 75])
+Loading checkpoint epoch=89-step=18000.ckpt...
+encoder_only_mode=True → skipping dynamics-only sections: ['kaplan_yorke', 'long_trajectory', 'lyapunov', 'mase', 'prediction_detail', 'prediction_windows', 'sweep_overview']
+Computing reconstruction ...
+Computing latent utilization ...
+Entropy-based utilization: 0.942
+Null subspace mean RMS: 5.366792e-02
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 75, 75)
+decoder_jacobian: (128, 75, 75)
+Computing amplification loss ...
+Amplification loss — True state: 0.003419
+Amplification loss — Latent:     0.005620
+Computing tangent space spectrum ...
+</code></pre>
+
+
+</details>
 </body>
 </html>

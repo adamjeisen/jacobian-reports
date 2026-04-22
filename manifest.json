@@ -232,6 +232,13 @@
     ],
     "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE": [
       {
+        "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776893417.9565256
+      },
+      {
         "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001",
         "has_report": true,
         "has_metrics": true,
@@ -272,13 +279,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776861644.911324
-      },
-      {
-        "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776851460.6562169
       },
       {
         "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",

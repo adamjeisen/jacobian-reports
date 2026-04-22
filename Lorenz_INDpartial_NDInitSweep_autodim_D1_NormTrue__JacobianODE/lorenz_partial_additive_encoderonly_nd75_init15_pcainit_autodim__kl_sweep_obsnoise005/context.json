@@ -1,6 +1,6 @@
 {
   "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
-  "completed_at": "2026-04-22T09:45:17Z",
+  "completed_at": "2026-04-22T20:20:16Z",
   "outcome": "complete_clean",
   "experiment_metadata": {
     "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005": {
@@ -29,8 +29,8 @@
         "run_idx": 0,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=0",
-          "model.kl_null_weight=null",
+          "training.lightning.kl_dyn_weight=0",
+          "training.lightning.kl_null_weight=null",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -38,8 +38,8 @@
         "run_idx": 1,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=0",
-          "model.kl_null_weight=0",
+          "training.lightning.kl_dyn_weight=0",
+          "training.lightning.kl_null_weight=0",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -47,8 +47,8 @@
         "run_idx": 2,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-4",
-          "model.kl_null_weight=null",
+          "training.lightning.kl_dyn_weight=1e-4",
+          "training.lightning.kl_null_weight=null",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -56,8 +56,8 @@
         "run_idx": 3,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-4",
-          "model.kl_null_weight=0",
+          "training.lightning.kl_dyn_weight=1e-4",
+          "training.lightning.kl_null_weight=0",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -65,8 +65,8 @@
         "run_idx": 4,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-3",
-          "model.kl_null_weight=null",
+          "training.lightning.kl_dyn_weight=1e-3",
+          "training.lightning.kl_null_weight=null",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -74,8 +74,8 @@
         "run_idx": 5,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-3",
-          "model.kl_null_weight=0",
+          "training.lightning.kl_dyn_weight=1e-3",
+          "training.lightning.kl_null_weight=0",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -83,8 +83,8 @@
         "run_idx": 6,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-2",
-          "model.kl_null_weight=null",
+          "training.lightning.kl_dyn_weight=1e-2",
+          "training.lightning.kl_null_weight=null",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -92,8 +92,8 @@
         "run_idx": 7,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-2",
-          "model.kl_null_weight=0",
+          "training.lightning.kl_dyn_weight=1e-2",
+          "training.lightning.kl_null_weight=0",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -101,8 +101,8 @@
         "run_idx": 8,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-1",
-          "model.kl_null_weight=null",
+          "training.lightning.kl_dyn_weight=1e-1",
+          "training.lightning.kl_null_weight=null",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -110,8 +110,8 @@
         "run_idx": 9,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1e-1",
-          "model.kl_null_weight=0",
+          "training.lightning.kl_dyn_weight=1e-1",
+          "training.lightning.kl_null_weight=0",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -119,8 +119,8 @@
         "run_idx": 10,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1",
-          "model.kl_null_weight=null",
+          "training.lightning.kl_dyn_weight=1",
+          "training.lightning.kl_null_weight=null",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       },
@@ -128,8 +128,8 @@
         "run_idx": 11,
         "experiment": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005",
         "overrides": [
-          "model.kl_dyn_weight=1",
-          "model.kl_null_weight=0",
+          "training.lightning.kl_dyn_weight=1",
+          "training.lightning.kl_null_weight=0",
           "hydra.launcher.partition=ou_bcs_low"
         ]
       }
@@ -142,8 +142,8 @@
   },
   "git": {
     "branch": "latent-JacobianODE",
-    "commit": "290cc47",
+    "commit": "f909fc3",
     "repo_dir": "/home/eisenaj/code/JacobianODE"
   },
-  "launched_at": "2026-04-22T05:55:45Z"
+  "launched_at": "2026-04-22T19:50:43Z"
 }
