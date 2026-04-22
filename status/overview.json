@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-22T19:51:24Z",
+  "last_updated": "2026-04-22T19:55:30Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -314,15 +314,15 @@
     "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001": {
       "status": "active",
       "runs_summary": {
-        "terminal": 0,
-        "in_flight": 12,
+        "terminal": 2,
+        "in_flight": 10,
         "failed_exhausted": 0,
-        "effectively_done": 0
+        "effectively_done": 2
       },
       "training_slurm": {
         "n_running": 2,
-        "n_pending": 10,
-        "n_total": 12
+        "n_pending": 8,
+        "n_total": 10
       }
     },
     "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005": {
@@ -412,21 +412,12 @@
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 5,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 5
-      },
-      "analysis": {
-        "slurm_job_id": "12359280",
-        "dispatched_at": "2026-04-22T19:51:24Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep": {
@@ -452,8 +443,8 @@
         "status": "running"
       },
       "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
+        "n_running": 1,
+        "n_pending": 0
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {

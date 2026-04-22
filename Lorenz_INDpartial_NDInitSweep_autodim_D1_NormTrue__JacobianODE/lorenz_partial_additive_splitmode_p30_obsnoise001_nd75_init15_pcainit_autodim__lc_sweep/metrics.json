@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
-  "analyzed_at": "2026-04-22T08:26:27Z",
+  "analyzed_at": "2026-04-22T19:54:40Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -161,24 +161,194 @@
     ],
     "n_runs": 5
   },
-  "per_run_lyapunov": {},
-  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov": {
+    "34et2hk9": {
+      "lambda_spectrum": [
+        0.038589801639318466,
+        -0.11899886280298233,
+        -2.122775077819824,
+        -2.320289373397827,
+        -4.331200122833252,
+        -8.840458869934082
+      ],
+      "lambda_max": 0.038589801639318466,
+      "lambda_sum": -17.695133209228516,
+      "kaplan_yorke_dim": 1.3242871761322021,
+      "error": null
+    },
+    "1rjo2r7a": {
+      "lambda_spectrum": [
+        0.07108861207962036,
+        -0.12753060460090637,
+        -2.0981152057647705,
+        -2.3166165351867676,
+        -4.34024715423584,
+        -8.465408325195312
+      ],
+      "lambda_max": 0.07108861207962036,
+      "lambda_sum": -17.27682876586914,
+      "kaplan_yorke_dim": 1.5574239492416382,
+      "error": null
+    },
+    "sp745jkz": {
+      "lambda_spectrum": [
+        0.05335890129208565,
+        -0.1797134280204773,
+        -2.13399600982666,
+        -2.3412466049194336,
+        -3.785346031188965,
+        -9.61960220336914
+      ],
+      "lambda_max": 0.05335890129208565,
+      "lambda_sum": -18.006546020507812,
+      "kaplan_yorke_dim": 1.2969110012054443,
+      "error": null
+    },
+    "bqr94eu5": {
+      "lambda_spectrum": [
+        0.0434703528881073,
+        -0.17411457002162933,
+        -2.2078168392181396,
+        -2.4231133460998535,
+        -3.8944151401519775,
+        -9.713274955749512
+      ],
+      "lambda_max": 0.0434703528881073,
+      "lambda_sum": -18.369264602661133,
+      "kaplan_yorke_dim": 1.2496652603149414,
+      "error": null
+    },
+    "i3ebq21q": {
+      "lambda_spectrum": [
+        0.08845072984695435,
+        -0.21591299772262573,
+        -2.154099464416504,
+        -2.459080934524536,
+        -4.534289836883545,
+        -6.727477550506592
+      ],
+      "lambda_max": 0.08845072984695435,
+      "lambda_sum": -16.002410888671875,
+      "kaplan_yorke_dim": 1.4096591472625732,
+      "error": null
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.4042733907699585,
+    -0.1893320232629776,
+    -13.881906509399414
+  ],
   "per_run_lyapunov_error": null,
   "per_run_tangent_spectrum": {
     "34et2hk9": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.005973151884973049,
+        0.005721962079405785,
+        0.005229244939982891,
+        0.004449762403964996,
+        0.00345867732539773,
+        0.0006193005829118192
+      ],
+      "spectrum": [
+        0.2346820831298828,
+        0.22481296956539154,
+        0.20545436441898346,
+        0.1748288869857788,
+        0.1358896642923355,
+        0.02433200366795063
+      ],
+      "n_pairs": 512,
+      "n_dyn": 6,
+      "n_obs": 75,
+      "error": null
     },
     "1rjo2r7a": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.00647385511547327,
+        0.006181132048368454,
+        0.0053331200033426285,
+        0.004962585400789976,
+        0.0036951538641005754,
+        0.0006148338434286416
+      ],
+      "spectrum": [
+        0.23747959733009338,
+        0.22674167156219482,
+        0.1956341564655304,
+        0.18204188346862793,
+        0.13554885983467102,
+        0.02255387045443058
+      ],
+      "n_pairs": 512,
+      "n_dyn": 6,
+      "n_obs": 75,
+      "error": null
     },
     "sp745jkz": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.00548007246106863,
+        0.004582189954817295,
+        0.004385469481348991,
+        0.003973347134888172,
+        0.002916269237175584,
+        0.0005511479685083032
+      ],
+      "spectrum": [
+        0.25036314129829407,
+        0.20934240520000458,
+        0.20035500824451447,
+        0.18152675032615662,
+        0.133232980966568,
+        0.025179803371429443
+      ],
+      "n_pairs": 512,
+      "n_dyn": 6,
+      "n_obs": 75,
+      "error": null
     },
     "bqr94eu5": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.005369947291910648,
+        0.00502213928848505,
+        0.0046951924450695515,
+        0.003797609359025955,
+        0.0029374975711107254,
+        0.0005890514585189521
+      ],
+      "spectrum": [
+        0.23960743844509125,
+        0.22408822178840637,
+        0.20949983596801758,
+        0.1694496124982834,
+        0.13107135891914368,
+        0.026283519342541695
+      ],
+      "n_pairs": 512,
+      "n_dyn": 6,
+      "n_obs": 75,
+      "error": null
     },
     "i3ebq21q": {
-      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+      "energy": [
+        0.006363756954669952,
+        0.004634740762412548,
+        0.004071297589689493,
+        0.0040125856176018715,
+        0.0030290763825178146,
+        0.00041404878720641136
+      ],
+      "spectrum": [
+        0.2825133800506592,
+        0.20575523376464844,
+        0.18074166774749756,
+        0.1781352013349533,
+        0.13447317481040955,
+        0.018381331115961075
+      ],
+      "n_pairs": 512,
+      "n_dyn": 6,
+      "n_obs": 75,
+      "error": null
     }
   },
   "per_run_tangent_spectrum_error": null,
@@ -204,8 +374,28 @@
       "note": ""
     }
   ],
-  "figures": {},
-  "analytics_error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it.",
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/amplification.png",
+    "tangent_spectrum": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/tangent_spectrum.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/per_run_lyapunov_relerr.png",
+    "per_run_tangent_spectrum": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep/figures/per_run_tangent_spectrum.png"
+  },
+  "analytics_error": null,
   "true_lyapunov": null,
   "analytics_log_file": "run_analytics.log"
 }
