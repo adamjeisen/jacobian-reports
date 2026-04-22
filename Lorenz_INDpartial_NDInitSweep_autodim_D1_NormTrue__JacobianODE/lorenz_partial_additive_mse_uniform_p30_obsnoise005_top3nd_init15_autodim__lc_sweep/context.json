@@ -1,0 +1,284 @@
+{
+  "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+  "completed_at": "2026-04-22T14:15:24Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep": {
+      "description": "Lorenz partial additive coupling, uniform reconstruction loss,\nobs_noise=0.05, prediction_steps=30, traj_init_steps=15.\n27-run sweep: 3 n_delays {45, 80, 85} \u00d7 9 LC weights\n{0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1, 10}. n_target_dims\npicked by PCA-auto (threshold=0.99) per n_delays \u2014 with more\ndelays and higher noise, the PCA threshold should select a\nlarger n_target_dims (7 at n_d=45 \u2192 13-14 at n_d=80-85 per the\nearlier sweep).\nGoal: same two-stage-stability check as the obsnoise001\ncompanion sweep, but at higher noise where the n_delays\nsurface was nearly flat and LC may cleanly break the tie.\n",
+      "hypothesis": "Because the LC=0 n_delays surface was flat at obs_noise=0.05\n(top 3 within ~15% of each other), LC is likely what picks a\nwinner here. LC's role is partially a denoising regularizer, so\nat higher noise we'd expect the best LC weight to be larger than\nat obsnoise001. High n_delays + high LC may win if the extra\nlatent-space redundancy gives LC more room to find a clean chart\n\u2014 but it may also hurt if PCA-auto inflates n_target_dims and\nthe dynamics MLP overfits.\n",
+      "success_criteria": [
+        "All 27 runs train without divergence",
+        "Best val traj_loss achieved at LC > 0 with a clear margin over LC=0",
+        "PCA-auto n_target_dims at each n_delays matches what the earlier LC=0 sweep recorded (sanity: data-driven pick is deterministic)",
+        "Optimum (n_delays, LC) is interpretable \u2014 e.g., low n_delays favours small LC, high n_delays favours larger LC, or a single cell dominates"
+      ]
+    }
+  },
+  "expected_run_count": 27,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+      "hydra.launcher.partition=ou_bcs_low"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45",
+          "training.lightning.loop_closure_weight=10",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80",
+          "training.lightning.loop_closure_weight=10",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 21,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 22,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 23,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-2",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 24,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 25,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      },
+      {
+        "run_idx": 26,
+        "experiment": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=10",
+          "hydra.launcher.partition=ou_bcs_low"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "3094575",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-21T22:10:42Z"
+}
