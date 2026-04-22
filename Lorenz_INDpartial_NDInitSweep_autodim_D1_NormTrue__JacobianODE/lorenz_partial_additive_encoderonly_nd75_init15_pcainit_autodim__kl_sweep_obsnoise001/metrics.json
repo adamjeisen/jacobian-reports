@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001",
-  "analyzed_at": "2026-04-22T20:44:20Z",
+  "analyzed_at": "2026-04-22T21:46:15Z",
   "metrics_summary": {
     "per_run": [
       {
