@@ -1,0 +1,316 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+  "analyzed_at": "2026-04-22T04:22:41Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "nw8qqxad",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005195337347686291,
+        "best_traj_loss_epoch": 156.0,
+        "best_mase": 0.7584244608879089,
+        "best_mase_epoch": 161.0,
+        "lc_loss_at_best_tl": 116.08728790283203,
+        "r2_at_best_tl": 0.9861100912094116,
+        "n_epochs": 168,
+        "swept_config": {
+          "model.n_target_dims_pca_cum_var": 0.9900360734509484,
+          "training.lightning.loop_closure_weight": 0
+        }
+      },
+      {
+        "run_id": "h2ytbitb",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006073218770325184,
+        "best_traj_loss_epoch": 111.0,
+        "best_mase": 0.790589451789856,
+        "best_mase_epoch": 105.0,
+        "lc_loss_at_best_tl": 30.545995712280273,
+        "r2_at_best_tl": 0.9838051795959473,
+        "n_epochs": 114,
+        "swept_config": {
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "training.lightning.loop_closure_weight": 1e-06
+        }
+      },
+      {
+        "run_id": "1kizyazt",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006471812725067139,
+        "best_traj_loss_epoch": 76.0,
+        "best_mase": 0.8050076365470886,
+        "best_mase_epoch": 98.0,
+        "lc_loss_at_best_tl": 5.454060077667236,
+        "r2_at_best_tl": 0.9826537370681763,
+        "n_epochs": 102,
+        "swept_config": {
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "training.lightning.loop_closure_weight": 1e-05
+        }
+      },
+      {
+        "run_id": "726vvxyq",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006303063128143549,
+        "best_traj_loss_epoch": 82.0,
+        "best_mase": 0.8120510578155518,
+        "best_mase_epoch": 92.0,
+        "lc_loss_at_best_tl": 0.764617919921875,
+        "r2_at_best_tl": 0.9830805063247681,
+        "n_epochs": 107,
+        "swept_config": {
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "training.lightning.loop_closure_weight": 0.0001
+        }
+      },
+      {
+        "run_id": "c86yvz74",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006366642192006111,
+        "best_traj_loss_epoch": 95.0,
+        "best_mase": 0.8049554228782654,
+        "best_mase_epoch": 110.0,
+        "lc_loss_at_best_tl": 0.15986305475234985,
+        "r2_at_best_tl": 0.9829540848731995,
+        "n_epochs": 116,
+        "swept_config": {
+          "model.n_target_dims_pca_cum_var": 0.9900360734509472,
+          "training.lightning.loop_closure_weight": 0.001
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 5,
+    "matched_run_count": 5,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "nw8qqxad",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005195337347686291,
+        "best_traj_loss_epoch": 156.0,
+        "best_mase": 0.7584244608879089,
+        "best_mase_epoch": 161.0,
+        "lc_loss_at_best_tl": 116.08728790283203,
+        "r2_at_best_tl": 0.9861100912094116,
+        "n_epochs": 168,
+        "swept_config": {
+          "model.n_target_dims_pca_cum_var": 0.9900360734509484,
+          "training.lightning.loop_closure_weight": 0
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "nw8qqxad",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.005195337347686291,
+      "best_traj_loss_epoch": 156.0,
+      "best_mase": 0.7584244608879089,
+      "best_mase_epoch": 161.0,
+      "lc_loss_at_best_tl": 116.08728790283203,
+      "r2_at_best_tl": 0.9861100912094116,
+      "n_epochs": 168,
+      "swept_config": {
+        "model.n_target_dims_pca_cum_var": 0.9900360734509484,
+        "training.lightning.loop_closure_weight": 0
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "nw8qqxad",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.005195337347686291,
+      "best_traj_loss_epoch": 156.0,
+      "best_mase": 0.7584244608879089,
+      "best_mase_epoch": 161.0,
+      "lc_loss_at_best_tl": 116.08728790283203,
+      "r2_at_best_tl": 0.9861100912094116,
+      "n_epochs": 168,
+      "swept_config": {
+        "model.n_target_dims_pca_cum_var": 0.9900360734509484,
+        "training.lightning.loop_closure_weight": 0
+      }
+    },
+    "swept_paths": [
+      "model.n_target_dims_pca_cum_var",
+      "training.lightning.loop_closure_weight"
+    ],
+    "n_runs": 5
+  },
+  "per_run_lyapunov": {
+    "nw8qqxad": {
+      "lambda_spectrum": [
+        0.05582992732524872,
+        -0.7468730807304382,
+        -11.126184463500977,
+        -12.153766632080078,
+        -29.319150924682617,
+        -33.49020004272461,
+        -79.14765167236328,
+        -79.52526092529297,
+        -93.68334197998047,
+        -93.7430648803711,
+        -113.96240234375,
+        -114.00289916992188
+      ],
+      "lambda_max": 0.05582992732524872,
+      "lambda_sum": -660.844970703125,
+      "kaplan_yorke_dim": 1.074751615524292,
+      "error": null
+    },
+    "h2ytbitb": {
+      "lambda_spectrum": [
+        0.07912497222423553,
+        -0.7677323818206787,
+        -11.372058868408203,
+        -11.80675983428955,
+        -33.63216781616211,
+        -39.681190490722656,
+        -84.30286407470703,
+        -84.34658813476562,
+        -99.87085723876953,
+        -99.909912109375,
+        -120.5988540649414,
+        -120.6279525756836
+      ],
+      "lambda_max": 0.07912497222423553,
+      "lambda_sum": -706.8377685546875,
+      "kaplan_yorke_dim": 1.1030632257461548,
+      "error": null
+    },
+    "726vvxyq": {
+      "lambda_spectrum": [
+        0.08324385434389114,
+        -0.6527279019355774,
+        -10.31850814819336,
+        -15.663352012634277,
+        -26.27751350402832,
+        -35.102195739746094,
+        -90.73031616210938,
+        -90.7918472290039,
+        -111.81961059570312,
+        -111.911865234375,
+        -132.3798065185547,
+        -132.42071533203125
+      ],
+      "lambda_max": 0.08324385434389114,
+      "lambda_sum": -757.9851684570312,
+      "kaplan_yorke_dim": 1.1275322437286377,
+      "error": null
+    },
+    "c86yvz74": {
+      "lambda_spectrum": [
+        -0.03947273641824722,
+        -0.39169251918792725,
+        -6.3590803146362305,
+        -6.528153896331787,
+        -9.904080390930176,
+        -10.31845474243164,
+        -96.8961181640625,
+        -97.0631332397461,
+        -110.54132843017578,
+        -110.63691711425781,
+        -131.603271484375,
+        -131.6172332763672
+      ],
+      "lambda_max": -0.03947273641824722,
+      "lambda_sum": -711.8989868164062,
+      "kaplan_yorke_dim": null,
+      "error": null
+    },
+    "1kizyazt": {
+      "lambda_spectrum": [
+        0.10584032535552979,
+        -0.8023922443389893,
+        -10.071671485900879,
+        -10.814334869384766,
+        -30.392498016357422,
+        -42.65514373779297,
+        -87.9189453125,
+        -87.96440887451172,
+        -108.2455825805664,
+        -108.31891632080078,
+        -128.6203155517578,
+        -128.66648864746094
+      ],
+      "lambda_max": 0.10584032535552979,
+      "lambda_sum": -744.3648681640625,
+      "kaplan_yorke_dim": 1.1319060325622559,
+      "error": null
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.48128193616867065,
+    -0.2260732501745224,
+    -13.922173500061035
+  ],
+  "per_run_lyapunov_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 5 runs train without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best val traj_loss at LC > 0 shows a larger fractional improvement over LC=0 than the obsnoise001 companion",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "lc_loss_at_best_tl bounded",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "\u03bb_max of best-LC run is positive and closer to empirical Lorenz than LC=0's value",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/amplification.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep/figures/per_run_lyapunov_relerr.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

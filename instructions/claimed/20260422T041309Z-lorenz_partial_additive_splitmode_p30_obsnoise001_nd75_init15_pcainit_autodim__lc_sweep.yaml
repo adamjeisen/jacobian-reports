@@ -1,0 +1,9 @@
+experiment: lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep
+overrides:
+- hydra.launcher.partition=ou_bcs_normal
+submitted_at: 20260422T041309Z
+submitted_from: millerlab-endeavourOS
+wandb_group: lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep
+expected_run_count: 5
+slurm_array_id: '12329533'
+slurm_submitted_at: '2026-04-22T04:25:33Z'

@@ -1,0 +1,81 @@
+{
+  "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+  "completed_at": "2026-04-22T04:20:42Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep": {
+      "description": "Lorenz partial additive coupling, obs_noise=0.05, n_delays=75,\nprediction_steps=30, traj_init_steps=15. Split reconstruction mode:\nuniform for encoder-decoder round-trip, most_recent for rollout\ntrajectory (matches val). 5-run LC sweep over\n{0, 1e-6, 1e-5, 1e-4, 1e-3}. n_target_dims picked by PCA-auto\n(threshold=0.99). final_perm_identity=true.\n",
+      "hypothesis": "At obs_noise=0.05 the encoder has a harder denoising job. LC should\nhelp more at this noise level than at 0.01 because it's a\nself-consistency regularizer that compensates for noise-driven\nencoder instability. Expect best LC shifted toward larger values\nrelative to the obsnoise001 companion sweep.\n",
+      "success_criteria": [
+        "All 5 runs train without divergence",
+        "Best val traj_loss at LC > 0 shows a larger fractional improvement over LC=0 than the obsnoise001 companion",
+        "lc_loss_at_best_tl bounded",
+        "\u03bb_max of best-LC run is positive and closer to empirical Lorenz than LC=0's value"
+      ]
+    }
+  },
+  "expected_run_count": 5,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "28c8380",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-22T00:20:37Z"
+}
