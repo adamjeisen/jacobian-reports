@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-22T02:15:37Z",
+  "last_updated": "2026-04-22T02:20:43Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -320,8 +320,8 @@
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 4,
-        "n_pending": 16,
+        "n_running": 5,
+        "n_pending": 15,
         "n_total": 20
       }
     },
@@ -352,9 +352,9 @@
         "effectively_done": 5
       },
       "training_slurm": {
-        "n_running": 4,
+        "n_running": 3,
         "n_pending": 18,
-        "n_total": 22
+        "n_total": 21
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim": {
