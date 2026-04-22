@@ -1,0 +1,9 @@
+experiment: lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001
+overrides:
+- hydra.launcher.partition=ou_bcs_low
+submitted_at: 20260422T054941Z
+submitted_from: millerlab-endeavourOS
+wandb_group: lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001
+expected_run_count: 12
+slurm_array_id: '12331060'
+slurm_submitted_at: '2026-04-22T05:55:38Z'
