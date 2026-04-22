@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-22T05:10:36Z",
+  "last_updated": "2026-04-22T05:15:45Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -434,8 +434,8 @@
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 2,
-        "n_pending": 3,
+        "n_running": 4,
+        "n_pending": 1,
         "n_total": 5
       }
     },
