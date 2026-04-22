@@ -1,0 +1,5 @@
+experiment: lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005
+overrides:
+  - "hydra.launcher.partition=ou_bcs_low"
+submitted_at: 20260422T054941Z
+submitted_from: millerlab-endeavourOS
