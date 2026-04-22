@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE/groups/lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001">Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-22T05:55:15Z<br />
+<strong>Completed</strong>: 2026-04-22T09:40:18Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>290cc47</code><br />
+<strong>Expected runs</strong>: 12</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001</code></h3>
+<p><strong>Description</strong></p>
+<p>Lorenz partial additive coupling, obs_noise=0.01, n_delays=75,
+traj_init_steps=15 (only governs dataloader seq_length, not training).
+encoder_only_mode=true → training + validation skip all dynamics work
+and use only recon + KL losses. init_pca_basis=true → encoder starts
+as the PCA rotation V. use_vae=true so kl_dyn_weight has teeth.
+12-run sweep: 6 kl_dyn_weight × 2 kl_null_weight.
+Analytics includes the new tangent_spectrum section: per-point latent
+tangents (z_{t+1} - z_t) projected onto encoder Jacobian columns,
+ranked by magnitude, averaged over val set. For the true 3-dim Lorenz
+attractor, we expect the top 3 components to carry most of the energy.</p>
+<p><strong>Hypothesis</strong></p>
+<p>With PCA-basis init the encoder already reconstructs cleanly. The KL
+regularizers shape the latent geometry: kl_null pushes z_null → 0,
+concentrating representation on z_dyn; kl_dyn (VAE Gaussian KL on
+z_dyn) encourages smooth/Gaussian latent codes. Too much kl_dyn will
+collapse the latent entirely; too little gives no shaping benefit.
+Prior: best val/recon_loss at small-to-mid kl_dyn (~1e-4 to 1e-2),
+kl_null=0 (let z_null stay untouched since PCA already picked the
+right subspace). The tangent_spectrum should concentrate on the top
+3 directions at every KL weight, since Lorenz is intrinsically 3-dim
+— this is a check on the encoder, not on the KL choice.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>All 12 runs train without divergence (val/recon_loss finite throughout)</li>
+<li>Best val/recon_loss achieved at some kl_dyn in {1e-4, 1e-3, 1e-2}</li>
+<li>Top 3 components of the tangent spectrum at the best run carry &gt;= 95% of energy</li>
+<li>Cumulative tangent energy at dim 3 is higher than at the worst run</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Swept axes</strong> (3): <code>model.kl_dyn_weight</code>, <code>model.kl_null_weight</code>, <code>model.n_target_dims_pca_cum_var</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>8zj4cex3</code> — traj_loss=0.00015, MASE=—, R²=—, LC loss=—, epoch=27.0</p>
+<p>Swept-axis values at chosen run: <code>model.kl_dyn_weight</code>=1 · <code>model.kl_null_weight</code>=0 · <code>model.n_target_dims_pca_cum_var</code>=0.993244</p>
+<p><strong>Runs analyzed</strong>: 12 (expected 12)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>model.kl_dyn_weight</code></th>
+<th><code>model.kl_null_weight</code></th>
+<th><code>model.n_target_dims_pca_cum_var</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td><code>8zj4cex3</code></td>
+<td>1</td>
+<td>0</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>27186ol7</code></td>
+<td>0</td>
+<td>None</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>hgy3ujb9</code></td>
+<td>0</td>
+<td>0</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>4ap9r1kz</code></td>
+<td>1.0e-04</td>
+<td>None</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>qznhfxfy</code></td>
+<td>1.0e-04</td>
+<td>0</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>r8vva785</code></td>
+<td>0.001</td>
+<td>None</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>cjfiyh0f</code></td>
+<td>0.001</td>
+<td>0</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>z8glgmy1</code></td>
+<td>0.01</td>
+<td>None</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>atja9o1s</code></td>
+<td>0.01</td>
+<td>0</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>gl4zjkyi</code></td>
+<td>0.1</td>
+<td>None</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>e31w0cua</code></td>
+<td>0.1</td>
+<td>0</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>gf33rdwr</code></td>
+<td>1</td>
+<td>None</td>
+<td>0.993244</td>
+<td>0.00015</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>27.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All 12 runs train without divergence (val/recon_loss finite throughout)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best val/recon_loss achieved at some kl_dyn in {1e-4, 1e-3, 1e-2}</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Top 3 components of the tangent spectrum at the best run carry &gt;= 95% of energy</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Cumulative tangent energy at dim 3 is higher than at the worst run</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<p><em>(no figures produced — analytics may have failed)</em></p>
+<pre><code>ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it.
+</code></pre>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+</body>
+</html>

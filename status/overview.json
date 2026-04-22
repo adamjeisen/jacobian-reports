@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-22T09:41:07Z",
+  "last_updated": "2026-04-22T09:46:07Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -312,6 +312,15 @@
       }
     },
     "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001": {
+      "status": "processed",
+      "runs_summary": {
+        "terminal": 12,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 12
+      }
+    },
+    "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005": {
       "status": "done",
       "runs_summary": {
         "terminal": 12,
@@ -320,8 +329,8 @@
         "effectively_done": 12
       },
       "analysis": {
-        "slurm_job_id": "12333767",
-        "dispatched_at": "2026-04-22T09:41:07Z",
+        "slurm_job_id": "12334149",
+        "dispatched_at": "2026-04-22T09:46:00Z",
         "status": "running"
       },
       "analysis_slurm": {
@@ -329,32 +338,18 @@
         "n_pending": 1
       }
     },
-    "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise005": {
-      "status": "active",
-      "runs_summary": {
-        "terminal": 0,
-        "in_flight": 12,
-        "failed_exhausted": 0,
-        "effectively_done": 0
-      },
-      "training_slurm": {
-        "n_running": 6,
-        "n_pending": 5,
-        "n_total": 11
-      }
-    },
     "lorenz_partial_additive_mse_mostrecent_p30_obsnoise001_init15_autodim__ndelays_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 12,
-        "in_flight": 8,
+        "terminal": 13,
+        "in_flight": 7,
         "failed_exhausted": 0,
-        "effectively_done": 12
+        "effectively_done": 13
       },
       "training_slurm": {
-        "n_running": 8,
+        "n_running": 7,
         "n_pending": 0,
-        "n_total": 8
+        "n_total": 7
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim": {
@@ -416,8 +411,8 @@
         "effectively_done": 10
       },
       "training_slurm": {
-        "n_running": 15,
-        "n_pending": 2,
+        "n_running": 17,
+        "n_pending": 0,
         "n_total": 17
       }
     },
