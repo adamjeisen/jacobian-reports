@@ -1,0 +1,81 @@
+{
+  "group": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
+  "completed_at": "2026-04-22T08:25:48Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep": {
+      "description": "Lorenz partial additive coupling, obs_noise=0.01, n_delays=75,\nprediction_steps=30, traj_init_steps=15. Split-mode trajectory\nloss (most_recent at train and val) + uniform encoder-decoder\nrecon. n_target_dims auto-picked via PCA threshold=0.99. Encoder\ninit via PCA-basis rotation (init_pca_basis=true) \u2014 at init the\nencoder is V @ x where V is the PCA basis of the noisy training\ndelay embeddings. 5-run LC sweep over\n{0, 1e-6, 1e-5, 1e-4, 1e-3}.\n",
+      "hypothesis": "PCA-basis init places z_dyn at init exactly in the top-n_target\nPCs of the (noisy) training embedding \u2014 the linear subspace that\ncaptures most variance of the signal. The dynamics MLP starts\nwith a near-optimal linear chart and only has to learn nonlinear\ncorrections, vs identity init where it starts on the lag-axis\nbasis (also sensible but linearly misaligned with the principal\ndirections). Expect comparable or modestly better val trajectory\nloss compared to the identity-init companion sweep at the same\nn_delays. If PCA wins consistently across noise levels, switch\nthe convention; if equal, identity init wins on interpretability.\n",
+      "success_criteria": [
+        "All 5 runs train without divergence",
+        "Best val traj loss is comparable or better than identity-init companion sweep at the same LC",
+        "Convergence (epochs to best val loss) is faster than identity-init companion (PCA gives a head start)",
+        "\u03bb-spectrum at best LC matches identity-init companion within tolerance \u2014 same dynamics, just different starting basis"
+      ]
+    }
+  },
+  "expected_run_count": 5,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_pcainit_autodim__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "944fcaf",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-22T04:25:10Z"
+}
