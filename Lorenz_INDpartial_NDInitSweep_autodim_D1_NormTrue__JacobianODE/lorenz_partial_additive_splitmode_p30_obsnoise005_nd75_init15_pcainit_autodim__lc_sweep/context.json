@@ -1,0 +1,81 @@
+{
+  "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+  "completed_at": "2026-04-22T08:45:56Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep": {
+      "description": "Lorenz partial additive coupling, obs_noise=0.05, n_delays=75,\nprediction_steps=30, traj_init_steps=15. Split-mode trajectory\nloss (most_recent at train and val) + uniform encoder-decoder\nrecon. n_target_dims auto-picked via PCA threshold=0.99. Encoder\ninit via PCA-basis rotation (init_pca_basis=true). 5-run LC sweep\nover {0, 1e-6, 1e-5, 1e-4, 1e-3}.\n",
+      "hypothesis": "Same as the obsnoise001 PCA-init companion, but at higher noise.\nPCA init may help MORE here than at low noise: noise inflates\nvariance roughly equally across all directions, so the top-PCs\nchosen by PCA-auto on noisy data should still capture the\nsignal manifold cleanly, and starting the encoder rotated into\nthat basis gives the dynamics MLP a head start. Identity init\nhas to learn the rotation alongside the dynamics.\n",
+      "success_criteria": [
+        "All 5 runs train without divergence",
+        "Best val traj loss is comparable or better than identity-init companion sweep at the same LC",
+        "Convergence faster than identity-init companion",
+        "PCA-init's advantage over identity (if any) is at least as large at noise=0.05 as at noise=0.01"
+      ]
+    }
+  },
+  "expected_run_count": 5,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "944fcaf",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-22T04:25:38Z"
+}

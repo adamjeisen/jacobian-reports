@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE/groups/lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep">Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-22T04:25:38Z<br />
+<strong>Completed</strong>: 2026-04-22T08:45:56Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>944fcaf</code><br />
+<strong>Expected runs</strong>: 5</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep</code></h3>
+<p><strong>Description</strong></p>
+<p>Lorenz partial additive coupling, obs_noise=0.05, n_delays=75,
+prediction_steps=30, traj_init_steps=15. Split-mode trajectory
+loss (most_recent at train and val) + uniform encoder-decoder
+recon. n_target_dims auto-picked via PCA threshold=0.99. Encoder
+init via PCA-basis rotation (init_pca_basis=true). 5-run LC sweep
+over {0, 1e-6, 1e-5, 1e-4, 1e-3}.</p>
+<p><strong>Hypothesis</strong></p>
+<p>Same as the obsnoise001 PCA-init companion, but at higher noise.
+PCA init may help MORE here than at low noise: noise inflates
+variance roughly equally across all directions, so the top-PCs
+chosen by PCA-auto on noisy data should still capture the
+signal manifold cleanly, and starting the encoder rotated into
+that basis gives the dynamics MLP a head start. Identity init
+has to learn the rotation alongside the dynamics.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>All 5 runs train without divergence</li>
+<li>Best val traj loss is comparable or better than identity-init companion sweep at the same LC</li>
+<li>Convergence faster than identity-init companion</li>
+<li>PCA-init's advantage over identity (if any) is at least as large at noise=0.05 as at noise=0.01</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Swept axes</strong> (1): <code>training.lightning.loop_closure_weight</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>qx7s85sj</code> — traj_loss=0.00515, MASE=0.7546, R²=0.9861, LC loss=7.618, epoch=113.0</p>
+<p>Swept-axis values at chosen run: <code>training.lightning.loop_closure_weight</code>=0</p>
+<p><strong>Runs analyzed</strong>: 5 (expected 5)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>training.lightning.loop_closure_weight</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>qx7s85sj</code></td>
+<td>0</td>
+<td>0.00515</td>
+<td>0.7546</td>
+<td>0.9861</td>
+<td>7.618</td>
+<td>113.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>avtldx1b</code></td>
+<td>1.0e-06</td>
+<td>0.00517</td>
+<td>0.7549</td>
+<td>0.9861</td>
+<td>4.042</td>
+<td>113.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>2josp5ek</code></td>
+<td>1.0e-05</td>
+<td>0.00520</td>
+<td>0.7557</td>
+<td>0.9860</td>
+<td>1.314</td>
+<td>113.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>ar8w5u2w</code></td>
+<td>1.0e-04</td>
+<td>0.00525</td>
+<td>0.7569</td>
+<td>0.9859</td>
+<td>0.322</td>
+<td>113.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>ym53fkj8</code></td>
+<td>0.001</td>
+<td>0.00568</td>
+<td>0.7722</td>
+<td>0.9849</td>
+<td>0.068</td>
+<td>107.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All 5 runs train without divergence</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best val traj loss is comparable or better than identity-init companion sweep at the same LC</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Convergence faster than identity-init companion</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>PCA-init's advantage over identity (if any) is at least as large at noise=0.05 as at noise=0.01</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<p><em>(no figures produced — analytics may have failed)</em></p>
+<pre><code>ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it.
+</code></pre>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+</body>
+</html>

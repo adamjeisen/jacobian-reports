@@ -1,0 +1,202 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
+  "analyzed_at": "2026-04-22T08:47:04Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "qx7s85sj",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0051519679836928844,
+        "best_traj_loss_epoch": 113.0,
+        "best_mase": 0.7546310424804688,
+        "best_mase_epoch": 113.0,
+        "lc_loss_at_best_tl": 7.617521286010742,
+        "r2_at_best_tl": 0.9861337542533875,
+        "n_epochs": 115,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0
+        }
+      },
+      {
+        "run_id": "avtldx1b",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005169317126274109,
+        "best_traj_loss_epoch": 113.0,
+        "best_mase": 0.7548849582672119,
+        "best_mase_epoch": 113.0,
+        "lc_loss_at_best_tl": 4.041628360748291,
+        "r2_at_best_tl": 0.9860886931419373,
+        "n_epochs": 116,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06
+        }
+      },
+      {
+        "run_id": "2josp5ek",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005203159525990486,
+        "best_traj_loss_epoch": 113.0,
+        "best_mase": 0.7556560635566711,
+        "best_mase_epoch": 113.0,
+        "lc_loss_at_best_tl": 1.3135191202163696,
+        "r2_at_best_tl": 0.9859960675239563,
+        "n_epochs": 114,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05
+        }
+      },
+      {
+        "run_id": "ar8w5u2w",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005253246054053307,
+        "best_traj_loss_epoch": 113.0,
+        "best_mase": 0.7568565607070923,
+        "best_mase_epoch": 113.0,
+        "lc_loss_at_best_tl": 0.32231709361076355,
+        "r2_at_best_tl": 0.9859027862548828,
+        "n_epochs": 117,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001
+        }
+      },
+      {
+        "run_id": "ym53fkj8",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005675019230693579,
+        "best_traj_loss_epoch": 107.0,
+        "best_mase": 0.7721585631370544,
+        "best_mase_epoch": 107.0,
+        "lc_loss_at_best_tl": 0.06756559014320374,
+        "r2_at_best_tl": 0.9848756194114685,
+        "n_epochs": 115,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 5,
+    "matched_run_count": 5,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "qx7s85sj",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0051519679836928844,
+        "best_traj_loss_epoch": 113.0,
+        "best_mase": 0.7546310424804688,
+        "best_mase_epoch": 113.0,
+        "lc_loss_at_best_tl": 7.617521286010742,
+        "r2_at_best_tl": 0.9861337542533875,
+        "n_epochs": 115,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "qx7s85sj",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0051519679836928844,
+      "best_traj_loss_epoch": 113.0,
+      "best_mase": 0.7546310424804688,
+      "best_mase_epoch": 113.0,
+      "lc_loss_at_best_tl": 7.617521286010742,
+      "r2_at_best_tl": 0.9861337542533875,
+      "n_epochs": 115,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 0
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "qx7s85sj",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.0051519679836928844,
+      "best_traj_loss_epoch": 113.0,
+      "best_mase": 0.7546310424804688,
+      "best_mase_epoch": 113.0,
+      "lc_loss_at_best_tl": 7.617521286010742,
+      "r2_at_best_tl": 0.9861337542533875,
+      "n_epochs": 115,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 0
+      }
+    },
+    "swept_paths": [
+      "training.lightning.loop_closure_weight"
+    ],
+    "n_runs": 5
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": null,
+  "per_run_tangent_spectrum": {
+    "ar8w5u2w": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "2josp5ek": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "qx7s85sj": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "avtldx1b": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    },
+    "ym53fkj8": {
+      "error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it."
+    }
+  },
+  "per_run_tangent_spectrum_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 5 runs train without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best val traj loss is comparable or better than identity-init companion sweep at the same LC",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Convergence faster than identity-init companion",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "PCA-init's advantage over identity (if any) is at least as large at noise=0.05 as at noise=0.01",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {},
+  "analytics_error": "ValueError: model.encoder.init_pca_basis=True but no pca_basis tensor was passed to make_model. Compute it in run_jacobians and forward it.",
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
