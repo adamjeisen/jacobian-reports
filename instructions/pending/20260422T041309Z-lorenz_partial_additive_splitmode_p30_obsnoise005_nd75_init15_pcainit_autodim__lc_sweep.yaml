@@ -1,0 +1,5 @@
+experiment: lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep
+overrides:
+  - "hydra.launcher.partition=ou_bcs_normal"
+submitted_at: 20260422T041309Z
+submitted_from: millerlab-endeavourOS
