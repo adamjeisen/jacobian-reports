@@ -20,11 +20,11 @@ Found 5 effectively-done sweep runs:
   loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=k3axirk1
   loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ng29960w
 n_dims=75, n_latent=75, n_dyn=6, dt=0.0150
-  run=h5uv4jeq: DiagnosticMetrics(one_step_mase=0.7051078081130981, loop_closure_loss=4.8020830154418945, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0007934003951959312) (from W&B history)
-  run=yfbnmzzh: DiagnosticMetrics(one_step_mase=0.6745500564575195, loop_closure_loss=2.265191078186035, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008038212545216084) (from W&B history)
-  run=t7uxxd9h: DiagnosticMetrics(one_step_mase=0.6214777231216431, loop_closure_loss=0.7874701619148254, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.000751942687202245) (from W&B history)
-  run=k3axirk1: DiagnosticMetrics(one_step_mase=0.7030951976776123, loop_closure_loss=0.14789293706417084, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0006325357244350016) (from W&B history)
-  run=ng29960w: DiagnosticMetrics(one_step_mase=0.6657422184944153, loop_closure_loss=0.02807716652750969, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009320250246673822) (from W&B history)
+  run=h5uv4jeq: DiagnosticMetrics(one_step_mase=0.7051078081130981, loop_closure_loss=4.8020830154418945, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0007934003951959312) (from cache, n_batches=100)
+  run=yfbnmzzh: DiagnosticMetrics(one_step_mase=0.6745500564575195, loop_closure_loss=2.265191078186035, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0008038212545216084) (from cache, n_batches=100)
+  run=t7uxxd9h: DiagnosticMetrics(one_step_mase=0.6214777231216431, loop_closure_loss=0.7874701619148254, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.000751942687202245) (from cache, n_batches=100)
+  run=k3axirk1: DiagnosticMetrics(one_step_mase=0.7030951976776123, loop_closure_loss=0.14789293706417084, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0006325357244350016) (from cache, n_batches=100)
+  run=ng29960w: DiagnosticMetrics(one_step_mase=0.6657422184944153, loop_closure_loss=0.02807716652750969, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0009320250246673822) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              k3axirk1
@@ -33,7 +33,7 @@ Best tangent_entropy_weight: 0.0
 Best kl_dyn_weight:       0.0
 Best traj loss:           0.000633
 Criteria applied: ['C1', 'C2', 'C3']
-Surviving: 5 / 5
+Surviving: 4 / 5
 Auto-selected run_id: k3axirk1
 
 ======================================================================
@@ -45,7 +45,7 @@ PARETO FRONTIER RUNS (2 runs)
   k3axirk1            0.147893        0.000633 <-- selected
 
 ======================================================================
-RANKING METHOD COMPARISON (over 5 survivors)
+RANKING METHOD COMPARISON (over 4 survivors)
 ======================================================================
   Method                  Run ID               LC Loss   Traj Val Loss
   ----------------------  ------------  --------------  --------------

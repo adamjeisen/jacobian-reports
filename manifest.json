@@ -232,6 +232,20 @@
     ],
     "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE": [
       {
+        "group": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_autodim__lc_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776835557.776073
+      },
+      {
+        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776835549.1939917
+      },
+      {
         "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise001__ndelays_initsteps_autodim",
         "has_report": true,
         "has_metrics": true,
@@ -244,20 +258,6 @@
         "has_metrics": true,
         "has_discussion": false,
         "report_mtime": 1776832008.0166674
-      },
-      {
-        "group": "lorenz_partial_additive_splitmode_p30_obsnoise001_nd75_init15_autodim__lc_sweep",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776830450.945548
-      },
-      {
-        "group": "lorenz_partial_additive_mse_uniform_p30_obsnoise005__ndelays_initsteps_autodim",
-        "has_report": true,
-        "has_metrics": true,
-        "has_discussion": false,
-        "report_mtime": 1776807041.5070384
       }
     ],
     "Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE": [
