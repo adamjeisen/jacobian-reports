@@ -365,6 +365,12 @@
   },
   "diagnostics": [
     {
+      "name": "tlm_compare_split_vs_uniform.png",
+      "path": "diagnostics/tlm_compare_split_vs_uniform.png",
+      "mtime": 1776911102.7179,
+      "size": 217667
+    },
+    {
       "name": "amplification_vs_delays_ndelays_sweep.png",
       "path": "diagnostics/amplification_vs_delays_ndelays_sweep.png",
       "mtime": 1776712802.235552,
