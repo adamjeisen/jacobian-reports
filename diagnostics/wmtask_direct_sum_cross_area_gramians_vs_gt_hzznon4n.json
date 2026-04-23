@@ -4,7 +4,7 @@
   "n_trajectories": 128,
   "T": 49,
   "dt": 0.02,
-  "generated_at": "2026-04-23T18:21:49",
+  "generated_at": "2026-04-23T18:28:30",
   "rows": [
     {
       "direction": "vis\u2192cog",
