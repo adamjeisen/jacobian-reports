@@ -1,0 +1,5 @@
+experiment: lorenz_partial_additive_uniformLC_p30_obsnoise005_nd45_init15_autodim_lc1em4__validation_3x3x3_sweep
+overrides:
+  - "hydra.launcher.partition=ou_bcs_normal"
+submitted_at: 20260423T064147Z
+submitted_from: millerlab-endeavourOS
