@@ -1,0 +1,93 @@
+{
+  "run_id": "hzznon4n",
+  "obs_noise_scale": 0.01,
+  "generated_at": "2026-04-23T17:38:22",
+  "rows": [
+    {
+      "pair": "visual\u2192cognitive",
+      "gramian": "reach",
+      "log_trace_final": -0.20224441587924957,
+      "log_trace_std_final": 0.047917626798152924,
+      "log_min_final": -7.746767044067383,
+      "log_min_std_final": 0.3860243856906891
+    },
+    {
+      "pair": "visual\u2192cognitive",
+      "gramian": "ctrl",
+      "log_trace_final": -4.088149547576904,
+      "log_trace_std_final": 0.04831507056951523,
+      "log_min_final": -17.521278381347656,
+      "log_min_std_final": 1.612892985343933
+    },
+    {
+      "pair": "visual\u2192cognitive",
+      "gramian": "obs",
+      "log_trace_final": -4.10941219329834,
+      "log_trace_std_final": 0.048432860523462296,
+      "log_min_final": -18.10662078857422,
+      "log_min_std_final": 1.661802053451538
+    },
+    {
+      "pair": "cognitive\u2192visual",
+      "gramian": "reach",
+      "log_trace_final": -0.21994346380233765,
+      "log_trace_std_final": 0.04703785851597786,
+      "log_min_final": -7.713353157043457,
+      "log_min_std_final": 0.47922569513320923
+    },
+    {
+      "pair": "cognitive\u2192visual",
+      "gramian": "ctrl",
+      "log_trace_final": -4.10941219329834,
+      "log_trace_std_final": 0.04843292012810707,
+      "log_min_final": -18.10662078857422,
+      "log_min_std_final": 1.661804437637329
+    },
+    {
+      "pair": "cognitive\u2192visual",
+      "gramian": "obs",
+      "log_trace_final": -4.088149547576904,
+      "log_trace_std_final": 0.04831512272357941,
+      "log_min_final": -17.521278381347656,
+      "log_min_std_final": 1.6128913164138794
+    }
+  ],
+  "ground_truth": {
+    "visual\u2192cognitive|reach": {
+      "log_trace": 4.893,
+      "log_trace_std": 0.385,
+      "log_min": -6.624,
+      "log_min_std": 0.172
+    },
+    "visual\u2192cognitive|ctrl": {
+      "log_trace": 2.787,
+      "log_trace_std": 0.051,
+      "log_min": -13.473,
+      "log_min_std": 0.2
+    },
+    "visual\u2192cognitive|obs": {
+      "log_trace": 0.321,
+      "log_trace_std": 0.138,
+      "log_min": -18.894,
+      "log_min_std": 1.338
+    },
+    "cognitive\u2192visual|reach": {
+      "log_trace": 2.678,
+      "log_trace_std": 0.178,
+      "log_min": -7.771,
+      "log_min_std": 0.384
+    },
+    "cognitive\u2192visual|ctrl": {
+      "log_trace": 0.321,
+      "log_trace_std": 0.138,
+      "log_min": -18.894,
+      "log_min_std": 1.338
+    },
+    "cognitive\u2192visual|obs": {
+      "log_trace": 2.787,
+      "log_trace_std": 0.051,
+      "log_min": -13.473,
+      "log_min_std": 0.2
+    }
+  }
+}
