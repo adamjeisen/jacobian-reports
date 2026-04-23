@@ -1,5 +1,0 @@
-experiment: wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep
-overrides:
-  - "hydra.launcher.partition=ou_bcs_high"
-submitted_at: 20260423T171336Z
-submitted_from: millerlab-endeavourOS
