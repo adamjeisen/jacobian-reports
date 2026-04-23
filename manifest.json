@@ -365,6 +365,12 @@
   },
   "diagnostics": [
     {
+      "name": "tlm_compare_lyapunov.png",
+      "path": "diagnostics/tlm_compare_lyapunov.png",
+      "mtime": 1776918002.483648,
+      "size": 299560
+    },
+    {
       "name": "tlm_compare_split_vs_uniform.png",
       "path": "diagnostics/tlm_compare_split_vs_uniform.png",
       "mtime": 1776911102.7179,
