@@ -365,6 +365,12 @@
   },
   "diagnostics": [
     {
+      "name": "cull_rule_pareto.png",
+      "path": "diagnostics/cull_rule_pareto.png",
+      "mtime": 1776923102.649035,
+      "size": 178976
+    },
+    {
       "name": "mase_drop_rule.png",
       "path": "diagnostics/mase_drop_rule.png",
       "mtime": 1776922503.619268,
