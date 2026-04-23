@@ -393,6 +393,12 @@
   },
   "diagnostics": [
     {
+      "name": "wmtask_direct_sum_cross_area_gramians_hzznon4n.png",
+      "path": "diagnostics/wmtask_direct_sum_cross_area_gramians_hzznon4n.png",
+      "mtime": 1776980702.516976,
+      "size": 186575
+    },
+    {
       "name": "early_stop_pareto.png",
       "path": "diagnostics/early_stop_pareto.png",
       "mtime": 1776925502.9181,
