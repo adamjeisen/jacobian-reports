@@ -232,6 +232,13 @@
     ],
     "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE": [
       {
+        "group": "lorenz_partial_additive_splitmode_p30_obsnoise001_top3nd_init15_autodim__lc_obsnoisescale_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776978626.918716
+      },
+      {
         "group": "lorenz_partial_additive_uniformLC_p30_obsnoise005_nd45_init15_autodim_lc1em4__validation_3x3x3_sweep",
         "has_report": true,
         "has_metrics": true,
@@ -354,6 +361,13 @@
       }
     ],
     "WMTask_identity_encoder_verification": [
+      {
+        "group": "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776978635.154794
+      },
       {
         "group": "wmtask_vanilla_mse_p30__lc_sweep",
         "has_report": true,

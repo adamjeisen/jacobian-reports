@@ -1,0 +1,65 @@
+{
+  "group": "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep",
+  "completed_at": "2026-04-23T21:00:20Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep": {
+      "description": "WMTask fully-observed (N1=N2=64), latent JacobianODE with DIRECT-SUM\ncoupling encoder. z_dyn = 128 (= 64 + 64, no null subspace). Visual\nand cognitive are encoded independently; the combined dynamic\nsubspace is contiguous at positions [0, 128) so downstream z_dyn\nslicing unchanged. Split-mode MSE (uniform recon + most_recent traj).\nobs_noise=0.05, prediction_steps=30, seq_length=45. LC weight fixed\nat 1e-5 (winner of the reference LC sweep by best trajectory loss).\n3-run sweep over obs_noise_scale {0, 0.01, 0.05}.\n",
+      "hypothesis": "With a block-structured (area-diagonal) encoder Jacobian by\nconstruction, any cross-area signal in the latent dynamics is\nattributable to the dynamics MLP, not encoder mixing. The baseline\ncheck is whether the Lyapunov spectrum reproduces the reference\nrandom-init 128->128 network at LC=1e-5 \u2014 if the direct-sum encoder\nconverges to a comparable spectrum, the block constraint didn't\nbreak anything. obs_noise_scale sweep quantifies how much training\nnoise biases the Lyapunov spectrum toward better-resolved\ncontracting directions (as it did for partial-obs Lorenz).\n",
+      "success_criteria": [
+        "All 3 runs train without divergence",
+        "Best val traj_loss within 2x of the reference LC=1e-5 run's 0.0105",
+        "Lyapunov \u03bb_max is finite positive at obs_noise_scale=0 (consistent with reference)",
+        "Loop closure loss at selection epoch < sqrt(n_target_dims) = sqrt(128) \u2248 11.3 (C2 pass)"
+      ]
+    }
+  },
+  "expected_run_count": 3,
+  "hydra": {
+    "experiments": [
+      "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep",
+      "hydra.launcher.partition=ou_bcs_high"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep",
+        "overrides": [
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_high"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep",
+        "overrides": [
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_high"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep",
+        "overrides": [
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_high"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "3d11167",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-23T17:15:11Z"
+}
