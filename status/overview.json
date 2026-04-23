@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-23T06:40:14Z",
+  "last_updated": "2026-04-23T06:46:15Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -413,15 +413,15 @@
     "lorenz_partial_additive_splitmode_p30_obsnoise001_top3nd_init15_autodim__lc_obsnoisescale_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 0,
-        "in_flight": 108,
+        "terminal": 2,
+        "in_flight": 106,
         "failed_exhausted": 0,
-        "effectively_done": 0
+        "effectively_done": 2
       },
       "training_slurm": {
-        "n_running": 3,
-        "n_pending": 105,
-        "n_total": 108
+        "n_running": 2,
+        "n_pending": 104,
+        "n_total": 106
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep": {
@@ -454,6 +454,34 @@
         "n_running": 0,
         "n_pending": 108,
         "n_total": 108
+      }
+    },
+    "lorenz_partial_additive_uniformLC_p30_obsnoise001_nd60_init15_autodim_lc1em4__validation_3x3x3_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 27,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 27,
+        "n_total": 27
+      }
+    },
+    "lorenz_partial_additive_uniformLC_p30_obsnoise005_nd45_init15_autodim_lc1em4__validation_3x3x3_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 27,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 27,
+        "n_total": 27
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
@@ -702,6 +730,14 @@
     },
     {
       "file": "20260423T045621Z-lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_obsnoisescale_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260423T064146Z-lorenz_partial_additive_uniformLC_p30_obsnoise001_nd60_init15_autodim_lc1em4__validation_3x3x3_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260423T064147Z-lorenz_partial_additive_uniformLC_p30_obsnoise005_nd45_init15_autodim_lc1em4__validation_3x3x3_sweep.yaml",
       "status": "claimed"
     }
   ]
