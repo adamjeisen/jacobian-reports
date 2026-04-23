@@ -365,6 +365,12 @@
   },
   "diagnostics": [
     {
+      "name": "mase_drop_rule.png",
+      "path": "diagnostics/mase_drop_rule.png",
+      "mtime": 1776922503.619268,
+      "size": 354097
+    },
+    {
       "name": "early_vs_best_traj_loss.png",
       "path": "diagnostics/early_vs_best_traj_loss.png",
       "mtime": 1776922202.09937,
