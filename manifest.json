@@ -365,6 +365,12 @@
   },
   "diagnostics": [
     {
+      "name": "early_vs_best_traj_loss.png",
+      "path": "diagnostics/early_vs_best_traj_loss.png",
+      "mtime": 1776921902.566442,
+      "size": 325842
+    },
+    {
       "name": "tlm_compare_lyapunov.png",
       "path": "diagnostics/tlm_compare_lyapunov.png",
       "mtime": 1776918002.483648,
