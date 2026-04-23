@@ -365,6 +365,12 @@
   },
   "diagnostics": [
     {
+      "name": "cull_rule_combined.png",
+      "path": "diagnostics/cull_rule_combined.png",
+      "mtime": 1776924003.871161,
+      "size": 185327
+    },
+    {
       "name": "cull_rule_pareto.png",
       "path": "diagnostics/cull_rule_pareto.png",
       "mtime": 1776923102.649035,
