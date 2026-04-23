@@ -232,6 +232,13 @@
     ],
     "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE": [
       {
+        "group": "lorenz_partial_additive_uniformLC_p30_obsnoise001_nd60_init15_autodim_lc1em4__validation_3x3x3_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1776942630.2480128
+      },
+      {
         "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_pcainit_autodim__lc_sweep",
         "has_report": true,
         "has_metrics": true,
