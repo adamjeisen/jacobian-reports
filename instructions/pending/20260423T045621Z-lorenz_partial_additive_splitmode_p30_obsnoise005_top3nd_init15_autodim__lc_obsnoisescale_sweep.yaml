@@ -1,0 +1,5 @@
+experiment: lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_obsnoisescale_sweep
+overrides:
+  - "hydra.launcher.partition=ou_bcs_low"
+submitted_at: 20260423T045621Z
+submitted_from: millerlab-endeavourOS
