@@ -365,6 +365,18 @@
   },
   "diagnostics": [
     {
+      "name": "early_stop_pareto.png",
+      "path": "diagnostics/early_stop_pareto.png",
+      "mtime": 1776925502.9181,
+      "size": 82986
+    },
+    {
+      "name": "early_stop_curves_sample.png",
+      "path": "diagnostics/early_stop_curves_sample.png",
+      "mtime": 1776925502.916059,
+      "size": 472684
+    },
+    {
       "name": "cull_rule_combined.png",
       "path": "diagnostics/cull_rule_combined.png",
       "mtime": 1776924003.871161,
