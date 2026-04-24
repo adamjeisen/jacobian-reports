@@ -1,0 +1,60 @@
+{
+  "run_id": "pip3w5po",
+  "group": "wmtask_vanilla_mse_p30__lc_sweep",
+  "model_kind": "no_encoder_vanilla",
+  "n_trajectories": 128,
+  "T": 49,
+  "dt": 0.02,
+  "generated_at": "2026-04-24T11:35:18",
+  "rows": [
+    {
+      "direction": "vis\u2192cog",
+      "gramian": "reach",
+      "learned_log_trace_final": 5.542661666870117,
+      "gt_log_trace_final": 4.892991542816162,
+      "learned_log_min_final": -4.635080337524414,
+      "gt_log_min_final": -6.624362945556641
+    },
+    {
+      "direction": "vis\u2192cog",
+      "gramian": "ctrl",
+      "learned_log_trace_final": 3.029995918273926,
+      "gt_log_trace_final": 2.7872185707092285,
+      "learned_log_min_final": -12.879997253417969,
+      "gt_log_min_final": -13.472970962524414
+    },
+    {
+      "direction": "vis\u2192cog",
+      "gramian": "obs",
+      "learned_log_trace_final": 2.36076021194458,
+      "gt_log_trace_final": 0.3205075263977051,
+      "learned_log_min_final": -12.311400413513184,
+      "gt_log_min_final": -18.894203186035156
+    },
+    {
+      "direction": "cog\u2192vis",
+      "gramian": "reach",
+      "learned_log_trace_final": 3.801910400390625,
+      "gt_log_trace_final": 2.677903890609741,
+      "learned_log_min_final": -6.0293989181518555,
+      "gt_log_min_final": -7.770848274230957
+    },
+    {
+      "direction": "cog\u2192vis",
+      "gramian": "ctrl",
+      "learned_log_trace_final": 2.36076021194458,
+      "gt_log_trace_final": 0.3205075263977051,
+      "learned_log_min_final": -12.311407089233398,
+      "gt_log_min_final": -18.894203186035156
+    },
+    {
+      "direction": "cog\u2192vis",
+      "gramian": "obs",
+      "learned_log_trace_final": 3.029996156692505,
+      "gt_log_trace_final": 2.7872185707092285,
+      "learned_log_min_final": -12.88000774383545,
+      "gt_log_min_final": -13.472969055175781
+    }
+  ],
+  "wandb_traj_val_loss": 0.011511684395372868
+}
