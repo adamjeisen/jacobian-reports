@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-24T08:50:27Z",
+  "last_updated": "2026-04-24T08:55:26Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -490,15 +490,15 @@
     "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 15,
-        "in_flight": 6,
+        "terminal": 16,
+        "in_flight": 5,
         "failed_exhausted": 0,
-        "effectively_done": 15
+        "effectively_done": 16
       },
       "training_slurm": {
-        "n_running": 6,
+        "n_running": 5,
         "n_pending": 0,
-        "n_total": 6
+        "n_total": 5
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep": {
