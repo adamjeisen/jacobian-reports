@@ -421,6 +421,12 @@
   },
   "diagnostics": [
     {
+      "name": "wmtask_pca_autodim_diagnostic_clean_vs_noisy.png",
+      "path": "diagnostics/wmtask_pca_autodim_diagnostic_clean_vs_noisy.png",
+      "mtime": 1777053003.574378,
+      "size": 186510
+    },
+    {
       "name": "wmtask_pca_autodim_diagnostic.png",
       "path": "diagnostics/wmtask_pca_autodim_diagnostic.png",
       "mtime": 1777051202.440567,
