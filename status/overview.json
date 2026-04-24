@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-24T10:20:30Z",
+  "last_updated": "2026-04-24T10:25:29Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -488,17 +488,21 @@
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 17,
-        "in_flight": 4,
+        "terminal": 21,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 17
+        "effectively_done": 21
       },
-      "training_slurm": {
-        "n_running": 4,
-        "n_pending": 0,
-        "n_total": 4
+      "analysis": {
+        "slurm_job_id": "12444960",
+        "dispatched_at": "2026-04-24T10:25:29Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_lc1em5__obs_noise_scale_sweep": {
@@ -519,8 +523,8 @@
         "effectively_done": 4
       },
       "training_slurm": {
-        "n_running": 12,
-        "n_pending": 5,
+        "n_running": 16,
+        "n_pending": 1,
         "n_total": 17
       }
     },
