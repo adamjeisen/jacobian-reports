@@ -421,6 +421,12 @@
   },
   "diagnostics": [
     {
+      "name": "dim_estimators_lorenz_and_wmtask.png",
+      "path": "diagnostics/dim_estimators_lorenz_and_wmtask.png",
+      "mtime": 1777053903.80334,
+      "size": 151822
+    },
+    {
       "name": "lorenz_pr_vs_99_across_ndelays.png",
       "path": "diagnostics/lorenz_pr_vs_99_across_ndelays.png",
       "mtime": 1777053301.837359,
