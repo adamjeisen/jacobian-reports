@@ -1,0 +1,20 @@
+{
+  "obs_noise": 0.05,
+  "threshold": 0.99,
+  "n_samples": 200704,
+  "full": {
+    "D": 128,
+    "participation_ratio": 5.3642672039269526,
+    "n_pc_at_threshold": 19
+  },
+  "visual": {
+    "D": 64,
+    "participation_ratio": 4.620305828821079,
+    "n_pc_at_threshold": 18
+  },
+  "cognitive": {
+    "D": 64,
+    "participation_ratio": 4.878231420027456,
+    "n_pc_at_threshold": 14
+  }
+}
