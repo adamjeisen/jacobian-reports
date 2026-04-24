@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-24T04:55:28Z",
+  "last_updated": "2026-04-24T05:00:27Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -471,7 +471,7 @@
       "training_slurm": {
         "n_running": 5,
         "n_pending": 0,
-        "n_total": 6
+        "n_total": 5
       }
     },
     "lorenz_partial_additive_uniformLC_p30_obsnoise001_nd60_init15_autodim_lc1em4__validation_3x3x3_sweep": {
@@ -501,8 +501,8 @@
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 10,
-        "n_pending": 11,
+        "n_running": 11,
+        "n_pending": 10,
         "n_total": 21
       }
     },
