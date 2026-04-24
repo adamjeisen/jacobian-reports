@@ -496,15 +496,6 @@
         "effectively_done": 21
       }
     },
-    "wmtask_direct_sum_additive_splitmode_p30_full128_randinit__lc_x_obsnoisescale_sweep": {
-      "status": "failed",
-      "runs_summary": {
-        "terminal": 21,
-        "in_flight": 0,
-        "failed_exhausted": 17,
-        "effectively_done": 4
-      }
-    },
     "wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep": {
       "status": "active",
       "runs_summary": {
