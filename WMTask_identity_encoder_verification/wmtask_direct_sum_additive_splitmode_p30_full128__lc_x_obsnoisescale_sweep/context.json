@@ -1,0 +1,230 @@
+{
+  "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+  "completed_at": "2026-04-24T10:25:22Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
+      "description": "WMTask fully-observed (N1=N2=64), latent JacobianODE with DirectSum\ncoupling encoder, 128->128 (no null subspace). 21-run sweep over\n7 LC weights \u00d7 3 obs_noise_scale values. Identity init\n(final_perm_identity=true + zero_init=true), additive coupling.\nSplit-mode loss (uniform recon + trajectory_loss_most_recent=true) \u2014\nmoot for fully-observed n_delays=1 (uniform == most_recent), set\nexplicitly for consistency. Dropped LC=1 and LC=10 (near-uniformly\nbad in prior LC sweeps). Submitted on ou_bcs_normal.\n",
+      "hypothesis": "Earlier 3-run obs_noise_scale sweep at LC=1e-5 (the vanilla-encoder\nwinner) gave good trajectory val loss but Lyapunov spectra worse\nthan the vanilla 128->128 reference \u2014 possibly because LC=1e-5\nisn't the DirectSum-optimal LC. This sweep checks whether some\nLC produces both good traj loss AND faithful Lyapunov / Gramian\nstructure, and how obs_noise_scale interacts with LC for the\nDirectSum constraint. Companion sweep is the per-area PCA-auto\nn_target_dims version (with null subspace) \u2014 same grid, different\nencoder dimensionality.\n",
+      "success_criteria": [
+        "All 21 runs train without divergence",
+        "Best val traj_loss within 2x of the reference 128->128 vanilla LC sweep's best (0.0105 at LC=1e-5)",
+        "At least one cell shows cross-area Gramian asymmetry consistent with ground truth (vis->cog reach > cog->vis reach)",
+        "\u03bb_max at best cell finite positive and consistent with reference"
+      ]
+    }
+  },
+  "expected_run_count": 21,
+  "hydra": {
+    "experiments": [
+      "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "71e9038",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-24T04:15:11Z"
+}
