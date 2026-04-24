@@ -421,6 +421,12 @@
   },
   "diagnostics": [
     {
+      "name": "wmtask_pca_autodim_diagnostic.png",
+      "path": "diagnostics/wmtask_pca_autodim_diagnostic.png",
+      "mtime": 1777051202.440567,
+      "size": 104749
+    },
+    {
       "name": "wmtask_direct_sum_perareaautodim_cross_area_gramians_vs_gt_r9mia371.png",
       "path": "diagnostics/wmtask_direct_sum_perareaautodim_cross_area_gramians_vs_gt_r9mia371.png",
       "mtime": 1777050903.551118,
