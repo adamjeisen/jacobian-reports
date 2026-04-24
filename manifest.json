@@ -376,6 +376,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_direct_sum_additive_splitmode_p30_perareaautodim__lc_x_obsnoisescale_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777037731.0507777
+      },
+      {
         "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
         "has_report": true,
         "has_metrics": true,
