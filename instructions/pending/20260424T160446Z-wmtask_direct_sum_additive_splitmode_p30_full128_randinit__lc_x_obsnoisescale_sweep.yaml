@@ -1,5 +1,0 @@
-experiment: wmtask_direct_sum_additive_splitmode_p30_full128_randinit__lc_x_obsnoisescale_sweep
-overrides:
-  - "hydra.launcher.partition=ou_bcs_normal"
-submitted_at: 20260424T160446Z
-submitted_from: millerlab-endeavourOS
