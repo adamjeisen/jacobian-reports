@@ -421,6 +421,12 @@
   },
   "diagnostics": [
     {
+      "name": "fnn_dim_lorenz_and_wmtask.png",
+      "path": "diagnostics/fnn_dim_lorenz_and_wmtask.png",
+      "mtime": 1777055116.001117,
+      "size": 285311
+    },
+    {
       "name": "dim_estimators_lorenz_and_wmtask.png",
       "path": "diagnostics/dim_estimators_lorenz_and_wmtask.png",
       "mtime": 1777053903.80334,
