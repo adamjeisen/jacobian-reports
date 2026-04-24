@@ -421,6 +421,12 @@
   },
   "diagnostics": [
     {
+      "name": "lorenz_pr_vs_99_across_ndelays.png",
+      "path": "diagnostics/lorenz_pr_vs_99_across_ndelays.png",
+      "mtime": 1777053301.837359,
+      "size": 126972
+    },
+    {
       "name": "wmtask_pca_autodim_diagnostic_clean_vs_noisy.png",
       "path": "diagnostics/wmtask_pca_autodim_diagnostic_clean_vs_noisy.png",
       "mtime": 1777053003.574378,
