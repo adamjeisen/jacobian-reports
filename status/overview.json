@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-24T00:00:20Z",
+  "last_updated": "2026-04-24T00:05:21Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -449,29 +449,29 @@
     "lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_obsnoisescale_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 83,
-        "in_flight": 25,
+        "terminal": 85,
+        "in_flight": 23,
         "failed_exhausted": 73,
-        "effectively_done": 10
+        "effectively_done": 12
       },
       "training_slurm": {
-        "n_running": 1,
-        "n_pending": 24,
-        "n_total": 25
+        "n_running": 0,
+        "n_pending": 23,
+        "n_total": 23
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 2,
-        "in_flight": 19,
+        "terminal": 3,
+        "in_flight": 18,
         "failed_exhausted": 0,
-        "effectively_done": 2
+        "effectively_done": 3
       },
       "training_slurm": {
         "n_running": 9,
-        "n_pending": 10,
-        "n_total": 19
+        "n_pending": 9,
+        "n_total": 18
       }
     },
     "lorenz_partial_additive_uniformLC_p30_obsnoise001_nd60_init15_autodim_lc1em4__validation_3x3x3_sweep": {
