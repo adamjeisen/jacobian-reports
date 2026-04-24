@@ -1,0 +1,57 @@
+{
+  "threshold": 0.99,
+  "noise_levels": [
+    0.0,
+    0.05
+  ],
+  "rows": [
+    {
+      "noise": 0.0,
+      "subsystem": "FULL (128-D)",
+      "D": 128,
+      "participation_ratio": 5.332541097137927,
+      "ceil_pr": 6,
+      "n_pc_at_99": 16
+    },
+    {
+      "noise": 0.0,
+      "subsystem": "VISUAL (64-D)",
+      "D": 64,
+      "participation_ratio": 4.540968217319402,
+      "ceil_pr": 5,
+      "n_pc_at_99": 13
+    },
+    {
+      "noise": 0.0,
+      "subsystem": "COGNITIVE (64-D)",
+      "D": 64,
+      "participation_ratio": 4.861520825400879,
+      "ceil_pr": 5,
+      "n_pc_at_99": 13
+    },
+    {
+      "noise": 0.05,
+      "subsystem": "FULL (128-D)",
+      "D": 128,
+      "participation_ratio": 5.3642672039269526,
+      "ceil_pr": 6,
+      "n_pc_at_99": 19
+    },
+    {
+      "noise": 0.05,
+      "subsystem": "VISUAL (64-D)",
+      "D": 64,
+      "participation_ratio": 4.620305828821079,
+      "ceil_pr": 5,
+      "n_pc_at_99": 18
+    },
+    {
+      "noise": 0.05,
+      "subsystem": "COGNITIVE (64-D)",
+      "D": 64,
+      "participation_ratio": 4.878231420027456,
+      "ceil_pr": 5,
+      "n_pc_at_99": 14
+    }
+  ]
+}
