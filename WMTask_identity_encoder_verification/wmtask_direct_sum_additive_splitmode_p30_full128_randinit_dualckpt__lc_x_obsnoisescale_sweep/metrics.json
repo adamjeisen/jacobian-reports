@@ -1,0 +1,583 @@
+{
+  "schema_version": 3,
+  "group": "wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep",
+  "analyzed_at": "2026-04-24T23:58:40Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "shvnbo6m",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004465973936021328,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6604478359222412,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 11.340237617492676,
+        "r2_at_best_tl": 0.9948771595954895,
+        "n_epochs": 40,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "3tsdse3q",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004546486306935549,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6679569482803345,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 21.86119842529297,
+        "r2_at_best_tl": 0.9947847723960876,
+        "n_epochs": 41,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "om7x2lp5",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.00425605708733201,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.6465837359428406,
+        "best_mase_epoch": 40.0,
+        "lc_loss_at_best_tl": 30.729490280151367,
+        "r2_at_best_tl": 0.9951232671737671,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "ykoqooew",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0043183015659451485,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.6495977640151978,
+        "best_mase_epoch": 40.0,
+        "lc_loss_at_best_tl": 9.776531219482422,
+        "r2_at_best_tl": 0.9950459003448486,
+        "n_epochs": 41,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "ihruo1nh",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004496898502111435,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6649841070175171,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 17.555822372436523,
+        "r2_at_best_tl": 0.9948427677154541,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "kpssh1t5",
+        "run_idx": 5,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004296920727938414,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.649354100227356,
+        "best_mase_epoch": 40.0,
+        "lc_loss_at_best_tl": 23.628931045532227,
+        "r2_at_best_tl": 0.9950779676437378,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "ruf6eimh",
+        "run_idx": 6,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004302163142710924,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.6487056612968445,
+        "best_mase_epoch": 40.0,
+        "lc_loss_at_best_tl": 4.883230209350586,
+        "r2_at_best_tl": 0.995064377784729,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "355qgefr",
+        "run_idx": 7,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004555069375783205,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6685744524002075,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 8.585664749145508,
+        "r2_at_best_tl": 0.9947788119316101,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "2j9p9bar",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004112141206860542,
+        "best_traj_loss_epoch": 35.0,
+        "best_mase": 0.6381482481956482,
+        "best_mase_epoch": 35.0,
+        "lc_loss_at_best_tl": 9.877305030822754,
+        "r2_at_best_tl": 0.9952831864356995,
+        "n_epochs": 41,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "4b9b4zk8",
+        "run_idx": 9,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004682409111410379,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6741389632225037,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 1.2676769495010376,
+        "r2_at_best_tl": 0.9946316480636597,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "pf2ebouj",
+        "run_idx": 10,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.005274546332657337,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.7142302989959717,
+        "best_mase_epoch": 41.0,
+        "lc_loss_at_best_tl": 3.5944530963897705,
+        "r2_at_best_tl": 0.993955135345459,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "bcqyj136",
+        "run_idx": 11,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004375186748802662,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6563690304756165,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 3.2358202934265137,
+        "r2_at_best_tl": 0.9949842095375061,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "fnxovse1",
+        "run_idx": 12,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0049061221070587635,
+        "best_traj_loss_epoch": 39.0,
+        "best_mase": 0.6879087686538696,
+        "best_mase_epoch": 39.0,
+        "lc_loss_at_best_tl": 0.2045392096042633,
+        "r2_at_best_tl": 0.994374692440033,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "ru3tfu3u",
+        "run_idx": 13,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.005609680898487568,
+        "best_traj_loss_epoch": 41.0,
+        "best_mase": 0.7369543313980103,
+        "best_mase_epoch": 41.0,
+        "lc_loss_at_best_tl": 0.3688083291053772,
+        "r2_at_best_tl": 0.993567943572998,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "jigea1r1",
+        "run_idx": 14,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.005376577842980623,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.7177714705467224,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 0.4991380274295807,
+        "r2_at_best_tl": 0.9938412308692932,
+        "n_epochs": 39,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "sliyvdk6",
+        "run_idx": 15,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005627555772662163,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.732574999332428,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 0.024166101589798927,
+        "r2_at_best_tl": 0.9935469627380371,
+        "n_epochs": 39,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "qhl82jkn",
+        "run_idx": 16,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.006752959918230772,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.8059659600257874,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 0.05283176898956299,
+        "r2_at_best_tl": 0.9922645092010498,
+        "n_epochs": 39,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "8j99ikd7",
+        "run_idx": 17,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.0071073370054364204,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.8234890699386597,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 0.09618101269006729,
+        "r2_at_best_tl": 0.9918532371520996,
+        "n_epochs": 40,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "ozyq3lxf",
+        "run_idx": 18,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005887348670512438,
+        "best_traj_loss_epoch": 39.0,
+        "best_mase": 0.7513023614883423,
+        "best_mase_epoch": 39.0,
+        "lc_loss_at_best_tl": 0.002879779553040862,
+        "r2_at_best_tl": 0.9932456016540527,
+        "n_epochs": 40,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "ot399pzt",
+        "run_idx": 19,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.059611864387989044,
+        "best_traj_loss_epoch": 6.0,
+        "best_mase": 2.0632948875427246,
+        "best_mase_epoch": 6.0,
+        "lc_loss_at_best_tl": 0.0004258455301169306,
+        "r2_at_best_tl": 0.9317330718040466,
+        "n_epochs": 16,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "gfd504tk",
+        "run_idx": 20,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.04978685826063156,
+        "best_traj_loss_epoch": 10.0,
+        "best_mase": 1.8969498872756958,
+        "best_mase_epoch": 10.0,
+        "lc_loss_at_best_tl": 0.0005849262233823538,
+        "r2_at_best_tl": 0.9433386325836182,
+        "n_epochs": 20,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 21,
+    "matched_run_count": 21,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "ruf6eimh",
+        "run_idx": 6,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004302163142710924,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.6487056612968445,
+        "best_mase_epoch": 40.0,
+        "lc_loss_at_best_tl": 4.883230209350586,
+        "r2_at_best_tl": 0.995064377784729,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      "0.01": {
+        "run_id": "ihruo1nh",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004496898502111435,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6649841070175171,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 17.555822372436523,
+        "r2_at_best_tl": 0.9948427677154541,
+        "n_epochs": 42,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      "0.05": {
+        "run_id": "2j9p9bar",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004112141206860542,
+        "best_traj_loss_epoch": 35.0,
+        "best_mase": 0.6381482481956482,
+        "best_mase_epoch": 35.0,
+        "lc_loss_at_best_tl": 9.877305030822754,
+        "r2_at_best_tl": 0.9952831864356995,
+        "n_epochs": 41,
+        "swept_config": {
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "2j9p9bar",
+      "run_idx": 8,
+      "state": "finished",
+      "lc_weight": 1e-05,
+      "obs_noise_scale": 0.05,
+      "best_traj_loss": 0.004112141206860542,
+      "best_traj_loss_epoch": 35.0,
+      "best_mase": 0.6381482481956482,
+      "best_mase_epoch": 35.0,
+      "lc_loss_at_best_tl": 9.877305030822754,
+      "r2_at_best_tl": 0.9952831864356995,
+      "n_epochs": 41,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 1e-05,
+        "training.lightning.obs_noise_scale": 0.05
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "2j9p9bar",
+      "run_idx": 8,
+      "state": "finished",
+      "lc_weight": 1e-05,
+      "obs_noise_scale": 0.05,
+      "best_traj_loss": 0.004112141206860542,
+      "best_traj_loss_epoch": 35.0,
+      "best_mase": 0.6381482481956482,
+      "best_mase_epoch": 35.0,
+      "lc_loss_at_best_tl": 9.877305030822754,
+      "r2_at_best_tl": 0.9952831864356995,
+      "n_epochs": 41,
+      "swept_config": {
+        "training.lightning.loop_closure_weight": 1e-05,
+        "training.lightning.obs_noise_scale": 0.05
+      }
+    },
+    "swept_paths": [
+      "training.lightning.loop_closure_weight",
+      "training.lightning.obs_noise_scale"
+    ],
+    "n_runs": 21
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": null,
+  "per_run_tangent_spectrum": {
+    "3tsdse3q": {
+      "error": "IndexError: list index out of range"
+    },
+    "shvnbo6m": {
+      "error": "IndexError: list index out of range"
+    },
+    "om7x2lp5": {
+      "error": "IndexError: list index out of range"
+    },
+    "ykoqooew": {
+      "error": "IndexError: list index out of range"
+    },
+    "ihruo1nh": {
+      "error": "IndexError: list index out of range"
+    },
+    "kpssh1t5": {
+      "error": "IndexError: list index out of range"
+    },
+    "ruf6eimh": {
+      "error": "IndexError: list index out of range"
+    },
+    "355qgefr": {
+      "error": "IndexError: list index out of range"
+    },
+    "2j9p9bar": {
+      "error": "IndexError: list index out of range"
+    },
+    "4b9b4zk8": {
+      "error": "IndexError: list index out of range"
+    },
+    "pf2ebouj": {
+      "error": "IndexError: list index out of range"
+    },
+    "bcqyj136": {
+      "error": "IndexError: list index out of range"
+    },
+    "fnxovse1": {
+      "error": "IndexError: list index out of range"
+    },
+    "ru3tfu3u": {
+      "error": "IndexError: list index out of range"
+    },
+    "8j99ikd7": {
+      "error": "IndexError: list index out of range"
+    },
+    "jigea1r1": {
+      "error": "IndexError: list index out of range"
+    },
+    "qhl82jkn": {
+      "error": "IndexError: list index out of range"
+    },
+    "sliyvdk6": {
+      "error": "IndexError: list index out of range"
+    },
+    "ozyq3lxf": {
+      "error": "IndexError: list index out of range"
+    },
+    "ot399pzt": {
+      "error": "IndexError: list index out of range"
+    },
+    "gfd504tk": {
+      "error": "IndexError: list index out of range"
+    }
+  },
+  "per_run_tangent_spectrum_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 21 runs train without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "es2-best.ckpt and es5-best.ckpt both saved per run",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best val traj_loss (at either checkpoint) within 2x of reference's 0.0105",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Cross-area Gramian asymmetry (vis->cog > cog->vis) present at best cell",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {},
+  "analytics_error": "IndexError: list index out of range",
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
