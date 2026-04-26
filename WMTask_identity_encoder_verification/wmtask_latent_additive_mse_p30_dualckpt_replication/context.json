@@ -1,0 +1,48 @@
+{
+  "group": "wmtask_latent_additive_mse_p30_dualckpt_replication",
+  "completed_at": "2026-04-26T22:20:13Z",
+  "outcome": "complete_with_failures",
+  "experiment_metadata": {
+    "wmtask_latent_additive_mse_p30_dualckpt_replication": {
+      "description": "Single-run replication of the monolithic CouplingEncoder best cell\n(LC=1e-5, obs_noise_scale=0.05) with dual-checkpoint enabled\n(early_stopping_patience=5, shadow_patience=2). Same model + data\n+ loss config as wmtask_latent_additive_mse_p30__lc_sweep modulo\npatience. Should reproduce that sweep's chosen-best Lyapunov\nbehavior at the es2-best.ckpt sidecar.\n",
+      "hypothesis": "es2-best.ckpt should match the original i73jwojr Lyapunov spectrum\n(clean negative tail, \u0394\u03bb_min \u2248 0). If it doesn't, code has drifted.\nes5-best.ckpt may or may not match \u2014 if it ALSO degrades, then ES5\nover-training contributes to the suppression we see on DirectSum\ndualckpt; if it stays clean, the suppression is DirectSum-specific.\n",
+      "success_criteria": [
+        "Run trains without divergence",
+        "Both es2-best.ckpt and (epoch-best) best.ckpt saved",
+        "es2 Lyapunov spectrum matches empirical to within \u0394\u03bb_min \u2248 \u00b11"
+      ]
+    }
+  },
+  "expected_run_count": 1,
+  "hydra": {
+    "experiments": [
+      "wmtask_latent_additive_mse_p30_dualckpt_replication"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_latent_additive_mse_p30_dualckpt_replication",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_latent_additive_mse_p30_dualckpt_replication",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_latent_additive_mse_p30_dualckpt_replication"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "6f113af",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-26T22:10:12Z"
+}

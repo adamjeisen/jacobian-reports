@@ -390,6 +390,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_latent_additive_mse_p30_dualckpt_replication",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777242319.0606806
+      },
+      {
         "group": "wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep",
         "has_report": true,
         "has_metrics": true,
