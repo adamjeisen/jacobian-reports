@@ -1,9 +1,142 @@
 {
   "sidecar": "es2-best.ckpt",
   "group": "wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep",
-  "swept_key": "training.lightning.loop_closure_weight",
+  "swept_keys": [
+    "training.lightning.loop_closure_weight"
+  ],
+  "empirical_lyapunov": [
+    -0.6849892139434814,
+    -1.2604632377624512,
+    -1.8541167974472046,
+    -2.4846978187561035,
+    -2.9244842529296875,
+    -3.261540174484253,
+    -3.7729506492614746,
+    -4.208206653594971,
+    -4.631889343261719,
+    -5.022093772888184,
+    -5.33618688583374,
+    -5.73844051361084,
+    -6.236234664916992,
+    -6.702847957611084,
+    -7.039422035217285,
+    -7.372195243835449,
+    -7.660328388214111,
+    -7.967138290405273,
+    -8.21160888671875,
+    -8.434985160827637,
+    -8.623978614807129,
+    -8.84627628326416,
+    -9.036660194396973,
+    -9.34356689453125,
+    -9.515668869018555,
+    -9.730523109436035,
+    -9.974517822265625,
+    -10.210700035095215,
+    -10.464609146118164,
+    -10.688358306884766,
+    -11.03208065032959,
+    -11.28499984741211,
+    -11.763935089111328,
+    -12.331192016601562,
+    -12.661774635314941,
+    -13.01568603515625,
+    -13.372817039489746,
+    -13.750092506408691,
+    -14.064504623413086,
+    -14.323211669921875,
+    -14.601276397705078,
+    -14.981791496276855,
+    -15.345730781555176,
+    -15.760491371154785,
+    -16.34235954284668,
+    -17.241519927978516,
+    -17.989553451538086,
+    -18.692100524902344,
+    -19.162973403930664,
+    -19.5872802734375,
+    -19.94189453125,
+    -20.26352310180664,
+    -20.6951904296875,
+    -21.232755661010742,
+    -22.13560676574707,
+    -22.51642417907715,
+    -22.824474334716797,
+    -23.105966567993164,
+    -23.365161895751953,
+    -23.637479782104492,
+    -23.86559295654297,
+    -24.077064514160156,
+    -24.231388092041016,
+    -24.3580322265625,
+    -24.50752830505371,
+    -24.628908157348633,
+    -24.75536346435547,
+    -24.879451751708984,
+    -24.99306297302246,
+    -25.123632431030273,
+    -25.235671997070312,
+    -25.34370994567871,
+    -25.443164825439453,
+    -25.549095153808594,
+    -25.644514083862305,
+    -25.79563331604004,
+    -25.93315887451172,
+    -26.065710067749023,
+    -26.20945167541504,
+    -26.378755569458008,
+    -26.53427505493164,
+    -26.67855453491211,
+    -26.879138946533203,
+    -27.05866050720215,
+    -27.280593872070312,
+    -27.47754669189453,
+    -27.596240997314453,
+    -27.734540939331055,
+    -27.871858596801758,
+    -27.99854850769043,
+    -28.132373809814453,
+    -28.291168212890625,
+    -28.426240921020508,
+    -28.546550750732422,
+    -28.671005249023438,
+    -28.808666229248047,
+    -28.924392700195312,
+    -29.04903793334961,
+    -29.17066764831543,
+    -29.30600357055664,
+    -29.462722778320312,
+    -29.596052169799805,
+    -29.720449447631836,
+    -29.875436782836914,
+    -30.019235610961914,
+    -30.144376754760742,
+    -30.28684425354004,
+    -30.42884063720703,
+    -30.57573699951172,
+    -30.72417449951172,
+    -30.89125633239746,
+    -31.037694931030273,
+    -31.174854278564453,
+    -31.315996170043945,
+    -31.456829071044922,
+    -31.578536987304688,
+    -31.73723602294922,
+    -31.876270294189453,
+    -31.993879318237305,
+    -32.09791946411133,
+    -32.23966598510742,
+    -32.322425842285156,
+    -32.431190490722656,
+    -32.585330963134766,
+    -32.83799362182617,
+    -33.027008056640625,
+    -33.22655487060547,
+    -33.47757339477539
+  ],
   "per_run": {
     "3tsdse3q": {
+      "run_idx": 1,
       "lambda_spectrum": [
         -0.9441834092140198,
         -1.2426611185073853,
@@ -136,11 +269,14 @@
       ],
       "lambda_max": -0.9441834092140198,
       "lambda_sum": -1067.58984375,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0
+      },
+      "traj_loss": null,
       "error": null
     },
     "shvnbo6m": {
+      "run_idx": 0,
       "lambda_spectrum": [
         -0.780867874622345,
         -1.4363425970077515,
@@ -273,11 +409,14 @@
       ],
       "lambda_max": -0.780867874622345,
       "lambda_sum": -1270.2432861328125,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0
+      },
+      "traj_loss": null,
       "error": null
     },
     "om7x2lp5": {
+      "run_idx": 2,
       "lambda_spectrum": [
         -1.403099536895752,
         -1.8110359907150269,
@@ -410,11 +549,14 @@
       ],
       "lambda_max": -1.403099536895752,
       "lambda_sum": -1703.119384765625,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0
+      },
+      "traj_loss": null,
       "error": null
     },
     "ykoqooew": {
+      "run_idx": 3,
       "lambda_spectrum": [
         -0.9301488399505615,
         -1.5525704622268677,
@@ -547,11 +689,14 @@
       ],
       "lambda_max": -0.9301488399505615,
       "lambda_sum": -1221.564453125,
-      "kaplan_yorke_dim": null,
-      "swept_value": 1e-06,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 1e-06
+      },
+      "traj_loss": null,
       "error": null
     },
     "ihruo1nh": {
+      "run_idx": 4,
       "lambda_spectrum": [
         -1.1481410264968872,
         -1.4480067491531372,
@@ -684,11 +829,14 @@
       ],
       "lambda_max": -1.1481410264968872,
       "lambda_sum": -985.9326171875,
-      "kaplan_yorke_dim": null,
-      "swept_value": 1e-06,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 1e-06
+      },
+      "traj_loss": null,
       "error": null
     },
     "kpssh1t5": {
+      "run_idx": 5,
       "lambda_spectrum": [
         -1.0500208139419556,
         -1.5253690481185913,
@@ -821,11 +969,14 @@
       ],
       "lambda_max": -1.0500208139419556,
       "lambda_sum": -2038.87744140625,
-      "kaplan_yorke_dim": null,
-      "swept_value": 1e-06,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 1e-06
+      },
+      "traj_loss": null,
       "error": null
     },
     "ruf6eimh": {
+      "run_idx": 6,
       "lambda_spectrum": [
         -0.734804630279541,
         -1.2896705865859985,
@@ -958,11 +1109,14 @@
       ],
       "lambda_max": -0.734804630279541,
       "lambda_sum": -1297.9617919921875,
-      "kaplan_yorke_dim": null,
-      "swept_value": 1e-05,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 1e-05
+      },
+      "traj_loss": null,
       "error": null
     },
     "355qgefr": {
+      "run_idx": 7,
       "lambda_spectrum": [
         -1.0784529447555542,
         -1.3133481740951538,
@@ -1095,11 +1249,14 @@
       ],
       "lambda_max": -1.0784529447555542,
       "lambda_sum": -951.12109375,
-      "kaplan_yorke_dim": null,
-      "swept_value": 1e-05,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 1e-05
+      },
+      "traj_loss": null,
       "error": null
     },
     "2j9p9bar": {
+      "run_idx": 8,
       "lambda_spectrum": [
         -1.5295227766036987,
         -1.8449448347091675,
@@ -1232,11 +1389,14 @@
       ],
       "lambda_max": -1.5295227766036987,
       "lambda_sum": -1430.452392578125,
-      "kaplan_yorke_dim": null,
-      "swept_value": 1e-05,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 1e-05
+      },
+      "traj_loss": null,
       "error": null
     },
     "4b9b4zk8": {
+      "run_idx": 9,
       "lambda_spectrum": [
         -2.040864944458008,
         -2.3330180644989014,
@@ -1369,11 +1529,14 @@
       ],
       "lambda_max": -2.040864944458008,
       "lambda_sum": -1259.6571044921875,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.0001,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.0001
+      },
+      "traj_loss": null,
       "error": null
     },
     "pf2ebouj": {
+      "run_idx": 10,
       "lambda_spectrum": [
         -0.4128287136554718,
         -0.9602726101875305,
@@ -1506,11 +1669,14 @@
       ],
       "lambda_max": -0.4128287136554718,
       "lambda_sum": -840.7565307617188,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.0001,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.0001
+      },
+      "traj_loss": null,
       "error": null
     },
     "bcqyj136": {
+      "run_idx": 11,
       "lambda_spectrum": [
         -0.7203512191772461,
         -1.1320827007293701,
@@ -1643,11 +1809,14 @@
       ],
       "lambda_max": -0.7203512191772461,
       "lambda_sum": -1708.1500244140625,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.0001,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.0001
+      },
+      "traj_loss": null,
       "error": null
     },
     "fnxovse1": {
+      "run_idx": 12,
       "lambda_spectrum": [
         -1.4149984121322632,
         -1.6350103616714478,
@@ -1780,11 +1949,14 @@
       ],
       "lambda_max": -1.4149984121322632,
       "lambda_sum": -978.636474609375,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.001,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.001
+      },
+      "traj_loss": null,
       "error": null
     },
     "ru3tfu3u": {
+      "run_idx": 13,
       "lambda_spectrum": [
         -0.7710302472114563,
         -1.1525787115097046,
@@ -1917,11 +2089,14 @@
       ],
       "lambda_max": -0.7710302472114563,
       "lambda_sum": -570.1727294921875,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.001,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.001
+      },
+      "traj_loss": null,
       "error": null
     },
     "8j99ikd7": {
+      "run_idx": 17,
       "lambda_spectrum": [
         0.9177040457725525,
         0.24047768115997314,
@@ -2054,11 +2229,14 @@
       ],
       "lambda_max": 0.9177040457725525,
       "lambda_sum": -577.9093017578125,
-      "kaplan_yorke_dim": 5.617153644561768,
-      "swept_value": 0.01,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.01
+      },
+      "traj_loss": null,
       "error": null
     },
     "jigea1r1": {
+      "run_idx": 14,
       "lambda_spectrum": [
         -0.5186862945556641,
         -0.9112655520439148,
@@ -2191,11 +2369,14 @@
       ],
       "lambda_max": -0.5186862945556641,
       "lambda_sum": -898.8531494140625,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.001,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.001
+      },
+      "traj_loss": null,
       "error": null
     },
     "qhl82jkn": {
+      "run_idx": 16,
       "lambda_spectrum": [
         -0.8105717301368713,
         -1.0803371667861938,
@@ -2328,11 +2509,14 @@
       ],
       "lambda_max": -0.8105717301368713,
       "lambda_sum": -600.251953125,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.01,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.01
+      },
+      "traj_loss": null,
       "error": null
     },
     "sliyvdk6": {
+      "run_idx": 15,
       "lambda_spectrum": [
         -0.47476598620414734,
         -0.769334077835083,
@@ -2465,11 +2649,14 @@
       ],
       "lambda_max": -0.47476598620414734,
       "lambda_sum": -845.1033935546875,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.01,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.01
+      },
+      "traj_loss": null,
       "error": null
     },
     "ozyq3lxf": {
+      "run_idx": 18,
       "lambda_spectrum": [
         -1.4385040998458862,
         -1.6396069526672363,
@@ -2602,11 +2789,14 @@
       ],
       "lambda_max": -1.4385040998458862,
       "lambda_sum": -981.507568359375,
-      "kaplan_yorke_dim": null,
-      "swept_value": 0.1,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.1
+      },
+      "traj_loss": null,
       "error": null
     },
     "ot399pzt": {
+      "run_idx": 19,
       "lambda_spectrum": [
         0.37677618861198425,
         0.2504916787147522,
@@ -2739,11 +2929,14 @@
       ],
       "lambda_max": 0.37677618861198425,
       "lambda_sum": -266.49359130859375,
-      "kaplan_yorke_dim": 6.001434803009033,
-      "swept_value": 0.1,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.1
+      },
+      "traj_loss": null,
       "error": null
     },
     "gfd504tk": {
+      "run_idx": 20,
       "lambda_spectrum": [
         0.2842239737510681,
         -0.12257496267557144,
@@ -2876,8 +3069,10 @@
       ],
       "lambda_max": 0.2842239737510681,
       "lambda_sum": -491.7921142578125,
-      "kaplan_yorke_dim": 2.5631535053253174,
-      "swept_value": 0.1,
+      "swept_values": {
+        "training.lightning.loop_closure_weight": 0.1
+      },
+      "traj_loss": null,
       "error": null
     }
   }

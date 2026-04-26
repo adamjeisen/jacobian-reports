@@ -442,6 +442,18 @@
   },
   "diagnostics": [
     {
+      "name": "fnn_autodim_dysts_lorenz_partial_smoke_p30_nd30_fnnautodim_median5_n2500.png",
+      "path": "diagnostics/fnn_autodim_dysts_lorenz_partial_smoke_p30_nd30_fnnautodim_median5_n2500.png",
+      "mtime": 1777235441.142474,
+      "size": 90381
+    },
+    {
+      "name": "wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep_es2_lyapunov_per_run.png",
+      "path": "diagnostics/wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep_es2_lyapunov_per_run.png",
+      "mtime": 1777235356.373838,
+      "size": 433877
+    },
+    {
       "name": "wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep_es2_lyapunov.png",
       "path": "diagnostics/wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep_es2_lyapunov.png",
       "mtime": 1777234655.621603,
