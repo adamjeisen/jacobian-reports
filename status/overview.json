@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-26T19:15:12Z",
+  "last_updated": "2026-04-26T19:46:59Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -817,6 +817,10 @@
     },
     {
       "file": "20260426T181043Z-backfill-wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260426T191754Z-backfill-wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep.yaml",
       "status": "claimed"
     }
   ]

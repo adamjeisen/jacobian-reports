@@ -1,0 +1,207 @@
+# backfill cmd: /home/eisenaj/.local/bin/uv run --no-sync python -m JacobianODE.jacobians.tuning.analyze_sweep --backfill wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep
+# cwd: /home/eisenaj/code/JacobianODE
+# started: 2026-04-26T19:20:03Z
+
+2026-04-26 15:20:11,550 INFO JacobianODE.analyze_sweep: [backfill wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep] missing sections: ['sweep_overview', 'reconstruction', 'mase', 'latent_utilization', 'lyapunov', 'kaplan_yorke', 'prediction_windows', 'prediction_detail', 'long_trajectory', 'encoder_decoder_jacobians', 'amplification', 'tangent_spectrum']  per_run_lyap=True  per_run_tangent=True  (existing: [])
+2026-04-26 15:20:13,308 INFO JacobianODE.analyze_sweep: Running run_analytics for group=wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep, sections=['sweep_overview', 'reconstruction', 'mase', 'latent_utilization', 'lyapunov', 'kaplan_yorke', 'prediction_windows', 'prediction_detail', 'long_trajectory', 'encoder_decoder_jacobians', 'amplification', 'tangent_spectrum']
+wandb: [wandb.Api()] Loaded credentials for https://api.wandb.ai from /home/eisenaj/.netrc.
+2026-04-26 15:20:28,613 INFO JacobianODE.jacobians.tuning.sweep:   run=3tsdse3q: DiagnosticMetrics(one_step_mase=0.6016207933425903, loop_closure_loss=21.86119842529297, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004546486306935549) (from cache, n_batches=100)
+No run_id provided — selecting best run from group 'wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep' ...
+Found 21 total runs in JacobianODE/WMTask_identity_encoder_verification (group=wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  3tsdse3q: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  shvnbo6m: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  om7x2lp5: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  ykoqooew: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
+  ihruo1nh: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
+  kpssh1t5: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
+  ruf6eimh: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
+  355qgefr: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
+  2j9p9bar: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
+  4b9b4zk8: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+  pf2ebouj: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+  bcqyj136: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+  fnxovse1: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  ru3tfu3u: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  8j99ikd7: state=finished, lc=0.01, te=0.0, kl_dyn=0.0
+  jigea1r1: state=finished, lc=0.001, te=0.0, kl_dyn=0.0
+  qhl82jkn: state=finished, lc=0.01, te=0.0, kl_dyn=0.0
+  sliyvdk6: state=finished, lc=0.01, te=0.0, kl_dyn=0.0
+  ozyq3lxf: state=finished, lc=0.1, te=0.0, kl_dyn=0.0
+  ot399pzt: state=finished, lc=0.1, te=0.0, kl_dyn=0.0
+  gfd504tk: state=finished, lc=0.1, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including 3tsdse3q (lc=0.0): use_all_runs=True (state=finished)
+  Including shvnbo6m (lc=0.0): use_all_runs=True (state=finished)
+  Including om7x2lp5 (lc=0.0): use_all_runs=True (state=finished)
+  Including ykoqooew (lc=1e-06): use_all_runs=True (state=finished)
+  Including ihruo1nh (lc=1e-06): use_all_runs=True (state=finished)
+  Including kpssh1t5 (lc=1e-06): use_all_runs=True (state=finished)
+  Including ruf6eimh (lc=1e-05): use_all_runs=True (state=finished)
+  Including 355qgefr (lc=1e-05): use_all_runs=True (state=finished)
+  Including 2j9p9bar (lc=1e-05): use_all_runs=True (state=finished)
+  Including 4b9b4zk8 (lc=0.0001): use_all_runs=True (state=finished)
+  Including pf2ebouj (lc=0.0001): use_all_runs=True (state=finished)
+  Including bcqyj136 (lc=0.0001): use_all_runs=True (state=finished)
+  Including fnxovse1 (lc=0.001): use_all_runs=True (state=finished)
+  Including ru3tfu3u (lc=0.001): use_all_runs=True (state=finished)
+  Including 8j99ikd7 (lc=0.01): use_all_runs=True (state=finished)
+  Including jigea1r1 (lc=0.001): use_all_runs=True (state=finished)
+  Including qhl82jkn (lc=0.01): use_all_runs=True (state=finished)
+  Including sliyvdk6 (lc=0.01): use_all_runs=True (state=finished)
+  Including ozyq3lxf (lc=0.1): use_all_runs=True (state=finished)
+  Including ot399pzt (lc=0.1): use_all_runs=True (state=finished)
+  Including gfd504tk (lc=0.1): use_all_runs=True (state=finished)
+Found 21 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=3tsdse3q
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=om7x2lp5
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=shvnbo6m
+  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ihruo1nh
+  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=kpssh1t5
+  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ykoqooew
+  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=2j9p9bar
+  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=355qgefr
+  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ruf6eimh
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=4b9b4zk8
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=bcqyj136
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=pf2ebouj
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=fnxovse1
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=jigea1r1
+  loop_closure_weight=0.001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ru3tfu3u
+  loop_closure_weight=0.01, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=8j99ikd7
+  loop_closure_weight=0.01, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=qhl82jkn
+  loop_closure_weight=0.01, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=sliyvdk6
+  loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=gfd504tk
+  loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ot399pzt
+  loop_closure_weight=0.1, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=ozyq3lxf
+loaded wmtask RNN model checkpoint 41
+Loading cached wmtask hiddens from /orcd/data/ekmiller/001/eisenaj/ControlJacobians/WMTaskModels/WMSelectionTask__cue_time_0.1__response_time_0.25__enforce_fixation_False/BiologicalRNN__cue_time_0.1__learning_rate_0.0005__max_epochs_42__N1_64__N2_64__tau_0.05__dt_0.02__eig_lower_bound_0.1__init_mode_random/_jacobianode_cache/hiddens__all__epoch41__trials4096__seed42.pt
+n_dims=128, n_latent=128, n_dyn=128, dt=0.0200
+  run=3tsdse3q: DiagnosticMetrics(one_step_mase=0.6016207933425903, loop_closure_loss=21.86119842529297, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004546486306935549) (from cache, n_batches=100)
+2026-04-26 15:20:28,628 INFO JacobianODE.jacobians.tuning.sweep:   run=om7x2lp5: DiagnosticMetrics(one_step_mase=0.5852727890014648, loop_closure_loss=30.729490280151367, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00425605708733201) (from cache, n_batches=100)
+  run=om7x2lp5: DiagnosticMetrics(one_step_mase=0.5852727890014648, loop_closure_loss=30.729490280151367, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00425605708733201) (from cache, n_batches=100)
+2026-04-26 15:20:28,648 INFO JacobianODE.jacobians.tuning.sweep:   run=shvnbo6m: DiagnosticMetrics(one_step_mase=0.595082700252533, loop_closure_loss=11.340237617492676, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004465973936021328) (from cache, n_batches=100)
+  run=shvnbo6m: DiagnosticMetrics(one_step_mase=0.595082700252533, loop_closure_loss=11.340237617492676, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004465973936021328) (from cache, n_batches=100)
+2026-04-26 15:20:28,652 INFO JacobianODE.jacobians.tuning.sweep:   run=ihruo1nh: DiagnosticMetrics(one_step_mase=0.6014765501022339, loop_closure_loss=17.555822372436523, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004496898502111435) (from cache, n_batches=100)
+  run=ihruo1nh: DiagnosticMetrics(one_step_mase=0.6014765501022339, loop_closure_loss=17.555822372436523, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004496898502111435) (from cache, n_batches=100)
+2026-04-26 15:20:28,662 INFO JacobianODE.jacobians.tuning.sweep:   run=kpssh1t5: DiagnosticMetrics(one_step_mase=0.5850842595100403, loop_closure_loss=23.628931045532227, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004296920727938414) (from cache, n_batches=100)
+  run=kpssh1t5: DiagnosticMetrics(one_step_mase=0.5850842595100403, loop_closure_loss=23.628931045532227, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004296920727938414) (from cache, n_batches=100)
+2026-04-26 15:20:28,697 INFO JacobianODE.jacobians.tuning.sweep:   run=ykoqooew: DiagnosticMetrics(one_step_mase=0.592481791973114, loop_closure_loss=9.776531219482422, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0043183015659451485) (from cache, n_batches=100)
+  run=ykoqooew: DiagnosticMetrics(one_step_mase=0.592481791973114, loop_closure_loss=9.776531219482422, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0043183015659451485) (from cache, n_batches=100)
+2026-04-26 15:20:28,701 INFO JacobianODE.jacobians.tuning.sweep:   run=2j9p9bar: DiagnosticMetrics(one_step_mase=0.5876811146736145, loop_closure_loss=9.877305030822754, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004112141206860542) (from cache, n_batches=100)
+  run=2j9p9bar: DiagnosticMetrics(one_step_mase=0.5876811146736145, loop_closure_loss=9.877305030822754, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004112141206860542) (from cache, n_batches=100)
+2026-04-26 15:20:28,719 INFO JacobianODE.jacobians.tuning.sweep:   run=355qgefr: DiagnosticMetrics(one_step_mase=0.601377010345459, loop_closure_loss=8.585664749145508, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004555069375783205) (from cache, n_batches=100)
+  run=355qgefr: DiagnosticMetrics(one_step_mase=0.601377010345459, loop_closure_loss=8.585664749145508, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004555069375783205) (from cache, n_batches=100)
+2026-04-26 15:20:28,733 INFO JacobianODE.jacobians.tuning.sweep:   run=ruf6eimh: DiagnosticMetrics(one_step_mase=0.592881441116333, loop_closure_loss=4.883230209350586, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004302163142710924) (from cache, n_batches=100)
+  run=ruf6eimh: DiagnosticMetrics(one_step_mase=0.592881441116333, loop_closure_loss=4.883230209350586, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004302163142710924) (from cache, n_batches=100)
+2026-04-26 15:20:28,746 INFO JacobianODE.jacobians.tuning.sweep:   run=4b9b4zk8: DiagnosticMetrics(one_step_mase=0.5958403944969177, loop_closure_loss=1.2676769495010376, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004682409111410379) (from cache, n_batches=100)
+  run=4b9b4zk8: DiagnosticMetrics(one_step_mase=0.5958403944969177, loop_closure_loss=1.2676769495010376, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004682409111410379) (from cache, n_batches=100)
+2026-04-26 15:20:28,751 INFO JacobianODE.jacobians.tuning.sweep:   run=bcqyj136: DiagnosticMetrics(one_step_mase=0.5927011370658875, loop_closure_loss=3.2358202934265137, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004375186748802662) (from cache, n_batches=100)
+  run=bcqyj136: DiagnosticMetrics(one_step_mase=0.5927011370658875, loop_closure_loss=3.2358202934265137, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004375186748802662) (from cache, n_batches=100)
+2026-04-26 15:20:28,768 INFO JacobianODE.jacobians.tuning.sweep:   run=pf2ebouj: DiagnosticMetrics(one_step_mase=0.6098282337188721, loop_closure_loss=3.5944530963897705, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005274546332657337) (from cache, n_batches=100)
+  run=pf2ebouj: DiagnosticMetrics(one_step_mase=0.6098282337188721, loop_closure_loss=3.5944530963897705, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005274546332657337) (from cache, n_batches=100)
+2026-04-26 15:20:28,776 INFO JacobianODE.jacobians.tuning.sweep:   run=fnxovse1: DiagnosticMetrics(one_step_mase=0.5976987481117249, loop_closure_loss=0.2045392096042633, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0049061221070587635) (from cache, n_batches=100)
+  run=fnxovse1: DiagnosticMetrics(one_step_mase=0.5976987481117249, loop_closure_loss=0.2045392096042633, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0049061221070587635) (from cache, n_batches=100)
+2026-04-26 15:20:28,795 INFO JacobianODE.jacobians.tuning.sweep:   run=jigea1r1: DiagnosticMetrics(one_step_mase=0.5995734930038452, loop_closure_loss=0.4991380274295807, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005376577842980623) (from cache, n_batches=100)
+  run=jigea1r1: DiagnosticMetrics(one_step_mase=0.5995734930038452, loop_closure_loss=0.4991380274295807, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005376577842980623) (from cache, n_batches=100)
+2026-04-26 15:20:28,805 INFO JacobianODE.jacobians.tuning.sweep:   run=ru3tfu3u: DiagnosticMetrics(one_step_mase=0.6124445199966431, loop_closure_loss=0.3688083291053772, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005609680898487568) (from cache, n_batches=100)
+  run=ru3tfu3u: DiagnosticMetrics(one_step_mase=0.6124445199966431, loop_closure_loss=0.3688083291053772, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005609680898487568) (from cache, n_batches=100)
+2026-04-26 15:20:28,818 INFO JacobianODE.jacobians.tuning.sweep:   run=8j99ikd7: DiagnosticMetrics(one_step_mase=0.6211869716644287, loop_closure_loss=0.09618101269006729, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0071073370054364204) (from cache, n_batches=100)
+  run=8j99ikd7: DiagnosticMetrics(one_step_mase=0.6211869716644287, loop_closure_loss=0.09618101269006729, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0071073370054364204) (from cache, n_batches=100)
+2026-04-26 15:20:28,833 INFO JacobianODE.jacobians.tuning.sweep:   run=qhl82jkn: DiagnosticMetrics(one_step_mase=0.621898353099823, loop_closure_loss=0.05283176898956299, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006752959918230772) (from cache, n_batches=100)
+  run=qhl82jkn: DiagnosticMetrics(one_step_mase=0.621898353099823, loop_closure_loss=0.05283176898956299, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006752959918230772) (from cache, n_batches=100)
+2026-04-26 15:20:28,842 INFO JacobianODE.jacobians.tuning.sweep:   run=sliyvdk6: DiagnosticMetrics(one_step_mase=0.6045911312103271, loop_closure_loss=0.024166101589798927, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005627555772662163) (from cache, n_batches=100)
+  run=sliyvdk6: DiagnosticMetrics(one_step_mase=0.6045911312103271, loop_closure_loss=0.024166101589798927, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005627555772662163) (from cache, n_batches=100)
+2026-04-26 15:20:28,857 INFO JacobianODE.jacobians.tuning.sweep:   run=gfd504tk: DiagnosticMetrics(one_step_mase=0.653110146522522, loop_closure_loss=0.0005849262233823538, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.04978685826063156) (from cache, n_batches=100)
+  run=gfd504tk: DiagnosticMetrics(one_step_mase=0.653110146522522, loop_closure_loss=0.0005849262233823538, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.04978685826063156) (from cache, n_batches=100)
+2026-04-26 15:20:28,870 INFO JacobianODE.jacobians.tuning.sweep:   run=ot399pzt: DiagnosticMetrics(one_step_mase=0.6571704745292664, loop_closure_loss=0.0004258455301169306, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.059611864387989044) (from cache, n_batches=100)
+  run=ot399pzt: DiagnosticMetrics(one_step_mase=0.6571704745292664, loop_closure_loss=0.0004258455301169306, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.059611864387989044) (from cache, n_batches=100)
+2026-04-26 15:20:28,877 INFO JacobianODE.jacobians.tuning.sweep:   run=ozyq3lxf: DiagnosticMetrics(one_step_mase=0.6093762516975403, loop_closure_loss=0.002879779553040862, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005887348670512438) (from cache, n_batches=100)
+  run=ozyq3lxf: DiagnosticMetrics(one_step_mase=0.6093762516975403, loop_closure_loss=0.002879779553040862, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005887348670512438) (from cache, n_batches=100)
+2026-04-26 15:20:29,300 INFO JacobianODE.jacobians.checkpoints.loader: Run created at 2026-04-24 16:31:50-04:00 EST
+2026-04-26 15:20:29,301 INFO JacobianODE.jacobians.checkpoints.loader: Is after Jan 31 2025 2pm EST? True
+2026-04-26 15:20:29,301 INFO JacobianODE.jacobians.checkpoints.loader: Date is after Jan 31 2025 2pm EST
+2026-04-26 15:20:29,314 INFO JacobianODE.jacobians.checkpoints.loader: Making trajectories
+2026-04-26 15:20:29,455 INFO JacobianODE.jacobians.data.trajectory: Loaded WMTask data: 4096 trials, 49 timepoints, 128 dimensions
+2026-04-26 15:20:29,455 INFO JacobianODE.jacobians.data.trajectory: Time step (dt): 0.02
+2026-04-26 15:20:29,455 INFO JacobianODE.jacobians.checkpoints.loader: Done making trajectories
+2026-04-26 15:20:29,455 INFO JacobianODE.jacobians.checkpoints.loader: obs_noise: 0.05
+2026-04-26 15:20:29,455 INFO JacobianODE.jacobians.checkpoints.loader: seq_length: 45
+2026-04-26 15:20:35,166 INFO JacobianODE.jacobians.training.model_factory: Created model with 40,560,384 parameters
+2026-04-26 15:20:35,166 INFO JacobianODE.jacobians.checkpoints.loader: Loading checkpoint from /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs
+2026-04-26 15:20:35,166 INFO JacobianODE.jacobians.checkpoints.loader: Checkpoint epochs: [35]
+2026-04-26 15:20:35,441 INFO JacobianODE.jacobians.checkpoints.loader: Loading checkpoint from epoch 35
+
+Ranking method:           best_traj_loss
+Best run ID:              2j9p9bar
+Best loop_closure_weight: 1e-05
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.004112
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 16 / 21
+Auto-selected run_id: 2j9p9bar
+
+======================================================================
+PARETO FRONTIER RUNS (9 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  ot399pzt            0.000426        0.059612
+  gfd504tk            0.000585        0.049787
+  ozyq3lxf            0.002880        0.005887
+  sliyvdk6            0.024166        0.005628
+  fnxovse1            0.204539        0.004906
+  4b9b4zk8            1.267677        0.004682
+  bcqyj136            3.235820        0.004375
+  ruf6eimh            4.883230        0.004302
+  2j9p9bar            9.877305        0.004112 <-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 16 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          2j9p9bar            9.877305        0.004112 <-- active
+  pareto_knee             ozyq3lxf            0.002880        0.005887
+  geo_rank                2j9p9bar            9.877305        0.004112
+  minimax_rank            fnxovse1            0.204539        0.004906
+  geo_log_score           2j9p9bar            9.877305        0.004112
+  minimax_log_score       ozyq3lxf            0.002880        0.005887
+======================================================================
+
+Loading run 2j9p9bar from JacobianODE/WMTask_identity_encoder_verification ...
+loaded wmtask RNN model checkpoint 41
+Loading cached wmtask hiddens from /orcd/data/ekmiller/001/eisenaj/ControlJacobians/WMTaskModels/WMSelectionTask__cue_time_0.1__response_time_0.25__enforce_fixation_False/BiologicalRNN__cue_time_0.1__learning_rate_0.0005__max_epochs_42__N1_64__N2_64__tau_0.05__dt_0.02__eig_lower_bound_0.1__init_mode_random/_jacobianode_cache/hiddens__all__epoch41__trials4096__seed42.pt
+Loading checkpoint epoch=35-step=4500.ckpt...
+Sequence Indices:   0%|          | 0/4 [00:00<?, ?it/s]Sequence Indices:  25%|██▌       | 1/4 [00:02<00:07,  2.42s/it]Sequence Indices:  50%|█████     | 2/4 [00:04<00:04,  2.30s/it]Sequence Indices:  75%|███████▌  | 3/4 [00:05<00:01,  1.64s/it]Sequence Indices: 100%|██████████| 4/4 [00:06<00:00,  1.26s/it]Sequence Indices: 100%|██████████| 4/4 [00:06<00:00,  1.54s/it]
+2026-04-26 15:20:48,476 INFO JacobianODE.jacobians.data.dataloaders: Created dataloaders:
+2026-04-26 15:20:48,476 INFO JacobianODE.jacobians.data.dataloaders:   Train: 11468 samples
+2026-04-26 15:20:48,476 INFO JacobianODE.jacobians.data.dataloaders:   Val: 3280 samples
+2026-04-26 15:20:48,476 INFO JacobianODE.jacobians.data.dataloaders:   Test: 1636 samples
+2026-04-26 15:20:48,476 INFO JacobianODE.jacobians.data.dataloaders:   Batch size: 16
+2026-04-26 15:20:48,476 INFO JacobianODE.jacobians.checkpoints.loader: Loading checkpoint from /orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs
+2026-04-26 15:20:48,476 INFO JacobianODE.jacobians.checkpoints.loader: Checkpoint epochs: [35]
+2026-04-26 15:20:49,195 INFO JacobianODE.jacobians.checkpoints.loader: Loading checkpoint from epoch 35
+Train dataset shape: torch.Size([11468, 45, 128])
+Validation dataset shape: torch.Size([3280, 45, 128])
+Test dataset shape: torch.Size([1636, 45, 128])
+Train trajectories dataset shape: torch.Size([2867, 49, 128])
+Validation trajectories dataset shape: torch.Size([820, 49, 128])
+Test trajectories dataset shape: torch.Size([409, 49, 128])
+Loading checkpoint epoch=35-step=4500.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+MASE batches:   0%|          | 0/10 [00:00<?, ?it/s]/home/eisenaj/code/JacobianODE/.venv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:1118: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+MASE batches:  10%|█         | 1/10 [00:42<06:25, 42.79s/it]MASE batches:  20%|██        | 2/10 [01:22<05:26, 40.79s/it]MASE batches:  30%|███       | 3/10 [02:03<04:48, 41.21s/it]MASE batches:  40%|████      | 4/10 [02:45<04:08, 41.36s/it]MASE batches:  50%|█████     | 5/10 [03:26<03:26, 41.23s/it]MASE batches:  60%|██████    | 6/10 [04:08<02:46, 41.56s/it]MASE batches:  70%|███████   | 7/10 [04:49<02:03, 41.31s/it]MASE batches:  80%|████████  | 8/10 [05:31<01:22, 41.43s/it]MASE batches:  90%|█████████ | 9/10 [06:13<00:41, 41.58s/it]MASE batches: 100%|██████████| 10/10 [06:53<00:00, 41.28s/it]MASE batches: 100%|██████████| 10/10 [06:53<00:00, 41.38s/it]
+Teacher-forced MASE: 0.6927
+Free-running MASE:   0.7032
+Computing latent utilization ...
+Entropy-based utilization: 0.889
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (409 test trajs, T=49) ...
+    full-traj Lyap chunks:   0%|          | 0/7 [00:00<?, ?it/s]    full-traj Lyap chunks:  14%|█▍        | 1/7 [00:12<01:14, 12.40s/it]    full-traj Lyap chunks:  29%|██▊       | 2/7 [00:25<01:04, 12.81s/it]    full-traj Lyap chunks:  43%|████▎     | 3/7 [00:37<00:50, 12.62s/it]    full-traj Lyap chunks:  57%|█████▋    | 4/7 [00:50<00:37, 12.61s/it]    full-traj Lyap chunks:  71%|███████▏  | 5/7 [01:02<00:25, 12.54s/it]    full-traj Lyap chunks:  86%|████████▌ | 6/7 [01:15<00:12, 12.66s/it]    full-traj Lyap chunks: 100%|██████████| 7/7 [01:21<00:00, 10.35s/it]    full-traj Lyap chunks: 100%|██████████| 7/7 [01:21<00:00, 11.63s/it]
+
+# exited: 2026-04-26T19:46:24Z — FAILED (exit 143)
