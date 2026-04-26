@@ -442,6 +442,12 @@
   },
   "diagnostics": [
     {
+      "name": "encoder_noise_svd_directsum_vs_vanilla.png",
+      "path": "diagnostics/encoder_noise_svd_directsum_vs_vanilla.png",
+      "mtime": 1777238149.538327,
+      "size": 143233
+    },
+    {
       "name": "fnn_autodim_dysts_lorenz_partial_smoke_p30_nd30_fnnautodim_median5_n2500.png",
       "path": "diagnostics/fnn_autodim_dysts_lorenz_partial_smoke_p30_nd30_fnnautodim_median5_n2500.png",
       "mtime": 1777235441.142474,
