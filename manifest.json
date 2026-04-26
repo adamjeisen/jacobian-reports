@@ -442,6 +442,12 @@
   },
   "diagnostics": [
     {
+      "name": "wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep_es2_lyapunov.png",
+      "path": "diagnostics/wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep_es2_lyapunov.png",
+      "mtime": 1777234655.621603,
+      "size": 202454
+    },
+    {
       "name": "fnn_dim_lorenz_and_wmtask.png",
       "path": "diagnostics/fnn_dim_lorenz_and_wmtask.png",
       "mtime": 1777055116.001117,
