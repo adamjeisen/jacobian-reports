@@ -1,0 +1,47 @@
+{
+  "group": "lorenz_partial_smoke_p30_nd30_fnnautodim",
+  "completed_at": "2026-04-26T18:52:41Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_smoke_p30_nd30_fnnautodim": {
+      "description": "Lorenz partial-obs smoke for FNN autodim. n_delays=30, obs_noise=0.05,\nadditive coupling, split-mode loss. 5 epochs only \u2014 purpose is to\nvalidate the FNN autodim code path, not to train a useful model.\n",
+      "hypothesis": "With model.n_target_dim_method='fnn' and n_delays=30 (where the\nwhitened-PCA-FNN k=1 stop-at-min diagnostic robustly returned dim=3\nacross all noise levels), the autodim path should pick\nn_target_dims=3 and training should proceed without error.\n",
+      "success_criteria": [
+        "Autodim resolves to n_target_dims=3 (logged as n_target_dims_fnn_auto)",
+        "Run completes 5 epochs without divergence"
+      ]
+    }
+  },
+  "expected_run_count": 1,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_smoke_p30_nd30_fnnautodim"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_smoke_p30_nd30_fnnautodim",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_smoke_p30_nd30_fnnautodim",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_smoke_p30_nd30_fnnautodim"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "758b604",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-26T18:10:12Z"
+}

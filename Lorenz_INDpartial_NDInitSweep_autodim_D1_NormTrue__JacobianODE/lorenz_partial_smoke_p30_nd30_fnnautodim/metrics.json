@@ -1,0 +1,154 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_partial_smoke_p30_nd30_fnnautodim",
+  "analyzed_at": "2026-04-26T18:54:11Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "4qs9wmdf",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.10307984054088593,
+        "best_traj_loss_epoch": 3.0,
+        "best_mase": 3.191699981689453,
+        "best_mase_epoch": 3.0,
+        "lc_loss_at_best_tl": 0.27524083852767944,
+        "r2_at_best_tl": 0.7184373140335083,
+        "n_epochs": 5,
+        "swept_config": {}
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 1,
+    "matched_run_count": 1,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "4qs9wmdf",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.10307984054088593,
+        "best_traj_loss_epoch": 3.0,
+        "best_mase": 3.191699981689453,
+        "best_mase_epoch": 3.0,
+        "lc_loss_at_best_tl": 0.27524083852767944,
+        "r2_at_best_tl": 0.7184373140335083,
+        "n_epochs": 5,
+        "swept_config": {}
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "4qs9wmdf",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0001,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.10307984054088593,
+      "best_traj_loss_epoch": 3.0,
+      "best_mase": 3.191699981689453,
+      "best_mase_epoch": 3.0,
+      "lc_loss_at_best_tl": 0.27524083852767944,
+      "r2_at_best_tl": 0.7184373140335083,
+      "n_epochs": 5,
+      "swept_config": {}
+    },
+    "overall_best_mase": {
+      "run_id": "4qs9wmdf",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0001,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.10307984054088593,
+      "best_traj_loss_epoch": 3.0,
+      "best_mase": 3.191699981689453,
+      "best_mase_epoch": 3.0,
+      "lc_loss_at_best_tl": 0.27524083852767944,
+      "r2_at_best_tl": 0.7184373140335083,
+      "n_epochs": 5,
+      "swept_config": {}
+    },
+    "swept_paths": [],
+    "n_runs": 1
+  },
+  "per_run_lyapunov": {
+    "4qs9wmdf": {
+      "lambda_spectrum": [
+        -1.3486326932907104,
+        -1.3829541206359863,
+        -76.58139038085938,
+        -76.61373138427734
+      ],
+      "lambda_max": -1.3486326932907104,
+      "lambda_sum": -155.9267120361328,
+      "kaplan_yorke_dim": null,
+      "error": null
+    }
+  },
+  "empirical_lyapunov_spectrum": [
+    0.48128193616867065,
+    -0.2260732501745224,
+    -13.922173500061035
+  ],
+  "per_run_lyapunov_error": null,
+  "per_run_tangent_spectrum": {
+    "4qs9wmdf": {
+      "energy": [
+        0.010351375676691532,
+        0.009283345192670822,
+        0.007259294856339693,
+        0.006125542335212231
+      ],
+      "spectrum": [
+        0.3134922683238983,
+        0.2811468541622162,
+        0.21984833478927612,
+        0.18551255762577057
+      ],
+      "n_pairs": 512,
+      "n_dyn": 4,
+      "n_obs": 30,
+      "error": null
+    }
+  },
+  "per_run_tangent_spectrum_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Autodim resolves to n_target_dims=3 (logged as n_target_dims_fnn_auto)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Run completes 5 epochs without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/lyapunov.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/long_trajectory.png",
+    "encoder_decoder_jacobians": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/encoder_decoder_jacobians.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/amplification.png",
+    "tangent_spectrum": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/tangent_spectrum.png",
+    "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/per_run_lyapunov.png",
+    "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/per_run_lyapunov_vs_true.png",
+    "per_run_lyapunov_relerr": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/per_run_lyapunov_relerr.png",
+    "per_run_tangent_spectrum": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/lorenz_partial_smoke_p30_nd30_fnnautodim/figures/per_run_tangent_spectrum.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

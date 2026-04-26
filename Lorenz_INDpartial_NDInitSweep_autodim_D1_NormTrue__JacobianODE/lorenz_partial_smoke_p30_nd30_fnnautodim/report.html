@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_smoke_p30_nd30_fnnautodim</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE/groups/lorenz_partial_smoke_p30_nd30_fnnautodim">Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-26T18:10:12Z<br />
+<strong>Completed</strong>: 2026-04-26T18:52:41Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>758b604</code><br />
+<strong>Expected runs</strong>: 1</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_smoke_p30_nd30_fnnautodim</code></h3>
+<p><strong>Description</strong></p>
+<p>Lorenz partial-obs smoke for FNN autodim. n_delays=30, obs_noise=0.05,
+additive coupling, split-mode loss. 5 epochs only — purpose is to
+validate the FNN autodim code path, not to train a useful model.</p>
+<p><strong>Hypothesis</strong></p>
+<p>With model.n_target_dim_method='fnn' and n_delays=30 (where the
+whitened-PCA-FNN k=1 stop-at-min diagnostic robustly returned dim=3
+across all noise levels), the autodim path should pick
+n_target_dims=3 and training should proceed without error.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>Autodim resolves to n_target_dims=3 (logged as n_target_dims_fnn_auto)</li>
+<li>Run completes 5 epochs without divergence</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>4qs9wmdf</code> — traj_loss=0.10308, MASE=3.1917, R²=0.7184, LC loss=0.275, epoch=3.0</p>
+<p><strong>Runs analyzed</strong>: 1 (expected 1)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>4qs9wmdf</code></td>
+<td>0.10308</td>
+<td>3.1917</td>
+<td>0.7184</td>
+<td>0.275</td>
+<td>3.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autodim resolves to n_target_dims=3 (logged as n_target_dims_fnn_auto)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Run completes 5 epochs without divergence</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>sweep_overview</h3>
+<p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
+<h3>sweep_pareto</h3>
+<p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
+<h3>prediction_windows</h3>
+<p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
+<h3>long_trajectory</h3>
+<p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
+<h3>mase</h3>
+<p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
+<h3>lyapunov</h3>
+<p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
+<h3>kaplan_yorke_pca</h3>
+<p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
+<h3>prediction_detail_latent</h3>
+<p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
+<h3>prediction_detail_obs</h3>
+<p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
+<h3>tangent_spectrum</h3>
+<p><img alt="tangent_spectrum" src="figures/tangent_spectrum.png" /></p>
+<h3>per_run_tangent_spectrum</h3>
+<p><img alt="per_run_tangent_spectrum" src="figures/per_run_tangent_spectrum.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+<h2><code>run_analytics</code> stdout</h2>
+<details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
+
+
+<pre><code>No run_id provided — selecting best run from group 'lorenz_partial_smoke_p30_nd30_fnnautodim' ...
+Found 1 total runs in JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE (group=lorenz_partial_smoke_p30_nd30_fnnautodim)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  4qs9wmdf: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including 4qs9wmdf (lc=0.0001): use_all_runs=True (state=finished)
+Found 1 effectively-done sweep runs:
+  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=4qs9wmdf
+n_dims=30, n_latent=30, n_dyn=4, dt=0.0150
+  run=4qs9wmdf: DiagnosticMetrics(one_step_mase=2.2717182636260986, loop_closure_loss=0.27524083852767944, fast_eigenvalue_fraction=0.5, trajectory_val_loss=0.10307984054088593) (from W&amp;B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              4qs9wmdf
+Best loop_closure_weight: 0.0001
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.103080
+Criteria applied: []
+Surviving: 1 / 1
+Auto-selected run_id: 4qs9wmdf
+
+======================================================================
+PARETO FRONTIER RUNS (1 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  4qs9wmdf            0.275241        0.103080 &lt;-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 1 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          4qs9wmdf            0.275241        0.103080 &lt;-- active
+  pareto_knee             4qs9wmdf            0.275241        0.103080
+  geo_rank                4qs9wmdf            0.275241        0.103080
+  minimax_rank            4qs9wmdf            0.275241        0.103080
+  geo_log_score           4qs9wmdf            0.275241        0.103080
+  minimax_log_score       4qs9wmdf            0.275241        0.103080
+======================================================================
+
+Loading run 4qs9wmdf from JacobianODE/Lorenz_INDpartial_NDInitSweep_autodim_D1_NormTrue__JacobianODE ...
+Loading checkpoint epoch=3-step=200.ckpt...
+Train dataset shape: torch.Size([24772, 45, 30])
+Validation dataset shape: torch.Size([7882, 45, 30])
+Test dataset shape: torch.Size([3378, 45, 30])
+Train trajectories dataset shape: torch.Size([22, 1171, 30])
+Validation trajectories dataset shape: torch.Size([7, 1171, 30])
+Test trajectories dataset shape: torch.Size([3, 1171, 30])
+Loading checkpoint epoch=3-step=200.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 2.1462
+Free-running MASE:   2.4956
+Computing latent utilization ...
+Entropy-based utilization: 0.932
+Null subspace mean RMS: 2.537502e-01
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1171) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = -1.4347 ± 0.1352
+  λ_2 = -1.5584 ± 0.1125
+  λ_3 = -75.8424 ± 0.9143
+  λ_4 = -75.9782 ± 0.8983
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = -1.4538 ± 0.0028
+  λ_2 = -1.4815 ± 0.0034
+  λ_3 = -76.2261 ± 0.0444
+  λ_4 = -76.2559 ± 0.0380
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.4677 ± 0.0259
+  λ_2 = -0.2173 ± 0.0549
+  λ_3 = -13.9174 ± 0.0513
+Mean KY dim (predicted): 0.000 ± 0.000
+Mean KY dim (empirical): 2.018 ± 0.003
+Mean KY dim (burn-in):   0.000 ± 0.000
+Computing prediction windows ...
+Windows: 114 — nMSE min=0.0725, median=0.2891, mean=0.5950, max=5.6299
+Computing long-trajectory free-running rollouts ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 30, 30)
+decoder_jacobian: (128, 30, 30)
+Computing amplification loss ...
+Amplification loss — True state: 0.003467
+Amplification loss — Latent:     0.003415
+Computing tangent space spectrum ...
+</code></pre>
+
+
+</details>
+</body>
+</html>
