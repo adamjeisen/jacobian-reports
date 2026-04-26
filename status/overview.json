@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-26T18:10:45Z",
+  "last_updated": "2026-04-26T18:52:43Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -483,17 +483,21 @@
       }
     },
     "lorenz_partial_smoke_p30_nd30_fnnautodim": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 0,
-        "in_flight": 1,
+        "terminal": 1,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 0
+        "effectively_done": 1
       },
-      "training_slurm": {
+      "analysis": {
+        "slurm_job_id": "12590807",
+        "dispatched_at": "2026-04-26T18:52:43Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
         "n_running": 0,
-        "n_pending": 1,
-        "n_total": 1
+        "n_pending": 1
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
@@ -818,6 +822,10 @@
     },
     {
       "file": "20260426T180557Z-lorenz_partial_smoke_p30_nd30_fnnautodim.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260426T181043Z-backfill-wmtask_direct_sum_additive_splitmode_p30_full128_randinit_dualckpt__lc_x_obsnoisescale_sweep.yaml",
       "status": "claimed"
     }
   ]
