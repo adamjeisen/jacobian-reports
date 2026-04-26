@@ -1,0 +1,5 @@
+experiment: lorenz_partial_smoke_p30_nd30_fnnautodim
+overrides:
+  - "hydra.launcher.partition=ou_bcs_normal"
+submitted_at: 20260426T180557Z
+submitted_from: millerlab-endeavourOS
