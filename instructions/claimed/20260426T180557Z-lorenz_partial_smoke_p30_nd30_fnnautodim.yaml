@@ -1,0 +1,9 @@
+experiment: lorenz_partial_smoke_p30_nd30_fnnautodim
+overrides:
+- hydra.launcher.partition=ou_bcs_normal
+submitted_at: 20260426T180557Z
+submitted_from: millerlab-endeavourOS
+wandb_group: lorenz_partial_smoke_p30_nd30_fnnautodim
+expected_run_count: 1
+slurm_array_id: '12588373'
+slurm_submitted_at: '2026-04-26T18:10:35Z'
