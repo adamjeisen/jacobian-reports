@@ -1,0 +1,20 @@
+experiment: wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep
+overrides:
+- training.trainer_params.max_epochs=20
+- wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a
+two_stage:
+  full_max_epochs: 200
+  cull_fraction: 0.5
+  metric: trajectory val_loss
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260427T223207Z
+submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a
+expected_run_count: 21
+slurm_array_id: split
+slurm_submitted_at: '2026-04-27T22:35:20Z'
+split_submission:
+  mit_count: 4
+  ou_bcs_count: 17
+  n_failures: 0

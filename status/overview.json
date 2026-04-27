@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-27T22:30:29Z",
+  "last_updated": "2026-04-27T22:35:30Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -563,6 +563,15 @@
         "effectively_done": 0
       }
     },
+    "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
     "wmtask_latent_additive_mse_p30_permidentity_replication": {
       "status": "processed",
       "runs_summary": {
@@ -582,7 +591,13 @@
       }
     },
     "wmtask_migration_smoke": {
-      "status": "active"
+      "status": "active",
+      "runs_summary": {
+        "terminal": 2,
+        "in_flight": 0,
+        "failed_exhausted": 0,
+        "effectively_done": 2
+      }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
       "status": "processed",
@@ -893,6 +908,10 @@
     },
     {
       "file": "20260427T222506Z-wmtask_migration_smoke__migration.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260427T223207Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__two_stage.yaml",
       "status": "claimed"
     }
   ]
