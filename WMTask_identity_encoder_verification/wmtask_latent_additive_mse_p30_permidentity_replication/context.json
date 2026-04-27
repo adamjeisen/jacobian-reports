@@ -1,0 +1,48 @@
+{
+  "group": "wmtask_latent_additive_mse_p30_permidentity_replication",
+  "completed_at": "2026-04-27T04:00:18Z",
+  "outcome": "complete_with_failures",
+  "experiment_metadata": {
+    "wmtask_latent_additive_mse_p30_permidentity_replication": {
+      "description": "Same as wmtask_latent_additive_mse_p30_dualckpt_replication except\nencoder.final_perm_identity=true. Single run, LC=1e-5,\nobs_noise_scale=0.05, dual checkpoint (patience=5 + shadow=2).\n",
+      "hypothesis": "Trained monolithic with final_perm_identity=true should reach\nsimilar best_traj_loss as the original (i73jwojr ~0.0105) and\nproduce a clean Lyapunov spectrum (\u0394\u03bb_min \u2248 0). The diagnostic on\nits trained best.ckpt should give the apples-to-apples gradient-\nsignal numbers we need to compare against DirectSum.\n",
+      "success_criteria": [
+        "Run trains without divergence",
+        "Both es2-best.ckpt and (epoch-best) best.ckpt saved",
+        "best_traj_loss within ~2x of i73jwojr's 0.0105"
+      ]
+    }
+  },
+  "expected_run_count": 1,
+  "hydra": {
+    "experiments": [
+      "wmtask_latent_additive_mse_p30_permidentity_replication"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_latent_additive_mse_p30_permidentity_replication",
+      "hydra.launcher.partition=ou_bcs_normal"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_replication",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "hydra.launcher.partition=ou_bcs_normal"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_latent_additive_mse_p30_permidentity_replication"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "42e46ba",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-27T03:45:11Z"
+}

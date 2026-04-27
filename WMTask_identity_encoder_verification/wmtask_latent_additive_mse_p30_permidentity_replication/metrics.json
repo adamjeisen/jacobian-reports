@@ -1,0 +1,50 @@
+{
+  "schema_version": 3,
+  "group": "wmtask_latent_additive_mse_p30_permidentity_replication",
+  "analyzed_at": "2026-04-27T04:02:00Z",
+  "metrics_summary": {
+    "per_run": [],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 1,
+    "matched_run_count": 0,
+    "best_by_obs_noise_scale": {},
+    "overall_chosen_run": null,
+    "overall_best_mase": null,
+    "swept_paths": [],
+    "n_runs": 0
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": null,
+  "per_run_tangent_spectrum": {
+    "bu0gglgx": {
+      "error": "ValueError: attempt to get argmin of an empty sequence"
+    },
+    "ofvm11g7": {
+      "error": "ValueError: attempt to get argmin of an empty sequence"
+    }
+  },
+  "per_run_tangent_spectrum_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Run trains without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Both es2-best.ckpt and (epoch-best) best.ckpt saved",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "best_traj_loss within ~2x of i73jwojr's 0.0105",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {},
+  "analytics_error": "ValueError: attempt to get argmin of an empty sequence",
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
