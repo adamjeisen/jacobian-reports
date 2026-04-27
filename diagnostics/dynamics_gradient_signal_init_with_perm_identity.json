@@ -1,0 +1,70 @@
+[
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.6013772530243386e-09,
+      "vc": 2.888567607328696e-09,
+      "cv": 2.3825186268311427e-09,
+      "cc": 4.3590411280547414e-09,
+      "vv_max": 1.5957979826453084e-08,
+      "vc_max": 1.679725514236452e-08,
+      "cv_max": 1.5325539948207734e-08,
+      "cc_max": 1.6266456626112813e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 1.6013772530243386e-09,
+      "vc": 2.888567607328696e-09,
+      "cv": 2.3825186268311427e-09,
+      "cc": 4.3590411280547414e-09,
+      "vv_max": 1.5957979826453084e-08,
+      "vc_max": 1.679725514236452e-08,
+      "cv_max": 1.5325539948207734e-08,
+      "cc_max": 1.6266456626112813e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 3.1203888362085763e-09,
+      "vc": 4.904392447713235e-09,
+      "cv": 4.835920552892503e-09,
+      "cc": 7.63192975483662e-09,
+      "vv_max": 1.9673205287062956e-08,
+      "vc_max": 2.2915584096949715e-08,
+      "cv_max": 2.0074027773375747e-08,
+      "cc_max": 2.6505908579110837e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 3.1203888362085763e-09,
+      "vc": 4.904392447713235e-09,
+      "cv": 4.835920552892503e-09,
+      "cc": 7.63192975483662e-09,
+      "vv_max": 1.9673205287062956e-08,
+      "vc_max": 2.2915584096949715e-08,
+      "cv_max": 2.0074027773375747e-08,
+      "cc_max": 2.6505908579110837e-08
+    },
+    "n_dyn": 128
+  }
+]
