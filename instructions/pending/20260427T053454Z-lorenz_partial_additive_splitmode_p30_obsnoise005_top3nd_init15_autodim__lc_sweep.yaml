@@ -1,0 +1,7 @@
+experiment: lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_sweep
+overrides:
+  - "training.lightning.teacher_forcing_update_interval=1"
+  - "training.trainer_params.max_epochs=80"
+  - "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_sweep__step1_int1_maxep80"
+submitted_at: 20260427T053454Z
+submitted_from: claude-sandbox
