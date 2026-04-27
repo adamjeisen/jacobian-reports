@@ -1,0 +1,9 @@
+experiment: wmtask_latent_additive_mse_p30_permidentity_replication_v2
+overrides:
+- hydra.launcher.partition=ou_bcs_normal
+submitted_at: 20260427T165419Z
+submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_latent_additive_mse_p30_permidentity_replication_v2
+expected_run_count: 1
+slurm_array_id: '12637732'
+slurm_submitted_at: '2026-04-27T16:55:35Z'
