@@ -40,10 +40,33 @@ signal numbers we need to compare against DirectSum.</p>
 <li>best_traj_loss within ~2x of i73jwojr's 0.0105</li>
 </ul>
 <h2>Results</h2>
-<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>—</code> — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None</p>
-<h3>Integrity checks</h3>
-<p>⚠️ <strong>Matched-run count mismatch</strong>: expected 1 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.</p>
-<p><strong>Runs analyzed</strong>: 0 (expected 1)</p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>bu0gglgx</code> — traj_loss=0.00961, MASE=0.9073, R²=0.9890, LC loss=3.952, epoch=8.0</p>
+<p><strong>Runs analyzed</strong>: 1 (expected 1)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>bu0gglgx</code></td>
+<td>0.00961</td>
+<td>0.9073</td>
+<td>0.9890</td>
+<td>3.952</td>
+<td>8.0</td>
+</tr>
+</tbody>
+</table>
 <h2>Success-criteria verdicts (automated)</h2>
 <table>
 <thead>
@@ -73,9 +96,14 @@ signal numbers we need to compare against DirectSum.</p>
 </table>
 <p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
 <h2>Figures</h2>
-<p><em>(no figures produced — analytics may have failed)</em></p>
-<pre><code>ValueError: attempt to get argmin of an empty sequence
-</code></pre>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h3>per_run_tangent_spectrum</h3>
+<p><img alt="per_run_tangent_spectrum" src="figures/per_run_tangent_spectrum.png" /></p>
 <h2>Discussion</h2>
 <!--
 This section is intentionally left as a placeholder. A human reviewer
