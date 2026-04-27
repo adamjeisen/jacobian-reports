@@ -1,0 +1,239 @@
+{
+  "k": 1,
+  "n_samples": 2500,
+  "threshold": 0.01,
+  "rows": [
+    {
+      "noise": 0.0,
+      "n_delays": 3,
+      "N": 26356,
+      "D": 3,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 5,
+      "N": 26312,
+      "D": 5,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 10,
+      "N": 26202,
+      "D": 10,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 15,
+      "N": 26092,
+      "D": 15,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 20,
+      "N": 25982,
+      "D": 20,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 30,
+      "N": 25762,
+      "D": 30,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 45,
+      "N": 25432,
+      "D": 45,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 60,
+      "N": 25102,
+      "D": 60,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 75,
+      "N": 24772,
+      "D": 75,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 85,
+      "N": 24552,
+      "D": 85,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.0,
+      "n_delays": 100,
+      "N": 24222,
+      "D": 100,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 3,
+      "N": 26356,
+      "D": 3,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 5,
+      "N": 26312,
+      "D": 5,
+      "fnn_dim": 5
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 10,
+      "N": 26202,
+      "D": 10,
+      "fnn_dim": 2
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 15,
+      "N": 26092,
+      "D": 15,
+      "fnn_dim": 2
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 20,
+      "N": 25982,
+      "D": 20,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 30,
+      "N": 25762,
+      "D": 30,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 45,
+      "N": 25432,
+      "D": 45,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 60,
+      "N": 25102,
+      "D": 60,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 75,
+      "N": 24772,
+      "D": 75,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 85,
+      "N": 24552,
+      "D": 85,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.01,
+      "n_delays": 100,
+      "N": 24222,
+      "D": 100,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 3,
+      "N": 26356,
+      "D": 3,
+      "fnn_dim": 3
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 5,
+      "N": 26312,
+      "D": 5,
+      "fnn_dim": 5
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 10,
+      "N": 26202,
+      "D": 10,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 15,
+      "N": 26092,
+      "D": 15,
+      "fnn_dim": 5
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 20,
+      "N": 25982,
+      "D": 20,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 30,
+      "N": 25762,
+      "D": 30,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 45,
+      "N": 25432,
+      "D": 45,
+      "fnn_dim": 5
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 60,
+      "N": 25102,
+      "D": 60,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 75,
+      "N": 24772,
+      "D": 75,
+      "fnn_dim": 4
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 85,
+      "N": 24552,
+      "D": 85,
+      "fnn_dim": 5
+    },
+    {
+      "noise": 0.05,
+      "n_delays": 100,
+      "N": 24222,
+      "D": 100,
+      "fnn_dim": 5
+    }
+  ],
+  "data_source": "dysts via project pipeline"
+}

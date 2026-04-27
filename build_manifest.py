@@ -43,20 +43,28 @@ for project_dir in sorted(REPO.iterdir()):
         manifest["projects"][project_dir.name] = groups
 
 # Enumerate diagnostics/ for the dashboard browser. Anything that looks
-# like an image (png/jpg/svg/webp) is exposed; the dashboard renders the
-# list and lets the user pick one to view.
+# like an image (png/jpg/svg/webp) is exposed; the dashboard groups by
+# subfolder (the immediate parent's name under diagnostics/) so related
+# diagnostics cluster in the UI. Files at the top level (no subfolder)
+# go into a synthetic "uncategorized" bucket. Recursion is one level
+# deep so nested per-run profile dumps don't clutter the listing.
 diag_dir = REPO / "diagnostics"
 if diag_dir.is_dir():
     img_exts = {".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif"}
-    for p in sorted(diag_dir.iterdir()):
-        if p.is_file() and p.suffix.lower() in img_exts:
-            manifest["diagnostics"].append({
-                "name": p.name,
-                "path": f"diagnostics/{p.name}",
-                "mtime": p.stat().st_mtime,
-                "size": p.stat().st_size,
-            })
-    # Newest first.
+    for p in diag_dir.rglob("*"):
+        if not (p.is_file() and p.suffix.lower() in img_exts):
+            continue
+        rel = p.relative_to(diag_dir)
+        # Category = top-level subfolder; "uncategorized" if at root.
+        category = rel.parts[0] if len(rel.parts) > 1 else "uncategorized"
+        manifest["diagnostics"].append({
+            "name": p.name,
+            "category": category,
+            "path": f"diagnostics/{rel.as_posix()}",
+            "mtime": p.stat().st_mtime,
+            "size": p.stat().st_size,
+        })
+    # Newest first within the flat list; the dashboard groups by category.
     manifest["diagnostics"].sort(key=lambda d: d["mtime"], reverse=True)
 
 (REPO / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

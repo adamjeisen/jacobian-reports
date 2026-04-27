@@ -138,6 +138,17 @@
   .diag-list .diag-name { flex: 1 1 auto; word-break: break-word; }
   .diag-list .diag-meta { color: var(--fg2); font-size: 0.78rem;
     flex: 0 0 auto; }
+  .diag-cat { margin-top: 1rem; }
+  .diag-cat:first-child { margin-top: 0; }
+  .diag-cat-header { display: flex; align-items: baseline; gap: 0.6rem;
+    cursor: pointer; padding: 0.4rem 0; user-select: none;
+    border-bottom: 1px solid var(--border); }
+  .diag-cat-header:hover { color: var(--accent); }
+  .diag-cat-header .diag-cat-toggle { color: var(--fg2);
+    font-size: 0.75rem; width: 0.7rem; text-align: center; }
+  .diag-cat-header .diag-cat-name { font-weight: 600; }
+  .diag-cat-header .diag-cat-count { color: var(--fg2);
+    font-size: 0.78rem; margin-left: auto; }
   .diag-viewer { text-align: center; }
   .diag-viewer img { max-width: 100%; height: auto;
     border: 1px solid var(--border); border-radius: 4px; }
@@ -261,8 +272,23 @@ async function openDiagnostics() {
       '<code>build_manifest.py</code>.</div>';
     return;
   }
-  // List view
-  const items = diags.map(d => {
+  // Group by category. Categories are ordered by their newest entry's
+  // mtime (so the most-recently-updated category bubbles to the top).
+  const byCat = new Map();
+  for (const d of diags) {
+    const cat = d.category || "uncategorized";
+    if (!byCat.has(cat)) byCat.set(cat, []);
+    byCat.get(cat).push(d);
+  }
+  const orderedCats = [...byCat.entries()]
+    .map(([cat, items]) => ({
+      cat,
+      items: items.sort((a, b) => b.mtime - a.mtime),
+      newest: Math.max(...items.map(i => i.mtime)),
+    }))
+    .sort((a, b) => b.newest - a.newest);
+
+  const renderItem = (d) => {
     let ts = "?";
     try {
       ts = new Date(d.mtime * 1000).toLocaleString("en-US", {
@@ -272,23 +298,50 @@ async function openDiagnostics() {
       });
     } catch (e) {}
     const kb = (d.size / 1024).toFixed(0);
-    const nameEnc = encodeURIComponent(d.name);
-    return `<li><a href="#" onclick="viewDiagnostic(decodeURIComponent('${nameEnc}'));return false;">
+    const pathEnc = encodeURIComponent(d.path);
+    return `<li><a href="#" onclick="viewDiagnostic(decodeURIComponent('${pathEnc}'));return false;">
       <span class="diag-name">${d.name}</span>
       <span class="diag-meta">${ts} ET · ${kb} KB</span>
     </a></li>`;
+  };
+
+  const sections = orderedCats.map((g, i) => {
+    const id = `diag-cat-${i}`;
+    return `<section class="diag-cat">
+      <div class="diag-cat-header" onclick="toggleDiagCat('${id}')">
+        <span class="diag-cat-toggle" id="${id}-tog">▼</span>
+        <span class="diag-cat-name">${g.cat}</span>
+        <span class="diag-cat-count">${g.items.length}</span>
+      </div>
+      <ul class="diag-list" id="${id}">${g.items.map(renderItem).join("")}</ul>
+    </section>`;
   });
-  body.innerHTML = `<ul class="diag-list">${items.join("")}</ul>`;
+  body.innerHTML = sections.join("");
 }
 
-async function viewDiagnostic(name) {
+function toggleDiagCat(id) {
+  const list = document.getElementById(id);
+  const tog = document.getElementById(id + "-tog");
+  if (!list || !tog) return;
+  if (list.style.display === "none") {
+    list.style.display = ""; tog.textContent = "▼";
+  } else {
+    list.style.display = "none"; tog.textContent = "▶";
+  }
+}
+
+async function viewDiagnostic(pathOrName) {
   // Fetch fresh manifest so file metadata stays in sync with the index list.
   let manifest;
   try {
     const r = await fetch("manifest.json?" + Date.now());
     manifest = await r.json();
   } catch (e) { manifest = { diagnostics: [] }; }
-  const meta = (manifest.diagnostics || []).find(d => d.name === name);
+  // Prefer match-by-path (unambiguous when same name lives in multiple
+  // categories); fall back to match-by-name for legacy callers.
+  const meta = (manifest.diagnostics || []).find(
+    d => d.path === pathOrName || d.name === pathOrName
+  );
   if (!meta) {
     document.getElementById("diag-modal-body").innerHTML =
       '<div class="empty">Image not in manifest. ' +
