@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-27T03:40:12Z",
+  "last_updated": "2026-04-27T03:45:42Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -545,6 +545,20 @@
         "effectively_done": 0
       }
     },
+    "wmtask_latent_additive_mse_p30_permidentity_replication": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 1,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 1,
+        "n_total": 1
+      }
+    },
     "wmtask_vanilla_mse_p30__lc_sweep": {
       "status": "processed",
       "runs_summary": {
@@ -834,6 +848,10 @@
     },
     {
       "file": "20260426T220716Z-wmtask_latent_additive_mse_p30_dualckpt_replication.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260427T034151Z-wmtask_latent_additive_mse_p30_permidentity_replication.yaml",
       "status": "claimed"
     }
   ]
