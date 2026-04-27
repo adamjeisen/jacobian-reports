@@ -1,0 +1,34 @@
+{
+  "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
+    "run_id": "sqyybgkz",
+    "jacs_shape": [
+      8,
+      128,
+      128
+    ],
+    "eigvals_ms_median": 74.28009499562904,
+    "eigvals_ms_mean": 74.65708240051754,
+    "cond_median": 11.724827766418457,
+    "cond_max": 25.984359741210938,
+    "spectral_norm_median": 27.212890625,
+    "non_normality_median": 5.836911201477051,
+    "lambda_real_min": -27.28356170654297,
+    "lambda_real_max": 1.1393712759017944
+  },
+  "wmtask_latent_additive_mse_p30_permidentity_replication": {
+    "run_id": "bu0gglgx",
+    "jacs_shape": [
+      8,
+      128,
+      128
+    ],
+    "eigvals_ms_median": 79.03249753871933,
+    "eigvals_ms_mean": 79.2707177111879,
+    "cond_median": 44.15879440307617,
+    "cond_max": 93.0515365600586,
+    "spectral_norm_median": 37.99123001098633,
+    "non_normality_median": 6.053854942321777,
+    "lambda_real_min": -38.77629089355469,
+    "lambda_real_max": 1.9630494117736816
+  }
+}
