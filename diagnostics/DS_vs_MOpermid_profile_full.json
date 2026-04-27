@@ -1,0 +1,122 @@
+{
+  "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
+    "run_id": "sqyybgkz",
+    "stats": {
+      "encode_trajectory": {
+        "n_calls_per_iter": 3.0,
+        "mean_ms_per_call": 2.203121070067088,
+        "total_ms_per_iter": 6.609363210201264,
+        "p95_ms_per_call": 3.14004483222961
+      },
+      "compute_jacobians": {
+        "n_calls_per_iter": 141.0,
+        "mean_ms_per_call": 0.8843758977896778,
+        "total_ms_per_iter": 124.69700158834458,
+        "p95_ms_per_call": 0.9247487932443619
+      },
+      "decode_trajectory": {
+        "n_calls_per_iter": 2.0,
+        "mean_ms_per_call": 2.0018864035606385,
+        "total_ms_per_iter": 4.003772807121277,
+        "p95_ms_per_call": 2.078057563304901
+      },
+      "trajectory_model_step": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 206.35566101074218,
+        "total_ms_per_iter": 206.35566101074218,
+        "p95_ms_per_call": 213.52075729370117
+      },
+      "loop_closure_step": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 32.940294647216795,
+        "total_ms_per_iter": 32.940294647216795,
+        "p95_ms_per_call": 36.099694061279294
+      },
+      "recon_loss": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 2.0800511598587037,
+        "total_ms_per_iter": 2.0800511598587037,
+        "p95_ms_per_call": 2.16010559797287
+      },
+      "training_step_forward": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 250.6883117675781,
+        "total_ms_per_iter": 250.6883117675781,
+        "p95_ms_per_call": 259.14548568725587
+      },
+      "backward": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 234.7566390991211,
+        "total_ms_per_iter": 234.7566390991211,
+        "p95_ms_per_call": 235.62504119873046
+      },
+      "TOTAL_iter": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 485.6615295410156,
+        "total_ms_per_iter": 485.6615295410156,
+        "p95_ms_per_call": 493.66625061035154
+      }
+    },
+    "iter_total_ms": 485.6615295410156
+  },
+  "wmtask_latent_additive_mse_p30_permidentity_replication": {
+    "run_id": "bu0gglgx",
+    "stats": {
+      "encode_trajectory": {
+        "n_calls_per_iter": 4.0,
+        "mean_ms_per_call": 1.0070631995797157,
+        "total_ms_per_iter": 4.028252798318863,
+        "p95_ms_per_call": 1.2083071887493133
+      },
+      "compute_jacobians": {
+        "n_calls_per_iter": 141.0,
+        "mean_ms_per_call": 0.8821656287984645,
+        "total_ms_per_iter": 124.38535366058349,
+        "p95_ms_per_call": 0.919988813996315
+      },
+      "decode_trajectory": {
+        "n_calls_per_iter": 2.0,
+        "mean_ms_per_call": 0.9733055979013443,
+        "total_ms_per_iter": 1.9466111958026886,
+        "p95_ms_per_call": 0.9952976107597351
+      },
+      "trajectory_model_step": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 204.0919967651367,
+        "total_ms_per_iter": 204.0919967651367,
+        "p95_ms_per_call": 209.5051170349121
+      },
+      "loop_closure_step": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 32.18164825439453,
+        "total_ms_per_iter": 32.18164825439453,
+        "p95_ms_per_call": 32.284617805480956
+      },
+      "recon_loss": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 1.100374412536621,
+        "total_ms_per_iter": 1.100374412536621,
+        "p95_ms_per_call": 1.120120006799698
+      },
+      "training_step_forward": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 244.10717315673827,
+        "total_ms_per_iter": 244.10717315673827,
+        "p95_ms_per_call": 249.69895629882814
+      },
+      "backward": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 229.36686248779296,
+        "total_ms_per_iter": 229.36686248779296,
+        "p95_ms_per_call": 232.57385330200194
+      },
+      "TOTAL_iter": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 473.632861328125,
+        "total_ms_per_iter": 473.632861328125,
+        "p95_ms_per_call": 478.27628936767576
+      }
+    },
+    "iter_total_ms": 473.632861328125
+  }
+}
