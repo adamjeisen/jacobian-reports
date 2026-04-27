@@ -1,0 +1,86 @@
+{
+  "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
+    "run_id": "sqyybgkz",
+    "stats": {
+      "encode_trajectory": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 2.194521588087082,
+        "total_ms_per_iter": 2.194521588087082,
+        "p95_ms_per_call": 2.461732769012451
+      },
+      "compute_jacobians": {
+        "n_calls_per_iter": 120.0,
+        "mean_ms_per_call": 0.870754319926103,
+        "total_ms_per_iter": 104.49051839113235,
+        "p95_ms_per_call": 0.873699226975441
+      },
+      "decode_trajectory": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 2.035750389099121,
+        "total_ms_per_iter": 2.035750389099121,
+        "p95_ms_per_call": 2.0852959871292116
+      },
+      "forward_step": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 207.51224670410156,
+        "total_ms_per_iter": 207.51224670410156,
+        "p95_ms_per_call": 210.80950775146485
+      },
+      "backward": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 195.75770263671876,
+        "total_ms_per_iter": 195.75770263671876,
+        "p95_ms_per_call": 196.158349609375
+      },
+      "TOTAL_iter": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 403.4293548583984,
+        "total_ms_per_iter": 403.4293548583984,
+        "p95_ms_per_call": 406.869450378418
+      }
+    },
+    "iter_total_ms": 403.4293548583984
+  },
+  "wmtask_latent_additive_mse_p30_permidentity_replication": {
+    "run_id": "bu0gglgx",
+    "stats": {
+      "encode_trajectory": {
+        "n_calls_per_iter": 2.0,
+        "mean_ms_per_call": 1.047543992102146,
+        "total_ms_per_iter": 2.095087984204292,
+        "p95_ms_per_call": 1.2849647939205173
+      },
+      "compute_jacobians": {
+        "n_calls_per_iter": 120.0,
+        "mean_ms_per_call": 0.8719009071091811,
+        "total_ms_per_iter": 104.62810885310174,
+        "p95_ms_per_call": 0.8774927854537964
+      },
+      "decode_trajectory": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 0.9803999960422516,
+        "total_ms_per_iter": 0.9803999960422516,
+        "p95_ms_per_call": 0.9955807983875274
+      },
+      "forward_step": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 206.84104919433594,
+        "total_ms_per_iter": 206.84104919433594,
+        "p95_ms_per_call": 213.50433273315429
+      },
+      "backward": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 192.4531997680664,
+        "total_ms_per_iter": 192.4531997680664,
+        "p95_ms_per_call": 192.6694450378418
+      },
+      "TOTAL_iter": {
+        "n_calls_per_iter": 1.0,
+        "mean_ms_per_call": 399.3787780761719,
+        "total_ms_per_iter": 399.3787780761719,
+        "p95_ms_per_call": 406.1050003051758
+      }
+    },
+    "iter_total_ms": 399.3787780761719
+  }
+}
