@@ -1,0 +1,5 @@
+experiment: wmtask_latent_additive_mse_p30_permidentity_replication_v2
+overrides:
+  - "hydra.launcher.partition=ou_bcs_normal"
+submitted_at: 20260427T165419Z
+submitted_from: millerlab-endeavourOS
