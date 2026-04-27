@@ -1,0 +1,70 @@
+[
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.5450546397843823e-09,
+      "vc": 2.756445960372389e-09,
+      "cv": 3.3760949591510325e-09,
+      "cc": 6.1493494740716415e-09,
+      "vv_max": 1.2636736101967472e-08,
+      "vc_max": 2.051835501504229e-08,
+      "cv_max": 2.337909421612494e-08,
+      "cc_max": 2.7865336704735455e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 1.5450546397843823e-09,
+      "vc": 2.756445960372389e-09,
+      "cv": 3.3760949591510325e-09,
+      "cc": 6.1493494740716415e-09,
+      "vv_max": 1.2636736101967472e-08,
+      "vc_max": 2.051835501504229e-08,
+      "cv_max": 2.337909421612494e-08,
+      "cc_max": 2.7865336704735455e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.7692227682886141e-09,
+      "vc": 2.93323521027844e-09,
+      "cv": 3.829667694077443e-09,
+      "cc": 6.458938273112835e-09,
+      "vv_max": 1.323055887070268e-08,
+      "vc_max": 2.0841566694684843e-08,
+      "cv_max": 2.413812261181647e-08,
+      "cc_max": 2.826472211836517e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 1.7692227682886141e-09,
+      "vc": 2.93323521027844e-09,
+      "cv": 3.829667694077443e-09,
+      "cc": 6.458938273112835e-09,
+      "vv_max": 1.323055887070268e-08,
+      "vc_max": 2.0841566694684843e-08,
+      "cv_max": 2.413812261181647e-08,
+      "cc_max": 2.826472211836517e-08
+    },
+    "n_dyn": 128
+  }
+]

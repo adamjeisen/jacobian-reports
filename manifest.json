@@ -449,6 +449,12 @@
   },
   "diagnostics": [
     {
+      "name": "dynamics_gradient_signal_init_freshmlp_perm_identity.png",
+      "path": "diagnostics/dynamics_gradient_signal_init_freshmlp_perm_identity.png",
+      "mtime": 1777260697.652666,
+      "size": 45660
+    },
+    {
       "name": "dynamics_gradient_signal_init_with_perm_identity.png",
       "path": "diagnostics/dynamics_gradient_signal_init_with_perm_identity.png",
       "mtime": 1777260162.278997,
