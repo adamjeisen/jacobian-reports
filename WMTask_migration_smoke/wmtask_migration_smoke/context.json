@@ -1,0 +1,53 @@
+{
+  "group": "wmtask_migration_smoke",
+  "completed_at": "2026-04-27T22:40:20Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_migration_smoke": {
+      "description": "Smoke test for migrate_to: split-submission. 2-cell grid (LC sweep),\nDirectSum encoder, n_target_dims_per_block=[4,4], 1 epoch, 5 train /\n3 val batches. Verifies _submit_one_split fires correctly and\nexpected.json.partition_per_cell ends up populated.\n",
+      "hypothesis": "Cell 0 lands on mit_normal_gpu, cell 1 on ou_bcs_normal (assuming\nfree budget at submit). expected.json has partition_per_cell map\nwith both entries. squeue shows one job on each partition.\n",
+      "success_criteria": [
+        "Both cells submit (no sbatch failures)",
+        "expected.json.partition_per_cell has 2 entries",
+        "squeue shows one of our jobs on mit_normal_gpu, one on ou_bcs_normal"
+      ]
+    }
+  },
+  "expected_run_count": 2,
+  "hydra": {
+    "experiments": [
+      "wmtask_migration_smoke"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_migration_smoke"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_migration_smoke",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_migration_smoke",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_migration_smoke",
+    "group": "wmtask_migration_smoke"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "1266f49",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-27T22:30:18Z"
+}

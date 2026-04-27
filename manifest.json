@@ -473,6 +473,15 @@
         "has_discussion": false,
         "report_mtime": 1776706520.3749778
       }
+    ],
+    "WMTask_migration_smoke": [
+      {
+        "group": "wmtask_migration_smoke",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777329925.9171932
+      }
     ]
   },
   "diagnostics": [
