@@ -1,0 +1,72 @@
+FIT Profiler Report
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Action                                                             	|  Mean duration (s)	|  Num calls      	|  Total time (s) 	|  Percentage %   	|
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Total                                                              	|  -              	|  305            	|  62.791         	|  100 %          	|
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  run_training_epoch                                                 	|  62.538         	|  1              	|  62.538         	|  99.598         	|
+|  [Strategy]SingleDeviceStrategy.validation_step                     	|  7.2738         	|  8              	|  58.19          	|  92.673         	|
+|  run_training_batch                                                 	|  0.43227        	|  10             	|  4.3227         	|  6.8843         	|
+|  [Strategy]SingleDeviceStrategy.training_step                       	|  0.21757        	|  10             	|  2.1757         	|  3.465          	|
+|  [Strategy]SingleDeviceStrategy.backward                            	|  0.21185        	|  10             	|  2.1185         	|  3.3739         	|
+|  [LightningModule]LitLatentJacobianODE.optimizer_step               	|  0.43629        	|  3              	|  1.3089         	|  2.0845         	|
+|  [_TrainingEpochLoop].train_dataloader_next                         	|  0.0012328      	|  10             	|  0.012328       	|  0.019633       	|
+|  [Callback]RichModelSummary.on_fit_start                            	|  0.0037516      	|  1              	|  0.0037516      	|  0.0059748      	|
+|  [_EvaluationLoop].val_next                                         	|  0.0002721      	|  8              	|  0.0021768      	|  0.0034668      	|
+|  [Strategy]SingleDeviceStrategy.batch_to_device                     	|  9.828e-05      	|  18             	|  0.001769       	|  0.0028174      	|
+|  [LightningModule]LitLatentJacobianODE.transfer_batch_to_device     	|  7.933e-05      	|  18             	|  0.0014279      	|  0.0022741      	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_model_zero_grad	|  0.0012092      	|  1              	|  0.0012092      	|  0.0019258      	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_epoch_end      	|  0.0011869      	|  1              	|  0.0011869      	|  0.0018902      	|
+|  [LightningModule]LitLatentJacobianODE.optimizer_zero_grad          	|  0.00012394     	|  3              	|  0.00037181     	|  0.00059214     	|
+|  [LightningModule]LitLatentJacobianODE.configure_optimizers         	|  0.0003706      	|  1              	|  0.0003706      	|  0.00059022     	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_model_eval     	|  0.00015654     	|  1              	|  0.00015654     	|  0.0002493      	|
+|  [LightningModule]LitLatentJacobianODE.configure_gradient_clipping  	|  2.6029e-05     	|  3              	|  7.8086e-05     	|  0.00012436     	|
+|  [LightningModule]LitLatentJacobianODE.lr_scheduler_step            	|  3.0001e-05     	|  1              	|  3.0001e-05     	|  4.7779e-05     	|
+|  [Callback]RichModelSummary.on_after_backward                       	|  2.981e-06      	|  10             	|  2.981e-05      	|  4.7475e-05     	|
+|  [LightningModule]LitLatentJacobianODE.on_before_batch_transfer     	|  1.0613e-06     	|  18             	|  1.9104e-05     	|  3.0425e-05     	|
+|  [Callback]RichModelSummary.on_train_batch_end                      	|  1.8841e-06     	|  10             	|  1.8841e-05     	|  3.0006e-05     	|
+|  [Callback]RichModelSummary.on_validation_batch_end                 	|  2.0122e-06     	|  8              	|  1.6097e-05     	|  2.5636e-05     	|
+|  [Callback]RichModelSummary.on_before_backward                      	|  1.2862e-06     	|  10             	|  1.2862e-05     	|  2.0483e-05     	|
+|  [LightningModule]LitLatentJacobianODE.on_after_batch_transfer      	|  6.6698e-07     	|  18             	|  1.2006e-05     	|  1.912e-05      	|
+|  [Callback]RichModelSummary.on_train_batch_start                    	|  1.1411e-06     	|  10             	|  1.1411e-05     	|  1.8173e-05     	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_batch_end      	|  1.279e-06      	|  8              	|  1.0232e-05     	|  1.6295e-05     	|
+|  [Callback]RichModelSummary.on_validation_batch_start               	|  1.2509e-06     	|  8              	|  1.0007e-05     	|  1.5937e-05     	|
+|  [LightningModule]LitLatentJacobianODE.on_train_batch_start         	|  8.2419e-07     	|  10             	|  8.2419e-06     	|  1.3126e-05     	|
+|  [Strategy]SingleDeviceStrategy.on_train_batch_start                	|  8.04e-07       	|  10             	|  8.04e-06       	|  1.2804e-05     	|
+|  [LightningModule]LitLatentJacobianODE.on_after_backward            	|  7.2701e-07     	|  10             	|  7.2701e-06     	|  1.1578e-05     	|
+|  [Callback]RichModelSummary.on_before_zero_grad                     	|  2.2074e-06     	|  3              	|  6.6221e-06     	|  1.0546e-05     	|
+|  [LightningModule]LitLatentJacobianODE.on_train_batch_end           	|  6.4399e-07     	|  10             	|  6.4399e-06     	|  1.0256e-05     	|
+|  [LightningModule]LitLatentJacobianODE.on_before_backward           	|  6.242e-07      	|  10             	|  6.242e-06      	|  9.9409e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_batch_start    	|  5.9986e-07     	|  8              	|  4.7989e-06     	|  7.6426e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_before_optimizer_step     	|  1.455e-06      	|  3              	|  4.3651e-06     	|  6.9518e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_train_epoch_start         	|  4.254e-06      	|  1              	|  4.254e-06      	|  6.775e-06      	|
+|  [Callback]RichModelSummary.on_fit_end                              	|  3.15e-06       	|  1              	|  3.15e-06       	|  5.0166e-06     	|
+|  [Callback]RichModelSummary.on_before_optimizer_step                	|  1.0053e-06     	|  3              	|  3.016e-06      	|  4.8032e-06     	|
+|  [Callback]RichModelSummary.on_validation_end                       	|  2.52e-06       	|  1              	|  2.52e-06       	|  4.0134e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_before_zero_grad          	|  7.4234e-07     	|  3              	|  2.227e-06      	|  3.5467e-06     	|
+|  [Strategy]SingleDeviceStrategy.on_validation_end                   	|  2.216e-06      	|  1              	|  2.216e-06      	|  3.5291e-06     	|
+|  [LightningModule]LitLatentJacobianODE.configure_callbacks          	|  2.071e-06      	|  1              	|  2.071e-06      	|  3.2983e-06     	|
+|  [Callback]RichModelSummary.teardown                                	|  1.715e-06      	|  1              	|  1.715e-06      	|  2.7313e-06     	|
+|  [Callback]RichModelSummary.setup                                   	|  1.7009e-06     	|  1              	|  1.7009e-06     	|  2.7089e-06     	|
+|  [Callback]RichModelSummary.on_train_start                          	|  1.6211e-06     	|  1              	|  1.6211e-06     	|  2.5817e-06     	|
+|  [Callback]RichModelSummary.on_validation_start                     	|  1.354e-06      	|  1              	|  1.354e-06      	|  2.1564e-06     	|
+|  [Callback]RichModelSummary.on_validation_epoch_end                 	|  1.3519e-06     	|  1              	|  1.3519e-06     	|  2.1531e-06     	|
+|  [Callback]RichModelSummary.on_train_epoch_end                      	|  1.3061e-06     	|  1              	|  1.3061e-06     	|  2.08e-06       	|
+|  [Callback]RichModelSummary.on_train_end                            	|  1.198e-06      	|  1              	|  1.198e-06      	|  1.908e-06      	|
+|  [LightningModule]LitLatentJacobianODE.setup                        	|  1.163e-06      	|  1              	|  1.163e-06      	|  1.8522e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_fit_start                 	|  1.094e-06      	|  1              	|  1.094e-06      	|  1.7422e-06     	|
+|  [Callback]RichModelSummary.on_train_epoch_start                    	|  9.2899e-07     	|  1              	|  9.2899e-07     	|  1.4795e-06     	|
+|  [LightningModule]LitLatentJacobianODE.teardown                     	|  8.34e-07       	|  1              	|  8.34e-07       	|  1.3282e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_fit_end                   	|  8.0804e-07     	|  1              	|  8.0804e-07     	|  1.2869e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_end            	|  7.73e-07       	|  1              	|  7.73e-07       	|  1.2311e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_train_epoch_end           	|  7.3505e-07     	|  1              	|  7.3505e-07     	|  1.1706e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_epoch_start    	|  7.269e-07      	|  1              	|  7.269e-07      	|  1.1577e-06     	|
+|  [Callback]RichModelSummary.on_validation_epoch_start               	|  6.6904e-07     	|  1              	|  6.6904e-07     	|  1.0655e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_train_start               	|  6.4308e-07     	|  1              	|  6.4308e-07     	|  1.0242e-06     	|
+|  [LightningModule]LitLatentJacobianODE.on_validation_start          	|  5.8499e-07     	|  1              	|  5.8499e-07     	|  9.3165e-07     	|
+|  [Strategy]SingleDeviceStrategy.on_train_start                      	|  5.4995e-07     	|  1              	|  5.4995e-07     	|  8.7584e-07     	|
+|  [LightningModule]LitLatentJacobianODE.on_train_end                 	|  5.3004e-07     	|  1              	|  5.3004e-07     	|  8.4414e-07     	|
+|  [Strategy]SingleDeviceStrategy.on_validation_start                 	|  5.1793e-07     	|  1              	|  5.1793e-07     	|  8.2485e-07     	|
+|  [Strategy]SingleDeviceStrategy.on_train_end                        	|  4.8801e-07     	|  1              	|  4.8801e-07     	|  7.7721e-07     	|
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------

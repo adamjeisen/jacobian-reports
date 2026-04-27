@@ -1,0 +1,44 @@
+{
+  "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
+    "run_id": "sqyybgkz",
+    "modes": {
+      "production": {
+        "n_val": 8,
+        "val_total_sec": 3.5376907096942887,
+        "val_per_call_sec": 0.4422113387117861,
+        "n_train": 10,
+        "train_total_sec": 2.4684641151688993,
+        "train_per_call_sec": 0.24684641151688994
+      },
+      "minimal": {
+        "n_val": 8,
+        "val_total_sec": 3.487114868941717,
+        "val_per_call_sec": 0.4358893586177146,
+        "n_train": 10,
+        "train_total_sec": 2.150014227256179,
+        "train_per_call_sec": 0.2150014227256179
+      }
+    }
+  },
+  "wmtask_latent_additive_mse_p30_permidentity_replication": {
+    "run_id": "bu0gglgx",
+    "modes": {
+      "production": {
+        "n_val": 8,
+        "val_total_sec": 58.193913822993636,
+        "val_per_call_sec": 7.2742392278742045,
+        "n_train": 10,
+        "train_total_sec": 2.2118608760647476,
+        "train_per_call_sec": 0.22118608760647476
+      },
+      "minimal": {
+        "n_val": 8,
+        "val_total_sec": 58.1902952111559,
+        "val_per_call_sec": 7.273786901394487,
+        "n_train": 10,
+        "train_total_sec": 2.1757232372183353,
+        "train_per_call_sec": 0.21757232372183352
+      }
+    }
+  }
+}
