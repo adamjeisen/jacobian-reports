@@ -1,6 +1,0 @@
-experiment: wmtask_migration_smoke
-overrides: []
-migrate_to:
-  partition: "mit_normal_gpu"
-submitted_at: 20260427T222506Z
-submitted_from: millerlab-endeavourOS

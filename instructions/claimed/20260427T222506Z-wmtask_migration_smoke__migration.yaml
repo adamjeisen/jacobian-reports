@@ -1,0 +1,14 @@
+experiment: wmtask_migration_smoke
+overrides: []
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260427T222506Z
+submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_migration_smoke
+expected_run_count: 2
+slurm_array_id: split
+slurm_submitted_at: '2026-04-27T22:30:19Z'
+split_submission:
+  mit_count: 2
+  ou_bcs_count: 0
+  n_failures: 0

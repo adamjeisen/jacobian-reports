@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-27T22:25:12Z",
+  "last_updated": "2026-04-27T22:30:29Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -581,6 +581,9 @@
         "effectively_done": 1
       }
     },
+    "wmtask_migration_smoke": {
+      "status": "active"
+    },
     "wmtask_vanilla_mse_p30__lc_sweep": {
       "status": "processed",
       "runs_summary": {
@@ -886,6 +889,10 @@
     },
     {
       "file": "20260427T165419Z-wmtask_latent_additive_mse_p30_permidentity_replication_v2.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260427T222506Z-wmtask_migration_smoke__migration.yaml",
       "status": "claimed"
     }
   ]
