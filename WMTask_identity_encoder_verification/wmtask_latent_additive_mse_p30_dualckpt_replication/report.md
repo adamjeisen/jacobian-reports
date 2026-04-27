@@ -36,13 +36,15 @@ dualckpt; if it stays clean, the suppression is DirectSum-specific.
 
 ## Results
 
-**Chosen run** (by `best_traj_loss`): `—` — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None
+**Chosen run** (by `best_traj_loss`): `fjff0off` — traj_loss=0.01046, MASE=0.9511, R²=0.9880, LC loss=3.833, epoch=8.0
 
-### Integrity checks
+**Runs analyzed**: 1 (expected 1)
 
-⚠️ **Matched-run count mismatch**: expected 1 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.
+### Per-run results
 
-**Runs analyzed**: 0 (expected 1)
+| run_idx | run_id | best_traj_loss | best_MASE | R² | LC loss | epoch |
+|---|---|---|---|---|---|---|
+| 0 | `fjff0off` | 0.01046 | 0.9511 | 0.9880 | 3.833 | 8.0 |
 
 ## Success-criteria verdicts (automated)
 
@@ -56,11 +58,21 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ## Figures
 
-_(no figures produced — analytics may have failed)_
+### per_run_lyapunov
 
-```
-ValueError: attempt to get argmin of an empty sequence
-```
+![per_run_lyapunov](figures/per_run_lyapunov.png)
+
+### per_run_lyapunov_vs_true
+
+![per_run_lyapunov_vs_true](figures/per_run_lyapunov_vs_true.png)
+
+### per_run_lyapunov_relerr
+
+![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
+
+### per_run_tangent_spectrum
+
+![per_run_tangent_spectrum](figures/per_run_tangent_spectrum.png)
 
 ## Discussion
 
