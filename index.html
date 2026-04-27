@@ -147,8 +147,10 @@
   .diag-cat-header .diag-cat-toggle { color: var(--fg2);
     font-size: 0.75rem; width: 0.7rem; text-align: center; }
   .diag-cat-header .diag-cat-name { font-weight: 600; }
-  .diag-cat-header .diag-cat-count { color: var(--fg2);
+  .diag-cat-header .diag-cat-mtime { color: var(--fg2);
     font-size: 0.78rem; margin-left: auto; }
+  .diag-cat-header .diag-cat-count { color: var(--fg2);
+    font-size: 0.78rem; padding-left: 0.6rem; }
   .diag-viewer { text-align: center; }
   .diag-viewer img { max-width: 100%; height: auto;
     border: 1px solid var(--border); border-radius: 4px; }
@@ -307,13 +309,23 @@ async function openDiagnostics() {
 
   const sections = orderedCats.map((g, i) => {
     const id = `diag-cat-${i}`;
+    let newest = "?";
+    try {
+      newest = new Date(g.newest * 1000).toLocaleString("en-US", {
+        timeZone: "America/New_York",
+        month: "short", day: "numeric",
+        hour: "numeric", minute: "2-digit",
+      });
+    } catch (e) {}
+    // Default to COLLAPSED (display:none + ▶); user toggles open.
     return `<section class="diag-cat">
       <div class="diag-cat-header" onclick="toggleDiagCat('${id}')">
-        <span class="diag-cat-toggle" id="${id}-tog">▼</span>
+        <span class="diag-cat-toggle" id="${id}-tog">▶</span>
         <span class="diag-cat-name">${g.cat}</span>
+        <span class="diag-cat-mtime">${newest} ET</span>
         <span class="diag-cat-count">${g.items.length}</span>
       </div>
-      <ul class="diag-list" id="${id}">${g.items.map(renderItem).join("")}</ul>
+      <ul class="diag-list" id="${id}" style="display:none">${g.items.map(renderItem).join("")}</ul>
     </section>`;
   });
   body.innerHTML = sections.join("");
