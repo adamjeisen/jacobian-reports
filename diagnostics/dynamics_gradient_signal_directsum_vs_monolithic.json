@@ -1,0 +1,106 @@
+[
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.294006466423525e-07,
+      "vc": 2.4033357703956426e-07,
+      "cv": 3.834255153378763e-07,
+      "cc": 7.763509302094462e-07
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 5.600022134899518e-08,
+      "vc": 9.77616281261362e-08,
+      "cv": 9.263335698506125e-08,
+      "cc": 1.821941992830034e-07
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "trained",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.294006466423525e-07,
+      "vc": 2.4033357703956426e-07,
+      "cv": 3.834255153378763e-07,
+      "cc": 7.763509302094462e-07
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "trained",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 5.600022134899518e-08,
+      "vc": 9.77616281261362e-08,
+      "cv": 9.263335698506125e-08,
+      "cc": 1.821941992830034e-07
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 4.688301089572633e-07,
+      "vc": 4.5280577865014493e-07,
+      "cv": 4.5481533561542165e-07,
+      "cc": 4.288763193471823e-07
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 3.563594077604648e-07,
+      "vc": 3.475732910374063e-07,
+      "cv": 3.3920144915100536e-07,
+      "cc": 3.197122850906453e-07
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "trained",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 4.688301089572633e-07,
+      "vc": 4.5280577865014493e-07,
+      "cv": 4.5481533561542165e-07,
+      "cc": 4.288763193471823e-07
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30__lc_sweep",
+    "run_id": "i73jwojr",
+    "stage": "trained",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 3.563594077604648e-07,
+      "vc": 3.475732910374063e-07,
+      "cv": 3.3920144915100536e-07,
+      "cc": 3.197122850906453e-07
+    },
+    "n_dyn": 128
+  }
+]

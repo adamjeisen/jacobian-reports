@@ -449,6 +449,12 @@
   },
   "diagnostics": [
     {
+      "name": "dynamics_gradient_signal_directsum_vs_monolithic.png",
+      "path": "diagnostics/dynamics_gradient_signal_directsum_vs_monolithic.png",
+      "mtime": 1777253562.580533,
+      "size": 92526
+    },
+    {
       "name": "block_jacobian_directsum_vs_monolithic.png",
       "path": "diagnostics/block_jacobian_directsum_vs_monolithic.png",
       "mtime": 1777241380.043127,
