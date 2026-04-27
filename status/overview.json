@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-27T01:10:14Z",
+  "last_updated": "2026-04-27T01:15:13Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -537,17 +537,21 @@
       }
     },
     "wmtask_latent_additive_mse_p30_dualckpt_replication": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
         "terminal": 1,
         "in_flight": 0,
         "failed_exhausted": 1,
         "effectively_done": 0
       },
-      "training_slurm": {
-        "n_running": 1,
-        "n_pending": 0,
-        "n_total": 1
+      "analysis": {
+        "slurm_job_id": "12606351",
+        "dispatched_at": "2026-04-27T01:15:13Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
