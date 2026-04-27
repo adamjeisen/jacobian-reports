@@ -397,6 +397,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_latent_additive_mse_p30_permidentity_replication_v2",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777320021.0673757
+      },
+      {
         "group": "wmtask_latent_additive_mse_p30_permidentity_replication",
         "has_report": true,
         "has_metrics": true,
