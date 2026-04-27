@@ -1,0 +1,76 @@
+{
+  "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep": {
+    "run_id": "sqyybgkz",
+    "n_iters": 10,
+    "stats": {
+      "val/1.trajectory_step": {
+        "mean_ms": 166.06247671879828,
+        "median_ms": 165.48012749990448,
+        "p95_ms": 168.6440486984793
+      },
+      "val/2.encode": {
+        "mean_ms": 2.144302800297737,
+        "median_ms": 2.1374214556999505,
+        "p95_ms": 2.1801995288114995
+      },
+      "val/3.loop_closure": {
+        "mean_ms": 27.441081684082747,
+        "median_ms": 26.872456481214613,
+        "p95_ms": 29.823446407681327
+      },
+      "val/4.recon_loss": {
+        "mean_ms": 2.3488724138587713,
+        "median_ms": 2.2403860348276794,
+        "p95_ms": 2.87402887479402
+      },
+      "val/5.one_step_traj": {
+        "mean_ms": 164.26731451647356,
+        "median_ms": 163.0393760278821,
+        "p95_ms": 169.1961908072699
+      },
+      "val/6.eigvals": {
+        "mean_ms": 78.45196319976822,
+        "median_ms": 78.6266045179218,
+        "p95_ms": 80.07445351686327
+      }
+    },
+    "total_mean_ms": 440.7160113332793
+  },
+  "wmtask_latent_additive_mse_p30_permidentity_replication": {
+    "run_id": "bu0gglgx",
+    "n_iters": 10,
+    "stats": {
+      "val/1.trajectory_step": {
+        "mean_ms": 165.62547761714086,
+        "median_ms": 164.90220493869856,
+        "p95_ms": 168.99286909028888
+      },
+      "val/2.encode": {
+        "mean_ms": 1.119335601106286,
+        "median_ms": 1.1059219832532108,
+        "p95_ms": 1.2021267786622045
+      },
+      "val/3.loop_closure": {
+        "mean_ms": 27.726850798353553,
+        "median_ms": 27.303515991661698,
+        "p95_ms": 29.678477783454582
+      },
+      "val/4.recon_loss": {
+        "mean_ms": 1.6365231131203473,
+        "median_ms": 1.4950375189073384,
+        "p95_ms": 2.3094040981959543
+      },
+      "val/5.one_step_traj": {
+        "mean_ms": 164.07020259648561,
+        "median_ms": 162.17281500576064,
+        "p95_ms": 169.43851927062494
+      },
+      "val/6.eigvals": {
+        "mean_ms": 81.00161358015612,
+        "median_ms": 81.3189574982971,
+        "p95_ms": 81.78031139541417
+      }
+    },
+    "total_mean_ms": 441.1800033063628
+  }
+}
