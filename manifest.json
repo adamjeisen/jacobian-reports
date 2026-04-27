@@ -470,6 +470,12 @@
   },
   "diagnostics": [
     {
+      "name": "dynamics_gradient_signal_DS_vs_MOpermid.png",
+      "path": "diagnostics/dynamics_gradient_signal_DS_vs_MOpermid.png",
+      "mtime": 1777301270.833158,
+      "size": 71899
+    },
+    {
       "name": "dynamics_gradient_signal_init_freshmlp_perm_identity.png",
       "path": "diagnostics/dynamics_gradient_signal_init_freshmlp_perm_identity.png",
       "mtime": 1777260697.652666,

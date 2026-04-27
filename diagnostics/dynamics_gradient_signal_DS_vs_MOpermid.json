@@ -1,0 +1,138 @@
+[
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.6013772530243386e-09,
+      "vc": 2.888567607328696e-09,
+      "cv": 2.3825186268311427e-09,
+      "cc": 4.3590411280547414e-09,
+      "vv_max": 1.5957979826453084e-08,
+      "vc_max": 1.679725514236452e-08,
+      "cv_max": 1.5325539948207734e-08,
+      "cc_max": 1.6266456626112813e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 1.6013772530243386e-09,
+      "vc": 2.888567607328696e-09,
+      "cv": 2.3825186268311427e-09,
+      "cc": 4.3590411280547414e-09,
+      "vv_max": 1.5957979826453084e-08,
+      "vc_max": 1.679725514236452e-08,
+      "cv_max": 1.5325539948207734e-08,
+      "cc_max": 1.6266456626112813e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "trained",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.3644518848110465e-10,
+      "vc": 2.1103990777149306e-10,
+      "cv": 1.7353417314236452e-10,
+      "cc": 2.651799335673388e-10,
+      "vv_max": 8.83184081423849e-10,
+      "vc_max": 7.421368519722193e-10,
+      "cv_max": 9.463320127522934e-10,
+      "cc_max": 8.279327223803534e-10
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_obsnoisescale_sweep",
+    "run_id": "sqyybgkz",
+    "stage": "trained",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 1.2455823872326022e-10,
+      "vc": 1.9456250499594319e-10,
+      "cv": 1.371886770851205e-10,
+      "cc": 2.1391027837935894e-10,
+      "vv_max": 6.262556584424317e-10,
+      "vc_max": 5.44843004046669e-10,
+      "cv_max": 6.623641635172817e-10,
+      "cc_max": 5.899485899796275e-10
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30_permidentity_replication",
+    "run_id": "bu0gglgx",
+    "stage": "init",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 1.324770737554104e-09,
+      "vc": 2.2369217589357504e-09,
+      "cv": 1.997336962489271e-09,
+      "cc": 3.36946781587244e-09,
+      "vv_max": 9.94109061736026e-09,
+      "vc_max": 1.1034305025248159e-08,
+      "cv_max": 1.2598996512735994e-08,
+      "cc_max": 1.3989574831896334e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30_permidentity_replication",
+    "run_id": "bu0gglgx",
+    "stage": "init",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 1.324770737554104e-09,
+      "vc": 2.2369217589357504e-09,
+      "cv": 1.997336962489271e-09,
+      "cc": 3.36946781587244e-09,
+      "vv_max": 9.94109061736026e-09,
+      "vc_max": 1.1034305025248159e-08,
+      "cv_max": 1.2598996512735994e-08,
+      "cc_max": 1.3989574831896334e-08
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30_permidentity_replication",
+    "run_id": "bu0gglgx",
+    "stage": "trained",
+    "loss_type": "obs",
+    "block_norms": {
+      "vv": 2.418243105761775e-10,
+      "vc": 3.9736591794792275e-10,
+      "cv": 3.132206161104989e-10,
+      "cc": 5.121112423012164e-10,
+      "vv_max": 9.510764398257265e-10,
+      "vc_max": 9.371465825580572e-10,
+      "cv_max": 1.2246388347847414e-09,
+      "cc_max": 1.2546843564109622e-09
+    },
+    "n_dyn": 128
+  },
+  {
+    "group": "wmtask_latent_additive_mse_p30_permidentity_replication",
+    "run_id": "bu0gglgx",
+    "stage": "trained",
+    "loss_type": "latent",
+    "block_norms": {
+      "vv": 2.3553167749490456e-10,
+      "vc": 3.8812925096110007e-10,
+      "cv": 3.0168634257421445e-10,
+      "cc": 4.952059318164004e-10,
+      "vv_max": 8.871302026314254e-10,
+      "vc_max": 9.382208343566845e-10,
+      "cv_max": 1.2053693598801374e-09,
+      "cc_max": 1.2533577509188376e-09
+    },
+    "n_dyn": 128
+  }
+]
