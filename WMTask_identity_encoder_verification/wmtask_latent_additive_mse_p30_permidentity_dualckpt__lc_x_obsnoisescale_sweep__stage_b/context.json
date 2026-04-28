@@ -1,0 +1,155 @@
+{
+  "group": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+  "completed_at": "2026-04-28T15:38:27Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep": {
+      "description": "WMTask fully-observed (N1=N2=64), latent JacobianODE with monolithic\nadditive coupling encoder, 128->128, final_perm_identity=true. 21-run\nsweep over 7 LC \u00d7 3 obs_noise_scale. Split-mode loss. Dual checkpoint:\nprimary ES at patience=5, shadow-freeze at patience=2.\n",
+      "hypothesis": "Monolithic additive at this prediction horizon (p=30) shows the same\nnegative-Lyapunov suppression as DirectSum when trained for many epochs\n(replication_v2 result). This sweep tests whether suppression is driven\nby LC weight, obs_noise_scale, or develops uniformly across the\n(LC, obs_noise) grid. Dual-ckpt isolates \"ES patience caused it\" from\na true late-training drift.\n",
+      "success_criteria": [
+        "All 21 cells train without divergence",
+        "es2-best.ckpt and es5-best.ckpt both saved per cell",
+        "Best val traj_loss (at either ckpt) within 2x of i73jwojr's 0.0105",
+        "Lyapunov spectrum at es2-best vs es5-best directly comparable across LC \u00d7 obs_noise"
+      ]
+    }
+  },
+  "expected_run_count": 10,
+  "hydra": {
+    "experiments": [
+      "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+      "training.lightning.loop_closure_weight=1e-06",
+      "training.lightning.obs_noise_scale=0.05",
+      "training.trainer_params.max_epochs=200",
+      "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+      "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/536feb1e214ff933/last.ckpt"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/536feb1e214ff933/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/b2b02557d16c691e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/e2d851cdaeb66b9f/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/f9a20657e9f3ccd2/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/a08083641f8d8494/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/d7a3ea34a2d5401c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/a0d0954aa2aebc4e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/54426b7f2a8f1f3a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/546b15c86db6f7b7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/a421f95ba66ac4b7/last.ckpt"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "2e7eaeb",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-28T05:20:17Z"
+}
