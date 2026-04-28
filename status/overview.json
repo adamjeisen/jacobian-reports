@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-28T21:30:25Z",
+  "last_updated": "2026-04-28T21:35:23Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -566,10 +566,10 @@
     "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__lrfix__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 15,
-        "in_flight": 6,
+        "terminal": 18,
+        "in_flight": 3,
         "failed_exhausted": 0,
-        "effectively_done": 15
+        "effectively_done": 18
       }
     },
     "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a": {
