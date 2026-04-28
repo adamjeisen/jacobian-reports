@@ -1,0 +1,11 @@
+experiment: wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a
+overrides:
+  - "training.lightning.loop_closure_weight=1e-06"
+  - "training.lightning.obs_noise_scale=0.01"
+  - "training.trainer_params.max_epochs=200"
+  - "wandb_group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b"
+  - "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/a0d0954aa2aebc4e/last.ckpt"
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260428T045608Z
+submitted_from: login006
