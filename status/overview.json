@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-28T22:00:26Z",
+  "last_updated": "2026-04-28T22:05:31Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -564,12 +564,21 @@
       }
     },
     "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__lrfix__stage_a": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 19,
-        "in_flight": 2,
+        "terminal": 21,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 19
+        "effectively_done": 21
+      },
+      "analysis": {
+        "slurm_job_id": "12776960",
+        "dispatched_at": "2026-04-28T22:05:31Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a": {
