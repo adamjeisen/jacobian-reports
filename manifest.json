@@ -401,7 +401,7 @@
         "has_report": true,
         "has_metrics": true,
         "has_discussion": false,
-        "report_mtime": 1777391726.0889726
+        "report_mtime": 1777393525.415182
       },
       {
         "group": "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a",

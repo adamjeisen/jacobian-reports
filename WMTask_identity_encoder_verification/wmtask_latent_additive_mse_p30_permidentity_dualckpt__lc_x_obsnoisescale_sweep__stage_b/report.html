@@ -46,18 +46,6 @@ a true late-training drift.</p>
 <p><strong>Swept axes</strong> (4): <code>data.postprocessing.generalized_variance</code>, <code>training.ckpt_path</code>, <code>training.lightning.loop_closure_weight</code>, <code>training.lightning.obs_noise_scale</code></p>
 <p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>zejr9bqf</code> — traj_loss=0.00341, MASE=0.5855, R²=0.9961, LC loss=13.385, epoch=60.0</p>
 <p>Swept-axis values at chosen run: <code>data.postprocessing.generalized_variance</code>=0.00954705 · <code>training.ckpt_path</code>=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/e2d851cdaeb66b9f/last.ckpt · <code>training.lightning.loop_closure_weight</code>=1.0e-05 · <code>training.lightning.obs_noise_scale</code>=0.05</p>
-<h3>Integrity checks</h3>
-<p>⚠️ <strong>10 run_idx slot(s) had multiple matching wandb runs</strong> — the best by <code>best_traj_loss</code> was kept; the others are listed below for audit:
-  - run_idx=<strong>0</strong>: chose <code>v8a6imkg</code>, dropped <code>qzd0vrre</code>, <code>47zwqsxy</code>, <code>l42us8c0</code>
-  - run_idx=<strong>1</strong>: chose <code>gx26jmcs</code>, dropped <code>wu6tkufb</code>, <code>2rkhqwfj</code>
-  - run_idx=<strong>2</strong>: chose <code>zejr9bqf</code>, dropped <code>lmvcwzpl</code>, <code>nxmic54k</code>
-  - run_idx=<strong>3</strong>: chose <code>bhori9z7</code>, dropped <code>r1mva1tp</code>, <code>vcwqqd45</code>, <code>o023xkfo</code>, <code>lc2kr90e</code>, <code>6870jacg</code>, <code>5jof1i73</code>
-  - run_idx=<strong>4</strong>: chose <code>52hy6sp1</code>, dropped <code>lj7uzfg1</code>, <code>hyrnwyd9</code>, <code>d7ew7igb</code>, <code>rx9ty7xr</code>, <code>cxdx6sgw</code>, <code>chpxjjvb</code>
-  - run_idx=<strong>5</strong>: chose <code>jhc6x3q2</code>, dropped <code>v5z5x3b0</code>, <code>6jg3ri2m</code>, <code>ui33z1x0</code>, <code>zph7q9qu</code>, <code>ov7x3hxk</code>, <code>bqop9vik</code>
-  - run_idx=<strong>6</strong>: chose <code>lqwu5k0s</code>, dropped <code>00lslzib</code>, <code>aea4gdze</code>
-  - run_idx=<strong>7</strong>: chose <code>o93b82e0</code>, dropped <code>ly4av1qb</code>, <code>zko4wjja</code>
-  - run_idx=<strong>8</strong>: chose <code>hihhuwpg</code>, dropped <code>b3w7b0fm</code>, <code>ovc2orzs</code>
-  - run_idx=<strong>9</strong>: chose <code>01421klz</code>, dropped <code>1t9cddzt</code></p>
 <p><strong>Runs analyzed</strong>: 10 (expected 10)</p>
 <h3>Per-run results</h3>
 <table>
@@ -157,7 +145,7 @@ a true late-training drift.</p>
 </tr>
 <tr>
 <td>7</td>
-<td><code>o93b82e0</code></td>
+<td><code>ly4av1qb</code></td>
 <td>0.00954705</td>
 <td>/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_a/54426b7f2a8f1f3a/last.ckpt</td>
 <td>0</td>
@@ -165,7 +153,7 @@ a true late-training drift.</p>
 <td>0.00375</td>
 <td>0.6127</td>
 <td>0.9957</td>
-<td>22.459</td>
+<td>22.449</td>
 <td>60.0</td>
 </tr>
 <tr>
@@ -341,7 +329,7 @@ outcome to the stated hypothesis. Write the Discussion to
 
 
 <pre><code>No run_id provided — selecting best run from group 'wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b' ...
-Found 43 total runs in JacobianODE/WMTask_identity_encoder_verification (group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b)
+Found 10 total runs in JacobianODE/WMTask_identity_encoder_verification (group=wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b)
 All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
   v8a6imkg: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
   gx26jmcs: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
@@ -353,39 +341,6 @@ All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
   lqwu5k0s: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
   jhc6x3q2: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
   01421klz: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  r1mva1tp: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  lj7uzfg1: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  v5z5x3b0: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  vcwqqd45: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  hyrnwyd9: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  qzd0vrre: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  6jg3ri2m: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  o023xkfo: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  wu6tkufb: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  lmvcwzpl: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  d7ew7igb: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  ui33z1x0: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  lc2kr90e: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  rx9ty7xr: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  zph7q9qu: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  6870jacg: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  cxdx6sgw: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  00lslzib: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  47zwqsxy: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  o93b82e0: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  ov7x3hxk: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  b3w7b0fm: state=finished, lc=0.0001, te=0.0, kl_dyn=0.0
-  2rkhqwfj: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  1t9cddzt: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  5jof1i73: state=finished, lc=1e-06, te=0.0, kl_dyn=0.0
-  chpxjjvb: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
-  nxmic54k: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  bqop9vik: state=finished, lc=1e-05, te=0.0, kl_dyn=0.0
-  aea4gdze: state=running, lc=1e-06, te=0.0, kl_dyn=0.0
-  l42us8c0: state=running, lc=1e-06, te=0.0, kl_dyn=0.0
-  zko4wjja: state=running, lc=0.0, te=0.0, kl_dyn=0.0
-  ovc2orzs: state=running, lc=0.0001, te=0.0, kl_dyn=0.0
-  lc7ofcie: state=running, lc=1e-05, te=0.0, kl_dyn=0.0
 
 slurm_timeout_min not found in any run config — falling back to 180 min
   Including v8a6imkg (lc=1e-06): use_all_runs=True (state=finished)
@@ -398,129 +353,30 @@ slurm_timeout_min not found in any run config — falling back to 180 min
   Including lqwu5k0s (lc=1e-06): use_all_runs=True (state=finished)
   Including jhc6x3q2 (lc=1e-05): use_all_runs=True (state=finished)
   Including 01421klz (lc=1e-05): use_all_runs=True (state=finished)
-  Including r1mva1tp (lc=1e-06): use_all_runs=True (state=finished)
-  Including lj7uzfg1 (lc=0.0): use_all_runs=True (state=finished)
-  Including v5z5x3b0 (lc=1e-05): use_all_runs=True (state=finished)
-  Including vcwqqd45 (lc=1e-06): use_all_runs=True (state=finished)
-  Including hyrnwyd9 (lc=0.0): use_all_runs=True (state=finished)
-  Including qzd0vrre (lc=1e-06): use_all_runs=True (state=finished)
-  Including 6jg3ri2m (lc=1e-05): use_all_runs=True (state=finished)
-  Including o023xkfo (lc=1e-06): use_all_runs=True (state=finished)
-  Including wu6tkufb (lc=0.0): use_all_runs=True (state=finished)
-  Including lmvcwzpl (lc=1e-05): use_all_runs=True (state=finished)
-  Including d7ew7igb (lc=0.0): use_all_runs=True (state=finished)
-  Including ui33z1x0 (lc=1e-05): use_all_runs=True (state=finished)
-  Including lc2kr90e (lc=1e-06): use_all_runs=True (state=finished)
-  Including rx9ty7xr (lc=0.0): use_all_runs=True (state=finished)
-  Including zph7q9qu (lc=1e-05): use_all_runs=True (state=finished)
-  Including 6870jacg (lc=1e-06): use_all_runs=True (state=finished)
-  Including cxdx6sgw (lc=0.0): use_all_runs=True (state=finished)
-  Including 00lslzib (lc=1e-06): use_all_runs=True (state=finished)
-  Including 47zwqsxy (lc=1e-06): use_all_runs=True (state=finished)
-  Including o93b82e0 (lc=0.0): use_all_runs=True (state=finished)
-  Including ov7x3hxk (lc=1e-05): use_all_runs=True (state=finished)
-  Including b3w7b0fm (lc=0.0001): use_all_runs=True (state=finished)
-  Including 2rkhqwfj (lc=0.0): use_all_runs=True (state=finished)
-  Including 1t9cddzt (lc=1e-05): use_all_runs=True (state=finished)
-  Including 5jof1i73 (lc=1e-06): use_all_runs=True (state=finished)
-  Including chpxjjvb (lc=0.0): use_all_runs=True (state=finished)
-  Including nxmic54k (lc=1e-05): use_all_runs=True (state=finished)
-  Including bqop9vik (lc=1e-05): use_all_runs=True (state=finished)
-  Including aea4gdze (lc=1e-06): use_all_runs=True (state=running)
-  Including l42us8c0 (lc=1e-06): use_all_runs=True (state=running)
-  Including zko4wjja (lc=0.0): use_all_runs=True (state=running)
-  Including ovc2orzs (lc=0.0001): use_all_runs=True (state=running)
-  Including lc7ofcie (lc=1e-05): use_all_runs=True (state=running)
-Found 43 effectively-done sweep runs:
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=2rkhqwfj
+Found 10 effectively-done sweep runs:
   loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=52hy6sp1
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=chpxjjvb
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=cxdx6sgw
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=d7ew7igb
   loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=gx26jmcs
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=hyrnwyd9
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=lj7uzfg1
   loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ly4av1qb
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=o93b82e0
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=rx9ty7xr
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=wu6tkufb
-  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=zko4wjja
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=00lslzib
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=47zwqsxy
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=5jof1i73
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=6870jacg
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=aea4gdze
   loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=bhori9z7
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=l42us8c0
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=lc2kr90e
   loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=lqwu5k0s
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=o023xkfo
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=qzd0vrre
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=r1mva1tp
   loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=v8a6imkg
-  loop_closure_weight=1e-06, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=vcwqqd45
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=01421klz
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=1t9cddzt
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=6jg3ri2m
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=bqop9vik
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=jhc6x3q2
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=lc7ofcie
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=lmvcwzpl
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=nxmic54k
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ov7x3hxk
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ui33z1x0
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=v5z5x3b0
   loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=zejr9bqf
-  loop_closure_weight=1e-05, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=zph7q9qu
-  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=b3w7b0fm
   loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=hihhuwpg
-  loop_closure_weight=0.0001, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ovc2orzs
-  Dropping 1 run(s) with no checkpoint dir: ['lc7ofcie']
 loaded wmtask RNN model checkpoint 41
 Loading cached wmtask hiddens from /orcd/data/ekmiller/001/eisenaj/ControlJacobians/WMTaskModels/WMSelectionTask__cue_time_0.1__response_time_0.25__enforce_fixation_False/BiologicalRNN__cue_time_0.1__learning_rate_0.0005__max_epochs_42__N1_64__N2_64__tau_0.05__dt_0.02__eig_lower_bound_0.1__init_mode_random/_jacobianode_cache/hiddens__all__epoch41__trials4096__seed42.pt
 n_dims=128, n_latent=128, n_dyn=128, dt=0.0200
-  run=2rkhqwfj: DiagnosticMetrics(one_step_mase=0.5764835476875305, loop_closure_loss=32.81113815307617, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034276703372597694) (from W&amp;B history)
-  run=52hy6sp1: DiagnosticMetrics(one_step_mase=0.5844502449035645, loop_closure_loss=12.420079231262207, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115818232297897) (from W&amp;B history)
-  run=chpxjjvb: DiagnosticMetrics(one_step_mase=0.584449827671051, loop_closure_loss=12.42013931274414, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115826614201069) (from W&amp;B history)
-  run=cxdx6sgw: DiagnosticMetrics(one_step_mase=0.584449827671051, loop_closure_loss=12.42013931274414, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115826614201069) (from W&amp;B history)
-  run=d7ew7igb: DiagnosticMetrics(one_step_mase=0.584449827671051, loop_closure_loss=12.42013931274414, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115826614201069) (from W&amp;B history)
-  run=gx26jmcs: DiagnosticMetrics(one_step_mase=0.5764835476875305, loop_closure_loss=32.81113815307617, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034276703372597694) (from W&amp;B history)
-  run=hyrnwyd9: DiagnosticMetrics(one_step_mase=0.584449827671051, loop_closure_loss=12.42013931274414, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115826614201069) (from W&amp;B history)
-  run=lj7uzfg1: DiagnosticMetrics(one_step_mase=0.584449827671051, loop_closure_loss=12.42013931274414, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115826614201069) (from W&amp;B history)
-  run=ly4av1qb: DiagnosticMetrics(one_step_mase=0.5933855175971985, loop_closure_loss=22.448951721191406, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0037515766452997923) (from W&amp;B history)
-  run=o93b82e0: DiagnosticMetrics(one_step_mase=0.593386709690094, loop_closure_loss=22.45948028564453, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0037514830473810434) (from W&amp;B history)
-  run=rx9ty7xr: DiagnosticMetrics(one_step_mase=0.584449827671051, loop_closure_loss=12.42013931274414, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115826614201069) (from W&amp;B history)
-  run=wu6tkufb: DiagnosticMetrics(one_step_mase=0.5764835476875305, loop_closure_loss=32.81113815307617, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034276703372597694) (from W&amp;B history)
-  run=zko4wjja: DiagnosticMetrics(one_step_mase=0.5935805439949036, loop_closure_loss=15.438796043395996, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005428141914308071) (from W&amp;B history)
-  run=00lslzib: DiagnosticMetrics(one_step_mase=0.5934219360351562, loop_closure_loss=18.47962188720703, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0037469558883458376) (from W&amp;B history)
-  run=47zwqsxy: DiagnosticMetrics(one_step_mase=0.5764819979667664, loop_closure_loss=26.273662567138672, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034197173081338406) (from W&amp;B history)
-  run=5jof1i73: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from W&amp;B history)
-  run=6870jacg: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from W&amp;B history)
-  run=aea4gdze: DiagnosticMetrics(one_step_mase=0.5974053740501404, loop_closure_loss=17.236221313476562, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004138064105063677) (from W&amp;B history)
-  run=bhori9z7: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from W&amp;B history)
-  run=l42us8c0: DiagnosticMetrics(one_step_mase=0.5670211911201477, loop_closure_loss=15.296003341674805, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.004844299517571926) (from W&amp;B history)
-  run=lc2kr90e: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from W&amp;B history)
-  run=lqwu5k0s: DiagnosticMetrics(one_step_mase=0.5934068560600281, loop_closure_loss=18.51671600341797, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0037456094287335873) (from W&amp;B history)
-  run=o023xkfo: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from W&amp;B history)
-  run=qzd0vrre: DiagnosticMetrics(one_step_mase=0.5764819979667664, loop_closure_loss=26.273662567138672, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034197173081338406) (from W&amp;B history)
-  run=r1mva1tp: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from W&amp;B history)
-  run=v8a6imkg: DiagnosticMetrics(one_step_mase=0.5764819979667664, loop_closure_loss=26.273662567138672, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034197173081338406) (from W&amp;B history)
-  run=vcwqqd45: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from W&amp;B history)
-  run=01421klz: DiagnosticMetrics(one_step_mase=0.5937638282775879, loop_closure_loss=10.013422012329102, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003739602630957961) (from W&amp;B history)
-  run=1t9cddzt: DiagnosticMetrics(one_step_mase=0.5937815308570862, loop_closure_loss=10.008903503417969, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003740099025890231) (from W&amp;B history)
-  run=6jg3ri2m: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from W&amp;B history)
-  run=bqop9vik: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from W&amp;B history)
-  run=jhc6x3q2: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from W&amp;B history)
-  run=lmvcwzpl: DiagnosticMetrics(one_step_mase=0.5769802927970886, loop_closure_loss=13.384598731994629, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003412476275116205) (from W&amp;B history)
-  run=nxmic54k: DiagnosticMetrics(one_step_mase=0.5769802927970886, loop_closure_loss=13.384598731994629, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003412476275116205) (from W&amp;B history)
-  run=ov7x3hxk: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from W&amp;B history)
-  run=ui33z1x0: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from W&amp;B history)
-  run=v5z5x3b0: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from W&amp;B history)
-  run=zejr9bqf: DiagnosticMetrics(one_step_mase=0.5769802927970886, loop_closure_loss=13.384598731994629, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003412476275116205) (from W&amp;B history)
-  run=zph7q9qu: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from W&amp;B history)
-  run=b3w7b0fm: DiagnosticMetrics(one_step_mase=0.5812145471572876, loop_closure_loss=3.80983829498291, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003526081796735525) (from W&amp;B history)
-  run=hihhuwpg: DiagnosticMetrics(one_step_mase=0.5812114477157593, loop_closure_loss=3.809751033782959, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0035260256845504045) (from W&amp;B history)
-  run=ovc2orzs: DiagnosticMetrics(one_step_mase=0.5770250558853149, loop_closure_loss=1.1552295684814453, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005348561331629753) (from W&amp;B history)
+  run=52hy6sp1: DiagnosticMetrics(one_step_mase=0.5844502449035645, loop_closure_loss=12.420079231262207, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005115818232297897) (from cache, n_batches=100)
+  run=gx26jmcs: DiagnosticMetrics(one_step_mase=0.5764835476875305, loop_closure_loss=32.81113815307617, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034276703372597694) (from cache, n_batches=100)
+  run=ly4av1qb: DiagnosticMetrics(one_step_mase=0.5933855175971985, loop_closure_loss=22.448951721191406, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0037515766452997923) (from cache, n_batches=100)
+  run=bhori9z7: DiagnosticMetrics(one_step_mase=0.5845804214477539, loop_closure_loss=8.165125846862793, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005114327650517225) (from cache, n_batches=100)
+  run=lqwu5k0s: DiagnosticMetrics(one_step_mase=0.5934068560600281, loop_closure_loss=18.51671600341797, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0037456094287335873) (from cache, n_batches=100)
+  run=v8a6imkg: DiagnosticMetrics(one_step_mase=0.5764819979667664, loop_closure_loss=26.273662567138672, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0034197173081338406) (from cache, n_batches=100)
+  run=01421klz: DiagnosticMetrics(one_step_mase=0.5937638282775879, loop_closure_loss=10.013422012329102, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003739602630957961) (from cache, n_batches=100)
+  run=jhc6x3q2: DiagnosticMetrics(one_step_mase=0.5854282379150391, loop_closure_loss=2.887986660003662, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005200928542762995) (from cache, n_batches=100)
+  run=zejr9bqf: DiagnosticMetrics(one_step_mase=0.5769802927970886, loop_closure_loss=13.384598731994629, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003412476275116205) (from cache, n_batches=100)
+  run=hihhuwpg: DiagnosticMetrics(one_step_mase=0.5812114477157593, loop_closure_loss=3.809751033782959, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0035260256845504045) (from cache, n_batches=100)
 
 Ranking method:           best_traj_loss
 Best run ID:              hihhuwpg
@@ -529,37 +385,28 @@ Best tangent_entropy_weight: 0.0
 Best kl_dyn_weight:       0.0
 Best traj loss:           0.003526
 Criteria applied: ['C1', 'C2', 'C3']
-Surviving: 19 / 42
+Surviving: 4 / 10
 Auto-selected run_id: hihhuwpg
 
 ======================================================================
-PARETO FRONTIER RUNS (12 runs)
+PARETO FRONTIER RUNS (3 runs)
 ======================================================================
   Run ID               LC Loss   Traj Val Loss
   ------------  --------------  --------------
-  ovc2orzs            1.155230        0.005349
-  6jg3ri2m            2.887987        0.005201
   jhc6x3q2            2.887987        0.005201
-  bqop9vik            2.887987        0.005201
-  v5z5x3b0            2.887987        0.005201
-  ui33z1x0            2.887987        0.005201
-  zph7q9qu            2.887987        0.005201
-  ov7x3hxk            2.887987        0.005201
   hihhuwpg            3.809751        0.003526 &lt;-- selected
-  lmvcwzpl           13.384599        0.003412
-  nxmic54k           13.384599        0.003412
   zejr9bqf           13.384599        0.003412
 
 ======================================================================
-RANKING METHOD COMPARISON (over 19 survivors)
+RANKING METHOD COMPARISON (over 4 survivors)
 ======================================================================
   Method                  Run ID               LC Loss   Traj Val Loss
   ----------------------  ------------  --------------  --------------
   best_traj_loss          hihhuwpg            3.809751        0.003526 &lt;-- active
-  pareto_knee             6jg3ri2m            2.887987        0.005201
+  pareto_knee             jhc6x3q2            2.887987        0.005201
   geo_rank                hihhuwpg            3.809751        0.003526
   minimax_rank            hihhuwpg            3.809751        0.003526
-  geo_log_score           hihhuwpg            3.809751        0.003526
+  geo_log_score           jhc6x3q2            2.887987        0.005201
   minimax_log_score       hihhuwpg            3.809751        0.003526
 ======================================================================
 
