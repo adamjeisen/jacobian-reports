@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-28T05:05:21Z",
+  "last_updated": "2026-04-28T05:11:30Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -572,6 +572,15 @@
         "effectively_done": 21
       }
     },
+    "wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__stage_b": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 1,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
     "wmtask_latent_additive_mse_p30_permidentity_replication": {
       "status": "processed",
       "runs_summary": {
@@ -912,6 +921,46 @@
     },
     {
       "file": "20260427T223207Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050851Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-blxnhdbm.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050854Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-9lr5pj1o.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050856Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-euyeqm0p.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050858Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-0pkgerj8.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050900Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-hgbqcq47.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050902Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-tgad1rh4.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050904Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-v0viph3w.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050906Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-k21dhcz5.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050908Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-597khda3.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260428T050910Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-nviyshra.yaml",
       "status": "claimed"
     }
   ]
