@@ -2,6 +2,13 @@
   "projects": {
     "Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE": [
       {
+        "group": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777490741.8888319
+      },
+      {
         "group": "lorenz_full_additive_mse_p30__lc_sweep",
         "has_report": true,
         "has_metrics": true,
