@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T04:15:17Z",
+  "last_updated": "2026-04-29T04:20:36Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -608,6 +608,24 @@
         "effectively_done": 1
       }
     },
+    "wmtask_latent_additive_p30_lr1e-5_nearid__lc_x_obsnoisescale_sweep_20260429T042007Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
+    "wmtask_latent_additive_p30_lr1e-5_zeroinit__lc_x_obsnoisescale_sweep_20260429T042000Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
     "wmtask_migration_smoke": {
       "status": "processed",
       "runs_summary": {
@@ -1054,6 +1072,14 @@
     },
     {
       "file": "20260428T221615Z-wmtask_latent_additive_mse_p30_permidentity_dualckpt__lc_x_obsnoisescale_sweep-stage-b-qur4r25e.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260429T042000Z-wmtask_latent_additive_p30_lr1e-5_zeroinit__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260429T042007Z-wmtask_latent_additive_p30_lr1e-5_nearid__lc_x_obsnoisescale_sweep__two_stage.yaml",
       "status": "claimed"
     }
   ]
