@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T10:05:41Z",
+  "last_updated": "2026-04-29T10:10:33Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -629,10 +629,10 @@
     "wmtask_latent_additive_p30_lr1e-5_nearid__lc_x_obsnoisescale_sweep_20260429T042007Z__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 9,
-        "in_flight": 12,
+        "terminal": 10,
+        "in_flight": 11,
         "failed_exhausted": 0,
-        "effectively_done": 9
+        "effectively_done": 10
       }
     },
     "wmtask_latent_additive_p30_lr1e-5_zeroinit__lc_x_obsnoisescale_sweep_20260429T042000Z__stage_a": {
