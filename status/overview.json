@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T11:30:26Z",
+  "last_updated": "2026-04-29T11:36:29Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -609,30 +609,21 @@
       }
     },
     "wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep_20260429T042020Z__stage_a": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 21,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 21
-      },
-      "analysis": {
-        "slurm_job_id": "12818089",
-        "dispatched_at": "2026-04-29T11:25:39Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 1,
-        "n_pending": 0
       }
     },
     "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 4,
-        "in_flight": 17,
+        "terminal": 5,
+        "in_flight": 16,
         "failed_exhausted": 0,
-        "effectively_done": 4
+        "effectively_done": 5
       }
     },
     "wmtask_latent_additive_p30_lr1e-5_nearid__lc_x_obsnoisescale_sweep_20260429T042007Z__stage_a": {
@@ -691,6 +682,46 @@
     }
   },
   "pending_instructions": [
+    {
+      "file": "20260429T113607Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-fjgatspz.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113609Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-meei0id5.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113612Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-mdivo8sf.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113614Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-sw0pthtz.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113616Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-92mf2g7l.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113618Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-tio74zlr.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113620Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-80gxb6q7.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113622Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-o2sie6s5.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113624Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-4qc61y8g.yaml",
+      "status": "pending"
+    },
+    {
+      "file": "20260429T113626Z-wmtask_latent_additive_p30_lr1e-4_nearid__lc_x_obsnoisescale_sweep-stage-b-ea6hmyu1.yaml",
+      "status": "pending"
+    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
