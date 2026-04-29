@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T16:30:18Z",
+  "last_updated": "2026-04-29T16:35:38Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -21,6 +21,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 1
+      }
+    },
+    "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
       }
     },
     "lorenz_full_additive_mse__lc_sweep": {
@@ -680,6 +689,15 @@
         "effectively_done": 10
       }
     },
+    "wmtask_latent_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163244Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
     "wmtask_migration_smoke": {
       "status": "processed",
       "runs_summary": {
@@ -1302,6 +1320,14 @@
     },
     {
       "file": "20260429T125129Z-wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep-stage-b-nea7006h.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260429T163244Z-wmtask_latent_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260429T163249Z-lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
       "status": "claimed"
     }
   ]
