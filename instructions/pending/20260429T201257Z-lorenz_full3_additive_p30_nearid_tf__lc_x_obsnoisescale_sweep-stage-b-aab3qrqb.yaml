@@ -1,0 +1,11 @@
+experiment: lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep
+overrides:
+  - "training.lightning.loop_closure_weight=0.001"
+  - "training.lightning.obs_noise_scale=0"
+  - "training.trainer_params.max_epochs=100"
+  - "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2"
+  - "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/94d54f219fa69833/last.ckpt"
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260429T201257Z
+submitted_from: login006
