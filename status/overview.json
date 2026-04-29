@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T19:50:36Z",
+  "last_updated": "2026-04-29T19:55:45Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -35,9 +35,9 @@
     "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b": {
       "status": "active",
       "runs_summary": {
-        "terminal": 0,
-        "in_flight": 10,
-        "failed_exhausted": 0,
+        "terminal": 1,
+        "in_flight": 9,
+        "failed_exhausted": 1,
         "effectively_done": 0
       }
     },
