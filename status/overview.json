@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T19:05:36Z",
+  "last_updated": "2026-04-29T19:10:32Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -26,10 +26,10 @@
     "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 18,
-        "in_flight": 3,
+        "terminal": 19,
+        "in_flight": 2,
         "failed_exhausted": 0,
-        "effectively_done": 18
+        "effectively_done": 19
       }
     },
     "lorenz_full_additive_mse__lc_sweep": {
@@ -692,10 +692,10 @@
     "wmtask_latent_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163244Z__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 17,
-        "in_flight": 4,
+        "terminal": 19,
+        "in_flight": 2,
         "failed_exhausted": 0,
-        "effectively_done": 17
+        "effectively_done": 19
       }
     },
     "wmtask_migration_smoke": {
