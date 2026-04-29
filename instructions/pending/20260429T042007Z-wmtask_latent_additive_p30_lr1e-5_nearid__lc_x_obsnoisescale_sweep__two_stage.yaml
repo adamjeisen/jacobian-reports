@@ -1,0 +1,12 @@
+experiment: wmtask_latent_additive_p30_lr1e-5_nearid__lc_x_obsnoisescale_sweep
+overrides:
+  - "training.trainer_params.max_epochs=20"
+  - "wandb_group=wmtask_latent_additive_p30_lr1e-5_nearid__lc_x_obsnoisescale_sweep_20260429T042007Z__stage_a"
+two_stage:
+  full_max_epochs: 200
+  cull_fraction: 0.5
+  metric: "trajectory val_loss"
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260429T042007Z
+submitted_from: millerlab-endeavourOS
