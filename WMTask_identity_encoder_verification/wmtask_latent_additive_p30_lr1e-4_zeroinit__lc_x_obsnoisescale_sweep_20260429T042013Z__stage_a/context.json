@@ -1,0 +1,252 @@
+{
+  "group": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a",
+  "completed_at": "2026-04-29T12:40:27Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep": {
+      "description": "Cell C of the 2x2 LR \u00d7 init isolation. WMTask fully-observed (N1=N2=64),\nmonolithic additive coupling encoder, 128->128, final_perm_identity=true.\n21-run sweep over 7 LC \u00d7 3 obs_noise_scale. lr=1e-4, near_identity_std=0\n(strict zero_init). Same as the __lrfix sweep but allowed to run to\nconvergence under the two-stage protocol.\n",
+      "hypothesis": "Re-extension of the __lrfix sweep (which only ran Stage A=20 epochs)\nto full convergence. Provides the high-LR + zero-init reference point\nagainst which (a) the init effect at high LR (vs Cell D) and (b) the\nLR effect at fixed init (vs Cell A) can both be read off cleanly.\n",
+      "success_criteria": [
+        "All 21 cells train without divergence",
+        "es2-best.ckpt and es5-best.ckpt both saved per cell",
+        "Lyapunov spectrum behavior matches __lrfix at the 20-epoch mark, then evolves through Stage B",
+        "If LR is the dominant factor in suppression: spectrum compression appears here too"
+      ]
+    }
+  },
+  "expected_run_count": 21,
+  "hydra": {
+    "experiments": [
+      "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+      "training.trainer_params.max_epochs=20",
+      "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "52d7924",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-29T04:25:15Z"
+}
