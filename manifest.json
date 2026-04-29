@@ -397,6 +397,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_latent_additive_p30_lr1e-5_zeroinit__lc_x_obsnoisescale_sweep_20260429T042000Z__stage_b",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777475136.9267278
+      },
+      {
         "group": "wmtask_latent_additive_p30_lr1e-4_zeroinit__lc_x_obsnoisescale_sweep_20260429T042013Z__stage_a",
         "has_report": true,
         "has_metrics": true,
