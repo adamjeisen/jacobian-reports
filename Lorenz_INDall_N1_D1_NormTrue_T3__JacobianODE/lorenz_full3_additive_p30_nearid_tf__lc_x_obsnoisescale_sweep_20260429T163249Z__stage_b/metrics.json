@@ -1,0 +1,58 @@
+{
+  "schema_version": 3,
+  "group": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b",
+  "analyzed_at": "2026-04-29T20:11:24Z",
+  "metrics_summary": {
+    "per_run": [],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 10,
+    "matched_run_count": 0,
+    "best_by_obs_noise_scale": {},
+    "overall_chosen_run": null,
+    "overall_best_mase": null,
+    "swept_paths": [
+      "data.postprocessing.generalized_variance",
+      "training.ckpt_path",
+      "training.lightning.loop_closure_weight",
+      "training.lightning.obs_noise_scale"
+    ],
+    "n_runs": 0
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": null,
+  "per_run_tangent_spectrum": {},
+  "per_run_tangent_spectrum_error": null,
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 21 cells train without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "es2-best.ckpt and es5-best.ckpt both saved per cell",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Best run's predicted Lyapunov spectrum within ~30% of empirical",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Lyapunov spectrum NOT compressed in Stage B vs Stage A",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Result shape is consistent with the matched WMTask sweep (LC dependence, init effect)",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {},
+  "analytics_error": "FileNotFoundError: [Errno 2] No such file or directory: '/orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE/cn2wglxg/checkpoints'",
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

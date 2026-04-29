@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE/groups/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b">Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-04-29T19:30:18Z<br />
+<strong>Completed</strong>: 2026-04-29T20:10:32Z<br />
+<strong>Outcome</strong>: <code>complete_with_failures</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>3195286</code><br />
+<strong>Expected runs</strong>: 10</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep</code></h3>
+<p><strong>Description</strong></p>
+<p>Fully-observed Lorenz (3 dims, no delay embedding). Monolithic
+CouplingEncoder (additive coupling, 8 layers, hidden_dim=128),
+near_identity_std=1e-3, final_perm_identity=true. 21-cell sweep
+over 7 LC x 3 obs_noise_scale. TF-coupled LR schedule (k_scale=1).
+Two-stage protocol with dual-checkpoint (primary ES patience=5,
+shadow-freeze patience=2). Same recipe as the matched WMTask
+128-&gt;128 sweep.</p>
+<p><strong>Hypothesis</strong></p>
+<p>If the orig recipe (TF-coupled LR, mean ~5e-5 effective in the
+high-LR phase) is portable, Lorenz 3-&gt;3 should hit good Lyapunov
+spectrum recovery across the LC x obs_noise grid without
+spectrum compression in Stage B. Recovery of all three Lyapunov
+exponents (positive, zero, negative) within ~30% of empirical
+is the success bar — same standard the existing
+lorenz_full_additive_mse_p30 sweep was held to. This sweep is
+the matched-recipe Lorenz control for the WMTask sweep.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>All 21 cells train without divergence</li>
+<li>es2-best.ckpt and es5-best.ckpt both saved per cell</li>
+<li>Best run's predicted Lyapunov spectrum within ~30% of empirical</li>
+<li>Lyapunov spectrum NOT compressed in Stage B vs Stage A</li>
+<li>Result shape is consistent with the matched WMTask sweep (LC dependence, init effect)</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Swept axes</strong> (4): <code>data.postprocessing.generalized_variance</code>, <code>training.ckpt_path</code>, <code>training.lightning.loop_closure_weight</code>, <code>training.lightning.obs_noise_scale</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>—</code> — traj_loss=—, MASE=—, R²=—, LC loss=—, epoch=None</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>Matched-run count mismatch</strong>: expected 10 run_idx slots per the sentinel, matched 0 in wandb. The sweep may still be in progress, or some slots failed without producing wandb evidence.</p>
+<p><strong>Runs analyzed</strong>: 0 (expected 10)</p>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All 21 cells train without divergence</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>es2-best.ckpt and es5-best.ckpt both saved per cell</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best run's predicted Lyapunov spectrum within ~30% of empirical</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Lyapunov spectrum NOT compressed in Stage B vs Stage A</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Result shape is consistent with the matched WMTask sweep (LC dependence, init effect)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<p><em>(no figures produced — analytics may have failed)</em></p>
+<pre><code>FileNotFoundError: [Errno 2] No such file or directory: '/orcd/data/ekmiller/001/eisenaj/JacobianODE/lightning/latent_jac_runs/Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE/cn2wglxg/checkpoints'
+</code></pre>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+</body>
+</html>

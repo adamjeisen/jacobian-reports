@@ -1,0 +1,19 @@
+experiment: lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep
+overrides:
+- training.lightning.loop_closure_weight=0.0001
+- training.lightning.obs_noise_scale=0.01
+- training.trainer_params.max_epochs=100
+- wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2
+- +training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/ee053169080d0c36/last.ckpt
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260429T201259Z
+submitted_from: login006
+wandb_group: lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2
+expected_run_count: 6
+slurm_array_id: split-extend
+slurm_submitted_at: '2026-04-29T20:17:16Z'
+split_submission:
+  mit_count: 0
+  ou_bcs_count: 1
+  n_failures: 0
