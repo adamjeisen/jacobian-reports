@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T23:40:30Z",
+  "last_updated": "2026-04-29T23:45:53Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -525,6 +525,24 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 1
+      }
+    },
+    "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
+    "wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234503Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_lpl_sweep": {
@@ -1564,6 +1582,14 @@
     },
     {
       "file": "20260429T201414Z-lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-y18ij9b8.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260429T234502Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260429T234503Z-wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
       "status": "claimed"
     }
   ]
