@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-29T20:00:54Z",
+  "last_updated": "2026-04-29T20:05:50Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -35,9 +35,9 @@
     "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b": {
       "status": "active",
       "runs_summary": {
-        "terminal": 4,
-        "in_flight": 6,
-        "failed_exhausted": 4,
+        "terminal": 7,
+        "in_flight": 3,
+        "failed_exhausted": 7,
         "effectively_done": 0
       }
     },
@@ -708,12 +708,21 @@
       }
     },
     "wmtask_latent_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163244Z__stage_b": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 0,
-        "in_flight": 10,
-        "failed_exhausted": 0,
+        "terminal": 10,
+        "in_flight": 0,
+        "failed_exhausted": 10,
         "effectively_done": 0
+      },
+      "analysis": {
+        "slurm_job_id": "12851419",
+        "dispatched_at": "2026-04-29T20:05:50Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_migration_smoke": {
