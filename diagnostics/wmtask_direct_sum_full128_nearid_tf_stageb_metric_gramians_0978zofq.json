@@ -1,0 +1,112 @@
+{
+  "run_id": "0978zofq",
+  "obs_noise_scale": 0.05,
+  "best_traj_loss_wandb": 0.004069683142006397,
+  "metric": "R^# = (J_E J_E^T)^{-1} on source-area control space",
+  "encoder_J_det_check": {
+    "vis": 1.0,
+    "cog": 1.0
+  },
+  "encoder_J_cond_mean": {
+    "vis": 1.7450083494186401,
+    "cog": 1.6935460567474365
+  },
+  "terminal_step_summary": [
+    {
+      "dir": "vis\u2192cog",
+      "gram": "reach",
+      "stat": "trace",
+      "std": 5.182102203369141,
+      "metric": 5.223102569580078,
+      "delta_metric_vs_std": 0.04100095108151436
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "reach",
+      "stat": "min",
+      "std": -4.331648826599121,
+      "metric": -4.3311920166015625,
+      "delta_metric_vs_std": 0.00045652687549591064
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "ctrl",
+      "stat": "trace",
+      "std": 3.413607120513916,
+      "metric": 3.4453072547912598,
+      "delta_metric_vs_std": 0.031700171530246735
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "ctrl",
+      "stat": "min",
+      "std": -11.636046409606934,
+      "metric": -11.644303321838379,
+      "delta_metric_vs_std": -0.008256614208221436
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "obs",
+      "stat": "trace",
+      "std": 2.9034409523010254,
+      "metric": 2.9034409523010254,
+      "delta_metric_vs_std": 0.0
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "obs",
+      "stat": "min",
+      "std": -11.558490753173828,
+      "metric": -11.558490753173828,
+      "delta_metric_vs_std": 0.0
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "reach",
+      "stat": "trace",
+      "std": 3.970844268798828,
+      "metric": 3.995208501815796,
+      "delta_metric_vs_std": 0.024364206939935684
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "reach",
+      "stat": "min",
+      "std": -5.452576637268066,
+      "metric": -5.460392951965332,
+      "delta_metric_vs_std": -0.007816210389137268
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "ctrl",
+      "stat": "trace",
+      "std": 2.9034409523010254,
+      "metric": 2.9323811531066895,
+      "delta_metric_vs_std": 0.02894003875553608
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "ctrl",
+      "stat": "min",
+      "std": -11.558490753173828,
+      "metric": -11.57530403137207,
+      "delta_metric_vs_std": -0.016813717782497406
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "obs",
+      "stat": "trace",
+      "std": 3.413607120513916,
+      "metric": 3.413607120513916,
+      "delta_metric_vs_std": 0.0
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "obs",
+      "stat": "min",
+      "std": -11.635974884033203,
+      "metric": -11.635974884033203,
+      "delta_metric_vs_std": 0.0
+    }
+  ]
+}
