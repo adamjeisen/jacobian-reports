@@ -668,6 +668,20 @@
   },
   "diagnostics": [
     {
+      "name": "wmtask_direct_sum_cayley_stageb_metric_gramians_vs_gt_pjiw0cab.png",
+      "category": "cross-area-gramians",
+      "path": "diagnostics/cross-area-gramians/wmtask_direct_sum_cayley_stageb_metric_gramians_vs_gt_pjiw0cab.png",
+      "mtime": 1777575010.680922,
+      "size": 359383
+    },
+    {
+      "name": "wmtask_direct_sum_cayley_stageb_cross_area_gramians_vs_gt_pjiw0cab.png",
+      "category": "cross-area-gramians",
+      "path": "diagnostics/cross-area-gramians/wmtask_direct_sum_cayley_stageb_cross_area_gramians_vs_gt_pjiw0cab.png",
+      "mtime": 1777575010.675898,
+      "size": 351961
+    },
+    {
       "name": "wmtask_direct_sum_full128_nearid_tf_stageb_metric_gramians_vs_gt_0978zofq.png",
       "category": "cross-area-gramians",
       "path": "diagnostics/cross-area-gramians/wmtask_direct_sum_full128_nearid_tf_stageb_metric_gramians_vs_gt_0978zofq.png",
