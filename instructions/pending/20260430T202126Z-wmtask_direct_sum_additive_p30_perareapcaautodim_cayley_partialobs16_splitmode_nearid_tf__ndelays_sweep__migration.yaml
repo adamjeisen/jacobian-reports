@@ -1,6 +1,0 @@
-experiment: wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep
-overrides: []
-migrate_to:
-  partition: "mit_normal_gpu"
-submitted_at: 20260430T202126Z
-submitted_from: millerlab-endeavourOS

@@ -1,0 +1,14 @@
+experiment: wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep
+overrides: []
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260430T202126Z
+submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep
+expected_run_count: 8
+slurm_array_id: split
+slurm_submitted_at: '2026-04-30T20:25:18Z'
+split_submission:
+  mit_count: 4
+  ou_bcs_count: 4
+  n_failures: 0
