@@ -633,10 +633,17 @@
   },
   "diagnostics": [
     {
+      "name": "wmtask_direct_sum_full128_nearid_tf_stageb_metric_gramians_0978zofq.png",
+      "category": "cross-area-gramians",
+      "path": "diagnostics/cross-area-gramians/wmtask_direct_sum_full128_nearid_tf_stageb_metric_gramians_0978zofq.png",
+      "mtime": 1777528210.41906,
+      "size": 318988
+    },
+    {
       "name": "wmtask_direct_sum_full128_nearid_tf_stageb_cross_area_gramians_0978zofq.png",
-      "category": "uncategorized",
-      "path": "diagnostics/wmtask_direct_sum_full128_nearid_tf_stageb_cross_area_gramians_0978zofq.png",
-      "mtime": 1777526410.140469,
+      "category": "cross-area-gramians",
+      "path": "diagnostics/cross-area-gramians/wmtask_direct_sum_full128_nearid_tf_stageb_cross_area_gramians_0978zofq.png",
+      "mtime": 1777528210.411091,
       "size": 376718
     },
     {
