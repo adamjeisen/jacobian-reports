@@ -418,6 +418,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_direct_sum_additive_p30_perareapcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T032535Z__stage_a",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777529125.5137818
+      },
+      {
         "group": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
         "has_report": true,
         "has_metrics": true,
@@ -632,6 +639,13 @@
     ]
   },
   "diagnostics": [
+    {
+      "name": "wmtask_direct_sum_full128_nearid_tf_stageb_metric_gramians_vs_gt_0978zofq.png",
+      "category": "cross-area-gramians",
+      "path": "diagnostics/cross-area-gramians/wmtask_direct_sum_full128_nearid_tf_stageb_metric_gramians_vs_gt_0978zofq.png",
+      "mtime": 1777529111.061072,
+      "size": 396894
+    },
     {
       "name": "wmtask_direct_sum_full128_nearid_tf_stageb_metric_gramians_0978zofq.png",
       "category": "cross-area-gramians",
