@@ -1,0 +1,12 @@
+experiment: lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep
+overrides:
+  - "training.trainer_params.max_epochs=20"
+  - "wandb_group=lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062724Z__stage_a"
+two_stage:
+  full_max_epochs: 100
+  cull_fraction: 0.5
+  metric: "trajectory val_loss"
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260430T062724Z
+submitted_from: millerlab-endeavourOS
