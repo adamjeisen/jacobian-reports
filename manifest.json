@@ -418,6 +418,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777525230.031947
+      },
+      {
         "group": "wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234503Z__stage_b",
         "has_report": true,
         "has_metrics": true,

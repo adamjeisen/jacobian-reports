@@ -1,0 +1,156 @@
+{
+  "group": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+  "completed_at": "2026-04-30T04:55:19Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep": {
+      "description": "WMTask fully-observed (N1=N2=64), latent JacobianODE with\nDirectSumCouplingEncoder, 128->128 (no null subspace, full target dim\nper area). Additive coupling, 8 layers, hidden_dim=128.\nnear_identity_std=1e-3, final_perm_identity=true. 21-cell sweep over\n7 LC x 3 obs_noise_scale. Split-mode loss. TF-coupled LR schedule\n(k_scale=1, init 1e-4 -> min 1e-6 following TF alpha annealing).\nTwo-stage protocol with dual-checkpoint (primary ES patience=5,\nshadow patience=2).\n",
+      "hypothesis": "Same recipe as the monolithic nearid_tf sweep; the only structural\ndifference is per-area block-diagonal Jacobian routing via the\nDirectSum encoder. If WMTask's brain-area structure (visual/cognitive\npartition) is exploitable, this should match or exceed the monolithic\nsweep on val_traj_loss while preserving the cross-area Gramian\nasymmetry signal that the monolithic encoder cannot represent\nstructurally.\n",
+      "success_criteria": [
+        "All 21 cells train without divergence",
+        "es2-best.ckpt and es5-best.ckpt both saved per cell",
+        "Best val traj_loss within 10% of monolithic nearid_tf sweep's best",
+        "Cross-area Gramian asymmetry (vis -> cog > cog -> vis) at best cell",
+        "Lyapunov spectrum NOT compressed in Stage B vs Stage A"
+      ]
+    }
+  },
+  "expected_run_count": 10,
+  "hydra": {
+    "experiments": [
+      "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+      "training.lightning.loop_closure_weight=0",
+      "training.lightning.obs_noise_scale=0.05",
+      "training.trainer_params.max_epochs=100",
+      "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+      "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/b2b02557d16c691e/last.ckpt"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/b2b02557d16c691e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/536feb1e214ff933/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/e2d851cdaeb66b9f/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/546b15c86db6f7b7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/f9a20657e9f3ccd2/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/d7a3ea34a2d5401c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/a08083641f8d8494/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/54426b7f2a8f1f3a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/a0d0954aa2aebc4e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a/a421f95ba66ac4b7/last.ckpt"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "4cd9047",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-30T01:50:18Z"
+}
