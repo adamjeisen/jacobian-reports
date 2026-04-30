@@ -1,0 +1,8 @@
+experiment: wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep
+overrides: []
+submitted_at: 20260430T193235Z
+submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep
+expected_run_count: 8
+slurm_array_id: '12905511'
+slurm_submitted_at: '2026-04-30T19:36:00Z'
