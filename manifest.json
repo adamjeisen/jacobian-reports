@@ -633,6 +633,13 @@
   },
   "diagnostics": [
     {
+      "name": "wmtask_direct_sum_full128_nearid_tf_stageb_cross_area_gramians_0978zofq.png",
+      "category": "uncategorized",
+      "path": "diagnostics/wmtask_direct_sum_full128_nearid_tf_stageb_cross_area_gramians_0978zofq.png",
+      "mtime": 1777526410.140469,
+      "size": 376718
+    },
+    {
       "name": "val_mode_mismatch_uniform_sweeps.png",
       "category": "training-dynamics",
       "path": "diagnostics/training-dynamics/val_mode_mismatch_uniform_sweeps.png",
