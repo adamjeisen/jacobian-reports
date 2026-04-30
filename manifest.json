@@ -418,6 +418,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_direct_sum_additive_p30_perareapcaautodim999_nearid_tf__lc_x_obsnoisescale_sweep_20260430T071435Z__stage_b",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777557623.4596121
+      },
+      {
         "group": "wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep_20260430T071136Z__stage_b",
         "has_report": true,
         "has_metrics": true,
