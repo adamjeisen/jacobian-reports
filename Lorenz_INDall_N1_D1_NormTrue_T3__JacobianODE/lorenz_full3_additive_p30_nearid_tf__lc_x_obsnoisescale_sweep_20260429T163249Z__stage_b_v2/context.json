@@ -1,0 +1,266 @@
+{
+  "group": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+  "completed_at": "2026-04-30T00:40:26Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep": {
+      "description": "Fully-observed Lorenz (3 dims, no delay embedding). Monolithic\nCouplingEncoder (additive coupling, 8 layers, hidden_dim=128),\nnear_identity_std=1e-3, final_perm_identity=true. 21-cell sweep\nover 7 LC x 3 obs_noise_scale. TF-coupled LR schedule (k_scale=1).\nTwo-stage protocol with dual-checkpoint (primary ES patience=5,\nshadow-freeze patience=2). Same recipe as the matched WMTask\n128->128 sweep.\n",
+      "hypothesis": "If the orig recipe (TF-coupled LR, mean ~5e-5 effective in the\nhigh-LR phase) is portable, Lorenz 3->3 should hit good Lyapunov\nspectrum recovery across the LC x obs_noise grid without\nspectrum compression in Stage B. Recovery of all three Lyapunov\nexponents (positive, zero, negative) within ~30% of empirical\nis the success bar \u2014 same standard the existing\nlorenz_full_additive_mse_p30 sweep was held to. This sweep is\nthe matched-recipe Lorenz control for the WMTask sweep.\n",
+      "success_criteria": [
+        "All 21 cells train without divergence",
+        "es2-best.ckpt and es5-best.ckpt both saved per cell",
+        "Best run's predicted Lyapunov spectrum within ~30% of empirical",
+        "Lyapunov spectrum NOT compressed in Stage B vs Stage A",
+        "Result shape is consistent with the matched WMTask sweep (LC dependence, init effect)"
+      ]
+    }
+  },
+  "expected_run_count": 20,
+  "hydra": {
+    "experiments": [
+      "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+      "training.lightning.loop_closure_weight=0.0001",
+      "training.lightning.obs_noise_scale=0",
+      "training.trainer_params.max_epochs=100",
+      "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+      "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a4e7a36e10c4eac1/last.ckpt"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a4e7a36e10c4eac1/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a08083641f8d8494/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/f9a20657e9f3ccd2/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/d7a3ea34a2d5401c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/94d54f219fa69833/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/ee053169080d0c36/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a0d0954aa2aebc4e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/0fc300e5f6331999/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/54426b7f2a8f1f3a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a421f95ba66ac4b7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a4e7a36e10c4eac1/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a08083641f8d8494/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/f9a20657e9f3ccd2/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/d7a3ea34a2d5401c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/94d54f219fa69833/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/ee053169080d0c36/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a0d0954aa2aebc4e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/0fc300e5f6331999/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/54426b7f2a8f1f3a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_a/a421f95ba66ac4b7/last.ckpt"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDall_N1_D1_NormTrue_T3__JacobianODE",
+    "group": "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "547e96e",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-04-29T20:16:33Z"
+}

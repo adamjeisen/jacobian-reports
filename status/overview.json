@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-30T00:40:37Z",
+  "last_updated": "2026-04-30T00:46:15Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -42,21 +42,12 @@
       }
     },
     "lorenz_full3_additive_p30_nearid_tf__lc_x_obsnoisescale_sweep_20260429T163249Z__stage_b_v2": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 20,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 20
-      },
-      "analysis": {
-        "slurm_job_id": "12868440",
-        "dispatched_at": "2026-04-30T00:40:36Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "lorenz_full_additive_mse__lc_sweep": {
