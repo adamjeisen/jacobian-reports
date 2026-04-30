@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Quick status check for a JacobianODE sweep, run periodically by a /loop.
+#
+# Usage: sweep-status <sweep_group_name>
+#
+# Steps:
+#   1. git pull --rebase in the repo (sucks in latest controller pushes)
+#   2. report whether the instruction is still in pending/ or has moved
+#      to claimed/
+#   3. report the entry under status/overview.json["sweeps"][<group>]
+#   4. report whether a report.md exists under <project>/<group>/
+set -euo pipefail
+
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO"
+
+if (( $# < 1 )); then
+  echo "usage: sweep-status <sweep_group_name>" >&2
+  exit 2
+fi
+GROUP="$1"
+
+echo "=== git pull ==="
+git pull --rebase 2>&1 | tail -3
+
+echo
+echo "=== instruction file location ==="
+PEND=$(ls instructions/pending/ 2>/dev/null | grep -F "$GROUP" || true)
+CLAIM=$(ls instructions/claimed/ 2>/dev/null | grep -F "$GROUP" || true)
+if [[ -n "$PEND" ]]; then echo "pending: $PEND"; fi
+if [[ -n "$CLAIM" ]]; then echo "claimed: $CLAIM"; fi
+if [[ -z "$PEND$CLAIM" ]]; then echo "(no instruction file matching '$GROUP')"; fi
+
+echo
+echo "=== status/overview.json[sweeps][$GROUP] ==="
+python3 - "$GROUP" <<'PYEOF'
+import json, os, sys
+group = sys.argv[1]
+o = json.load(open('status/overview.json'))
+m = o.get('sweeps', {}).get(group)
+if m is None:
+    print("(group not found in status/overview.json)")
+else:
+    print(json.dumps(m, indent=2))
+# Find the project that owns this group (by directory existence).
+report_path = None
+for project in os.listdir('.'):
+    p = os.path.join(project, group, 'report.md')
+    if os.path.isfile(p):
+        report_path = p
+        break
+print()
+if report_path:
+    print(f"report.md EXISTS at: {report_path}")
+else:
+    print("report.md: not yet")
+PYEOF
