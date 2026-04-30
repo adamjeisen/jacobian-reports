@@ -1,0 +1,19 @@
+experiment: wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep
+overrides:
+- training.lightning.loop_closure_weight=1e-06
+- training.lightning.obs_noise_scale=0.01
+- training.trainer_params.max_epochs=100
+- wandb_group=wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234503Z__stage_b
+- +training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234503Z__stage_a/a0d0954aa2aebc4e/last.ckpt
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260430T025607Z
+submitted_from: login006
+wandb_group: wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234503Z__stage_b
+expected_run_count: 7
+slurm_array_id: split-extend
+slurm_submitted_at: '2026-04-30T03:01:10Z'
+split_submission:
+  mit_count: 0
+  ou_bcs_count: 1
+  n_failures: 0
