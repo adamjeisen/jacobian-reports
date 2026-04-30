@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-30T01:46:31Z",
+  "last_updated": "2026-04-30T01:51:39Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -536,6 +536,15 @@
         "effectively_done": 21
       }
     },
+    "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_b": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 10,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
     "wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234503Z__stage_a": {
       "status": "active",
       "runs_summary": {
@@ -772,46 +781,6 @@
     }
   },
   "pending_instructions": [
-    {
-      "file": "20260430T014559Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-5j58o549.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014604Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-lbgfaqfr.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014608Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-sh3sevik.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014611Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-yxkhj8sm.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014614Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-t6hiz545.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014617Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-zg3r9p42.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014619Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-kqk288nb.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014622Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-728s1wh6.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014625Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-73xtuotf.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T014627Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-f9qwwicv.yaml",
-      "status": "pending"
-    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
@@ -1630,6 +1599,46 @@
     },
     {
       "file": "20260429T234503Z-wmtask_direct_sum_additive_p30_perareafnnautodim_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014559Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-5j58o549.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014604Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-lbgfaqfr.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014608Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-sh3sevik.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014611Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-yxkhj8sm.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014614Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-t6hiz545.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014617Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-zg3r9p42.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014619Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-kqk288nb.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014622Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-728s1wh6.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014625Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-73xtuotf.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T014627Z-wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-f9qwwicv.yaml",
       "status": "claimed"
     }
   ]
