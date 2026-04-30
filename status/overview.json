@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-30T10:21:16Z",
+  "last_updated": "2026-04-30T10:26:32Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -566,10 +566,10 @@
     "wmtask_direct_sum_additive_p30_perareapcaautodim999_nearid_tf__lc_x_obsnoisescale_sweep_20260430T071435Z__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 18,
-        "in_flight": 3,
+        "terminal": 20,
+        "in_flight": 1,
         "failed_exhausted": 0,
-        "effectively_done": 18
+        "effectively_done": 20
       }
     },
     "wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep_20260430T071136Z__stage_a": {
@@ -579,6 +579,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 21
+      }
+    },
+    "wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep_20260430T071136Z__stage_b": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 10,
+        "failed_exhausted": 0,
+        "effectively_done": 0
       }
     },
     "wmtask_direct_sum_additive_p30_perareapcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T032535Z__stage_a": {
@@ -817,46 +826,6 @@
     }
   },
   "pending_instructions": [
-    {
-      "file": "20260430T102052Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-883rn6yw.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102055Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-0ss7s6sr.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102057Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-3qhuxkxj.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102059Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-yuss65ko.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102101Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-9ncq1v2o.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102104Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-trp7h4fm.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102106Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-msxe2p3w.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102108Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-hb8ktudy.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102110Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-75y1fubw.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260430T102113Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-9jxkbud4.yaml",
-      "status": "pending"
-    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
@@ -1807,6 +1776,46 @@
     },
     {
       "file": "20260430T071435Z-wmtask_direct_sum_additive_p30_perareapcaautodim999_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102052Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-883rn6yw.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102055Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-0ss7s6sr.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102057Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-3qhuxkxj.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102059Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-yuss65ko.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102101Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-9ncq1v2o.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102104Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-trp7h4fm.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102106Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-msxe2p3w.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102108Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-hb8ktudy.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102110Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-75y1fubw.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T102113Z-wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-9jxkbud4.yaml",
       "status": "claimed"
     }
   ]
