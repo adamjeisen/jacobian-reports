@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+# Add diagnostic file(s) to jacobian-reports: stage the file(s), rebuild
+# manifest.json (so the dashboard sees them), pull --rebase against the
+# controller's frequent pushes, commit, and push. Retries the
+# manifest-rebuild + rebase loop once if the controller wins the race.
+#
+# Usage:
+#   add-diagnostic <path>... [-m "commit message"]
+#
+# Each <path> must already be inside the repo's diagnostics/ tree (copy
+# it there yourself first; the script does not move files). Sibling JSON
+# files (same basename, .json) are auto-included.
+#
+# Examples:
+#   add-diagnostic diagnostics/cross-area-gramians/foo_<run>.png
+#   add-diagnostic diagnostics/cross-area-gramians/{foo,bar}_<run>.png \
+#                  -m "diagnostics: cross-area gramians for run <id>"
+set -euo pipefail
+
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO"
+
+paths=()
+msg=""
+while (( $# )); do
+  case "$1" in
+    -m|--message) msg="$2"; shift 2 ;;
+    -h|--help)
+      sed -n '2,18p' "$0" | sed 's/^# \?//'; exit 0 ;;
+    -*) echo "unknown flag: $1" >&2; exit 2 ;;
+    *)  paths+=("$1"); shift ;;
+  esac
+done
+
+if (( ${#paths[@]} == 0 )); then
+  echo "usage: add-diagnostic <path>... [-m message]" >&2
+  exit 2
+fi
+
+# Resolve paths relative to repo, ensure each lives under diagnostics/,
+# and collect sibling .json companions.
+to_stage=()
+for p in "${paths[@]}"; do
+  if [[ "$p" = /* ]]; then
+    rel="$(realpath --relative-to="$REPO" "$p")"
+  else
+    rel="$p"
+  fi
+  if [[ ! -e "$REPO/$rel" ]]; then
+    echo "not found: $rel" >&2; exit 1
+  fi
+  if [[ "$rel" != diagnostics/* ]]; then
+    echo "not under diagnostics/: $rel" >&2; exit 1
+  fi
+  to_stage+=("$rel")
+  # Companion JSON (same basename, .json)
+  base="${rel%.*}"
+  if [[ -f "$REPO/$base.json" && "$rel" != "$base.json" ]]; then
+    to_stage+=("$base.json")
+  fi
+done
+
+# Default message: "diagnostics: <comma-separated basenames>"
+if [[ -z "$msg" ]]; then
+  names=()
+  for r in "${to_stage[@]}"; do
+    [[ "$r" == *.json ]] || names+=("$(basename "$r")")
+  done
+  msg="diagnostics: $(IFS=, ; echo "${names[*]}")"
+fi
+
+# One round of: pull --rebase, stage user files, exit no-op if nothing
+# new, else rebuild manifest, stage it too, commit, push. If push loses
+# the race against a controller push, retry once on the new tip.
+#
+# manifest.json's "projects" section reorders by report mtime, so the
+# controller's report regen (every 5 min) shifts the file's contents
+# even when no diagnostic actually changed — staging it unconditionally
+# would cause a churn commit on every invocation. So we stage user
+# files FIRST, check whether any of THEM produced a real diff, and only
+# then rebuild + stage the manifest.
+push_with_retry() {
+  local attempt
+  for attempt in 1 2; do
+    git pull --rebase --autostash >/dev/null
+    git add "${to_stage[@]}"
+    if git diff --cached --quiet; then
+      echo "nothing to add (files already up to date in repo)"
+      return 0
+    fi
+    python3 build_manifest.py >/dev/null
+    git add manifest.json
+    if (( attempt == 1 )); then
+      git commit -m "$msg" >/dev/null
+    else
+      git commit --amend --no-edit >/dev/null
+    fi
+    if git push 2>/dev/null; then
+      return 0
+    fi
+    echo "push raced with controller; retrying after rebasing..."
+  done
+  echo "push still failing after retry; resolve manually" >&2
+  return 1
+}
+
+push_with_retry
+echo "pushed: $msg"
+echo "files:"
+for r in "${to_stage[@]}"; do echo "  $r"; done
