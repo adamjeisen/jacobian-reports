@@ -1,0 +1,108 @@
+{
+  "run_id": "0978zofq",
+  "obs_noise_scale": 0.05,
+  "best_traj_loss_wandb": 0.004069683142006397,
+  "metric": "R^# = (J_E J_E^T)^{-1} from learned per-area encoder; applied to BOTH learned dynamics and GT dynamics",
+  "encoder_J_det_check": {
+    "vis": 1.0,
+    "cog": 1.0
+  },
+  "terminal_step_summary": [
+    {
+      "dir": "vis\u2192cog",
+      "gram": "reach",
+      "stat": "trace",
+      "learned": 5.223102569580078,
+      "gt": 4.908437728881836,
+      "delta_learned_minus_gt": 0.3146648406982422
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "reach",
+      "stat": "min",
+      "learned": -4.3311920166015625,
+      "gt": -6.619792938232422,
+      "delta_learned_minus_gt": 2.2886009216308594
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "ctrl",
+      "stat": "trace",
+      "learned": 3.4453072547912598,
+      "gt": 2.804029941558838,
+      "delta_learned_minus_gt": 0.6412773132324219
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "ctrl",
+      "stat": "min",
+      "learned": -11.644303321838379,
+      "gt": -13.48628044128418,
+      "delta_learned_minus_gt": 1.8419771194458008
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "obs",
+      "stat": "trace",
+      "learned": 2.9034409523010254,
+      "gt": 0.3205075263977051,
+      "delta_learned_minus_gt": 2.5829334259033203
+    },
+    {
+      "dir": "vis\u2192cog",
+      "gram": "obs",
+      "stat": "min",
+      "learned": -11.558490753173828,
+      "gt": -18.894203186035156,
+      "delta_learned_minus_gt": 7.335712432861328
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "reach",
+      "stat": "trace",
+      "learned": 3.995208501815796,
+      "gt": 2.6942222118377686,
+      "delta_learned_minus_gt": 1.3009862899780273
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "reach",
+      "stat": "min",
+      "learned": -5.460392951965332,
+      "gt": -7.771810531616211,
+      "delta_learned_minus_gt": 2.311417579650879
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "ctrl",
+      "stat": "trace",
+      "learned": 2.9323811531066895,
+      "gt": 0.35551634430885315,
+      "delta_learned_minus_gt": 2.5768648087978363
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "ctrl",
+      "stat": "min",
+      "learned": -11.57530403137207,
+      "gt": -18.903148651123047,
+      "delta_learned_minus_gt": 7.327844619750977
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "obs",
+      "stat": "trace",
+      "learned": 3.413607120513916,
+      "gt": 2.7872185707092285,
+      "delta_learned_minus_gt": 0.6263885498046875
+    },
+    {
+      "dir": "cog\u2192vis",
+      "gram": "obs",
+      "stat": "min",
+      "learned": -11.635974884033203,
+      "gt": -13.472969055175781,
+      "delta_learned_minus_gt": 1.8369941711425781
+    }
+  ]
+}
