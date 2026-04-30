@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-30T10:00:30Z",
+  "last_updated": "2026-04-30T10:05:28Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -566,10 +566,10 @@
     "wmtask_direct_sum_additive_p30_perareapcaautodim999_nearid_tf__lc_x_obsnoisescale_sweep_20260430T071435Z__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 7,
-        "in_flight": 14,
+        "terminal": 9,
+        "in_flight": 12,
         "failed_exhausted": 0,
-        "effectively_done": 7
+        "effectively_done": 9
       }
     },
     "wmtask_direct_sum_additive_p30_perareapcaautodim_cayley_nearid_tf__lc_x_obsnoisescale_sweep_20260430T071136Z__stage_a": {
