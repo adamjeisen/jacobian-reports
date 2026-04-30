@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-30T06:25:39Z",
+  "last_updated": "2026-04-30T06:30:40Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -141,6 +141,9 @@
       }
     },
     "lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062505Z__stage_a": {
+      "status": "active"
+    },
+    "lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062724Z__stage_a": {
       "status": "active"
     },
     "lorenz_partial_25d_additive_gennmse__lc_sweep": {
@@ -342,6 +345,15 @@
       }
     },
     "lorenz_partial_25d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062506Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 21,
+        "in_flight": 0,
+        "failed_exhausted": 21,
+        "effectively_done": 0
+      }
+    },
+    "lorenz_partial_25d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062725Z__stage_a": {
       "status": "active",
       "runs_summary": {
         "terminal": 0,
@@ -587,10 +599,10 @@
     "wmtask_direct_sum_additive_p30_perareapcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T032535Z__stage_b": {
       "status": "active",
       "runs_summary": {
-        "terminal": 2,
-        "in_flight": 8,
+        "terminal": 3,
+        "in_flight": 7,
         "failed_exhausted": 0,
-        "effectively_done": 2
+        "effectively_done": 3
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_lpl_sweep": {
@@ -1770,6 +1782,14 @@
     },
     {
       "file": "20260430T062506Z-lorenz_partial_25d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T062724Z-lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T062725Z-lorenz_partial_25d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
       "status": "claimed"
     }
   ]
