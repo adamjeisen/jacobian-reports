@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-04-30T06:20:21Z",
+  "last_updated": "2026-04-30T06:25:39Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -139,6 +139,9 @@
         "failed_exhausted": 0,
         "effectively_done": 9
       }
+    },
+    "lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062505Z__stage_a": {
+      "status": "active"
     },
     "lorenz_partial_25d_additive_gennmse__lc_sweep": {
       "status": "processed",
@@ -336,6 +339,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
+      }
+    },
+    "lorenz_partial_25d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062506Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
       }
     },
     "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001": {
@@ -575,10 +587,10 @@
     "wmtask_direct_sum_additive_p30_perareapcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T032535Z__stage_b": {
       "status": "active",
       "runs_summary": {
-        "terminal": 1,
-        "in_flight": 9,
+        "terminal": 2,
+        "in_flight": 8,
         "failed_exhausted": 0,
-        "effectively_done": 1
+        "effectively_done": 2
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_lpl_sweep": {
@@ -1750,6 +1762,14 @@
     },
     {
       "file": "20260430T060611Z-wmtask_direct_sum_additive_p30_perareapcaautodim_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-6nqq7lry.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T062505Z-lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260430T062506Z-lorenz_partial_25d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep__two_stage.yaml",
       "status": "claimed"
     }
   ]
