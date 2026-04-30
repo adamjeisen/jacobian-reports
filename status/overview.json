@@ -140,15 +140,6 @@
         "effectively_done": 9
       }
     },
-    "lorenz_partial_100d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062724Z__stage_a": {
-      "status": "active",
-      "runs_summary": {
-        "terminal": 2,
-        "in_flight": 19,
-        "failed_exhausted": 0,
-        "effectively_done": 2
-      }
-    },
     "lorenz_partial_25d_additive_gennmse__lc_sweep": {
       "status": "processed",
       "runs_summary": {
@@ -345,15 +336,6 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 9
-      }
-    },
-    "lorenz_partial_25d_split_p30_pcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T062725Z__stage_a": {
-      "status": "active",
-      "runs_summary": {
-        "terminal": 0,
-        "in_flight": 21,
-        "failed_exhausted": 0,
-        "effectively_done": 0
       }
     },
     "lorenz_partial_additive_encoderonly_nd75_init15_pcainit_autodim__kl_sweep_obsnoise001": {
@@ -588,15 +570,6 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 21
-      }
-    },
-    "wmtask_direct_sum_additive_p30_perareapcaautodim_nearid_tf__lc_x_obsnoisescale_sweep_20260430T032535Z__stage_b": {
-      "status": "active",
-      "runs_summary": {
-        "terminal": 6,
-        "in_flight": 4,
-        "failed_exhausted": 0,
-        "effectively_done": 6
       }
     },
     "wmtask_direct_sum_additive_splitmode_p30_full128__lc_x_lpl_sweep": {
