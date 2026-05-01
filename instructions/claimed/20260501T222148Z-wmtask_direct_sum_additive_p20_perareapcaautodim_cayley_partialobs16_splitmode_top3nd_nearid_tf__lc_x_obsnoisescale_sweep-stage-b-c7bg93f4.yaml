@@ -1,0 +1,20 @@
+experiment: wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep
+overrides:
+- data.train_test_params.delay_embedding_params.n_delays=9
+- training.lightning.loop_closure_weight=0
+- training.lightning.obs_noise_scale=0.05
+- training.trainer_params.max_epochs=100
+- wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b
+- +training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/ded53340dfe5edd1/last.ckpt
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260501T222148Z
+submitted_from: login006
+wandb_group: wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b
+expected_run_count: 21
+slurm_array_id: split-extend
+slurm_submitted_at: '2026-05-01T22:27:59Z'
+split_submission:
+  mit_count: 0
+  ou_bcs_count: 1
+  n_failures: 0
