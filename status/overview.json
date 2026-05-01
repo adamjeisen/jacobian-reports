@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-01T21:45:32Z",
+  "last_updated": "2026-05-01T21:50:33Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -834,12 +834,21 @@
       }
     },
     "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 62,
-        "in_flight": 1,
+        "terminal": 63,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 62
+        "effectively_done": 63
+      },
+      "analysis": {
+        "slurm_job_id": "12976341",
+        "dispatched_at": "2026-05-01T21:50:32Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
