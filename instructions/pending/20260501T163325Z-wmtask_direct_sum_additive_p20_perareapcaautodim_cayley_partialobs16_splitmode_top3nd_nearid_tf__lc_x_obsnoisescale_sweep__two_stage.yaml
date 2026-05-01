@@ -1,0 +1,12 @@
+experiment: wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep
+overrides:
+  - "training.trainer_params.max_epochs=20"
+  - "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+two_stage:
+  full_max_epochs: 100
+  cull_fraction: 0.5
+  metric: "trajectory val_loss"
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260501T163325Z
+submitted_from: millerlab-endeavourOS
