@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-01T17:50:27Z",
+  "last_updated": "2026-05-01T17:55:29Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -836,10 +836,10 @@
     "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a": {
       "status": "active",
       "runs_summary": {
-        "terminal": 7,
-        "in_flight": 56,
+        "terminal": 13,
+        "in_flight": 50,
         "failed_exhausted": 0,
-        "effectively_done": 7
+        "effectively_done": 13
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
