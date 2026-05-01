@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/adameisen/Documents/code/JacobianODE/.venv/bin/python3
 """launch-sweep2-from-sweep1 — one-shot glue for the partial-obs Cayley pipeline.
 
 Reads finished cells of Sweep 1 (the n_delays scout, group hardcoded
