@@ -12,109 +12,121 @@
       "gram": "reach",
       "dir": "cog\u2192vis",
       "stat": "trace",
+      "n_trajectories": 128,
       "gt_mean": 2.677903652191162,
-      "gt_std": 0.17699801921844482,
+      "gt_sem": 0.015706034951385804,
       "learned_mean": 2.479936122894287,
-      "learned_std": 0.09144606441259384
+      "learned_sem": 0.008114526158357347
     },
     {
       "gram": "reach",
       "dir": "cog\u2192vis",
       "stat": "min",
+      "n_trajectories": 128,
       "gt_mean": -7.770848274230957,
-      "gt_std": 0.38264310359954834,
+      "gt_sem": 0.03395408331372129,
       "learned_mean": -4.191738128662109,
-      "learned_std": 0.32770341634750366
+      "learned_sem": 0.029078975785712398
     },
     {
       "gram": "reach",
       "dir": "vis\u2192cog",
       "stat": "trace",
+      "n_trajectories": 128,
       "gt_mean": 4.892991542816162,
-      "gt_std": 0.38331812620162964,
+      "gt_sem": 0.0340139845221674,
       "learned_mean": 5.501171112060547,
-      "learned_std": 0.44090670347213745
+      "learned_sem": 0.03912414239014351
     },
     {
       "gram": "reach",
       "dir": "vis\u2192cog",
       "stat": "min",
+      "n_trajectories": 128,
       "gt_mean": -6.624363422393799,
-      "gt_std": 0.1713450402021408,
+      "gt_sem": 0.01520441369712127,
       "learned_mean": -1.7869822978973389,
-      "learned_std": 0.18759648501873016
+      "learned_sem": 0.016646495777790846
     },
     {
       "gram": "ctrl",
       "dir": "cog\u2192vis",
       "stat": "trace",
+      "n_trajectories": 128,
       "gt_mean": 67.53910827636719,
-      "gt_std": 0.34898611903190613,
+      "gt_sem": 0.03096751021303476,
       "learned_mean": 20.482301712036133,
-      "learned_std": 0.699498176574707
+      "learned_sem": 0.06207042244526683
     },
     {
       "gram": "ctrl",
       "dir": "cog\u2192vis",
       "stat": "min",
+      "n_trajectories": 128,
       "gt_mean": 0.9148820042610168,
-      "gt_std": 0.27522170543670654,
+      "gt_sem": 0.024421975564569355,
       "learned_mean": 1.4583786725997925,
-      "learned_std": 0.4315860867500305
+      "learned_sem": 0.03829707370838998
     },
     {
       "gram": "ctrl",
       "dir": "vis\u2192cog",
       "stat": "trace",
+      "n_trajectories": 128,
       "gt_mean": 64.29537200927734,
-      "gt_std": 0.9883386492729187,
+      "gt_sem": 0.08770087459718905,
       "learned_mean": 13.81051254272461,
-      "learned_std": 0.8235225081443787
+      "learned_sem": 0.07307580752843149
     },
     {
       "gram": "ctrl",
       "dir": "vis\u2192cog",
       "stat": "min",
+      "n_trajectories": 128,
       "gt_mean": 4.44147253036499,
-      "gt_std": 0.7883894443511963,
+      "gt_sem": 0.06995825255928523,
       "learned_mean": 4.187257766723633,
-      "learned_std": 0.4942744970321655
+      "learned_sem": 0.043859767557183627
     },
     {
       "gram": "obs",
       "dir": "cog\u2192vis",
       "stat": "trace",
+      "n_trajectories": 128,
       "gt_mean": 5.6457366943359375,
-      "gt_std": 0.2585183084011078,
+      "gt_sem": 0.02293979207463068,
       "learned_mean": 5.165181636810303,
-      "learned_std": 0.2919676899909973
+      "learned_sem": 0.025907944368339913
     },
     {
       "gram": "obs",
       "dir": "cog\u2192vis",
       "stat": "min",
+      "n_trajectories": 128,
       "gt_mean": -6.953768730163574,
-      "gt_std": 0.39874306321144104,
+      "gt_sem": 0.03538272450098293,
       "learned_mean": -3.2177085876464844,
-      "learned_std": 0.2871313691139221
+      "learned_sem": 0.025478789351733797
     },
     {
       "gram": "obs",
       "dir": "vis\u2192cog",
       "stat": "trace",
+      "n_trajectories": 128,
       "gt_mean": 2.2540078163146973,
-      "gt_std": 0.4199375510215759,
+      "gt_sem": 0.0372634301511944,
       "learned_mean": 3.1472630500793457,
-      "learned_std": 0.30525827407836914
+      "learned_sem": 0.027087289580837653
     },
     {
       "gram": "obs",
       "dir": "vis\u2192cog",
       "stat": "min",
+      "n_trajectories": 128,
       "gt_mean": -9.734405517578125,
-      "gt_std": 1.5865752696990967,
+      "gt_sem": 0.14078579440581976,
       "learned_mean": -2.6163716316223145,
-      "learned_std": 0.24958418309688568
+      "learned_sem": 0.022147015122496828
     }
   ]
 }
