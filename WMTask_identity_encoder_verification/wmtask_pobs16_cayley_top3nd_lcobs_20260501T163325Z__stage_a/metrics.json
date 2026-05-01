@@ -22002,8 +22002,6 @@
     "swept_paths": [
       "data.postprocessing.generalized_variance",
       "data.train_test_params.delay_embedding_params.n_delays",
-      "model.encoder.area_indices",
-      "model.encoder.n_target_dims_per_block",
       "model.n_target_dims",
       "model.n_target_dims_per_block_pca_auto",
       "model.n_target_dims_per_block_pca_cum_var",
