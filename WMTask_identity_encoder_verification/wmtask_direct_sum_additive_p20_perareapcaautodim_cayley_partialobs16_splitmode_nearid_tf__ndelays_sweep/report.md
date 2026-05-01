@@ -1,0 +1,473 @@
+# Sweep Analysis: `wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep`
+
+**Project**: [WMTask_identity_encoder_verification](https://wandb.ai/JacobianODE/WMTask_identity_encoder_verification/groups/wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep)  
+**Launched**: 2026-04-30T23:05:19Z  
+**Completed**: 2026-05-01T07:40:17Z  
+**Outcome**: `complete_clean`  
+**Git**: `latent-JacobianODE` @ `392ab8f`  
+**Expected runs**: 6
+
+## Experiment Context
+
+### `wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep`
+
+**Description**
+
+WMTask partial-observation sweep: 16 random indices per area (fixed
+seed=42) over n_delays in {1,3,6,9,12,15}. Same encoder recipe
+as the full-obs Cayley pca_999 winner (DirectSum + per-area PCA-99
+autodim + Cayley orthogonal mixers + near-identity init + TF-coupled
+LR + split-mode losses), with:
+  - observed_indices='random', n_observed_per_area=[16, 16],
+    obs_area_indices = [[0..63], [64..127]]
+  - encoder.area_indices='auto_partial_obs' (resolver computes the
+    delay-embedded per-area block layout)
+  - prediction_steps=20, seq_length=35 (= 15 traj_init + 20 pred);
+    sized so n_delays up to 15 fits the 49-frame delay2 window
+  - LC fixed at 0 (loop_closure_training=false)
+  - training-time obs_noise_scale fixed at 0
+  - max_epochs=100, no Stage A/B culling
+
+**Hypothesis**
+
+Under partial obs, n_delays is the dominant lever — it controls how
+much state info delay-embedding can reconstruct from 16 obs per area.
+Sweep 1 isolates it under clean conditions; the top-3 n_delays go
+into the LC × obs_noise grid sweep that follows. Expected shape:
+best traj_loss falls steeply for very small n_delays (insufficient
+state info), reaches a plateau, and may degrade slightly for large
+n_delays (less effective rollout horizon, larger encoder input,
+PCA-99 keeping more dims).
+
+**Success criteria**
+
+- All 6 cells train without divergence
+- Per-area autodim n_target_dims logged for each n_delays cell
+- C2 (eigenvalue threshold) passes for at least 4 of 6 cells
+- Best val traj_loss within 5x of full-obs Cayley winner (~0.0042)
+
+## Results
+
+**Swept axes** (9): `data.postprocessing.generalized_variance`, `data.train_test_params.delay_embedding_params.n_delays`, `model.encoder.area_indices`, `model.encoder.n_target_dims_per_block`, `model.n_target_dims`, `model.n_target_dims_per_block_pca_auto`, `model.n_target_dims_per_block_pca_cum_var`, `model.params.input_dim`, `model.params.output_dim`
+
+**Chosen run** (by `best_traj_loss`): `po289iaq` — traj_loss=0.00338, MASE=0.5917, R²=0.9960, LC loss=95.229, epoch=38.0
+
+Swept-axis values at chosen run: `data.postprocessing.generalized_variance`=0.0197462 · `data.train_test_params.delay_embedding_params.n_delays`=9 · `model.encoder.area_indices`=[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271], [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287]] · `model.encoder.n_target_dims_per_block`=[17, 13] · `model.n_target_dims`=30 · `model.n_target_dims_per_block_pca_auto`=[17, 13] · `model.n_target_dims_per_block_pca_cum_var`=[0.9905957045468436, 0.99105788566372] · `model.params.input_dim`=30 · `model.params.output_dim`=900
+
+**Runs analyzed**: 6 (expected 6)
+
+### Per-run results
+
+| run_idx | run_id | `data.postprocessing.generalized_variance` | `data.train_test_params.delay_embedding_params.n_delays` | `model.encoder.area_indices` | `model.encoder.n_target_dims_per_block` | `model.n_target_dims` | `model.n_target_dims_per_block_pca_auto` | `model.n_target_dims_per_block_pca_cum_var` | `model.params.input_dim` | `model.params.output_dim` | best_traj_loss | best_MASE | R² | LC loss | epoch |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 3 | `po289iaq` | 0.0197462 | 9 | [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271], [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287]] | [17, 13] | 30 | [17, 13] | [0.9905957045468436, 0.99105788566372] | 30 | 900 | 0.00338 | 0.5917 | 0.9960 | 95.229 | 38.0 |
+| 4 | `wxe7sas1` | 0.0197462 | 12 | [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367], [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383]] | [19, 14] | 33 | [19, 14] | [0.990466904603792, 0.9907145482737882] | 33 | 1089 | 0.00339 | 0.5974 | 0.9958 | 100.536 | 41.0 |
+| 2 | `6leje1og` | 0.0197462 | 6 | [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175], [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191]] | [14, 11] | 25 | [14, 11] | [0.9903351849713868, 0.9900285479042218] | 25 | 625 | 0.00347 | 0.6000 | 0.9958 | 91.043 | 32.0 |
+| 1 | `szp2jnl3` | 0.0197462 | 3 | [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79], [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95]] | [12, 10] | 22 | [12, 10] | [0.9904783175511908, 0.9908902223205168] | 22 | 484 | 0.00373 | 0.6141 | 0.9954 | 66.328 | 32.0 |
+| 5 | `d4keeqjj` | 0.0197462 | 15 | [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463], [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479]] | [20, 15] | 35 | [20, 15] | [0.9900060728622276, 0.9905745947396116] | 35 | 1225 | 0.00387 | 0.6355 | 0.9954 | 116.830 | 58.0 |
+| 0 | `1mi9tvq3` | 0.0197462 | 1 | [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]] | [11, 10] | 21 | [11, 10] | [0.9930656977806188, 0.9926789277872394] | 21 | 441 | 0.00488 | 0.6995 | 0.9940 | 46.491 | 34.0 |
+
+## Success-criteria verdicts (automated)
+
+| Criterion | Verdict | Note |
+|---|---|---|
+| All 6 cells train without divergence | **Unknown** |  |
+| Per-area autodim n_target_dims logged for each n_delays cell | **Unknown** |  |
+| C2 (eigenvalue threshold) passes for at least 4 of 6 cells | **Unknown** |  |
+| Best val traj_loss within 5x of full-obs Cayley winner (~0.0042) | **Unknown** |  |
+
+_Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence._
+
+## Figures
+
+### sweep_overview
+
+![sweep_overview](figures/sweep_overview.png)
+
+### sweep_pareto
+
+![sweep_pareto](figures/sweep_pareto.png)
+
+### reconstruction
+
+![reconstruction](figures/reconstruction.png)
+
+### prediction_windows
+
+![prediction_windows](figures/prediction_windows.png)
+
+### long_trajectory
+
+![long_trajectory](figures/long_trajectory.png)
+
+### mase
+
+![mase](figures/mase.png)
+
+### latent_utilization
+
+![latent_utilization](figures/latent_utilization.png)
+
+### lyapunov
+
+![lyapunov](figures/lyapunov.png)
+
+### lyapunov_top10
+
+![lyapunov_top10](figures/lyapunov_top10.png)
+
+### kaplan_yorke
+
+![kaplan_yorke](figures/kaplan_yorke.png)
+
+### per_run_lyapunov
+
+![per_run_lyapunov](figures/per_run_lyapunov.png)
+
+### per_run_lyapunov_vs_true
+
+![per_run_lyapunov_vs_true](figures/per_run_lyapunov_vs_true.png)
+
+### per_run_lyapunov_relerr
+
+![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
+
+### encoder_decoder_jacobians
+
+![encoder_decoder_jacobians](figures/encoder_decoder_jacobians.png)
+
+### amplification
+
+![amplification](figures/amplification.png)
+
+### kaplan_yorke_pca
+
+![kaplan_yorke_pca](figures/kaplan_yorke_pca.png)
+
+### prediction_detail_latent
+
+![prediction_detail_latent](figures/prediction_detail_latent.png)
+
+### prediction_detail_obs
+
+![prediction_detail_obs](figures/prediction_detail_obs.png)
+
+### tangent_spectrum
+
+![tangent_spectrum](figures/tangent_spectrum.png)
+
+### per_run_tangent_spectrum
+
+![per_run_tangent_spectrum](figures/per_run_tangent_spectrum.png)
+
+## Discussion
+
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+_(to be written)_
+
+## `run_analytics` stdout
+
+<details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
+
+```
+No run_id provided — selecting best run from group 'wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep' ...
+Found 6 total runs in JacobianODE/WMTask_identity_encoder_verification (group=wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  wxe7sas1: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  d4keeqjj: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  1mi9tvq3: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  6leje1og: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  szp2jnl3: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  po289iaq: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including wxe7sas1 (lc=0.0): use_all_runs=True (state=finished)
+  Including d4keeqjj (lc=0.0): use_all_runs=True (state=finished)
+  Including 1mi9tvq3 (lc=0.0): use_all_runs=True (state=finished)
+  Including 6leje1og (lc=0.0): use_all_runs=True (state=finished)
+  Including szp2jnl3 (lc=0.0): use_all_runs=True (state=finished)
+  Including po289iaq (lc=0.0): use_all_runs=True (state=finished)
+Found 6 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=1mi9tvq3
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=6leje1og
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=d4keeqjj
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=po289iaq
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=szp2jnl3
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -> run_id=wxe7sas1
+loaded wmtask RNN model checkpoint 41
+Loading cached wmtask hiddens from /orcd/data/ekmiller/001/eisenaj/ControlJacobians/WMTaskModels/WMSelectionTask__cue_time_0.1__response_time_0.25__enforce_fixation_False/BiologicalRNN__cue_time_0.1__learning_rate_0.0005__max_epochs_42__N1_64__N2_64__tau_0.05__dt_0.02__eig_lower_bound_0.1__init_mode_random/_jacobianode_cache/hiddens__all__epoch41__trials4096__seed42.pt
+n_dims=32, n_latent=32, n_dyn=21, dt=0.0200
+  run=1mi9tvq3: DiagnosticMetrics(one_step_mase=0.6037386655807495, loop_closure_loss=46.490692138671875, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0048845368437469006) (from W&B history)
+  run=6leje1og: DiagnosticMetrics(one_step_mase=0.5177955627441406, loop_closure_loss=91.04327392578125, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00346737471409142) (from W&B history)
+  run=d4keeqjj: DiagnosticMetrics(one_step_mase=0.6029083132743835, loop_closure_loss=116.82996368408203, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0038676063995808363) (from W&B history)
+  run=po289iaq: DiagnosticMetrics(one_step_mase=0.5329155325889587, loop_closure_loss=95.22949981689453, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0033825025893747807) (from W&B history)
+  run=szp2jnl3: DiagnosticMetrics(one_step_mase=0.48567140102386475, loop_closure_loss=66.32778930664062, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003728272393345833) (from W&B history)
+  run=wxe7sas1: DiagnosticMetrics(one_step_mase=0.5608658194541931, loop_closure_loss=100.53578186035156, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.003391801379621029) (from W&B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              po289iaq
+Best loop_closure_weight: 0.0
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.003383
+Criteria applied: ['C1', 'C3']
+Surviving: 6 / 6
+Auto-selected run_id: po289iaq
+
+======================================================================
+PARETO FRONTIER RUNS (4 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  1mi9tvq3           46.490692        0.004885
+  szp2jnl3           66.327789        0.003728
+  6leje1og           91.043274        0.003467
+  po289iaq           95.229500        0.003383 <-- selected
+
+======================================================================
+RANKING METHOD COMPARISON (over 6 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          po289iaq           95.229500        0.003383 <-- active
+  pareto_knee             szp2jnl3           66.327789        0.003728
+  geo_rank                po289iaq           95.229500        0.003383
+  minimax_rank            6leje1og           91.043274        0.003467
+  geo_log_score           1mi9tvq3           46.490692        0.004885
+  minimax_log_score       szp2jnl3           66.327789        0.003728
+======================================================================
+
+Loading run po289iaq from JacobianODE/WMTask_identity_encoder_verification ...
+loaded wmtask RNN model checkpoint 41
+Loading cached wmtask hiddens from /orcd/data/ekmiller/001/eisenaj/ControlJacobians/WMTaskModels/WMSelectionTask__cue_time_0.1__response_time_0.25__enforce_fixation_False/BiologicalRNN__cue_time_0.1__learning_rate_0.0005__max_epochs_42__N1_64__N2_64__tau_0.05__dt_0.02__eig_lower_bound_0.1__init_mode_random/_jacobianode_cache/hiddens__all__epoch41__trials4096__seed42.pt
+Loading checkpoint epoch=38-step=4875.ckpt...
+Train dataset shape: torch.Size([17202, 35, 288])
+Validation dataset shape: torch.Size([4920, 35, 288])
+Test dataset shape: torch.Size([2454, 35, 288])
+Train trajectories dataset shape: torch.Size([2867, 41, 288])
+Validation trajectories dataset shape: torch.Size([820, 41, 288])
+Test trajectories dataset shape: torch.Size([409, 41, 288])
+Loading checkpoint epoch=38-step=4875.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 0.5356
+Free-running MASE:   0.5943
+Computing latent utilization ...
+Entropy-based utilization: 0.889
+Null subspace mean RMS: 6.336765e-02
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (409 test trajs, T=41) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = -0.0865 ± 0.2627
+  λ_2 = -0.5829 ± 0.4024
+  λ_3 = -1.0363 ± 0.4391
+  λ_4 = -1.2589 ± 0.4746
+  λ_5 = -1.6332 ± 0.4053
+  λ_6 = -2.0552 ± 0.5369
+  λ_7 = -2.4625 ± 0.4648
+  λ_8 = -2.8528 ± 0.5254
+  λ_9 = -3.1633 ± 0.5110
+  λ_10 = -3.2768 ± 0.5103
+  λ_11 = -3.4063 ± 0.5356
+  λ_12 = -3.4826 ± 0.5373
+  λ_13 = -3.5418 ± 0.5481
+  λ_14 = -3.5905 ± 0.5513
+  λ_15 = -3.6704 ± 0.5609
+  λ_16 = -3.7542 ± 0.5966
+  λ_17 = -3.8488 ± 0.6201
+  λ_18 = -3.9322 ± 0.6335
+  λ_19 = -4.0250 ± 0.6296
+  λ_20 = -4.1240 ± 0.6333
+  λ_21 = -4.2339 ± 0.6524
+  λ_22 = -4.3899 ± 0.6970
+  λ_23 = -4.5527 ± 0.7132
+  λ_24 = -4.8574 ± 0.7992
+  λ_25 = -5.0969 ± 0.8010
+  λ_26 = -5.3074 ± 0.8671
+  λ_27 = -5.8574 ± 0.9680
+  λ_28 = -6.4686 ± 0.9348
+  λ_29 = -7.1844 ± 1.1894
+  λ_30 = -7.3833 ± 1.1543
+Predicted Lyapunov exponents (full-length, 409 test trajs):
+  λ_1 = -0.1976 ± 0.4230
+  λ_2 = -1.2127 ± 0.4786
+  λ_3 = -1.6231 ± 0.4435
+  λ_4 = -1.9722 ± 0.4738
+  λ_5 = -2.6045 ± 0.4516
+  λ_6 = -2.9213 ± 0.3978
+  λ_7 = -3.3134 ± 0.3895
+  λ_8 = -3.7497 ± 0.4177
+  λ_9 = -4.4601 ± 0.3383
+  λ_10 = -4.6917 ± 0.2864
+  λ_11 = -4.8454 ± 0.2985
+  λ_12 = -4.9802 ± 0.2686
+  λ_13 = -5.0708 ± 0.2812
+  λ_14 = -5.1841 ± 0.2863
+  λ_15 = -5.2743 ± 0.2948
+  λ_16 = -5.3352 ± 0.3102
+  λ_17 = -5.4000 ± 0.3229
+  λ_18 = -5.4739 ± 0.3333
+  λ_19 = -5.5450 ± 0.3306
+  λ_20 = -5.6088 ± 0.3249
+  λ_21 = -5.7081 ± 0.3290
+  λ_22 = -5.8041 ± 0.3516
+  λ_23 = -5.9059 ± 0.3826
+  λ_24 = -6.0359 ± 0.4405
+  λ_25 = -6.2169 ± 0.4941
+  λ_26 = -6.3966 ± 0.5515
+  λ_27 = -6.5658 ± 0.5229
+  λ_28 = -6.8105 ± 0.5018
+  λ_29 = -7.0783 ± 0.5729
+  λ_30 = -7.3287 ± 0.6092
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = -0.6836 ± 0.4470
+  λ_2 = -1.2860 ± 0.4717
+  λ_3 = -1.8796 ± 0.4983
+  λ_4 = -2.5140 ± 0.3383
+  λ_5 = -2.9329 ± 0.4143
+  λ_6 = -3.2778 ± 0.5212
+  λ_7 = -3.7948 ± 0.4446
+  λ_8 = -4.2351 ± 0.4668
+  λ_9 = -4.6672 ± 0.4583
+  λ_10 = -5.0458 ± 0.4531
+  λ_11 = -5.3534 ± 0.4185
+  λ_12 = -5.7506 ± 0.4346
+  λ_13 = -6.2355 ± 0.3491
+  λ_14 = -6.7043 ± 0.5036
+  λ_15 = -7.0414 ± 0.4554
+  λ_16 = -7.3719 ± 0.4648
+  λ_17 = -7.6725 ± 0.4415
+  λ_18 = -7.9667 ± 0.4130
+  λ_19 = -8.2155 ± 0.4290
+  λ_20 = -8.4474 ± 0.4083
+  λ_21 = -8.6400 ± 0.3667
+  λ_22 = -8.8546 ± 0.3395
+  λ_23 = -9.0471 ± 0.3366
+  λ_24 = -9.3642 ± 0.2863
+  λ_25 = -9.5403 ± 0.3009
+  λ_26 = -9.7473 ± 0.3189
+  λ_27 = -9.9780 ± 0.3514
+  λ_28 = -10.2177 ± 0.4331
+  λ_29 = -10.4760 ± 0.4197
+  λ_30 = -10.6968 ± 0.4504
+  λ_31 = -11.0538 ± 0.5425
+  λ_32 = -11.3182 ± 0.5459
+  λ_33 = -11.7806 ± 0.6071
+  λ_34 = -12.3300 ± 0.5244
+  λ_35 = -12.6464 ± 0.5369
+  λ_36 = -13.0198 ± 0.6314
+  λ_37 = -13.3795 ± 0.7073
+  λ_38 = -13.7502 ± 0.7660
+  λ_39 = -14.0682 ± 0.7579
+  λ_40 = -14.3279 ± 0.7619
+  λ_41 = -14.6206 ± 0.8778
+  λ_42 = -15.0213 ± 0.8116
+  λ_43 = -15.3487 ± 0.8488
+  λ_44 = -15.7679 ± 0.8512
+  λ_45 = -16.3535 ± 0.8105
+  λ_46 = -17.2371 ± 0.8420
+  λ_47 = -18.0172 ± 0.6551
+  λ_48 = -18.7348 ± 0.4352
+  λ_49 = -19.1920 ± 0.4388
+  λ_50 = -19.6032 ± 0.3862
+  λ_51 = -19.9849 ± 0.4171
+  λ_52 = -20.2854 ± 0.3677
+  λ_53 = -20.7129 ± 0.4088
+  λ_54 = -21.2293 ± 0.4493
+  λ_55 = -22.1518 ± 0.3711
+  λ_56 = -22.5100 ± 0.3571
+  λ_57 = -22.8264 ± 0.3133
+  λ_58 = -23.1069 ± 0.3495
+  λ_59 = -23.3589 ± 0.3337
+  λ_60 = -23.6276 ± 0.2926
+  λ_61 = -23.8603 ± 0.3155
+  λ_62 = -24.0618 ± 0.3005
+  λ_63 = -24.2152 ± 0.3129
+  λ_64 = -24.3396 ± 0.3136
+  λ_65 = -24.4895 ± 0.3210
+  λ_66 = -24.6115 ± 0.3197
+  λ_67 = -24.7359 ± 0.3269
+  λ_68 = -24.8561 ± 0.3392
+  λ_69 = -24.9753 ± 0.3426
+  λ_70 = -25.1117 ± 0.3497
+  λ_71 = -25.2226 ± 0.3734
+  λ_72 = -25.3357 ± 0.4009
+  λ_73 = -25.4353 ± 0.4172
+  λ_74 = -25.5439 ± 0.4046
+  λ_75 = -25.6332 ± 0.4116
+  λ_76 = -25.7832 ± 0.4585
+  λ_77 = -25.9142 ± 0.4799
+  λ_78 = -26.0449 ± 0.4990
+  λ_79 = -26.1810 ± 0.5037
+  λ_80 = -26.3617 ± 0.4899
+  λ_81 = -26.5171 ± 0.4864
+  λ_82 = -26.6628 ± 0.4753
+  λ_83 = -26.8617 ± 0.4795
+  λ_84 = -27.0282 ± 0.5036
+  λ_85 = -27.2607 ± 0.4846
+  λ_86 = -27.4529 ± 0.4854
+  λ_87 = -27.5733 ± 0.4725
+  λ_88 = -27.7187 ± 0.4967
+  λ_89 = -27.8617 ± 0.5003
+  λ_90 = -27.9895 ± 0.4903
+  λ_91 = -28.1274 ± 0.4923
+  λ_92 = -28.2824 ± 0.4913
+  λ_93 = -28.4072 ± 0.4914
+  λ_94 = -28.5255 ± 0.4695
+  λ_95 = -28.6477 ± 0.4521
+  λ_96 = -28.7842 ± 0.4453
+  λ_97 = -28.9001 ± 0.4403
+  λ_98 = -29.0308 ± 0.4330
+  λ_99 = -29.1511 ± 0.4295
+  λ_100 = -29.2954 ± 0.4247
+  λ_101 = -29.4503 ± 0.4217
+  λ_102 = -29.5753 ± 0.4321
+  λ_103 = -29.6956 ± 0.4539
+  λ_104 = -29.8547 ± 0.4485
+  λ_105 = -29.9992 ± 0.4490
+  λ_106 = -30.1172 ± 0.4378
+  λ_107 = -30.2615 ± 0.4426
+  λ_108 = -30.4062 ± 0.3980
+  λ_109 = -30.5554 ± 0.4003
+  λ_110 = -30.7032 ± 0.3985
+  λ_111 = -30.8743 ± 0.4228
+  λ_112 = -31.0109 ± 0.4336
+  λ_113 = -31.1492 ± 0.4292
+  λ_114 = -31.3023 ± 0.3981
+  λ_115 = -31.4396 ± 0.4097
+  λ_116 = -31.5685 ± 0.3902
+  λ_117 = -31.7302 ± 0.3526
+  λ_118 = -31.8705 ± 0.3050
+  λ_119 = -31.9948 ± 0.3040
+  λ_120 = -32.0998 ± 0.2813
+  λ_121 = -32.2401 ± 0.2718
+  λ_122 = -32.3221 ± 0.2617
+  λ_123 = -32.4282 ± 0.2531
+  λ_124 = -32.5858 ± 0.2272
+  λ_125 = -32.8296 ± 0.2629
+  λ_126 = -33.0206 ± 0.2244
+  λ_127 = -33.2132 ± 0.2160
+  λ_128 = -33.4614 ± 0.3541
+Mean KY dim (predicted): 0.497 ± 0.633
+Mean KY dim (empirical): 0.042 ± 0.210
+Mean KY dim (burn-in):   0.688 ± 1.009
+Computing prediction windows ...
+Windows: 3 — nMSE min=0.0161, median=0.0183, mean=0.0212, max=0.0291
+Computing long-trajectory free-running rollouts ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 288, 288)
+decoder_jacobian: (128, 288, 288)
+Computing amplification loss ...
+Amplification loss — True state: 0.005491
+Amplification loss — Latent:     0.005613
+Computing tangent space spectrum ...
+```
+
+</details>
