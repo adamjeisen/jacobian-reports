@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 # Quick status check for a JacobianODE sweep, run periodically by a /loop.
 #
-# Usage: sweep-status <sweep_group_name>
+# Usage:
+#   sweep-status <exact_group_name>
+#   sweep-status '<glob_pattern>'      # contains *, e.g. '<prefix>_*__stage_b'
 #
-# Steps:
+# Glob form: resolves to the unique matching group in
+# status/overview.json["sweeps"]. Errors if 0 or >1 matches; prints
+# candidates when ambiguous so you can refine.
+#
+# Other steps:
 #   1. git pull --rebase in the repo (sucks in latest controller pushes)
 #   2. report whether the instruction is still in pending/ or has moved
 #      to claimed/
@@ -15,13 +21,40 @@ REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO"
 
 if (( $# < 1 )); then
-  echo "usage: sweep-status <sweep_group_name>" >&2
+  echo "usage: sweep-status <group_name_or_glob>" >&2
   exit 2
 fi
-GROUP="$1"
+PATTERN="$1"
 
 echo "=== git pull ==="
 git pull --rebase 2>&1 | tail -3
+
+# Resolve glob → exact group name via overview.json. Exact strings are
+# passed through unchanged (so old call sites keep working).
+if [[ "$PATTERN" == *"*"* ]]; then
+  echo
+  echo "=== glob resolve ==="
+  GROUP=$(python3 - "$PATTERN" <<'PYEOF'
+import fnmatch, json, sys
+pattern = sys.argv[1]
+o = json.load(open('status/overview.json'))
+matches = [k for k in o.get('sweeps', {}) if fnmatch.fnmatchcase(k, pattern)]
+if len(matches) == 0:
+    print(f"(glob '{pattern}' matched 0 groups in status/overview.json — sweep not yet active?)", file=sys.stderr)
+    sys.exit(3)
+if len(matches) > 1:
+    print(f"(glob '{pattern}' matched {len(matches)} groups; refine):", file=sys.stderr)
+    for m in matches: print(f"  {m}", file=sys.stderr)
+    sys.exit(4)
+print(matches[0])
+PYEOF
+)
+  rc=$?
+  if (( rc != 0 )); then exit $rc; fi
+  echo "resolved: $GROUP"
+else
+  GROUP="$PATTERN"
+fi
 
 echo
 echo "=== instruction file location ==="
