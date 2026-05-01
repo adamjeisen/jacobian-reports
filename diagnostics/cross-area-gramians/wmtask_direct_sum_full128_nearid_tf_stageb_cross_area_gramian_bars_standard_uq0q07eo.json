@@ -1,0 +1,120 @@
+{
+  "run_id": "uq0q07eo",
+  "label": "full128",
+  "k_per_block": [
+    64,
+    64
+  ],
+  "best_traj_val_loss": 0.004076435696333647,
+  "flavor": "standard",
+  "rows": [
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "gt_mean": 2.677903652191162,
+      "gt_std": 0.17699801921844482,
+      "learned_mean": 3.972047805786133,
+      "learned_std": 0.08609384298324585
+    },
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "gt_mean": -7.770848274230957,
+      "gt_std": 0.38264310359954834,
+      "learned_mean": -5.6231842041015625,
+      "learned_std": 0.16644015908241272
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "gt_mean": 4.892991542816162,
+      "gt_std": 0.38331812620162964,
+      "learned_mean": 5.249434471130371,
+      "learned_std": 0.24126006662845612
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "gt_mean": -6.624363422393799,
+      "gt_std": 0.1713450402021408,
+      "learned_mean": -4.215183258056641,
+      "learned_std": 0.16150890290737152
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "gt_mean": 67.53910827636719,
+      "gt_std": 0.34898611903190613,
+      "learned_mean": 77.78335571289062,
+      "learned_std": 4.018843173980713
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "gt_mean": 0.9148820042610168,
+      "gt_std": 0.27522170543670654,
+      "learned_mean": 5.291488170623779,
+      "learned_std": 0.6034195423126221
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "gt_mean": 64.29537200927734,
+      "gt_std": 0.9883386492729187,
+      "learned_mean": 48.030189514160156,
+      "learned_std": 2.5004260540008545
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "gt_mean": 4.44147253036499,
+      "gt_std": 0.7883894443511963,
+      "learned_mean": 4.836087226867676,
+      "learned_std": 0.6568757891654968
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "gt_mean": 5.6457366943359375,
+      "gt_std": 0.2585183084011078,
+      "learned_mean": 4.780052185058594,
+      "learned_std": 0.11291459947824478
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "gt_mean": -6.953768730163574,
+      "gt_std": 0.39874306321144104,
+      "learned_mean": -5.10024881362915,
+      "learned_std": 0.2094019651412964
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "gt_mean": 2.2540078163146973,
+      "gt_std": 0.4199375510215759,
+      "learned_mean": 4.313037872314453,
+      "learned_std": 0.11805227398872375
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "gt_mean": -9.734405517578125,
+      "gt_std": 1.5865752696990967,
+      "learned_mean": -4.478167533874512,
+      "learned_std": 0.23705774545669556
+    }
+  ]
+}

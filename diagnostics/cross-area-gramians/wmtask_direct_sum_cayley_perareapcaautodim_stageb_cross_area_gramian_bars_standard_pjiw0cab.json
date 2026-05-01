@@ -1,0 +1,120 @@
+{
+  "run_id": "pjiw0cab",
+  "label": "cayley_pca99",
+  "k_per_block": [
+    17,
+    14
+  ],
+  "best_traj_val_loss": 0.004203033167868853,
+  "flavor": "standard",
+  "rows": [
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "gt_mean": 2.677903652191162,
+      "gt_std": 0.17699801921844482,
+      "learned_mean": 2.2606053352355957,
+      "learned_std": 0.09849467128515244
+    },
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "gt_mean": -7.770848274230957,
+      "gt_std": 0.38264310359954834,
+      "learned_mean": -4.356805801391602,
+      "learned_std": 0.28347888588905334
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "gt_mean": 4.892991542816162,
+      "gt_std": 0.38331812620162964,
+      "learned_mean": 5.0578179359436035,
+      "learned_std": 0.4249008297920227
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "gt_mean": -6.624363422393799,
+      "gt_std": 0.1713450402021408,
+      "learned_mean": -2.170198440551758,
+      "learned_std": 0.19634754955768585
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "gt_mean": 67.53910827636719,
+      "gt_std": 0.34898611903190613,
+      "learned_mean": 20.309486389160156,
+      "learned_std": 0.6937342882156372
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "gt_mean": 0.9148820042610168,
+      "gt_std": 0.27522170543670654,
+      "learned_mean": 1.2842726707458496,
+      "learned_std": 0.4300693869590759
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "gt_mean": 64.29537200927734,
+      "gt_std": 0.9883386492729187,
+      "learned_mean": 13.356822967529297,
+      "learned_std": 0.8117938041687012
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "gt_mean": 4.44147253036499,
+      "gt_std": 0.7883894443511963,
+      "learned_mean": 3.779250144958496,
+      "learned_std": 0.49684059619903564
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "gt_mean": 5.6457366943359375,
+      "gt_std": 0.2585183084011078,
+      "learned_mean": 4.907395839691162,
+      "learned_std": 0.29271718859672546
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "gt_mean": -6.953768730163574,
+      "gt_std": 0.39874306321144104,
+      "learned_mean": -3.381131172180176,
+      "learned_std": 0.27554410696029663
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "gt_mean": 2.2540078163146973,
+      "gt_std": 0.4199375510215759,
+      "learned_mean": 2.7440743446350098,
+      "learned_std": 0.31678739190101624
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "gt_mean": -9.734405517578125,
+      "gt_std": 1.5865752696990967,
+      "learned_mean": -2.9879915714263916,
+      "learned_std": 0.24406936764717102
+    }
+  ]
+}
