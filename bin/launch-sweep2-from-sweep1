@@ -117,6 +117,13 @@ def main() -> int:
     SWEEP2_YAML.write_text(new)
     log(f"filled TOP3_NDELAYS in {SWEEP2_YAML.name}")
 
+    # Sync JacobianODE first (defensive against race conditions on push).
+    cp = subprocess.run(["git", "-C", str(JACODE), "pull", "--rebase",
+                         "--autostash", "origin", "latent-JacobianODE"],
+                        capture_output=True, text=True)
+    if cp.returncode:
+        log(f"WARN git pull --rebase nonzero (continuing): {cp.stderr}")
+
     rel = SWEEP2_YAML.relative_to(JACODE)
     cp = subprocess.run(["git", "-C", str(JACODE), "add", str(rel)],
                         capture_output=True, text=True)
