@@ -418,6 +418,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777674026.3910317
+      },
+      {
         "group": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep",
         "has_report": true,
         "has_metrics": true,

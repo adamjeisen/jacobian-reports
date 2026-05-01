@@ -1,0 +1,736 @@
+{
+  "group": "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a",
+  "completed_at": "2026-05-01T21:50:31Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep": {
+      "description": "WMTask partial-obs (16 random per area, partial_obs_seed=42) full grid\nsweep: 3 n_delays (top-3 from sweep 1) \u00d7 7 LC \u00d7 3 obs_noise_scale = 63\ncells, with two-stage Stage A \u2192 Stage B culling. Same encoder recipe\nas the full-obs Cayley pca_999 winner (DirectSum + per-area PCA-99\nautodim + Cayley orthogonal mixers + near-identity init + TF-coupled\nLR + split-mode losses), with prediction_steps=20 and seq_length=35\nso n_delays up to 15 fits the 49-frame delay2 window.\n",
+      "hypothesis": "With the top-3 n_delays already identified, this grid is the partial-obs\nanalogue of the full-obs Cayley LC \u00d7 obs_noise sweep that identified\npjiw0cab (LC=1e-4, obs=0, traj=0.0042). Expectation: best partial-obs\ncell within ~3x of pjiw0cab if the recipe ports cleanly. If best is\nmuch worse, the partial-obs sufficient-statistic hypothesis (memory:\nproject_partial_obs_sufficient_statistic.md) needs revisiting at this\nn_observed level.\n",
+      "success_criteria": [
+        "All 63 Stage A cells train without divergence",
+        "Stage A \u2192 Stage B cull keeps approximately 32 cells (cull_fraction=0.5)",
+        "Stage B survivors all reach es2-best.ckpt and es5-best.ckpt",
+        "Best Stage B val traj_loss within 3x of full-obs Cayley pjiw0cab (~0.0042)",
+        "At least one (LC, obs_noise) cell passes C1/C2/C3 validity at each of the 3 n_delays"
+      ]
+    }
+  },
+  "expected_run_count": 63,
+  "hydra": {
+    "experiments": [
+      "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+      "training.trainer_params.max_epochs=20",
+      "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 21,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 22,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 23,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 24,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 25,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 26,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 27,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 28,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 29,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 30,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 31,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 32,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 33,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 34,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 35,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 36,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 37,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 38,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 39,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 40,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 41,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 42,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 43,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 44,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 45,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 46,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 47,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 48,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 49,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 50,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 51,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 52,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 53,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 54,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 55,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 56,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 57,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 58,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 59,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 60,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 61,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 62,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "db13c30",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-01T16:35:17Z"
+}
