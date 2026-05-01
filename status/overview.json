@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-01T07:35:19Z",
+  "last_updated": "2026-05-01T07:40:18Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -528,12 +528,21 @@
       }
     },
     "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 5,
-        "in_flight": 1,
+        "terminal": 6,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 5
+        "effectively_done": 6
+      },
+      "analysis": {
+        "slurm_job_id": "12941884",
+        "dispatched_at": "2026-05-01T07:40:18Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_direct_sum_additive_p30_full128_nearid_tf__lc_x_obsnoisescale_sweep_20260429T234502Z__stage_a": {
