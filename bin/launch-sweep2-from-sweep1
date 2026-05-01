@@ -1,0 +1,151 @@
+#!/usr/bin/env python3
+"""launch-sweep2-from-sweep1 — one-shot glue for the partial-obs Cayley pipeline.
+
+Reads finished cells of Sweep 1 (the n_delays scout, group hardcoded
+below) from wandb, picks the 3 distinct n_delays with the lowest best
+trajectory val_loss, fills the TOP3_NDELAYS placeholder in Sweep 2's
+YAML, commits + pushes JacobianODE, and submits Sweep 2 via the
+existing ~/bin/j-submit-two-stage 20 100. The two-stage controller +
+auto-dispatch handles Stage A → Stage B from there.
+
+Run it once when Sweep 1 is done (in_flight==0 with at least 3 finished
+runs). Calling it again is a no-op if the YAML's placeholder is gone.
+
+Exit codes:
+  0 — launched successfully (or YAML already filled, treated as launched)
+  1 — error (sweep 1 not done, <3 finished cells, missing YAML, etc.)
+"""
+from __future__ import annotations
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+REPORTS = Path("/home/adameisen/Documents/jacobian-analyses")
+JACODE = Path("/home/adameisen/Documents/code/JacobianODE")
+SWEEP1_GROUP = ("wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_"
+                "partialobs16_splitmode_nearid_tf__ndelays_sweep")
+SWEEP2_EXP = ("wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_"
+              "partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep")
+SWEEP2_YAML = JACODE / "JacobianODE/jacobians/conf/experiment" / f"{SWEEP2_EXP}.yaml"
+WANDB_PROJECT = "JacobianODE/WMTask_identity_encoder_verification"
+J_SUBMIT_TWO_STAGE = Path.home() / "bin" / "j-submit-two-stage"
+
+
+def log(m): print(m, flush=True)
+
+
+def sweep1_done() -> tuple[bool, dict]:
+    """True iff sweep 1 has no cells in flight (everything terminal). Pulls
+    fresh status by git-pulling the reports repo first."""
+    subprocess.run(["git", "-C", str(REPORTS), "pull", "--rebase", "--autostash"],
+                   capture_output=True, text=True)
+    o = json.loads((REPORTS / "status" / "overview.json").read_text())
+    s1 = o.get("sweeps", {}).get(SWEEP1_GROUP)
+    if not s1:
+        return False, {"error": "sweep 1 group not in overview.json"}
+    rs = s1.get("runs_summary") or {}
+    return rs.get("in_flight", 0) == 0 and rs.get("terminal", 0) > 0, rs
+
+
+def rank_sweep1():
+    import wandb
+    api = wandb.Api()
+    runs = api.runs(WANDB_PROJECT, filters={"group": SWEEP1_GROUP})
+    rows = []
+    for r in runs:
+        if r.state != "finished":
+            log(f"  skip {r.id}: state={r.state!r}")
+            continue
+        nd = (r.config.get("data", {}).get("train_test_params", {})
+                       .get("delay_embedding_params", {}).get("n_delays"))
+        if nd is None:
+            continue
+        best = r.summary.get("best_trajectory_val_loss")
+        if best is None:
+            try:
+                hist = r.history(keys=["trajectory val_loss"], pandas=False, samples=10000)
+                losses = [h.get("trajectory val_loss") for h in hist
+                          if h.get("trajectory val_loss") is not None]
+                if losses:
+                    best = min(losses)
+            except Exception as e:
+                log(f"  skip {r.id}: history fetch failed: {e}")
+                continue
+        if best is None:
+            continue
+        rows.append((int(nd), float(best), r.id))
+    rows.sort(key=lambda x: x[1])
+    return rows
+
+
+def main() -> int:
+    if not SWEEP2_YAML.exists():
+        log(f"ERROR: sweep 2 YAML missing: {SWEEP2_YAML}")
+        return 1
+
+    text = SWEEP2_YAML.read_text()
+    if "TOP3_NDELAYS" not in text:
+        log("YAML placeholder already filled — assuming sweep 2 is already launched. No-op.")
+        return 0
+
+    done, rs = sweep1_done()
+    if not done:
+        log(f"sweep 1 not yet done; deferring. runs_summary={rs}")
+        return 0
+
+    log(f"Ranking sweep 1 cells (group={SWEEP1_GROUP})...")
+    rows = rank_sweep1()
+    log("All finished cells (lowest loss first):")
+    for nd, loss, rid in rows:
+        log(f"  n_delays={nd:2d}  best_traj_val_loss={loss:.4e}  run={rid}")
+    if len(rows) < 3:
+        log(f"ERROR: only {len(rows)} finished cells with usable loss; need >=3")
+        return 1
+
+    seen = []
+    for nd, _, _ in rows:
+        if nd not in seen:
+            seen.append(nd)
+        if len(seen) == 3:
+            break
+    top3 = sorted(seen)
+    log(f"top3 n_delays (sorted): {top3}")
+
+    new = text.replace("TOP3_NDELAYS", ",".join(str(n) for n in top3))
+    SWEEP2_YAML.write_text(new)
+    log(f"filled TOP3_NDELAYS in {SWEEP2_YAML.name}")
+
+    rel = SWEEP2_YAML.relative_to(JACODE)
+    cp = subprocess.run(["git", "-C", str(JACODE), "add", str(rel)],
+                        capture_output=True, text=True)
+    if cp.returncode:
+        log(f"ERROR git add: {cp.stderr}")
+        return 1
+    msg = (f"sweep 2 (partialobs16 top3nd grid): fill TOP3_NDELAYS="
+           f"{','.join(str(n) for n in top3)} from sweep 1 ranking")
+    cp = subprocess.run(["git", "-C", str(JACODE), "commit", "-m", msg],
+                        capture_output=True, text=True)
+    if cp.returncode:
+        log(f"git commit nonzero (already committed?): {cp.stdout}{cp.stderr}")
+    else:
+        cp = subprocess.run(["git", "-C", str(JACODE), "push", "origin",
+                             "latent-JacobianODE"], capture_output=True, text=True)
+        if cp.returncode:
+            log(f"ERROR git push: {cp.stderr}")
+            return 1
+
+    log(f"running: {J_SUBMIT_TWO_STAGE} {SWEEP2_EXP} 20 100")
+    cp = subprocess.run([str(J_SUBMIT_TWO_STAGE), SWEEP2_EXP, "20", "100"],
+                        capture_output=True, text=True)
+    log(cp.stdout)
+    if cp.returncode:
+        log(f"ERROR j-submit-two-stage exit {cp.returncode}")
+        log(cp.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
