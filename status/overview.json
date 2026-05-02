@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-02T19:10:49Z",
+  "last_updated": "2026-05-02T19:16:06Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -871,10 +871,6 @@
     }
   },
   "pending_instructions": [
-    {
-      "file": "20260502T191046Z-lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_obsnoisescale_sweep-chain-axissel_45-85-10.yaml",
-      "status": "pending"
-    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
@@ -2061,6 +2057,10 @@
     },
     {
       "file": "20260502T073250Z-lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep__chain.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260502T191046Z-lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_obsnoisescale_sweep-chain-axissel_45-85-10.yaml",
       "status": "claimed"
     }
   ]
