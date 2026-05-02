@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-02T07:00:20Z",
+  "last_updated": "2026-05-02T07:05:27Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -526,6 +526,9 @@
         "failed_exhausted": 0,
         "effectively_done": 1
       }
+    },
+    "wmtask_chain_smoke_scout": {
+      "status": "active"
     },
     "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep": {
       "status": "processed",
@@ -2040,6 +2043,10 @@
     },
     {
       "file": "20260501T222207Z-wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep-stage-b-0a2z8yqt.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260502T070342Z-wmtask_chain_smoke_scout__chain.yaml",
       "status": "claimed"
     }
   ]

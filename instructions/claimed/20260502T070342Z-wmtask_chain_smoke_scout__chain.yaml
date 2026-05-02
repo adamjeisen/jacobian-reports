@@ -14,6 +14,14 @@ chain:
   top_k: 1
   type: axis_select
 migrate_to:
-  partition: "mit_normal_gpu"
+  partition: mit_normal_gpu
 submitted_at: 20260502T070342Z
 submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_chain_smoke_scout
+expected_run_count: 2
+slurm_array_id: split
+slurm_submitted_at: '2026-05-02T07:05:19Z'
+split_submission:
+  mit_count: 2
+  ou_bcs_count: 0
+  n_failures: 0
