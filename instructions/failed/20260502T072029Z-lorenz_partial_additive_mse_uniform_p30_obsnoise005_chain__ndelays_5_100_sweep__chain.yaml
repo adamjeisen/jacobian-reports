@@ -17,3 +17,7 @@ migrate_to:
   partition: "mit_normal_gpu"
 submitted_at: 20260502T072029Z
 submitted_from: millerlab-endeavourOS
+
+error: |
+  ERROR: No experiment YAML at /home/eisenaj/code/JacobianODE/JacobianODE/jacobians/conf/experiment/lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep.yaml
+
