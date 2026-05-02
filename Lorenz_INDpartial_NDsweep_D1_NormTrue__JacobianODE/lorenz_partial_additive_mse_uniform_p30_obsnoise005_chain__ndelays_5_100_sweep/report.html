@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE/groups/lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep">Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-05-02T07:35:15Z<br />
+<strong>Completed</strong>: 2026-05-02T18:55:33Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>95677e6</code><br />
+<strong>Expected runs</strong>: 20</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep</code></h3>
+<p><strong>Description</strong></p>
+<p>Lorenz partial additive coupling, uniform reconstruction loss,
+obs_noise=0.05, prediction_steps=30, loop_closure_weight=0.
+Sweeps delay_embedding_params.n_delays over [5, 10, ..., 100] (20
+cells). n_target_dims fixed at 3; encoder.n_input is auto-resolved
+from n_delays × |observed_indices| at Hydra runtime.
+On reap, the chain dispatches the top-3 n_delays into the existing
+<code>splitmode_p30_obsnoise005_top3nd</code> LC × obs_noise grid (108-cell
+Stage A, ~54-cell Stage B).</p>
+<p><strong>Hypothesis</strong></p>
+<p>Bigger n_delays bound (100 vs 50) lets us see whether the optimum
+plateaus at 50 or keeps improving. At obs_noise=0.05, more delays
+average out more noise per delay coordinate.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>All 20 cells train without divergence</li>
+<li>Best traj_loss is monotone-or-curve in n_delays (no random scatter)</li>
+<li>On reap, controller logs '[chain ...] axis_select OK' and grid instruction lands in instructions/pending/</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Swept axes</strong> (2): <code>data.train_test_params.delay_embedding_params.n_delays</code>, <code>model.encoder.n_input</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>9ptb3ina</code> — traj_loss=0.00513, MASE=0.7598, R²=0.9858, LC loss=3.008, epoch=92.0</p>
+<p>Swept-axis values at chosen run: <code>data.train_test_params.delay_embedding_params.n_delays</code>=45 · <code>model.encoder.n_input</code>=45</p>
+<h3>Integrity checks</h3>
+<p>⚠️ <strong>1 run_idx slot(s) had multiple matching wandb runs</strong> — the best by <code>best_traj_loss</code> was kept; the others are listed below for audit:
+  - run_idx=<strong>0</strong>: chose <code>r63wsasd</code>, dropped <code>bokje8d9</code></p>
+<p><strong>Runs analyzed</strong>: 20 (expected 20)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>data.train_test_params.delay_embedding_params.n_delays</code></th>
+<th><code>model.encoder.n_input</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td><code>9ptb3ina</code></td>
+<td>45</td>
+<td>45</td>
+<td>0.00513</td>
+<td>0.7598</td>
+<td>0.9858</td>
+<td>3.008</td>
+<td>92.0</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>n1sgrof7</code></td>
+<td>85</td>
+<td>85</td>
+<td>0.00535</td>
+<td>0.7767</td>
+<td>0.9860</td>
+<td>31.413</td>
+<td>98.0</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>v62wnqgz</code></td>
+<td>75</td>
+<td>75</td>
+<td>0.00560</td>
+<td>0.7895</td>
+<td>0.9849</td>
+<td>50.205</td>
+<td>85.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>k1vjfld7</code></td>
+<td>40</td>
+<td>40</td>
+<td>0.00562</td>
+<td>0.7839</td>
+<td>0.9850</td>
+<td>1.571</td>
+<td>91.0</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>zw2tstb6</code></td>
+<td>50</td>
+<td>50</td>
+<td>0.00596</td>
+<td>0.7975</td>
+<td>0.9841</td>
+<td>1.658</td>
+<td>83.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>ig461nn4</code></td>
+<td>55</td>
+<td>55</td>
+<td>0.00623</td>
+<td>0.8101</td>
+<td>0.9834</td>
+<td>3.703</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>phvs7piu</code></td>
+<td>100</td>
+<td>100</td>
+<td>0.00627</td>
+<td>0.8155</td>
+<td>0.9832</td>
+<td>14.805</td>
+<td>83.0</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>g5fzzzx6</code></td>
+<td>95</td>
+<td>95</td>
+<td>0.00642</td>
+<td>0.8161</td>
+<td>0.9826</td>
+<td>28.041</td>
+<td>76.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>zqz9kfxd</code></td>
+<td>65</td>
+<td>65</td>
+<td>0.00649</td>
+<td>0.7925</td>
+<td>0.9828</td>
+<td>23.533</td>
+<td>107.0</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>6mgla6s9</code></td>
+<td>60</td>
+<td>60</td>
+<td>0.00661</td>
+<td>0.8202</td>
+<td>0.9822</td>
+<td>22.412</td>
+<td>98.0</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>83ydtyam</code></td>
+<td>80</td>
+<td>80</td>
+<td>0.00670</td>
+<td>0.8175</td>
+<td>0.9821</td>
+<td>43.450</td>
+<td>82.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>dtn2of2g</code></td>
+<td>35</td>
+<td>35</td>
+<td>0.00740</td>
+<td>0.8420</td>
+<td>0.9806</td>
+<td>16.896</td>
+<td>81.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>0n8zzm4d</code></td>
+<td>25</td>
+<td>25</td>
+<td>0.00808</td>
+<td>0.8587</td>
+<td>0.9786</td>
+<td>4.055</td>
+<td>99.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>bl160pvy</code></td>
+<td>20</td>
+<td>20</td>
+<td>0.01093</td>
+<td>0.9129</td>
+<td>0.9702</td>
+<td>0.689</td>
+<td>88.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>w2zoejol</code></td>
+<td>15</td>
+<td>15</td>
+<td>0.02172</td>
+<td>1.1077</td>
+<td>0.9428</td>
+<td>0.450</td>
+<td>92.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>s3s1kq5n</code></td>
+<td>10</td>
+<td>10</td>
+<td>0.02297</td>
+<td>1.3028</td>
+<td>0.9390</td>
+<td>0.478</td>
+<td>108.0</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>ss4noj5q</code></td>
+<td>70</td>
+<td>70</td>
+<td>0.03166</td>
+<td>1.2696</td>
+<td>0.9164</td>
+<td>37.780</td>
+<td>25.0</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>r63wsasd</code></td>
+<td>5</td>
+<td>5</td>
+<td>0.07352</td>
+<td>2.4514</td>
+<td>0.8062</td>
+<td>0.445</td>
+<td>114.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>2ess20yo</code></td>
+<td>30</td>
+<td>30</td>
+<td>1.09957</td>
+<td>11.9960</td>
+<td>-1.9394</td>
+<td>2.006</td>
+<td>—</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>reqpr8x8</code></td>
+<td>90</td>
+<td>90</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>16.948</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All 20 cells train without divergence</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best traj_loss is monotone-or-curve in n_delays (no random scatter)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>On reap, controller logs '[chain ...] axis_select OK' and grid instruction lands in instructions/pending/</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>sweep_overview</h3>
+<p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
+<h3>sweep_pareto</h3>
+<p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
+<h3>prediction_windows</h3>
+<p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
+<h3>long_trajectory</h3>
+<p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
+<h3>mase</h3>
+<p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
+<h3>lyapunov</h3>
+<p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
+<h3>kaplan_yorke_pca</h3>
+<p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
+<h3>prediction_detail_latent</h3>
+<p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
+<h3>prediction_detail_obs</h3>
+<p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
+<h3>tangent_spectrum</h3>
+<p><img alt="tangent_spectrum" src="figures/tangent_spectrum.png" /></p>
+<h3>per_run_tangent_spectrum</h3>
+<p><img alt="per_run_tangent_spectrum" src="figures/per_run_tangent_spectrum.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+<h2><code>run_analytics</code> stdout</h2>
+<details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
+
+
+<pre><code>No run_id provided — selecting best run from group 'lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep' ...
+Found 21 total runs in JacobianODE/Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE (group=lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  0n8zzm4d: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  w2zoejol: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  k1vjfld7: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  dtn2of2g: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  2ess20yo: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  bl160pvy: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  9ptb3ina: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  zw2tstb6: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  6mgla6s9: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  ig461nn4: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  zqz9kfxd: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  83ydtyam: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  n1sgrof7: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  g5fzzzx6: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  phvs7piu: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  reqpr8x8: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  bokje8d9: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  r63wsasd: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  s3s1kq5n: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  ss4noj5q: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  v62wnqgz: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including 0n8zzm4d (lc=0.0): use_all_runs=True (state=crashed)
+  Including w2zoejol (lc=0.0): use_all_runs=True (state=crashed)
+  Including k1vjfld7 (lc=0.0): use_all_runs=True (state=crashed)
+  Including dtn2of2g (lc=0.0): use_all_runs=True (state=crashed)
+  Including 2ess20yo (lc=0.0): use_all_runs=True (state=finished)
+  Including bl160pvy (lc=0.0): use_all_runs=True (state=crashed)
+  Including 9ptb3ina (lc=0.0): use_all_runs=True (state=finished)
+  Including zw2tstb6 (lc=0.0): use_all_runs=True (state=crashed)
+  Including 6mgla6s9 (lc=0.0): use_all_runs=True (state=crashed)
+  Including ig461nn4 (lc=0.0): use_all_runs=True (state=crashed)
+  Including zqz9kfxd (lc=0.0): use_all_runs=True (state=crashed)
+  Including 83ydtyam (lc=0.0): use_all_runs=True (state=crashed)
+  Including n1sgrof7 (lc=0.0): use_all_runs=True (state=finished)
+  Including g5fzzzx6 (lc=0.0): use_all_runs=True (state=crashed)
+  Including phvs7piu (lc=0.0): use_all_runs=True (state=crashed)
+  Including reqpr8x8 (lc=0.0): use_all_runs=True (state=crashed)
+  Including bokje8d9 (lc=0.0): use_all_runs=True (state=crashed)
+  Including r63wsasd (lc=0.0): use_all_runs=True (state=crashed)
+  Including s3s1kq5n (lc=0.0): use_all_runs=True (state=finished)
+  Including ss4noj5q (lc=0.0): use_all_runs=True (state=finished)
+  Including v62wnqgz (lc=0.0): use_all_runs=True (state=running)
+Found 21 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=0n8zzm4d
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=2ess20yo
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=6mgla6s9
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=83ydtyam
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=9ptb3ina
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=bl160pvy
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=bokje8d9
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=dtn2of2g
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=g5fzzzx6
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ig461nn4
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=k1vjfld7
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=n1sgrof7
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=phvs7piu
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=r63wsasd
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=reqpr8x8
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=s3s1kq5n
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=ss4noj5q
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=v62wnqgz
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=w2zoejol
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=zqz9kfxd
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=zw2tstb6
+n_dims=25, n_latent=25, n_dyn=3, dt=0.0150
+  run=0n8zzm4d: DiagnosticMetrics(one_step_mase=0.6574689745903015, loop_closure_loss=4.054520130157471, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00808319728821516) (from W&amp;B history)
+  run=2ess20yo: DiagnosticMetrics(one_step_mase=2.2465319633483887, loop_closure_loss=2.005669355392456, fast_eigenvalue_fraction=0.0416666679084301, trajectory_val_loss=1.0995689630508423) (from W&amp;B history)
+  run=6mgla6s9: DiagnosticMetrics(one_step_mase=0.8203098177909851, loop_closure_loss=22.41213607788086, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006613464560359716) (from W&amp;B history)
+  run=83ydtyam: DiagnosticMetrics(one_step_mase=0.8970001935958862, loop_closure_loss=43.450016021728516, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006696376018226147) (from W&amp;B history)
+  run=9ptb3ina: DiagnosticMetrics(one_step_mase=0.7079468369483948, loop_closure_loss=3.008054733276367, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005126113072037697) (from W&amp;B history)
+  run=bl160pvy: DiagnosticMetrics(one_step_mase=0.6329125761985779, loop_closure_loss=0.6890865564346313, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.010930359363555908) (from W&amp;B history)
+  run=bokje8d9: DiagnosticMetrics(one_step_mase=0.7261512279510498, loop_closure_loss=0.4575902819633484, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07571537047624588) (from W&amp;B history)
+  run=dtn2of2g: DiagnosticMetrics(one_step_mase=0.6942533254623413, loop_closure_loss=16.896045684814453, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.007397010922431946) (from W&amp;B history)
+  run=g5fzzzx6: DiagnosticMetrics(one_step_mase=0.9467947483062744, loop_closure_loss=28.040613174438477, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006419679615646601) (from W&amp;B history)
+  run=ig461nn4: DiagnosticMetrics(one_step_mase=0.9808865189552307, loop_closure_loss=3.7034389972686768, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.006226045545190573) (from W&amp;B history)
+  run=k1vjfld7: DiagnosticMetrics(one_step_mase=0.6845749020576477, loop_closure_loss=1.5710924863815308, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005623101722449064) (from W&amp;B history)
+  run=n1sgrof7: DiagnosticMetrics(one_step_mase=0.8698402643203735, loop_closure_loss=31.41326904296875, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005347886122763157) (from W&amp;B history)
+  run=phvs7piu: DiagnosticMetrics(one_step_mase=0.9796512126922607, loop_closure_loss=14.805009841918945, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0062667070887982845) (from W&amp;B history)
+  run=r63wsasd: DiagnosticMetrics(one_step_mase=0.7289502024650574, loop_closure_loss=0.4448773264884949, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.07351799309253693) (from W&amp;B history)
+  run=reqpr8x8: DiagnosticMetrics(one_step_mase=1.075610876083374, loop_closure_loss=135.78948974609375, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.010971247218549252) (from W&amp;B history)
+  run=s3s1kq5n: DiagnosticMetrics(one_step_mase=0.6596358418464661, loop_closure_loss=0.4775063693523407, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.022967839613556862) (from W&amp;B history)
+  run=ss4noj5q: DiagnosticMetrics(one_step_mase=1.0664713382720947, loop_closure_loss=37.77985763549805, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.03165598213672638) (from W&amp;B history)
+  run=v62wnqgz: DiagnosticMetrics(one_step_mase=0.8508985042572021, loop_closure_loss=50.20488357543945, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005598281044512987) (from W&amp;B history)
+  run=w2zoejol: DiagnosticMetrics(one_step_mase=0.6299511790275574, loop_closure_loss=0.4501948952674866, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.02172347530722618) (from W&amp;B history)
+  run=zqz9kfxd: DiagnosticMetrics(one_step_mase=0.8090766072273254, loop_closure_loss=23.533004760742188, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.00648955162614584) (from W&amp;B history)
+  run=zw2tstb6: DiagnosticMetrics(one_step_mase=0.7595682144165039, loop_closure_loss=1.6578952074050903, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.005958148278295994) (from W&amp;B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              k1vjfld7
+Best loop_closure_weight: 0.0
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.005623
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 7 / 21
+Auto-selected run_id: k1vjfld7
+
+======================================================================
+PARETO FRONTIER RUNS (5 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  r63wsasd            0.444877        0.073518
+  w2zoejol            0.450195        0.021723
+  bl160pvy            0.689087        0.010930
+  k1vjfld7            1.571092        0.005623 &lt;-- selected
+  9ptb3ina            3.008055        0.005126
+
+======================================================================
+RANKING METHOD COMPARISON (over 7 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          k1vjfld7            1.571092        0.005623 &lt;-- active
+  pareto_knee             w2zoejol            0.450195        0.021723
+  geo_rank                k1vjfld7            1.571092        0.005623
+  minimax_rank            w2zoejol            0.450195        0.021723
+  geo_log_score           k1vjfld7            1.571092        0.005623
+  minimax_log_score       bl160pvy            0.689087        0.010930
+======================================================================
+
+Loading run k1vjfld7 from JacobianODE/Lorenz_INDpartial_NDsweep_D1_NormTrue__JacobianODE ...
+Loading checkpoint epoch=91-step=18400.ckpt...
+Train dataset shape: torch.Size([24552, 45, 40])
+Validation dataset shape: torch.Size([7812, 45, 40])
+Test dataset shape: torch.Size([3348, 45, 40])
+Train trajectories dataset shape: torch.Size([22, 1161, 40])
+Validation trajectories dataset shape: torch.Size([7, 1161, 40])
+Test trajectories dataset shape: torch.Size([3, 1161, 40])
+Loading checkpoint epoch=91-step=18400.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 0.6942
+Free-running MASE:   0.7497
+Computing latent utilization ...
+Entropy-based utilization: 0.884
+Null subspace mean RMS: 1.043494e-01
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1161) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = +nan ± nan
+  λ_2 = +nan ± nan
+  λ_3 = +nan ± nan
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = +0.1685 ± 0.0305
+  λ_2 = -0.3425 ± 0.1828
+  λ_3 = -8.9733 ± 0.1227
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.4677 ± 0.0259
+  λ_2 = -0.2173 ± 0.0549
+  λ_3 = -13.9174 ± 0.0513
+Mean KY dim (predicted): 1.561 ± 0.181
+Mean KY dim (empirical): 2.018 ± 0.003
+Mean KY dim (burn-in):   1.672 ± 0.502
+Computing prediction windows ...
+Windows: 114 — nMSE min=0.0224, median=0.0372, mean=0.0425, max=0.1596
+Computing long-trajectory free-running rollouts ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 40, 40)
+decoder_jacobian: (128, 40, 40)
+Computing amplification loss ...
+Amplification loss — True state: 0.003431
+Amplification loss — Latent:     0.008702
+Computing tangent space spectrum ...
+</code></pre>
+
+
+</details>
+</body>
+</html>
