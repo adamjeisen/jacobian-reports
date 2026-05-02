@@ -1,0 +1,12 @@
+experiment: lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_obsnoisescale_sweep
+overrides:
+  - "data.train_test_params.delay_embedding_params.n_delays=45,85,10"
+two_stage:
+  cull_fraction: 0.5
+  full_max_epochs: 200
+  metric: "trajectory val_loss"
+  stage_a_epochs: 20
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260502T191046Z
+submitted_from: login006
