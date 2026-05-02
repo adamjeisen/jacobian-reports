@@ -1,0 +1,431 @@
+{
+  "group": "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+  "completed_at": "2026-05-02T02:30:29Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep": {
+      "description": "WMTask partial-obs (16 random per area, partial_obs_seed=42) full grid\nsweep: 3 n_delays (top-3 from sweep 1) \u00d7 7 LC \u00d7 3 obs_noise_scale = 63\ncells, with two-stage Stage A \u2192 Stage B culling. Same encoder recipe\nas the full-obs Cayley pca_999 winner (DirectSum + per-area PCA-99\nautodim + Cayley orthogonal mixers + near-identity init + TF-coupled\nLR + split-mode losses), with prediction_steps=20 and seq_length=35\nso n_delays up to 15 fits the 49-frame delay2 window.\n",
+      "hypothesis": "With the top-3 n_delays already identified, this grid is the partial-obs\nanalogue of the full-obs Cayley LC \u00d7 obs_noise sweep that identified\npjiw0cab (LC=1e-4, obs=0, traj=0.0042). Expectation: best partial-obs\ncell within ~3x of pjiw0cab if the recipe ports cleanly. If best is\nmuch worse, the partial-obs sufficient-statistic hypothesis (memory:\nproject_partial_obs_sufficient_statistic.md) needs revisiting at this\nn_observed level.\n",
+      "success_criteria": [
+        "All 63 Stage A cells train without divergence",
+        "Stage A \u2192 Stage B cull keeps approximately 32 cells (cull_fraction=0.5)",
+        "Stage B survivors all reach es2-best.ckpt and es5-best.ckpt",
+        "Best Stage B val traj_loss within 3x of full-obs Cayley pjiw0cab (~0.0042)",
+        "At least one (LC, obs_noise) cell passes C1/C2/C3 validity at each of the 3 n_delays"
+      ]
+    }
+  },
+  "expected_run_count": 32,
+  "hydra": {
+    "experiments": [
+      "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+      "data.train_test_params.delay_embedding_params.n_delays=6",
+      "training.lightning.loop_closure_weight=0",
+      "training.lightning.obs_noise_scale=0",
+      "training.trainer_params.max_epochs=100",
+      "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+      "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/ea5b8ea7676f1e4e/last.ckpt"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/ea5b8ea7676f1e4e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/4bdadbe914dfd0cb/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/250ba3e607efe585/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/5cea1ce00769376b/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/7ec67a42d1c5dfae/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/e04d172d7c19542d/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/2bcdc935dc22d3a8/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/f79da651d0874c6e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/0911511d700e9cd7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/973df263777ea90a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/e2666e227508e141/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/2dac5b03ce137a4b/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/677ea3f14ae34a5b/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/95d7b552fb866dc3/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/da99c88a3601a925/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/0e5af2045a0589ab/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/3860ebb0ca4ed993/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/b0e54c0f6e7d4591/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/52b2fcee3de921a8/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/b9424ddc769a7242/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/ded53340dfe5edd1/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 21,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/da21574d853db0e7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 22,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/0d4942c70fc7f83c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 23,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/204146faf00a2c7e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 24,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/38764eb8fd379476/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 25,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/834b0ee94afe8d90/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 26,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/ff9ca99adc72a6e3/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 27,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/a5ed59334538761b/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 28,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/87b53ac0da7ee584/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 29,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/d28399ecd4f7fe2d/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 30,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/80d3ffebc62a6fd5/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 31,
+        "experiment": "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_top3nd_nearid_tf__lc_x_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "training.trainer_params.max_epochs=100",
+          "wandb_group=wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a/8f3f1fe599223be4/last.ckpt"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "db13c30",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-01T22:25:18Z"
+}
