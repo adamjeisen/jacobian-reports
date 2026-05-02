@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-02T07:40:27Z",
+  "last_updated": "2026-05-02T07:45:26Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -535,9 +535,6 @@
         "failed_exhausted": 0,
         "effectively_done": 1
       }
-    },
-    "wmtask_chain_smoke_scout": {
-      "status": "active"
     },
     "wmtask_direct_sum_additive_p20_perareapcaautodim_cayley_partialobs16_splitmode_nearid_tf__ndelays_sweep": {
       "status": "processed",
