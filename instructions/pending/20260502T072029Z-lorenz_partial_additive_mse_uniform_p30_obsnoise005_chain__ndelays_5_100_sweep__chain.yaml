@@ -1,0 +1,19 @@
+experiment: lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep
+overrides: []
+chain:
+- axis: data.train_test_params.delay_embedding_params.n_delays
+  metric: trajectory val_loss
+  next_experiment: lorenz_partial_additive_splitmode_p30_obsnoise005_top3nd_init15_autodim__lc_obsnoisescale_sweep
+  next_migrate_to:
+    partition: mit_normal_gpu
+  next_two_stage:
+    cull_fraction: 0.5
+    full_max_epochs: 200
+    metric: trajectory val_loss
+    stage_a_epochs: 20
+  top_k: 3
+  type: axis_select
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260502T072029Z
+submitted_from: millerlab-endeavourOS
