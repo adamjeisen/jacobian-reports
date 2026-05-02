@@ -1,0 +1,19 @@
+experiment: wmtask_chain_smoke_scout
+overrides: []
+chain:
+- axis: data.train_test_params.delay_embedding_params.n_delays
+  metric: trajectory val_loss
+  next_experiment: wmtask_chain_smoke_grid
+  next_migrate_to:
+    partition: mit_normal_gpu
+  next_two_stage:
+    cull_fraction: 0.5
+    full_max_epochs: 2
+    metric: trajectory val_loss
+    stage_a_epochs: 1
+  top_k: 1
+  type: axis_select
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260502T070342Z
+submitted_from: millerlab-endeavourOS
