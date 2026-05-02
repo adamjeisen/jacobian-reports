@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-02T07:30:17Z",
+  "last_updated": "2026-05-02T07:35:26Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -408,6 +408,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 10
+      }
+    },
+    "lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 20,
+        "failed_exhausted": 0,
+        "effectively_done": 0
       }
     },
     "lorenz_partial_additive_mse_uniform_p30_obsnoise005_top3nd_init15_autodim__lc_sweep": {
@@ -2047,6 +2056,10 @@
     },
     {
       "file": "20260502T070342Z-wmtask_chain_smoke_scout__chain.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260502T073250Z-lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep__chain.yaml",
       "status": "claimed"
     }
   ]

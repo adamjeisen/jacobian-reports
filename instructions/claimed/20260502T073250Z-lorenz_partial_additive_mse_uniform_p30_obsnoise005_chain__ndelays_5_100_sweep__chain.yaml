@@ -14,6 +14,14 @@ chain:
   top_k: 3
   type: axis_select
 migrate_to:
-  partition: "mit_normal_gpu"
+  partition: mit_normal_gpu
 submitted_at: 20260502T073250Z
 submitted_from: millerlab-endeavourOS
+wandb_group: lorenz_partial_additive_mse_uniform_p30_obsnoise005_chain__ndelays_5_100_sweep
+expected_run_count: 20
+slurm_array_id: split
+slurm_submitted_at: '2026-05-02T07:35:18Z'
+split_submission:
+  mit_count: 2
+  ou_bcs_count: 18
+  n_failures: 0
