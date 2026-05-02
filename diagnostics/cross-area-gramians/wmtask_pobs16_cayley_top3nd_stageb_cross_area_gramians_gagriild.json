@@ -1,0 +1,262 @@
+{
+  "run_id": "gagriild",
+  "sweep_tag": "wmtask_pobs16_cayley_top3nd_stageb",
+  "k_per_block": [
+    14,
+    11
+  ],
+  "n_delays": 6,
+  "n_observed_per_area": [
+    16,
+    16
+  ],
+  "best_traj_val_loss": 0.003505139844492078,
+  "encoder_J_det_check": {
+    "vis": 0.9999959468841553,
+    "cog": 1.0000022649765015
+  },
+  "standard_terminal_summary": [
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 2.644369602203369,
+      "gt_sem": 0.015314739658543616,
+      "learned_mean": 2.2937510013580322,
+      "learned_sem": 0.013581018508335862
+    },
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -7.771471977233887,
+      "gt_sem": 0.03394492691088229,
+      "learned_mean": -4.612649917602539,
+      "learned_sem": 0.024327097740215266
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 4.875364780426025,
+      "gt_sem": 0.03327050884607916,
+      "learned_mean": 4.713737487792969,
+      "learned_sem": 0.03316066889050371
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -6.624944686889648,
+      "gt_sem": 0.015212462428097836,
+      "learned_mean": -1.976744294166565,
+      "learned_sem": 0.04095694814702234
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 60.330474853515625,
+      "gt_sem": 0.03076146480737713,
+      "learned_mean": 15.46056079864502,
+      "learned_sem": 0.04207596278005477
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": 0.6001334190368652,
+      "gt_sem": 0.021240981685880105,
+      "learned_mean": 1.8622143268585205,
+      "learned_sem": 0.03995888179832602
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 57.587425231933594,
+      "gt_sem": 0.07935419174343256,
+      "learned_mean": 10.734108924865723,
+      "learned_sem": 0.06391295095326152
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": 4.045496463775635,
+      "gt_sem": 0.07026689919928657,
+      "learned_mean": 3.0561258792877197,
+      "learned_sem": 0.0395041278396056
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 5.676562309265137,
+      "gt_sem": 0.022175358878120402,
+      "learned_mean": 4.258849143981934,
+      "learned_sem": 0.02003500625056856
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -6.904923915863037,
+      "gt_sem": 0.041134597113495756,
+      "learned_mean": -3.7945713996887207,
+      "learned_sem": 0.03318910747653643
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 2.2483761310577393,
+      "gt_sem": 0.037465321458095675,
+      "learned_mean": 2.6598997116088867,
+      "learned_sem": 0.028065926232370454
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -9.838244438171387,
+      "gt_sem": 0.12116203207832921,
+      "learned_mean": -2.4142327308654785,
+      "learned_sem": 0.01964719860944065
+    }
+  ],
+  "metric_terminal_summary": [
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 2.644369602203369,
+      "gt_sem": 0.015314739658543616,
+      "learned_mean": 2.656318187713623,
+      "learned_sem": 0.015080478254896956
+    },
+    {
+      "gram": "reach",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -7.771471977233887,
+      "gt_sem": 0.03394492691088229,
+      "learned_mean": -4.320006370544434,
+      "learned_sem": 0.025291188460655745
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 4.875364780426025,
+      "gt_sem": 0.03327050884607916,
+      "learned_mean": 5.2098870277404785,
+      "learned_sem": 0.033729696126427317
+    },
+    {
+      "gram": "reach",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -6.624944686889648,
+      "gt_sem": 0.015212462428097836,
+      "learned_mean": -1.5776365995407104,
+      "learned_sem": 0.04138097968735635
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 60.330474853515625,
+      "gt_sem": 0.03076146480737713,
+      "learned_mean": 15.851568222045898,
+      "learned_sem": 0.04228537729941524
+    },
+    {
+      "gram": "ctrl",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": 0.6001334190368652,
+      "gt_sem": 0.021240981685880105,
+      "learned_mean": 2.171248197555542,
+      "learned_sem": 0.04265740226286484
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 57.587425231933594,
+      "gt_sem": 0.07935419174343256,
+      "learned_mean": 11.229473114013672,
+      "learned_sem": 0.06468442267347312
+    },
+    {
+      "gram": "ctrl",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": 4.045496463775635,
+      "gt_sem": 0.07026689919928657,
+      "learned_mean": 3.506368637084961,
+      "learned_sem": 0.03943095827641266
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 5.676562309265137,
+      "gt_sem": 0.022175358878120402,
+      "learned_mean": 4.587841033935547,
+      "learned_sem": 0.019862142268490143
+    },
+    {
+      "gram": "obs",
+      "dir": "cog\u2192vis",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -6.904923915863037,
+      "gt_sem": 0.041134597113495756,
+      "learned_mean": -3.5044329166412354,
+      "learned_sem": 0.031896179141479866
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "trace",
+      "n_trajectories": 128,
+      "gt_mean": 2.2483761310577393,
+      "gt_sem": 0.037465321458095675,
+      "learned_mean": 3.029564380645752,
+      "learned_sem": 0.026623244876198614
+    },
+    {
+      "gram": "obs",
+      "dir": "vis\u2192cog",
+      "stat": "min",
+      "n_trajectories": 128,
+      "gt_mean": -9.838244438171387,
+      "gt_sem": 0.12116203207832921,
+      "learned_mean": -1.9888546466827393,
+      "learned_sem": 0.01874735680828798
+    }
+  ]
+}
