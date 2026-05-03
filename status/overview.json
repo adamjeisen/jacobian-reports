@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-03T09:33:23Z",
+  "last_updated": "2026-05-03T09:41:25Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -482,6 +482,15 @@
         "effectively_done": 108
       }
     },
+    "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 54,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep": {
       "status": "processed",
       "runs_summary": {
@@ -883,222 +892,6 @@
     }
   },
   "pending_instructions": [
-    {
-      "file": "20260503T093138Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-id6d0nan.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093140Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-xpqhs9r5.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093142Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-365xxmpk.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093144Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3cexp570.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093145Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3nplzrjw.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093147Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-jgms7rny.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093149Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-o032u4j4.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093151Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3nstn66s.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093153Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-b2q4dvxe.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093155Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-eyo7kbrd.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093157Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-klj5tn5w.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093159Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-r5y3m8kt.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093201Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-wizbsqsw.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093203Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-6v59mul9.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093205Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-0enol8sg.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093206Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-60bbpe0s.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093208Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-322zwhto.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093210Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-egrstbam.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093212Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-4o129gpe.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093214Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-r838tfeu.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093216Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-a8rjy7kg.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093218Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-anrfk2i7.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093220Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-pxft8ayf.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093222Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-qj02b8u0.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093224Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-lu9mdd3t.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093226Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-fgorh2u6.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093228Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-0dn67ryj.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093229Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-qk5kwnu4.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093231Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-w4yawenf.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093233Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-onfwfz1d.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093235Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-35v0e7ov.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093237Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-g8e71vju.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093239Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-fuixohqa.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093241Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-45cyq4v1.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093243Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-c2fxqa3c.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093245Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-9xwwuzd1.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093247Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-1r0paozx.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093249Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-jbd5yb6z.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093251Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-n6a0y649.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093253Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-5nr5lua3.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093254Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-0z0avj5k.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093256Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-p5pa20fn.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093258Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-1pthqep1.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093300Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-srme5iw0.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093302Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3eqixatz.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093304Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-08nukj26.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093306Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-623olsmk.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093308Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-q7sb3aet.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093310Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-ugns9mbh.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093312Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-zs23hgfq.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093314Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-31ep3aj1.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093316Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-35s2gm94.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093318Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-h1yhjzto.yaml",
-      "status": "pending"
-    },
-    {
-      "file": "20260503T093320Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-x65g33rr.yaml",
-      "status": "pending"
-    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
@@ -2301,6 +2094,222 @@
     },
     {
       "file": "20260503T045452Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093138Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-id6d0nan.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093140Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-xpqhs9r5.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093142Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-365xxmpk.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093144Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3cexp570.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093145Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3nplzrjw.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093147Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-jgms7rny.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093149Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-o032u4j4.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093151Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3nstn66s.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093153Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-b2q4dvxe.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093155Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-eyo7kbrd.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093157Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-klj5tn5w.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093159Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-r5y3m8kt.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093201Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-wizbsqsw.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093203Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-6v59mul9.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093205Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-0enol8sg.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093206Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-60bbpe0s.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093208Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-322zwhto.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093210Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-egrstbam.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093212Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-4o129gpe.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093214Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-r838tfeu.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093216Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-a8rjy7kg.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093218Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-anrfk2i7.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093220Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-pxft8ayf.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093222Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-qj02b8u0.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093224Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-lu9mdd3t.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093226Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-fgorh2u6.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093228Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-0dn67ryj.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093229Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-qk5kwnu4.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093231Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-w4yawenf.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093233Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-onfwfz1d.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093235Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-35v0e7ov.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093237Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-g8e71vju.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093239Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-fuixohqa.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093241Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-45cyq4v1.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093243Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-c2fxqa3c.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093245Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-9xwwuzd1.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093247Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-1r0paozx.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093249Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-jbd5yb6z.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093251Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-n6a0y649.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093253Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-5nr5lua3.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093254Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-0z0avj5k.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093256Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-p5pa20fn.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093258Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-1pthqep1.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093300Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-srme5iw0.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093302Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-3eqixatz.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093304Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-08nukj26.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093306Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-623olsmk.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093308Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-q7sb3aet.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093310Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-ugns9mbh.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093312Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-zs23hgfq.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093314Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-31ep3aj1.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093316Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-35s2gm94.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093318Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-h1yhjzto.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T093320Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep-stage-b-x65g33rr.yaml",
       "status": "claimed"
     }
   ]

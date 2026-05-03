@@ -1,0 +1,20 @@
+experiment: lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep
+overrides:
+- data.train_test_params.delay_embedding_params.n_delays=75
+- training.lightning.loop_closure_weight=1e-05
+- training.lightning.obs_noise_scale=0
+- training.trainer_params.max_epochs=200
+- wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b
+- +training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/a2d21244f6486470/last.ckpt
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260503T093155Z
+submitted_from: login006
+wandb_group: lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b
+expected_run_count: 10
+slurm_array_id: split-extend
+slurm_submitted_at: '2026-05-03T09:36:18Z'
+split_submission:
+  mit_count: 0
+  ou_bcs_count: 1
+  n_failures: 0
