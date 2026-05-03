@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-03T04:50:20Z",
+  "last_updated": "2026-05-03T04:56:11Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -471,6 +471,15 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 20
+      }
+    },
+    "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 108,
+        "failed_exhausted": 0,
+        "effectively_done": 0
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep": {
@@ -2072,6 +2081,10 @@
     },
     {
       "file": "20260503T014547Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd__lc_obsnoisescale_sweep-chain-axissel_75-45-50.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T045452Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep__two_stage.yaml",
       "status": "claimed"
     }
   ]
