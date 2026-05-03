@@ -1,0 +1,20 @@
+experiment: lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd__lc_obsnoisescale_sweep
+overrides:
+- data.train_test_params.delay_embedding_params.n_delays=75,45,50
+two_stage:
+  cull_fraction: 0.5
+  full_max_epochs: 200
+  metric: trajectory val_loss
+  stage_a_epochs: 20
+migrate_to:
+  partition: mit_normal_gpu
+submitted_at: 20260503T014547Z
+submitted_from: login006
+wandb_group: lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd__lc_obsnoisescale_sweep
+expected_run_count: 108
+slurm_array_id: split
+slurm_submitted_at: '2026-05-03T01:50:58Z'
+split_submission:
+  mit_count: 4
+  ou_bcs_count: 104
+  n_failures: 0

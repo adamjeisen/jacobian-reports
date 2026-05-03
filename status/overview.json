@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-03T01:45:50Z",
+  "last_updated": "2026-05-03T01:51:05Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -473,6 +473,15 @@
         "effectively_done": 20
       }
     },
+    "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd__lc_obsnoisescale_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 108,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      }
+    },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep": {
       "status": "processed",
       "runs_summary": {
@@ -874,10 +883,6 @@
     }
   },
   "pending_instructions": [
-    {
-      "file": "20260503T014547Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd__lc_obsnoisescale_sweep-chain-axissel_75-45-50.yaml",
-      "status": "pending"
-    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
@@ -2072,6 +2077,10 @@
     },
     {
       "file": "20260502T194738Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep__chain.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260503T014547Z-lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd__lc_obsnoisescale_sweep-chain-axissel_75-45-50.yaml",
       "status": "claimed"
     }
   ]
