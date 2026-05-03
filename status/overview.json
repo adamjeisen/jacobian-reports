@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-03T13:10:29Z",
+  "last_updated": "2026-05-03T13:15:30Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -485,10 +485,10 @@
     "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b": {
       "status": "active",
       "runs_summary": {
-        "terminal": 24,
-        "in_flight": 30,
+        "terminal": 26,
+        "in_flight": 28,
         "failed_exhausted": 0,
-        "effectively_done": 24
+        "effectively_done": 26
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_nd75_init15_autodim__lc_sweep": {
