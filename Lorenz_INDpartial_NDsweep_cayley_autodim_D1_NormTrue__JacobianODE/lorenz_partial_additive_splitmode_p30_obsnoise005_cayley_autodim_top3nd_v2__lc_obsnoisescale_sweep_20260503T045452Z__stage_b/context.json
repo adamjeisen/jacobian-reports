@@ -1,0 +1,694 @@
+{
+  "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+  "completed_at": "2026-05-03T18:00:36Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep": {
+      "description": "Lorenz partial additive coupling, Cayley + autodim + split-mode +\nTF-coupled LR. Single observed channel (idx 0), obs_noise=0.05,\nprediction_steps=30, traj_init_steps=15. 108-run grid: 3 n_delays\n(chain-pinned) \u00d7 9 LC weights \u00d7 4 obs_noise_scale values.\n",
+      "hypothesis": "Same noise-injection / LC ramp hypothesis as the prior splitmode\nobsnoise005 grid, now run under the standard Cayley + autodim recipe\nend-to-end so the n_delays choice from the scout transfers cleanly.\n",
+      "success_criteria": [
+        "All 108 Stage A runs train without divergence",
+        "Per-cell autodim n_target_dims logged",
+        "two_stage_cull keeps top ~54 (cull_fraction=0.5)",
+        "Best obs_noise_scale > 0 cell strictly improves vs obs_noise_scale=0 baseline at the same (n_delays, LC) cell on val/trajectory_loss"
+      ]
+    }
+  },
+  "expected_run_count": 54,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+      "data.train_test_params.delay_embedding_params.n_delays=65",
+      "training.lightning.loop_closure_weight=0",
+      "training.lightning.obs_noise_scale=0",
+      "training.trainer_params.max_epochs=200",
+      "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+      "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/fd66dec68d19e5b7/last.ckpt"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/fd66dec68d19e5b7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/94f8b35c2c623c37/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/226028ce880f3e5a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/f9fac93de95a15de/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/a078d33b8344f73a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/8d7d8fe94139aa16/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/c6873eb89e0a8273/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/2df04e3fa0fbf3a7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/0b81e0672bf7ca5c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/a2d21244f6486470/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/ebccc34e6de77b5c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/6bd8bf36346f79e0/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/387ba3ec7a6fa0c6/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/4df2b83c11d3f1e5/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/56926cceabd9cb08/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/cfc0d801b52a5286/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/c869655a88896b02/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/2ccfc8c01df3fd0b/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/69198fcea2a6ff45/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/3d56e5e25c96ace7/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/2eee7c9fed79df25/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 21,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/7e615db08f4d56d6/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 22,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/4d2c9f4d9533308e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 23,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/20fb2a744b2703af/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 24,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/8ecd17d95fae770c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 25,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/2119b66362b1e636/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 26,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/563c458b3d7ec240/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 27,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/8e6ad8a535cde348/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 28,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/d6c534289e80f23e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 29,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/a009083e0b40c1b3/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 30,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/daecb2727b10c462/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 31,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/531e24af5f60e05c/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 32,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/161ad51a1df755c8/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 33,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/7b562cd3e5152aa3/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 34,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/ed2d4604a03fb1bb/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 35,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/fe32108d865a0485/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 36,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/9401cdc9150e0788/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 37,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/33bd3cb733a079da/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 38,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/f899b0d113e19830/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 39,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/c0442d5c87efea80/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 40,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/a7a361a2f6e21622/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 41,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=1e-05",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/6c4db0481487a4c1/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 42,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/f0a9acc0fc6e424a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 43,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=1",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/1d9e16300067f50e/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 44,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.01",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/b28442cc441ed628/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 45,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.0001",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/0aa7eb79a90bdc78/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 46,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.1",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/a8efee72bc115510/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 47,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85",
+          "training.lightning.loop_closure_weight=0.1",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/f85db824ec903a54/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 48,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.1",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/62cf27a31da5a153/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 49,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.1",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/db398e7f91c92e5a/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 50,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=0.1",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/12551106778c3c79/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 51,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65",
+          "training.lightning.loop_closure_weight=10",
+          "training.lightning.obs_noise_scale=0.003",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/6e14759f3e2afe44/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 52,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=1e-06",
+          "training.lightning.obs_noise_scale=0.01",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/cb78516c7f2a1ac8/last.ckpt"
+        ]
+      },
+      {
+        "run_idx": 53,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75",
+          "training.lightning.loop_closure_weight=0.1",
+          "training.lightning.obs_noise_scale=0",
+          "training.trainer_params.max_epochs=200",
+          "wandb_group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b",
+          "+training.ckpt_path=/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/two_stage_ckpts/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a/8250fcbac7b6b8b0/last.ckpt"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDsweep_cayley_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_b"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "56c7aab",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-03T09:35:16Z"
+}
