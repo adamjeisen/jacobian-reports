@@ -1,0 +1,198 @@
+{
+  "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+  "completed_at": "2026-05-03T01:35:24Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep": {
+      "description": "Lorenz partial additive coupling, PCA-99 autodim + split-mode +\nCayley + near-identity init + TF-coupled LR. Single observed channel\n(idx 0), obs_noise=0.05, prediction_steps=30, traj_init_steps=15.\nSweeps delay_embedding_params.n_delays over [5, 10, ..., 100] (20\ncells). n_target_dims is auto-picked per cell from the noisy training\ndelay-embeddings via PCA-99; encoder.n_input is auto-resolved from\nn_delays at Hydra runtime.\nOn reap, the chain dispatches the top-3 n_delays into the Cayley LC\n\u00d7 obs_noise grid sweep `..._cayley_autodim_top3nd__lc_obsnoisescale_sweep`.\n",
+      "hypothesis": "With the standard Cayley + autodim + split-mode recipe, the n_delays\noptimum may shift vs the prior non-Cayley non-autodim scout (which\nfixed n_target_dims=3 and used random permutations). Identity-start\n+ Cayley should give a cleaner curve over n_delays since the encoder\nno longer has random-permutation slop fighting against the dynamics\nMLP. PCA-99 lets the latent dim grow with the embedding dim where\nneeded.\n",
+      "success_criteria": [
+        "All 20 cells train without divergence",
+        "Per-cell autodim n_target_dims logged (expect growth with n_delays)",
+        "Best traj_loss is monotone-or-curve in n_delays (no random scatter)",
+        "On reap, controller logs '[chain ...] axis_select OK' and grid instruction lands in instructions/pending/"
+      ],
+      "chain": [
+        {
+          "type": "axis_select",
+          "axis": "data.train_test_params.delay_embedding_params.n_delays",
+          "top_k": 3,
+          "metric": "trajectory val_loss",
+          "next_experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd__lc_obsnoisescale_sweep",
+          "next_two_stage": {
+            "stage_a_epochs": 20,
+            "full_max_epochs": 200,
+            "cull_fraction": 0.5,
+            "metric": "trajectory val_loss"
+          },
+          "next_migrate_to": {
+            "partition": "mit_normal_gpu"
+          }
+        }
+      ]
+    }
+  },
+  "expected_run_count": 20,
+  "hydra": {
+    "experiments": [
+      "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=5"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=10"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=20"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=25"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=30"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=35"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=40"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=45"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=50"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=55"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=60"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=65"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=70"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=75"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=80"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=85"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=90"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=95"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=100"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "Lorenz_INDpartial_NDsweep_cayley_autodim_D1_NormTrue__JacobianODE",
+    "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "41023f1",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-02T19:50:17Z"
+}

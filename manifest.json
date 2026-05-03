@@ -423,6 +423,15 @@
         "report_mtime": 1776710752.9302557
       }
     ],
+    "Lorenz_INDpartial_NDsweep_cayley_autodim_D1_NormTrue__JacobianODE": [
+      {
+        "group": "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777772726.3164742
+      }
+    ],
     "WMTask_identity_encoder_verification": [
       {
         "group": "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_b",

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/Lorenz_INDpartial_NDsweep_cayley_autodim_D1_NormTrue__JacobianODE/groups/lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep">Lorenz_INDpartial_NDsweep_cayley_autodim_D1_NormTrue__JacobianODE</a><br />
+<strong>Launched</strong>: 2026-05-02T19:50:17Z<br />
+<strong>Completed</strong>: 2026-05-03T01:35:24Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>41023f1</code><br />
+<strong>Expected runs</strong>: 20</p>
+<h2>Experiment Context</h2>
+<h3><code>lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep</code></h3>
+<p><strong>Description</strong></p>
+<p>Lorenz partial additive coupling, PCA-99 autodim + split-mode +
+Cayley + near-identity init + TF-coupled LR. Single observed channel
+(idx 0), obs_noise=0.05, prediction_steps=30, traj_init_steps=15.
+Sweeps delay_embedding_params.n_delays over [5, 10, ..., 100] (20
+cells). n_target_dims is auto-picked per cell from the noisy training
+delay-embeddings via PCA-99; encoder.n_input is auto-resolved from
+n_delays at Hydra runtime.
+On reap, the chain dispatches the top-3 n_delays into the Cayley LC
+× obs_noise grid sweep <code>..._cayley_autodim_top3nd__lc_obsnoisescale_sweep</code>.</p>
+<p><strong>Hypothesis</strong></p>
+<p>With the standard Cayley + autodim + split-mode recipe, the n_delays
+optimum may shift vs the prior non-Cayley non-autodim scout (which
+fixed n_target_dims=3 and used random permutations). Identity-start
++ Cayley should give a cleaner curve over n_delays since the encoder
+no longer has random-permutation slop fighting against the dynamics
+MLP. PCA-99 lets the latent dim grow with the embedding dim where
+needed.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>All 20 cells train without divergence</li>
+<li>Per-cell autodim n_target_dims logged (expect growth with n_delays)</li>
+<li>Best traj_loss is monotone-or-curve in n_delays (no random scatter)</li>
+<li>On reap, controller logs '[chain ...] axis_select OK' and grid instruction lands in instructions/pending/</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Swept axes</strong> (22): <code>data.train_test_params.delay_embedding_params.n_delays</code>, <code>model.encoder.n_input</code>, <code>model.n_target_dims</code>, <code>model.n_target_dims_pca_auto</code>, <code>model.n_target_dims_pca_cum_var</code>, <code>model.params.input_dim</code>, <code>model.params.output_dim</code>, <code>training.lightning.cosine_T_max</code>, <code>training.lightning.diffeomorphism_weight</code>, <code>training.lightning.latent_noise_per_step</code>, <code>training.lightning.latent_noise_scale</code>, <code>training.lightning.learn_fnn_weight</code>, <code>training.lightning.learn_jac_cons_weight</code>, <code>training.lightning.learn_jac_norm_weight</code>, <code>training.lightning.learn_loop_closure_weight</code>, <code>training.lightning.learn_r2_weight</code>, <code>training.lightning.log_var_init</code>, <code>training.lightning.loop_closure_int_method</code>, <code>training.lightning.precompute_latent_noise_factor</code>, <code>training.lightning.tangent_entropy_mode</code>, <code>training.lightning.tangent_entropy_n_samples</code>, <code>training.lightning.tangent_entropy_weight</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>6pt0eef4</code> — traj_loss=0.00514, MASE=0.7603, R²=0.9866, LC loss=30.974, epoch=107.0</p>
+<p>Swept-axis values at chosen run: <code>data.train_test_params.delay_embedding_params.n_delays</code>=85 · <code>model.encoder.n_input</code>=85 · <code>model.n_target_dims</code>=14 · <code>model.n_target_dims_pca_auto</code>=14 · <code>model.n_target_dims_pca_cum_var</code>=0.990074 · <code>model.params.input_dim</code>=14 · <code>model.params.output_dim</code>=196 · <code>training.lightning.cosine_T_max</code>=100 · <code>training.lightning.diffeomorphism_weight</code>=0 · <code>training.lightning.latent_noise_per_step</code>=False · <code>training.lightning.latent_noise_scale</code>=0 · <code>training.lightning.learn_fnn_weight</code>=False · <code>training.lightning.learn_jac_cons_weight</code>=False · <code>training.lightning.learn_jac_norm_weight</code>=False · <code>training.lightning.learn_loop_closure_weight</code>=False · <code>training.lightning.learn_r2_weight</code>=False · <code>training.lightning.log_var_init</code>=auto · <code>training.lightning.loop_closure_int_method</code>=Trapezoid · <code>training.lightning.precompute_latent_noise_factor</code>=True · <code>training.lightning.tangent_entropy_mode</code>=quadratic · <code>training.lightning.tangent_entropy_n_samples</code>=256 · <code>training.lightning.tangent_entropy_weight</code>=0</p>
+<p><strong>Runs analyzed</strong>: 20 (expected 20)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>data.train_test_params.delay_embedding_params.n_delays</code></th>
+<th><code>model.encoder.n_input</code></th>
+<th><code>model.n_target_dims</code></th>
+<th><code>model.n_target_dims_pca_auto</code></th>
+<th><code>model.n_target_dims_pca_cum_var</code></th>
+<th><code>model.params.input_dim</code></th>
+<th><code>model.params.output_dim</code></th>
+<th><code>training.lightning.cosine_T_max</code></th>
+<th><code>training.lightning.diffeomorphism_weight</code></th>
+<th><code>training.lightning.latent_noise_per_step</code></th>
+<th><code>training.lightning.latent_noise_scale</code></th>
+<th><code>training.lightning.learn_fnn_weight</code></th>
+<th><code>training.lightning.learn_jac_cons_weight</code></th>
+<th><code>training.lightning.learn_jac_norm_weight</code></th>
+<th><code>training.lightning.learn_loop_closure_weight</code></th>
+<th><code>training.lightning.learn_r2_weight</code></th>
+<th><code>training.lightning.log_var_init</code></th>
+<th><code>training.lightning.loop_closure_int_method</code></th>
+<th><code>training.lightning.precompute_latent_noise_factor</code></th>
+<th><code>training.lightning.tangent_entropy_mode</code></th>
+<th><code>training.lightning.tangent_entropy_n_samples</code></th>
+<th><code>training.lightning.tangent_entropy_weight</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td><code>6pt0eef4</code></td>
+<td>85</td>
+<td>85</td>
+<td>14</td>
+<td>14</td>
+<td>0.990074</td>
+<td>14</td>
+<td>196</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00514</td>
+<td>0.7603</td>
+<td>0.9866</td>
+<td>30.974</td>
+<td>107.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>z6rq7a88</code></td>
+<td>65</td>
+<td>65</td>
+<td>11</td>
+<td>11</td>
+<td>0.990219</td>
+<td>11</td>
+<td>121</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00537</td>
+<td>0.7667</td>
+<td>0.9857</td>
+<td>19.869</td>
+<td>109.0</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>4a0qqu1o</code></td>
+<td>75</td>
+<td>75</td>
+<td>12</td>
+<td>12</td>
+<td>0.990036</td>
+<td>12</td>
+<td>144</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00570</td>
+<td>0.7839</td>
+<td>0.9846</td>
+<td>23.872</td>
+<td>72.0</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>3cwrrjbb</code></td>
+<td>90</td>
+<td>90</td>
+<td>15</td>
+<td>15</td>
+<td>0.990087</td>
+<td>15</td>
+<td>225</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00572</td>
+<td>0.7846</td>
+<td>0.9847</td>
+<td>22.492</td>
+<td>108.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>o0fzjaqg</code></td>
+<td>55</td>
+<td>55</td>
+<td>9</td>
+<td>9</td>
+<td>0.990192</td>
+<td>9</td>
+<td>81</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00574</td>
+<td>0.7868</td>
+<td>0.9847</td>
+<td>35.921</td>
+<td>114.0</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>b6rqlpix</code></td>
+<td>100</td>
+<td>100</td>
+<td>17</td>
+<td>17</td>
+<td>0.990106</td>
+<td>17</td>
+<td>289</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00585</td>
+<td>0.7914</td>
+<td>0.9843</td>
+<td>19.076</td>
+<td>103.0</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>01ngc7hg</code></td>
+<td>60</td>
+<td>60</td>
+<td>10</td>
+<td>10</td>
+<td>0.990208</td>
+<td>10</td>
+<td>100</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00599</td>
+<td>0.7923</td>
+<td>0.9839</td>
+<td>22.288</td>
+<td>108.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>j0xl13ov</code></td>
+<td>30</td>
+<td>30</td>
+<td>5</td>
+<td>5</td>
+<td>0.990271</td>
+<td>5</td>
+<td>25</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00628</td>
+<td>0.8104</td>
+<td>0.9833</td>
+<td>26.403</td>
+<td>103.0</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>7cd0v85y</code></td>
+<td>80</td>
+<td>80</td>
+<td>13</td>
+<td>13</td>
+<td>0.990058</td>
+<td>13</td>
+<td>169</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00639</td>
+<td>0.7958</td>
+<td>0.9830</td>
+<td>21.745</td>
+<td>105.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>2g14oxfz</code></td>
+<td>40</td>
+<td>40</td>
+<td>7</td>
+<td>7</td>
+<td>0.990472</td>
+<td>7</td>
+<td>49</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00647</td>
+<td>0.7993</td>
+<td>0.9828</td>
+<td>14.463</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>l8eqint7</code></td>
+<td>35</td>
+<td>35</td>
+<td>6</td>
+<td>6</td>
+<td>0.990408</td>
+<td>6</td>
+<td>36</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00653</td>
+<td>0.7997</td>
+<td>0.9828</td>
+<td>12.577</td>
+<td>108.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>dvd4m4j6</code></td>
+<td>45</td>
+<td>45</td>
+<td>7</td>
+<td>7</td>
+<td>0.990085</td>
+<td>7</td>
+<td>49</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00684</td>
+<td>0.8164</td>
+<td>0.9807</td>
+<td>10.715</td>
+<td>41.0</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>00uwjk1l</code></td>
+<td>50</td>
+<td>50</td>
+<td>8</td>
+<td>8</td>
+<td>0.990154</td>
+<td>8</td>
+<td>64</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00717</td>
+<td>0.8150</td>
+<td>0.9806</td>
+<td>30.240</td>
+<td>74.0</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>yv4qyo8g</code></td>
+<td>70</td>
+<td>70</td>
+<td>11</td>
+<td>11</td>
+<td>0.990007</td>
+<td>11</td>
+<td>121</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00773</td>
+<td>0.8025</td>
+<td>0.9795</td>
+<td>30.263</td>
+<td>70.0</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>4dg41gx9</code></td>
+<td>95</td>
+<td>95</td>
+<td>16</td>
+<td>16</td>
+<td>0.990098</td>
+<td>16</td>
+<td>256</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00830</td>
+<td>0.8565</td>
+<td>0.9776</td>
+<td>18.250</td>
+<td>47.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>agayvyh6</code></td>
+<td>25</td>
+<td>25</td>
+<td>5</td>
+<td>5</td>
+<td>0.990796</td>
+<td>5</td>
+<td>25</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.00971</td>
+<td>0.8971</td>
+<td>0.9744</td>
+<td>7.508</td>
+<td>109.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>dlnfq59a</code></td>
+<td>20</td>
+<td>20</td>
+<td>4</td>
+<td>4</td>
+<td>0.990715</td>
+<td>4</td>
+<td>16</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>0.01155</td>
+<td>0.9457</td>
+<td>0.9688</td>
+<td>12.392</td>
+<td>126.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>0kq9y1x2</code></td>
+<td>15</td>
+<td>15</td>
+<td>3</td>
+<td>3</td>
+<td>0.990585</td>
+<td>3</td>
+<td>9</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>0.02247</td>
+<td>1.1464</td>
+<td>0.9406</td>
+<td>0.512</td>
+<td>93.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>kgcwcd7m</code></td>
+<td>10</td>
+<td>10</td>
+<td>3</td>
+<td>3</td>
+<td>0.991956</td>
+<td>3</td>
+<td>9</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.02472</td>
+<td>1.3354</td>
+<td>0.9343</td>
+<td>0.275</td>
+<td>89.0</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>imwiz3cy</code></td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+<td>0.993071</td>
+<td>2</td>
+<td>4</td>
+<td>100</td>
+<td>0</td>
+<td>False</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>auto</td>
+<td>Trapezoid</td>
+<td>True</td>
+<td>quadratic</td>
+<td>256</td>
+<td>0</td>
+<td>0.06177</td>
+<td>2.2958</td>
+<td>0.8371</td>
+<td>0.224</td>
+<td>151.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All 20 cells train without divergence</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Per-cell autodim n_target_dims logged (expect growth with n_delays)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Best traj_loss is monotone-or-curve in n_delays (no random scatter)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>On reap, controller logs '[chain ...] axis_select OK' and grid instruction lands in instructions/pending/</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>sweep_overview</h3>
+<p><img alt="sweep_overview" src="figures/sweep_overview.png" /></p>
+<h3>sweep_pareto</h3>
+<p><img alt="sweep_pareto" src="figures/sweep_pareto.png" /></p>
+<h3>reconstruction</h3>
+<p><img alt="reconstruction" src="figures/reconstruction.png" /></p>
+<h3>prediction_windows</h3>
+<p><img alt="prediction_windows" src="figures/prediction_windows.png" /></p>
+<h3>long_trajectory</h3>
+<p><img alt="long_trajectory" src="figures/long_trajectory.png" /></p>
+<h3>mase</h3>
+<p><img alt="mase" src="figures/mase.png" /></p>
+<h3>latent_utilization</h3>
+<p><img alt="latent_utilization" src="figures/latent_utilization.png" /></p>
+<h3>lyapunov</h3>
+<p><img alt="lyapunov" src="figures/lyapunov.png" /></p>
+<h3>kaplan_yorke</h3>
+<p><img alt="kaplan_yorke" src="figures/kaplan_yorke.png" /></p>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h3>encoder_decoder_jacobians</h3>
+<p><img alt="encoder_decoder_jacobians" src="figures/encoder_decoder_jacobians.png" /></p>
+<h3>amplification</h3>
+<p><img alt="amplification" src="figures/amplification.png" /></p>
+<h3>kaplan_yorke_pca</h3>
+<p><img alt="kaplan_yorke_pca" src="figures/kaplan_yorke_pca.png" /></p>
+<h3>prediction_detail_latent</h3>
+<p><img alt="prediction_detail_latent" src="figures/prediction_detail_latent.png" /></p>
+<h3>prediction_detail_obs</h3>
+<p><img alt="prediction_detail_obs" src="figures/prediction_detail_obs.png" /></p>
+<h3>tangent_spectrum</h3>
+<p><img alt="tangent_spectrum" src="figures/tangent_spectrum.png" /></p>
+<h3>per_run_tangent_spectrum</h3>
+<p><img alt="per_run_tangent_spectrum" src="figures/per_run_tangent_spectrum.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+<h2><code>run_analytics</code> stdout</h2>
+<details><summary>Click to expand — full diagnostic output from <code>run_analytics</code></summary>
+
+
+<pre><code>No run_id provided — selecting best run from group 'lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep' ...
+Found 20 total runs in JacobianODE/Lorenz_INDpartial_NDsweep_cayley_autodim_D1_NormTrue__JacobianODE (group=lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_chain__ndelays_5_100_sweep)
+All runs (state, loop_closure_weight, tangent_entropy_weight, kl_dyn_weight):
+  agayvyh6: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  j0xl13ov: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  imwiz3cy: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  kgcwcd7m: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  l8eqint7: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  00uwjk1l: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  o0fzjaqg: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  4dg41gx9: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  z6rq7a88: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  01ngc7hg: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  dvd4m4j6: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  3cwrrjbb: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  4a0qqu1o: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  6pt0eef4: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  7cd0v85y: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  yv4qyo8g: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  2g14oxfz: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  b6rqlpix: state=crashed, lc=0.0, te=0.0, kl_dyn=0.0
+  0kq9y1x2: state=finished, lc=0.0, te=0.0, kl_dyn=0.0
+  dlnfq59a: state=running, lc=0.0, te=0.0, kl_dyn=0.0
+
+slurm_timeout_min not found in any run config — falling back to 180 min
+  Including agayvyh6 (lc=0.0): use_all_runs=True (state=crashed)
+  Including j0xl13ov (lc=0.0): use_all_runs=True (state=crashed)
+  Including imwiz3cy (lc=0.0): use_all_runs=True (state=crashed)
+  Including kgcwcd7m (lc=0.0): use_all_runs=True (state=finished)
+  Including l8eqint7 (lc=0.0): use_all_runs=True (state=crashed)
+  Including 00uwjk1l (lc=0.0): use_all_runs=True (state=finished)
+  Including o0fzjaqg (lc=0.0): use_all_runs=True (state=crashed)
+  Including 4dg41gx9 (lc=0.0): use_all_runs=True (state=finished)
+  Including z6rq7a88 (lc=0.0): use_all_runs=True (state=crashed)
+  Including 01ngc7hg (lc=0.0): use_all_runs=True (state=crashed)
+  Including dvd4m4j6 (lc=0.0): use_all_runs=True (state=finished)
+  Including 3cwrrjbb (lc=0.0): use_all_runs=True (state=crashed)
+  Including 4a0qqu1o (lc=0.0): use_all_runs=True (state=finished)
+  Including 6pt0eef4 (lc=0.0): use_all_runs=True (state=crashed)
+  Including 7cd0v85y (lc=0.0): use_all_runs=True (state=crashed)
+  Including yv4qyo8g (lc=0.0): use_all_runs=True (state=crashed)
+  Including 2g14oxfz (lc=0.0): use_all_runs=True (state=crashed)
+  Including b6rqlpix (lc=0.0): use_all_runs=True (state=crashed)
+  Including 0kq9y1x2 (lc=0.0): use_all_runs=True (state=finished)
+  Including dlnfq59a (lc=0.0): use_all_runs=True (state=running)
+Found 20 effectively-done sweep runs:
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=00uwjk1l
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=01ngc7hg
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=0kq9y1x2
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=2g14oxfz
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=3cwrrjbb
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=4a0qqu1o
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=4dg41gx9
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=6pt0eef4
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=7cd0v85y
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=agayvyh6
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=b6rqlpix
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=dlnfq59a
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=dvd4m4j6
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=imwiz3cy
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=j0xl13ov
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=kgcwcd7m
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=l8eqint7
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=o0fzjaqg
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=yv4qyo8g
+  loop_closure_weight=0.0, tangent_entropy_weight=0.0, kl_dyn_weight=0.0 -&gt; run_id=z6rq7a88
+n_dims=50, n_latent=50, n_dyn=8, dt=0.0150
+  run=00uwjk1l: DiagnosticMetrics(one_step_mase=0.6754624247550964, loop_closure_loss=30.240192413330078, fast_eigenvalue_fraction=0.5, trajectory_val_loss=0.007172144018113613) (from W&amp;B history)
+  run=01ngc7hg: DiagnosticMetrics(one_step_mase=0.6466826796531677, loop_closure_loss=22.28786849975586, fast_eigenvalue_fraction=0.4000000059604645, trajectory_val_loss=0.005989021621644497) (from W&amp;B history)
+  run=0kq9y1x2: DiagnosticMetrics(one_step_mase=0.6322402954101562, loop_closure_loss=0.5119985938072205, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.02247111313045025) (from W&amp;B history)
+  run=2g14oxfz: DiagnosticMetrics(one_step_mase=0.6418149471282959, loop_closure_loss=14.462990760803223, fast_eigenvalue_fraction=0.4285714328289032, trajectory_val_loss=0.006465525832027197) (from W&amp;B history)
+  run=3cwrrjbb: DiagnosticMetrics(one_step_mase=0.6461144685745239, loop_closure_loss=22.491716384887695, fast_eigenvalue_fraction=0.46666666865348816, trajectory_val_loss=0.0057178218849003315) (from W&amp;B history)
+  run=4a0qqu1o: DiagnosticMetrics(one_step_mase=0.6601777076721191, loop_closure_loss=23.872220993041992, fast_eigenvalue_fraction=0.4791666567325592, trajectory_val_loss=0.005702839698642492) (from W&amp;B history)
+  run=4dg41gx9: DiagnosticMetrics(one_step_mase=0.6501593589782715, loop_closure_loss=18.249780654907227, fast_eigenvalue_fraction=0.5, trajectory_val_loss=0.00830024853348732) (from W&amp;B history)
+  run=6pt0eef4: DiagnosticMetrics(one_step_mase=0.6616532802581787, loop_closure_loss=30.973756790161133, fast_eigenvalue_fraction=0.4821428656578064, trajectory_val_loss=0.005142477806657553) (from W&amp;B history)
+  run=7cd0v85y: DiagnosticMetrics(one_step_mase=0.655305027961731, loop_closure_loss=21.744522094726562, fast_eigenvalue_fraction=0.3076923191547394, trajectory_val_loss=0.006391320843249559) (from W&amp;B history)
+  run=agayvyh6: DiagnosticMetrics(one_step_mase=0.6323376893997192, loop_closure_loss=7.5076093673706055, fast_eigenvalue_fraction=0.4000000059604645, trajectory_val_loss=0.009711140766739845) (from W&amp;B history)
+  run=b6rqlpix: DiagnosticMetrics(one_step_mase=0.6486927270889282, loop_closure_loss=19.075916290283203, fast_eigenvalue_fraction=0.47058823704719543, trajectory_val_loss=0.00585276260972023) (from W&amp;B history)
+  run=dlnfq59a: DiagnosticMetrics(one_step_mase=0.6651644110679626, loop_closure_loss=12.391884803771973, fast_eigenvalue_fraction=0.5, trajectory_val_loss=0.011546650901436806) (from W&amp;B history)
+  run=dvd4m4j6: DiagnosticMetrics(one_step_mase=0.6522124409675598, loop_closure_loss=10.714605331420898, fast_eigenvalue_fraction=0.3928571343421936, trajectory_val_loss=0.006839513313025236) (from W&amp;B history)
+  run=imwiz3cy: DiagnosticMetrics(one_step_mase=0.6283477544784546, loop_closure_loss=0.2242143303155899, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.0617748387157917) (from W&amp;B history)
+  run=j0xl13ov: DiagnosticMetrics(one_step_mase=0.6471287608146667, loop_closure_loss=26.403085708618164, fast_eigenvalue_fraction=0.3499999940395355, trajectory_val_loss=0.006280282512307167) (from W&amp;B history)
+  run=kgcwcd7m: DiagnosticMetrics(one_step_mase=0.6431223154067993, loop_closure_loss=0.27470678091049194, fast_eigenvalue_fraction=0.0, trajectory_val_loss=0.024723567068576813) (from W&amp;B history)
+  run=l8eqint7: DiagnosticMetrics(one_step_mase=0.636674702167511, loop_closure_loss=12.576972961425781, fast_eigenvalue_fraction=0.3333333432674408, trajectory_val_loss=0.006532621569931507) (from W&amp;B history)
+  run=o0fzjaqg: DiagnosticMetrics(one_step_mase=0.6528958678245544, loop_closure_loss=35.92095184326172, fast_eigenvalue_fraction=0.4444444477558136, trajectory_val_loss=0.005740104243159294) (from W&amp;B history)
+  run=yv4qyo8g: DiagnosticMetrics(one_step_mase=0.64963698387146, loop_closure_loss=30.262615203857422, fast_eigenvalue_fraction=0.3636363744735718, trajectory_val_loss=0.00772519176825881) (from W&amp;B history)
+  run=z6rq7a88: DiagnosticMetrics(one_step_mase=0.6396624445915222, loop_closure_loss=19.86850929260254, fast_eigenvalue_fraction=0.4545454680919647, trajectory_val_loss=0.005368427839130163) (from W&amp;B history)
+
+Ranking method:           best_traj_loss
+Best run ID:              0kq9y1x2
+Best loop_closure_weight: 0.0
+Best tangent_entropy_weight: 0.0
+Best kl_dyn_weight:       0.0
+Best traj loss:           0.022471
+Criteria applied: ['C1', 'C2', 'C3']
+Surviving: 3 / 20
+Auto-selected run_id: 0kq9y1x2
+
+======================================================================
+PARETO FRONTIER RUNS (10 runs)
+======================================================================
+  Run ID               LC Loss   Traj Val Loss
+  ------------  --------------  --------------
+  imwiz3cy            0.224214        0.061775
+  kgcwcd7m            0.274707        0.024724
+  0kq9y1x2            0.511999        0.022471 &lt;-- selected
+  agayvyh6            7.507609        0.009711
+  dvd4m4j6           10.714605        0.006840
+  l8eqint7           12.576973        0.006533
+  2g14oxfz           14.462991        0.006466
+  b6rqlpix           19.075916        0.005853
+  z6rq7a88           19.868509        0.005368
+  6pt0eef4           30.973757        0.005142
+
+======================================================================
+RANKING METHOD COMPARISON (over 3 survivors)
+======================================================================
+  Method                  Run ID               LC Loss   Traj Val Loss
+  ----------------------  ------------  --------------  --------------
+  best_traj_loss          0kq9y1x2            0.511999        0.022471 &lt;-- active
+  pareto_knee             kgcwcd7m            0.274707        0.024724
+  geo_rank                0kq9y1x2            0.511999        0.022471
+  minimax_rank            kgcwcd7m            0.274707        0.024724
+  geo_log_score           0kq9y1x2            0.511999        0.022471
+  minimax_log_score       kgcwcd7m            0.274707        0.024724
+======================================================================
+
+Loading run 0kq9y1x2 from JacobianODE/Lorenz_INDpartial_NDsweep_cayley_autodim_D1_NormTrue__JacobianODE ...
+Loading checkpoint epoch=93-step=18800.ckpt...
+Train dataset shape: torch.Size([25102, 45, 15])
+Validation dataset shape: torch.Size([7987, 45, 15])
+Test dataset shape: torch.Size([3423, 45, 15])
+Train trajectories dataset shape: torch.Size([22, 1186, 15])
+Validation trajectories dataset shape: torch.Size([7, 1186, 15])
+Test trajectories dataset shape: torch.Size([3, 1186, 15])
+Loading checkpoint epoch=93-step=18800.ckpt...
+Computing reconstruction ...
+Computing MASE ...
+Teacher-forced MASE: 0.6328
+Free-running MASE:   0.9636
+Computing latent utilization ...
+Entropy-based utilization: 0.929
+Null subspace mean RMS: 1.597451e-01
+Computing Lyapunov exponents ...
+  Computing full-trajectory Lyapunov (3 test trajs, T=1186) ...
+Predicted Lyapunov exponents (batch+burn-in, 128 windowed trajs):
+  λ_1 = +0.2751 ± 0.6134
+  λ_2 = -0.9826 ± 1.4936
+  λ_3 = -23.0646 ± 1.3321
+Predicted Lyapunov exponents (full-length, 3 test trajs):
+  λ_1 = +0.3777 ± 0.1998
+  λ_2 = -1.2736 ± 0.2190
+  λ_3 = -23.1209 ± 0.0195
+Empirical Lyapunov exponents (mean ± std):
+  λ_1 = +0.4677 ± 0.0259
+  λ_2 = -0.2173 ± 0.0549
+  λ_3 = -13.9174 ± 0.0513
+Mean KY dim (predicted): 1.284 ± 0.092
+Mean KY dim (empirical): 2.018 ± 0.003
+Mean KY dim (burn-in):   1.294 ± 0.761
+Computing prediction windows ...
+Windows: 117 — nMSE min=0.0172, median=0.0356, mean=0.0634, max=0.9358
+Computing long-trajectory free-running rollouts ...
+Computing encoder/decoder Jacobians ...
+encoder_jacobian: (128, 15, 15)
+decoder_jacobian: (128, 15, 15)
+Computing amplification loss ...
+Amplification loss — True state: 0.003832
+Amplification loss — Latent:     0.007571
+Computing tangent space spectrum ...
+</code></pre>
+
+
+</details>
+</body>
+</html>
