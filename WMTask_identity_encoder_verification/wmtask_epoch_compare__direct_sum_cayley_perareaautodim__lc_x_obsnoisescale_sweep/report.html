@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Sweep Analysis: <code>wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep</code></h1>
+<p><strong>Project</strong>: <a href="https://wandb.ai/JacobianODE/WMTask_identity_encoder_verification/groups/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep">WMTask_identity_encoder_verification</a><br />
+<strong>Launched</strong>: 2026-05-04T06:00:27Z<br />
+<strong>Completed</strong>: 2026-05-04T14:38:35Z<br />
+<strong>Outcome</strong>: <code>complete_clean</code><br />
+<strong>Git</strong>: <code>latent-JacobianODE</code> @ <code>c28bed8</code><br />
+<strong>Expected runs</strong>: 21</p>
+<h2>Experiment Context</h2>
+<h3><code>wmtask_epoch_compare</code></h3>
+<p><strong>Description</strong></p>
+<p>WMTask fully-observed (N1=N2=64), DirectSum coupling encoder with
+per-area PCA-autodim, additive coupling + Cayley orthogonal mixers +
+near-identity init, TF-coupled LR. Combined dataloader pools
+trajectories from epoch=1 and epoch='final' checkpoints of the same
+BiologicalRNN; condition_dim=1 with values {-1: epoch=1, +1: final}
+threaded through encoder conditioners + dynamics MLP. Normalization
++ obs_noise_scale calibration computed on the concatenated data.
+Single-stage; sweep over loop_closure_weight + obs_noise_scale.</p>
+<p><strong>Hypothesis</strong></p>
+<p>A single JacobianODE that conditions on training-stage should be able
+to capture both the epoch-1 and final-epoch dynamics of the same
+biological RNN with one shared encoder + dynamics MLP, exposing the
+difference between the two as a function of c. This validates the
+multi-condition framework end-to-end and gives us a comparison axis
+where we know the underlying system is "the same network with
+different weights" — a controlled instance of within-system change.</p>
+<p><strong>Success criteria</strong></p>
+<ul>
+<li>All cells train without divergence (no NaN train loss)</li>
+<li>val/trajectory_loss within ~2x of the existing single-checkpoint wmtask_direct_sum_additive Cayley sweep at the matching cell</li>
+<li>Latent trajectories at c=-1 and c=+1 are visibly different on the same trial (encoder respects the condition)</li>
+<li>Encoder &amp; dynamics MLP weights both have nonzero condition-input gradients (the conditioning is actually learned)</li>
+</ul>
+<h2>Results</h2>
+<p><strong>Swept axes</strong> (4): <code>data.postprocessing.generalized_variance</code>, <code>model.n_target_dims_per_block_pca_cum_var</code>, <code>training.lightning.loop_closure_weight</code>, <code>training.lightning.obs_noise_scale</code></p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>44yjbq6x</code> — traj_loss=0.00256, MASE=0.6732, R²=0.9950, LC loss=12.016, epoch=50.0</p>
+<p>Swept-axis values at chosen run: <code>data.postprocessing.generalized_variance</code>=0.0065177 · <code>model.n_target_dims_per_block_pca_cum_var</code>=[0.9908354217288812, 0.9910537774958704] · <code>training.lightning.loop_closure_weight</code>=1.0e-06 · <code>training.lightning.obs_noise_scale</code>=0.05</p>
+<p><strong>Runs analyzed</strong>: 21 (expected 21)</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_idx</th>
+<th>run_id</th>
+<th><code>data.postprocessing.generalized_variance</code></th>
+<th><code>model.n_target_dims_per_block_pca_cum_var</code></th>
+<th><code>training.lightning.loop_closure_weight</code></th>
+<th><code>training.lightning.obs_noise_scale</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><code>44yjbq6x</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288812, 0.9910537774958704]</td>
+<td>1.0e-06</td>
+<td>0.05</td>
+<td>0.00256</td>
+<td>0.6732</td>
+<td>0.9950</td>
+<td>12.016</td>
+<td>50.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>5qq2ih61</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288812, 0.9910537774958704]</td>
+<td>1.0e-05</td>
+<td>0</td>
+<td>0.00261</td>
+<td>0.6805</td>
+<td>0.9949</td>
+<td>3.876</td>
+<td>53.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>tk1isw7j</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288812, 0.9910537774958704]</td>
+<td>1.0e-05</td>
+<td>0.01</td>
+<td>0.00268</td>
+<td>0.6874</td>
+<td>0.9947</td>
+<td>4.624</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>cpb2xljt</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>1.0e-05</td>
+<td>0.05</td>
+<td>0.00274</td>
+<td>0.6914</td>
+<td>0.9946</td>
+<td>4.869</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>hjf2dkkq</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>1.0e-06</td>
+<td>0</td>
+<td>0.00280</td>
+<td>0.6998</td>
+<td>0.9945</td>
+<td>8.569</td>
+<td>36.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>62dkknxe</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0</td>
+<td>0.05</td>
+<td>0.00280</td>
+<td>0.6989</td>
+<td>0.9945</td>
+<td>16.065</td>
+<td>31.0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>bv0qk4ah</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0</td>
+<td>0.01</td>
+<td>0.00282</td>
+<td>0.7036</td>
+<td>0.9944</td>
+<td>15.788</td>
+<td>37.0</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>7lqmrnlb</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>1.0e-04</td>
+<td>0</td>
+<td>0.00284</td>
+<td>0.7047</td>
+<td>0.9944</td>
+<td>0.971</td>
+<td>36.0</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>21uo87i5</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>1.0e-04</td>
+<td>0.05</td>
+<td>0.00284</td>
+<td>0.7018</td>
+<td>0.9944</td>
+<td>1.286</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>pw1120fm</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0</td>
+<td>0</td>
+<td>0.00284</td>
+<td>0.7043</td>
+<td>0.9944</td>
+<td>13.205</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>ov6v517m</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>1.0e-06</td>
+<td>0.01</td>
+<td>0.00288</td>
+<td>0.7074</td>
+<td>0.9943</td>
+<td>10.206</td>
+<td>36.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>7hassahu</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>1.0e-04</td>
+<td>0.01</td>
+<td>0.00297</td>
+<td>0.7178</td>
+<td>0.9942</td>
+<td>1.150</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>xlcjrnoa</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.001</td>
+<td>0</td>
+<td>0.00333</td>
+<td>0.7554</td>
+<td>0.9935</td>
+<td>0.200</td>
+<td>36.0</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>yuo9l1gn</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.001</td>
+<td>0.05</td>
+<td>0.00345</td>
+<td>0.7659</td>
+<td>0.9932</td>
+<td>0.290</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>6lr54gri</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.001</td>
+<td>0.01</td>
+<td>0.00367</td>
+<td>0.7885</td>
+<td>0.9928</td>
+<td>0.262</td>
+<td>32.0</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>nbzpddye</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.01</td>
+<td>0</td>
+<td>0.00534</td>
+<td>0.9270</td>
+<td>0.9895</td>
+<td>0.037</td>
+<td>33.0</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>amchzs04</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288812, 0.9910537774958704]</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.00763</td>
+<td>1.1064</td>
+<td>0.9851</td>
+<td>0.138</td>
+<td>52.0</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>lczdbkf3</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.1</td>
+<td>0</td>
+<td>0.00799</td>
+<td>1.1037</td>
+<td>0.9844</td>
+<td>0.003</td>
+<td>37.0</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>5v6vplqq</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.01</td>
+<td>0.05</td>
+<td>0.00869</td>
+<td>1.1613</td>
+<td>0.9830</td>
+<td>0.111</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>h8f1x5b5</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.1</td>
+<td>0.05</td>
+<td>0.05666</td>
+<td>2.5585</td>
+<td>0.8912</td>
+<td>0.026</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>xo7u9le6</code></td>
+<td>0.0065177</td>
+<td>[0.9908354217288816, 0.9910537774958708]</td>
+<td>0.1</td>
+<td>0.01</td>
+<td>0.05806</td>
+<td>2.6000</td>
+<td>0.8885</td>
+<td>0.048</td>
+<td>10.0</td>
+</tr>
+</tbody>
+</table>
+<h3>Best run per <code>obs_noise_scale</code></h3>
+<table>
+<thead>
+<tr>
+<th>obs_noise_scale</th>
+<th>Best LC weight</th>
+<th>Best traj loss</th>
+<th>MASE at best</th>
+<th>R²</th>
+<th>LC loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0</td>
+<td>1.0e-05</td>
+<td>0.00261</td>
+<td>0.6805</td>
+<td>0.9949</td>
+<td>3.876</td>
+<td>53.0</td>
+</tr>
+<tr>
+<td>0.01</td>
+<td>1.0e-05</td>
+<td>0.00268</td>
+<td>0.6874</td>
+<td>0.9947</td>
+<td>4.624</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>0.05</td>
+<td>1.0e-06</td>
+<td>0.00256</td>
+<td>0.6732</td>
+<td>0.9950</td>
+<td>12.016</td>
+<td>50.0</td>
+</tr>
+</tbody>
+</table>
+<h2>Success-criteria verdicts (automated)</h2>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Verdict</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All cells train without divergence (no NaN train loss)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>val/trajectory_loss within ~2x of the existing single-checkpoint wmtask_direct_sum_additive Cayley sweep at the matching cell</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Latent trajectories at c=-1 and c=+1 are visibly different on the same trial (encoder respects the condition)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Encoder &amp; dynamics MLP weights both have nonzero condition-input gradients (the conditioning is actually learned)</td>
+<td><strong>Unknown</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Automated verdicts use simple numeric-threshold parsing and may mis-classify qualitative criteria. The Discussion section below takes precedence.</em></p>
+<h2>Figures</h2>
+<h3>per_run_lyapunov</h3>
+<p><img alt="per_run_lyapunov" src="figures/per_run_lyapunov.png" /></p>
+<h3>per_run_lyapunov_vs_true</h3>
+<p><img alt="per_run_lyapunov_vs_true" src="figures/per_run_lyapunov_vs_true.png" /></p>
+<h3>per_run_lyapunov_relerr</h3>
+<p><img alt="per_run_lyapunov_relerr" src="figures/per_run_lyapunov_relerr.png" /></p>
+<h2>Discussion</h2>
+<!--
+This section is intentionally left as a placeholder. A human reviewer
+or Claude Code agent should fill it in based on the tables and figures
+above, explicitly addressing each success criterion and comparing the
+outcome to the stated hypothesis. Write the Discussion to
+`discussion.md` in this directory and re-run `render_report`.
+-->
+
+<p><em>(to be written)</em></p>
+</body>
+</html>
