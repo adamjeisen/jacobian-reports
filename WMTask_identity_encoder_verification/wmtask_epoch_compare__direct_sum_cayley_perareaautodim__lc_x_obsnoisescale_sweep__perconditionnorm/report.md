@@ -161,6 +161,14 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![prediction_detail_obs](figures/prediction_detail_obs.png)
 
+### gramians_metric_overlay
+
+![gramians_metric_overlay](figures/gramians_metric_overlay.png)
+
+### gramians_overlay
+
+![gramians_overlay](figures/gramians_overlay.png)
+
 ## Discussion
 
 <!--
