@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-04T08:10:41Z",
+  "last_updated": "2026-05-04T08:15:40Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -474,17 +474,21 @@
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_nd35__lc_sweep": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 8,
-        "in_flight": 1,
+        "terminal": 9,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 8
+        "effectively_done": 9
       },
-      "training_slurm": {
-        "n_running": 1,
-        "n_pending": 0,
-        "n_total": 1
+      "analysis": {
+        "slurm_job_id": "13212766",
+        "dispatched_at": "2026-05-04T08:15:40Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "lorenz_partial_additive_splitmode_p30_obsnoise005_cayley_autodim_top3nd_v2__lc_obsnoisescale_sweep_20260503T045452Z__stage_a": {
@@ -715,8 +719,8 @@
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 15,
-        "n_pending": 6,
+        "n_running": 16,
+        "n_pending": 5,
         "n_total": 21
       }
     },
