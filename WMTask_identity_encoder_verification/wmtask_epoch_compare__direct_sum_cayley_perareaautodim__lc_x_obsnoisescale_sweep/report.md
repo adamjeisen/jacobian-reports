@@ -148,6 +148,10 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
 
+### lyapunov_spectrum_mse_vs_val_loss
+
+![lyapunov_spectrum_mse_vs_val_loss](figures/lyapunov_spectrum_mse_vs_val_loss.png)
+
 ### prediction_detail_obs
 
 ![prediction_detail_obs](figures/prediction_detail_obs.png)
