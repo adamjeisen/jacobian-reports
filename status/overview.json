@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-04T18:55:22Z",
+  "last_updated": "2026-05-04T19:00:22Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -711,21 +711,12 @@
       }
     },
     "wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
-      "status": "done",
+      "status": "failed",
       "runs_summary": {
         "terminal": 21,
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 21
-      },
-      "analysis": {
-        "slurm_job_id": "13259462",
-        "dispatched_at": "2026-05-04T18:55:22Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "wmtask_init_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
