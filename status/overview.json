@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-04T11:00:50Z",
+  "last_updated": "2026-05-04T14:38:52Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -702,31 +702,35 @@
       }
     },
     "wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 16,
-        "in_flight": 5,
+        "terminal": 21,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 16
+        "effectively_done": 21
       },
-      "training_slurm": {
-        "n_running": 5,
-        "n_pending": 0,
-        "n_total": 5
+      "analysis": {
+        "slurm_job_id": "13238088",
+        "dispatched_at": "2026-05-04T14:38:52Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
       "status": "active",
       "runs_summary": {
-        "terminal": 0,
-        "in_flight": 21,
+        "terminal": 12,
+        "in_flight": 9,
         "failed_exhausted": 0,
-        "effectively_done": 0
+        "effectively_done": 12
       },
       "training_slurm": {
-        "n_running": 11,
-        "n_pending": 10,
-        "n_total": 21
+        "n_running": 9,
+        "n_pending": 0,
+        "n_total": 9
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
