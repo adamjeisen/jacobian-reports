@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-04T15:05:40Z",
+  "last_updated": "2026-05-04T15:10:23Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -713,15 +713,15 @@
     "wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
       "status": "active",
       "runs_summary": {
-        "terminal": 18,
-        "in_flight": 3,
+        "terminal": 19,
+        "in_flight": 2,
         "failed_exhausted": 0,
-        "effectively_done": 18
+        "effectively_done": 19
       },
       "training_slurm": {
-        "n_running": 3,
+        "n_running": 2,
         "n_pending": 0,
-        "n_total": 3
+        "n_total": 2
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
