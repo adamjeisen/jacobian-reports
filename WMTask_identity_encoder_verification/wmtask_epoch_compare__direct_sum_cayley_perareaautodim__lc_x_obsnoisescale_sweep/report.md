@@ -164,6 +164,14 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ![kaplan_yorke_pca](figures/kaplan_yorke_pca.png)
 
+### gramians_overlay
+
+![gramians_overlay](figures/gramians_overlay.png)
+
+### gramians_metric_overlay
+
+![gramians_metric_overlay](figures/gramians_metric_overlay.png)
+
 ## Discussion
 
 <!--

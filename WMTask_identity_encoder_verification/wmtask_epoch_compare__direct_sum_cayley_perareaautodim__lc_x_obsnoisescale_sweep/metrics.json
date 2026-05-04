@@ -3522,7 +3522,9 @@
     "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep/figures/long_trajectory.png",
     "lyapunov_top10": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep/figures/lyapunov_top10.png",
     "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep/figures/kaplan_yorke_pca.png",
-    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png"
+    "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep/figures/lyapunov_spectrum_mse_vs_val_loss.png",
+    "gramians_overlay": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep/figures/gramians_overlay.png",
+    "gramians_metric_overlay": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep/figures/gramians_metric_overlay.png"
   },
   "analytics_error": "OutOfMemoryError: CUDA out of memory. Tried to allocate 18.76 GiB. GPU 0 has a total capacity of 79.18 GiB of which 11.99 GiB is free. Including non-PyTorch memory, this process has 67.18 GiB memory in use. Of the allocated memory 56.70 GiB is allocated by PyTorch, and 9.46 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
   "true_lyapunov": null,
