@@ -1,0 +1,8 @@
+experiment: wmtask_epoch_compare
+overrides: []
+submitted_at: 20260504T055547Z
+submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep
+expected_run_count: 21
+slurm_array_id: '13201230'
+slurm_submitted_at: '2026-05-04T06:00:57Z'
