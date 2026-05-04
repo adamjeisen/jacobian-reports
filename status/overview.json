@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-04T17:40:19Z",
+  "last_updated": "2026-05-04T17:45:51Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -717,6 +717,20 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 21
+      }
+    },
+    "wmtask_init_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 21,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 21,
+        "n_total": 21
       }
     },
     "wmtask_latent_additive_mse_p30__lc_sweep": {
@@ -2357,6 +2371,10 @@
     },
     {
       "file": "20260504T064020Z-wmtask_epoch_compare_perconditionnorm.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260504T174102Z-wmtask_init_compare_perconditionnorm.yaml",
       "status": "claimed"
     }
   ]
