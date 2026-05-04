@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-04T10:35:28Z",
+  "last_updated": "2026-05-04T10:40:29Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -704,15 +704,15 @@
     "wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep": {
       "status": "active",
       "runs_summary": {
-        "terminal": 11,
-        "in_flight": 10,
+        "terminal": 14,
+        "in_flight": 7,
         "failed_exhausted": 0,
-        "effectively_done": 11
+        "effectively_done": 14
       },
       "training_slurm": {
-        "n_running": 10,
+        "n_running": 7,
         "n_pending": 0,
-        "n_total": 10
+        "n_total": 7
       }
     },
     "wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
@@ -724,8 +724,8 @@
         "effectively_done": 0
       },
       "training_slurm": {
-        "n_running": 6,
-        "n_pending": 15,
+        "n_running": 9,
+        "n_pending": 12,
         "n_total": 21
       }
     },
