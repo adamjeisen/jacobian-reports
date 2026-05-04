@@ -96,6 +96,46 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 
 ## Figures
 
+### sweep_overview
+
+![sweep_overview](figures/sweep_overview.png)
+
+### sweep_pareto
+
+![sweep_pareto](figures/sweep_pareto.png)
+
+### reconstruction
+
+![reconstruction](figures/reconstruction.png)
+
+### prediction_windows
+
+![prediction_windows](figures/prediction_windows.png)
+
+### long_trajectory
+
+![long_trajectory](figures/long_trajectory.png)
+
+### mase
+
+![mase](figures/mase.png)
+
+### latent_utilization
+
+![latent_utilization](figures/latent_utilization.png)
+
+### lyapunov
+
+![lyapunov](figures/lyapunov.png)
+
+### lyapunov_top10
+
+![lyapunov_top10](figures/lyapunov_top10.png)
+
+### kaplan_yorke
+
+![kaplan_yorke](figures/kaplan_yorke.png)
+
 ### per_run_lyapunov
 
 ![per_run_lyapunov](figures/per_run_lyapunov.png)
@@ -107,6 +147,18 @@ _Automated verdicts use simple numeric-threshold parsing and may mis-classify qu
 ### per_run_lyapunov_relerr
 
 ![per_run_lyapunov_relerr](figures/per_run_lyapunov_relerr.png)
+
+### prediction_detail_obs
+
+![prediction_detail_obs](figures/prediction_detail_obs.png)
+
+### prediction_detail_latent
+
+![prediction_detail_latent](figures/prediction_detail_latent.png)
+
+### kaplan_yorke_pca
+
+![kaplan_yorke_pca](figures/kaplan_yorke_pca.png)
 
 ## Discussion
 
