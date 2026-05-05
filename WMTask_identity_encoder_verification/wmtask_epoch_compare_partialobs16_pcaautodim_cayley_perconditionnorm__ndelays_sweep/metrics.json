@@ -1,0 +1,303 @@
+{
+  "schema_version": 3,
+  "group": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+  "analyzed_at": "2026-05-05T04:42:13Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "sap955z9",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004382354207336903,
+        "best_traj_loss_epoch": 41.0,
+        "best_mase": 0.6202435493469238,
+        "best_mase_epoch": 41.0,
+        "lc_loss_at_best_tl": 39.177459716796875,
+        "r2_at_best_tl": 0.9952943325042725,
+        "n_epochs": 42,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993726,
+          "data.train_test_params.delay_embedding_params.n_delays": 3,
+          "model.n_target_dims": 23,
+          "model.n_target_dims_per_block_pca_auto": [
+            13,
+            10
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900657051938336,
+            0.9900459248222068
+          ],
+          "model.params.input_dim": 23,
+          "model.params.output_dim": 529
+        }
+      },
+      {
+        "run_id": "n08vuuf7",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004126054234802723,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6037073731422424,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 48.633628845214844,
+        "r2_at_best_tl": 0.9957844614982605,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993726,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168366,
+            0.9919741165444236
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841
+        }
+      },
+      {
+        "run_id": "hqed9eg9",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005313307046890259,
+        "best_traj_loss_epoch": 13.0,
+        "best_mase": 0.6759931445121765,
+        "best_mase_epoch": 13.0,
+        "lc_loss_at_best_tl": 52.74424743652344,
+        "r2_at_best_tl": 0.9945471882820129,
+        "n_epochs": 14,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089
+        }
+      },
+      {
+        "run_id": "nheqz1ez",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0057417405769228935,
+        "best_traj_loss_epoch": 12.0,
+        "best_mase": 0.7025542259216309,
+        "best_mase_epoch": 12.0,
+        "lc_loss_at_best_tl": 54.50490188598633,
+        "r2_at_best_tl": 0.9942485094070435,
+        "n_epochs": 13,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 12,
+          "model.n_target_dims": 37,
+          "model.n_target_dims_per_block_pca_auto": [
+            23,
+            14
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902654313095508,
+            0.990024507336198
+          ],
+          "model.params.input_dim": 37,
+          "model.params.output_dim": 1369
+        }
+      },
+      {
+        "run_id": "9dz81tez",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.00623670406639576,
+        "best_traj_loss_epoch": 16.0,
+        "best_mase": 0.7305848002433777,
+        "best_mase_epoch": 16.0,
+        "lc_loss_at_best_tl": 52.0706672668457,
+        "r2_at_best_tl": 0.9939308762550354,
+        "n_epochs": 17,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 5,
+    "matched_run_count": 5,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "n08vuuf7",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004126054234802723,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6037073731422424,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 48.633628845214844,
+        "r2_at_best_tl": 0.9957844614982605,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993726,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168366,
+            0.9919741165444236
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "n08vuuf7",
+      "run_idx": 1,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004126054234802723,
+      "best_traj_loss_epoch": 37.0,
+      "best_mase": 0.6037073731422424,
+      "best_mase_epoch": 37.0,
+      "lc_loss_at_best_tl": 48.633628845214844,
+      "r2_at_best_tl": 0.9957844614982605,
+      "n_epochs": 39,
+      "swept_config": {
+        "data.postprocessing.generalized_variance": 0.02445884945993726,
+        "data.train_test_params.delay_embedding_params.n_delays": 6,
+        "model.n_target_dims": 29,
+        "model.n_target_dims_per_block_pca_auto": [
+          17,
+          12
+        ],
+        "model.n_target_dims_per_block_pca_cum_var": [
+          0.9902608766168366,
+          0.9919741165444236
+        ],
+        "model.params.input_dim": 29,
+        "model.params.output_dim": 841
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "n08vuuf7",
+      "run_idx": 1,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004126054234802723,
+      "best_traj_loss_epoch": 37.0,
+      "best_mase": 0.6037073731422424,
+      "best_mase_epoch": 37.0,
+      "lc_loss_at_best_tl": 48.633628845214844,
+      "r2_at_best_tl": 0.9957844614982605,
+      "n_epochs": 39,
+      "swept_config": {
+        "data.postprocessing.generalized_variance": 0.02445884945993726,
+        "data.train_test_params.delay_embedding_params.n_delays": 6,
+        "model.n_target_dims": 29,
+        "model.n_target_dims_per_block_pca_auto": [
+          17,
+          12
+        ],
+        "model.n_target_dims_per_block_pca_cum_var": [
+          0.9902608766168366,
+          0.9919741165444236
+        ],
+        "model.params.input_dim": 29,
+        "model.params.output_dim": 841
+      }
+    },
+    "swept_paths": [
+      "data.postprocessing.generalized_variance",
+      "data.train_test_params.delay_embedding_params.n_delays",
+      "model.n_target_dims",
+      "model.n_target_dims_per_block_pca_auto",
+      "model.n_target_dims_per_block_pca_cum_var",
+      "model.params.input_dim",
+      "model.params.output_dim"
+    ],
+    "n_runs": 5
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "per_run_tangent_spectrum": {},
+  "per_run_tangent_spectrum_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 5 Stage A cells train without divergence (no NaN train loss)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Per-area autodim n_target_dims logged for each n_delays cell",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Two_stage_cull keeps top survivors (cull_fraction=0.5)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Stage B winner: best val traj_loss within 5x of full-obs Cayley conditioned winner (~0.005 from epoch_compare_perconditionnorm)",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/lyapunov.png",
+    "lyapunov_top10": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/lyapunov_top10.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/long_trajectory.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep/figures/amplification.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

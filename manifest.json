@@ -455,6 +455,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777956325.8690116
+      },
+      {
         "group": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a",
         "has_report": true,
         "has_metrics": true,
