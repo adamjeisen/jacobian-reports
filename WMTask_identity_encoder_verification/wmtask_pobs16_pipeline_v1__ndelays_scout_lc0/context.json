@@ -1,0 +1,90 @@
+{
+  "group": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
+  "completed_at": "2026-05-05T08:15:17Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0": {
+      "description": "Pipeline v1 SCOUT (Sweep 1). 5-cell n_delays sweep ({3,6,9,12,15})\non WMTask conditioned (epoch=1 vs final) partial-obs with\nper-condition normalization. lc=0; ES + 3hr SLURM walltime are\nthe actual stoppers. On reap, chain auto-dispatches the lc x\nobs_noise grid as Stage A/B with the top-3 n_delays pinned.\n",
+      "hypothesis": "n_delays controls how much state info delay-embedding can recover\nfrom 16 obs per area. The scout identifies the best 3 n_delays\nvalues; downstream lc x obs_noise grid is run only for those\n3 n_delays values to keep the cell count tractable.\n",
+      "success_criteria": [
+        "All 5 cells train without divergence (no NaN train loss)",
+        "Per-area autodim n_target_dims logged for each n_delays cell",
+        "ES (or 3hr cap) terminates each cell \u2014 none hits max_epochs=200",
+        "Chain dispatches grid sweep with top-3 n_delays pinned"
+      ],
+      "chain": [
+        {
+          "type": "axis_select",
+          "axis": "data.train_test_params.delay_embedding_params.n_delays",
+          "top_k": 3,
+          "metric": "trajectory val_loss",
+          "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+          "next_two_stage": {
+            "stage_a_epochs": 20,
+            "full_max_epochs": 200,
+            "cull_fraction": 0.5,
+            "metric": "trajectory val_loss"
+          }
+        }
+      ]
+    }
+  },
+  "expected_run_count": 5,
+  "hydra": {
+    "experiments": [
+      "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_pobs16_pipeline_v1__ndelays_scout_lc0"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=3"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "9615cd2",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-05T05:50:16Z"
+}

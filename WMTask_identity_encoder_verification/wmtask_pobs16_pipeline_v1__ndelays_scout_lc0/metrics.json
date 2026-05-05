@@ -1,0 +1,424 @@
+{
+  "schema_version": 3,
+  "group": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
+  "analyzed_at": "2026-05-05T08:16:35Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "ykxgquz1",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004339255858212709,
+        "best_traj_loss_epoch": 45.0,
+        "best_mase": 0.6175806522369385,
+        "best_mase_epoch": 45.0,
+        "lc_loss_at_best_tl": 39.31723403930664,
+        "r2_at_best_tl": 0.995341956615448,
+        "n_epochs": 46,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 3,
+          "metadata.chain": [
+            {
+              "axis": "data.train_test_params.delay_embedding_params.n_delays",
+              "type": "axis_select",
+              "top_k": 3,
+              "metric": "trajectory val_loss",
+              "next_two_stage": {
+                "metric": "trajectory val_loss",
+                "cull_fraction": 0.5,
+                "stage_a_epochs": 20,
+                "full_max_epochs": 200
+              },
+              "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+            }
+          ],
+          "model.n_target_dims": 23,
+          "model.n_target_dims_per_block_pca_auto": [
+            13,
+            10
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.990065705193834,
+            0.990045924822203
+          ],
+          "model.params.input_dim": 23,
+          "model.params.output_dim": 529
+        }
+      },
+      {
+        "run_id": "zgz8m6fz",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004125876352190971,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6036869287490845,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 48.633731842041016,
+        "r2_at_best_tl": 0.99578458070755,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "metadata.chain": [
+            {
+              "axis": "data.train_test_params.delay_embedding_params.n_delays",
+              "type": "axis_select",
+              "top_k": 3,
+              "metric": "trajectory val_loss",
+              "next_two_stage": {
+                "metric": "trajectory val_loss",
+                "cull_fraction": 0.5,
+                "stage_a_epochs": 20,
+                "full_max_epochs": 200
+              },
+              "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+            }
+          ],
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841
+        }
+      },
+      {
+        "run_id": "sxjfuvb0",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004079318139702082,
+        "best_traj_loss_epoch": 34.0,
+        "best_mase": 0.5995581150054932,
+        "best_mase_epoch": 34.0,
+        "lc_loss_at_best_tl": 51.836219787597656,
+        "r2_at_best_tl": 0.9958122372627258,
+        "n_epochs": 35,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "metadata.chain": [
+            {
+              "axis": "data.train_test_params.delay_embedding_params.n_delays",
+              "type": "axis_select",
+              "top_k": 3,
+              "metric": "trajectory val_loss",
+              "next_two_stage": {
+                "metric": "trajectory val_loss",
+                "cull_fraction": 0.5,
+                "stage_a_epochs": 20,
+                "full_max_epochs": 200
+              },
+              "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+            }
+          ],
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089
+        }
+      },
+      {
+        "run_id": "rjlfawkw",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004193735774606466,
+        "best_traj_loss_epoch": 33.0,
+        "best_mase": 0.6081912517547607,
+        "best_mase_epoch": 33.0,
+        "lc_loss_at_best_tl": 56.91468811035156,
+        "r2_at_best_tl": 0.9957975745201111,
+        "n_epochs": 34,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 12,
+          "metadata.chain": [
+            {
+              "axis": "data.train_test_params.delay_embedding_params.n_delays",
+              "type": "axis_select",
+              "top_k": 3,
+              "metric": "trajectory val_loss",
+              "next_two_stage": {
+                "metric": "trajectory val_loss",
+                "cull_fraction": 0.5,
+                "stage_a_epochs": 20,
+                "full_max_epochs": 200
+              },
+              "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+            }
+          ],
+          "model.n_target_dims": 37,
+          "model.n_target_dims_per_block_pca_auto": [
+            23,
+            14
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902654313095508,
+            0.990024507336198
+          ],
+          "model.params.input_dim": 37,
+          "model.params.output_dim": 1369
+        }
+      },
+      {
+        "run_id": "lfzkhpcv",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004094330593943596,
+        "best_traj_loss_epoch": 55.0,
+        "best_mase": 0.6006608605384827,
+        "best_mase_epoch": 55.0,
+        "lc_loss_at_best_tl": 54.6552619934082,
+        "r2_at_best_tl": 0.9960122108459473,
+        "n_epochs": 56,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "metadata.chain": [
+            {
+              "axis": "data.train_test_params.delay_embedding_params.n_delays",
+              "type": "axis_select",
+              "top_k": 3,
+              "metric": "trajectory val_loss",
+              "next_two_stage": {
+                "metric": "trajectory val_loss",
+                "cull_fraction": 0.5,
+                "stage_a_epochs": 20,
+                "full_max_epochs": 200
+              },
+              "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+            }
+          ],
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [
+      {
+        "run_idx": 4,
+        "chosen_run_id": "lfzkhpcv",
+        "other_run_ids": [
+          "5if60kut"
+        ],
+        "n_candidates": 2
+      }
+    ],
+    "expected_run_count": 5,
+    "matched_run_count": 5,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "sxjfuvb0",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004079318139702082,
+        "best_traj_loss_epoch": 34.0,
+        "best_mase": 0.5995581150054932,
+        "best_mase_epoch": 34.0,
+        "lc_loss_at_best_tl": 51.836219787597656,
+        "r2_at_best_tl": 0.9958122372627258,
+        "n_epochs": 35,
+        "swept_config": {
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "metadata.chain": [
+            {
+              "axis": "data.train_test_params.delay_embedding_params.n_delays",
+              "type": "axis_select",
+              "top_k": 3,
+              "metric": "trajectory val_loss",
+              "next_two_stage": {
+                "metric": "trajectory val_loss",
+                "cull_fraction": 0.5,
+                "stage_a_epochs": 20,
+                "full_max_epochs": 200
+              },
+              "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+            }
+          ],
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "sxjfuvb0",
+      "run_idx": 2,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004079318139702082,
+      "best_traj_loss_epoch": 34.0,
+      "best_mase": 0.5995581150054932,
+      "best_mase_epoch": 34.0,
+      "lc_loss_at_best_tl": 51.836219787597656,
+      "r2_at_best_tl": 0.9958122372627258,
+      "n_epochs": 35,
+      "swept_config": {
+        "data.train_test_params.delay_embedding_params.n_delays": 9,
+        "metadata.chain": [
+          {
+            "axis": "data.train_test_params.delay_embedding_params.n_delays",
+            "type": "axis_select",
+            "top_k": 3,
+            "metric": "trajectory val_loss",
+            "next_two_stage": {
+              "metric": "trajectory val_loss",
+              "cull_fraction": 0.5,
+              "stage_a_epochs": 20,
+              "full_max_epochs": 200
+            },
+            "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+          }
+        ],
+        "model.n_target_dims": 33,
+        "model.n_target_dims_per_block_pca_auto": [
+          20,
+          13
+        ],
+        "model.n_target_dims_per_block_pca_cum_var": [
+          0.9901722465285276,
+          0.9905418872477084
+        ],
+        "model.params.input_dim": 33,
+        "model.params.output_dim": 1089
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "sxjfuvb0",
+      "run_idx": 2,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004079318139702082,
+      "best_traj_loss_epoch": 34.0,
+      "best_mase": 0.5995581150054932,
+      "best_mase_epoch": 34.0,
+      "lc_loss_at_best_tl": 51.836219787597656,
+      "r2_at_best_tl": 0.9958122372627258,
+      "n_epochs": 35,
+      "swept_config": {
+        "data.train_test_params.delay_embedding_params.n_delays": 9,
+        "metadata.chain": [
+          {
+            "axis": "data.train_test_params.delay_embedding_params.n_delays",
+            "type": "axis_select",
+            "top_k": 3,
+            "metric": "trajectory val_loss",
+            "next_two_stage": {
+              "metric": "trajectory val_loss",
+              "cull_fraction": 0.5,
+              "stage_a_epochs": 20,
+              "full_max_epochs": 200
+            },
+            "next_experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+          }
+        ],
+        "model.n_target_dims": 33,
+        "model.n_target_dims_per_block_pca_auto": [
+          20,
+          13
+        ],
+        "model.n_target_dims_per_block_pca_cum_var": [
+          0.9901722465285276,
+          0.9905418872477084
+        ],
+        "model.params.input_dim": 33,
+        "model.params.output_dim": 1089
+      }
+    },
+    "swept_paths": [
+      "data.train_test_params.delay_embedding_params.n_delays",
+      "metadata.chain",
+      "model.n_target_dims",
+      "model.n_target_dims_per_block_pca_auto",
+      "model.n_target_dims_per_block_pca_cum_var",
+      "model.params.input_dim",
+      "model.params.output_dim"
+    ],
+    "n_runs": 5
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "per_run_tangent_spectrum": {},
+  "per_run_tangent_spectrum_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 5 cells train without divergence (no NaN train loss)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Per-area autodim n_target_dims logged for each n_delays cell",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "ES (or 3hr cap) terminates each cell \u2014 none hits max_epochs=200",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Chain dispatches grid sweep with top-3 n_delays pinned",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/lyapunov.png",
+    "lyapunov_top10": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/lyapunov_top10.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/long_trajectory.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__ndelays_scout_lc0/figures/amplification.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
