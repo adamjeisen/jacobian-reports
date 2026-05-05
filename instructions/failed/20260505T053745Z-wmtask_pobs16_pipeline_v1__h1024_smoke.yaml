@@ -7,3 +7,5 @@ overrides:
   - "hydra.launcher.timeout_min=30"
 submitted_at: 20260505T053745Z
 submitted_from: millerlab-endeavourOS
+
+error: jsweep submission for wmtask_pobs16_pipeline_v1__h1024_smoke: no new SLURM array job appeared within 90s
