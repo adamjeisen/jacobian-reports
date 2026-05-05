@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T08:10:20Z",
+  "last_updated": "2026-05-05T08:15:20Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -933,17 +933,21 @@
       }
     },
     "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0": {
-      "status": "active",
+      "status": "done",
       "runs_summary": {
-        "terminal": 4,
-        "in_flight": 1,
+        "terminal": 5,
+        "in_flight": 0,
         "failed_exhausted": 0,
-        "effectively_done": 4
+        "effectively_done": 5
       },
-      "training_slurm": {
-        "n_running": 1,
-        "n_pending": 0,
-        "n_total": 1
+      "analysis": {
+        "slurm_job_id": "13319048",
+        "dispatched_at": "2026-05-05T08:15:20Z",
+        "status": "running"
+      },
+      "analysis_slurm": {
+        "n_running": 0,
+        "n_pending": 1
       }
     },
     "wmtask_pobs16_pipeline_v1_h1024__ndelays_scout_lc0": {
