@@ -1,0 +1,87 @@
+{
+  "group": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a",
+  "completed_at": "2026-05-05T03:50:27Z",
+  "outcome": "complete_with_failures",
+  "experiment_metadata": {
+    "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep": {
+      "description": "WMTask conditioned (epoch=1 vs final) partial-obs n_delays scout.\nCombined loader + 16-random-channel-per-area partial obs (seed=42,\nsame channels both conditions). Per-area PCA-99 autodim + Cayley\northogonal mixers + near-identity init + TF-coupled LR + split-mode\nloss. Per-condition normalization. Two-stage: 5-cell n_delays sweep\nat Stage A (short, 20 ep), survivors resumed to full convergence at\nStage B (200 ep). LC=0 throughout (kept clean for n_delays scouting).\n",
+      "hypothesis": "n_delays controls how much state info delay-embedding can recover\nfrom 16 obs per area. The scout identifies the n_delays that gives\nthe cleanest dynamics under conditioning; survivors carry into the\nStage B convergence and become the candidates for downstream LC\u00d7\nobs_noise grids.\n",
+      "success_criteria": [
+        "All 5 Stage A cells train without divergence (no NaN train loss)",
+        "Per-area autodim n_target_dims logged for each n_delays cell",
+        "Two_stage_cull keeps top survivors (cull_fraction=0.5)",
+        "Stage B winner: best val traj_loss within 5x of full-obs Cayley conditioned winner (~0.005 from epoch_compare_perconditionnorm)"
+      ]
+    }
+  },
+  "expected_run_count": 5,
+  "hydra": {
+    "experiments": [
+      "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+      "training.trainer_params.max_epochs=20",
+      "wandb_group=wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=3",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=6",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=9",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=12",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=15",
+          "training.trainer_params.max_epochs=20",
+          "wandb_group=wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "8d8de88",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-05T02:05:21Z"
+}

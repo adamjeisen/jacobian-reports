@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T03:50:28Z",
+  "last_updated": "2026-05-05T03:55:54Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -734,21 +734,12 @@
       }
     },
     "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a": {
-      "status": "done",
+      "status": "processed",
       "runs_summary": {
         "terminal": 5,
         "in_flight": 0,
         "failed_exhausted": 4,
         "effectively_done": 1
-      },
-      "analysis": {
-        "slurm_job_id": "13302179",
-        "dispatched_at": "2026-05-05T03:50:28Z",
-        "status": "running"
-      },
-      "analysis_slurm": {
-        "n_running": 0,
-        "n_pending": 1
       }
     },
     "wmtask_init_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
@@ -960,6 +951,10 @@
     }
   },
   "pending_instructions": [
+    {
+      "file": "20260505T035550Z-wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep-stage-b-2noumq79.yaml",
+      "status": "pending"
+    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
