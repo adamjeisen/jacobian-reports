@@ -1,6 +1,0 @@
-experiment: wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep
-overrides:
-  - "training.trainer_params.max_epochs=1000"
-  - "hydra.launcher.partition=mit_normal_gpu"
-submitted_at: 20260505T030810Z
-submitted_from: millerlab-endeavourOS

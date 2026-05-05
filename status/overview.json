@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T03:05:21Z",
+  "last_updated": "2026-05-05T03:10:53Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -717,6 +717,20 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 21
+      }
+    },
+    "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 5,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 5,
+        "n_total": 5
       }
     },
     "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a": {
@@ -2383,6 +2397,10 @@
     },
     {
       "file": "20260505T020105Z-wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep__two_stage.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260505T030810Z-wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep.yaml",
       "status": "claimed"
     }
   ]
