@@ -1,0 +1,14 @@
+experiment: wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid
+overrides:
+- data.train_test_params.delay_embedding_params.n_delays=9,15,6
+two_stage:
+  cull_fraction: 0.5
+  full_max_epochs: 200
+  metric: trajectory val_loss
+  stage_a_epochs: 20
+submitted_at: 20260505T082056Z
+submitted_from: login006
+wandb_group: wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid
+expected_run_count: 63
+slurm_array_id: '13319777'
+slurm_submitted_at: '2026-05-05T08:25:43Z'
