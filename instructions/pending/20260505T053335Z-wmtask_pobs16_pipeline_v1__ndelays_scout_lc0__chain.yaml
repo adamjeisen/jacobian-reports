@@ -1,0 +1,19 @@
+experiment: wmtask_pobs16_pipeline_v1__ndelays_scout_lc0
+overrides: []
+chain:
+- axis: data.train_test_params.delay_embedding_params.n_delays
+  metric: trajectory val_loss
+  next_experiment: wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid
+  next_migrate_to:
+    partition: mit_normal_gpu
+  next_two_stage:
+    cull_fraction: 0.5
+    full_max_epochs: 200
+    metric: trajectory val_loss
+    stage_a_epochs: 20
+  top_k: 3
+  type: axis_select
+migrate_to:
+  partition: "mit_normal_gpu"
+submitted_at: 20260505T053335Z
+submitted_from: millerlab-endeavourOS
