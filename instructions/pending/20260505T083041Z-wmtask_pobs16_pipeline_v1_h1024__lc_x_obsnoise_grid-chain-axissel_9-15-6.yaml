@@ -1,0 +1,10 @@
+experiment: wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid
+overrides:
+  - "data.train_test_params.delay_embedding_params.n_delays=9,15,6"
+two_stage:
+  cull_fraction: 0.5
+  full_max_epochs: 200
+  metric: "trajectory val_loss"
+  stage_a_epochs: 20
+submitted_at: 20260505T083041Z
+submitted_from: login006
