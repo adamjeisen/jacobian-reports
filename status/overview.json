@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T04:45:27Z",
+  "last_updated": "2026-05-05T04:50:16Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -720,31 +720,10 @@
       }
     },
     "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep": {
-      "status": "processed",
-      "runs_summary": {
-        "terminal": 5,
-        "in_flight": 0,
-        "failed_exhausted": 0,
-        "effectively_done": 5
-      }
+      "status": "processed"
     },
     "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a": {
-      "status": "processed",
-      "runs_summary": {
-        "terminal": 5,
-        "in_flight": 0,
-        "failed_exhausted": 4,
-        "effectively_done": 1
-      }
-    },
-    "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_b": {
-      "status": "active",
-      "runs_summary": {
-        "terminal": 0,
-        "in_flight": 1,
-        "failed_exhausted": 0,
-        "effectively_done": 0
-      }
+      "status": "processed"
     },
     "wmtask_init_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
       "status": "processed",
