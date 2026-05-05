@@ -1,0 +1,8 @@
+experiment: wmtask_pobs16_pipeline_v1__h1024_smoke
+overrides: []
+submitted_at: 20260505T054848Z
+submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_pobs16_pipeline_v1__h1024_smoke
+expected_run_count: 1
+slurm_array_id: '13309664'
+slurm_submitted_at: '2026-05-05T05:51:08Z'

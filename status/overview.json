@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T05:45:18Z",
+  "last_updated": "2026-05-05T05:51:19Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -923,6 +923,20 @@
         "effectively_done": 32
       }
     },
+    "wmtask_pobs16_pipeline_v1__h1024_smoke": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 1,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 1,
+        "n_total": 1
+      }
+    },
     "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0": {
       "status": "active",
       "runs_summary": {
@@ -930,6 +944,11 @@
         "in_flight": 5,
         "failed_exhausted": 0,
         "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 5,
+        "n_pending": 0,
+        "n_total": 5
       }
     },
     "wmtask_vanilla_mse_p30__lc_sweep": {
@@ -2388,7 +2407,11 @@
       "status": "claimed"
     },
     {
-      "file": "20260505T053335Z-wmtask_pobs16_pipeline_v1__ndelays_scout_lc0__chain.yaml",
+      "file": "20260505T054712Z-wmtask_pobs16_pipeline_v1__ndelays_scout_lc0__chain.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260505T054848Z-wmtask_pobs16_pipeline_v1__h1024_smoke.yaml",
       "status": "claimed"
     }
   ]
