@@ -13,3 +13,7 @@ chain:
   type: axis_select
 submitted_at: 20260505T055740Z
 submitted_from: millerlab-endeavourOS
+wandb_group: wmtask_pobs16_pipeline_v1_h1024__ndelays_scout_lc0
+expected_run_count: 5
+slurm_array_id: '13310410'
+slurm_submitted_at: '2026-05-05T06:00:41Z'
