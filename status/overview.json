@@ -733,15 +733,6 @@
         "n_total": 5
       }
     },
-    "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep_20260505T020105Z__stage_a": {
-      "status": "active",
-      "runs_summary": {
-        "terminal": 1,
-        "in_flight": 4,
-        "failed_exhausted": 0,
-        "effectively_done": 1
-      }
-    },
     "wmtask_init_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm": {
       "status": "processed",
       "runs_summary": {
@@ -2393,10 +2384,6 @@
     },
     {
       "file": "20260504T174102Z-wmtask_init_compare_perconditionnorm.yaml",
-      "status": "claimed"
-    },
-    {
-      "file": "20260505T020105Z-wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep__two_stage.yaml",
       "status": "claimed"
     },
     {
