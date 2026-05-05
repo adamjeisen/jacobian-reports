@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T16:20:33Z",
+  "last_updated": "2026-05-05T16:25:34Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -935,9 +935,9 @@
     "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid": {
       "status": "active",
       "runs_summary": {
-        "terminal": 25,
-        "in_flight": 38,
-        "failed_exhausted": 0,
+        "terminal": 36,
+        "in_flight": 27,
+        "failed_exhausted": 11,
         "effectively_done": 25
       },
       "training_slurm": {
