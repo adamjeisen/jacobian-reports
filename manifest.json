@@ -455,6 +455,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_pobs16_pipeline_v1_h1024__ndelays_scout_lc0",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777969828.765781
+      },
+      {
         "group": "wmtask_pobs16_pipeline_v1__ndelays_scout_lc0",
         "has_report": true,
         "has_metrics": true,
