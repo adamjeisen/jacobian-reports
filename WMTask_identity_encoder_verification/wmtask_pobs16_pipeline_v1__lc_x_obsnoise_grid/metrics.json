@@ -1,0 +1,2176 @@
+{
+  "schema_version": 3,
+  "group": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+  "analyzed_at": "2026-05-05T20:09:35Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "3x9dcmu8",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004079318139702082,
+        "best_traj_loss_epoch": 34.0,
+        "best_mase": 0.5995581150054932,
+        "best_mase_epoch": 34.0,
+        "lc_loss_at_best_tl": 50.664642333984375,
+        "r2_at_best_tl": 0.9958122372627258,
+        "n_epochs": 35,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "5jun6tc1",
+        "run_idx": 1,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004101421218365431,
+        "best_traj_loss_epoch": 54.0,
+        "best_mase": 0.6008723378181458,
+        "best_mase_epoch": 53.0,
+        "lc_loss_at_best_tl": 53.567665100097656,
+        "r2_at_best_tl": 0.9960051774978638,
+        "n_epochs": 55,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "48tr0xgh",
+        "run_idx": 2,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004125876352190971,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6036869287490845,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 48.83686065673828,
+        "r2_at_best_tl": 0.99578458070755,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "8c39il95",
+        "run_idx": 3,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004516379442065954,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6297152042388916,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 63.39046859741211,
+        "r2_at_best_tl": 0.9953635931015015,
+        "n_epochs": 38,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "1sucuj93",
+        "run_idx": 4,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.006713333074003458,
+        "best_traj_loss_epoch": 42.0,
+        "best_mase": 0.7544276714324951,
+        "best_mase_epoch": 41.0,
+        "lc_loss_at_best_tl": 154.24884033203125,
+        "r2_at_best_tl": 0.9934592247009277,
+        "n_epochs": 43,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "udmt3lkf",
+        "run_idx": 5,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004468110855668783,
+        "best_traj_loss_epoch": 31.0,
+        "best_mase": 0.6269125938415527,
+        "best_mase_epoch": 31.0,
+        "lc_loss_at_best_tl": 51.63094711303711,
+        "r2_at_best_tl": 0.9954330325126648,
+        "n_epochs": 33,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993729,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168364,
+            0.9919741165444236
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "primfzzm",
+        "run_idx": 6,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004307842347770929,
+        "best_traj_loss_epoch": 42.0,
+        "best_mase": 0.615010678768158,
+        "best_mase_epoch": 42.0,
+        "lc_loss_at_best_tl": 67.21179962158203,
+        "r2_at_best_tl": 0.9955776929855347,
+        "n_epochs": 43,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "rn8mv1jm",
+        "run_idx": 7,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.0057327705435454845,
+        "best_traj_loss_epoch": 48.0,
+        "best_mase": 0.7018438577651978,
+        "best_mase_epoch": 48.0,
+        "lc_loss_at_best_tl": 109.00586700439453,
+        "r2_at_best_tl": 0.9944123029708862,
+        "n_epochs": 49,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "miyfq4ru",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004243391565978527,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6113876700401306,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 53.167938232421875,
+        "r2_at_best_tl": 0.9956631660461426,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "78ox3tnj",
+        "run_idx": 9,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0040834988467395306,
+        "best_traj_loss_epoch": 34.0,
+        "best_mase": 0.5998548269271851,
+        "best_mase_epoch": 34.0,
+        "lc_loss_at_best_tl": 28.198488235473633,
+        "r2_at_best_tl": 0.9958081841468811,
+        "n_epochs": 35,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "a2kmvkzo",
+        "run_idx": 10,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004090072121471167,
+        "best_traj_loss_epoch": 54.0,
+        "best_mase": 0.600313127040863,
+        "best_mase_epoch": 54.0,
+        "lc_loss_at_best_tl": 29.836322784423828,
+        "r2_at_best_tl": 0.9960160255432129,
+        "n_epochs": 56,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993729,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927824,
+            0.9907630722157732
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "nyxpooea",
+        "run_idx": 11,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0041243527084589005,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6036130785942078,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 27.629789352416992,
+        "r2_at_best_tl": 0.9957864880561829,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "awpb0yfy",
+        "run_idx": 12,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.00451275147497654,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6295434832572937,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 41.673030853271484,
+        "r2_at_best_tl": 0.9953674077987671,
+        "n_epochs": 38,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "d4cwj81g",
+        "run_idx": 13,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.00610191049054265,
+        "best_traj_loss_epoch": 49.0,
+        "best_mase": 0.7228957414627075,
+        "best_mase_epoch": 49.0,
+        "lc_loss_at_best_tl": 116.66996002197266,
+        "r2_at_best_tl": 0.9940529465675354,
+        "n_epochs": 50,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "i542tqq9",
+        "run_idx": 14,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004472589120268822,
+        "best_traj_loss_epoch": 31.0,
+        "best_mase": 0.6271197199821472,
+        "best_mase_epoch": 31.0,
+        "lc_loss_at_best_tl": 32.721893310546875,
+        "r2_at_best_tl": 0.9954284429550171,
+        "n_epochs": 33,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "w0xmpllx",
+        "run_idx": 15,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004301200620830059,
+        "best_traj_loss_epoch": 42.0,
+        "best_mase": 0.6146050095558167,
+        "best_mase_epoch": 42.0,
+        "lc_loss_at_best_tl": 44.39095687866211,
+        "r2_at_best_tl": 0.9955844879150391,
+        "n_epochs": 43,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "uxm7pkl1",
+        "run_idx": 16,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.005079252179712057,
+        "best_traj_loss_epoch": 52.0,
+        "best_mase": 0.6631309390068054,
+        "best_mase_epoch": 52.0,
+        "lc_loss_at_best_tl": 76.02507781982422,
+        "r2_at_best_tl": 0.9950498938560486,
+        "n_epochs": 53,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "ctblk4fv",
+        "run_idx": 17,
+        "state": "finished",
+        "lc_weight": 1e-06,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004246561322361231,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6115463972091675,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 34.64728546142578,
+        "r2_at_best_tl": 0.9956600666046143,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 1e-06,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "2zu9r1v1",
+        "run_idx": 18,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004192638676613569,
+        "best_traj_loss_epoch": 30.0,
+        "best_mase": 0.606828510761261,
+        "best_mase_epoch": 30.0,
+        "lc_loss_at_best_tl": 8.7445707321167,
+        "r2_at_best_tl": 0.9956981539726257,
+        "n_epochs": 31,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "uoj4xawo",
+        "run_idx": 19,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004115044139325619,
+        "best_traj_loss_epoch": 53.0,
+        "best_mase": 0.6018285155296326,
+        "best_mase_epoch": 53.0,
+        "lc_loss_at_best_tl": 9.242551803588867,
+        "r2_at_best_tl": 0.9959924221038818,
+        "n_epochs": 54,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "ma5q364f",
+        "run_idx": 20,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004140170756727457,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6047258377075195,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 9.081457138061523,
+        "r2_at_best_tl": 0.9957708120346069,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "fh7hqm2q",
+        "run_idx": 21,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004595106467604637,
+        "best_traj_loss_epoch": 33.0,
+        "best_mase": 0.6349754929542542,
+        "best_mase_epoch": 33.0,
+        "lc_loss_at_best_tl": 14.638494491577148,
+        "r2_at_best_tl": 0.9952852129936218,
+        "n_epochs": 34,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "xu1eixb9",
+        "run_idx": 22,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.005441032815724611,
+        "best_traj_loss_epoch": 46.0,
+        "best_mase": 0.6865343451499939,
+        "best_mase_epoch": 46.0,
+        "lc_loss_at_best_tl": 25.918073654174805,
+        "r2_at_best_tl": 0.9946994781494141,
+        "n_epochs": 47,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "d5qrp7h9",
+        "run_idx": 23,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004380335565656424,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6209005117416382,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 12.042349815368652,
+        "r2_at_best_tl": 0.9955237507820129,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "qv74v8v1",
+        "run_idx": 24,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004291460383683443,
+        "best_traj_loss_epoch": 42.0,
+        "best_mase": 0.6141376495361328,
+        "best_mase_epoch": 42.0,
+        "lc_loss_at_best_tl": 16.813858032226562,
+        "r2_at_best_tl": 0.9955947399139404,
+        "n_epochs": 45,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "kybx7ydc",
+        "run_idx": 25,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.005085864569991827,
+        "best_traj_loss_epoch": 49.0,
+        "best_mase": 0.6642802953720093,
+        "best_mase_epoch": 49.0,
+        "lc_loss_at_best_tl": 28.726285934448242,
+        "r2_at_best_tl": 0.995042622089386,
+        "n_epochs": 50,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "cdkmy8xt",
+        "run_idx": 26,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004261708352714777,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6124622821807861,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 12.944990158081055,
+        "r2_at_best_tl": 0.9956450462341309,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993729,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168364,
+            0.9919741165444236
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "2luc50is",
+        "run_idx": 27,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004102251958101988,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.6007055640220642,
+        "best_mase_epoch": 40.0,
+        "lc_loss_at_best_tl": 1.955323338508606,
+        "r2_at_best_tl": 0.9957878589630127,
+        "n_epochs": 41,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "iaj54q33",
+        "run_idx": 28,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004410257562994957,
+        "best_traj_loss_epoch": 44.0,
+        "best_mase": 0.6210253834724426,
+        "best_mase_epoch": 44.0,
+        "lc_loss_at_best_tl": 1.8148797750473022,
+        "r2_at_best_tl": 0.9957079887390137,
+        "n_epochs": 46,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "ccpgm7cl",
+        "run_idx": 29,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.0042202165350317955,
+        "best_traj_loss_epoch": 40.0,
+        "best_mase": 0.6099520325660706,
+        "best_mase_epoch": 40.0,
+        "lc_loss_at_best_tl": 1.9749888181686401,
+        "r2_at_best_tl": 0.9956874847412109,
+        "n_epochs": 41,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "y7n4fqoc",
+        "run_idx": 30,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004614169709384441,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6357888579368591,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 3.705101251602173,
+        "r2_at_best_tl": 0.995262861251831,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "6xgmlvt1",
+        "run_idx": 31,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.006878067273646593,
+        "best_traj_loss_epoch": 48.0,
+        "best_mase": 0.7638282775878906,
+        "best_mase_epoch": 48.0,
+        "lc_loss_at_best_tl": 21.563894271850586,
+        "r2_at_best_tl": 0.993293821811676,
+        "n_epochs": 52,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "taxfrzvi",
+        "run_idx": 32,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.0045012133195996284,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.6288835406303406,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 2.891845464706421,
+        "r2_at_best_tl": 0.9954001903533936,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "cbe7z6js",
+        "run_idx": 33,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.0045188129879534245,
+        "best_traj_loss_epoch": 36.0,
+        "best_mase": 0.6283688545227051,
+        "best_mase_epoch": 36.0,
+        "lc_loss_at_best_tl": 3.783820152282715,
+        "r2_at_best_tl": 0.9953615665435791,
+        "n_epochs": 37,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "b1li01z7",
+        "run_idx": 34,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.006653040647506714,
+        "best_traj_loss_epoch": 45.0,
+        "best_mase": 0.749605119228363,
+        "best_mase_epoch": 45.0,
+        "lc_loss_at_best_tl": 21.511367797851562,
+        "r2_at_best_tl": 0.9935191869735718,
+        "n_epochs": 48,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "qpzk8q77",
+        "run_idx": 35,
+        "state": "finished",
+        "lc_weight": 0.0001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004379637539386749,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6202964186668396,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 3.076871633529663,
+        "r2_at_best_tl": 0.9955245852470398,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.0001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "1yhoqwg5",
+        "run_idx": 36,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004662897437810898,
+        "best_traj_loss_epoch": 39.0,
+        "best_mase": 0.6368261575698853,
+        "best_mase_epoch": 39.0,
+        "lc_loss_at_best_tl": 0.3609226644039154,
+        "r2_at_best_tl": 0.9952087998390198,
+        "n_epochs": 40,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "wb5ogm10",
+        "run_idx": 37,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.005087880417704582,
+        "best_traj_loss_epoch": 42.0,
+        "best_mase": 0.6620932817459106,
+        "best_mase_epoch": 42.0,
+        "lc_loss_at_best_tl": 0.31609421968460083,
+        "r2_at_best_tl": 0.9950457215309143,
+        "n_epochs": 43,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993729,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927824,
+            0.9907630722157732
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "1184hm1z",
+        "run_idx": 38,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.00473680067807436,
+        "best_traj_loss_epoch": 41.0,
+        "best_mase": 0.6425419449806213,
+        "best_mase_epoch": 41.0,
+        "lc_loss_at_best_tl": 0.3842847943305969,
+        "r2_at_best_tl": 0.9951581358909607,
+        "n_epochs": 42,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "nw6kehrs",
+        "run_idx": 39,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.03026544116437435,
+        "best_traj_loss_epoch": 33.0,
+        "best_mase": 1.504247784614563,
+        "best_mase_epoch": 33.0,
+        "lc_loss_at_best_tl": 17.638212203979492,
+        "r2_at_best_tl": 0.968889057636261,
+        "n_epochs": 38,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "0n5tf14x",
+        "run_idx": 40,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.011257043108344078,
+        "best_traj_loss_epoch": 50.0,
+        "best_mase": 0.9630280137062073,
+        "best_mase_epoch": 50.0,
+        "lc_loss_at_best_tl": 4.169408798217773,
+        "r2_at_best_tl": 0.9890190362930298,
+        "n_epochs": 51,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "wp4net0i",
+        "run_idx": 41,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.0053449212573468685,
+        "best_traj_loss_epoch": 42.0,
+        "best_mase": 0.6792865991592407,
+        "best_mase_epoch": 42.0,
+        "lc_loss_at_best_tl": 0.9212894439697266,
+        "r2_at_best_tl": 0.9945348501205444,
+        "n_epochs": 43,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "v5oijoaq",
+        "run_idx": 42,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.03951830789446831,
+        "best_traj_loss_epoch": 3.0,
+        "best_mase": 1.610105037689209,
+        "best_mase_epoch": 3.0,
+        "lc_loss_at_best_tl": 1.4339979887008667,
+        "r2_at_best_tl": 0.9594743251800537,
+        "n_epochs": 44,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "cjd6bfqm",
+        "run_idx": 43,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.010943945497274399,
+        "best_traj_loss_epoch": 61.0,
+        "best_mase": 0.9531580209732056,
+        "best_mase_epoch": 61.0,
+        "lc_loss_at_best_tl": 6.992959499359131,
+        "r2_at_best_tl": 0.9893109798431396,
+        "n_epochs": 66,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993729,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927824,
+            0.9907630722157732
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "yr9k1c12",
+        "run_idx": 44,
+        "state": "finished",
+        "lc_weight": 0.001,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.005279938690364361,
+        "best_traj_loss_epoch": 37.0,
+        "best_mase": 0.674937903881073,
+        "best_mase_epoch": 37.0,
+        "lc_loss_at_best_tl": 0.8748000860214233,
+        "r2_at_best_tl": 0.9946027994155884,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.001,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "9v8mih73",
+        "run_idx": 45,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006357054226100445,
+        "best_traj_loss_epoch": 43.0,
+        "best_mase": 0.7306802868843079,
+        "best_mase_epoch": 43.0,
+        "lc_loss_at_best_tl": 0.05244855582714081,
+        "r2_at_best_tl": 0.9934705495834351,
+        "n_epochs": 44,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "fybsg3o5",
+        "run_idx": 46,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006295631639659405,
+        "best_traj_loss_epoch": 51.0,
+        "best_mase": 0.7285234928131104,
+        "best_mase_epoch": 51.0,
+        "lc_loss_at_best_tl": 0.040003661066293716,
+        "r2_at_best_tl": 0.9938643574714661,
+        "n_epochs": 52,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "pjhquqis",
+        "run_idx": 47,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.006647801026701927,
+        "best_traj_loss_epoch": 41.0,
+        "best_mase": 0.7462832927703857,
+        "best_mase_epoch": 41.0,
+        "lc_loss_at_best_tl": 0.05977187305688858,
+        "r2_at_best_tl": 0.9932021498680115,
+        "n_epochs": 42,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "9awygdxx",
+        "run_idx": 48,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.14831599593162537,
+        "best_traj_loss_epoch": 1.0,
+        "best_mase": 2.959986686706543,
+        "best_mase_epoch": 1.0,
+        "lc_loss_at_best_tl": 0.11762604117393494,
+        "r2_at_best_tl": 0.8484551906585693,
+        "n_epochs": 16,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993729,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285298,
+            0.9905418872477102
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "i13ej08e",
+        "run_idx": 49,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.03790925815701485,
+        "best_traj_loss_epoch": 24.0,
+        "best_mase": 1.6656882762908936,
+        "best_mase_epoch": 24.0,
+        "lc_loss_at_best_tl": 0.1468421220779419,
+        "r2_at_best_tl": 0.9631593823432922,
+        "n_epochs": 53,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "l1bvf1hu",
+        "run_idx": 50,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.07281463593244553,
+        "best_traj_loss_epoch": 39.0,
+        "best_mase": 2.260627508163452,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 3.2347702980041504,
+        "r2_at_best_tl": 0.9256784915924072,
+        "n_epochs": 41,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "m0zb3cdy",
+        "run_idx": 51,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.1485595554113388,
+        "best_traj_loss_epoch": 1.0,
+        "best_mase": 2.9596548080444336,
+        "best_mase_epoch": 1.0,
+        "lc_loss_at_best_tl": 0.15653586387634277,
+        "r2_at_best_tl": 0.8482431769371033,
+        "n_epochs": 65,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993729,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285298,
+            0.9905418872477102
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "hpi3ejsz",
+        "run_idx": 52,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.020723305642604828,
+        "best_traj_loss_epoch": 49.0,
+        "best_mase": 1.2821861505508423,
+        "best_mase_epoch": 49.0,
+        "lc_loss_at_best_tl": 0.3312283456325531,
+        "r2_at_best_tl": 0.9797853827476501,
+        "n_epochs": 50,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "139dwoa8",
+        "run_idx": 53,
+        "state": "finished",
+        "lc_weight": 0.01,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.09812439233064651,
+        "best_traj_loss_epoch": 3.0,
+        "best_mase": 2.39574933052063,
+        "best_mase_epoch": 3.0,
+        "lc_loss_at_best_tl": 0.14634671807289124,
+        "r2_at_best_tl": 0.8996963500976562,
+        "n_epochs": 45,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.01,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "5296bl4t",
+        "run_idx": 54,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.009283830411732197,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.8657705187797546,
+        "best_mase_epoch": 39.0,
+        "lc_loss_at_best_tl": 0.0029698321595788,
+        "r2_at_best_tl": 0.9904664754867554,
+        "n_epochs": 40,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "mxcblnbv",
+        "run_idx": 55,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.007980351336300373,
+        "best_traj_loss_epoch": 52.0,
+        "best_mase": 0.8128021955490112,
+        "best_mase_epoch": 52.0,
+        "lc_loss_at_best_tl": 0.002238423563539982,
+        "r2_at_best_tl": 0.9922289848327637,
+        "n_epochs": 53,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "56suu9xy",
+        "run_idx": 56,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.009539312683045864,
+        "best_traj_loss_epoch": 43.0,
+        "best_mase": 0.8788141012191772,
+        "best_mase_epoch": 43.0,
+        "lc_loss_at_best_tl": 0.003868252271786332,
+        "r2_at_best_tl": 0.9902417063713074,
+        "n_epochs": 44,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      {
+        "run_id": "17rm3ro7",
+        "run_idx": 57,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.020945563912391663,
+        "best_traj_loss_epoch": 39.0,
+        "best_mase": 1.2833229303359985,
+        "best_mase_epoch": 39.0,
+        "lc_loss_at_best_tl": 0.03787314519286156,
+        "r2_at_best_tl": 0.9785248637199402,
+        "n_epochs": 40,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "y1hvo5lg",
+        "run_idx": 58,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.015269872732460499,
+        "best_traj_loss_epoch": 49.0,
+        "best_mase": 1.1110005378723145,
+        "best_mase_epoch": 49.0,
+        "lc_loss_at_best_tl": 0.018694262951612473,
+        "r2_at_best_tl": 0.9851170182228088,
+        "n_epochs": 50,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "qh49bl8i",
+        "run_idx": 59,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.05178018659353256,
+        "best_traj_loss_epoch": 16.0,
+        "best_mase": 1.8824529647827148,
+        "best_mase_epoch": 16.0,
+        "lc_loss_at_best_tl": 0.02642839401960373,
+        "r2_at_best_tl": 0.9472411870956421,
+        "n_epochs": 43,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      {
+        "run_id": "mjfkpubb",
+        "run_idx": 60,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.01698843576014042,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 1.1607288122177124,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 0.02395842969417572,
+        "r2_at_best_tl": 0.982573926448822,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "l119bzlt",
+        "run_idx": 61,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.015090666711330414,
+        "best_traj_loss_epoch": 50.0,
+        "best_mase": 1.1043511629104614,
+        "best_mase_epoch": 50.0,
+        "lc_loss_at_best_tl": 0.017762387171387672,
+        "r2_at_best_tl": 0.9852858781814575,
+        "n_epochs": 51,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 15,
+          "model.n_target_dims": 41,
+          "model.n_target_dims_per_block_pca_auto": [
+            25,
+            16
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9900411020927828,
+            0.9907630722157746
+          ],
+          "model.params.input_dim": 41,
+          "model.params.output_dim": 1681,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      },
+      {
+        "run_id": "jvwajp4f",
+        "run_idx": 62,
+        "state": "finished",
+        "lc_weight": 0.1,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.04986795410513878,
+        "best_traj_loss_epoch": 17.0,
+        "best_mase": 1.8510823249816895,
+        "best_mase_epoch": 17.0,
+        "lc_loss_at_best_tl": 0.028461968526244164,
+        "r2_at_best_tl": 0.9490974545478821,
+        "n_epochs": 23,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0.1,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 63,
+    "matched_run_count": 63,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "3x9dcmu8",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 0.004079318139702082,
+        "best_traj_loss_epoch": 34.0,
+        "best_mase": 0.5995581150054932,
+        "best_mase_epoch": 34.0,
+        "lc_loss_at_best_tl": 50.664642333984375,
+        "r2_at_best_tl": 0.9958122372627258,
+        "n_epochs": 35,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 9,
+          "model.n_target_dims": 33,
+          "model.n_target_dims_per_block_pca_auto": [
+            20,
+            13
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9901722465285276,
+            0.9905418872477084
+          ],
+          "model.params.input_dim": 33,
+          "model.params.output_dim": 1089,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0
+        }
+      },
+      "0.01": {
+        "run_id": "d5qrp7h9",
+        "run_idx": 23,
+        "state": "finished",
+        "lc_weight": 1e-05,
+        "obs_noise_scale": 0.01,
+        "best_traj_loss": 0.004380335565656424,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6209005117416382,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 12.042349815368652,
+        "r2_at_best_tl": 0.9955237507820129,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 1e-05,
+          "training.lightning.obs_noise_scale": 0.01
+        }
+      },
+      "0.05": {
+        "run_id": "miyfq4ru",
+        "run_idx": 8,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.05,
+        "best_traj_loss": 0.004243391565978527,
+        "best_traj_loss_epoch": 38.0,
+        "best_mase": 0.6113876700401306,
+        "best_mase_epoch": 38.0,
+        "lc_loss_at_best_tl": 53.167938232421875,
+        "r2_at_best_tl": 0.9956631660461426,
+        "n_epochs": 39,
+        "swept_config": {
+          "data.postprocessing.generalized_variance": 0.02445884945993906,
+          "data.train_test_params.delay_embedding_params.n_delays": 6,
+          "model.n_target_dims": 29,
+          "model.n_target_dims_per_block_pca_auto": [
+            17,
+            12
+          ],
+          "model.n_target_dims_per_block_pca_cum_var": [
+            0.9902608766168368,
+            0.9919741165444216
+          ],
+          "model.params.input_dim": 29,
+          "model.params.output_dim": 841,
+          "training.lightning.loop_closure_weight": 0,
+          "training.lightning.obs_noise_scale": 0.05
+        }
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "3x9dcmu8",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004079318139702082,
+      "best_traj_loss_epoch": 34.0,
+      "best_mase": 0.5995581150054932,
+      "best_mase_epoch": 34.0,
+      "lc_loss_at_best_tl": 50.664642333984375,
+      "r2_at_best_tl": 0.9958122372627258,
+      "n_epochs": 35,
+      "swept_config": {
+        "data.postprocessing.generalized_variance": 0.02445884945993906,
+        "data.train_test_params.delay_embedding_params.n_delays": 9,
+        "model.n_target_dims": 33,
+        "model.n_target_dims_per_block_pca_auto": [
+          20,
+          13
+        ],
+        "model.n_target_dims_per_block_pca_cum_var": [
+          0.9901722465285276,
+          0.9905418872477084
+        ],
+        "model.params.input_dim": 33,
+        "model.params.output_dim": 1089,
+        "training.lightning.loop_closure_weight": 0,
+        "training.lightning.obs_noise_scale": 0
+      }
+    },
+    "overall_best_mase": {
+      "run_id": "3x9dcmu8",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 0.004079318139702082,
+      "best_traj_loss_epoch": 34.0,
+      "best_mase": 0.5995581150054932,
+      "best_mase_epoch": 34.0,
+      "lc_loss_at_best_tl": 50.664642333984375,
+      "r2_at_best_tl": 0.9958122372627258,
+      "n_epochs": 35,
+      "swept_config": {
+        "data.postprocessing.generalized_variance": 0.02445884945993906,
+        "data.train_test_params.delay_embedding_params.n_delays": 9,
+        "model.n_target_dims": 33,
+        "model.n_target_dims_per_block_pca_auto": [
+          20,
+          13
+        ],
+        "model.n_target_dims_per_block_pca_cum_var": [
+          0.9901722465285276,
+          0.9905418872477084
+        ],
+        "model.params.input_dim": 33,
+        "model.params.output_dim": 1089,
+        "training.lightning.loop_closure_weight": 0,
+        "training.lightning.obs_noise_scale": 0
+      }
+    },
+    "swept_paths": [
+      "data.postprocessing.generalized_variance",
+      "data.train_test_params.delay_embedding_params.n_delays",
+      "model.n_target_dims",
+      "model.n_target_dims_per_block_pca_auto",
+      "model.n_target_dims_per_block_pca_cum_var",
+      "model.params.input_dim",
+      "model.params.output_dim",
+      "training.lightning.loop_closure_weight",
+      "training.lightning.obs_noise_scale"
+    ],
+    "n_runs": 63
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "per_run_tangent_spectrum": {},
+  "per_run_tangent_spectrum_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "success_criteria_verdicts": [
+    {
+      "criterion": "All 63 Stage A cells finish without divergence",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "two_stage_cull keeps top ~32 by trajectory val_loss",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "Stage B publishes report.md with at least one cell beating the scout's lc=0 winner on val traj_loss",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/lyapunov.png",
+    "lyapunov_top10": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/lyapunov_top10.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/long_trajectory.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/amplification.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}

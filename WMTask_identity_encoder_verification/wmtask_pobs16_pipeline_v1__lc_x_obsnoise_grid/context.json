@@ -1,0 +1,607 @@
+{
+  "group": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+  "completed_at": "2026-05-05T20:05:32Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid": {
+      "description": "Pipeline v1 GRID (Sweep 2). Chain follow-up of\n`wmtask_pobs16_pipeline_v1__ndelays_scout_lc0`. n_delays pinned to\nscout's top-3 by axis_select. sweep_grid covers\nloop_closure_weight \u00d7 obs_noise_scale =\n7 \u00d7 3 = 21 cells per pinned n_delays \u2192 63 total Stage A cells.\nTwo-stage cull at 20 epochs (top 50%); Stage B runs to ES or\n3hr walltime.\n",
+      "hypothesis": "For the n_delays values that perform best at lc=0 (sweep 1),\nsweep over loop_closure regularization \u00d7 observation noise scale\nto find the regime that maximizes generalization on the\npartial-obs WMTask conditioned task.\n",
+      "success_criteria": [
+        "All 63 Stage A cells finish without divergence",
+        "two_stage_cull keeps top ~32 by trajectory val_loss",
+        "Stage B publishes report.md with at least one cell beating the scout's lc=0 winner on val traj_loss"
+      ]
+    }
+  },
+  "expected_run_count": 63,
+  "hydra": {
+    "experiments": [
+      "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+      "data.train_test_params.delay_embedding_params.n_delays=9,15,6"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 1,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 2,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 3,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 4,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 5,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 6,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 7,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 8,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=0",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 9,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 10,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 11,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 12,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 13,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 14,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 15,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 16,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 17,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-6",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 18,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 19,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 20,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 21,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 22,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 23,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 24,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 25,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 26,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-5",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 27,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 28,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 29,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 30,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 31,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 32,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 33,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 34,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 35,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-4",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 36,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 37,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 38,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 39,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 40,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 41,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 42,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 43,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 44,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-3",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 45,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 46,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 47,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 48,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 49,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 50,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 51,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 52,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 53,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-2",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 54,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 55,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 56,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 57,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 58,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 59,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.01",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      },
+      {
+        "run_idx": 60,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=9"
+        ]
+      },
+      {
+        "run_idx": 61,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      },
+      {
+        "run_idx": 62,
+        "experiment": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
+        "overrides": [
+          "training.lightning.loop_closure_weight=1e-1",
+          "training.lightning.obs_noise_scale=0.05",
+          "data.train_test_params.delay_embedding_params.n_delays=6"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "517adfd",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-05T08:25:15Z"
+}
