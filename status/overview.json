@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T21:10:23Z",
+  "last_updated": "2026-05-05T21:15:23Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -960,8 +960,8 @@
       },
       "training_slurm": {
         "n_running": 16,
-        "n_pending": 44,
-        "n_total": 60
+        "n_pending": 43,
+        "n_total": 59
       }
     },
     "wmtask_pobs16_pipeline_v1_h1024__ndelays_scout_lc0": {
