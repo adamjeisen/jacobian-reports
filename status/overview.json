@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-05T08:30:44Z",
+  "last_updated": "2026-05-05T08:36:02Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -955,6 +955,20 @@
         "effectively_done": 5
       }
     },
+    "wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 63,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 0,
+        "n_pending": 63,
+        "n_total": 63
+      }
+    },
     "wmtask_pobs16_pipeline_v1_h1024__ndelays_scout_lc0": {
       "status": "processed",
       "runs_summary": {
@@ -975,10 +989,6 @@
     }
   },
   "pending_instructions": [
-    {
-      "file": "20260505T083041Z-wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid-chain-axissel_9-15-6.yaml",
-      "status": "pending"
-    },
     {
       "file": "20260416T020034Z-lorenz_partial_100d_7lat_additive_mse_klnull_sweep.yaml",
       "status": "claimed"
@@ -2437,6 +2447,10 @@
     },
     {
       "file": "20260505T082056Z-wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid-chain-axissel_9-15-6.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260505T083041Z-wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid-chain-axissel_9-15-6.yaml",
       "status": "claimed"
     }
   ]
