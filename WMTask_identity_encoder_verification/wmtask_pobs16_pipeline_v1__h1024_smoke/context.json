@@ -1,0 +1,45 @@
+{
+  "group": "wmtask_pobs16_pipeline_v1__h1024_smoke",
+  "completed_at": "2026-05-05T06:00:50Z",
+  "outcome": "complete_clean",
+  "experiment_metadata": {
+    "wmtask_pobs16_pipeline_v1__h1024_smoke": {
+      "description": "Smoke test for the H=1024 encoder (vs the H=128 scout default).\n1 cell, n_delays=15 (worst-case Cayley memory at D=240 per area),\n5 train batches, 2 val batches, 1 epoch. ou_bcs_high (H100s).\n",
+      "hypothesis": "H=1024 fits on a single H100 without OOM. Should finish in well\nunder the 30-min walltime cap I'm asking for.\n",
+      "success_criteria": [
+        "Job COMPLETES (no OOM, no NaN train loss)",
+        "5 train batches + 2 val batches logged to wandb"
+      ]
+    }
+  },
+  "expected_run_count": 1,
+  "hydra": {
+    "experiments": [
+      "wmtask_pobs16_pipeline_v1__h1024_smoke"
+    ],
+    "multirun_dir": null,
+    "overrides_template": [
+      "experiment=wmtask_pobs16_pipeline_v1__h1024_smoke"
+    ],
+    "resolved_runs": [
+      {
+        "run_idx": 0,
+        "experiment": "wmtask_pobs16_pipeline_v1__h1024_smoke",
+        "overrides": [
+          "data.train_test_params.delay_embedding_params.n_delays=15"
+        ]
+      }
+    ]
+  },
+  "wandb": {
+    "entity": "JacobianODE",
+    "project": "WMTask_identity_encoder_verification",
+    "group": "wmtask_pobs16_pipeline_v1__h1024_smoke"
+  },
+  "git": {
+    "branch": "latent-JacobianODE",
+    "commit": "9615cd2",
+    "repo_dir": "/home/eisenaj/code/JacobianODE"
+  },
+  "launched_at": "2026-05-05T05:50:45Z"
+}

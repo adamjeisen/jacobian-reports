@@ -455,6 +455,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_pobs16_pipeline_v1__h1024_smoke",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1777961131.3097355
+      },
+      {
         "group": "wmtask_epoch_compare_partialobs16_pcaautodim_cayley_perconditionnorm__ndelays_sweep",
         "has_report": true,
         "has_metrics": true,

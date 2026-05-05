@@ -1,0 +1,113 @@
+{
+  "schema_version": 3,
+  "group": "wmtask_pobs16_pipeline_v1__h1024_smoke",
+  "analyzed_at": "2026-05-05T06:02:41Z",
+  "metrics_summary": {
+    "per_run": [
+      {
+        "run_id": "6adererk",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 1.2657999992370605,
+        "best_traj_loss_epoch": 0.0,
+        "best_mase": 8.326892852783203,
+        "best_mase_epoch": 0.0,
+        "lc_loss_at_best_tl": 0.005563513375818729,
+        "r2_at_best_tl": -0.3304840326309204,
+        "n_epochs": 1,
+        "swept_config": {}
+      }
+    ],
+    "unmatched_runs": [],
+    "duplicate_matches": [],
+    "expected_run_count": 1,
+    "matched_run_count": 1,
+    "best_by_obs_noise_scale": {
+      "0.0": {
+        "run_id": "6adererk",
+        "run_idx": 0,
+        "state": "finished",
+        "lc_weight": 0.0,
+        "obs_noise_scale": 0.0,
+        "best_traj_loss": 1.2657999992370605,
+        "best_traj_loss_epoch": 0.0,
+        "best_mase": 8.326892852783203,
+        "best_mase_epoch": 0.0,
+        "lc_loss_at_best_tl": 0.005563513375818729,
+        "r2_at_best_tl": -0.3304840326309204,
+        "n_epochs": 1,
+        "swept_config": {}
+      }
+    },
+    "overall_chosen_run": {
+      "run_id": "6adererk",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 1.2657999992370605,
+      "best_traj_loss_epoch": 0.0,
+      "best_mase": 8.326892852783203,
+      "best_mase_epoch": 0.0,
+      "lc_loss_at_best_tl": 0.005563513375818729,
+      "r2_at_best_tl": -0.3304840326309204,
+      "n_epochs": 1,
+      "swept_config": {}
+    },
+    "overall_best_mase": {
+      "run_id": "6adererk",
+      "run_idx": 0,
+      "state": "finished",
+      "lc_weight": 0.0,
+      "obs_noise_scale": 0.0,
+      "best_traj_loss": 1.2657999992370605,
+      "best_traj_loss_epoch": 0.0,
+      "best_mase": 8.326892852783203,
+      "best_mase_epoch": 0.0,
+      "lc_loss_at_best_tl": 0.005563513375818729,
+      "r2_at_best_tl": -0.3304840326309204,
+      "n_epochs": 1,
+      "swept_config": {}
+    },
+    "swept_paths": [],
+    "n_runs": 1
+  },
+  "per_run_lyapunov": {},
+  "empirical_lyapunov_spectrum": null,
+  "per_run_lyapunov_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "per_run_tangent_spectrum": {},
+  "per_run_tangent_spectrum_error": "AcceleratorError: CUDA error: device-side assert triggered\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n",
+  "success_criteria_verdicts": [
+    {
+      "criterion": "Job COMPLETES (no OOM, no NaN train loss)",
+      "verdict": "Unknown",
+      "note": ""
+    },
+    {
+      "criterion": "5 train batches + 2 val batches logged to wandb",
+      "verdict": "Unknown",
+      "note": ""
+    }
+  ],
+  "figures": {
+    "sweep_overview": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/sweep_overview.png",
+    "sweep_pareto": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/sweep_pareto.png",
+    "reconstruction": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/reconstruction.png",
+    "mase": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/mase.png",
+    "latent_utilization": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/latent_utilization.png",
+    "lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/lyapunov.png",
+    "lyapunov_top10": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/lyapunov_top10.png",
+    "kaplan_yorke": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/kaplan_yorke.png",
+    "kaplan_yorke_pca": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/kaplan_yorke_pca.png",
+    "prediction_windows": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/prediction_windows.png",
+    "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/prediction_detail_latent.png",
+    "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/prediction_detail_obs.png",
+    "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/long_trajectory.png",
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__h1024_smoke/figures/amplification.png"
+  },
+  "analytics_error": null,
+  "true_lyapunov": null,
+  "analytics_log_file": "run_analytics.log"
+}
