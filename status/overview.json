@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-06T20:55:21Z",
+  "last_updated": "2026-05-06T21:00:21Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2501,6 +2501,10 @@
     },
     {
       "file": "20260506T205329Z-mc-awake_only_ds10_full_1stage_big_mlp.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260506T205852Z-mc-awake_only_ds10_full_2stage_big_mlp.yaml",
       "status": "claimed"
     }
   ]
