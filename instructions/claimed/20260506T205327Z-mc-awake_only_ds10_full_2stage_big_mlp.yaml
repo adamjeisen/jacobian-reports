@@ -1,0 +1,94 @@
+kind: mindcontrol
+metadata:
+  description: 'Full training: 16-layer encoder + dynamics MLP [2048, 2048, 4096,
+    4096] on awake-only ds10. Two-stage PCA (pre_pca_per_area=True at 99% on raw,
+    then JacobianODE autodim PCA-99% on delay-embedded reduced obs). 15 encoder warmup
+    epochs.
+
+    '
+  hypothesis: "The bigger dynamics MLP (~36-37M params at two-stage n_target_dims\n\
+    \u2248 42) gives the dynamics model real capacity to fit the awake LFP\nforecast\
+    \ task. Encoder warmup gives the encoder time to settle\nnear its reconstruction\
+    \ floor before dynamics starts learning,\navoiding the chicken-and-egg problem\
+    \ where dynamics tries to fit\na moving latent.\n\nTwo-stage PCA reduces the input\
+    \ to the encoder by ~75% (from 1245\ndelay-embedded dims to ~300 reduced ones\
+    \ at n_delays=5), and\nhalves the second-stage autodim dim (~73 \u2192 ~42). Smaller\
+    \ MLP\noutput layer (42\xB2 = 1764 vs 73\xB2 = 5329), more tractable\noptimization.\n"
+  success_criteria:
+  - Reconstruction loss tracks the encoder-only convergence in the first 15 epochs
+    (~0.01 floor at PCA-99%, awake-only).
+  - val/one_step_mase drops below 1.0 (model beats persistence) by epoch 60.
+  - "val/total_loss is monotonically decreasing across the warmup \u2192 dynamics\
+    \ transition (no divergence at epoch 15+)."
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_only__ds10
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    section_condition_values:
+    - -1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 10
+sweep_name: full_2stage_big_mlp
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid: {}
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+  prediction_steps: 30
+  n_delays: 5
+  delay_spacing: 1
+  seq_length: 45
+  seq_spacing: 15
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  pre_pca_per_area: true
+  pre_pca_var_threshold: 0.99
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  encoder_warmup_epochs: 15
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 30
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 96GB
+  timeout_min: 360
+  gres: gpu:1
+submitted_at: 20260506T205327Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_only__ds10__full_2stage_big_mlp__20260506T205513Z
+slurm_array_id: '13450446'
+slurm_submitted_at: 20260506T205513Z
+n_cells: 1
+expected_run_count: 1
