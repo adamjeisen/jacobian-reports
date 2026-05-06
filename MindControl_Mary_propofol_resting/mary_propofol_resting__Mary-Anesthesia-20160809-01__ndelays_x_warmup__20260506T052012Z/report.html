@@ -53,9 +53,58 @@ maintenance dose in the chosen-cell run.
 <h2>Per-cell Lyapunov spectra</h2>
 <p><img alt="per-cell lyap" src="figures/per_cell_lyapunov.png" /></p>
 <p>Each subplot is one cell's per-condition Lyapunov spectrum (mean across that cell's trajectories). Watch for monotone trends as <code>n_delays</code> increases and for any cell where the conditions cleanly separate.</p>
-<h2>Chosen run gramians</h2>
-<p><img alt="chosen gramians" src="figures/chosen_gramians.png" /></p>
-<p>2×2 of {<code>standard</code>, <code>metric</code>} × {<code>full</code>, <code>k20</code>}. Curves overlay {reach, ctrl, obs} per condition. <code>metric</code> uses encoder-Jacobian-weighted B/C (currently natural-metric placeholder; future iteration plugs in <code>B_factor = J_E^{-T}</code>).</p>
+<h2>Chosen run cross-area block gramians (per pair)</h2>
+<p>For each ordered (source → target) area pair, we compute the reach / ctrl / obs gramians of the chosen run's predicted Jacobian's cross-area blocks. Bars show <code>log_trace</code> (top row) and <code>log_min_eig</code> (bottom row, actually log of LARGEST eigvalue per the JacobianODE convention) per condition, with SEM error bars across the cell's trajectories. Pure model side — no GT since neural data lacks a ground-truth dynamical model. <code>metric</code> mode is currently identical to <code>standard</code> (encoder-Jacobian B_factor / C_factor not yet plugged in).</p>
+<h3>standard / full</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_FEF.png" /></p>
+<h3>standard / k20</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_FEF.png" /></p>
 <h2>Per-cell summary metrics</h2>
 <table>
 <thead>
