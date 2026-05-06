@@ -455,6 +455,13 @@
     ],
     "WMTask_identity_encoder_verification": [
       {
+        "group": "wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid",
+        "has_report": true,
+        "has_metrics": true,
+        "has_discussion": false,
+        "report_mtime": 1778055624.439453
+      },
+      {
         "group": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
         "has_report": true,
         "has_metrics": true,
