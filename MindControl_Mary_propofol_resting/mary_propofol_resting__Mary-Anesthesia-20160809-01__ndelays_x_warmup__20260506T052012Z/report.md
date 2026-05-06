@@ -38,6 +38,8 @@ Chose `encoder_warmup_epochs_10__n_delays_12` (val/one_step_mase = 1.4423). `val
 
 `encoder_warmup_epochs_10__n_delays_12` cell params: `{'encoder_warmup_epochs': 10, 'n_delays': 12}`
 
+![chosen trajectory](figures/chosen_trajectory.png)
+
 Solid = ground-truth, dashed = autoregressive rollout (`alpha_TF=0`). Top: latent space (top-6 dims). Bottom: observation space (top-3 LFP channels). Vertical line marks burn-in / start-of-rollout boundary.
 
 ## Chosen run Lyapunov spectrum (per condition)
