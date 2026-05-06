@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm",
-  "analyzed_at": "2026-05-04T20:43:38Z",
+  "analyzed_at": "2026-05-06T00:45:35Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -3519,8 +3519,10 @@
     "per_run_lyapunov": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/per_run_lyapunov.png",
     "lyapunov_spectrum_mse_vs_val_loss": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/lyapunov_spectrum_mse_vs_val_loss.png",
     "per_run_lyapunov_vs_true": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/per_run_lyapunov_vs_true.png",
+    "gramians_overlay": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/gramians_overlay.png",
     "gramians_metric_overlay": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/gramians_metric_overlay.png",
-    "gramians_overlay": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/gramians_overlay.png"
+    "gramians_overlay_k20": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/gramians_overlay_k20.png",
+    "gramians_metric_overlay_k20": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_epoch_compare__direct_sum_cayley_perareaautodim__lc_x_obsnoisescale_sweep__perconditionnorm/figures/gramians_metric_overlay_k20.png"
   },
   "analytics_error": null,
   "true_lyapunov": null,

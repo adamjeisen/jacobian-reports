@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "group": "wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid",
-  "analyzed_at": "2026-05-05T20:09:35Z",
+  "analyzed_at": "2026-05-06T00:23:37Z",
   "metrics_summary": {
     "per_run": [
       {
@@ -2168,7 +2168,11 @@
     "prediction_detail_latent": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/prediction_detail_latent.png",
     "prediction_detail_obs": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/prediction_detail_obs.png",
     "long_trajectory": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/long_trajectory.png",
-    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/amplification.png"
+    "amplification": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/amplification.png",
+    "gramians_overlay": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/gramians_overlay.png",
+    "gramians_metric_overlay": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/gramians_metric_overlay.png",
+    "gramians_overlay_k20": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/gramians_overlay_k20.png",
+    "gramians_metric_overlay_k20": "/orcd/data/ekmiller/001/eisenaj/JacobianODE/sweeps/analysis/wmtask_pobs16_pipeline_v1__lc_x_obsnoise_grid/figures/gramians_metric_overlay_k20.png"
   },
   "analytics_error": null,
   "true_lyapunov": null,
