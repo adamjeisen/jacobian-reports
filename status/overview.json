@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-06T20:00:22Z",
+  "last_updated": "2026-05-06T20:05:23Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2485,6 +2485,10 @@
     },
     {
       "file": "20260506T195031Z-mc-awake_only_encoder_only_kl_sweep_ds1.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260506T200146Z-mc-awake_only_ds10_enc_only_16layers.yaml",
       "status": "claimed"
     }
   ]
