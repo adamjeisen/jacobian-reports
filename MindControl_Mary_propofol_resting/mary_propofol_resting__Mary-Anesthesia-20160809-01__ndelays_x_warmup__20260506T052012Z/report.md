@@ -56,6 +56,8 @@ Each subplot is one cell's per-condition Lyapunov spectrum (mean across that cel
 
 ## Chosen run gramians
 
+![chosen gramians](figures/chosen_gramians.png)
+
 2×2 of {`standard`, `metric`} × {`full`, `k20`}. Curves overlay {reach, ctrl, obs} per condition. `metric` uses encoder-Jacobian-weighted B/C (currently natural-metric placeholder; future iteration plugs in `B_factor = J_E^{-T}`).
 
 ## Per-cell summary metrics
