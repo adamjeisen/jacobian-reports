@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>mary_propofol_resting__Mary-Anesthesia-20160809-01__ndelays_x_warmup__20260506T052012Z</h1>
+<ul>
+<li>wandb group: <a href="https://wandb.ai/JacobianODE/MindControl_Mary_propofol_resting/groups/mary_propofol_resting__Mary-Anesthesia-20160809-01__ndelays_x_warmup__20260506T052012Z">mary_propofol_resting__Mary-Anesthesia-20160809-01__ndelays_x_warmup__20260506T052012Z</a></li>
+<li>chosen cell: <strong><code>encoder_warmup_epochs_10__n_delays_12</code></strong> (val/one_step_mase = 1.4423)</li>
+<li>cells reported: 18</li>
+</ul>
+<p><strong>Description</strong>: Sweep n_delays × encoder_warmup_epochs on Mary propofol resting LFP (awake vs maintenance dose) to find the (delay-depth, warmup) regime that separates the two conditions in latent dynamics.</p>
+<p><strong>Hypothesis</strong></p>
+<pre><code>Larger n_delays gives the encoder more state to disentangle the
+(already-recurrent) network dynamics. We predict val/one_step_mase
+monotonically improves with n_delays up to ~10 and then plateaus
+or worsens (overfit on padded boundary). encoder_warmup_epochs &gt; 0
+should help in the n_delays &gt;= 9 regime where the conditioner MLP
+has more parameters and is harder to land near identity.
+
+No ground-truth model exists for the LFP, so success is judged by
+(a) absolute val/one_step_mase &lt; 1.0 (model beats persistence baseline),
+(b) per-condition Lyapunov spectra that differ between awake and
+maintenance dose in the chosen-cell run.
+</code></pre>
+<p><strong>Success criteria</strong> (manual review until automated):</p>
+<ul>
+<li>[ ] At least one cell achieves val/one_step_mase &lt; 1.0 on each condition.</li>
+<li>[ ] The chosen-run per-condition Lyapunov spectra differ between awake and maintenance dose (largest exponent gap &gt; 1 std across cell trajectories).</li>
+<li>[ ] n_delays * encoder_warmup_epochs interaction shows up in the heatmap of val/one_step_mase (i.e. not pure additive in the two axes).</li>
+</ul>
+<h2>Run picking</h2>
+<p><img alt="run-picking heatmap" src="figures/run_picking__heatmap.png" /></p>
+<p>Chose <code>encoder_warmup_epochs_10__n_delays_12</code> (val/one_step_mase = 1.4423). <code>val/one_step_mase &lt; 1</code> would mean beating persistence (predicting <code>x_{t+1} ≈ x_t</code>); on 1 kHz LFP the persistence baseline is hard to beat per-step even when 30-step R² is high.</p>
+<h2>Chosen run trajectory prediction</h2>
+<p><code>encoder_warmup_epochs_10__n_delays_12</code> cell params: <code>{'encoder_warmup_epochs': 10, 'n_delays': 12}</code></p>
+<p><img alt="chosen trajectory" src="figures/chosen_trajectory.png" /></p>
+<p>Solid = ground-truth, dashed = autoregressive rollout (<code>alpha_TF=0</code>). Top: latent space (top-6 dims). Bottom: observation space (top-3 LFP channels). Vertical line marks burn-in / start-of-rollout boundary.</p>
+<h2>Chosen run Lyapunov spectrum (per condition)</h2>
+<p><img alt="chosen lyap" src="figures/chosen_lyapunov.png" /></p>
+<p>Bars = mean ± std across the chosen-cell's trajectories within each condition. No empirical / GT comparison — for neural data we only have model-predicted exponents.</p>
+<h2>Per-cell Lyapunov spectra</h2>
+<p><img alt="per-cell lyap" src="figures/per_cell_lyapunov.png" /></p>
+<p>Each subplot is one cell's per-condition Lyapunov spectrum (mean across that cell's trajectories). Watch for monotone trends as <code>n_delays</code> increases and for any cell where the conditions cleanly separate.</p>
+<h2>Chosen run gramians</h2>
+<p>2×2 of {<code>standard</code>, <code>metric</code>} × {<code>full</code>, <code>k20</code>}. Curves overlay {reach, ctrl, obs} per condition. <code>metric</code> uses encoder-Jacobian-weighted B/C (currently natural-metric placeholder; future iteration plugs in <code>B_factor = J_E^{-T}</code>).</p>
+<h2>Per-cell summary metrics</h2>
+<table>
+<thead>
+<tr>
+<th>run</th>
+<th>n_delays</th>
+<th>encoder_warmup</th>
+<th>mean val loss</th>
+<th>val/one_step_mase</th>
+<th>val/total_loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>encoder_warmup_epochs_0__n_delays_1</code></td>
+<td>1</td>
+<td>0</td>
+<td>0.6361</td>
+<td>1.6751</td>
+<td>—</td>
+<td>28.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_0__n_delays_12</code></td>
+<td>12</td>
+<td>0</td>
+<td>0.3590</td>
+<td>1.8120</td>
+<td>—</td>
+<td>31.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_0__n_delays_15</code></td>
+<td>15</td>
+<td>0</td>
+<td>0.3032</td>
+<td>2.1258</td>
+<td>—</td>
+<td>49.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_0__n_delays_3</code></td>
+<td>3</td>
+<td>0</td>
+<td>0.3505</td>
+<td>2.1904</td>
+<td>—</td>
+<td>38.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_0__n_delays_6</code></td>
+<td>6</td>
+<td>0</td>
+<td>0.3089</td>
+<td>2.2152</td>
+<td>—</td>
+<td>47.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_0__n_delays_9</code></td>
+<td>9</td>
+<td>0</td>
+<td>0.3224</td>
+<td>1.9389</td>
+<td>—</td>
+<td>40.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_10__n_delays_1</code></td>
+<td>1</td>
+<td>10</td>
+<td>0.5844</td>
+<td>1.6164</td>
+<td>—</td>
+<td>37.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_10__n_delays_12</code></td>
+<td>12</td>
+<td>10</td>
+<td>0.4131</td>
+<td>1.4423</td>
+<td>—</td>
+<td>36.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_10__n_delays_15</code></td>
+<td>15</td>
+<td>10</td>
+<td>0.4178</td>
+<td>1.4842</td>
+<td>—</td>
+<td>32.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_10__n_delays_3</code></td>
+<td>3</td>
+<td>10</td>
+<td>0.3138</td>
+<td>2.8177</td>
+<td>—</td>
+<td>88.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_10__n_delays_6</code></td>
+<td>6</td>
+<td>10</td>
+<td>0.3100</td>
+<td>2.1742</td>
+<td>—</td>
+<td>57.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_10__n_delays_9</code></td>
+<td>9</td>
+<td>10</td>
+<td>0.3450</td>
+<td>1.6665</td>
+<td>—</td>
+<td>47.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_5__n_delays_1</code></td>
+<td>1</td>
+<td>5</td>
+<td>1.0422</td>
+<td>1.6614</td>
+<td>—</td>
+<td>37.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_5__n_delays_12</code></td>
+<td>12</td>
+<td>5</td>
+<td>0.3760</td>
+<td>1.5834</td>
+<td>—</td>
+<td>34.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_5__n_delays_15</code></td>
+<td>15</td>
+<td>5</td>
+<td>0.4252</td>
+<td>1.6356</td>
+<td>—</td>
+<td>27.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_5__n_delays_3</code></td>
+<td>3</td>
+<td>5</td>
+<td>0.3354</td>
+<td>2.9668</td>
+<td>—</td>
+<td>64.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_5__n_delays_6</code></td>
+<td>6</td>
+<td>5</td>
+<td>0.3027</td>
+<td>2.2911</td>
+<td>—</td>
+<td>56.0000</td>
+</tr>
+<tr>
+<td><code>encoder_warmup_epochs_5__n_delays_9</code></td>
+<td>9</td>
+<td>5</td>
+<td>0.3328</td>
+<td>1.7131</td>
+<td>—</td>
+<td>44.0000</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
