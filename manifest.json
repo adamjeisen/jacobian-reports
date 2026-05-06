@@ -456,10 +456,10 @@
     "MindControl_Mary_propofol_resting": [
       {
         "group": "mary_propofol_resting__Mary-Anesthesia-20160809-01__ndelays_x_warmup__20260506T052012Z",
-        "has_report": false,
+        "has_report": true,
         "has_metrics": false,
         "has_discussion": false,
-        "report_mtime": null
+        "report_mtime": 1778094943.928222
       }
     ],
     "WMTask_identity_encoder_verification": [
