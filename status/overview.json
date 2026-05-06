@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-06T06:40:31Z",
+  "last_updated": "2026-05-06T06:45:34Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -953,15 +953,15 @@
     "wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid": {
       "status": "active",
       "runs_summary": {
-        "terminal": 58,
-        "in_flight": 5,
+        "terminal": 60,
+        "in_flight": 3,
         "failed_exhausted": 2,
-        "effectively_done": 56
+        "effectively_done": 58
       },
       "training_slurm": {
-        "n_running": 4,
+        "n_running": 3,
         "n_pending": 0,
-        "n_total": 4
+        "n_total": 3
       }
     },
     "wmtask_pobs16_pipeline_v1_h1024__ndelays_scout_lc0": {
