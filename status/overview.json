@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-06T15:40:21Z",
+  "last_updated": "2026-05-06T15:45:21Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2449,6 +2449,10 @@
     },
     {
       "file": "20260506T051640Z-mc-ndelays_x_warmup.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260506T154122Z-mc-awake_only_baseline.yaml",
       "status": "claimed"
     }
   ]

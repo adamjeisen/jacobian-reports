@@ -1,0 +1,78 @@
+kind: mindcontrol
+metadata:
+  description: "Awake-only single-cell sanity baseline for the parent ndelays_x_warmup\
+    \ sweep. n_delays=5, no encoder warmup, no conditioning effect (single section\
+    \ \u2192 constant condition).\n"
+  hypothesis: "The parent sweep's reconstruction loss never goes below 0.01\ndespite\
+    \ per-area PCA capturing 99% variance, and one_step_mase is\npinned \u2265 1.\
+    \ We suspect the encoder + dynamics MLP can't\nsimultaneously fit awake AND maintenance\
+    \ dose with a single\nparameter set \u2014 the latent geometries are different\
+    \ enough that\none set of weights compromises both. Stripping to awake-only\n\
+    should land reconstruction loss << 0.01 within a few epochs and\ndrive one_step_mase\
+    \ < 1; that's the falsification test.\n"
+  success_criteria:
+  - Reconstruction loss drops below 0.01 within 20 epochs.
+  - val/one_step_mase finishes below 1.0 (model beats persistence on awake LFP).
+  - If both happen, the conditioning / two-regime hypothesis is validated and we should
+    refactor the parent sweep to learn per-condition encoders (or use a heavier conditioned
+    MLP).
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_only
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    section_condition_values:
+    - -1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+sweep_name: awake_only_baseline
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid: {}
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 8
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+  prediction_steps: 30
+  n_delays: 5
+  encoder_warmup_epochs: 0
+  delay_spacing: 1
+  seq_length: 45
+  seq_spacing: 15
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 20
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 96GB
+  timeout_min: 360
+  gres: gpu:1
+submitted_at: 20260506T154122Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_only__awake_only_baseline__20260506T154513Z
+slurm_array_id: '13432270'
+slurm_submitted_at: 20260506T154513Z
+n_cells: 1
+expected_run_count: 1
