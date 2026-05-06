@@ -1,0 +1,104 @@
+kind: mindcontrol
+metadata:
+  description: "Sweep n_delays \xD7 encoder_warmup_epochs on Mary propofol resting\
+    \ LFP (awake vs maintenance dose) to find the (delay-depth, warmup) regime that\
+    \ separates the two conditions in latent dynamics.\n"
+  hypothesis: 'Larger n_delays gives the encoder more state to disentangle the
+
+    (already-recurrent) network dynamics. We predict val/one_step_mase
+
+    monotonically improves with n_delays up to ~10 and then plateaus
+
+    or worsens (overfit on padded boundary). encoder_warmup_epochs > 0
+
+    should help in the n_delays >= 9 regime where the conditioner MLP
+
+    has more parameters and is harder to land near identity.
+
+
+    No ground-truth model exists for the LFP, so success is judged by
+
+    (a) absolute val/one_step_mase < 1.0 (model beats persistence baseline),
+
+    (b) per-condition Lyapunov spectra that differ between awake and
+
+    maintenance dose in the chosen-cell run.
+
+    '
+  success_criteria:
+  - At least one cell achieves val/one_step_mase < 1.0 on each condition.
+  - The chosen-run per-condition Lyapunov spectra differ between awake and maintenance
+    dose (largest exponent gap > 1 std across cell trajectories).
+  - n_delays * encoder_warmup_epochs interaction shows up in the heatmap of val/one_step_mase
+    (i.e. not pure additive in the two axes).
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+sweep_name: ndelays_x_warmup
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid:
+  n_delays:
+  - 1
+  - 3
+  - 6
+  - 9
+  - 12
+  - 15
+  encoder_warmup_epochs:
+  - 0
+  - 5
+  - 10
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 8
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+  prediction_steps: 30
+  delay_spacing: 1
+  seq_length: 45
+  seq_spacing: 15
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 20
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 4
+  mem: 96GB
+  timeout_min: 360
+  gres: gpu:1
+submitted_at: 20260506T051640Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__ndelays_x_warmup__20260506T052012Z
+slurm_array_id: '13403729'
+slurm_submitted_at: 20260506T052013Z
+n_cells: 18
+expected_run_count: 18
