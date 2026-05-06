@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-06T05:00:33Z",
+  "last_updated": "2026-05-06T05:05:38Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -953,15 +953,15 @@
     "wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid": {
       "status": "active",
       "runs_summary": {
-        "terminal": 53,
-        "in_flight": 10,
-        "failed_exhausted": 7,
-        "effectively_done": 46
+        "terminal": 54,
+        "in_flight": 9,
+        "failed_exhausted": 6,
+        "effectively_done": 48
       },
       "training_slurm": {
-        "n_running": 10,
+        "n_running": 9,
         "n_pending": 0,
-        "n_total": 10
+        "n_total": 9
       }
     },
     "wmtask_pobs16_pipeline_v1_h1024__ndelays_scout_lc0": {
@@ -2446,6 +2446,10 @@
     },
     {
       "file": "20260505T083041Z-wmtask_pobs16_pipeline_v1_h1024__lc_x_obsnoise_grid-chain-axissel_9-15-6.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260506T050106Z-mc-ndelays_x_warmup.yaml",
       "status": "claimed"
     }
   ]
