@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-07T16:45:18Z",
+  "last_updated": "2026-05-07T16:50:26Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -3053,9 +3053,7 @@
       "wandb_project": "MindControl_Mary_propofol_resting",
       "instruction_file": "20260507T153104Z-mc-awake_maint_ds1_enc_only_2stage_pp09_lp100_n_delays_sweep.yaml",
       "report": {
-        "status": "running",
-        "report_job_id": "13503069",
-        "dispatched_at": "2026-05-07T16:35:19Z"
+        "status": "done"
       }
     }
   }
