@@ -1,0 +1,92 @@
+kind: mindcontrol
+metadata:
+  description: 'Encoder-only, awake + maintenance dose, ds=1 (1000 Hz). Two-stage
+    PCA with first-stage=0.9, second-stage=0.99. n_delays grid: {5, 10, 20, 30}. Pure
+    reconstruction loss (no dynamics MLP, no VAE).
+
+    '
+  hypothesis: "The 24-run sweep's 0.9-first-stage runs have suspiciously bad\nreconstruction.\
+    \ Hypothesis: with only ~80 dims after first-stage\nreduction, the encoder + autodim\
+    \ has too little signal to fit\nwell within walltime. By extending n_delays we\
+    \ increase the\nencoder's input dimensionality (n_features \xD7 n_delays) and\
+    \ give\nautodim more context to pick PCs that actually capture variance.\nIf reconstruction\
+    \ improves monotonically with n_delays, the issue\nis capacity / context size.\
+    \ If it stays flat, the 0.9 first-stage\nhas discarded structure the encoder needs\
+    \ and the right fix is to\nraise the first-stage threshold.\n"
+  success_criteria:
+  - All 4 cells finish within the 6-hour cap.
+  - val/recon_loss finite for all cells.
+  - Cells reach a clear plateau (no late divergence).
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: enc_only_2stage_pp09_n_delays
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid:
+  n_delays:
+  - 5
+  - 10
+  - 20
+  - 30
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  pre_pca_per_area: true
+  pre_pca_var_threshold: 0.9
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+  prediction_steps: 30
+  delay_spacing: 1
+  seq_length: 80
+  seq_spacing: 15
+  filter_data: false
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 4
+  seed: 42
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    model.encoder_only_mode: true
+    model.use_vae: false
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 96GB
+  timeout_min: 360
+  gres: gpu:1
+submitted_at: 20260507T153102Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__enc_only_2stage_pp09_n_delays__20260507T153513Z
+slurm_array_id: '13498791'
+slurm_submitted_at: 20260507T153514Z
+n_cells: 4
+expected_run_count: 4

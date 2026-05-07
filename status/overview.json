@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-07T15:30:22Z",
+  "last_updated": "2026-05-07T15:35:29Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2550,6 +2550,14 @@
     {
       "file": "20260507T142437Z-mc-awake_maint_ds1_enc_only_2stage_pp09_lp100_n_delays_sweep.yaml",
       "status": "claimed"
+    },
+    {
+      "file": "20260507T153102Z-mc-awake_maint_ds1_enc_only_2stage_pp09_n_delays_sweep.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260507T153104Z-mc-awake_maint_ds1_enc_only_2stage_pp09_lp100_n_delays_sweep.yaml",
+      "status": "claimed"
     }
   ],
   "mc_sweeps": {
@@ -2958,9 +2966,7 @@
       "wandb_project": "MindControl_Mary_propofol_resting",
       "instruction_file": "20260507T063143Z-mc-awake_maint_ds1_full_2stage_raw.yaml",
       "report": {
-        "status": "running",
-        "report_job_id": "13493806",
-        "dispatched_at": "2026-05-07T14:20:47Z"
+        "status": "done"
       }
     },
     "mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__full_2stage_lp100_ds1__20260507T063513Z": {
@@ -2996,9 +3002,7 @@
       "wandb_project": "MindControl_Mary_propofol_resting",
       "instruction_file": "20260507T141905Z-mc-awake_maint_ds1_enc_only_2stage_pp09_n_delays_sweep.yaml",
       "report": {
-        "status": "running",
-        "report_job_id": "13496605",
-        "dispatched_at": "2026-05-07T15:00:20Z"
+        "status": "done"
       }
     },
     "mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__enc_only_2stage_pp09_lp100_n_delays__20260507T142513Z": {
@@ -3018,6 +3022,40 @@
         "status": "running",
         "report_job_id": "13498073",
         "dispatched_at": "2026-05-07T15:25:20Z"
+      }
+    },
+    "mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__enc_only_2stage_pp09_n_delays__20260507T153513Z": {
+      "status": "active",
+      "training_slurm": {
+        "array_id": "13498791",
+        "n_total": 1,
+        "n_completed": 0,
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
+      },
+      "n_cells": 4,
+      "wandb_project": "MindControl_Mary_propofol_resting",
+      "instruction_file": "20260507T153102Z-mc-awake_maint_ds1_enc_only_2stage_pp09_n_delays_sweep.yaml",
+      "report": {
+        "status": "waiting_on_training"
+      }
+    },
+    "mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__enc_only_2stage_pp09_lp100_n_delays__20260507T153514Z": {
+      "status": "active",
+      "training_slurm": {
+        "array_id": "13498792",
+        "n_total": 1,
+        "n_completed": 0,
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
+      },
+      "n_cells": 4,
+      "wandb_project": "MindControl_Mary_propofol_resting",
+      "instruction_file": "20260507T153104Z-mc-awake_maint_ds1_enc_only_2stage_pp09_lp100_n_delays_sweep.yaml",
+      "report": {
+        "status": "waiting_on_training"
       }
     }
   }
