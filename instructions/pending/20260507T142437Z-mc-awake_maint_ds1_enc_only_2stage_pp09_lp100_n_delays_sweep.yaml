@@ -1,0 +1,114 @@
+kind: mindcontrol
+
+# Encoder-only diagnostic for the "0.9 first-stage PCA gives WORSE
+# reconstruction" puzzle in the 24-run sweep. Strips dynamics so
+# reconstruction is the only loss, then varies n_delays to see whether
+# the 0.9-first-stage reconstruction issue is capacity, optimization,
+# or something more fundamental about how the per-area reduced signal
+# behaves under different temporal contexts.
+#
+# Two-stage PCA pipeline:
+#   - first stage: per-area pre-PCA at threshold 0.9
+#   - second stage: autodim PCA at threshold 0.99 on the reduced + delay-
+#     embedded space
+# 4 cells over n_delays ∈ {5, 10, 20, 30}.
+
+metadata:
+  description: >
+    Encoder-only, awake + maintenance dose, ds=1 (1000 Hz). Two-stage
+    PCA with first-stage=0.9, second-stage=0.99. n_delays grid:
+    {5, 10, 20, 30}. Pure reconstruction loss (no dynamics MLP, no VAE). filtfilt 100 Hz LPF.
+  hypothesis: |
+    The 24-run sweep's 0.9-first-stage runs have suspiciously bad
+    reconstruction. Hypothesis: with only ~80 dims after first-stage
+    reduction, the encoder + autodim has too little signal to fit
+    well within walltime. By extending n_delays we increase the
+    encoder's input dimensionality (n_features × n_delays) and give
+    autodim more context to pick PCs that actually capture variance.
+    If reconstruction improves monotonically with n_delays, the issue
+    is capacity / context size. If it stays flat, the 0.9 first-stage
+    has discarded structure the encoder needs and the right fix is to
+    raise the first-stage threshold.
+  success_criteria:
+    - All 4 cells finish within the 6-hour cap.
+    - val/recon_loss finite for all cells.
+    - Cells reach a clear plateau (no late divergence).
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: enc_only_2stage_pp09_lp100_n_delays
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  n_delays: [5, 10, 20, 30]
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  # Two-stage PCA — first stage at 0.9, second stage at 0.99
+  pre_pca_per_area: true
+  pre_pca_var_threshold: 0.9
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+
+  prediction_steps: 30   # cfg validation reads this even under encoder_only_mode
+
+  delay_spacing: 1
+  seq_length: 80         # ≥ traj_init_steps (15) + prediction_steps (30) + margin; large n_delays can't push this above the trajectory length
+  seq_spacing: 15
+
+  filter_data: true
+  low_pass: 100.0
+
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 4
+  seed: 42
+
+  lightning_kwargs:
+    reconstruction_mode: uniform
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+  cfg_overrides:
+    "model.encoder_only_mode": true
+    "model.use_vae": false
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 96GB
+  timeout_min: 360         # 6h cap — n_delays=30 is the slowest cell
+  gres: gpu:1
+
+submitted_at: 20260507T142437Z
+submitted_from: millerlab-endeavourOS
