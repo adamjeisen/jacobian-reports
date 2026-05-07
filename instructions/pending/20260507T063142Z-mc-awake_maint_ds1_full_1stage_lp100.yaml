@@ -1,0 +1,102 @@
+kind: mindcontrol
+
+# 24-run filter × prediction × var-threshold sweep — Sweep A (single-stage,
+# LPF 100 Hz). 6 cells: prediction_steps {30, 50} × n_target_var_threshold
+# {0.99, 0.95, 0.90}.
+
+metadata:
+  description: >
+    ds=1 (1000 Hz raw), n_delays=5, awake + maintenance dose. Single-
+    stage PCA autodim. Pre-filter via filtfilt (zero-phase Butterworth
+    order 4) at 100 Hz LPF. 6 cells over prediction_steps ×
+    n_target_var_threshold.
+  hypothesis: |
+    Filtered arm of the 24-run sweep. 100 Hz LPF removes the high-
+    frequency content that has near-zero contribution to the dominant
+    PCs but introduces noise into the autodim-tail. We expect lower
+    n_target_dims and lower one-step MASE than the raw arm; the
+    Jacobian / Lyapunov spectra should be qualitatively similar.
+  success_criteria:
+    - All 6 cells finish within the 3-hour SLURM cap.
+    - val/one_step_mase finite for all cells.
+    - n_target_dims at .99 threshold reduced vs the raw arm.
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: full_1stage_lp100_ds1
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  prediction_steps: [30, 50]
+  n_target_var_threshold: [0.99, 0.95, 0.90]
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  n_target_dim_method: pca
+
+  n_delays: 5
+  delay_spacing: 1
+  seq_length: 80
+  seq_spacing: 15
+
+  # filtering ON: 100 Hz low-pass via filtfilt (zero-phase, order 4 Butterworth)
+  filter_data: true
+  low_pass: 100.0
+
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+
+  pre_pca_per_area: false
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 4
+  seed: 42
+
+  lightning_kwargs:
+    reconstruction_mode: uniform
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+  cfg_overrides:
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 180
+  gres: gpu:1
+
+submitted_at: 20260507T063142Z
+submitted_from: millerlab-endeavourOS
