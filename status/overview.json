@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-07T06:25:30Z",
+  "last_updated": "2026-05-07T06:30:19Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2509,6 +2509,22 @@
     },
     {
       "file": "20260506T214407Z-mc-awake_only_ds10_full_2stage_big_mlp.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260507T062933Z-mc-awake_maint_ds1_full_1stage_raw.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260507T062935Z-mc-awake_maint_ds1_full_1stage_lp100.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260507T062936Z-mc-awake_maint_ds1_full_2stage_raw.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260507T062937Z-mc-awake_maint_ds1_full_2stage_lp100.yaml",
       "status": "claimed"
     }
   ]
