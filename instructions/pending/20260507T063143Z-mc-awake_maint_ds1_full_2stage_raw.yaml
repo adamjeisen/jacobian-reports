@@ -1,0 +1,107 @@
+kind: mindcontrol
+
+# 24-run filter × prediction × var-threshold sweep — Sweep B (two-stage,
+# RAW). 6 cells: prediction_steps {30, 50} × pre_pca_var_threshold
+# {0.99, 0.95, 0.90}. Second-stage n_target_var_threshold pinned at 0.99.
+
+metadata:
+  description: >
+    ds=1 (1000 Hz raw), n_delays=5, awake + maintenance dose. Two-stage
+    PCA: per-area PCA reduction BEFORE delay-embed at threshold ∈
+    {0.99, 0.95, 0.90}, then JacobianODE autodim PCA at 0.99 on the
+    delay-embedded reduced obs. RAW (no LPF). 6 cells over
+    prediction_steps × pre_pca_var_threshold.
+  hypothesis: |
+    Two-stage PCA arm. The first stage controls how much per-area
+    raw variance is kept (lower threshold = aggressive compression);
+    the second stage always picks a tight 0.99 of the reduced+delay-
+    embedded variance. Compared to single-stage, this should yield
+    similar dynamic-dim totals at the 0.99 first-stage but much
+    smaller totals at 0.90, with potentially better gradient flow
+    because the encoder doesn't see redundant raw channels.
+  success_criteria:
+    - All 6 cells finish within the 3-hour SLURM cap.
+    - val/one_step_mase finite for all cells.
+    - At pre_pca=0.99 the dynamic dim approximately matches the
+      single-stage 0.99 case (consistency check).
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: full_2stage_raw_ds1
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  prediction_steps: [30, 50]
+  pre_pca_var_threshold: [0.99, 0.95, 0.90]
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  # Second-stage autodim pinned at 0.99 across all cells
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+
+  n_delays: 5
+  delay_spacing: 1
+  seq_length: 80
+  seq_spacing: 15
+
+  filter_data: false
+
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+
+  # Two-stage PCA: per-area pre-reduction; threshold varies via the grid
+  pre_pca_per_area: true
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 4
+  seed: 42
+
+  lightning_kwargs:
+    reconstruction_mode: uniform
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+  cfg_overrides:
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 180
+  gres: gpu:1
+
+submitted_at: 20260507T063143Z
+submitted_from: millerlab-endeavourOS
