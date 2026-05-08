@@ -1,0 +1,181 @@
+kind: mindcontrol
+
+# 64-cell pilot: 8 base (n_target_var × n_delays × delay_spacing) combos
+# crossed with 8 cells of a 2^(4-1) Resolution-IV fractional factorial
+# over the four binary factors (encoder_warmup_epochs,
+# decoded_only_pred_loss, accumulate_grad_batches, pre_pca_arm).
+# Defining word: D = ABC where A=warmup, B=decoded_only, C=accum,
+# D=pre_pca_arm. Main effects of all four factors are estimable and
+# unaliased with each other; 2-fi pairs are aliased.
+
+metadata:
+  description: >
+    8 base × 8 fractional binary cells = 64 runs. Two n_target_var
+    sub-grids: 0.99 with n_delays∈{5,15} × delay_spacing∈{1,5}, and
+    0.95 with n_delays∈{5,15} × delay_spacing∈{5,10}. Awake +
+    maintenance dose, ds=1, lp=80 Hz. New diagnostics:
+    val/dynamics_only_one_step_mase, val/decoder_corrected_one_step_mase,
+    val/trajectory_pred_loss_obs, val/trajectory_pred_loss_decoded.
+  hypothesis: |
+    The poor decoder reconstruction is contaminating the dynamics
+    gradient signal in the standard trajectory loss. We're testing four
+    factors at once:
+      - encoder_warmup_epochs ∈ {0, 5}: more warmup may stabilize the
+        decoder before turning on dynamics losses.
+      - decoded_only_pred_loss ∈ {false, true}: replacing the trajectory
+        target with D(z_{t+1}) (stop-grad'd) should give f a cleaner
+        gradient by cancelling the obs-space reconstruction floor.
+      - accumulate_grad_batches ∈ {1, 4}: effective batch 16 vs 64;
+        larger effective batch gives cleaner gradients on competing
+        loss terms.
+      - pre_pca_arm ∈ {pp095_whiten, no_prepca}: per-area PCA at 0.95
+        with post-PCA whitening vs no first-stage compression at all.
+    Resolution-IV fractional design lets us read off main effects of all
+    four with the cluster cost of an OFAT screening.
+  success_criteria:
+    - All 64 cells finish within the 3-hour SLURM cap.
+    - val/one_step_mase finite for all cells.
+    - At least one cell with decoded_only_pred_loss=true beats its
+      decoded_only=false counterpart on val/dynamics_only_one_step_mase.
+    - val/trajectory_pred_loss_obs is logged for both decoded_only arms
+      so cross-flag comparison is direct.
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: pilot64_pp_x_warmup_x_decoded_x_accum
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+# Bundles: each value list of dicts is one "factor" whose entries get
+# merged into cell_params per the mc_sbatch bundle expander. _label is
+# stripped from cell_params (used only in the run_name).
+grid:
+  base_combo:
+    - {_label: nt99_nd5_ds1,  n_target_var_threshold: 0.99, n_delays: 5,  delay_spacing: 1}
+    - {_label: nt99_nd5_ds5,  n_target_var_threshold: 0.99, n_delays: 5,  delay_spacing: 5}
+    - {_label: nt99_nd15_ds1, n_target_var_threshold: 0.99, n_delays: 15, delay_spacing: 1}
+    - {_label: nt99_nd15_ds5, n_target_var_threshold: 0.99, n_delays: 15, delay_spacing: 5}
+    - {_label: nt95_nd5_ds5,   n_target_var_threshold: 0.95, n_delays: 5,  delay_spacing: 5}
+    - {_label: nt95_nd5_ds10,  n_target_var_threshold: 0.95, n_delays: 5,  delay_spacing: 10}
+    - {_label: nt95_nd15_ds5,  n_target_var_threshold: 0.95, n_delays: 15, delay_spacing: 5}
+    - {_label: nt95_nd15_ds10, n_target_var_threshold: 0.95, n_delays: 15, delay_spacing: 10}
+
+  # 2^(4-1) fractional, defining word D = ABC (D = pre_pca_arm). Each
+  # cell sets the four binary factors (encoder_warmup_epochs,
+  # decoded_only_pred_loss, accumulate_grad_batches, pre_pca_*).
+  # Sign convention: A=0|5, B=false|true, C=1|4, D=pp095|nopre.
+  fractional_cell:
+    - _label: w0_dF_a1_pp095
+      encoder_warmup_epochs: 0
+      decoded_only_pred_loss: false
+      training.trainer_params.accumulate_grad_batches: 1
+      pre_pca_per_area: true
+      pre_pca_var_threshold: 0.95
+      whiten_after_pre_pca: true
+    - _label: w0_dF_a4_nopre
+      encoder_warmup_epochs: 0
+      decoded_only_pred_loss: false
+      training.trainer_params.accumulate_grad_batches: 4
+      pre_pca_per_area: false
+    - _label: w0_dT_a1_nopre
+      encoder_warmup_epochs: 0
+      decoded_only_pred_loss: true
+      training.trainer_params.accumulate_grad_batches: 1
+      pre_pca_per_area: false
+    - _label: w0_dT_a4_pp095
+      encoder_warmup_epochs: 0
+      decoded_only_pred_loss: true
+      training.trainer_params.accumulate_grad_batches: 4
+      pre_pca_per_area: true
+      pre_pca_var_threshold: 0.95
+      whiten_after_pre_pca: true
+    - _label: w5_dF_a1_nopre
+      encoder_warmup_epochs: 5
+      decoded_only_pred_loss: false
+      training.trainer_params.accumulate_grad_batches: 1
+      pre_pca_per_area: false
+    - _label: w5_dF_a4_pp095
+      encoder_warmup_epochs: 5
+      decoded_only_pred_loss: false
+      training.trainer_params.accumulate_grad_batches: 4
+      pre_pca_per_area: true
+      pre_pca_var_threshold: 0.95
+      whiten_after_pre_pca: true
+    - _label: w5_dT_a1_pp095
+      encoder_warmup_epochs: 5
+      decoded_only_pred_loss: true
+      training.trainer_params.accumulate_grad_batches: 1
+      pre_pca_per_area: true
+      pre_pca_var_threshold: 0.95
+      whiten_after_pre_pca: true
+    - _label: w5_dT_a4_nopre
+      encoder_warmup_epochs: 5
+      decoded_only_pred_loss: true
+      training.trainer_params.accumulate_grad_batches: 4
+      pre_pca_per_area: false
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  n_target_dim_method: pca
+
+  seq_length: 45
+  seq_spacing: 15
+  prediction_steps: 30
+
+  filter_data: true
+  low_pass: 80.0
+
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values: [-1.0, 1.0]
+
+  per_source_dynamics: false
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+
+  lightning_kwargs:
+    reconstruction_mode: uniform
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 180
+  gres: gpu:1
+
+submitted_at: 20260508T073834Z
+submitted_from: millerlab-endeavourOS
