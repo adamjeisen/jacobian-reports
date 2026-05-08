@@ -1,0 +1,111 @@
+kind: mindcontrol
+
+# 21-cell sweep: n_delays × delay_spacing, holding all other knobs fixed.
+# Tests how temporal context (depth × stride) affects training under
+# the no-pre-PCA + decoded=False + n_target=0.95 baseline.
+
+metadata:
+  description: >
+    7 × 3 = 21 cells over n_delays × delay_spacing. Defaults:
+    encoder_warmup_epochs=0, decoded_only_pred_loss=False,
+    pre_pca_per_area=false (no first-stage PCA),
+    n_target_var_threshold=0.99, accumulate_grad_batches=1.
+    Awake + maintenance dose, ds=1 (1000 Hz), lp=80 Hz.
+  hypothesis: |
+    Wider/deeper temporal context (larger n_delays × delay_spacing)
+    should give the encoder more information per sample to disambiguate
+    the latent state, lowering one-step MASE — but only up to the point
+    where the autodim'd latent saturates the dynamics MLP's capacity
+    or the prediction horizon dominates the residual variance.
+  success_criteria:
+    - All 21 cells run within the 6-hour SLURM cap (or TIMEOUT, which
+      counts as success-equivalent for reporting).
+    - val/one_step_mase finite for all cells.
+    - At least one (n_delays, delay_spacing) combo strictly beats the
+      n_delays=1, delay_spacing=1 baseline on val/one_step_mase.
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: nopre_decF_w0_nt95_pred10__ndelays_x_spacing
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  n_delays: [1, 5, 10, 15, 20, 25, 30]
+  delay_spacing: [1, 5, 10]
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  # Fixed knobs (the "other factors at default" baseline)
+  n_target_var_threshold: 0.95
+  n_target_dim_method: pca
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+
+  filter_data: true
+  low_pass: 80.0
+
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values: [-1.0, 1.0]
+
+  per_source_dynamics: false
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+
+  lightning_kwargs:
+    reconstruction_mode: uniform
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+  cfg_overrides:
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+
+submitted_at: 20260508T220557Z
+submitted_from: millerlab-endeavourOS
