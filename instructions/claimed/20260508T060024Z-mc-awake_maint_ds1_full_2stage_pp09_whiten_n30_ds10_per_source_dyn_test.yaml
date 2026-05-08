@@ -1,0 +1,101 @@
+kind: mindcontrol
+metadata:
+  description: "First test of `per_source_dynamics` (one dynamics MLP per condition,\
+    \ routed by section_condition_values nearest-neighbor on c[..., 0]). Two cells:\
+    \ per_source_dynamics \u2208 {false, true}; everything else pinned. pre_pca=0.9\
+    \ + whiten_after_pre_pca=true; n_target_var_threshold=0.9; n_delays=30; delay_spacing=10.\n"
+  hypothesis: "Burst-suppression maintenance-dose data and active awake data have\n\
+    very different dynamics distributions; a single shared dynamics MLP\nis biased\
+    \ toward the higher-variance / higher-gradient regime and\nunder-fits the suppressed\
+    \ regime. Splitting the dynamics MLP per\ncondition (per_source_dynamics=true)\
+    \ should improve val/one_step_mase\n(or its latent-only variant) on the maintenance-dose\
+    \ side without\nhurting awake. Whitening + dropping pre-PCA threshold to 0.9 in\n\
+    parallel \u2014 these are part of the wider preprocessing change being\nvalidated\
+    \ in the same run.\n"
+  success_criteria:
+  - Both cells finish within the 3-hour SLURM cap.
+  - val/one_step_mase finite for both cells.
+  - "per_source_dynamics=true cell has model wired through PerSourceDynamicsMLP (verifiable\
+    \ from cell stdout \u2014 model summary prints the wrapper)."
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: full_2stage_pp09_whiten_n30_ds10_per_source_dyn_test
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid:
+  per_source_dynamics:
+  - false
+  - true
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  pre_pca_per_area: true
+  pre_pca_var_threshold: 0.9
+  whiten_after_pre_pca: true
+  n_target_var_threshold: 0.9
+  n_target_dim_method: pca
+  n_delays: 30
+  delay_spacing: 10
+  seq_length: 45
+  seq_spacing: 15
+  prediction_steps: 30
+  filter_data: true
+  low_pass: 100.0
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 4
+  seed: 42
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 180
+  gres: gpu:1
+submitted_at: 20260508T060024Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__full_2stage_pp09_whiten_n30_ds10_per_source_dyn_test__20260508T060558Z
+slurm_array_id: '13541379'
+slurm_submitted_at: 20260508T060559Z
+n_cells: 2
+expected_run_count: 2
