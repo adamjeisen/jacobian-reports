@@ -1,0 +1,115 @@
+kind: mindcontrol
+metadata:
+  description: "7-cell phantom-GPU retry for the (ds=5,nd\u2208{20,25}) and (ds=10,nd\u2208\
+    {5,10,20,25,30}) cells of the pp09+pred=30 sweep. All other knobs identical to\
+    \ the original.\n"
+  hypothesis: "Same as the parent sweep \u2014 temporal context affects training under\n\
+    the pp=0.9+whiten + decoded=False + n_target=0.99 baseline. These\n7 cells failed\
+    \ at startup last time due to a SLURM phantom-GPU\nallocation when quota was contested;\
+    \ rerunning gives them a fresh\nchance.\n"
+  success_criteria:
+  - All 7 cells finish within the 6-hour SLURM cap (or TIMEOUT).
+  - val/one_step_mase finite for all cells.
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: pp09_whiten_decF_w0_nt99__retry7
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid:
+  ds_nd:
+  - _label: ds5_nd20
+    delay_spacing: 5
+    n_delays: 20
+  - _label: ds5_nd25
+    delay_spacing: 5
+    n_delays: 25
+  - _label: ds10_nd5
+    delay_spacing: 10
+    n_delays: 5
+  - _label: ds10_nd10
+    delay_spacing: 10
+    n_delays: 10
+  - _label: ds10_nd20
+    delay_spacing: 10
+    n_delays: 20
+  - _label: ds10_nd25
+    delay_spacing: 10
+    n_delays: 25
+  - _label: ds10_nd30
+    delay_spacing: 10
+    n_delays: 30
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+  pre_pca_per_area: true
+  pre_pca_var_threshold: 0.9
+  whiten_after_pre_pca: true
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 45
+  seq_spacing: 15
+  prediction_steps: 30
+  filter_data: true
+  low_pass: 80.0
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802
+submitted_at: 20260508T223949Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__pp09_whiten_decF_w0_nt99__retry7__20260508T224013Z
+slurm_array_id: '13598837'
+slurm_submitted_at: 20260508T224014Z
+n_cells: 7
+expected_run_count: 7
