@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__pp09_whiten_decF_w0_nt99__retry7__20260508T224013Z</h1>
+<ul>
+<li>wandb group: <a href="https://wandb.ai/JacobianODE/MindControl_Mary_propofol_resting/groups/mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__pp09_whiten_decF_w0_nt99__retry7__20260508T224013Z">mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__pp09_whiten_decF_w0_nt99__retry7__20260508T224013Z</a></li>
+<li>chosen cell: <strong><code>ds_nd_ds10_nd5</code></strong> (val/one_step_mase = 1.4405)</li>
+<li>cells reported: 7</li>
+</ul>
+<p><strong>Description</strong>: 7-cell phantom-GPU retry for the (ds=5,nd∈{20,25}) and (ds=10,nd∈{5,10,20,25,30}) cells of the pp09+pred=30 sweep. All other knobs identical to the original.</p>
+<p><strong>Hypothesis</strong></p>
+<pre><code>Same as the parent sweep — temporal context affects training under
+the pp=0.9+whiten + decoded=False + n_target=0.99 baseline. These
+7 cells failed at startup last time due to a SLURM phantom-GPU
+allocation when quota was contested; rerunning gives them a fresh
+chance.
+</code></pre>
+<p><strong>Success criteria</strong> (manual review until automated):</p>
+<ul>
+<li>[ ] All 7 cells finish within the 6-hour SLURM cap (or TIMEOUT).</li>
+<li>[ ] val/one_step_mase finite for all cells.</li>
+</ul>
+<h2>Run picking</h2>
+<p><img alt="run-picking bar" src="figures/run_picking__bar.png" /></p>
+<p>Chose <code>ds_nd_ds10_nd5</code> (val/one_step_mase = 1.4405). <code>val/one_step_mase &lt; 1</code> would mean beating persistence (predicting <code>x_{t+1} ≈ x_t</code>); on 1 kHz LFP the persistence baseline is hard to beat per-step even when 30-step R² is high.</p>
+<h2>Chosen run trajectory prediction</h2>
+<p><code>ds_nd_ds10_nd5</code> cell params: <code>{'delay_spacing': 10, 'n_delays': 5}</code></p>
+<p><img alt="chosen trajectory" src="figures/chosen_trajectory.png" /></p>
+<p>Solid = ground-truth, dashed = autoregressive rollout (<code>alpha_TF=0</code>). Top: latent space (top-6 dims). Bottom: observation space (top-3 LFP channels). Vertical line marks burn-in / start-of-rollout boundary.</p>
+<h2>Chosen run Lyapunov spectrum (per condition)</h2>
+<p><img alt="chosen lyap" src="figures/chosen_lyapunov.png" /></p>
+<p>Bars = mean ± std across the chosen-cell's trajectories within each condition. No empirical / GT comparison — for neural data we only have model-predicted exponents.</p>
+<h2>Per-cell Lyapunov spectra</h2>
+<p><img alt="per-cell lyap" src="figures/per_cell_lyapunov.png" /></p>
+<p>Each subplot is one cell's per-condition Lyapunov spectrum (mean across that cell's trajectories). Watch for monotone trends as <code>n_delays</code> increases and for any cell where the conditions cleanly separate.</p>
+<h2>Chosen run cross-area block gramians (per pair)</h2>
+<p>For each ordered (source → target) area pair, we compute the reach / ctrl / obs gramians of the chosen run's predicted Jacobian's cross-area blocks. Bars show <code>log_trace</code> (top row) and <code>log_min_eig</code> (bottom row — the LOG of the SMALLEST eigenvalue, i.e. the bottleneck-dim energy) per condition, with SEM error bars across the cell's trajectories. Pure model side — no GT since neural data lacks a ground-truth dynamical model. <code>metric</code> mode is currently identical to <code>standard</code> (encoder-Jacobian B_factor / C_factor not yet plugged in).</p>
+<h3>standard / full</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_FEF.png" /></p>
+<h3>standard / k20</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_FEF.png" /></p>
+<h2>Per-cell summary metrics</h2>
+<table>
+<thead>
+<tr>
+<th>run</th>
+<th>n_delays</th>
+<th>encoder_warmup</th>
+<th>mean val loss</th>
+<th>val/one_step_mase</th>
+<th>val/total_loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ds_nd_ds10_nd10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.1092</td>
+<td>1.6058</td>
+<td>—</td>
+<td>45.0000</td>
+</tr>
+<tr>
+<td><code>ds_nd_ds10_nd20</code></td>
+<td>20</td>
+<td>?</td>
+<td>0.0950</td>
+<td>1.6979</td>
+<td>—</td>
+<td>21.0000</td>
+</tr>
+<tr>
+<td><code>ds_nd_ds10_nd25</code></td>
+<td>25</td>
+<td>?</td>
+<td>0.1147</td>
+<td>1.7334</td>
+<td>—</td>
+<td>16.0000</td>
+</tr>
+<tr>
+<td><code>ds_nd_ds10_nd30</code></td>
+<td>30</td>
+<td>?</td>
+<td>0.1357</td>
+<td>1.8281</td>
+<td>—</td>
+<td>12.0000</td>
+</tr>
+<tr>
+<td><code>ds_nd_ds10_nd5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.1996</td>
+<td>1.4405</td>
+<td>—</td>
+<td>19.0000</td>
+</tr>
+<tr>
+<td><code>ds_nd_ds5_nd20</code></td>
+<td>20</td>
+<td>?</td>
+<td>0.0753</td>
+<td>1.4429</td>
+<td>—</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td><code>ds_nd_ds5_nd25</code></td>
+<td>25</td>
+<td>?</td>
+<td>0.0718</td>
+<td>1.4753</td>
+<td>—</td>
+<td>59.0000</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
