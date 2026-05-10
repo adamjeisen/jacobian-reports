@@ -1,7 +1,7 @@
 # mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__nopre_decF_w0_nt95_pred10__nde__8388b216__20260508T224014Z
 
 - wandb group: [mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__nopre_decF_w0_nt95_pred10__nde__8388b216__20260508T224014Z](https://wandb.ai/JacobianODE/MindControl_Mary_propofol_resting/groups/mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__nopre_decF_w0_nt95_pred10__nde__8388b216__20260508T224014Z)
-- chosen cell: **`delay_spacing_1__n_delays_5`** (val/one_step_mase = 3.4139)
+- chosen cell: **`delay_spacing_1__n_delays_10`** (trajectory val_loss (min over history) = 0.0943)
 - cells reported: 21
 
 **Description**: 7 × 3 = 21 cells over n_delays × delay_spacing. Defaults: encoder_warmup_epochs=0, decoded_only_pred_loss=False, pre_pca_per_area=false (no first-stage PCA), n_target_var_threshold=0.99, accumulate_grad_batches=1. Awake + maintenance dose, ds=1 (1000 Hz), lp=80 Hz.
@@ -24,17 +24,49 @@ or the prediction horizon dominates the residual variance.
 
 ## Run picking
 
-![run-picking heatmap](figures/run_picking__heatmap.png)
+![sweep overview](figures/sweep_overview.png)
 
-Chose `delay_spacing_1__n_delays_5` (val/one_step_mase = 3.4139). `val/one_step_mase < 1` would mean beating persistence (predicting `x_{t+1} ≈ x_t`); on 1 kHz LFP the persistence baseline is hard to beat per-step even when 30-step R² is high.
+Four panels: C1 (one-step MASE), C2 (loop closure loss), C3 (fast eigenvalue fraction), trajectory val loss (min over training history). Bars are color-coded green = passes all selection criteria, red = excluded by some criterion, gold = the selected best run.
+
+![sweep pareto](figures/sweep_pareto.png)
+
+Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the selected run.
+
+**Chosen run** (by `best_traj_loss`): `delay_spacing_1__n_delays_10` (trajectory val_loss (min over history) = 0.0943). Hard criteria applied after relaxation: C3. Survivors / candidates: 21/21.
+
+### Per-run results
+
+| run_name | `n_delays` | `delay_spacing` | best_traj_loss | best_MASE | LC loss | fast_eig_frac |
+|---|---|---|---|---|---|---|
+| `delay_spacing_1__n_delays_10` | 10 | 1 | 0.09429 | 3.4356 | 251.758 | 0.0000 |
+| `delay_spacing_1__n_delays_20` | 20 | 1 | 0.09713 | 3.5003 | 401.494 | 0.0000 |
+| `delay_spacing_1__n_delays_15` | 15 | 1 | 0.09967 | 3.4448 | 428.865 | 0.0000 |
+| `delay_spacing_1__n_delays_5` | 5 | 1 | 0.10726 | 3.4162 | 211.522 | 0.0000 |
+| `delay_spacing_1__n_delays_30` | 30 | 1 | 0.10810 | 3.6501 | 784.851 | 0.0000 |
+| `delay_spacing_5__n_delays_10` | 10 | 5 | 0.11196 | 3.4825 | 581.100 | 0.0000 |
+| `delay_spacing_5__n_delays_5` | 5 | 5 | 0.11227 | 3.4354 | 363.540 | 0.0000 |
+| `delay_spacing_5__n_delays_15` | 15 | 5 | 0.11422 | 3.6141 | 969.409 | 0.0000 |
+| `delay_spacing_5__n_delays_20` | 20 | 5 | 0.11987 | 3.8020 | 906.812 | 0.0000 |
+| `delay_spacing_5__n_delays_25` | 25 | 5 | 0.12076 | 4.0788 | 866.904 | 0.0000 |
+| `delay_spacing_1__n_delays_25` | 25 | 1 | 0.12700 | 3.8646 | 441.991 | 0.0000 |
+| `delay_spacing_10__n_delays_5` | 5 | 10 | 0.12945 | 3.5727 | 839.567 | 0.0000 |
+| `delay_spacing_10__n_delays_15` | 15 | 10 | 0.14374 | 3.9181 | 2440.857 | 0.0000 |
+| `delay_spacing_10__n_delays_10` | 10 | 10 | 0.14550 | 3.7463 | 1948.223 | 0.0000 |
+| `delay_spacing_10__n_delays_20` | 20 | 10 | 0.14768 | 4.2546 | 2022.970 | 0.0000 |
+| `delay_spacing_5__n_delays_30` | 30 | 5 | 0.15499 | 5.1606 | 768.585 | 0.0000 |
+| `delay_spacing_10__n_delays_25` | 25 | 10 | 0.16018 | 4.8113 | 1484.732 | 0.0000 |
+| `delay_spacing_10__n_delays_30` | 30 | 10 | 0.16248 | 5.1197 | 1131.442 | 0.0000 |
+| `delay_spacing_1__n_delays_1` | 1 | 1 | 0.18384 | 3.5601 | 1111.883 | 0.0000 |
+| `delay_spacing_5__n_delays_1` | 1 | 5 | 0.18384 | 3.5601 | 1111.883 | 0.0000 |
+| `delay_spacing_10__n_delays_1` | 1 | 10 | 0.18384 | 3.5601 | 1111.883 | 0.0000 |
 
 ## Chosen run trajectory prediction
 
-`delay_spacing_1__n_delays_5` cell params: `{'delay_spacing': 1, 'n_delays': 5}`
+`delay_spacing_1__n_delays_10` cell params: `{'delay_spacing': 1, 'n_delays': 10}`
 
 ![chosen trajectory](figures/chosen_trajectory.png)
 
-Solid = ground-truth, dashed = autoregressive rollout (`alpha_TF=0`). Top: latent space (top-6 dims). Bottom: observation space (top-3 LFP channels). Vertical line marks burn-in / start-of-rollout boundary.
+Solid = ground-truth, dashed = autoregressive rollout (`alpha_TF=0`). Left: latent space, projected onto top-3 PCs of rollout-window ground-truth latent. Right: observation space, projected onto top-3 PCs of rollout-window ground-truth obs. Color = PC index (`PC1=C0, PC2=C1, PC3=C2`). Vertical line = burn-in / start-of-rollout.
 
 ## Chosen run Lyapunov spectrum (per condition)
 
