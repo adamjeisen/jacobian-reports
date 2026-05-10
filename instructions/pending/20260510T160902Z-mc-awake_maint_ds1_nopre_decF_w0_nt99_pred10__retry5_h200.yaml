@@ -1,0 +1,114 @@
+kind: mindcontrol
+
+# 5-cell focused re-retry of the cells that OOMed AGAIN at batch=8
+# (sweep 13687863's failed cells). Drops to batch=4 +
+# accumulate_grad_batches=2 → effective batch=8 with ~½ activation
+# memory. Cells 0 (ds5_nd20) and 3 (ds10_nd15) succeeded at batch=8
+# and aren't in this retry.
+
+metadata:
+  description: >
+    5 cells: (ds=5, nd∈{25,30}) + (ds=10, nd∈{20,25,30}). Same
+    config as the b=8 retry, except batch_size=4 +
+    accumulate_grad_batches=2 (effective batch=8 with halved
+    activation memory). Defaults otherwise: encoder_warmup_epochs=0,
+    decoded_only_pred_loss=False, pre_pca_per_area=false,
+    n_target_var_threshold=0.99. Awake + maintenance dose, ds=1
+    (1000 Hz), lp=80 Hz.
+  hypothesis: |
+    Halving batch from 8 to 4 cuts activation memory ~2x; effective
+    batch is preserved via accum=2. Should fit under 80GB on A100.
+  success_criteria:
+    - All 5 cells finish within the 6-hour SLURM cap (or TIMEOUT).
+    - val/one_step_mase finite for all cells (no OOMs).
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: nopre_decF_w0_nt99_pred10__retry5_h200
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  ds_nd:
+    - {_label: ds5_nd25,  delay_spacing: 5,  n_delays: 25}
+    - {_label: ds5_nd30,  delay_spacing: 5,  n_delays: 30}
+    - {_label: ds10_nd20, delay_spacing: 10, n_delays: 20}
+    - {_label: ds10_nd25, delay_spacing: 10, n_delays: 25}
+    - {_label: ds10_nd30, delay_spacing: 10, n_delays: 30}
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  # Fixed knobs (the "other factors at default" baseline)
+  n_target_var_threshold: 0.99
+  n_target_dim_method: pca
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+
+  filter_data: true
+  low_pass: 80.0
+
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values: [-1.0, 1.0]
+
+  per_source_dynamics: false
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+
+  lightning_kwargs:
+    reconstruction_mode: uniform
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+  cfg_overrides:
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  partition: mit_normal_gpu
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:h200:1
+  exclude_nodes: node1802
+
+submitted_at: 20260510T160902Z
+submitted_from: millerlab-endeavourOS
