@@ -17,7 +17,7 @@ pre { white-space: pre-wrap; }
 <h1>mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__pp09_whiten_decF_w0_nt99_pred1__2792efaa__20260508T224014Z</h1>
 <ul>
 <li>wandb group: <a href="https://wandb.ai/JacobianODE/MindControl_Mary_propofol_resting/groups/mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__pp09_whiten_decF_w0_nt99_pred1__2792efaa__20260508T224014Z">mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__pp09_whiten_decF_w0_nt99_pred1__2792efaa__20260508T224014Z</a></li>
-<li>chosen cell: <strong><code>delay_spacing_1__n_delays_15</code></strong> (val/one_step_mase = 1.2179)</li>
+<li>chosen cell: <strong><code>delay_spacing_5__n_delays_30</code></strong> (trajectory val_loss (min over history) = 0.0164)</li>
 <li>cells reported: 21</li>
 </ul>
 <p><strong>Description</strong>: 7 × 3 = 21 cells over n_delays × delay_spacing. Defaults: encoder_warmup_epochs=0, decoded_only_pred_loss=False, pre_pca_per_area=true at threshold 0.9 with whitening, n_target_var_threshold=0.99, accumulate_grad_batches=1. Awake + maintenance dose, ds=1 (1000 Hz), lp=80 Hz.</p>
@@ -35,12 +35,220 @@ or the prediction horizon dominates the residual variance.
 <li>[ ] At least one (n_delays, delay_spacing) combo strictly beats the n_delays=1, delay_spacing=1 baseline on val/one_step_mase.</li>
 </ul>
 <h2>Run picking</h2>
-<p><img alt="run-picking heatmap" src="figures/run_picking__heatmap.png" /></p>
-<p>Chose <code>delay_spacing_1__n_delays_15</code> (val/one_step_mase = 1.2179). <code>val/one_step_mase &lt; 1</code> would mean beating persistence (predicting <code>x_{t+1} ≈ x_t</code>); on 1 kHz LFP the persistence baseline is hard to beat per-step even when 30-step R² is high.</p>
+<p><img alt="sweep overview" src="figures/sweep_overview.png" /></p>
+<p>Four panels: C1 (one-step MASE), C2 (loop closure loss), C3 (fast eigenvalue fraction), trajectory val loss (min over training history). Bars are color-coded green = passes all selection criteria, red = excluded by some criterion, gold = the selected best run.</p>
+<p><img alt="sweep pareto" src="figures/sweep_pareto.png" /></p>
+<p>Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the selected run.</p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>delay_spacing_5__n_delays_30</code> (trajectory val_loss (min over history) = 0.0164). Hard criteria applied after relaxation: C3. Survivors / candidates: 21/21.</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_name</th>
+<th><code>n_delays</code></th>
+<th><code>delay_spacing</code></th>
+<th>best_traj_loss</th>
+<th>best_MASE</th>
+<th>LC loss</th>
+<th>fast_eig_frac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delay_spacing_5__n_delays_30</code></td>
+<td>30</td>
+<td>5</td>
+<td>0.01645</td>
+<td>1.5529</td>
+<td>294.861</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_5__n_delays_25</code></td>
+<td>25</td>
+<td>5</td>
+<td>0.01681</td>
+<td>1.5050</td>
+<td>405.195</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_5__n_delays_20</code></td>
+<td>20</td>
+<td>5</td>
+<td>0.01854</td>
+<td>1.4889</td>
+<td>279.435</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_5__n_delays_15</code></td>
+<td>15</td>
+<td>5</td>
+<td>0.02091</td>
+<td>1.3812</td>
+<td>446.181</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_1__n_delays_20</code></td>
+<td>20</td>
+<td>1</td>
+<td>0.02528</td>
+<td>1.3271</td>
+<td>156.553</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_5__n_delays_10</code></td>
+<td>10</td>
+<td>5</td>
+<td>0.02536</td>
+<td>1.3683</td>
+<td>365.157</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_1__n_delays_25</code></td>
+<td>25</td>
+<td>1</td>
+<td>0.02600</td>
+<td>1.4093</td>
+<td>194.553</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_1__n_delays_30</code></td>
+<td>30</td>
+<td>1</td>
+<td>0.02646</td>
+<td>1.5062</td>
+<td>200.761</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_1__n_delays_15</code></td>
+<td>15</td>
+<td>1</td>
+<td>0.02979</td>
+<td>1.2179</td>
+<td>54.376</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_1__n_delays_10</code></td>
+<td>10</td>
+<td>1</td>
+<td>0.03394</td>
+<td>1.2564</td>
+<td>51.114</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_5__n_delays_5</code></td>
+<td>5</td>
+<td>5</td>
+<td>0.03859</td>
+<td>1.2960</td>
+<td>339.494</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_10__n_delays_20</code></td>
+<td>20</td>
+<td>10</td>
+<td>0.04915</td>
+<td>1.7324</td>
+<td>3129.927</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_10__n_delays_15</code></td>
+<td>15</td>
+<td>10</td>
+<td>0.05032</td>
+<td>1.6670</td>
+<td>1046.592</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_10__n_delays_30</code></td>
+<td>30</td>
+<td>10</td>
+<td>0.05166</td>
+<td>1.8786</td>
+<td>1697.129</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_10__n_delays_25</code></td>
+<td>25</td>
+<td>10</td>
+<td>0.05262</td>
+<td>1.7920</td>
+<td>1938.145</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_10__n_delays_10</code></td>
+<td>10</td>
+<td>10</td>
+<td>0.05349</td>
+<td>1.6341</td>
+<td>1891.224</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_10__n_delays_5</code></td>
+<td>5</td>
+<td>10</td>
+<td>0.05816</td>
+<td>1.4852</td>
+<td>748.502</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_1__n_delays_5</code></td>
+<td>5</td>
+<td>1</td>
+<td>0.06236</td>
+<td>1.4146</td>
+<td>83.945</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_1__n_delays_1</code></td>
+<td>1</td>
+<td>1</td>
+<td>0.17650</td>
+<td>1.3040</td>
+<td>31216.432</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_5__n_delays_1</code></td>
+<td>1</td>
+<td>5</td>
+<td>0.17650</td>
+<td>1.3040</td>
+<td>31216.432</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>delay_spacing_10__n_delays_1</code></td>
+<td>1</td>
+<td>10</td>
+<td>0.17650</td>
+<td>1.3040</td>
+<td>31216.432</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
 <h2>Chosen run trajectory prediction</h2>
-<p><code>delay_spacing_1__n_delays_15</code> cell params: <code>{'delay_spacing': 1, 'n_delays': 15}</code></p>
+<p><code>delay_spacing_5__n_delays_30</code> cell params: <code>{'delay_spacing': 5, 'n_delays': 30}</code></p>
 <p><img alt="chosen trajectory" src="figures/chosen_trajectory.png" /></p>
-<p>Solid = ground-truth, dashed = autoregressive rollout (<code>alpha_TF=0</code>). Top: latent space (top-6 dims). Bottom: observation space (top-3 LFP channels). Vertical line marks burn-in / start-of-rollout boundary.</p>
+<p>Solid = ground-truth, dashed = autoregressive rollout (<code>alpha_TF=0</code>). Left: latent space, projected onto top-3 PCs of rollout-window ground-truth latent. Right: observation space, projected onto top-3 PCs of rollout-window ground-truth obs. Color = PC index (<code>PC1=C0, PC2=C1, PC3=C2</code>). Vertical line = burn-in / start-of-rollout.</p>
 <h2>Chosen run Lyapunov spectrum (per condition)</h2>
 <p><img alt="chosen lyap" src="figures/chosen_lyapunov.png" /></p>
 <p>Bars = mean ± std across the chosen-cell's trajectories within each condition. No empirical / GT comparison — for neural data we only have model-predicted exponents.</p>
