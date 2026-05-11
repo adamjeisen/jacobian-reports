@@ -1,0 +1,109 @@
+kind: mindcontrol
+metadata:
+  description: "7 \xD7 3 = 21 cells over n_delays \xD7 n_target_var_threshold at delay_spacing=1.\
+    \ Other knobs match the prior nopre+pred=10 baseline: encoder_warmup_epochs=0,\
+    \ decoded_only_pred_loss=False, pre_pca_per_area=false, accumulate_grad_batches=1,\
+    \ batch_size=16. Awake + maintenance dose, ds=1 (1000 Hz), lp=80 Hz.\n"
+  hypothesis: "Lower n_target_var_threshold compresses the dyn-latent more\naggressively,\
+    \ shrinking the dynamics MLP and making each epoch\ncheaper. If the same compute\
+    \ budget reaches more training epochs\non the cheaper configs, the optimal n_delays\
+    \ should shift larger\nas nt drops \u2014 i.e., at nt=0.5 we may see a much larger\
+    \ n_delays\nwin than at nt=0.9. This sweep probes that trend.\n"
+  success_criteria:
+  - All 21 cells run within the 6-hour SLURM cap (or TIMEOUT).
+  - val/one_step_mase finite for all cells.
+  - Visible monotone shift in best-by-trajectory-val-loss n_delays as nt sweeps from
+    0.9 down to 0.5.
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: nopre_decF_w0_pred10__ndelays_x_ntvar
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid:
+  n_delays:
+  - 1
+  - 5
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
+  n_target_var_threshold:
+  - 0.9
+  - 0.75
+  - 0.5
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  delay_spacing: 1
+  n_target_dim_method: pca
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  obs_noise: 0.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802
+submitted_at: 20260511T064111Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__nopre_decF_w0_pred10__ndelays_x_ntvar__20260511T064511Z
+slurm_array_id: '13719077'
+slurm_submitted_at: 20260511T064512Z
+n_cells: 21
+expected_run_count: 21
