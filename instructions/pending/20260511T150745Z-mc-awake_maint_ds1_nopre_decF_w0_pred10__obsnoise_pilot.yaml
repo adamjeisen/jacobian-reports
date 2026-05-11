@@ -1,28 +1,30 @@
 kind: mindcontrol
 
-# 18-cell pilot: does obs_noise help at all? If yes, justify spending
+# 12-cell pilot: does obs_noise help at all? If yes, justify spending
 # compute on a full 3-axis (n_delays × LC × obs_noise) sweep; if no,
 # drop the obs_noise axis and run the (n_delays × LC) sweep with 42
 # cells instead of 126.
 #
-# Cells: 6 (nt, n_delays) bundles × 3 obs_noise = 18.
+# Cells: 6 (nt, n_delays) bundles × 2 obs_noise = 12.
 # (nt, n_delays) pairs are the per-nt top-3 from prior ds=1 sweeps:
 #   nt=0.99: best at n_delays = 5, 10, 15 (traj_val ≈ 0.064, 0.067, 0.077)
 #   nt=0.95: best at n_delays = 10, 15, 20 (traj_val ≈ 0.096, 0.105, 0.102)
-# obs_noise: 0 (control) / 0.01 / 0.05 — wide enough to actually see
-# the regularizer's effect. Data is per-condition normalized, so 0.05
-# = 5% of unit variance.
+# obs_noise: 0.01 / 0.05 (the obs_noise=0 baselines already exist in
+# prior nopre+pred10 ds×nd sweep groups — no reason to re-run them).
+# Data is per-condition normalized, so 0.05 = 5% of unit variance.
 
 metadata:
   description: >
-    18 cells: 6 (n_target_var_threshold, n_delays) bundles × 3
+    12 cells: 6 (n_target_var_threshold, n_delays) bundles × 2
     obs_noise. nt99 uses n_delays ∈ {5, 10, 15}, nt95 uses {10, 15, 20}
     — top-3 per nt by trajectory val_loss from the prior nopre+pred10
-    ds×nd sweeps. obs_noise ∈ {0, 0.01, 0.05}. Other knobs match prior
-    nopre+pred10 baseline: pre_pca_per_area=false,
-    decoded_only_pred_loss=False, encoder_warmup_epochs=0, batch_size=16,
-    delay_spacing=1, prediction_steps=10, seq_length=25, lp=80 Hz,
-    awake + maintenance.
+    ds×nd sweeps. obs_noise ∈ {0.01, 0.05}; obs_noise=0 baselines
+    already exist in the prior groups (nt99: …__nde__9637ce59…,
+    nt95: …__nde__8388b216…) — compare against those rather than
+    re-running. Other knobs match prior nopre+pred10 baseline:
+    pre_pca_per_area=false, decoded_only_pred_loss=False,
+    encoder_warmup_epochs=0, batch_size=16, delay_spacing=1,
+    prediction_steps=10, seq_length=25, lp=80 Hz, awake + maintenance.
   hypothesis: |
     Observation noise during training acts as a regularizer in the
     encoder + dynamics composition: it forces the latent to be robust
@@ -34,11 +36,12 @@ metadata:
     harmful. We test 0.01 and 0.05 to span "barely perceptible" and
     "visibly perturbing" noise levels.
   success_criteria:
-    - All 18 cells run within the 6-hour SLURM cap (or TIMEOUT).
+    - All 12 cells run within the 6-hour SLURM cap (or TIMEOUT).
     - val/one_step_mase finite for all cells.
     - For at least one (nt, n_delays) bundle, obs_noise > 0 strictly
-      beats obs_noise = 0 on best trajectory val_loss. If not, drop
-      the obs_noise axis from the next sweep.
+      beats the corresponding obs_noise = 0 cell from the prior nopre
+      ds×nd sweeps on best trajectory val_loss. If not, drop the
+      obs_noise axis from the next sweep.
 
 dataset:
   name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
@@ -65,7 +68,7 @@ grid:
     - {_label: nt95_nd10, n_target_var_threshold: 0.95, n_delays: 10}
     - {_label: nt95_nd15, n_target_var_threshold: 0.95, n_delays: 15}
     - {_label: nt95_nd20, n_target_var_threshold: 0.95, n_delays: 20}
-  obs_noise: [0.0, 0.01, 0.05]
+  obs_noise: [0.01, 0.05]
 
 shared_kwargs:
   encoder: latent_direct_sum_coupling
