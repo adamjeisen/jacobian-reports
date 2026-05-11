@@ -1,0 +1,138 @@
+kind: mindcontrol
+
+# 12-cell pilot: does TRAINING-TIME observation noise help at all?
+# Sweeps `training.lightning.obs_noise_scale` (per-batch stochastic
+# noise injected in trajectory_model_step), NOT the data-preprocessing
+# `obs_noise` parameter (which adds fixed noise to the raw data at
+# load time — that's a different thing entirely). The two had been
+# accidentally conflated; this corrects it.
+#
+# Cells: 6 (nt, n_delays) bundles × 2 obs_noise_scale = 12.
+# (nt, n_delays) pairs are the per-nt top-3 from prior ds=1 sweeps:
+#   nt=0.99: best at n_delays = 5, 10, 15 (traj_val ≈ 0.064, 0.067, 0.077)
+#   nt=0.95: best at n_delays = 10, 15, 20 (traj_val ≈ 0.096, 0.105, 0.102)
+# obs_noise_scale ∈ {0.01, 0.05}; the obs_noise_scale=0 baselines
+# already exist in the prior groups, so compare against those rather
+# than re-running.
+
+metadata:
+  description: >
+    12 cells: 6 (n_target_var_threshold, n_delays) bundles × 2
+    obs_noise_scale. nt99 uses n_delays ∈ {5, 10, 15}, nt95 uses
+    {10, 15, 20} — top-3 per nt by trajectory val_loss from the
+    prior nopre+pred10 ds×nd sweeps. obs_noise_scale ∈ {0.01, 0.05}
+    via lightning_kwargs (per-batch stochastic noise during training);
+    obs_noise_scale=0 baselines already exist in the prior groups
+    (nt99: …__nde__9637ce59…, nt95: …__nde__8388b216…). Other knobs
+    match prior nopre+pred10 baseline: pre_pca_per_area=false,
+    decoded_only_pred_loss=False, encoder_warmup_epochs=0,
+    batch_size=16, delay_spacing=1, prediction_steps=10,
+    seq_length=25, lp=80 Hz, awake + maintenance.
+  hypothesis: |
+    Observation noise during training acts as a regularizer in the
+    encoder + dynamics composition: it forces the latent to be robust
+    to small input perturbations. If the prior nopre+pred10 baselines
+    are limited by encoder overfitting / brittle latents, obs_noise
+    > 0 should improve trajectory val_loss (and lower one_step_mase).
+    If they're not — e.g. if the bottleneck is dynamics-MLP capacity
+    or the autodim'd latent — obs_noise will be neutral or slightly
+    harmful. We test 0.01 and 0.05 to span "barely perceptible" and
+    "visibly perturbing" noise levels.
+  success_criteria:
+    - All 12 cells run within the 6-hour SLURM cap (or TIMEOUT).
+    - val/one_step_mase finite for all cells.
+    - For at least one (nt, n_delays) bundle, obs_noise > 0 strictly
+      beats the corresponding obs_noise = 0 cell from the prior nopre
+      ds×nd sweeps on best trajectory val_loss. If not, drop the
+      obs_noise axis from the next sweep.
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: nopre_decF_w0_pred10__obsnoise_pilot
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  nt_nd:
+    - {_label: nt99_nd5,  n_target_var_threshold: 0.99, n_delays: 5}
+    - {_label: nt99_nd10, n_target_var_threshold: 0.99, n_delays: 10}
+    - {_label: nt99_nd15, n_target_var_threshold: 0.99, n_delays: 15}
+    - {_label: nt95_nd10, n_target_var_threshold: 0.95, n_delays: 10}
+    - {_label: nt95_nd15, n_target_var_threshold: 0.95, n_delays: 15}
+    - {_label: nt95_nd20, n_target_var_threshold: 0.95, n_delays: 20}
+  ons:
+    - {_label: ons001, lightning_kwargs: {reconstruction_mode: uniform, obs_noise_scale: 0.01}}
+    - {_label: ons005, lightning_kwargs: {reconstruction_mode: uniform, obs_noise_scale: 0.05}}
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  # Fixed knobs (n_target_var_threshold + n_delays are bundled; obs_noise is grid)
+  delay_spacing: 1
+  n_target_dim_method: pca
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+
+  filter_data: true
+  low_pass: 80.0
+
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values: [-1.0, 1.0]
+
+  per_source_dynamics: false
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+
+  lightning_kwargs:
+    reconstruction_mode: uniform
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+  cfg_overrides:
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802
