@@ -1,0 +1,131 @@
+kind: mindcontrol
+metadata:
+  description: "12 cells: 6 (n_target_var_threshold, n_delays) bundles \xD7 2 obs_noise_scale.\
+    \ nt99 uses n_delays \u2208 {5, 10, 15}, nt95 uses {10, 15, 20} \u2014 top-3 per\
+    \ nt by trajectory val_loss from the prior nopre+pred10 ds\xD7nd sweeps. obs_noise_scale\
+    \ \u2208 {0.01, 0.05} via lightning_kwargs (per-batch stochastic noise during\
+    \ training); obs_noise_scale=0 baselines already exist in the prior groups (nt99:\
+    \ \u2026__nde__9637ce59\u2026, nt95: \u2026__nde__8388b216\u2026). Other knobs\
+    \ match prior nopre+pred10 baseline: pre_pca_per_area=false, decoded_only_pred_loss=False,\
+    \ encoder_warmup_epochs=0, batch_size=16, delay_spacing=1, prediction_steps=10,\
+    \ seq_length=25, lp=80 Hz, awake + maintenance.\n"
+  hypothesis: "Observation noise during training acts as a regularizer in the\nencoder\
+    \ + dynamics composition: it forces the latent to be robust\nto small input perturbations.\
+    \ If the prior nopre+pred10 baselines\nare limited by encoder overfitting / brittle\
+    \ latents, obs_noise\n> 0 should improve trajectory val_loss (and lower one_step_mase).\n\
+    If they're not \u2014 e.g. if the bottleneck is dynamics-MLP capacity\nor the\
+    \ autodim'd latent \u2014 obs_noise will be neutral or slightly\nharmful. We test\
+    \ 0.01 and 0.05 to span \"barely perceptible\" and\n\"visibly perturbing\" noise\
+    \ levels.\n"
+  success_criteria:
+  - All 12 cells run within the 6-hour SLURM cap (or TIMEOUT).
+  - val/one_step_mase finite for all cells.
+  - "For at least one (nt, n_delays) bundle, obs_noise > 0 strictly beats the corresponding\
+    \ obs_noise = 0 cell from the prior nopre ds\xD7nd sweeps on best trajectory val_loss.\
+    \ If not, drop the obs_noise axis from the next sweep."
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160809-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: nopre_decF_w0_pred10__obsnoise_pilot
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid:
+  nt_nd:
+  - _label: nt99_nd5
+    n_target_var_threshold: 0.99
+    n_delays: 5
+  - _label: nt99_nd10
+    n_target_var_threshold: 0.99
+    n_delays: 10
+  - _label: nt99_nd15
+    n_target_var_threshold: 0.99
+    n_delays: 15
+  - _label: nt95_nd10
+    n_target_var_threshold: 0.95
+    n_delays: 10
+  - _label: nt95_nd15
+    n_target_var_threshold: 0.95
+    n_delays: 15
+  - _label: nt95_nd20
+    n_target_var_threshold: 0.95
+    n_delays: 20
+  ons:
+  - _label: ons001
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      obs_noise_scale: 0.01
+  - _label: ons005
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      obs_noise_scale: 0.05
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  delay_spacing: 1
+  n_target_dim_method: pca
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  lightning_kwargs:
+    reconstruction_mode: uniform
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160809-01__awake_maint__ds1__nopre_decF_w0_pred10__obsnoise_pilot__20260511T205513Z
+slurm_array_id: '13761431'
+slurm_submitted_at: 20260511T205514Z
+n_cells: 12
+expected_run_count: 12
