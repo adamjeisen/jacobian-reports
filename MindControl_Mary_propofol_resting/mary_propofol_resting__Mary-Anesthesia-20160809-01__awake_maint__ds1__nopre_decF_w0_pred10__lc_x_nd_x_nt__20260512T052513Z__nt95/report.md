@@ -29,7 +29,7 @@ eventual production training recipe.
 
 ![sweep overview](figures/sweep_overview.png)
 
-Four panels: C1 (one-step MASE), C2 (loop closure loss), C3 (fast eigenvalue fraction), trajectory val loss (min over training history). Bars are color-coded green = passes all selection criteria, red = excluded by some criterion, gold = the selected best run.
+Four panels: C1 (one-step MASE — uses `val/decoder_corrected_one_step_mase` per cell when available; threshold = 1 = decoded persistence baseline), C2 (loop closure — plots `LC / sqrt(n_dyn)` against y=1 when each cell carries its own `n_dyn`, otherwise raw LC vs the shared sqrt(n_dyn) line), C3 (fast eigenvalue fraction), trajectory val loss (min over training history). Bars are color-coded green = passes all selection criteria, red = excluded by some criterion, gold = the selected best run.
 
 ![sweep pareto](figures/sweep_pareto.png)
 
@@ -39,29 +39,29 @@ Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the 
 
 ### Per-run results
 
-| run_name | `nt_nd` | `lc` | best_traj_loss | best_MASE | LC loss | fast_eig_frac |
-|---|---|---|---|---|---|---|
-| `lc_lc1e-4__nt_nd_nt95_nd10` | — | — | 0.08967 | 3.4270 | 0.348 | 0.0000 |
-| `lc_lc1e-2__nt_nd_nt95_nd10` | — | — | 0.09015 | 3.4506 | 0.001 | 0.0000 |
-| `lc_lc1e-6__nt_nd_nt95_nd10` | — | — | 0.09047 | 3.4250 | 31.882 | 0.0000 |
-| `lc_lc1e-3__nt_nd_nt95_nd10` | — | — | 0.09055 | 3.4533 | 0.010 | 0.0000 |
-| `lc_lc1e-1__nt_nd_nt95_nd10` | — | — | 0.09092 | 3.4516 | 0.000 | 0.0000 |
-| `lc_lc1e-5__nt_nd_nt95_nd10` | — | — | 0.09137 | 3.4422 | 4.136 | 0.0000 |
-| `lc_lc0__nt_nd_nt95_nd10` | — | — | 0.09475 | 3.4246 | 246.427 | 0.0000 |
-| `lc_lc1e-6__nt_nd_nt95_nd15` | — | — | 0.09577 | 3.4273 | 48.471 | 0.0000 |
-| `lc_lc1e-1__nt_nd_nt95_nd15` | — | — | 0.09638 | 3.4484 | 0.000 | 0.0000 |
-| `lc_lc1e-4__nt_nd_nt95_nd15` | — | — | 0.09787 | 3.4485 | 0.324 | 0.0000 |
-| `lc_lc1e-5__nt_nd_nt95_nd15` | — | — | 0.09889 | 3.4532 | 4.992 | 0.0000 |
-| `lc_lc1e-3__nt_nd_nt95_nd15` | — | — | 0.09911 | 3.4579 | 0.005 | 0.0000 |
-| `lc_lc0__nt_nd_nt95_nd15` | — | — | 0.09956 | 3.4456 | 425.076 | 0.0000 |
-| `lc_lc1e-2__nt_nd_nt95_nd15` | — | — | 0.10095 | 3.4767 | 0.001 | 0.0000 |
-| `lc_lc1e-5__nt_nd_nt95_nd20` | — | — | 0.10245 | 3.5420 | 3.919 | 0.0000 |
-| `lc_lc1e-6__nt_nd_nt95_nd20` | — | — | 0.10281 | 3.5342 | 38.305 | 0.0000 |
-| `lc_lc0__nt_nd_nt95_nd20` | — | — | 0.10310 | 3.5538 | 372.199 | 0.0000 |
-| `lc_lc1e-4__nt_nd_nt95_nd20` | — | — | 0.10317 | 3.5559 | 0.115 | 0.0000 |
-| `lc_lc1e-2__nt_nd_nt95_nd20` | — | — | 0.10527 | 3.5468 | 0.000 | 0.0000 |
-| `lc_lc1e-3__nt_nd_nt95_nd20` | — | — | 0.10528 | 3.5663 | 0.039 | 0.0000 |
-| `lc_lc1e-1__nt_nd_nt95_nd20` | — | — | 0.10535 | 3.5414 | 0.000 | 0.0000 |
+| run_name | `nt_nd` | `lc` | best_traj_loss | MASE | dec_corr_MASE | LC loss | n_dyn | fast_eig_frac |
+|---|---|---|---|---|---|---|---|---|
+| `lc_lc1e-4__nt_nd_nt95_nd10` | — | — | 0.08967 | 3.4270 | 0.9903 | 0.348 | 39 | 0.0000 |
+| `lc_lc1e-2__nt_nd_nt95_nd10` | — | — | 0.09015 | 3.4506 | 0.9913 | 0.001 | 39 | 0.0000 |
+| `lc_lc1e-6__nt_nd_nt95_nd10` | — | — | 0.09047 | 3.4250 | 0.9900 | 31.882 | 39 | 0.0000 |
+| `lc_lc1e-3__nt_nd_nt95_nd10` | — | — | 0.09055 | 3.4533 | 0.9919 | 0.010 | 39 | 0.0000 |
+| `lc_lc1e-1__nt_nd_nt95_nd10` | — | — | 0.09092 | 3.4516 | 0.9919 | 0.000 | 39 | 0.0000 |
+| `lc_lc1e-5__nt_nd_nt95_nd10` | — | — | 0.09137 | 3.4422 | 0.9920 | 4.136 | 39 | 0.0000 |
+| `lc_lc0__nt_nd_nt95_nd10` | — | — | 0.09475 | 3.4246 | 0.9917 | 246.427 | 39 | 0.0000 |
+| `lc_lc1e-6__nt_nd_nt95_nd15` | — | — | 0.09577 | 3.4273 | 0.9832 | 48.471 | 43 | 0.0000 |
+| `lc_lc1e-1__nt_nd_nt95_nd15` | — | — | 0.09638 | 3.4484 | 0.9877 | 0.000 | 43 | 0.0000 |
+| `lc_lc1e-4__nt_nd_nt95_nd15` | — | — | 0.09787 | 3.4485 | 0.9836 | 0.324 | 43 | 0.0000 |
+| `lc_lc1e-5__nt_nd_nt95_nd15` | — | — | 0.09889 | 3.4532 | 0.9832 | 4.992 | 43 | 0.0000 |
+| `lc_lc1e-3__nt_nd_nt95_nd15` | — | — | 0.09911 | 3.4579 | 0.9840 | 0.005 | 43 | 0.0000 |
+| `lc_lc0__nt_nd_nt95_nd15` | — | — | 0.09956 | 3.4456 | 0.9822 | 425.076 | 43 | 0.0000 |
+| `lc_lc1e-2__nt_nd_nt95_nd15` | — | — | 0.10095 | 3.4767 | 0.9838 | 0.001 | 43 | 0.0000 |
+| `lc_lc1e-5__nt_nd_nt95_nd20` | — | — | 0.10245 | 3.5420 | 0.9829 | 3.919 | 49 | 0.0000 |
+| `lc_lc1e-6__nt_nd_nt95_nd20` | — | — | 0.10281 | 3.5342 | 0.9815 | 38.305 | 49 | 0.0000 |
+| `lc_lc0__nt_nd_nt95_nd20` | — | — | 0.10310 | 3.5538 | 0.9829 | 372.199 | 49 | 0.0000 |
+| `lc_lc1e-4__nt_nd_nt95_nd20` | — | — | 0.10317 | 3.5559 | 0.9807 | 0.115 | 49 | 0.0000 |
+| `lc_lc1e-2__nt_nd_nt95_nd20` | — | — | 0.10527 | 3.5468 | 0.9848 | 0.000 | 49 | 0.0000 |
+| `lc_lc1e-3__nt_nd_nt95_nd20` | — | — | 0.10528 | 3.5663 | 0.9808 | 0.039 | 49 | 0.0000 |
+| `lc_lc1e-1__nt_nd_nt95_nd20` | — | — | 0.10535 | 3.5414 | 0.9844 | 0.000 | 49 | 0.0000 |
 
 ## Chosen run trajectory prediction
 
@@ -69,7 +69,7 @@ Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the 
 
 ![chosen trajectory](figures/chosen_trajectory.png)
 
-Solid = ground-truth, dashed = autoregressive rollout (`alpha_TF=0`). Left: latent space, projected onto top-3 PCs of rollout-window ground-truth latent. Right: observation space, projected onto top-3 PCs of rollout-window ground-truth obs. Color = PC index (`PC1=C0, PC2=C1, PC3=C2`). Vertical line = burn-in / start-of-rollout.
+One row per condition. Window = the model's native training convention: `traj_init_steps` teacher-forced steps followed by `prediction_steps` autoregressive (alpha_TF=0) steps. Solid = ground-truth, dashed = autoregressive rollout. Left: latent space, projected onto top-3 PCs of rollout-window ground-truth latent. Right: observation space, projected onto top-3 PCs of rollout-window ground-truth obs. Color = PC index (`PC1=C0, PC2=C1, PC3=C2`). Vertical line = end of teacher forcing / start of autoregressive rollout.
 
 ## Chosen run Lyapunov spectrum (per condition)
 
