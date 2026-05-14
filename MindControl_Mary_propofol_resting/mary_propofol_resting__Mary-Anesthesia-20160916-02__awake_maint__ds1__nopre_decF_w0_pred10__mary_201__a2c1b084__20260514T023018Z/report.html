@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>mary_propofol_resting__Mary-Anesthesia-20160916-02__awake_maint__ds1__nopre_decF_w0_pred10__mary_201__a2c1b084__20260514T023018Z</h1>
+<ul>
+<li>wandb group: <a href="https://wandb.ai/JacobianODE/MindControl_Mary_propofol_resting/groups/mary_propofol_resting__Mary-Anesthesia-20160916-02__awake_maint__ds1__nopre_decF_w0_pred10__mary_201__a2c1b084__20260514T023018Z">mary_propofol_resting__Mary-Anesthesia-20160916-02__awake_maint__ds1__nopre_decF_w0_pred10__mary_201__a2c1b084__20260514T023018Z</a></li>
+<li>chosen cell: <strong><code>n_delays_5</code></strong> (trajectory val_loss (min over history) = 0.0622)</li>
+<li>cells reported: 7</li>
+</ul>
+<p><strong>Description</strong>: 7 cells on Mary-Anesthesia-20160916-02 (end (10th of 10) — 2016-09-16, last Mary recording day). Grid: n_delays ∈ {1, 5, 10, 15, 20, 25, 30}, fixed nt=0.99, ds=1. Identical config to the other nd pilots. 6h SLURM cap with migrate_to=mit_normal_gpu.</p>
+<p><strong>Hypothesis</strong></p>
+<pre><code>Same as the other nd pilots — expect top-3 nd at nt=0.99 to fall in
+{5, 10, 15} (which is what Mary-20160809 + MrJones-20160105 both
+show). If the sweet-spot drifts on a late-recording session, that's
+important to know before committing to the LC×nd sweep on the rest.
+</code></pre>
+<p><strong>Success criteria</strong> (manual review until automated):</p>
+<ul>
+<li>[ ] All 7 cells run within the 6-hour SLURM cap (or TIMEOUT).</li>
+<li>[ ] val/one_step_mase finite for all cells.</li>
+<li>[ ] Top-3 n_delays at nt=0.99 fall within {5, 10, 15, 20}.</li>
+</ul>
+<h2>Run picking</h2>
+<p><img alt="sweep overview" src="figures/sweep_overview.png" /></p>
+<p>Four panels: C1 (one-step MASE — uses <code>val/decoder_corrected_one_step_mase</code> per cell when available; threshold = 1 = decoded persistence baseline), C2 (loop closure — plots <code>LC / sqrt(n_dyn)</code> against y=1 when each cell carries its own <code>n_dyn</code>, otherwise raw LC vs the shared sqrt(n_dyn) line), C3 (fast eigenvalue fraction), trajectory val loss (min over training history). Bars are color-coded green = passes all selection criteria, red = excluded by some criterion, gold = the selected best run.</p>
+<p><img alt="sweep pareto" src="figures/sweep_pareto.png" /></p>
+<p>Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the selected run.</p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>n_delays_5</code> (trajectory val_loss (min over history) = 0.0622). Hard criteria applied after relaxation: C1, C3. Survivors / candidates: 6/7.</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_name</th>
+<th><code>n_delays</code></th>
+<th>best_traj_loss</th>
+<th>MASE</th>
+<th>dec_corr_MASE</th>
+<th>LC loss</th>
+<th>n_dyn</th>
+<th>fast_eig_frac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>n_delays_5</code></td>
+<td>5</td>
+<td>0.06217</td>
+<td>1.8283</td>
+<td>0.9357</td>
+<td>75.104</td>
+<td>110</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_10</code></td>
+<td>10</td>
+<td>0.06519</td>
+<td>1.8373</td>
+<td>0.9247</td>
+<td>134.890</td>
+<td>133</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_15</code></td>
+<td>15</td>
+<td>0.06766</td>
+<td>1.8490</td>
+<td>0.9086</td>
+<td>190.040</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_20</code></td>
+<td>20</td>
+<td>0.07225</td>
+<td>2.0049</td>
+<td>0.9196</td>
+<td>184.698</td>
+<td>177</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_25</code></td>
+<td>25</td>
+<td>0.07476</td>
+<td>2.1473</td>
+<td>0.9293</td>
+<td>230.066</td>
+<td>198</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_30</code></td>
+<td>30</td>
+<td>0.09023</td>
+<td>2.3789</td>
+<td>0.9465</td>
+<td>220.364</td>
+<td>221</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_1</code></td>
+<td>1</td>
+<td>0.14615</td>
+<td>2.0519</td>
+<td>1.0546</td>
+<td>936.432</td>
+<td>93</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<h2>Chosen run trajectory prediction</h2>
+<p><code>n_delays_5</code> cell params: <code>{'n_delays': 5}</code></p>
+<p><img alt="chosen trajectory" src="figures/chosen_trajectory.png" /></p>
+<p>One row per condition. Window = the model's native training convention: <code>traj_init_steps</code> teacher-forced steps followed by <code>prediction_steps</code> autoregressive (alpha_TF=0) steps. Solid = ground-truth, dashed = autoregressive rollout. Left: latent space, projected onto top-3 PCs of rollout-window ground-truth latent. Right: observation space, projected onto top-3 PCs of rollout-window ground-truth obs. Color = PC index (<code>PC1=C0, PC2=C1, PC3=C2</code>). Vertical line = end of teacher forcing / start of autoregressive rollout.</p>
+<h2>Chosen run Lyapunov spectrum (per condition)</h2>
+<p><img alt="chosen lyap" src="figures/chosen_lyapunov.png" /></p>
+<p>Bars = mean ± std across the chosen-cell's trajectories within each condition. No empirical / GT comparison — for neural data we only have model-predicted exponents.</p>
+<h2>Per-cell Lyapunov spectra</h2>
+<p><img alt="per-cell lyap" src="figures/per_cell_lyapunov.png" /></p>
+<p>Each subplot is one cell's per-condition Lyapunov spectrum (mean across that cell's trajectories). Watch for monotone trends as <code>n_delays</code> increases and for any cell where the conditions cleanly separate.</p>
+<h2>Chosen run cross-area block gramians (per pair)</h2>
+<p>For each ordered (source → target) area pair, we compute the reach / ctrl / obs gramians of the chosen run's predicted Jacobian's cross-area blocks. Bars show <code>log_trace</code> (top row) and <code>log_min_eig</code> (bottom row — the LOG of the SMALLEST eigenvalue, i.e. the bottleneck-dim energy) per condition, with SEM error bars across the cell's trajectories. Pure model side — no GT since neural data lacks a ground-truth dynamical model. <code>metric</code> mode is currently identical to <code>standard</code> (encoder-Jacobian B_factor / C_factor not yet plugged in).</p>
+<h3>standard / full</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_FEF.png" /></p>
+<h3>standard / k20</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_FEF.png" /></p>
+<h2>Per-cell summary metrics</h2>
+<table>
+<thead>
+<tr>
+<th>run</th>
+<th>n_delays</th>
+<th>encoder_warmup</th>
+<th>mean val loss</th>
+<th>val/one_step_mase</th>
+<th>val/total_loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>n_delays_1</code></td>
+<td>1</td>
+<td>?</td>
+<td>0.1475</td>
+<td>2.0411</td>
+<td>—</td>
+<td>33.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0658</td>
+<td>1.8517</td>
+<td>—</td>
+<td>47.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0677</td>
+<td>1.8490</td>
+<td>—</td>
+<td>40.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_20</code></td>
+<td>20</td>
+<td>?</td>
+<td>0.0728</td>
+<td>1.9827</td>
+<td>—</td>
+<td>28.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_25</code></td>
+<td>25</td>
+<td>?</td>
+<td>0.0748</td>
+<td>2.1473</td>
+<td>—</td>
+<td>24.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_30</code></td>
+<td>30</td>
+<td>?</td>
+<td>0.0969</td>
+<td>2.4283</td>
+<td>—</td>
+<td>18.0000</td>
+</tr>
+<tr>
+<td><code>n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0631</td>
+<td>1.8530</td>
+<td>—</td>
+<td>49.0000</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
