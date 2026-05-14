@@ -1,45 +1,44 @@
 kind: mindcontrol
-
-# Pilot nd sweep: Mary-Anesthesia-20160916-02 (end (10th of 10)). Sibling of the
-# Mary-20160831 + MrJones-20160105 sweeps. Confirms whether the
-# nd ∈ {5,10,15} sweet-spot generalizes across sessions.
-
 metadata:
-  description: >
-    7 cells on Mary-Anesthesia-20160916-02 (end (10th of 10) —
-    2016-09-16, last Mary recording day). Grid: n_delays ∈ {1, 5, 10, 15, 20, 25, 30},
-    fixed nt=0.99, ds=1. Identical config to the
-    other nd pilots. 6h SLURM cap with migrate_to=mit_normal_gpu.
-  hypothesis: |
-    Same as the other nd pilots — expect top-3 nd at nt=0.99 to fall in
-    {5, 10, 15} (which is what Mary-20160809 + MrJones-20160105 both
-    show). If the sweet-spot drifts on a late-recording session, that's
-    important to know before committing to the LC×nd sweep on the rest.
+  description: "7 cells on Mary-Anesthesia-20160916-02 (end (10th of 10) \u2014 2016-09-16,\
+    \ last Mary recording day). Grid: n_delays \u2208 {1, 5, 10, 15, 20, 25, 30},\
+    \ fixed nt=0.99, ds=1. Identical config to the other nd pilots. 6h SLURM cap with\
+    \ migrate_to=mit_normal_gpu.\n"
+  hypothesis: "Same as the other nd pilots \u2014 expect top-3 nd at nt=0.99 to fall\
+    \ in\n{5, 10, 15} (which is what Mary-20160809 + MrJones-20160105 both\nshow).\
+    \ If the sweet-spot drifts on a late-recording session, that's\nimportant to know\
+    \ before committing to the LC\xD7nd sweep on the rest.\n"
   success_criteria:
-    - All 7 cells run within the 6-hour SLURM cap (or TIMEOUT).
-    - val/one_step_mase finite for all cells.
-    - Top-3 n_delays at nt=0.99 fall within {5, 10, 15, 20}.
-
+  - All 7 cells run within the 6-hour SLURM cap (or TIMEOUT).
+  - val/one_step_mase finite for all cells.
+  - Top-3 n_delays at nt=0.99 fall within {5, 10, 15, 20}.
 dataset:
   name: mary_propofol_resting__Mary-Anesthesia-20160916-02__awake_maint__ds1
   loader: mindcontrol.loaders.mary_propofol.load_resting
   loader_kwargs:
     session: Mary-Anesthesia-20160916-02
-    sections: [awake, "maintenance dose"]
-    section_condition_values: [-1.0, 1.0]
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
     min_length_sec: 3.0
     min_kept_length_sec: 1.5
     balance: true
     downsample_factor: 1
-
 sweep_name: nopre_decF_w0_pred10__mary_20160916_ndelays_x_nt
-
 wandb_entity: JacobianODE
 wandb_project: MindControl_Mary_propofol_resting
-
 grid:
-  n_delays: [1, 5, 10, 15, 20, 25, 30]
-
+  n_delays:
+  - 1
+  - 5
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
 shared_kwargs:
   encoder: latent_direct_sum_coupling
   encoder_kwargs:
@@ -48,12 +47,14 @@ shared_kwargs:
     use_cayley_perms: true
     final_perm_identity: true
     zero_init: true
-    near_identity_std: 1.0e-3
-
+    near_identity_std: 0.001
   dynamics_kwargs:
-    hidden_dim: [2048, 2048, 4096, 4096]
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
     num_layers: 4
-
   delay_spacing: 1
   n_target_dim_method: pca
   n_target_var_threshold: 0.99
@@ -62,39 +63,31 @@ shared_kwargs:
   whiten_after_pre_pca: false
   encoder_warmup_epochs: 0
   decoded_only_pred_loss: false
-
   seq_length: 25
   seq_spacing: 15
   prediction_steps: 10
-
   filter_data: true
   low_pass: 80.0
-
   obs_noise: 0.0
   normalize: true
   normalize_per_condition: true
-  section_condition_values: [-1.0, 1.0]
-
+  section_condition_values:
+  - -1.0
+  - 1.0
   per_source_dynamics: false
-
   train_percent: 0.7
   test_percent: 0.15
   split_by: trajectory
-
   n_epochs: 100
   batch_size: 16
   seed: 42
-
   lightning_kwargs:
     reconstruction_mode: uniform
-
   early_stopping_kwargs:
     early_stopping_patience: 5
     min_epochs: 15
-
   cfg_overrides:
-    "training.trainer_params.accumulate_grad_batches": 1
-
+    training.trainer_params.accumulate_grad_batches: 1
 slurm:
   partition: ou_bcs_normal
   cpus_per_task: 2
@@ -103,6 +96,10 @@ slurm:
   gres: gpu:1
   exclude_nodes: node1802,node3808
   migrate_to: mit_normal_gpu
-
 submitted_at: 20260514T022750Z
 submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160916-02__awake_maint__ds1__nopre_decF_w0_pred10__mary_201__a2c1b084__20260514T023018Z
+slurm_array_id: '13904760'
+slurm_submitted_at: 20260514T023019Z
+n_cells: 7
+expected_run_count: 7
