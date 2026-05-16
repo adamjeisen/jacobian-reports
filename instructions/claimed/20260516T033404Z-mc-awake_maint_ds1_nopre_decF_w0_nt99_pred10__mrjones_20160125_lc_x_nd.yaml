@@ -1,0 +1,130 @@
+kind: mindcontrol
+metadata:
+  description: "21 cells: 3 n_delays \xD7 7 loop_closure_weight at nt=0.99, ds=1,\
+    \ on MrJones-Anesthesia-20160125-01. n_delays \u2208 {5, 10, 15}. loop_closure_weight\
+    \ \u2208 {0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1}. obs_noise_scale=0. 6-hour SLURM\
+    \ cap, migrate_to=mit_normal_gpu. All other knobs match the Mary-20160809 + MrJones-20160105\
+    \ LC \xD7 nd siblings.\n"
+  hypothesis: "The Mary-20160809 + MrJones-20160105 LC \xD7 nd sweeps both showed\
+    \ the\nLC sweet spot in 1e-3 to 1e-1 with a late-bloomer at lc=1e-1, nd=10.\n\
+    Expect MrJones-Anesthesia-20160125-01 to land in the same regime.\nVariation across\
+    \ sessions in the precise LC peak + late-bloom epoch\nis the whole point of running\
+    \ this on more sessions.\n"
+  success_criteria:
+  - All 21 cells run within the 6-hour SLURM cap (or TIMEOUT).
+  - val/one_step_mase finite for all cells.
+  - For each n_delays, at least one lc_weight > 0 strictly beats lc_weight = 0 on
+    best trajectory val_loss.
+dataset:
+  name: mrjones_propofol_resting__MrJones-Anesthesia-20160125-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: MrJones-Anesthesia-20160125-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: nopre_decF_w0_nt99_pred10__mrjones_20160125_lc_x_nd
+wandb_entity: JacobianODE
+wandb_project: MindControl_MrJones_propofol_resting
+grid:
+  n_delays:
+  - 5
+  - 10
+  - 15
+  lc:
+  - _label: lc0
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.0
+  - _label: lc1e-6
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 1.0e-06
+  - _label: lc1e-5
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 1.0e-05
+  - _label: lc1e-4
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.0001
+  - _label: lc1e-3
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.001
+  - _label: lc1e-2
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.01
+  - _label: lc1e-1
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.1
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  delay_spacing: 1
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+submitted_at: 20260516T033404Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mrjones_propofol_resting__MrJones-Anesthesia-20160125-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__8b8858a0__20260516T033521Z
+slurm_array_id: '14001843'
+slurm_submitted_at: 20260516T033521Z
+n_cells: 21
+expected_run_count: 21
