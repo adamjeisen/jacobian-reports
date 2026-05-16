@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-16T15:40:24Z",
+  "last_updated": "2026-05-16T15:45:29Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -3890,9 +3890,9 @@
         "array_id": "14001840",
         "n_total": 17,
         "n_completed": 8,
-        "n_succeeded": 9,
-        "n_running": 8,
-        "summary": "8xCOMPLETED 8xRUNNING 1xTIMEOUT"
+        "n_succeeded": 10,
+        "n_running": 7,
+        "summary": "8xCOMPLETED 7xRUNNING 2xTIMEOUT"
       },
       "n_cells": 21,
       "wandb_project": "MindControl_Mary_propofol_resting",
@@ -3905,11 +3905,11 @@
       "status": "active",
       "training_slurm": {
         "array_id": "14001841",
-        "n_total": 9,
+        "n_total": 10,
         "n_completed": 0,
         "n_succeeded": 0,
-        "n_running": 9,
-        "summary": "1xPENDING 8xRUNNING"
+        "n_running": 10,
+        "summary": "1xPENDING 9xRUNNING"
       },
       "n_cells": 21,
       "wandb_project": "MindControl_Mary_propofol_resting",
