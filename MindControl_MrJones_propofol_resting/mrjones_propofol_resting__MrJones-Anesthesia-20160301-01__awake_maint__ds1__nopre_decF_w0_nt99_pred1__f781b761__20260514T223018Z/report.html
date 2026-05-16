@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweep Analysis Report</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.5; }
+table { border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; }
+th { background: #f5f5f5; }
+img { max-width: 100%; height: auto; }
+code { background: #f5f5f5; padding: 2px 4px; }
+pre { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>mrjones_propofol_resting__MrJones-Anesthesia-20160301-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__f781b761__20260514T223018Z</h1>
+<ul>
+<li>wandb group: <a href="https://wandb.ai/JacobianODE/MindControl_MrJones_propofol_resting/groups/mrjones_propofol_resting__MrJones-Anesthesia-20160301-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__f781b761__20260514T223018Z">mrjones_propofol_resting__MrJones-Anesthesia-20160301-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__f781b761__20260514T223018Z</a></li>
+<li>chosen cell: <strong><code>lc_lc1e-1__n_delays_5</code></strong> (trajectory val_loss (min over history) = 0.0428)</li>
+<li>cells reported: 21</li>
+</ul>
+<p><strong>Description</strong>: 21 cells: 3 n_delays × 7 loop_closure_weight at nt=0.99, ds=1, on MrJones-Anesthesia-20160301-01. n_delays ∈ {5, 10, 15}. loop_closure_weight ∈ {0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1}. obs_noise_scale=0. 6-hour SLURM cap, migrate_to=mit_normal_gpu. All other knobs match the Mary-20160809 + MrJones-20160105 LC × nd siblings.</p>
+<p><strong>Hypothesis</strong></p>
+<pre><code>The Mary-20160809 + MrJones-20160105 LC × nd sweeps both showed the
+LC sweet spot in 1e-3 to 1e-1 with a late-bloomer at lc=1e-1, nd=10.
+Expect MrJones-Anesthesia-20160301-01 to land in the same regime.
+Variation across sessions in the precise LC peak + late-bloom epoch
+is the whole point of running this on more sessions.
+</code></pre>
+<p><strong>Success criteria</strong> (manual review until automated):</p>
+<ul>
+<li>[ ] All 21 cells run within the 6-hour SLURM cap (or TIMEOUT).</li>
+<li>[ ] val/one_step_mase finite for all cells.</li>
+<li>[ ] For each n_delays, at least one lc_weight &gt; 0 strictly beats lc_weight = 0 on best trajectory val_loss.</li>
+</ul>
+<h2>Run picking</h2>
+<p><img alt="sweep overview" src="figures/sweep_overview.png" /></p>
+<p>Four panels: C1 (one-step MASE — uses <code>val/decoder_corrected_one_step_mase</code> per cell when available; threshold = 1 = decoded persistence baseline), C2 (loop closure — plots <code>LC / sqrt(n_dyn)</code> against y=1 when each cell carries its own <code>n_dyn</code>, otherwise raw LC vs the shared sqrt(n_dyn) line), C3 (fast eigenvalue fraction), trajectory val loss (min over training history). Bars are color-coded green = passes all selection criteria, red = excluded by some criterion, gold = the selected best run.</p>
+<p><img alt="sweep pareto" src="figures/sweep_pareto.png" /></p>
+<p>Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the selected run.</p>
+<p><strong>Chosen run</strong> (by <code>best_traj_loss</code>): <code>lc_lc1e-1__n_delays_5</code> (trajectory val_loss (min over history) = 0.0428). Hard criteria applied after relaxation: C1, C2, C3. Survivors / candidates: 12/21.</p>
+<h3>Per-run results</h3>
+<table>
+<thead>
+<tr>
+<th>run_name</th>
+<th><code>n_delays</code></th>
+<th><code>lc</code></th>
+<th>best_traj_loss</th>
+<th>MASE</th>
+<th>dec_corr_MASE</th>
+<th>LC loss</th>
+<th>n_dyn</th>
+<th>fast_eig_frac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lc_lc1e-1__n_delays_5</code></td>
+<td>5</td>
+<td>—</td>
+<td>0.04281</td>
+<td>2.2202</td>
+<td>0.9945</td>
+<td>0.000</td>
+<td>128</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-4__n_delays_15</code></td>
+<td>15</td>
+<td>—</td>
+<td>0.04525</td>
+<td>2.1898</td>
+<td>0.9510</td>
+<td>0.269</td>
+<td>186</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-1__n_delays_15</code></td>
+<td>15</td>
+<td>—</td>
+<td>0.04562</td>
+<td>2.1966</td>
+<td>0.9545</td>
+<td>0.000</td>
+<td>186</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-4__n_delays_10</code></td>
+<td>10</td>
+<td>—</td>
+<td>0.04634</td>
+<td>2.1882</td>
+<td>0.9598</td>
+<td>0.322</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-2__n_delays_5</code></td>
+<td>5</td>
+<td>—</td>
+<td>0.04636</td>
+<td>2.2342</td>
+<td>1.0125</td>
+<td>0.000</td>
+<td>128</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-3__n_delays_5</code></td>
+<td>5</td>
+<td>—</td>
+<td>0.04639</td>
+<td>2.2315</td>
+<td>1.0108</td>
+<td>0.001</td>
+<td>128</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-2__n_delays_10</code></td>
+<td>10</td>
+<td>—</td>
+<td>0.04674</td>
+<td>2.1929</td>
+<td>0.9608</td>
+<td>0.001</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-4__n_delays_5</code></td>
+<td>5</td>
+<td>—</td>
+<td>0.04718</td>
+<td>2.2053</td>
+<td>1.0029</td>
+<td>0.111</td>
+<td>128</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-3__n_delays_10</code></td>
+<td>10</td>
+<td>—</td>
+<td>0.04774</td>
+<td>2.1980</td>
+<td>0.9609</td>
+<td>0.002</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-2__n_delays_15</code></td>
+<td>15</td>
+<td>—</td>
+<td>0.04776</td>
+<td>2.2080</td>
+<td>0.9517</td>
+<td>0.001</td>
+<td>186</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-1__n_delays_10</code></td>
+<td>10</td>
+<td>—</td>
+<td>0.04784</td>
+<td>2.2051</td>
+<td>0.9641</td>
+<td>0.000</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-3__n_delays_15</code></td>
+<td>15</td>
+<td>—</td>
+<td>0.04790</td>
+<td>2.2084</td>
+<td>0.9501</td>
+<td>0.007</td>
+<td>186</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-5__n_delays_15</code></td>
+<td>15</td>
+<td>—</td>
+<td>0.04821</td>
+<td>2.2191</td>
+<td>0.9528</td>
+<td>7.348</td>
+<td>186</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-5__n_delays_10</code></td>
+<td>10</td>
+<td>—</td>
+<td>0.04831</td>
+<td>2.1941</td>
+<td>0.9585</td>
+<td>12.372</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-6__n_delays_15</code></td>
+<td>15</td>
+<td>—</td>
+<td>0.04869</td>
+<td>2.1914</td>
+<td>0.9490</td>
+<td>137.864</td>
+<td>186</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-5__n_delays_5</code></td>
+<td>5</td>
+<td>—</td>
+<td>0.04882</td>
+<td>2.1658</td>
+<td>0.9906</td>
+<td>2.489</td>
+<td>128</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-6__n_delays_5</code></td>
+<td>5</td>
+<td>—</td>
+<td>0.04951</td>
+<td>2.1415</td>
+<td>0.9795</td>
+<td>31.087</td>
+<td>128</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-6__n_delays_10</code></td>
+<td>10</td>
+<td>—</td>
+<td>0.04960</td>
+<td>2.1732</td>
+<td>0.9597</td>
+<td>95.012</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc0__n_delays_15</code></td>
+<td>15</td>
+<td>—</td>
+<td>0.05076</td>
+<td>2.1845</td>
+<td>0.9499</td>
+<td>634.096</td>
+<td>186</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc0__n_delays_5</code></td>
+<td>5</td>
+<td>—</td>
+<td>0.05076</td>
+<td>2.1467</td>
+<td>0.9860</td>
+<td>199.934</td>
+<td>128</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc0__n_delays_10</code></td>
+<td>10</td>
+<td>—</td>
+<td>0.05362</td>
+<td>2.1902</td>
+<td>0.9587</td>
+<td>338.329</td>
+<td>155</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<h2>Chosen run trajectory prediction</h2>
+<p><code>lc_lc1e-1__n_delays_5</code> cell params: <code>{'lightning_kwargs': {'reconstruction_mode': 'uniform', 'loop_closure_weight': 0.1}, 'n_delays': 5}</code></p>
+<p><img alt="chosen trajectory" src="figures/chosen_trajectory.png" /></p>
+<p>One row per condition. Window = the model's native training convention: <code>traj_init_steps</code> teacher-forced steps followed by <code>prediction_steps</code> autoregressive (alpha_TF=0) steps. Solid = ground-truth, dashed = autoregressive rollout. Left: latent space, projected onto top-3 PCs of rollout-window ground-truth latent. Right: observation space, projected onto top-3 PCs of rollout-window ground-truth obs. Color = PC index (<code>PC1=C0, PC2=C1, PC3=C2</code>). Vertical line = end of teacher forcing / start of autoregressive rollout.</p>
+<h2>Chosen run Lyapunov spectrum (per condition)</h2>
+<p><img alt="chosen lyap" src="figures/chosen_lyapunov.png" /></p>
+<p>Bars = mean ± std across the chosen-cell's trajectories within each condition. No empirical / GT comparison — for neural data we only have model-predicted exponents.</p>
+<h2>Per-cell Lyapunov spectra</h2>
+<p><img alt="per-cell lyap" src="figures/per_cell_lyapunov.png" /></p>
+<p>Each subplot is one cell's per-condition Lyapunov spectrum (mean across that cell's trajectories). Watch for monotone trends as <code>n_delays</code> increases and for any cell where the conditions cleanly separate.</p>
+<h2>Chosen run cross-area block gramians (per pair)</h2>
+<p>For each ordered (source → target) area pair, we compute the reach / ctrl / obs gramians of the chosen run's predicted Jacobian's cross-area blocks. Bars show <code>log_trace</code> (top row) and <code>log_min_eig</code> (bottom row — the LOG of the SMALLEST eigenvalue, i.e. the bottleneck-dim energy) per condition, with SEM error bars across the cell's trajectories. Pure model side — no GT since neural data lacks a ground-truth dynamical model. <code>metric</code> mode is currently identical to <code>standard</code> (encoder-Jacobian B_factor / C_factor not yet plugged in).</p>
+<h3>standard / full</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/full)" src="figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_FEF.png" /></p>
+<h3>standard / k10</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/k10)" src="figures/gramians_per_pair/gramian_pair__standard__k10__vlPFC_to_FEF.png" /></p>
+<h3>standard / k20</h3>
+<h4>7b → CPB</h4>
+<p><img alt="7b → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_CPB.png" /></p>
+<h4>7b → FEF</h4>
+<p><img alt="7b → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_FEF.png" /></p>
+<h4>7b → vlPFC</h4>
+<p><img alt="7b → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_vlPFC.png" /></p>
+<h4>CPB → 7b</h4>
+<p><img alt="CPB → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_7b.png" /></p>
+<h4>CPB → FEF</h4>
+<p><img alt="CPB → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_FEF.png" /></p>
+<h4>CPB → vlPFC</h4>
+<p><img alt="CPB → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_vlPFC.png" /></p>
+<h4>FEF → 7b</h4>
+<p><img alt="FEF → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_7b.png" /></p>
+<h4>FEF → CPB</h4>
+<p><img alt="FEF → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_CPB.png" /></p>
+<h4>FEF → vlPFC</h4>
+<p><img alt="FEF → vlPFC (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_vlPFC.png" /></p>
+<h4>vlPFC → 7b</h4>
+<p><img alt="vlPFC → 7b (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_7b.png" /></p>
+<h4>vlPFC → CPB</h4>
+<p><img alt="vlPFC → CPB (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_CPB.png" /></p>
+<h4>vlPFC → FEF</h4>
+<p><img alt="vlPFC → FEF (standard/k20)" src="figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_FEF.png" /></p>
+<h2>Per-cell summary metrics</h2>
+<table>
+<thead>
+<tr>
+<th>run</th>
+<th>n_delays</th>
+<th>encoder_warmup</th>
+<th>mean val loss</th>
+<th>val/one_step_mase</th>
+<th>val/total_loss</th>
+<th>epoch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lc_lc0__n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0540</td>
+<td>2.1983</td>
+<td>—</td>
+<td>43.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc0__n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0513</td>
+<td>2.1799</td>
+<td>—</td>
+<td>53.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc0__n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0508</td>
+<td>2.1593</td>
+<td>—</td>
+<td>39.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-1__n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0478</td>
+<td>2.2051</td>
+<td>—</td>
+<td>61.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-1__n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0456</td>
+<td>2.1966</td>
+<td>—</td>
+<td>58.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-1__n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0429</td>
+<td>2.2161</td>
+<td>—</td>
+<td>78.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-2__n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0467</td>
+<td>2.1929</td>
+<td>—</td>
+<td>62.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-2__n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0478</td>
+<td>2.2080</td>
+<td>—</td>
+<td>48.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-2__n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0464</td>
+<td>2.2342</td>
+<td>—</td>
+<td>49.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-3__n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0477</td>
+<td>2.1980</td>
+<td>—</td>
+<td>60.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-3__n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0479</td>
+<td>2.2084</td>
+<td>—</td>
+<td>48.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-3__n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0464</td>
+<td>2.2315</td>
+<td>—</td>
+<td>49.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-4__n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0466</td>
+<td>2.1882</td>
+<td>—</td>
+<td>67.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-4__n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0458</td>
+<td>2.1870</td>
+<td>—</td>
+<td>59.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-4__n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0475</td>
+<td>2.2290</td>
+<td>—</td>
+<td>45.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-5__n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0485</td>
+<td>2.1996</td>
+<td>—</td>
+<td>59.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-5__n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0488</td>
+<td>2.2075</td>
+<td>—</td>
+<td>47.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-5__n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0491</td>
+<td>2.1759</td>
+<td>—</td>
+<td>39.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-6__n_delays_10</code></td>
+<td>10</td>
+<td>?</td>
+<td>0.0501</td>
+<td>2.1871</td>
+<td>—</td>
+<td>59.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-6__n_delays_15</code></td>
+<td>15</td>
+<td>?</td>
+<td>0.0487</td>
+<td>2.1914</td>
+<td>—</td>
+<td>48.0000</td>
+</tr>
+<tr>
+<td><code>lc_lc1e-6__n_delays_5</code></td>
+<td>5</td>
+<td>?</td>
+<td>0.0498</td>
+<td>2.1678</td>
+<td>—</td>
+<td>39.0000</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
