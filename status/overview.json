@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-17T05:30:25Z",
+  "last_updated": "2026-05-17T05:35:26Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2714,6 +2714,22 @@
     {
       "file": "20260516T033405Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mrjones_20160206_lc_x_nd.yaml",
       "status": "claimed"
+    },
+    {
+      "file": "20260517T053502Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mary_20160818_lc_x_nd.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260517T053503Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mary_20160908_lc_x_nd.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260517T053505Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mrjones_20160109_lc_x_nd.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260517T053506Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mrjones_20160210_lc_x_nd.yaml",
+      "status": "claimed"
     }
   ],
   "mc_sweeps": {
@@ -3965,6 +3981,74 @@
       "n_cells": 21,
       "wandb_project": "MindControl_MrJones_propofol_resting",
       "instruction_file": "20260516T033405Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mrjones_20160206_lc_x_nd.yaml",
+      "report": {
+        "status": "waiting_on_training"
+      }
+    },
+    "mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__nopre_decF_w0_nt99_pred10__mar__87bf80c6__20260517T053515Z": {
+      "status": "active",
+      "training_slurm": {
+        "array_id": "14041029",
+        "n_total": 1,
+        "n_completed": 0,
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
+      },
+      "n_cells": 21,
+      "wandb_project": "MindControl_Mary_propofol_resting",
+      "instruction_file": "20260517T053502Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mary_20160818_lc_x_nd.yaml",
+      "report": {
+        "status": "waiting_on_training"
+      }
+    },
+    "mary_propofol_resting__Mary-Anesthesia-20160908-02__awake_maint__ds1__nopre_decF_w0_nt99_pred10__mar__f349f5f2__20260517T053516Z": {
+      "status": "active",
+      "training_slurm": {
+        "array_id": "14041030",
+        "n_total": 1,
+        "n_completed": 0,
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
+      },
+      "n_cells": 21,
+      "wandb_project": "MindControl_Mary_propofol_resting",
+      "instruction_file": "20260517T053503Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mary_20160908_lc_x_nd.yaml",
+      "report": {
+        "status": "waiting_on_training"
+      }
+    },
+    "mrjones_propofol_resting__MrJones-Anesthesia-20160109-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__e49dffc4__20260517T053517Z": {
+      "status": "active",
+      "training_slurm": {
+        "array_id": "14041031",
+        "n_total": 1,
+        "n_completed": 0,
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
+      },
+      "n_cells": 21,
+      "wandb_project": "MindControl_MrJones_propofol_resting",
+      "instruction_file": "20260517T053505Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mrjones_20160109_lc_x_nd.yaml",
+      "report": {
+        "status": "waiting_on_training"
+      }
+    },
+    "mrjones_propofol_resting__MrJones-Anesthesia-20160210-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__601ee987__20260517T053517Z": {
+      "status": "active",
+      "training_slurm": {
+        "array_id": "14041032",
+        "n_total": 1,
+        "n_completed": 0,
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
+      },
+      "n_cells": 21,
+      "wandb_project": "MindControl_MrJones_propofol_resting",
+      "instruction_file": "20260517T053506Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mrjones_20160210_lc_x_nd.yaml",
       "report": {
         "status": "waiting_on_training"
       }
