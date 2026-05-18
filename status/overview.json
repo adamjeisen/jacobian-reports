@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-18T09:50:24Z",
+  "last_updated": "2026-05-18T09:55:48Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -4027,9 +4027,9 @@
         "array_id": "14041031",
         "n_total": 15,
         "n_completed": 6,
-        "n_succeeded": 7,
-        "n_running": 8,
-        "summary": "6xCOMPLETED 8xRUNNING 1xTIMEOUT"
+        "n_succeeded": 8,
+        "n_running": 7,
+        "summary": "6xCOMPLETED 7xRUNNING 2xTIMEOUT"
       },
       "n_cells": 21,
       "wandb_project": "MindControl_MrJones_propofol_resting",
