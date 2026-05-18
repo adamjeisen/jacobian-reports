@@ -625,6 +625,13 @@
     ],
     "MindControl_MrJones_propofol_resting": [
       {
+        "group": "mrjones_propofol_resting__MrJones-Anesthesia-20160206-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__4393de4c__20260516T033522Z",
+        "has_report": true,
+        "has_metrics": false,
+        "has_discussion": false,
+        "report_mtime": 1779065170.5182846
+      },
+      {
         "group": "mrjones_propofol_resting__MrJones-Anesthesia-20160125-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__8b8858a0__20260516T033521Z",
         "has_report": true,
         "has_metrics": false,
