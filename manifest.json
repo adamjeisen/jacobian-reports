@@ -455,6 +455,13 @@
     ],
     "MindControl_Mary_propofol_resting": [
       {
+        "group": "mary_propofol_resting__Mary-Anesthesia-20160908-02__awake_maint__ds1__nopre_decF_w0_nt99_pred10__mar__f349f5f2__20260517T053516Z",
+        "has_report": true,
+        "has_metrics": false,
+        "has_discussion": false,
+        "report_mtime": 1779108143.0540097
+      },
+      {
         "group": "mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__nopre_decF_w0_nt99_pred10__mar__87bf80c6__20260517T053515Z",
         "has_report": true,
         "has_metrics": false,
