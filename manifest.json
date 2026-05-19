@@ -639,6 +639,20 @@
     ],
     "MindControl_MrJones_propofol_resting": [
       {
+        "group": "mrjones_propofol_resting__MrJones-Anesthesia-20160210-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__601ee987__20260517T053517Z",
+        "has_report": true,
+        "has_metrics": false,
+        "has_discussion": false,
+        "report_mtime": 1779188712.89453
+      },
+      {
+        "group": "mrjones_propofol_resting__MrJones-Anesthesia-20160109-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__e49dffc4__20260517T053517Z",
+        "has_report": true,
+        "has_metrics": false,
+        "has_discussion": false,
+        "report_mtime": 1779188712.562285
+      },
+      {
         "group": "mrjones_propofol_resting__MrJones-Anesthesia-20160206-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__4393de4c__20260516T033522Z",
         "has_report": true,
         "has_metrics": false,
