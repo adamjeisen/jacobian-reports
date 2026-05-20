@@ -49,7 +49,6 @@ Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the 
 | `lc_lc1e-6__n_delays_5` | 5 | — | 0.03848 | 2.1700 | 0.9382 | 64.392 | 93 | 0.0000 |
 | `lc_lc1e-2__n_delays_10` | 10 | — | 0.03871 | 2.1904 | 0.9424 | 0.011 | 112 | 0.0000 |
 | `lc_lc1e-6__n_delays_10` | 10 | — | 0.03879 | 2.1718 | 0.9359 | 99.166 | 112 | 0.0000 |
-| `lc_lc0__n_delays_5` | 5 | — | 0.03924 | 2.1575 | 0.9405 | 174.042 | 93 | 0.0000 |
 | `lc_lc1e-3__n_delays_10` | 10 | — | 0.03948 | 2.1979 | 0.9385 | 0.122 | 112 | 0.0000 |
 | `lc_lc1e-5__n_delays_15` | 15 | — | 0.04121 | 2.0818 | 0.9195 | 34.960 | 130 | 0.0000 |
 | `lc_lc0__n_delays_10` | 10 | — | 0.04186 | 2.1743 | 0.9390 | 417.243 | 112 | 0.0000 |
@@ -59,6 +58,7 @@ Pareto front in (loop closure loss, trajectory val loss) space. Gold star = the 
 | `lc_lc1e-3__n_delays_15` | 15 | — | 0.04399 | 2.1290 | 0.9229 | 0.240 | 130 | 0.0000 |
 | `lc_lc1e-2__n_delays_15` | 15 | — | 0.04444 | 2.1367 | 0.9242 | 0.053 | 130 | 0.0000 |
 | `lc_lc1e-1__n_delays_15` | 15 | — | 0.04459 | 2.1320 | 0.9248 | 0.002 | 130 | 0.0000 |
+| `lc_lc0__n_delays_5` | 5 | — | inf | inf | — | — | — | 1.0000 |
 
 ## Chosen run trajectory prediction
 
@@ -86,6 +86,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 
 ### standard / full
 
+#### 7b → 7b
+
+![7b → 7b (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__7b_to_7b.png)
+
 #### 7b → CPB
 
 ![7b → CPB (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__7b_to_CPB.png)
@@ -101,6 +105,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 #### CPB → 7b
 
 ![CPB → 7b (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_7b.png)
+
+#### CPB → CPB
+
+![CPB → CPB (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__CPB_to_CPB.png)
 
 #### CPB → FEF
 
@@ -118,6 +126,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 
 ![FEF → CPB (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_CPB.png)
 
+#### FEF → FEF
+
+![FEF → FEF (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_FEF.png)
+
 #### FEF → vlPFC
 
 ![FEF → vlPFC (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__FEF_to_vlPFC.png)
@@ -134,7 +146,15 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 
 ![vlPFC → FEF (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_FEF.png)
 
+#### vlPFC → vlPFC
+
+![vlPFC → vlPFC (standard/full)](figures/gramians_per_pair/gramian_pair__standard__full__vlPFC_to_vlPFC.png)
+
 ### standard / k10
+
+#### 7b → 7b
+
+![7b → 7b (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__7b_to_7b.png)
 
 #### 7b → CPB
 
@@ -152,6 +172,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 
 ![CPB → 7b (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__CPB_to_7b.png)
 
+#### CPB → CPB
+
+![CPB → CPB (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__CPB_to_CPB.png)
+
 #### CPB → FEF
 
 ![CPB → FEF (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__CPB_to_FEF.png)
@@ -167,6 +191,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 #### FEF → CPB
 
 ![FEF → CPB (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__FEF_to_CPB.png)
+
+#### FEF → FEF
+
+![FEF → FEF (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__FEF_to_FEF.png)
 
 #### FEF → vlPFC
 
@@ -184,7 +212,15 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 
 ![vlPFC → FEF (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__vlPFC_to_FEF.png)
 
+#### vlPFC → vlPFC
+
+![vlPFC → vlPFC (standard/k10)](figures/gramians_per_pair/gramian_pair__standard__k10__vlPFC_to_vlPFC.png)
+
 ### standard / k20
+
+#### 7b → 7b
+
+![7b → 7b (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__7b_to_7b.png)
 
 #### 7b → CPB
 
@@ -202,6 +238,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 
 ![CPB → 7b (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_7b.png)
 
+#### CPB → CPB
+
+![CPB → CPB (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_CPB.png)
+
 #### CPB → FEF
 
 ![CPB → FEF (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__CPB_to_FEF.png)
@@ -218,6 +258,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 
 ![FEF → CPB (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_CPB.png)
 
+#### FEF → FEF
+
+![FEF → FEF (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_FEF.png)
+
 #### FEF → vlPFC
 
 ![FEF → vlPFC (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__FEF_to_vlPFC.png)
@@ -233,6 +277,10 @@ For each ordered (source → target) area pair, we compute the reach / ctrl / ob
 #### vlPFC → FEF
 
 ![vlPFC → FEF (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_FEF.png)
+
+#### vlPFC → vlPFC
+
+![vlPFC → vlPFC (standard/k20)](figures/gramians_per_pair/gramian_pair__standard__k20__vlPFC_to_vlPFC.png)
 
 ## Per-cell summary metrics
 
