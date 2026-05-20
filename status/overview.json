@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-20T18:35:37Z",
+  "last_updated": "2026-05-20T18:40:38Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -4087,9 +4087,7 @@
       "wandb_project": "MindControl_Mary_propofol_resting",
       "instruction_file": "20260520T055401Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mary_20160826_lc_x_nd.yaml",
       "report": {
-        "status": "running",
-        "report_job_id": "14136569",
-        "dispatched_at": "2026-05-20T16:00:34Z"
+        "status": "done"
       }
     },
     "mary_propofol_resting__Mary-Anesthesia-20160914-02__awake_maint__ds1__nopre_decF_w0_nt99_pred10__mar__ea502de4__20260520T055516Z": {
@@ -4098,9 +4096,9 @@
         "array_id": "14126420",
         "n_total": 17,
         "n_completed": 4,
-        "n_succeeded": 6,
-        "n_running": 11,
-        "summary": "4xCOMPLETED 11xRUNNING 2xTIMEOUT"
+        "n_succeeded": 7,
+        "n_running": 10,
+        "summary": "4xCOMPLETED 10xRUNNING 3xTIMEOUT"
       },
       "n_cells": 21,
       "wandb_project": "MindControl_Mary_propofol_resting",
@@ -4113,11 +4111,11 @@
       "status": "active",
       "training_slurm": {
         "array_id": "14126421",
-        "n_total": 6,
+        "n_total": 7,
         "n_completed": 0,
         "n_succeeded": 0,
-        "n_running": 6,
-        "summary": "1xPENDING 5xRUNNING"
+        "n_running": 7,
+        "summary": "1xPENDING 6xRUNNING"
       },
       "n_cells": 21,
       "wandb_project": "MindControl_MrJones_propofol_resting",
