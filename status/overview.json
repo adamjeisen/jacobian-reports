@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-21T15:40:51Z",
+  "last_updated": "2026-05-21T15:45:50Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -4150,20 +4150,24 @@
       }
     },
     "mrjones_propofol_resting__MrJones-Anesthesia-20160201-01__awake_maint__ds1__nopre_decF_w0_nt99_pred1__7438de31__20260520T055517Z": {
-      "status": "active",
+      "status": "incomplete",
       "training_slurm": {
         "array_id": "14126423",
         "n_total": 21,
         "n_completed": 8,
-        "n_succeeded": 19,
-        "n_running": 1,
-        "summary": "1xCANCELLED 8xCOMPLETED 1xRUNNING 11xTIMEOUT"
+        "n_succeeded": 20,
+        "n_running": 0,
+        "summary": "1xCANCELLED 8xCOMPLETED 12xTIMEOUT"
       },
       "n_cells": 21,
       "wandb_project": "MindControl_MrJones_propofol_resting",
       "instruction_file": "20260520T055405Z-mc-awake_maint_ds1_nopre_decF_w0_nt99_pred10__mrjones_20160201_lc_x_nd.yaml",
       "report": {
-        "status": "waiting_on_training"
+        "status": "skipped",
+        "reason": "training array not all-COMPLETED",
+        "n_completed": 8,
+        "n_total": 21,
+        "skipped_at": "2026-05-21T15:45:50Z"
       }
     }
   }
