@@ -1,0 +1,123 @@
+kind: mindcontrol
+metadata:
+  description: "3 cells on Mary-Anesthesia-20160818-02 (awake + maintenance dose,\
+    \ ds=1), n_delays=5, loop_closure_weight=1e-2 fixed (the chosen-run hyperparameters\
+    \ for this session). Single `variant` axis: {baseline, emanorm, percond_dyn}.\
+    \ 20 epochs each. All other knobs match the production nopre_decF_w0_nt99_pred10\
+    \ LC\xD7nd sweep on this session. Tracks per-condition Jacobian temporal variation\
+    \ each val epoch (val/jac_temporal_cv*).\n"
+  hypothesis: "The neural JacobianODE learns near-constant (effectively linear)\n\
+    Jacobians on this dataset: temporal CV of Jacobian entries is ~1e-5\nwithin a\
+    \ condition. The leading suspect is that the volume-preserving\ndirect-sum encoder\
+    \ leaves z_dyn at very small scale (z_dyn holds ~12%\nof variance; the rest is\
+    \ rotated into the ignored null), so the\ndynamics MLP \u2014 fed a tiny-scale,\
+    \ narrow-range input \u2014 sits in a flat\nregion and emits an essentially affine\
+    \ map. If that is the cause,\nEMA latent-normalization (rescaling z_dyn to unit\
+    \ scale before the\ndynamics MLP) should restore time-varying Jacobians (val/jac_temporal_cv\n\
+    rising well above the baseline's ~0). A per-condition dynamics model is\na complementary\
+    \ test: if a single shared near-linear flow is being\nforced to cover both regimes,\
+    \ splitting it should also raise\nper-condition Jacobian variation. If neither\
+    \ moves the CV, linear\ndynamics genuinely fit this data best.\n"
+  success_criteria:
+  - All 3 cells run to 20 epochs (or TIMEOUT) within the SLURM cap.
+  - val/one_step_mase finite for all 3 cells.
+  - val/jac_temporal_cv logged each val epoch for all 3 cells.
+  - emanorm and/or percond_dyn show val/jac_temporal_cv clearly above the baseline
+    cell (otherwise near-linearity is not a scale or routing artifact).
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160818-02
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: latent_norm_test__mary_20160818_nd5_lc1e-2
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+grid:
+  variant:
+  - _label: baseline
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.01
+  - _label: emanorm
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.01
+      latent_norm_ema: true
+      latent_norm_ema_decay: 0.99
+  - _label: percond_dyn
+    per_source_dynamics: true
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.01
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  n_delays: 5
+  delay_spacing: 1
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 20
+  batch_size: 16
+  seed: 42
+  early_stopping_kwargs:
+    early_stopping_patience: 25
+    min_epochs: 20
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 240
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+submitted_at: 20260522T000041Z
+submitted_from: millerlab-endeavourOS
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__latent_norm_test__mary_2016081__9d6560dc__20260522T000515Z
+slurm_array_id: '14226529'
+slurm_submitted_at: 20260522T000516Z
+n_cells: 3
+expected_run_count: 3
