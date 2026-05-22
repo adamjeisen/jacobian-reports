@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-22T19:55:27Z",
+  "last_updated": "2026-05-22T20:01:32Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -4238,9 +4238,7 @@
       "wandb_project": "MindControl_MrJones_propofol_resting",
       "instruction_file": "20260522T153159Z-mc-smallenc_lc0_ndsweep__mrjones_20160210.yaml",
       "report": {
-        "status": "running",
-        "report_job_id": "14280748",
-        "dispatched_at": "2026-05-22T18:36:02Z"
+        "status": "done"
       }
     },
     "mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__smallenc_lcxnd__mary_20160818__20260522T185514Z": {
