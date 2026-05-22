@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-22T18:50:59Z",
+  "last_updated": "2026-05-22T18:55:39Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2762,6 +2762,10 @@
     {
       "file": "20260522T153159Z-mc-smallenc_lc0_ndsweep__mrjones_20160210.yaml",
       "status": "claimed"
+    },
+    {
+      "file": "20260522T185248Z-mc-smallenc_lcxnd__mary_20160818.yaml",
+      "status": "claimed"
     }
   ],
   "mc_sweeps": {
@@ -4239,6 +4243,23 @@
         "status": "running",
         "report_job_id": "14280748",
         "dispatched_at": "2026-05-22T18:36:02Z"
+      }
+    },
+    "mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__smallenc_lcxnd__mary_20160818__20260522T185514Z": {
+      "status": "active",
+      "training_slurm": {
+        "array_id": "14281888",
+        "n_total": 1,
+        "n_completed": 0,
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
+      },
+      "n_cells": 28,
+      "wandb_project": "MindControl_Mary_propofol_resting",
+      "instruction_file": "20260522T185248Z-mc-smallenc_lcxnd__mary_20160818.yaml",
+      "report": {
+        "status": "waiting_on_training"
       }
     }
   }
