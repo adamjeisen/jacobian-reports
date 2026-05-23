@@ -1,0 +1,137 @@
+kind: mindcontrol
+metadata:
+  description: |
+    Extension of smallenc_lcxnd__mary_20160818: add n_delays ∈ {25, 30} ×
+    loop_closure_weight ∈ {0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1} = 14 cells.
+    Same small-encoder (hidden_dim=128, n_coupling_layers=8 ≈ 4.4M) and dynamics
+    MLP [2048,2048,4096,4096], nt=0.99, pred_steps=10, 6h SLURM cap, ou_bcs_normal
+    with migrate_to: mit_normal_gpu. Appended into the existing wandb group so
+    these cells join the same sweep bookkeeping.
+  hypothesis: |
+    Extending n_delays past 20 may further reduce trajectory val_loss, or saturate.
+    At the higher-lc operating point that minimised val_loss (≈ 1e-2..1e-4), jac_cv
+    is already small (~0.002-0.06). The interesting question is whether
+    n_delays=25-30 keeps val_loss at the ≈0.038 floor or pushes it lower, and
+    whether jac_cv stays at the same regime.
+  success_criteria:
+  - All 14 new cells run to early-stopping or the 6h cap.
+  - val/one_step_mase finite for all cells.
+  - Characterise val/trajectory_loss + jac_cv at n_delays ∈ {25, 30} vs the
+    existing nd ∈ {5,10,15,20} cells.
+
+# Pin the wandb_group to the existing sweep so the engaging-controller's
+# extend path appends these 14 cells to active/<group>.expected.json
+# (run_idx offset by len(old_runs)) rather than starting a new group.
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__smallenc_lcxnd__mary_20160818__20260522T185514Z
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160818-02
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: smallenc_lcxnd__mary_20160818
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  n_delays:
+  - 25
+  - 30
+  lc:
+  - _label: lc0
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.0
+  - _label: lc1e-6
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 1.0e-06
+  - _label: lc1e-5
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 1.0e-05
+  - _label: lc1e-4
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.0001
+  - _label: lc1e-3
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.001
+  - _label: lc1e-2
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.01
+  - _label: lc1e-1
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.1
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 128
+    n_coupling_layers: 8
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  delay_spacing: 1
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+
+submitted_at: 20260523T051012Z
+submitted_from: millerlab-endeavourOS
