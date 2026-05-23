@@ -1,0 +1,124 @@
+kind: mindcontrol
+metadata:
+  description: |
+    Small-encoder (hidden_dim=128, n_coupling_layers=8 ~= 4.4M) n_delays x loop_closure_weight grid on Mary-Anesthesia-20160826-02. Regular dynamics MLP [2048,2048,4096,4096]. n_delays in {5,10,15,20} x loop_closure_weight in {0,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1} = 28 cells. nt=0.99, pred_steps=10. 6h SLURM cap, partition=ou_bcs_normal + qos=mit_amf_advanced_gpu, migrate_to=mit_normal_gpu.
+  hypothesis: |
+    Under the small encoder, lc>0 progressively linearizes the learned Jacobians (low jac_temporal_cv) while a moderate lc minimizes trajectory val_loss. Replicate the Mary-0818 grid on Mary-Anesthesia-20160826-02 to test whether the (nd, lc) operating-point pattern is session-agnostic.
+  success_criteria:
+  - All 28 cells run to early-stopping or the 6h cap.
+  - val/one_step_mase finite for all cells.
+  - Locate the (nd, lc) operating point that minimizes trajectory val_loss and characterize jac_temporal_cv across the grid.
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160826-02__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160826-02
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: smallenc_lcxnd__mary_20160826
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  n_delays:
+  - 5
+  - 10
+  - 15
+  - 20
+  lc:
+  - _label: lc0
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.0
+  - _label: lc1e-6
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 1.0e-06
+  - _label: lc1e-5
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 1.0e-05
+  - _label: lc1e-4
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.0001
+  - _label: lc1e-3
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.001
+  - _label: lc1e-2
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.01
+  - _label: lc1e-1
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.1
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 128
+    n_coupling_layers: 8
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 2048
+    - 2048
+    - 4096
+    - 4096
+    num_layers: 4
+  delay_spacing: 1
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+
+submitted_at: 20260523T055645Z
+submitted_from: millerlab-endeavourOS
