@@ -1,19 +1,28 @@
 kind: mindcontrol
 metadata:
-  description: |
-    Small-encoder (hidden_dim=128, n_coupling_layers=8 ~= 4.4M) n_delays x loop_closure_weight grid on MrJones-Anesthesia-20160105-01. Regular dynamics MLP [2048,2048,4096,4096]. n_delays in {5,10,15,20} x loop_closure_weight in {0,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1} = 28 cells. nt=0.99, pred_steps=10. 6h SLURM cap, partition=ou_bcs_normal + qos=mit_amf_advanced_gpu, migrate_to=mit_normal_gpu.
-  hypothesis: |
-    Under the small encoder, lc>0 progressively linearizes the learned Jacobians (low jac_temporal_cv) while a moderate lc minimizes trajectory val_loss. Replicate the Mary-0818 grid on MrJones-Anesthesia-20160105-01 to test whether the (nd, lc) operating-point pattern is session-agnostic.
+  description: 'Small-encoder (hidden_dim=128, n_coupling_layers=8 ~= 4.4M) n_delays
+    x loop_closure_weight grid on MrJones-Anesthesia-20160109-01. Regular dynamics
+    MLP [2048,2048,4096,4096]. n_delays in {5,10,15,20} x loop_closure_weight in {0,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1}
+    = 28 cells. nt=0.99, pred_steps=10. 6h SLURM cap, partition=ou_bcs_normal + qos=mit_amf_advanced_gpu,
+    migrate_to=mit_normal_gpu.
+
+    '
+  hypothesis: 'Under the small encoder, lc>0 progressively linearizes the learned
+    Jacobians (low jac_temporal_cv) while a moderate lc minimizes trajectory val_loss.
+    Replicate the Mary-0818 grid on MrJones-Anesthesia-20160109-01 to test whether
+    the (nd, lc) operating-point pattern is session-agnostic.
+
+    '
   success_criteria:
   - All 28 cells run to early-stopping or the 6h cap.
   - val/one_step_mase finite for all cells.
-  - Locate the (nd, lc) operating point that minimizes trajectory val_loss and characterize jac_temporal_cv across the grid.
-
+  - Locate the (nd, lc) operating point that minimizes trajectory val_loss and characterize
+    jac_temporal_cv across the grid.
 dataset:
-  name: mrjones_propofol_resting__MrJones-Anesthesia-20160105-01__awake_maint__ds1
+  name: mrjones_propofol_resting__MrJones-Anesthesia-20160109-01__awake_maint__ds1
   loader: mindcontrol.loaders.mary_propofol.load_resting
   loader_kwargs:
-    session: MrJones-Anesthesia-20160105-01
+    session: MrJones-Anesthesia-20160109-01
     sections:
     - awake
     - maintenance dose
@@ -24,11 +33,9 @@ dataset:
     min_kept_length_sec: 1.5
     balance: true
     downsample_factor: 1
-
-sweep_name: smallenc_lcxnd__mrjones_20160105
+sweep_name: smallenc_lcxnd__mrjones_20160109
 wandb_entity: JacobianODE
 wandb_project: MindControl_MrJones_propofol_resting
-
 grid:
   n_delays:
   - 5
@@ -64,7 +71,6 @@ grid:
     lightning_kwargs:
       reconstruction_mode: uniform
       loop_closure_weight: 0.1
-
 shared_kwargs:
   encoder: latent_direct_sum_coupling
   encoder_kwargs:
@@ -110,7 +116,6 @@ shared_kwargs:
     min_epochs: 15
   cfg_overrides:
     training.trainer_params.accumulate_grad_batches: 1
-
 slurm:
   partition: ou_bcs_normal
   cpus_per_task: 2
@@ -119,6 +124,10 @@ slurm:
   gres: gpu:1
   exclude_nodes: node1802,node3808
   migrate_to: mit_normal_gpu
-
-submitted_at: 20260523T055654Z
+submitted_at: 20260523T055700Z
 submitted_from: millerlab-endeavourOS
+wandb_group: mrjones_propofol_resting__MrJones-Anesthesia-20160109-01__awake_maint__ds1__smallenc_lcxnd__mrjones_20160109__20260523T063517Z
+slurm_array_id: '14342633'
+slurm_submitted_at: 20260523T063517Z
+n_cells: 28
+expected_run_count: 28

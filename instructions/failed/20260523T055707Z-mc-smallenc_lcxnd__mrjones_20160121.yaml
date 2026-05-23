@@ -1,19 +1,19 @@
 kind: mindcontrol
 metadata:
   description: |
-    Small-encoder (hidden_dim=128, n_coupling_layers=8 ~= 4.4M) n_delays x loop_closure_weight grid on Mary-Anesthesia-20160826-02. Regular dynamics MLP [2048,2048,4096,4096]. n_delays in {5,10,15,20} x loop_closure_weight in {0,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1} = 28 cells. nt=0.99, pred_steps=10. 6h SLURM cap, partition=ou_bcs_normal + qos=mit_amf_advanced_gpu, migrate_to=mit_normal_gpu.
+    Small-encoder (hidden_dim=128, n_coupling_layers=8 ~= 4.4M) n_delays x loop_closure_weight grid on MrJones-Anesthesia-20160121-01. Regular dynamics MLP [2048,2048,4096,4096]. n_delays in {5,10,15,20} x loop_closure_weight in {0,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1} = 28 cells. nt=0.99, pred_steps=10. 6h SLURM cap, partition=ou_bcs_normal + qos=mit_amf_advanced_gpu, migrate_to=mit_normal_gpu.
   hypothesis: |
-    Under the small encoder, lc>0 progressively linearizes the learned Jacobians (low jac_temporal_cv) while a moderate lc minimizes trajectory val_loss. Replicate the Mary-0818 grid on Mary-Anesthesia-20160826-02 to test whether the (nd, lc) operating-point pattern is session-agnostic.
+    Under the small encoder, lc>0 progressively linearizes the learned Jacobians (low jac_temporal_cv) while a moderate lc minimizes trajectory val_loss. Replicate the Mary-0818 grid on MrJones-Anesthesia-20160121-01 to test whether the (nd, lc) operating-point pattern is session-agnostic.
   success_criteria:
   - All 28 cells run to early-stopping or the 6h cap.
   - val/one_step_mase finite for all cells.
   - Locate the (nd, lc) operating point that minimizes trajectory val_loss and characterize jac_temporal_cv across the grid.
 
 dataset:
-  name: mary_propofol_resting__Mary-Anesthesia-20160826-02__awake_maint__ds1
+  name: mrjones_propofol_resting__MrJones-Anesthesia-20160121-01__awake_maint__ds1
   loader: mindcontrol.loaders.mary_propofol.load_resting
   loader_kwargs:
-    session: Mary-Anesthesia-20160826-02
+    session: MrJones-Anesthesia-20160121-01
     sections:
     - awake
     - maintenance dose
@@ -25,9 +25,9 @@ dataset:
     balance: true
     downsample_factor: 1
 
-sweep_name: smallenc_lcxnd__mary_20160826
+sweep_name: smallenc_lcxnd__mrjones_20160121
 wandb_entity: JacobianODE
-wandb_project: MindControl_Mary_propofol_resting
+wandb_project: MindControl_MrJones_propofol_resting
 
 grid:
   n_delays:
@@ -120,7 +120,7 @@ slurm:
   exclude_nodes: node1802,node3808
   migrate_to: mit_normal_gpu
 
-submitted_at: 20260523T055645Z
+submitted_at: 20260523T055707Z
 submitted_from: millerlab-endeavourOS
 
 error: |
@@ -135,5 +135,5 @@ error: |
   File "/home/eisenaj/.local/share/uv/python/cpython-3.13.11-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 577, in run
     raise CalledProcessError(retcode, process.args,
                              output=stdout, stderr=stderr)
-subprocess.CalledProcessError: Command '['sbatch', '--parsable', '--array=0-27', '--partition=ou_bcs_normal', '--gres=gpu:1', '--cpus-per-task=2', '--mem=128GB', '--time=360', '--job-name=mc-mary_propofol_resting__Mary-An', '--output=/orcd/data/ekmiller/001/eisenaj/MindControl/sweeps/mary_propofol_resting__Mary-Anesthesia-20160826-02__awake_maint__ds1__smallenc_lcxnd__mary_20160826__20260523T055517Z/logs/cell_%a.out', '--error=/orcd/data/ekmiller/001/eisenaj/MindControl/sweeps/mary_propofol_resting__Mary-Anesthesia-20160826-02__awake_maint__ds1__smallenc_lcxnd__mary_20160826__20260523T055517Z/logs/cell_%a.out', '--qos=mit_amf_advanced_gpu', '--exclude=node1802,node3808', '--wrap', 'cd /home/eisenaj/code/MindControl && OPENBLAS_NUM_THREADS=4 HDF5_USE_FILE_LOCKING=FALSE /home/eisenaj/.local/bin/uv run --no-sync python -m mindcontrol.sweep_cell --instruction-path /orcd/data/ekmiller/001/eisenaj/MindControl/sweeps/mary_propofol_resting__Mary-Anesthesia-20160826-02__awake_maint__ds1__smallenc_lcxnd__mary_20160826__20260523T055517Z/instruction.json --cell-index $SLURM_ARRAY_TASK_ID']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['sbatch', '--parsable', '--array=0-27', '--partition=ou_bcs_normal', '--gres=gpu:1', '--cpus-per-task=2', '--mem=128GB', '--time=360', '--job-name=mc-mrjones_propofol_resting__MrJo', '--output=/orcd/data/ekmiller/001/eisenaj/MindControl/sweeps/mrjones_propofol_resting__MrJones-Anesthesia-20160121-01__awake_maint__ds1__smallenc_lcxnd__mrjones_20160121__20260523T063517Z/logs/cell_%a.out', '--error=/orcd/data/ekmiller/001/eisenaj/MindControl/sweeps/mrjones_propofol_resting__MrJones-Anesthesia-20160121-01__awake_maint__ds1__smallenc_lcxnd__mrjones_20160121__20260523T063517Z/logs/cell_%a.out', '--exclude=node1802,node3808', '--wrap', 'cd /home/eisenaj/code/MindControl && OPENBLAS_NUM_THREADS=4 HDF5_USE_FILE_LOCKING=FALSE /home/eisenaj/.local/bin/uv run --no-sync python -m mindcontrol.sweep_cell --instruction-path /orcd/data/ekmiller/001/eisenaj/MindControl/sweeps/mrjones_propofol_resting__MrJones-Anesthesia-20160121-01__awake_maint__ds1__smallenc_lcxnd__mrjones_20160121__20260523T063517Z/instruction.json --cell-index $SLURM_ARRAY_TASK_ID']' returned non-zero exit status 1.
 
