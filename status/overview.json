@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-24T13:55:22Z",
+  "last_updated": "2026-05-24T14:00:41Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -4381,8 +4381,8 @@
         "n_total": 21,
         "n_completed": 8,
         "n_succeeded": 8,
-        "n_running": 13,
-        "summary": "8xCOMPLETED 1xPENDING 12xRUNNING"
+        "n_running": 12,
+        "summary": "1xCANCELLED 8xCOMPLETED 12xRUNNING"
       },
       "n_cells": 28,
       "wandb_project": "MindControl_Mary_propofol_resting",
