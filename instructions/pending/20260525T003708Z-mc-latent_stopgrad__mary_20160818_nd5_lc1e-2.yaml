@@ -1,0 +1,142 @@
+kind: mindcontrol
+
+# Single-cell stop-gradient-on-latent re-run of the latent_norm_test
+# baseline variant (n_delays=5, loop_closure_weight=1.0e-2) on
+# Mary-Anesthesia-20160818-02, pinned into the original latent_norm_test
+# wandb_group so it appears as a fourth variant alongside
+# {baseline, emanorm, percond_dyn} for direct comparison.
+#
+# Differs from the original baseline cell ONLY in the underlying
+# JacobianODE code: commit 4ce6bbe5 detaches the latent-prediction target
+# (z_dyn_clean = mu_dyn.detach() in the obs_noise_scale == 0 branch) so
+# latent_pred_loss only updates the encoder via the predicted (rollout)
+# path, matching the obs_noise > 0 branch's torch.no_grad construction
+# and the BYOL/SimSiam decoded_true target-network convention.
+
+metadata:
+  description: >
+    Single cell on Mary-Anesthesia-20160818-02 with the latent_norm_test
+    BASELINE recipe: production encoder (hidden_dim=1024,
+    n_coupling_layers=16), [2048,2048,4096,4096] dynamics MLP, n_delays=5,
+    loop_closure_weight=1.0e-2, 20-epoch fixed horizon. Pinned to the
+    existing latent_norm_test wandb_group so this run sits alongside
+    {baseline, emanorm, percond_dyn} as a fourth controlled variant.
+    Submitted to ou_bcs_high.
+  hypothesis: |
+    The original latent_norm_test was framed around the observed
+    near-linearity of the learned Jacobians (val/jac_temporal_cv ~ 1e-5
+    on the baseline). The three variants (baseline / emanorm /
+    percond_dyn) tested whether the near-linearity was a z_dyn-scale or
+    routing artifact. There is a fourth confound: latent_pred_loss
+    backpropped into the encoder through BOTH the predicted and the
+    target latent (the target was reused mu_dyn without detach), which
+    is the canonical representation-collapse shape and may bias the
+    encoder toward latents the Jacobian network can easily linearize.
+    With z_dyn_clean detached (JacobianODE 4ce6bbe5), latent_pred_loss
+    only updates the encoder via the z_pred path. Expectation: if the
+    near-linearity persists at the same val/jac_temporal_cv level,
+    linear dynamics are genuinely the data-best fit; if it rises
+    meaningfully (closer to the emanorm cell), the stop-gradient was a
+    contributing factor.
+  success_criteria:
+    - 1 cell runs to 20 epochs (or TIMEOUT) within the SLURM cap.
+    - val/one_step_mase finite.
+    - val/jac_temporal_cv logged each val epoch.
+    - val/latent_pred_loss logged each val epoch (comparable to baseline cell).
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160818-02
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: latent_stopgrad__mary_20160818_nd5_lc1e-2
+
+# Pin to the existing latent_norm_test wandb_group so the new cell lands
+# as a 4th variant alongside {baseline, emanorm, percond_dyn}.
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__latent_norm_test__mary_2016081__9d6560dc__20260522T000515Z
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  variant:
+    - {_label: stopgrad,
+       lightning_kwargs: {reconstruction_mode: uniform, loop_closure_weight: 1.0e-2}}
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  # Chosen-run hyperparameters for this session, held fixed (match
+  # latent_norm_test shared_kwargs).
+  n_delays: 5
+  delay_spacing: 1
+
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+
+  filter_data: true
+  low_pass: 80.0
+
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values: [-1.0, 1.0]
+
+  per_source_dynamics: false
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  # 20-epoch controlled comparison: min_epochs=20 prevents early stop,
+  # matching the latent_norm_test horizon.
+  n_epochs: 20
+  batch_size: 16
+  seed: 42
+
+  early_stopping_kwargs:
+    early_stopping_patience: 25
+    min_epochs: 20
+
+  cfg_overrides:
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  # ou_bcs_high: 4h walltime cap (sinfo). 20 epochs at ~6 min/epoch on
+  # the production encoder should fit comfortably in 240 min.
+  partition: ou_bcs_high
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 240
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+
+submitted_at: 20260525T003708Z
+submitted_from: millerlab-endeavourOS
