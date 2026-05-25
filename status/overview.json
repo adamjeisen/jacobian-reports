@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-25T00:25:30Z",
+  "last_updated": "2026-05-25T00:30:24Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -2802,6 +2802,10 @@
     {
       "file": "20260523T055700Z-mc-smallenc_lcxnd__mrjones_20160109.yaml",
       "status": "claimed"
+    },
+    {
+      "file": "20260525T002645Z-mc-latent_stopgrad__mary_20160818_nd5_lc1e-2.yaml",
+      "status": "claimed"
     }
   ],
   "mc_sweeps": {
@@ -4278,18 +4282,18 @@
       }
     },
     "mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__smallenc_lcxnd__mary_20160818__20260522T185514Z": {
-      "status": "completed",
+      "status": "active",
       "training_slurm": {
-        "array_id": "14336907",
-        "n_total": 10,
+        "array_id": "14475578",
+        "n_total": 1,
         "n_completed": 0,
-        "n_succeeded": 10,
-        "n_running": 0,
-        "summary": "10xTIMEOUT"
+        "n_succeeded": 0,
+        "n_running": 1,
+        "summary": "1xPENDING"
       },
-      "n_cells": 14,
+      "n_cells": 1,
       "wandb_project": "MindControl_Mary_propofol_resting",
-      "instruction_file": "20260523T051012Z-mc-smallenc_lcxnd_nd25_30__mary_20160818.yaml",
+      "instruction_file": "20260525T002645Z-mc-latent_stopgrad__mary_20160818_nd5_lc1e-2.yaml",
       "report": {
         "status": "skipped",
         "reason": "training array not all-COMPLETED",
