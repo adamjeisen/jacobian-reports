@@ -1,0 +1,132 @@
+kind: mindcontrol
+
+# Single-cell stop-gradient-on-latent re-run of the smallenc_lcxnd baseline
+# cell (n_delays=5, loop_closure_weight=1.0e-2) on
+# Mary-Anesthesia-20160818-02. Lands in the same wandb_group as the
+# original smallenc_lcxnd sweep so it appears alongside the existing 28
+# cells for direct comparison.
+#
+# What changed: JacobianODE@4ce6bbe5 detaches the latent-prediction target
+# (z_dyn_clean = mu_dyn.detach()) when obs_noise_scale == 0, matching the
+# obs_noise > 0 branch's torch.no_grad target construction and the
+# BYOL/SimSiam decoded_true convention. Before this fix,
+# latent_pred_loss backpropped into the encoder through BOTH z_pred AND
+# z_true, so the encoder could collapse the target toward the rollout
+# instead of vice versa.
+
+metadata:
+  description: >
+    Single cell on Mary-Anesthesia-20160818-02, fixed at n_delays=5 and
+    loop_closure_weight=1.0e-2 (the chosen-run hyperparameters and the
+    baseline cell of the latent_norm_test 3-run sweep). All other knobs
+    identical to the smallenc_lcxnd__mary_20160818 production sweep
+    (128-d, 8-layer encoder, [2048,2048,4096,4096] dynamics MLP,
+    nopre_decF_w0_nt99_pred10). Pinned to the existing smallenc_lcxnd
+    wandb_group so this run is directly comparable to its baseline cell.
+    Submitted to ou_bcs_high partition.
+  hypothesis: |
+    The original smallenc_lcxnd run trained without a stop-gradient on
+    the latent-prediction target, so latent_pred_loss updated the
+    encoder via both arms of the loss (z_pred AND z_true). This is the
+    canonical representation-collapse shape and may have contributed
+    to the observed near-linearity of the learned Jacobians
+    (jac_temporal_cv ~ 0 at chosen lc on this session). With the
+    detach in place, latent_pred_loss only flows into the encoder
+    through the z_pred (rollout) path. Expectation: latent_pred_loss
+    curve differs from the baseline; jac_temporal_cv may rise;
+    trajectory val_loss should be in a similar ballpark.
+  success_criteria:
+    - 1 cell runs to early stopping or the 6h SLURM cap.
+    - val/one_step_mase finite for the cell.
+    - val/latent_pred_loss logged each val epoch.
+    - Compare jac_temporal_cv* between this cell and the
+      nd=5/lc=1e-2 cell of the original smallenc_lcxnd group.
+
+dataset:
+  name: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: Mary-Anesthesia-20160818-02
+    sections: [awake, "maintenance dose"]
+    section_condition_values: [-1.0, 1.0]
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+
+sweep_name: latent_stopgrad__mary_20160818_nd5_lc1e-2
+
+# Pin the wandb group to the existing smallenc_lcxnd sweep so this cell
+# appears alongside the original 28 cells.
+wandb_group: mary_propofol_resting__Mary-Anesthesia-20160818-02__awake_maint__ds1__smallenc_lcxnd__mary_20160818__20260522T185514Z
+
+wandb_entity: JacobianODE
+wandb_project: MindControl_Mary_propofol_resting
+
+grid:
+  variant:
+    - {_label: stopgrad_baseline,
+       lightning_kwargs: {reconstruction_mode: uniform, loop_closure_weight: 1.0e-2}}
+
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 128
+    n_coupling_layers: 8
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 1.0e-3
+
+  dynamics_kwargs:
+    hidden_dim: [2048, 2048, 4096, 4096]
+    num_layers: 4
+
+  n_delays: 5
+  delay_spacing: 1
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+
+  filter_data: true
+  low_pass: 80.0
+
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values: [-1.0, 1.0]
+
+  per_source_dynamics: false
+
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+
+  cfg_overrides:
+    "training.trainer_params.accumulate_grad_batches": 1
+
+slurm:
+  partition: ou_bcs_high
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+
+submitted_at: 20260525T000937Z
+submitted_from: millerlab-endeavourOS
