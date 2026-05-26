@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-26T12:26:13Z",
+  "last_updated": "2026-05-26T12:31:45Z",
   "sweeps": {
     "additive_joint_with_lpl_gennmse__lc_obsnoise_sweep": {
       "status": "processed"
@@ -921,6 +921,20 @@
         "in_flight": 0,
         "failed_exhausted": 0,
         "effectively_done": 2
+      }
+    },
+    "wmtask_partialobs16_bigres_lc1e-4__nd6": {
+      "status": "active",
+      "runs_summary": {
+        "terminal": 0,
+        "in_flight": 1,
+        "failed_exhausted": 0,
+        "effectively_done": 0
+      },
+      "training_slurm": {
+        "n_running": 1,
+        "n_pending": 0,
+        "n_total": 1
       }
     },
     "wmtask_pobs16_cayley_top3nd_lcobs_20260501T163325Z__stage_a": {
@@ -2835,6 +2849,10 @@
     },
     {
       "file": "20260526T114931Z-wmtask_epoch_compare_partialobs16_bigres_lc0__nd6.yaml",
+      "status": "claimed"
+    },
+    {
+      "file": "20260526T122604Z-wmtask_partialobs16_bigres_lc1e-4__nd6.yaml",
       "status": "claimed"
     }
   ],
