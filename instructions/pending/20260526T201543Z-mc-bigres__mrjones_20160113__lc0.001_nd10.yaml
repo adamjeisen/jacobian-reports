@@ -1,0 +1,100 @@
+kind: mindcontrol
+metadata:
+  description: "Single-cell bigres-dynamics rerun of the C1+C2 chosen (LC=0.001, n_delays=10) production run for MrJones-Anesthesia-20160113-01\
+    \ (C1+C2 chosen = 9mxe338c). Same encoder + same data setup + same loss weights as production; only dynamics MLP differs\
+    \ (8-layer \xD7 4096 with residual connections, vs production 4-layer 256/1024/2048/2048)."
+  hypothesis: "On Mary-0818's WMTask analog the bigres MLP raised Jacobian temporal CV ~100\xD7 while trajectory loss slightly\
+    \ improved. Test whether the bigres dynamics reproduces the per-pair Gramian pattern on the neural data cohort. Pass =\
+    \ Gramian sign/magnitude broadly matches the production cohort while CV is elevated."
+  success_criteria:
+  - Cell trains to n_epochs without NaN train loss.
+  - val/jac_temporal_cv elevated above ~0 (architecture used).
+  - "val/trajectory_loss within 2\xD7 of the production chosen."
+dataset:
+  name: mrjones_propofol_resting__MrJones-Anesthesia-20160113-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mrjones_propofol.load_resting
+  loader_kwargs:
+    session: MrJones-Anesthesia-20160113-01
+    sections:
+    - awake
+    - maintenance dose
+    section_condition_values:
+    - -1.0
+    - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: bigres_lcxnd_chosen__mrjones_20160113
+wandb_entity: JacobianODE
+wandb_project: MindControl_MrJones_propofol_resting
+grid:
+  n_delays:
+  - 10
+  lc:
+  - _label: lc0_001
+    lightning_kwargs:
+      reconstruction_mode: uniform
+      loop_closure_weight: 0.001
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+    - 4096
+    - 4096
+    - 4096
+    - 4096
+    - 4096
+    - 4096
+    - 4096
+    - 4096
+    num_layers: 8
+    residuals: true
+  delay_spacing: 1
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+  - -1.0
+  - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+
+submitted_at: 20260526T201543Z
+submitted_from: millerlab-endeavourOS
