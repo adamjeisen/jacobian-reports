@@ -1,0 +1,107 @@
+kind: mindcontrol
+metadata:
+  description: |
+    Single cell on MrJones-Anesthesia-20160125-01 with the chosen-cell
+    production hyperparams (n_delays=10, loop_closure_weight=1e-4;
+    encoder hidden=1024, n_coupling=16; dynamics MLP [2048,2048,4096,4096];
+    pred10, nt=0.99, ds=1, normalize_per_condition). Only delta from the
+    chosen production cell is latent_pred_target_stopgrad=true (matches
+    the WMTask stopgrad-target probe + sibling Mary-0818 submission).
+  hypothesis: |
+    Companion to the Mary-0818 stopgradtarget cell. Tests whether the
+    latent-prediction-target detach (see WMTask group
+    wmtask_partialobs16_stopgradtarget__nd6) generalizes across NHPs at
+    each session's production-chosen LC × n_delays. Expected: lower
+    val/jac_temporal_cv than the production chosen cell, preserved
+    per-condition gramian / Lyapunov direction.
+  success_criteria:
+    - 1 cell runs to convergence (or TIMEOUT) within the 6-hour SLURM cap.
+    - val/one_step_mase finite.
+    - val/jac_temporal_cv logged each val epoch (comparable to production
+      chosen cell lc_lc1e-4__n_delays_10 of MrJones-0125).
+    - val/loop_closure_loss logged each val epoch.
+    - val/latent_pred_loss curve finite; report side-by-side with
+      production chosen cell.
+dataset:
+  name: mrjones_propofol_resting__MrJones-Anesthesia-20160125-01__awake_maint__ds1
+  loader: mindcontrol.loaders.mary_propofol.load_resting
+  loader_kwargs:
+    session: MrJones-Anesthesia-20160125-01
+    sections:
+      - awake
+      - maintenance dose
+    section_condition_values:
+      - -1.0
+      - 1.0
+    min_length_sec: 3.0
+    min_kept_length_sec: 1.5
+    balance: true
+    downsample_factor: 1
+sweep_name: latent_stopgradtarget__mrjones_20160125_nd10_lc1e-4
+wandb_entity: JacobianODE
+wandb_project: MindControl_MrJones_propofol_resting
+grid:
+  variant:
+    - _label: stopgradtarget
+      lightning_kwargs:
+        reconstruction_mode: uniform
+        loop_closure_weight: 0.0001
+        latent_pred_target_stopgrad: true
+shared_kwargs:
+  encoder: latent_direct_sum_coupling
+  encoder_kwargs:
+    hidden_dim: 1024
+    n_coupling_layers: 16
+    use_cayley_perms: true
+    final_perm_identity: true
+    zero_init: true
+    near_identity_std: 0.001
+  dynamics_kwargs:
+    hidden_dim:
+      - 2048
+      - 2048
+      - 4096
+      - 4096
+    num_layers: 4
+  n_delays: 10
+  delay_spacing: 1
+  n_target_dim_method: pca
+  n_target_var_threshold: 0.99
+  pre_pca_per_area: false
+  pre_pca_var_threshold: 0.99
+  whiten_after_pre_pca: false
+  encoder_warmup_epochs: 0
+  decoded_only_pred_loss: false
+  seq_length: 25
+  seq_spacing: 15
+  prediction_steps: 10
+  filter_data: true
+  low_pass: 80.0
+  normalize: true
+  normalize_per_condition: true
+  section_condition_values:
+    - -1.0
+    - 1.0
+  per_source_dynamics: false
+  train_percent: 0.7
+  test_percent: 0.15
+  split_by: trajectory
+  n_epochs: 100
+  batch_size: 16
+  seed: 42
+  early_stopping_kwargs:
+    early_stopping_patience: 5
+    min_epochs: 15
+  cfg_overrides:
+    training.trainer_params.accumulate_grad_batches: 1
+slurm:
+  partition: ou_bcs_normal
+  cpus_per_task: 2
+  mem: 128GB
+  timeout_min: 360
+  gres: gpu:1
+  exclude_nodes: node1802,node3808
+  migrate_to: mit_normal_gpu
+
+submitted_at: 20260528T170032Z
+submitted_from: millerlab-endeavourOS
