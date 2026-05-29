@@ -1,0 +1,8 @@
+experiment: wmtask_fullobs_5fm9o2jn_match__random_loops
+overrides:
+  - "training.trainer_params.max_epochs=1"
+  - "training.trainer_params.limit_train_batches=8"
+  - "training.trainer_params.limit_val_batches=4"
+  - "wandb_group=smk_wmtask_fullobs_5fm9o2jn_random_loops"
+submitted_at: 20260529T201250Z
+submitted_from: millerlab-endeavourOS
