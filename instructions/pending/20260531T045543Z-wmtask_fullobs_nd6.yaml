@@ -1,0 +1,8 @@
+experiment: wmtask_fullobs_nd6
+overrides:
+  - "training.trainer_params.max_epochs=1"
+  - "training.trainer_params.limit_train_batches=8"
+  - "training.trainer_params.limit_val_batches=4"
+  - "wandb_group=smk_wmtask_fullobs_nd6_v2"
+submitted_at: 20260531T045543Z
+submitted_from: millerlab-endeavourOS
