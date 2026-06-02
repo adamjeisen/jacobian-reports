@@ -1108,6 +1108,13 @@
   },
   "diagnostics": [
     {
+      "name": "controllability_money_pertraj_dbqm15eu.png",
+      "category": "uncategorized",
+      "path": "diagnostics/controllability_money_pertraj_dbqm15eu.png",
+      "mtime": 1780433398.382325,
+      "size": 198820
+    },
+    {
       "name": "controllability_money_dbqm15eu.png",
       "category": "uncategorized",
       "path": "diagnostics/controllability_money_dbqm15eu.png",
